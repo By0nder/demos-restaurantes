@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertex Consulting — Decisiones basadas en datos</title>
+  <meta name="description" content="Ayudamos a empresas medianas a crecer con estrategia, análisis y ejecución.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
+
+  <header class="sticky top-0 z-50 bg-[var(--color-fondo)]/90 backdrop-blur border-b border-black/5 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      
+        <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
+          V
+        </span>
+      
+      <span class="font-semibold text-lg">Vertex Consulting</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+      
+      
+        <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
+      
+        <a href="#casos" class="hover:opacity-70 transition-opacity">Casos de Éxito</a>
+      
+        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Testimonios</a>
+      
+        <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
+      
+    </nav>
+
+    <button id="menu-toggle" class="md:hidden p-2" aria-label="Abrir menú">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-black/5 px-4 pb-4">
+    
+      <a href="#servicios" class="block py-2 text-sm font-medium">Servicios</a>
+    
+      <a href="#casos" class="block py-2 text-sm font-medium">Casos de Éxito</a>
+    
+      <a href="#testimonios" class="block py-2 text-sm font-medium">Testimonios</a>
+    
+      <a href="#contacto" class="block py-2 text-sm font-medium">Contacto</a>
+    
+  </nav>
+</header>
+
+
+  <main>
+    
+      <section id="hero" class="relative overflow-hidden">
+  
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))"></div>
+  
+
+  <div class="relative max-w-6xl mx-auto px-4 py-24 md:py-36 text-center text-white">
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight reveal">Vertex Consulting</h1>
+    
+      <p class="mt-4 text-lg md:text-2xl opacity-90 max-w-2xl mx-auto reveal">Estrategia, datos y ejecución para hacer crecer tu empresa</p>
+    
+    
+      <p class="mt-3 text-base opacity-75 max-w-xl mx-auto reveal">Ayudamos a empresas medianas a crecer con estrategia, análisis y ejecución.</p>
+    
+    <a href="#contacto" class="reveal inline-block mt-8 px-8 py-3 rounded-full font-semibold text-[var(--color-primario)] bg-white hover:scale-105 transition-transform shadow-lg">
+      Agenda una consulta gratuita
+    </a>
+  </div>
+</section>
+
+    
+      <section id="servicios" class="py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Nuestros Servicios</h2>
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+        <div class="reveal rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
+          
+            <div class="text-4xl">📊</div>
+          
+          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Estrategia de negocio</h3>
+          
+            <p class="mt-2 text-sm leading-relaxed opacity-80">Diagnóstico completo y hoja de ruta a 12 meses con metas medibles.</p>
+          
+          
+        </div>
+      
+        <div class="reveal rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
+          
+            <div class="text-4xl">⚙️</div>
+          
+          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Optimización de operaciones</h3>
+          
+            <p class="mt-2 text-sm leading-relaxed opacity-80">Reducción de costos y automatización de procesos clave.</p>
+          
+          
+        </div>
+      
+        <div class="reveal rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
+          
+            <div class="text-4xl">🚀</div>
+          
+          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Transformación digital</h3>
+          
+            <p class="mt-2 text-sm leading-relaxed opacity-80">Implementación de herramientas y cultura data-driven.</p>
+          
+          
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+    
+      <section id="casos" class="py-20 bg-black/[0.02]">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Casos de Éxito</h2>
+    <div class="mt-12 grid gap-8 md:grid-cols-2">
+      
+        <div class="reveal rounded-2xl bg-white border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow">
+          <p class="text-xs uppercase tracking-wide font-semibold opacity-60">Grupo Almacenes MX</p>
+          <h3 class="mt-2 text-xl font-semibold">Expansión regional de cadena retail</h3>
+          
+            <p class="mt-3 text-sm leading-relaxed opacity-80">Rediseñamos la estrategia de expansión y el modelo de inventarios.</p>
+          
+          
+            <p class="mt-5 inline-block rounded-full px-4 py-1.5 text-sm font-bold text-white" style="background-color: var(--color-primario)">
+              +40% ventas en 18 meses
+            </p>
+          
+        </div>
+      
+        <div class="reveal rounded-2xl bg-white border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow">
+          <p class="text-xs uppercase tracking-wide font-semibold opacity-60">TransLog SA</p>
+          <h3 class="mt-2 text-xl font-semibold">Automatización de logística</h3>
+          
+            <p class="mt-3 text-sm leading-relaxed opacity-80">Digitalizamos la asignación de rutas y el seguimiento de flota.</p>
+          
+          
+            <p class="mt-5 inline-block rounded-full px-4 py-1.5 text-sm font-bold text-white" style="background-color: var(--color-primario)">
+              -25% costos operativos
+            </p>
+          
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+    
+      <section id="testimonios" class="py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen nuestros clientes</h2>
+    <div class="mt-12 grid gap-8 md:grid-cols-2">
+      
+        <figure class="reveal rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
+          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
+          </svg>
+          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"Vertex no solo entregó un plan, se quedó a ejecutarlo con nosotros. Los resultados hablan solos."</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
+              M
+            </span>
+            <div>
+              <p class="text-sm font-semibold">María Fernández</p>
+              <p class="text-xs opacity-60">CEO, Grupo Almacenes MX</p>
+            </div>
+          </figcaption>
+        </figure>
+      
+        <figure class="reveal rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
+          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
+          </svg>
+          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"En seis meses recuperamos la inversión de la consultoría. Equipo serio y directo."</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
+              J
+            </span>
+            <div>
+              <p class="text-sm font-semibold">Jorge Ramírez</p>
+              <p class="text-xs opacity-60">Dir. Operaciones, TransLog</p>
+            </div>
+          </figcaption>
+        </figure>
+      
+    </div>
+  </div>
+</section>
+
+    
+      <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
+  <div class="max-w-4xl mx-auto px-4 text-center text-white">
+    <h2 class="text-3xl md:text-4xl font-bold reveal">Hablemos de tu proyecto</h2>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+      
+        <div class="reveal">
+          <p class="font-semibold uppercase tracking-wide text-xs opacity-75">Teléfono</p>
+          <a href="tel:+525598765432" class="mt-1 block text-lg font-medium hover:underline">+52 55 9876 5432</a>
+        </div>
+      
+      
+        <div class="reveal">
+          <p class="font-semibold uppercase tracking-wide text-xs opacity-75">Email</p>
+          <a href="mailto:hola@vertexconsulting.mx" class="mt-1 block text-lg font-medium hover:underline">hola@vertexconsulting.mx</a>
+        </div>
+      
+      
+        <div class="reveal">
+          <p class="font-semibold uppercase tracking-wide text-xs opacity-75">Dirección</p>
+          <p class="mt-1 text-lg font-medium">Torre Reforma, Piso 12, CDMX</p>
+        </div>
+      
+      
+    </div>
+
+    
+  </div>
+</section>
+
+    
+  </main>
+
+  <footer class="py-10 bg-gray-900 text-gray-300">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      
+      <p class="text-sm">© 2026 Vertex Consulting. Todos los derechos reservados.</p>
+    </div>
+
+    
+    
+      <div class="flex items-center gap-4 text-sm">
+        
+          <a href="https://linkedin.com/company/vertex-consulting" target="_blank" rel="noopener" class="capitalize hover:text-white transition-colors">linkedin</a>
+        
+      </div>
+    
+  </div>
+</footer>
+
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
