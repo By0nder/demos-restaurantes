@@ -22,6 +22,10 @@
   
     <meta name="robots" content="noindex, nofollow">
   
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -41,11 +45,21 @@
     <nav class="hidden md:flex items-center gap-6 text-base font-medium">
       
       
+      
         <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
       
-        <a href="#faq" class="hover:opacity-70 transition-opacity">faq</a>
+        <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
       
         <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
+      
+      
+      
+        <a href="https://wa.me/51999924205?text=Hola%20Ventura%20Ponce%20Helard%2C%20vi%20su%20p%C3%A1gina%20y%20quisiera%20hacer%20una%20consulta."
+           target="_blank" rel="noopener"
+           class="inline-flex min-h-[44px] items-center rounded-full px-5 font-semibold text-white transition hover:brightness-110"
+           style="background: var(--color-acento)">
+          Escríbanos
+        </a>
       
     </nav>
 
@@ -60,7 +74,7 @@
     
       <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
     
-      <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">faq</a>
+      <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
     
       <a href="#contacto" class="flex items-center min-h-[44px] py-2 text-base font-medium">Contacto</a>
     
@@ -73,32 +87,99 @@
       <section id="hero" class="relative overflow-hidden">
   
     
-    <div class="absolute inset-0">
+    
+    <div class="absolute inset-0 overflow-hidden">
       <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&amp;q=80"
            srcset="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=480&amp;q=80 480w, https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&amp;q=80 800w, https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&amp;q=80 1600w" sizes="100vw"
            alt=""
            fetchpriority="high" decoding="async"
-           class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-black/50"></div>
+           class="hero-foto w-full h-full object-cover">
+      
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&amp;q=80" alt="" aria-hidden="true"
+             fetchpriority="low" decoding="async" loading="lazy"
+             class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
+             style="animation-delay: 0s, 0s">
+      
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&amp;q=80" alt="" aria-hidden="true"
+             fetchpriority="low" decoding="async" loading="lazy"
+             class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
+             style="animation-delay: 8s, 8s">
+      
+      <div class="absolute inset-0 hero-velo"></div>
     </div>
   
 
-  <div class="relative max-w-6xl mx-auto px-4 py-24 md:py-36 text-center text-white">
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight reveal">Ventura Ponce Helard</h1>
-    
-      <p class="mt-4 text-lg md:text-2xl opacity-90 max-w-2xl mx-auto reveal">Clínica dental · Lima</p>
-    
-    
-    
-      <p class="mt-3 text-base opacity-75 max-w-xl mx-auto reveal">Avenida Guardia Civil, 337 - Consultorio 515, Clínica San Borja, C.P. Lima 41.</p>
-    
-    <a href="#contacto" class="reveal inline-block mt-8 min-h-[44px] px-8 py-3 rounded-full font-semibold text-[var(--color-primario)] bg-white hover:scale-105 transition-transform shadow-lg">
-      Agenda tu cita
-    </a>
+  
 
-    
-    
+  <div class="relative max-w-6xl mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24 text-white">
+    <div class="max-w-3xl">
+      
+
+      <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] reveal">Ventura Ponce Helard</h1>
+
+      
+        <p class="mt-4 text-lg md:text-2xl font-medium text-white/90 reveal">Clínica dental · Lima</p>
+      
+
+      
+      
+        <p class="mt-3 text-base md:text-lg text-white/75 max-w-xl reveal">Avenida Guardia Civil, 337 - Consultorio 515, Clínica San Borja, C.P. Lima 41.</p>
+      
+
+      <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center reveal">
+        <a href="https://wa.me/51999924205?text=Hola%20Ventura%20Ponce%20Helard%2C%20vi%20su%20p%C3%A1gina%20y%20quisiera%20consultar%20por%20un%20servicio."
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-full font-semibold text-white bg-[var(--color-acento)] shadow-lg shadow-black/30 hover:brightness-110 hover:scale-[1.02] transition">
+          
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+          
+          Escríbanos por WhatsApp
+        </a>
+        <a href="#servicios"
+           class="inline-flex items-center justify-center min-h-[52px] px-8 rounded-full font-semibold text-white ring-1 ring-white/45 bg-white/10 backdrop-blur hover:bg-white/20 transition">
+          Ver servicios y precios
+        </a>
+      </div>
+    </div>
   </div>
+
+  
+    <div class="relative border-t franja-dato bg-black/35 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3 text-white/90 text-sm md:text-base">
+        
+          
+          <p class="flex items-start gap-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg>
+            <span>
+              Avenida Guardia Civil, 337 - Consultorio 515, Clínica San Borja, C.P. Lima 41
+              
+              
+            </span>
+          </p>
+        
+          
+          <p class="flex items-start gap-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="m9 12 2 2 4-4" /></svg>
+            <span>
+              Evaluación y diagnóstico: gratis
+              
+              
+            </span>
+          </p>
+        
+          
+          <p class="flex items-start gap-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg>
+            <span>
+              Le respondemos por WhatsApp
+              
+              
+            </span>
+          </p>
+        
+      </div>
+    </div>
+  
 </section>
 
     
@@ -113,123 +194,208 @@
       </p>
     
 
-    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       
       
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">🦷</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Limpieza dental</h3>
-          
-            <p class="mt-2 text-base leading-relaxed opacity-80">Profilaxis completa y destartraje. Sin dolor y en una sola sesión.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">S/ 80</p>
-          
-          
-          
-            <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Limpieza%20dental"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M13.267 2.08a10 10 0 108.653 8.653" /> <path d="M15 10V9" /> <path d="M16 5h6" /> <path d="M16.472 15a6 6 0 01-8.943 0" /> <path d="M19 2v6" /> <path d="M9 10V9" /></svg>
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
+                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                  S/ 80
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Limpieza dental</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Profilaxis completa y destartraje. Sin dolor y en una sola sesión.</p>
+            
+
+            
+            
+              <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Limpieza%20dental"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
       
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">✨</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Curaciones y resinas</h3>
-          
-            <p class="mt-2 text-base leading-relaxed opacity-80">Del color de su diente, no se nota. Le decimos el costo antes de empezar.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">S/ 90</p>
-          
-          
-          
-            <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Curaciones%20y%20resinas"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /></svg>
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
+                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                  S/ 90
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Curaciones y resinas</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Del color de su diente, no se nota. Le decimos el costo antes de empezar.</p>
+            
+
+            
+            
+              <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Curaciones%20y%20resinas"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
       
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">😁</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Ortodoncia</h3>
-          
-            <p class="mt-2 text-base leading-relaxed opacity-80">Brackets metálicos o estéticos, con plan de pagos mensuales.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">desde S/ 1,200</p>
-          
-          
-          
-            <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Ortodoncia"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M15 10V9" /> <path d="M16.472 15a6 6 0 01-8.943 0" /> <path d="M9 10V9" /> <circle cx="12" cy="12" r="10" /></svg>
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
+                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                  desde S/ 1,200
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Ortodoncia</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Brackets metálicos o estéticos, con plan de pagos mensuales.</p>
+            
+
+            
+            
+              <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Ortodoncia"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
       
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">💎</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Blanqueamiento</h3>
-          
-            <p class="mt-2 text-base leading-relaxed opacity-80">Resultado visible desde la primera sesión.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">S/ 350</p>
-          
-          
-          
-            <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Blanqueamiento"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M10.5 3 8 9l4 13 4-13-2.5-6" /> <path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z" /> <path d="M2 9h20" /></svg>
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
+                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                  S/ 350
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Blanqueamiento</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Resultado visible desde la primera sesión.</p>
+            
+
+            
+            
+              <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Blanqueamiento"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
       
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">🔎</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Evaluación y diagnóstico</h3>
-          
-            <p class="mt-2 text-base leading-relaxed opacity-80">Revisamos y le explicamos qué necesita y qué puede esperar.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">Gratis</p>
-          
-          
-          
-            <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Evaluaci%C3%B3n%20y%20diagn%C3%B3stico"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="m8 11 2 2 4-4" /> <circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></svg>
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold text-white"
+                      style="background: var(--color-acento)">
+                  Gratis
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Evaluación y diagnóstico</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Revisamos y le explicamos qué necesita y qué puede esperar.</p>
+            
+
+            
+            
+              <a href="https://wa.me/51999924205?text=Hola%2C%20quisiera%20consultar%20por%3A%20Evaluaci%C3%B3n%20y%20diagn%C3%B3stico"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
       
     </div>
   </div>
@@ -348,13 +514,36 @@
        target="_blank" rel="noopener"
        aria-label="Escribir por WhatsApp"
        
-       class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 font-semibold text-[#0b3d20] shadow-lg shadow-black/25 transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b3d20]">
+       
+       class="hidden md:inline-flex fixed bottom-5 right-5 z-50 items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 font-semibold text-[#0b3d20] shadow-lg shadow-black/25 transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b3d20]">
       <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
         <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
         <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/>
       </svg>
       <span>Escríbanos</span>
     </a>
+  
+
+  
+  
+    
+    <div class="barra-movil md:hidden fixed bottom-0 inset-x-0 z-50 flex gap-2 border-t border-black/10 bg-[var(--color-fondo)]/95 px-3 pt-3 backdrop-blur">
+      <a href="https://wa.me/51999924205?text=Hola%20Ventura%20Ponce%20Helard%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
+         target="_blank" rel="noopener"
+         class="flex flex-1 min-h-[52px] items-center justify-center gap-2 rounded-full bg-[#25D366] font-semibold text-[#0b3d20]">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+        Escríbanos
+      </a>
+      
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Avenida%20Guardia%20Civil%2C%20337%20-%20Consultorio%20515%2C%20Cl%C3%ADnica%20San%20Borja%2C%20C.P.%20Lima%2041"
+           target="_blank" rel="noopener"
+           class="flex min-h-[52px] items-center justify-center gap-1.5 rounded-full border border-black/15 px-5 font-semibold">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Llegar
+        </a>
+      
+    </div>
+    <script>document.body.classList.add("con-barra-movil");</script>
   
 
   <script src="assets/main.js"></script>
