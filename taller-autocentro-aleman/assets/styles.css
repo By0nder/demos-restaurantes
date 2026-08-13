@@ -6,6 +6,22 @@
   --color-fondo: #f7f8f9;
   --color-texto: #17191c;
 }
+
+/* MODO OSCURO: solo cambian el papel y la tinta; los colores del negocio
+   (primario, secundario, acento) se respetan, que para eso son su marca.
+   Van aquí y no en styles.css porque necesitan pisar a las de arriba. */
+:root[data-tema="oscuro"] {
+  --color-fondo: #0f1216;
+  --color-texto: #e9ebee;
+  --color-superficie: #171b21;
+  --color-borde: rgba(255, 255, 255, 0.12);
+  --color-suave: rgba(255, 255, 255, 0.06);
+  /* El primario de varios rubros es oscuro (el gris acero de talleres, por
+     ejemplo). Sobre fondo negro sería ilegible, así que para los títulos se
+     usa una versión aclarada del mismo color: se mantiene la identidad y se
+     puede leer. */
+  --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
+}
 /* ============================================
    Estilos base del sitio (independientes del tema)
    Las variables de color se inyectan arriba en el build.
@@ -29,7 +45,21 @@ html {
 :root {
   --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-texto: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Valores del modo claro. El oscuro los pisa en el bloque de tema que el
+     generador escribe arriba de este archivo. Se llaman "superficie", "borde"
+     y "suave" en vez de blanco/negro justamente para poder darlos vuelta. */
+  --color-superficie: #ffffff;
+  --color-borde: rgba(0, 0, 0, 0.10);
+  --color-suave: rgba(0, 0, 0, 0.035);
+  --color-titulo: var(--color-primario);
 }
+
+/* Sin transición al cambiar de tema, y es a propósito.
+   Al animar `background-color` en <body> mientras cambia una variable CSS,
+   Chrome se queda con el color viejo: se medía --color-fondo en #f7f8f9 y el
+   body seguía pintado de #0f1216. El fondo quedaba oscuro con las tarjetas
+   blancas encima. El cambio instantáneo se ve bien y no tiene ese riesgo. */
 
 body {
   font-family: var(--font-texto);
