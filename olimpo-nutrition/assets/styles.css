@@ -1,6 +1,6 @@
 /* Tema generado automáticamente — colores del cliente */
 :root {
-  --color-primario: #65a30d;
+  --color-primario: #4d7c0f;
   --color-secundario: #3f6212;
   --color-fondo: #fafafa;
   --color-texto: #18181b;
@@ -41,4 +41,30 @@ html {
 ::selection {
   background-color: var(--color-primario);
   color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   FOCO VISIBLE PARA TECLADO (2026-08-13)
+   Medido en la demo publicada: de 11 elementos interactivos, 8 no mostraban
+   NADA al navegarlos con Tab. Solo lo tenían los que llevaban la clase de
+   focus-visible escrita a mano. Quien navega con teclado quedaba perdido sin
+   saber dónde está parado.
+   `:focus-visible` (y no `:focus`) es a propósito: solo se pinta cuando el
+   navegador detecta navegación por teclado, así que al tocar con el dedo o
+   hacer clic no aparece el recuadro.
+   Se usa el color primario del negocio para que no desentone con la paleta.
+--------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sobre el hero y el pie, que van sobre fondo oscuro, el primario puede perderse.
+   Ahí el contorno va en blanco, que siempre contrasta. */
+#hero a:focus-visible,
+footer a:focus-visible {
+  outline-color: #ffffff;
 }
