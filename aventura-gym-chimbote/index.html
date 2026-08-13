@@ -58,11 +58,11 @@
 
   <nav id="mobile-menu" class="hidden md:hidden border-t border-black/5 px-4 pb-4">
     
-      <a href="#servicios" class="block py-2 text-sm font-medium">Servicios</a>
+      <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
     
-      <a href="#galeria" class="block py-2 text-sm font-medium">Galería</a>
+      <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
     
-      <a href="#contacto" class="block py-2 text-sm font-medium">Contacto</a>
+      <a href="#contacto" class="flex items-center min-h-[44px] py-2 text-base font-medium">Contacto</a>
     
   </nav>
 </header>
@@ -72,8 +72,13 @@
     
       <section id="hero" class="relative overflow-hidden">
   
+    
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&amp;q=80" alt="" class="w-full h-full object-cover">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&amp;q=80"
+           srcset="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=480&amp;q=80 480w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&amp;q=80 800w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&amp;q=80 1600w" sizes="100vw"
+           alt=""
+           fetchpriority="high" decoding="async"
+           class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/50"></div>
     </div>
   
@@ -105,7 +110,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Mensualidad full</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Acceso libre a máquinas, pesas y todas las clases.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Acceso libre a máquinas, pesas y todas las clases.</p>
           
           
             <p class="mt-4 font-bold text-lg">S/ 80/mes</p>
@@ -114,7 +119,7 @@
           
             <a href="https://wa.me/51973120994?text=Hola%2C%20quisiera%20consultar%20por%3A%20Mensualidad%20full"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -128,7 +133,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Plan trimestral</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Tres meses pagando menos por mes.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Tres meses pagando menos por mes.</p>
           
           
             <p class="mt-4 font-bold text-lg">S/ 210</p>
@@ -137,7 +142,7 @@
           
             <a href="https://wa.me/51973120994?text=Hola%2C%20quisiera%20consultar%20por%3A%20Plan%20trimestral"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -151,7 +156,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Clases grupales</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Funcional, spinning y baile en horarios de mañana y noche.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Funcional, spinning y baile en horarios de mañana y noche.</p>
           
           
             <p class="mt-4 font-bold text-lg">Incluido</p>
@@ -160,7 +165,7 @@
           
             <a href="https://wa.me/51973120994?text=Hola%2C%20quisiera%20consultar%20por%3A%20Clases%20grupales"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -174,7 +179,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Entrenador personal</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Rutina hecha para usted y seguimiento semanal.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Rutina hecha para usted y seguimiento semanal.</p>
           
           
             <p class="mt-4 font-bold text-lg">desde S/ 200/mes</p>
@@ -183,7 +188,7 @@
           
             <a href="https://wa.me/51973120994?text=Hola%2C%20quisiera%20consultar%20por%3A%20Entrenador%20personal"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -197,7 +202,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Primera clase de prueba</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Venga, conozca el local y entrene una vez sin pagar.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Venga, conozca el local y entrene una vez sin pagar.</p>
           
           
             <p class="mt-4 font-bold text-lg">Gratis</p>
@@ -206,7 +211,7 @@
           
             <a href="https://wa.me/51973120994?text=Hola%2C%20quisiera%20consultar%20por%3A%20Primera%20clase%20de%20prueba"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -226,20 +231,32 @@
       
         
         
+        
         <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&amp;q=80" alt="Foto de Aventura Gym Chimbote" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&amp;q=80" alt="Foto de Aventura Gym Chimbote"
+               srcset="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+               loading="lazy" decoding="async"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
       
         
         
+        
         <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&amp;q=80" alt="Foto de Aventura Gym Chimbote" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&amp;q=80" alt="Foto de Aventura Gym Chimbote"
+               srcset="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+               loading="lazy" decoding="async"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
       
         
         
+        
         <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&amp;q=80" alt="Foto de Aventura Gym Chimbote" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&amp;q=80" alt="Foto de Aventura Gym Chimbote"
+               srcset="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+               loading="lazy" decoding="async"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
       
     </div>
