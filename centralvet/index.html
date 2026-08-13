@@ -29,7 +29,7 @@
 
   <header class="sticky top-0 z-50 bg-[var(--color-fondo)]/90 backdrop-blur border-b border-black/5 shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3">
+    <a href="#" class="flex items-center gap-3 min-h-[44px]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           C
@@ -38,16 +38,18 @@
       <span class="font-semibold text-lg">CENTRALVET</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+    <nav class="hidden md:flex items-center gap-6 text-base font-medium">
       
       
         <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
+      
+        <a href="#faq" class="hover:opacity-70 transition-opacity">faq</a>
       
         <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
       
     </nav>
 
-    <button id="menu-toggle" class="md:hidden p-2" aria-label="Abrir menú">
+    <button id="menu-toggle" class="md:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
@@ -56,9 +58,11 @@
 
   <nav id="mobile-menu" class="hidden md:hidden border-t border-black/5 px-4 pb-4">
     
-      <a href="#servicios" class="block py-2 text-sm font-medium">Servicios</a>
+      <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
     
-      <a href="#contacto" class="block py-2 text-sm font-medium">Contacto</a>
+      <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">faq</a>
+    
+      <a href="#contacto" class="flex items-center min-h-[44px] py-2 text-base font-medium">Contacto</a>
     
   </nav>
 </header>
@@ -68,8 +72,13 @@
     
       <section id="hero" class="relative overflow-hidden">
   
+    
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1600&amp;q=80" alt="" class="w-full h-full object-cover">
+      <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1600&amp;q=80"
+           srcset="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=480&amp;q=80 480w, https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800&amp;q=80 800w, https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1600&amp;q=80 1600w" sizes="100vw"
+           alt=""
+           fetchpriority="high" decoding="async"
+           class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/50"></div>
     </div>
   
@@ -80,11 +89,15 @@
       <p class="mt-4 text-lg md:text-2xl opacity-90 max-w-2xl mx-auto reveal">Clínica veterinaria · Chimbote</p>
     
     
-      <p class="mt-3 text-base opacity-75 max-w-xl mx-auto reveal">Clínica veterinaria en Chimbote. Av. Enrique Meiggs, Chimbote 02804, Perú.</p>
     
-    <a href="#contacto" class="reveal inline-block mt-8 px-8 py-3 rounded-full font-semibold text-[var(--color-primario)] bg-white hover:scale-105 transition-transform shadow-lg">
+      <p class="mt-3 text-base opacity-75 max-w-xl mx-auto reveal">Av. Enrique Meiggs, Chimbote 02804, Perú.</p>
+    
+    <a href="#contacto" class="reveal inline-block mt-8 min-h-[44px] px-8 py-3 rounded-full font-semibold text-[var(--color-primario)] bg-white hover:scale-105 transition-transform shadow-lg">
       Agenda tu cita
     </a>
+
+    
+    
   </div>
 </section>
 
@@ -101,7 +114,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Consulta general</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Revisión completa de su mascota con diagnóstico explicado.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Revisión completa de su mascota con diagnóstico explicado.</p>
           
           
             <p class="mt-4 font-bold text-lg">S/ 50</p>
@@ -110,7 +123,7 @@
           
             <a href="https://wa.me/51950828817?text=Hola%2C%20quisiera%20consultar%20por%3A%20Consulta%20general"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -124,7 +137,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Vacunación</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Esquema completo para perros y gatos, con carné al día.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Esquema completo para perros y gatos, con carné al día.</p>
           
           
             <p class="mt-4 font-bold text-lg">desde S/ 45</p>
@@ -133,7 +146,7 @@
           
             <a href="https://wa.me/51950828817?text=Hola%2C%20quisiera%20consultar%20por%3A%20Vacunaci%C3%B3n"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -147,7 +160,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Baño y peluquería</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Baño medicado, corte de pelo y limpieza de oídos.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Baño medicado, corte de pelo y limpieza de oídos.</p>
           
           
             <p class="mt-4 font-bold text-lg">desde S/ 40</p>
@@ -156,7 +169,7 @@
           
             <a href="https://wa.me/51950828817?text=Hola%2C%20quisiera%20consultar%20por%3A%20Ba%C3%B1o%20y%20peluquer%C3%ADa"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -170,7 +183,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Emergencias</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Atendemos urgencias. Escríbanos y le decimos si puede traerlo de una.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Atendemos urgencias. Escríbanos y le decimos si puede traerlo de una.</p>
           
           
             <p class="mt-4 font-bold text-lg">Consultar</p>
@@ -179,7 +192,7 @@
           
             <a href="https://wa.me/51950828817?text=Hola%2C%20quisiera%20consultar%20por%3A%20Emergencias"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -193,7 +206,7 @@
           
           <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Desparasitación</h3>
           
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Interna y externa, según el peso de su mascota.</p>
+            <p class="mt-2 text-base leading-relaxed opacity-80">Interna y externa, según el peso de su mascota.</p>
           
           
             <p class="mt-4 font-bold text-lg">S/ 35</p>
@@ -202,7 +215,7 @@
           
             <a href="https://wa.me/51950828817?text=Hola%2C%20quisiera%20consultar%20por%3A%20Desparasitaci%C3%B3n"
                target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+               class="mt-auto pt-5 inline-flex items-center gap-1.5 min-h-[44px] text-base font-semibold hover:underline"
                style="color: var(--color-primario)">
               Consultar por WhatsApp
               <span aria-hidden="true">&rarr;</span>
@@ -215,6 +228,61 @@
 </section>
 
     
+      
+
+<section id="faq" class="py-20" style="background-color: var(--color-fondo)">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
+
+    <div class="mt-10 divide-y divide-black/10">
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Cómo saco una cita?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Escríbanos por WhatsApp y coordinamos el día y la hora que mejor le quede.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Dónde quedan?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Estamos en Av. Enrique Meiggs, Chimbote 02804, Perú. En la sección de contacto puede abrir la ruta en el mapa.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Atienden emergencias?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Escríbanos por WhatsApp explicando el caso y le respondemos lo antes posible.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Cuánto cuesta la consulta?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Escríbanos por WhatsApp y le pasamos los precios actualizados.</p>
+        </details>
+      
+    </div>
+
+    
+      <p class="mt-8 text-center text-base opacity-80">
+        ¿Tiene otra consulta?
+        <a href="https://wa.me/51950828817" target="_blank" rel="noopener"
+           class="inline-flex items-center min-h-[44px] font-semibold underline"
+           style="color: var(--color-primario)">Escríbanos por WhatsApp</a>
+      </p>
+    
+  </div>
+</section>
+
+
+    
       <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
     <h2 class="text-3xl md:text-4xl font-bold reveal">Agenda tu cita</h2>
@@ -225,14 +293,15 @@
       
       
         <div class="reveal">
-          <p class="font-semibold uppercase tracking-wide text-xs opacity-75">Dirección</p>
+          <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Dirección</p>
           <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Enrique%20Meiggs%2C%20Chimbote%2002804%2C%20Per%C3%BA"
              target="_blank" rel="noopener"
-             class="mt-1 inline-flex items-start gap-1.5 text-lg font-medium hover:underline">
+             
+             class="mt-1 inline-flex items-start gap-1.5 min-h-[44px] py-1 text-lg font-medium hover:underline">
             <svg class="w-5 h-5 mt-0.5 shrink-0 opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <span>Av. Enrique Meiggs, Chimbote 02804, Perú</span>
           </a>
-          <p class="mt-1 text-xs opacity-75">Toque para abrir el mapa</p>
+          <p class="mt-1 text-sm opacity-75">Toque para abrir el mapa</p>
         </div>
       
       
@@ -270,7 +339,8 @@
     <a href="https://wa.me/51950828817?text=Hola%20CENTRALVET%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
        target="_blank" rel="noopener"
        aria-label="Escribir por WhatsApp"
-       class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 font-semibold text-white shadow-lg shadow-black/25 transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
+       
+       class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 font-semibold text-[#0b3d20] shadow-lg shadow-black/25 transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b3d20]">
       <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
         <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
         <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/>
