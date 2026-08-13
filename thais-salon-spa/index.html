@@ -28,10 +28,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/styles.css">
+  
+  <script>
+    (function () {
+      try {
+        var elegido = localStorage.getItem("tema");
+        var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (elegido === "oscuro" || (!elegido && oscuroSistema)) {
+          document.documentElement.setAttribute("data-tema", "oscuro");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body class="bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
 
-  <header class="sticky top-0 z-50 bg-[var(--color-fondo)]/90 backdrop-blur border-b border-black/5 shadow-sm">
+  
+<header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
     <a href="#" class="flex items-center gap-3 min-h-[44px]">
       
@@ -65,6 +78,14 @@
       
     </nav>
 
+    
+    <button id="tema-toggle" type="button"
+            class="ml-auto md:ml-4 mr-1 flex h-11 w-11 items-center justify-center rounded-full hover:bg-[var(--color-suave)] transition-colors"
+            aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
+      <svg data-icono="luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>
+      <svg data-icono="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
+    </button>
+
     <button id="menu-toggle" class="md:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -72,7 +93,7 @@
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden md:hidden border-t border-black/5 px-4 pb-4">
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-borde)] px-4 pb-4">
     
       <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
     
@@ -131,7 +152,7 @@
       
 
       <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center reveal">
-        <a href="https://wa.me/51968820498?text=Hola%20Thais%20Salon%20Spa%2C%20vi%20su%20p%C3%A1gina%20y%20quisiera%20consultar%20por%20un%20servicio."
+        <a href="https://wa.me/51968820498?text=Hola%20Thais%20Salon%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%20un%20servicio."
            target="_blank" rel="noopener"
            class="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-full font-semibold text-white bg-[var(--color-acento)] shadow-lg shadow-black/30 hover:brightness-110 hover:scale-[1.02] transition">
           
@@ -193,7 +214,7 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -201,26 +222,27 @@
               
                 
                 <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><circle cx="6" cy="6" r="3" /> <path d="M8.12 8.12 12 12" /> <path d="M20 4 8.12 15.88" /> <circle cx="6" cy="18" r="3" /> <path d="M14.8 14.8 20 20" /></svg>
                 </div>
               
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                      style="background: var(--color-suave); color: var(--color-titulo)">
                   desde S/ 35
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Corte y peinado</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Corte y peinado</h3>
             
               <p class="mt-2 text-base leading-relaxed opacity-75">Corte, lavado y peinado. Le asesoramos según su tipo de cabello.</p>
             
 
             
             
-              <a href="https://wa.me/51968820498?text=Hola%2C%20quisiera%20consultar%20por%3A%20Corte%20y%20peinado"
+
+              <a href="https://wa.me/51968820498?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Corte%20y%20peinado"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
                  style="background: var(--color-acento)">
@@ -233,7 +255,7 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -241,26 +263,27 @@
               
                 
                 <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" /> <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" /> <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" /> <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" /> <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" /></svg>
                 </div>
               
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                      style="background: var(--color-suave); color: var(--color-titulo)">
                   desde S/ 120
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Color y mechas</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Color y mechas</h3>
             
               <p class="mt-2 text-base leading-relaxed opacity-75">Tinte, balayage y mechas con productos de marca.</p>
             
 
             
             
-              <a href="https://wa.me/51968820498?text=Hola%2C%20quisiera%20consultar%20por%3A%20Color%20y%20mechas"
+
+              <a href="https://wa.me/51968820498?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Color%20y%20mechas"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
                  style="background: var(--color-acento)">
@@ -273,7 +296,7 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -281,26 +304,27 @@
               
                 
                 <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" /> <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" /> <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" /> <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" /></svg>
                 </div>
               
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                      style="background: var(--color-suave); color: var(--color-titulo)">
                   desde S/ 30
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Manicure y pedicure</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Manicure y pedicure</h3>
             
               <p class="mt-2 text-base leading-relaxed opacity-75">Clásico o semipermanente, con esterilizado de instrumentos.</p>
             
 
             
             
-              <a href="https://wa.me/51968820498?text=Hola%2C%20quisiera%20consultar%20por%3A%20Manicure%20y%20pedicure"
+
+              <a href="https://wa.me/51968820498?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Manicure%20y%20pedicure"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
                  style="background: var(--color-acento)">
@@ -313,7 +337,7 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -321,26 +345,27 @@
               
                 
                 <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" /> <path d="m14 7 3 3" /> <path d="M5 6v4" /> <path d="M19 14v4" /> <path d="M10 2v2" /> <path d="M7 8H3" /> <path d="M21 16h-4" /> <path d="M11 3H9" /></svg>
                 </div>
               
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                      style="background: var(--color-suave); color: var(--color-titulo)">
                   desde S/ 180
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Alisado y keratina</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Alisado y keratina</h3>
             
               <p class="mt-2 text-base leading-relaxed opacity-75">Tratamiento con keratina, dura varios meses.</p>
             
 
             
             
-              <a href="https://wa.me/51968820498?text=Hola%2C%20quisiera%20consultar%20por%3A%20Alisado%20y%20keratina"
+
+              <a href="https://wa.me/51968820498?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Alisado%20y%20keratina"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
                  style="background: var(--color-acento)">
@@ -353,7 +378,7 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm">
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -361,26 +386,27 @@
               
                 
                 <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 12%, white); color: var(--color-acento)">
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z" /> <path d="M5 21h14" /></svg>
                 </div>
               
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: color-mix(in srgb, var(--color-primario) 8%, white); color: var(--color-primario)">
+                      style="background: var(--color-suave); color: var(--color-titulo)">
                   desde S/ 100
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-primario)">Maquillaje para eventos</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Maquillaje para eventos</h3>
             
               <p class="mt-2 text-base leading-relaxed opacity-75">Para novias, quinceañeras y sesiones de fotos. Con cita previa.</p>
             
 
             
             
-              <a href="https://wa.me/51968820498?text=Hola%2C%20quisiera%20consultar%20por%3A%20Maquillaje%20para%20eventos"
+
+              <a href="https://wa.me/51968820498?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Maquillaje%20para%20eventos"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
                  style="background: var(--color-acento)">
@@ -442,7 +468,7 @@
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
 
-    <div class="mt-10 divide-y divide-black/10">
+    <div class="mt-10 divide-y divide-[var(--color-borde)]">
       
         <details class="group py-4 reveal">
           <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
@@ -481,9 +507,9 @@
     
       <p class="mt-8 text-center text-base opacity-80">
         ¿Tiene otra consulta?
-        <a href="https://wa.me/51968820498" target="_blank" rel="noopener"
+        <a href="https://wa.me/51968820498?text=Hola%20Thais%20Salon%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20tengo%20una%20consulta." target="_blank" rel="noopener"
            class="inline-flex items-center min-h-[44px] font-semibold underline"
-           style="color: var(--color-primario)">Escríbanos por WhatsApp</a>
+           style="color: var(--color-titulo)">Escríbanos por WhatsApp</a>
       </p>
     
   </div>
@@ -516,7 +542,8 @@
     </div>
 
     
-      <a href="https://wa.me/51968820498" target="_blank" rel="noopener"
+
+      <a href="https://wa.me/51968820498?text=Hola%20Thais%20Salon%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener"
          class="reveal inline-flex items-center gap-2 mt-10 px-8 py-3 rounded-full font-semibold bg-white text-[var(--color-primario)] hover:scale-105 transition-transform shadow-lg">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Escríbanos por WhatsApp
@@ -561,7 +588,7 @@
   
   
     
-    <div class="barra-movil md:hidden fixed bottom-0 inset-x-0 z-50 flex gap-2 border-t border-black/10 bg-[var(--color-fondo)]/95 px-3 pt-3 backdrop-blur">
+    <div class="barra-movil md:hidden fixed bottom-0 inset-x-0 z-50 flex gap-2 border-t border-[var(--color-borde)] bg-[var(--color-fondo)] px-3 pt-3 backdrop-blur">
       <a href="https://wa.me/51968820498?text=Hola%20Thais%20Salon%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
          target="_blank" rel="noopener"
          class="flex flex-1 min-h-[52px] items-center justify-center gap-2 rounded-full bg-[#25D366] font-semibold text-[#0b3d20]">
@@ -571,7 +598,7 @@
       
         <a href="https://www.google.com/maps/dir/?api=1&destination=Avenida%20Santa%20Rosa%20%2C%201847%2C%20San%20Juan%20De%20Lurigancho%20-%20Lima"
            target="_blank" rel="noopener"
-           class="flex min-h-[52px] items-center justify-center gap-1.5 rounded-full border border-black/15 px-5 font-semibold">
+           class="flex min-h-[52px] items-center justify-center gap-1.5 rounded-full border border-[var(--color-borde)] px-5 font-semibold">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           Llegar
         </a>
