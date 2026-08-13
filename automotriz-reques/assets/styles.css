@@ -131,6 +131,85 @@ footer a:focus-visible {
 }
 
 /* ---------------------------------------------------------------------------
+   FOTO VIVA EN EL HERO (2026-08-13)
+   El pedido era "que no se vea tan simple, algo tipo video pero que no pese".
+   Esto es eso: la foto se acerca despacio (Ken Burns) y, si hay galería, las
+   otras fotos se turnan encima. Cero kilobytes de video.
+   Solo se animan `transform` y `opacity`, que el navegador resuelve en la GPU:
+   no obliga a recalcular el diseño de la página y por eso no traba ni en un
+   celular de gama baja.
+--------------------------------------------------------------------------- */
+.hero-foto {
+  animation: kenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(0, -1.5%, 0);
+  }
+}
+
+/* Las fotos de relevo empiezan invisibles y aparecen por turnos. La primera
+   nunca se apaga: siempre hay algo debajo, así que jamás se ve un hueco. */
+.hero-capa {
+  opacity: 0;
+  animation: kenburns 28s ease-in-out infinite alternate,
+             hero-crossfade 24s linear infinite;
+}
+
+@keyframes hero-crossfade {
+  0%, 30% { opacity: 0; }
+  33%, 63% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+/* ---------------------------------------------------------------------------
+   BARRA DE ACCIÓN EN EL CELULAR
+   Reemplaza al botón flotante en pantallas chicas: ocupa el ancho completo,
+   con el pulgar cae justo encima, y suma "cómo llegar" que es la otra cosa
+   que la gente busca. `env(safe-area-inset-bottom)` evita quedar debajo de la
+   barra de gestos del iPhone.
+--------------------------------------------------------------------------- */
+.barra-movil {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+body.con-barra-movil {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  body.con-barra-movil {
+    padding-bottom: 0;
+  }
+}
+
+/* Punto verde que late cuando el negocio está abierto ahora mismo */
+.punto-abierto {
+  animation: latido 2.4s ease-in-out infinite;
+}
+
+@keyframes latido {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-foto,
+  .hero-capa,
+  .punto-abierto {
+    animation: none;
+  }
+  .hero-capa {
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    TARJETAS DE SERVICIO
    Se levantan un poco al pasar el mouse y marcan el borde con el acento. En
    celular no hay hover, así que el peso visual lo lleva el borde superior.
