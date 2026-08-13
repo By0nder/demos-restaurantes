@@ -28,10 +28,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/styles.css">
+  
+  <script>
+    (function () {
+      try {
+        var elegido = localStorage.getItem("tema");
+        var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (elegido === "oscuro" || (!elegido && oscuroSistema)) {
+          document.documentElement.setAttribute("data-tema", "oscuro");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body class="bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
 
-  <header class="sticky top-0 z-50 bg-[var(--color-fondo)]/90 backdrop-blur border-b border-black/5 shadow-sm">
+  
+<header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
     <a href="#" class="flex items-center gap-3 min-h-[44px]">
       
@@ -60,6 +73,14 @@
       
     </nav>
 
+    
+    <button id="tema-toggle" type="button"
+            class="ml-auto md:ml-4 mr-1 flex h-11 w-11 items-center justify-center rounded-full hover:bg-[var(--color-suave)] transition-colors"
+            aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
+      <svg data-icono="luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>
+      <svg data-icono="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
+    </button>
+
     <button id="menu-toggle" class="md:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -67,7 +88,7 @@
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden md:hidden border-t border-black/5 px-4 pb-4">
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-borde)] px-4 pb-4">
     
       <a href="#menu" class="flex items-center min-h-[44px] py-2 text-base font-medium">Menú</a>
     
@@ -174,14 +195,14 @@
 </section>
 
     
-      <section id="menu" class="py-20 bg-black/[0.02]">
+      <section id="menu" class="py-20 bg-[var(--color-suave)]">
   <div class="max-w-4xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Nuestro Menú</h2>
 
     
     
       <div class="mt-12 reveal">
-        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-primario); color: var(--color-primario)">
+        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-titulo); color: var(--color-titulo)">
           Especialidades
         </h3>
         <ul class="mt-6 space-y-5">
@@ -195,7 +216,7 @@
                 
                 
               </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">S/ 37</span>
+              <span class="font-bold whitespace-nowrap" style="color: var(--color-titulo)">S/ 37</span>
             </li>
           
             <li class="flex items-baseline justify-between gap-4">
@@ -207,7 +228,7 @@
                 
                 
               </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">S/ 34</span>
+              <span class="font-bold whitespace-nowrap" style="color: var(--color-titulo)">S/ 34</span>
             </li>
           
             <li class="flex items-baseline justify-between gap-4">
@@ -219,14 +240,14 @@
                 
                 
               </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">S/ 36</span>
+              <span class="font-bold whitespace-nowrap" style="color: var(--color-titulo)">S/ 36</span>
             </li>
           
         </ul>
       </div>
     
       <div class="mt-12 reveal">
-        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-primario); color: var(--color-primario)">
+        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-titulo); color: var(--color-titulo)">
           Para compartir
         </h3>
         <ul class="mt-6 space-y-5">
@@ -240,7 +261,7 @@
                 
                 
               </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">S/ 28</span>
+              <span class="font-bold whitespace-nowrap" style="color: var(--color-titulo)">S/ 28</span>
             </li>
           
             <li class="flex items-baseline justify-between gap-4">
@@ -252,7 +273,7 @@
                 
                 
               </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">S/ 24</span>
+              <span class="font-bold whitespace-nowrap" style="color: var(--color-titulo)">S/ 24</span>
             </li>
           
             <li class="flex items-baseline justify-between gap-4">
@@ -264,7 +285,7 @@
                 
                 
               </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">S/ 92</span>
+              <span class="font-bold whitespace-nowrap" style="color: var(--color-titulo)">S/ 92</span>
             </li>
           
         </ul>
@@ -319,7 +340,7 @@
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen nuestros comensales</h2>
     <div class="mt-12 grid gap-8 md:grid-cols-2">
       
-        <figure class="reveal rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
+        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
           <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
             <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
           </svg>
@@ -335,7 +356,7 @@
           </figcaption>
         </figure>
       
-        <figure class="reveal rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
+        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
           <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
             <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
           </svg>
@@ -362,7 +383,7 @@
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
 
-    <div class="mt-10 divide-y divide-black/10">
+    <div class="mt-10 divide-y divide-[var(--color-borde)]">
       
         <details class="group py-4 reveal">
           <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">

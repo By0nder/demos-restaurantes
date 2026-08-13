@@ -78,6 +78,32 @@ function estadoHorario(textoOriginal, ahora) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Modo claro / oscuro ---
+  // El tema ya se aplicó en el <head> para que no haya fogonazo; aquí solo va
+  // el botón, que además recuerda la elección para la próxima visita.
+  const btnTema = document.getElementById("tema-toggle");
+  if (btnTema) {
+    const luna = btnTema.querySelector('[data-icono="luna"]');
+    const sol = btnTema.querySelector('[data-icono="sol"]');
+    const esOscuro = () => document.documentElement.getAttribute("data-tema") === "oscuro";
+    const pintarIcono = () => {
+      // Se muestra el icono de lo que se va a activar al tocarlo, no el del
+      // estado actual: en modo oscuro se ve el sol, que es lo que ofrece.
+      if (luna) luna.classList.toggle("hidden", esOscuro());
+      if (sol) sol.classList.toggle("hidden", !esOscuro());
+    };
+    pintarIcono();
+    btnTema.addEventListener("click", () => {
+      const oscuro = esOscuro();
+      if (oscuro) document.documentElement.removeAttribute("data-tema");
+      else document.documentElement.setAttribute("data-tema", "oscuro");
+      try {
+        localStorage.setItem("tema", oscuro ? "claro" : "oscuro");
+      } catch (e) {}
+      pintarIcono();
+    });
+  }
+
   // --- Sello de "abierto ahora" ---
   document.querySelectorAll("[data-estado-horario]").forEach((nodo) => {
     const estado = estadoHorario(nodo.getAttribute("data-estado-horario"), new Date());
