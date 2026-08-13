@@ -29,7 +29,7 @@
 
   <header class="sticky top-0 z-50 bg-[var(--color-fondo)]/90 backdrop-blur border-b border-black/5 shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3">
+    <a href="#" class="flex items-center gap-3 min-h-[44px]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           A
@@ -38,7 +38,7 @@
       <span class="font-semibold text-lg">Aventura Gym Chimbote</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+    <nav class="hidden md:flex items-center gap-6 text-base font-medium">
       
       
         <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
@@ -49,7 +49,7 @@
       
     </nav>
 
-    <button id="menu-toggle" class="md:hidden p-2" aria-label="Abrir menú">
+    <button id="menu-toggle" class="md:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
@@ -274,14 +274,15 @@
       
       
         <div class="reveal">
-          <p class="font-semibold uppercase tracking-wide text-xs opacity-75">Dirección</p>
+          <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Dirección</p>
           <a href="https://www.google.com/maps/dir/?api=1&destination=Jr.%20El%C3%ADas%20Aguirre%20181%2C%20Chimbote"
              target="_blank" rel="noopener"
-             class="mt-1 inline-flex items-start gap-1.5 text-lg font-medium hover:underline">
+             
+             class="mt-1 inline-flex items-start gap-1.5 min-h-[44px] py-1 text-lg font-medium hover:underline">
             <svg class="w-5 h-5 mt-0.5 shrink-0 opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <span>Jr. Elías Aguirre 181, Chimbote</span>
           </a>
-          <p class="mt-1 text-xs opacity-75">Toque para abrir el mapa</p>
+          <p class="mt-1 text-sm opacity-75">Toque para abrir el mapa</p>
         </div>
       
       
