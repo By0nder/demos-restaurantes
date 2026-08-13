@@ -2,6 +2,7 @@
 :root {
   --color-primario: #b91c1c;
   --color-secundario: #7f1d1d;
+  --color-acento: #b91c1c;
   --color-fondo: #fffbf5;
   --color-texto: #292524;
 }
@@ -12,6 +13,46 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* ---------------------------------------------------------------------------
+   TIPOGRAFÍA (2026-08-13)
+   Antes todo salía con la fuente por defecto del sistema. Funciona, pero es
+   exactamente lo que hace que una página "no se vea hecha por alguien": es la
+   misma letra del bloc de notas. Dos familias, cargadas con display=swap para
+   que el texto se vea aunque la fuente demore:
+     - Archivo para los títulos: grotesca ancha, aguanta mayúsculas y se lee
+       fuerte en un celular al sol.
+     - Inter para el texto corrido: hecha para pantalla, no cansa.
+   Se declaran como variables para que un rubro pueda cambiarlas sin tocar HTML.
+--------------------------------------------------------------------------- */
+:root {
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-texto: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-texto);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Evita que un título quede con una palabra sola colgando en la última línea */
+h1, h2 {
+  text-wrap: balance;
+}
+
+/* ---------------------------------------------------------------------------
+   ANCLAS BAJO EL HEADER FIJO
+   El header se queda pegado arriba (~68px). Al tocar "Servicios" en el menú,
+   el navegador dejaba el título JUSTO debajo del header, tapado. Se veía como
+   si el enlace estuviera roto.
+--------------------------------------------------------------------------- */
+section[id] {
+  scroll-margin-top: 84px;
 }
 
 /* Animación de aparición al hacer scroll (activada por main.js) */
@@ -67,4 +108,124 @@ button:focus-visible,
 #hero a:focus-visible,
 footer a:focus-visible {
   outline-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   HERO: velo en degradado, no un plano negro al 50%
+   El plano apagaba la foto por igual: el taller se veía gris y el texto igual
+   de contrastado arriba que abajo. Con degradado la foto respira en el medio
+   y el texto se apoya en la parte más oscura.
+--------------------------------------------------------------------------- */
+.hero-velo {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.5) 45%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* Barra de datos reales bajo el hero (dirección, reseñas, lo que sí sabemos) */
+.franja-dato {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------------------------------------------------------------------------
+   FOTO VIVA EN EL HERO (2026-08-13)
+   El pedido era "que no se vea tan simple, algo tipo video pero que no pese".
+   Esto es eso: la foto se acerca despacio (Ken Burns) y, si hay galería, las
+   otras fotos se turnan encima. Cero kilobytes de video.
+   Solo se animan `transform` y `opacity`, que el navegador resuelve en la GPU:
+   no obliga a recalcular el diseño de la página y por eso no traba ni en un
+   celular de gama baja.
+--------------------------------------------------------------------------- */
+.hero-foto {
+  animation: kenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(0, -1.5%, 0);
+  }
+}
+
+/* Las fotos de relevo empiezan invisibles y aparecen por turnos. La primera
+   nunca se apaga: siempre hay algo debajo, así que jamás se ve un hueco. */
+.hero-capa {
+  opacity: 0;
+  animation: kenburns 28s ease-in-out infinite alternate,
+             hero-crossfade 24s linear infinite;
+}
+
+@keyframes hero-crossfade {
+  0%, 30% { opacity: 0; }
+  33%, 63% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+/* ---------------------------------------------------------------------------
+   BARRA DE ACCIÓN EN EL CELULAR
+   Reemplaza al botón flotante en pantallas chicas: ocupa el ancho completo,
+   con el pulgar cae justo encima, y suma "cómo llegar" que es la otra cosa
+   que la gente busca. `env(safe-area-inset-bottom)` evita quedar debajo de la
+   barra de gestos del iPhone.
+--------------------------------------------------------------------------- */
+.barra-movil {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+body.con-barra-movil {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  body.con-barra-movil {
+    padding-bottom: 0;
+  }
+}
+
+/* Punto verde que late cuando el negocio está abierto ahora mismo */
+.punto-abierto {
+  animation: latido 2.4s ease-in-out infinite;
+}
+
+@keyframes latido {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-foto,
+  .hero-capa,
+  .punto-abierto {
+    animation: none;
+  }
+  .hero-capa {
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   TARJETAS DE SERVICIO
+   Se levantan un poco al pasar el mouse y marcan el borde con el acento. En
+   celular no hay hover, así que el peso visual lo lleva el borde superior.
+--------------------------------------------------------------------------- */
+.tarjeta {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-acento);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta:hover {
+    transform: none;
+  }
 }
