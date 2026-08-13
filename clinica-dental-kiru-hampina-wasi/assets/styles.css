@@ -1,0 +1,70 @@
+/* Tema generado automáticamente — colores del cliente */
+:root {
+  --color-primario: #0e7490;
+  --color-secundario: #155e75;
+  --color-fondo: #f7fbfc;
+  --color-texto: #14262b;
+}
+/* ============================================
+   Estilos base del sitio (independientes del tema)
+   Las variables de color se inyectan arriba en el build.
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animación de aparición al hacer scroll (activada por main.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respeta la preferencia de menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+::selection {
+  background-color: var(--color-primario);
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   FOCO VISIBLE PARA TECLADO (2026-08-13)
+   Medido en la demo publicada: de 11 elementos interactivos, 8 no mostraban
+   NADA al navegarlos con Tab. Solo lo tenían los que llevaban la clase de
+   focus-visible escrita a mano. Quien navega con teclado quedaba perdido sin
+   saber dónde está parado.
+   `:focus-visible` (y no `:focus`) es a propósito: solo se pinta cuando el
+   navegador detecta navegación por teclado, así que al tocar con el dedo o
+   hacer clic no aparece el recuadro.
+   Se usa el color primario del negocio para que no desentone con la paleta.
+--------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sobre el hero y el pie, que van sobre fondo oscuro, el primario puede perderse.
+   Ahí el contorno va en blanco, que siempre contrasta. */
+#hero a:focus-visible,
+footer a:focus-visible {
+  outline-color: #ffffff;
+}
