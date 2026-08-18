@@ -1,8 +1,10 @@
 /* Tema generado automáticamente — colores del cliente */
 :root {
-  --color-primario: #c2410c;
-  --color-secundario: #7c2d12;
-  --color-acento: #c2410c;
+  --color-primario: #12141a;
+  --color-secundario: #2a2e37;
+  --color-acento: #f2b705;
+  --color-acento-texto: #17191c;
+  --color-primario-texto: #ffffff;
   --color-fondo: #f7f8f9;
   --color-texto: #17191c;
 }
