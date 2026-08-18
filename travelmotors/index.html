@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRAVELMOTORS — Su carro en buenas manos en Los Olivos</title>
-  <meta name="description" content="Taller mecánico automotriz en Los Olivos. Av. Universitaria MZ 52, Los Olivos 15302.">
+  <title>TRAVELMOTORS — Servicio · Repuestos · Confianza</title>
+  <meta name="description" content="Carburador, balancines, cadena, timón, batería y repuestos. Estamos en Av. Universitaria MZ 52, Los Olivos.">
   
-  <meta property="og:title" content="TRAVELMOTORS — Su carro en buenas manos en Los Olivos">
-  <meta property="og:description" content="Taller mecánico automotriz en Los Olivos. Av. Universitaria MZ 52, Los Olivos 15302.">
+  <meta property="og:title" content="TRAVELMOTORS — Servicio · Repuestos · Confianza">
+  <meta property="og:description" content="Carburador, balancines, cadena, timón, batería y repuestos. Estamos en Av. Universitaria MZ 52, Los Olivos.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_PE">
   <meta property="og:site_name" content="TRAVELMOTORS">
   
-  <meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&amp;q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1600&amp;q=80">
   <meta property="og:image:alt" content="TRAVELMOTORS">
   <meta name="twitter:card" content="summary_large_image">
   
-  <meta name="theme-color" content="#c2410c">
+  <meta name="theme-color" content="#12141a">
 
   
   
@@ -34,7 +34,8 @@
       try {
         var elegido = localStorage.getItem("tema");
         var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (elegido === "oscuro" || (!elegido && oscuroSistema)) {
+        var baseOscura = true;
+        if (elegido === "oscuro" || (!elegido && (baseOscura || oscuroSistema))) {
           document.documentElement.setAttribute("data-tema", "oscuro");
         }
       } catch (e) {}
@@ -45,21 +46,26 @@
 
   
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3 min-h-[44px]">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
+    
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           T
         </span>
       
-      <span class="font-semibold text-lg">TRAVELMOTORS</span>
+      <span class="truncate font-semibold text-lg">TRAVELMOTORS</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6 text-base font-medium">
+    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
       
       
+      
+        <a href="#paquete" class="hover:opacity-70 transition-opacity">Premium</a>
       
         <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
+      
+        <a href="#cotizador" class="hover:opacity-70 transition-opacity">Cotizar</a>
       
         <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
       
@@ -71,7 +77,7 @@
       
         <a href="https://wa.me/51966581425?text=Hola%20TRAVELMOTORS%2C%20vi%20su%20p%C3%A1gina%20y%20quisiera%20hacer%20una%20consulta."
            target="_blank" rel="noopener"
-           class="inline-flex min-h-[44px] items-center rounded-full px-5 font-semibold text-white transition hover:brightness-110"
+           class="inline-flex min-h-[44px] items-center rounded-full px-5 font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
            style="background: var(--color-acento)">
           Escríbanos
         </a>
@@ -80,22 +86,26 @@
 
     
     <button id="tema-toggle" type="button"
-            class="ml-auto md:ml-4 mr-1 flex h-11 w-11 items-center justify-center rounded-full hover:bg-[var(--color-suave)] transition-colors"
+            class="ml-auto lg:ml-4 mr-1 flex h-11 w-11 items-center justify-center rounded-full hover:bg-[var(--color-suave)] transition-colors"
             aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
       <svg data-icono="luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>
       <svg data-icono="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
     </button>
 
-    <button id="menu-toggle" class="md:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
+    <button id="menu-toggle" class="lg:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-borde)] px-4 pb-4">
+  <nav id="mobile-menu" class="hidden lg:hidden border-t border-[var(--color-borde)] px-4 pb-4">
+    
+      <a href="#paquete" class="flex items-center min-h-[44px] py-2 text-base font-medium">Premium</a>
     
       <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
+    
+      <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Cotizar</a>
     
       <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
     
@@ -114,18 +124,18 @@
     
     
     <div class="absolute inset-0 overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&amp;q=80"
-           srcset="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=480&amp;q=80 480w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&amp;q=80 800w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&amp;q=80 1600w" sizes="100vw"
+      <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1600&amp;q=80"
+           srcset="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=480&amp;q=80 480w, https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&amp;q=80 800w, https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1600&amp;q=80 1600w" sizes="100vw"
            alt=""
            fetchpriority="high" decoding="async"
            class="hero-foto w-full h-full object-cover">
       
-        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=1200&amp;q=80" alt="" aria-hidden="true"
+        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=1200&amp;q=80" alt="" aria-hidden="true"
              fetchpriority="low" decoding="async" loading="lazy"
              class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
              style="animation-delay: 0s, 0s">
       
-        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&amp;q=80" alt="" aria-hidden="true"
+        <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=1200&amp;q=80" alt="" aria-hidden="true"
              fetchpriority="low" decoding="async" loading="lazy"
              class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
              style="animation-delay: 8s, 8s">
@@ -148,26 +158,26 @@
       <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] reveal">TRAVELMOTORS</h1>
 
       
-        <p class="mt-4 text-lg md:text-2xl font-medium text-white/90 reveal">Taller mecánico automotriz · Los Olivos</p>
+        <p class="mt-4 text-lg md:text-2xl font-medium text-white/90 reveal">Taller de motos en Los Olivos · Mantenimiento premium para motos carburadas · Cuidamos su moto como si fuera nuestra</p>
       
 
       
       
-        <p class="mt-3 text-base md:text-lg text-white/75 max-w-xl reveal">Av. Universitaria MZ 52, Los Olivos 15302.</p>
+        <p class="mt-3 text-base md:text-lg text-white/75 max-w-xl reveal">Carburador, balancines, cadena, timón, batería y repuestos. Estamos en Av. Universitaria MZ 52, Los Olivos.</p>
       
 
       <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center reveal">
         <a href="https://wa.me/51966581425?text=Hola%20TRAVELMOTORS%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%20un%20servicio."
            target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-full font-semibold text-white bg-[var(--color-acento)] shadow-lg shadow-black/30 hover:brightness-110 hover:scale-[1.02] transition">
+           class="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-full font-semibold text-[var(--color-acento-texto)] bg-[var(--color-acento)] shadow-lg shadow-black/30 hover:brightness-110 hover:scale-[1.02] transition">
           
             <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
           
           Escríbanos por WhatsApp
         </a>
-        <a href="#servicios"
+        <a href="#cotizador"
            class="inline-flex items-center justify-center min-h-[52px] px-8 rounded-full font-semibold text-white ring-1 ring-white/45 bg-white/10 backdrop-blur hover:bg-white/20 transition">
-          Ver servicios y precios
+          Cotizar en 1 minuto
         </a>
       </div>
     </div>
@@ -175,23 +185,13 @@
 
   
     <div class="relative border-t franja-dato bg-black/35 backdrop-blur">
-      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3 text-white/90 text-sm md:text-base">
+      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-2 text-white/90 text-sm md:text-base">
         
           
           <p class="flex items-start gap-2">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg>
             <span>
               Av. Universitaria MZ 52, Los Olivos 15302
-              
-              
-            </span>
-          </p>
-        
-          
-          <p class="flex items-start gap-2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="m9 12 2 2 4-4" /></svg>
-            <span>
-              Diagnóstico por escáner: gratis
               
               
             </span>
@@ -213,15 +213,131 @@
 </section>
 
     
-      <section id="servicios" class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Servicios y precios</h2>
+      
+
+
+
+
+
+<section id="paquete" class="py-20" style="background: var(--color-primario)">
+  <div class="max-w-5xl mx-auto px-4">
+    <p class="text-center text-sm font-bold uppercase tracking-[0.2em] reveal" style="color: var(--color-acento)">
+      Servicio premium
+    </p>
+    <h2 class="mt-3 text-center text-3xl md:text-4xl font-bold reveal" style="color: #ffffff">
+      Mantenimiento Premium para motos carburadas
+    </h2>
+    
+      <p class="mt-4 text-center text-lg reveal" style="color: rgba(255,255,255,0.72)">Máximo rendimiento. Mayor duración. Su moto como el primer día.</p>
+    
 
     
+    <div class="mt-10 grid gap-3 sm:grid-cols-2 reveal">
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Limpieza de carburador</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Regulación de balancines</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Ajuste de cadena</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Limpieza de chasis</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Ajuste de timón</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Medición de batería</span>
+        </div>
+      
+    </div>
+
     
-      <p class="mt-4 text-center text-base opacity-70 reveal">
-        Los precios que ve son <strong>de ejemplo</strong>. Se reemplazan por los suyos.
-      </p>
+      <div class="mt-10 grid gap-6 border-t pt-10 sm:grid-cols-2 lg:grid-cols-4 reveal" style="border-color: rgba(255,255,255,0.14)">
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento)">Más rendimiento</h3>
+            
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Más potencia y mejor respuesta del motor.</p>
+            
+          </div>
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento)">Mayor duración</h3>
+            
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Componentes cuidados para que su moto dure más.</p>
+            
+          </div>
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento)">Mejor consumo</h3>
+            
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Gasta menos combustible en cada kilómetro.</p>
+            
+          </div>
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento)">Trabajo garantizado</h3>
+            
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Técnicos con experiencia y estándares premium.</p>
+            
+          </div>
+        
+      </div>
+    
+
+    
+      <div class="mt-10 text-center reveal">
+        <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20agendar%3A%20Mantenimiento%20Premium%20para%20motos%20carburadas"
+           target="_blank" rel="noopener"
+           class="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full px-8 text-lg font-bold transition hover:brightness-110"
+           style="background: var(--color-acento); color: var(--color-acento-texto)">
+          Agendar mi mantenimiento
+        </a>
+      </div>
+    
+  </div>
+</section>
+
+
+    
+      <section id="servicios" class="py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Nuestros servicios</h2>
+
+    
     
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -242,65 +358,19 @@
                 </div>
               
               
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 180
-                </span>
-              
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Afinamiento completo</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Limpieza de carburador</h3>
             
-              <p class="mt-2 text-base leading-relaxed opacity-75">Bujías, filtros de aire y aceite, más revisión de 20 puntos.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Mejora el encendido, la respuesta del acelerador y el consumo de su moto.</p>
             
 
-              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Afinamiento%20completo"
+            
+            
+
+              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Limpieza%20de%20carburador"
                  target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
-                 style="background: var(--color-acento)">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
-              </a>
-            
-          </div>
-        </article>
-      
-        
-        
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
-          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
-          <div class="flex flex-1 flex-col p-7">
-            <div class="flex items-start justify-between gap-4">
-              
-              
-                
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="M6 12c0-1.7.7-3.2 1.8-4.2" /> <circle cx="12" cy="12" r="2" /> <path d="M18 12c0 1.7-.7 3.2-1.8 4.2" /></svg>
-                </div>
-              
-              
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 150
-                </span>
-              
-            </div>
-
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Sistema de frenos</h3>
-            
-              <p class="mt-2 text-base leading-relaxed opacity-75">Cambio de pastillas, rectificado de discos y prueba en ruta.</p>
-            
-
-            
-            
-
-              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Sistema%20de%20frenos"
-                 target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Consultar
@@ -324,24 +394,127 @@
                 </div>
               
               
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 220
-                </span>
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Regulación de balancines</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Ajuste preciso de válvulas: motor más suave, con más fuerza y sin ruidos raros.</p>
+            
+
+            
+            
+
+              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Regulaci%C3%B3n%20de%20balancines"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
+      
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M12 4V2" /> <path d="M5 10v4a7.004 7.004 0 0 0 5.277 6.787c.412.104.802.292 1.102.592L12 22l.621-.621c.3-.3.69-.488 1.102-.592A7.003 7.003 0 0 0 19 14v-4" /> <path d="M12 4C8 4 4.5 6 4 8c-.243.97-.919 1.952-2 3 1.31-.082 1.972-.29 3-1 .54.92.982 1.356 2 2 1.452-.647 1.954-1.098 2.5-2 .595.995 1.151 1.427 2.5 2 1.31-.621 1.862-1.058 2.5-2 .629.977 1.162 1.423 2.5 2 1.209-.548 1.68-.967 2-2 1.032.916 1.683 1.157 3 1-1.297-1.036-1.758-2.03-2-3-.5-2-4-4-8-4Z" /></svg>
+                </div>
+              
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Suspensión y alineamiento</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Ajuste de cadena</h3>
             
-              <p class="mt-2 text-base leading-relaxed opacity-75">Amortiguadores, rótulas y alineamiento computarizado.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Más seguridad y mejor tracción, y su kit de arrastre le dura mucho más.</p>
             
 
-              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Suspensi%C3%B3n%20y%20alineamiento"
+            
+            
+
+              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Ajuste%20de%20cadena"
                  target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
+      
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /> <path d="M20 2v4" /> <path d="M22 4h-4" /> <circle cx="4" cy="20" r="2" /></svg>
+                </div>
+              
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Limpieza de chasis</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Sacamos suciedad, grasa y corrosión. Su moto queda limpia, protegida y con mejor aspecto.</p>
+            
+
+            
+            
+
+              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Limpieza%20de%20chasis"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
+      
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><circle cx="18.5" cy="17.5" r="3.5" /> <circle cx="5.5" cy="17.5" r="3.5" /> <circle cx="15" cy="5" r="1" /> <path d="M12 17.5V14l-3-3 4-3 2 3h2" /></svg>
+                </div>
+              
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Ajuste de timón</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Conducción precisa, más estabilidad y seguridad en cada viaje.</p>
+            
+
+            
+            
+
+              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Ajuste%20de%20tim%C3%B3n"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Consultar
@@ -365,24 +538,19 @@
                 </div>
               
               
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold text-white"
-                      style="background: var(--color-acento)">
-                  Gratis
-                </span>
-              
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Diagnóstico por escáner</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Medición de batería</h3>
             
-              <p class="mt-2 text-base leading-relaxed opacity-75">Leemos los códigos y le decimos qué urge y qué puede esperar.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Medimos el estado real de su batería para que no lo deje botado a mitad de camino.</p>
             
 
-              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Diagn%C3%B3stico%20por%20esc%C3%A1ner"
+            
+            
+
+              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Medici%C3%B3n%20de%20bater%C3%ADa"
                  target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Consultar
@@ -402,28 +570,23 @@
                 
                 <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
                      style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5" /> <path d="M14 21V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16" /> <path d="M2 21h13" /> <path d="M3 9h11" /></svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z" /> <path d="M12 22V12" /> <polyline points="3.29 7 12 12 20.71 7" /> <path d="m7.5 4.27 9 5.15" /></svg>
                 </div>
               
               
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: var(--color-suave); color: var(--color-titulo)">
-                  desde S/ 90
-                </span>
-              
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Cambio de aceite</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Venta de repuestos</h3>
             
-              <p class="mt-2 text-base leading-relaxed opacity-75">Aceite y filtro, mientras espera.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Repuestos para su modelo. Si no lo tenemos, se lo conseguimos y le avisamos el tiempo.</p>
             
 
-              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Cambio%20de%20aceite"
+            
+            
+
+              <a href="https://wa.me/51966581425?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Venta%20de%20repuestos"
                  target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Consultar
@@ -437,6 +600,272 @@
 </section>
 
     
+      
+
+
+
+
+<section id="cotizador" class="py-20" style="background: var(--color-suave)">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">
+      Cotice su servicio en 1 minuto
+    </h2>
+    
+      <p class="mt-4 text-center text-lg opacity-75 reveal">El precio depende de la moto, la cilindrada y el kilometraje. Llene estos datos y le respondemos con el monto por WhatsApp.</p>
+    
+
+    <form id="form-cotizador" class="tarjeta reveal mt-10 rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-6 sm:p-8 shadow-sm" novalidate>
+      <div class="grid gap-5 sm:grid-cols-2">
+        
+          
+          <div class="sm:col-span-2">
+            <label for="cot-servicio" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Qué servicio necesita? <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <select id="cot-servicio" name="servicio" data-etiqueta="¿Qué servicio necesita?"
+                      data-requerido
+                      class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+                <option value="">Seleccione…</option>
+                
+                  <option value="Mantenimiento Premium completo">Mantenimiento Premium completo</option>
+                
+                  <option value="Limpieza de carburador">Limpieza de carburador</option>
+                
+                  <option value="Regulación de balancines">Regulación de balancines</option>
+                
+                  <option value="Ajuste de cadena">Ajuste de cadena</option>
+                
+                  <option value="Limpieza de chasis">Limpieza de chasis</option>
+                
+                  <option value="Ajuste de timón">Ajuste de timón</option>
+                
+                  <option value="Medición de batería">Medición de batería</option>
+                
+                  <option value="Repuestos">Repuestos</option>
+                
+                  <option value="Todavía no sé, necesito que la revisen">Todavía no sé, necesito que la revisen</option>
+                
+              </select>
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-moto" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Marca y modelo <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <input id="cot-moto" name="moto" data-etiqueta="Marca y modelo"
+                     data-requerido
+                     type="text"
+                     
+                     placeholder="Honda CB 190"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-anio" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Año <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <input id="cot-anio" name="anio" data-etiqueta="Año"
+                     data-requerido
+                     type="number"
+                     inputmode=&#34;numeric&#34; min=&#34;0&#34;
+                     placeholder="2021"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-cilindrada" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Cilindrada
+            </label>
+            
+
+            
+              <select id="cot-cilindrada" name="cilindrada" data-etiqueta="Cilindrada"
+                      
+                      class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+                <option value="">Seleccione…</option>
+                
+                  <option value="100cc - 125cc">100cc - 125cc</option>
+                
+                  <option value="150cc - 200cc">150cc - 200cc</option>
+                
+                  <option value="250cc - 400cc">250cc - 400cc</option>
+                
+                  <option value="Más de 400cc">Más de 400cc</option>
+                
+              </select>
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-alimentacion" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Motor
+            </label>
+            
+
+            
+              <select id="cot-alimentacion" name="alimentacion" data-etiqueta="Motor"
+                      
+                      class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+                <option value="">Seleccione…</option>
+                
+                  <option value="Carburada">Carburada</option>
+                
+                  <option value="Inyección electrónica">Inyección electrónica</option>
+                
+                  <option value="No sé">No sé</option>
+                
+              </select>
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-kilometraje" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Kilometraje actual (km) <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <input id="cot-kilometraje" name="kilometraje" data-etiqueta="Kilometraje actual (km)"
+                     data-requerido
+                     type="number"
+                     inputmode=&#34;numeric&#34; min=&#34;0&#34;
+                     placeholder="18000"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-ultimo" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Último mantenimiento
+            </label>
+            
+
+            
+              <input id="cot-ultimo" name="ultimo" data-etiqueta="Último mantenimiento"
+                     
+                     type="text"
+                     
+                     placeholder="Hace 4 meses / no recuerdo"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-uso" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Uso de la moto
+            </label>
+            
+
+            
+              <select id="cot-uso" name="uso" data-etiqueta="Uso de la moto"
+                      
+                      class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+                <option value="">Seleccione…</option>
+                
+                  <option value="Personal">Personal</option>
+                
+                  <option value="Delivery / trabajo diario">Delivery / trabajo diario</option>
+                
+                  <option value="Viajes largos">Viajes largos</option>
+                
+              </select>
+            
+          </div>
+        
+          
+          <div class="sm:col-span-2">
+            <label for="cot-detalle" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Qué le pasa a su moto?
+            </label>
+            
+
+            
+              <textarea id="cot-detalle" name="detalle" data-etiqueta="¿Qué le pasa a su moto?"
+                        
+                        rows="3" placeholder="Le cuesta arrancar, jalonea en subida, la cadena suena…"
+                        class="campo-cot mt-2 w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 py-3 text-base"></textarea>
+            
+          </div>
+        
+      </div>
+
+      <p id="cot-error" class="mt-5 hidden rounded-xl px-4 py-3 text-sm font-medium"
+         style="background: color-mix(in srgb, var(--color-acento) 14%, transparent); color: var(--color-titulo)"></p>
+
+      
+      <button type="submit"
+              class="mt-6 flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full bg-[#25D366] text-lg font-bold text-[#0b3d20] transition hover:brightness-105">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+        Pedir mi cotización por WhatsApp
+      </button>
+
+      <p class="mt-3 text-center text-sm opacity-65">
+        No se envía a ningún correo: se abre su WhatsApp con el mensaje ya escrito.
+      </p>
+    </form>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById("form-cotizador");
+      if (!form) return;
+      var aviso = document.getElementById("cot-error");
+      var wsp = "51966581425";
+      var encabezado = "Hola TRAVELMOTORS, vi su página web y quisiera cotizar un servicio:";
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var campos = form.querySelectorAll(".campo-cot");
+        var faltan = [];
+        var lineas = [];
+
+        campos.forEach(function (c) {
+          var valor = (c.value || "").trim();
+          var etiqueta = c.getAttribute("data-etiqueta") || c.name;
+          if (c.hasAttribute("data-requerido") && !valor) {
+            faltan.push(etiqueta);
+            c.style.borderColor = "var(--color-acento)";
+            return;
+          }
+          c.style.borderColor = "";
+          if (valor) lineas.push("• " + etiqueta + ": " + valor);
+        });
+
+        if (faltan.length) {
+          aviso.textContent = "Nos falta: " + faltan.join(", ") + ".";
+          aviso.classList.remove("hidden");
+          return;
+        }
+        aviso.classList.add("hidden");
+
+        var texto = encabezado + "\n\n" + lineas.join("\n");
+        window.open("https://wa.me/" + wsp + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+      });
+    })();
+  </script>
+</section>
+
+
+    
       <section id="galeria" class="py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
@@ -446,8 +875,8 @@
         
         
         <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&amp;q=80" alt="Foto de TRAVELMOTORS"
-               srcset="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+          <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&amp;q=80" alt="Foto de TRAVELMOTORS"
+               srcset="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
@@ -456,8 +885,8 @@
         
         
         <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&amp;q=80" alt="Foto de TRAVELMOTORS"
-               srcset="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+          <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&amp;q=80" alt="Foto de TRAVELMOTORS"
+               srcset="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
@@ -466,8 +895,8 @@
         
         
         <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&amp;q=80" alt="Foto de TRAVELMOTORS"
-               srcset="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+          <img src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=800&amp;q=80" alt="Foto de TRAVELMOTORS"
+               srcset="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
@@ -487,10 +916,34 @@
       
         <details class="group py-4 reveal">
           <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
-            <span>¿Necesito cita o puedo llegar directo?</span>
+            <span>¿Atienden motos carburadas y de inyección?</span>
             <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
           </summary>
-          <p class="mt-3 text-base leading-relaxed opacity-80">Escríbanos por WhatsApp antes de venir y le confirmamos si hay espacio en el taller ese día.</p>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Las dos. El Mantenimiento Premium está armado para motos carburadas; si la suya es de inyección, escríbanos y le decimos qué le toca.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Tienen repuestos o los tengo que traer?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Trabajamos con repuestos. Si no tenemos el de su modelo, se lo conseguimos y le avisamos cuánto demora antes de empezar.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Cuánto demora un mantenimiento?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Depende de lo que necesite la moto. Escríbanos con el modelo y el kilometraje y le damos el tiempo real, no uno inventado.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Puedo saber el precio antes de llevar la moto?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Sí. Llene la cotización de esta página con los datos de su moto y le respondemos por WhatsApp con el monto.</p>
         </details>
       
         <details class="group py-4 reveal">
@@ -499,22 +952,6 @@
             <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
           </summary>
           <p class="mt-3 text-base leading-relaxed opacity-80">Estamos en Av. Universitaria MZ 52, Los Olivos 15302. Toque el mapa en la sección de contacto y le abre la ruta.</p>
-        </details>
-      
-        <details class="group py-4 reveal">
-          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
-            <span>¿Revisan el vehículo antes de dar un presupuesto?</span>
-            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
-          </summary>
-          <p class="mt-3 text-base leading-relaxed opacity-80">Sí. Cuéntenos por WhatsApp qué le pasa a su vehículo y coordinamos la revisión.</p>
-        </details>
-      
-        <details class="group py-4 reveal">
-          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
-            <span>¿Atienden todas las marcas?</span>
-            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
-          </summary>
-          <p class="mt-3 text-base leading-relaxed opacity-80">Escríbanos con la marca y el año de su vehículo y le confirmamos al toque.</p>
         </details>
       
     </div>
