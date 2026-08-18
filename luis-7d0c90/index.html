@@ -1,0 +1,1213 @@
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Envíos de Luis — 41 prospectos</title>
+<style>
+  :root {
+    --bg: #EDEAE0;
+    --surface: #FFFFFF;
+    --surface-2: #F7F5EE;
+    --border: #DBD5C4;
+    --ink: #211E19;
+    --ink-muted: #6E6858;
+    --accent: #2F6B52;
+    --accent-strong: #234F3D;
+    --accent-ink: #FDFBF6;
+    --accent-soft: #E3EDE6;
+    --warn: #A9711F;
+    --warn-soft: #F4E7CE;
+    --rust: #93412F;
+    --rust-soft: #F1E0DA;
+    --shadow: 0 1px 2px rgba(33,30,25,0.06), 0 8px 20px -12px rgba(33,30,25,0.18);
+
+    --font-display: -apple-system, "Segoe UI Semibold", "Segoe UI", system-ui, sans-serif;
+    --font-body: -apple-system, "Segoe UI", system-ui, sans-serif;
+    --font-mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1A1613;
+      --surface: #221D18;
+      --surface-2: #2A241D;
+      --border: #3C352A;
+      --ink: #EEE7D9;
+      --ink-muted: #A89E8A;
+      --accent: #57A184;
+      --accent-strong: #7CC0A4;
+      --accent-ink: #0D1512;
+      --accent-soft: #223930;
+      --warn: #D6A24C;
+      --warn-soft: #3A2E17;
+      --rust: #CB8471;
+      --rust-soft: #3A241D;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -12px rgba(0,0,0,0.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1A1613; --surface: #221D18; --surface-2: #2A241D; --border: #3C352A;
+    --ink: #EEE7D9; --ink-muted: #A89E8A; --accent: #57A184; --accent-strong: #7CC0A4;
+    --accent-ink: #0D1512; --accent-soft: #223930; --warn: #D6A24C; --warn-soft: #3A2E17;
+    --rust: #CB8471; --rust-soft: #3A241D;
+  }
+  :root[data-theme="light"] {
+    --bg: #EDEAE0; --surface: #FFFFFF; --surface-2: #F7F5EE; --border: #DBD5C4;
+    --ink: #211E19; --ink-muted: #6E6858; --accent: #2F6B52; --accent-strong: #234F3D;
+    --accent-ink: #FDFBF6; --accent-soft: #E3EDE6; --warn: #A9711F; --warn-soft: #F4E7CE;
+    --rust: #93412F; --rust-soft: #F1E0DA;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 28px 18px 80px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--bg);
+    padding: 10px 0 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 22px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 6px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 4vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .progress-track {
+    flex: 1;
+    height: 8px;
+    border-radius: 99px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  .progress-label {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+
+  .brief {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+  }
+  .brief h2 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    margin: 0 0 10px;
+  }
+  .brief ul {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 8px;
+  }
+  .brief li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ink-muted);
+  }
+  .brief strong { color: var(--ink); font-weight: 600; }
+
+  .group { margin-bottom: 34px; }
+  .group-title {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .group-count {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    padding: 1px 8px;
+    font-size: 0.72rem;
+    color: var(--ink);
+  }
+
+  .cards { display: grid; gap: 12px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+    transition: opacity 0.2s ease;
+  }
+  .card.is-sent {
+    opacity: 0.5;
+  }
+  .card.is-sent .card-heading h3 {
+    text-decoration: line-through;
+    text-decoration-color: var(--ink-muted);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .order-badge {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    border-radius: 7px;
+    padding: 3px 7px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .card-heading { flex: 1; min-width: 0; }
+  .card-heading h3 {
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 0 0 3px;
+  }
+  .meta {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+  .chip {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 99px;
+    margin-top: 6px;
+  }
+  .chip-warn { background: var(--warn-soft); color: var(--warn); }
+  .chip-rating {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--ink);
+  }
+
+  .sent-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    padding: 4px 2px;
+  }
+  .sent-toggle input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+    cursor: pointer;
+  }
+
+  .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .btn {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 9px;
+    padding: 9px 14px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .btn-primary:hover { background: var(--accent-strong); }
+  .btn-ghost {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--ink);
+  }
+  .btn-ghost:hover { background: var(--surface-2); }
+
+  details.msg-preview {
+    margin-top: 10px;
+  }
+  details.msg-preview summary {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    cursor: pointer;
+  }
+  details.msg-preview p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 8px 0 0;
+    color: var(--ink);
+  }
+
+  .script-preview {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 10px 0 0;
+    color: var(--ink);
+  }
+  .meta-sub {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    margin: 8px 0 0;
+  }
+  .visit-note {
+    font-size: 0.85rem;
+    color: var(--rust);
+    background: var(--rust-soft);
+    border-radius: 8px;
+    padding: 9px 12px;
+    margin: 10px 0 0;
+  }
+
+  .copy-btn.copied {
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    border-color: var(--accent-soft);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .progress-fill, .card { transition: none; }
+  }
+</style>
+
+<style id="estilo-dos-pasos">
+  .btn-second {
+    background: var(--surface-2);
+    color: var(--accent-strong);
+    border: 1px solid var(--accent);
+  }
+  .btn-second:hover { background: var(--accent-soft); }
+  .nota-pasos {
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+</style>
+
+<div class="page">
+  <div class="topbar">
+    <p class="eyebrow">Panel de envíos · By0nder Web</p>
+    <h1>Envíos de Luis — 41 prospectos</h1>
+    <div class="progress-row">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-label" id="progressLabel">0/41 contactados</span>
+    </div>
+  </div>
+
+  <div class="brief">
+    <h2>Cómo trabajar esta lista</h2>
+    <p class="nota-pasos"><strong>Son dos mensajes, no uno.</strong>
+      Aprieta <strong>“1 · Romper el hielo”</strong>: va corto y <strong>sin link</strong>, solo preguntando si hablas con el dueño.
+      Un link entrante de un número desconocido es lo que manda un estafador, y te reportan.
+      Cuando el dueño te conteste, recién aprietas <strong>“2 · Mandar la demo”</strong>.
+      Si preguntan el precio antes, respóndelo directo — nunca “depende”.</p>
+    <ul>
+      <li>Estos 41 negocios son <strong>solo tuyos</strong> (16 ciudades). Nadie más les escribe, así que no hay riesgo de mensajes repetidos.</li>
+      <li>Si tu número es <strong>nuevo</strong>, manda <strong>8 a 15 al día</strong> la primera semana, en bloques de 5 con pausas. Después puedes subir de a pocos.</li>
+      <li>Mejor horario: <strong>10am–11am</strong> o <strong>3pm–5pm</strong>. Evita las horas de servicio (12–2pm y 7–9pm), ahí están full.</li>
+      <li>Cada botón abre WhatsApp con el mensaje ya escrito — <strong>revísalo y dale enviar tú mismo</strong>. Nunca se automatiza el envío.</li>
+      <li>El mensaje te presenta como <strong>Luis</strong>, alguien que hace páginas web para negocios. <strong>Ya no digas que eres estudiante</strong>: justificaba el precio bajo pero te quitaba autoridad. Tampoco finjas ser una agencia. Si te preguntan por qué cuesta menos: no hay oficina ni intermediarios, y la página ya está hecha.</li>
+      <li>Marca <strong>"Enviado"</strong> en cada tarjeta para llevar la cuenta; queda guardado en este navegador.</li>
+    </ul>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Surquillo <span class="group-count">5</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="jean-paul-barbershop">
+        <div class="card-top">
+          <span class="order-badge">1</span>
+          <div class="card-heading">
+            <h3>Jean Paul Barbershop</h3>
+            <p class="meta">Surquillo · Salón de belleza</p>
+            <span class="chip chip-rating">4.5★ · 277 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="jean-paul-barbershop"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51993050290?text=Buenas.%20Vi%20Jean%20Paul%20Barbershop%20y%20sus%20277%20rese%C3%B1as%20en%20Google.%0A%0AEsas%20277%20rese%C3%B1as%20se%20las%20gan%C3%B3%20atendiendo%20bien.%20Lo%20raro%20es%20que%20quien%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20Surquillo%20en%20Google%20no%20llega%20a%20ustedes.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20arregla.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Jean%20Paul%20Barbershop%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51993050290?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fjean-paul-barbershop%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/jean-paul-barbershop/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="oviedo-s-barbershop">
+        <div class="card-top">
+          <span class="order-badge">2</span>
+          <div class="card-heading">
+            <h3>Oviedo's Barbershop</h3>
+            <p class="meta">Surquillo · Salón de belleza</p>
+            <span class="chip chip-rating">4.4★ · 218 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="oviedo-s-barbershop"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51945016295?text=Buenas.%20Vi%20Oviedo's%20Barbershop%20y%20sus%20218%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20cliente%20decide%20en%20el%20celular%20antes%20de%20ir.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20Oviedo's%20Barbershop%20cuando%20lo%20buscan%3A%20sus%20servicios%2C%20sus%20fotos%20y%20un%20bot%C3%B3n%20para%20escribirle%20directo.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Oviedo's%20Barbershop%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51945016295?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Foviedo-s-barbershop%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/oviedo-s-barbershop/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="star-s-barber-shop">
+        <div class="card-top">
+          <span class="order-badge">3</span>
+          <div class="card-heading">
+            <h3>Star's Barber Shop</h3>
+            <p class="meta">Surquillo · Salón de belleza</p>
+            <span class="chip chip-rating">4.5★ · 166 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="star-s-barber-shop"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51958874070?text=Buenas.%20Vi%20Star's%20Barber%20Shop%20y%20sus%20166%20rese%C3%B1as%20en%20Google.%0A%0ALe%20voy%20a%20ser%20honesto%3A%20revis%C3%A9%20qui%C3%A9n%20sale%20primero%20cuando%20uno%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20Surquillo%2C%20y%20no%20son%20ustedes%20pese%20a%20tener%20mejor%20reputaci%C3%B3n.%20Les%20prepar%C3%A9%20una%20muestra%2C%20ya%20est%C3%A1%20en%20l%C3%ADnea.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Star's%20Barber%20Shop%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51958874070?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fstar-s-barber-shop%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/star-s-barber-shop/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="bellaty-salon-y-spa">
+        <div class="card-top">
+          <span class="order-badge">4</span>
+          <div class="card-heading">
+            <h3>Bellaty Salon y Spa</h3>
+            <p class="meta">Surquillo · Salón de belleza</p>
+            <span class="chip chip-rating">4.7★ · 104 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="bellaty-salon-y-spa"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51937675803?text=Buenas.%20Vi%20Bellaty%20Salon%20y%20Spa%20y%20sus%20104%20rese%C3%B1as%20en%20Google.%0A%0AEl%20que%20ya%20los%20conoce%20los%20ubica.%20El%20que%20no%2C%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20Surquillo%20y%20llega%20a%20otro.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20resuelve%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Bellaty%20Salon%20y%20Spa%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51937675803?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fbellaty-salon-y-spa%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/bellaty-salon-y-spa/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="peluqueria-adan-eva">
+        <div class="card-top">
+          <span class="order-badge">5</span>
+          <div class="card-heading">
+            <h3>Peluqueria Adan &amp; Eva</h3>
+            <p class="meta">Surquillo · Salón de belleza</p>
+            <span class="chip chip-rating">4.5★ · 71 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="peluqueria-adan-eva"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51987311277?text=Buenas.%20Vi%20Peluqueria%20Adan%20%26%20Eva%20y%20sus%2071%20rese%C3%B1as%20en%20Google.%0A%0ALes%20hice%20una%20p%C3%A1gina%20de%20muestra%20con%20su%20nombre%2C%20sus%20servicios%20y%20contacto%20directo%20por%20WhatsApp.%20Ya%20est%C3%A1%20hecha%2C%20se%20la%20puedo%20mostrar.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Peluqueria%20Adan%20%26%20Eva%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51987311277?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fpeluqueria-adan-eva%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/peluqueria-adan-eva/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Los Olivos <span class="group-count">9</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="veterinaria-petylab">
+        <div class="card-top">
+          <span class="order-badge">6</span>
+          <div class="card-heading">
+            <h3>Veterinaria PetyLab</h3>
+            <p class="meta">Los Olivos · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.6★ · 251 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="veterinaria-petylab"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51910064188?text=Buenas.%20Vi%20Veterinaria%20PetyLab%20y%20sus%20251%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20que%20busca%20una%20veterinaria%20en%20Los%20Olivos%20no%20los%20ve.%20Prepar%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20su%20p%C3%A1gina%20resolviendo%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Veterinaria%20PetyLab%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51910064188?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fveterinaria-petylab%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/veterinaria-petylab/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="athletic-fitness-gym">
+        <div class="card-top">
+          <span class="order-badge">7</span>
+          <div class="card-heading">
+            <h3>Athletic Fitness Gym</h3>
+            <p class="meta">Los Olivos · Gimnasio</p>
+            <span class="chip chip-rating">4.4★ · 120 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="athletic-fitness-gym"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51933090786?text=Buenas.%20Vi%20Athletic%20Fitness%20Gym%20y%20sus%20120%20rese%C3%B1as%20en%20Google.%0A%0ALes%20arm%C3%A9%20una%20p%C3%A1gina%20de%20muestra%20con%20los%20datos%20de%20Athletic%20Fitness%20Gym.%20Est%C3%A1%20terminada%2C%20no%20le%20tengo%20que%20hacer%20nada%20m%C3%A1s%20para%20ense%C3%B1%C3%A1rsela.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Athletic%20Fitness%20Gym%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51933090786?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fathletic-fitness-gym%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/athletic-fitness-gym/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="power-gym-los-olivos">
+        <div class="card-top">
+          <span class="order-badge">8</span>
+          <div class="card-heading">
+            <h3>Power Gym Los Olivos</h3>
+            <p class="meta">Los Olivos · Gimnasio</p>
+            <span class="chip chip-rating">4.0★ · 107 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="power-gym-los-olivos"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51972262307?text=Buenas.%20Vi%20Power%20Gym%20Los%20Olivos%20y%20sus%20107%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20cliente%20decide%20en%20el%20celular%20antes%20de%20ir.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20Power%20Gym%20Los%20Olivos%20cuando%20lo%20buscan%3A%20sus%20servicios%2C%20sus%20fotos%20y%20un%20bot%C3%B3n%20para%20escribirle%20directo.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Power%20Gym%20Los%20Olivos%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51972262307?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fpower-gym-los-olivos%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/power-gym-los-olivos/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="clinica-veterinaria-afrivet">
+        <div class="card-top">
+          <span class="order-badge">9</span>
+          <div class="card-heading">
+            <h3>Clinica Veterinaria Afrivet</h3>
+            <p class="meta">Los Olivos · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.6★ · 78 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="clinica-veterinaria-afrivet"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51986068412?text=Buenas.%20Vi%20Clinica%20Veterinaria%20Afrivet%20y%20sus%2078%20rese%C3%B1as%20en%20Google.%0A%0AEsas%2078%20rese%C3%B1as%20se%20las%20gan%C3%B3%20atendiendo%20bien.%20Lo%20raro%20es%20que%20quien%20busca%20una%20veterinaria%20en%20Los%20Olivos%20en%20Google%20no%20llega%20a%20ustedes.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20arregla.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Clinica%20Veterinaria%20Afrivet%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51986068412?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fclinica-veterinaria-afrivet%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/clinica-veterinaria-afrivet/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="clinica-veterinaria-arca-de-noe">
+        <div class="card-top">
+          <span class="order-badge">10</span>
+          <div class="card-heading">
+            <h3>Clinica Veterinaria Arca de Noe</h3>
+            <p class="meta">Los Olivos · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.4★ · 75 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="clinica-veterinaria-arca-de-noe"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51960107694?text=Buenas.%20Vi%20Clinica%20Veterinaria%20Arca%20de%20Noe%20y%20sus%2075%20rese%C3%B1as%20en%20Google.%0A%0AEl%20que%20ya%20los%20conoce%20los%20ubica.%20El%20que%20no%2C%20busca%20una%20veterinaria%20en%20Los%20Olivos%20y%20llega%20a%20otro.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20resuelve%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Clinica%20Veterinaria%20Arca%20de%20Noe%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51960107694?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fclinica-veterinaria-arca-de-noe%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/clinica-veterinaria-arca-de-noe/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="veterinaria-petsyvet">
+        <div class="card-top">
+          <span class="order-badge">11</span>
+          <div class="card-heading">
+            <h3>Veterinaria PetsyVet</h3>
+            <p class="meta">Los Olivos · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.5★ · 74 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="veterinaria-petsyvet"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51987232033?text=Buenas.%20Vi%20Veterinaria%20PetsyVet%20y%20sus%2074%20rese%C3%B1as%20en%20Google.%0A%0ALes%20hice%20una%20p%C3%A1gina%20de%20muestra%20con%20su%20nombre%2C%20sus%20servicios%20y%20contacto%20directo%20por%20WhatsApp.%20Ya%20est%C3%A1%20hecha%2C%20se%20la%20puedo%20mostrar.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Veterinaria%20PetsyVet%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51987232033?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fveterinaria-petsyvet%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/veterinaria-petsyvet/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="rey-barba">
+        <div class="card-top">
+          <span class="order-badge">12</span>
+          <div class="card-heading">
+            <h3>Rey Barba</h3>
+            <p class="meta">Los Olivos · Salón de belleza</p>
+            <span class="chip chip-rating">4.7★ · 72 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="rey-barba"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51910168828?text=Buenas.%20Vi%20Rey%20Barba%20y%20sus%2072%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20que%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20Los%20Olivos%20no%20los%20ve.%20Prepar%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20su%20p%C3%A1gina%20resolviendo%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Rey%20Barba%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51910168828?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Frey-barba%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/rey-barba/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="barbers-club-gentlemen">
+        <div class="card-top">
+          <span class="order-badge">13</span>
+          <div class="card-heading">
+            <h3>Barbers Club Gentlemen</h3>
+            <p class="meta">Los Olivos · Salón de belleza</p>
+            <span class="chip chip-rating">4.2★ · 49 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="barbers-club-gentlemen"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51921133560?text=Buenas.%20Vi%20Barbers%20Club%20Gentlemen%20y%20sus%2049%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20cliente%20decide%20en%20el%20celular%20antes%20de%20ir.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20Barbers%20Club%20Gentlemen%20cuando%20lo%20buscan%3A%20sus%20servicios%2C%20sus%20fotos%20y%20un%20bot%C3%B3n%20para%20escribirle%20directo.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Barbers%20Club%20Gentlemen%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51921133560?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fbarbers-club-gentlemen%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/barbers-club-gentlemen/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="gentlemens-barber-peru">
+        <div class="card-top">
+          <span class="order-badge">14</span>
+          <div class="card-heading">
+            <h3>Gentlemens Barber Peru</h3>
+            <p class="meta">Los Olivos · Salón de belleza</p>
+            <span class="chip chip-rating">4.6★ · 40 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="gentlemens-barber-peru"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51963100236?text=Buenas.%20Vi%20Gentlemens%20Barber%20Peru%20y%20sus%2040%20rese%C3%B1as%20en%20Google.%0A%0AEsas%2040%20rese%C3%B1as%20se%20las%20gan%C3%B3%20atendiendo%20bien.%20Lo%20raro%20es%20que%20quien%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20Los%20Olivos%20en%20Google%20no%20llega%20a%20ustedes.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20arregla.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Gentlemens%20Barber%20Peru%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51963100236?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fgentlemens-barber-peru%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/gentlemens-barber-peru/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Lince <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="toque-ingles-salon">
+        <div class="card-top">
+          <span class="order-badge">15</span>
+          <div class="card-heading">
+            <h3>Toque Ingles Salon</h3>
+            <p class="meta">Lince · Salón de belleza</p>
+            <span class="chip chip-rating">4.9★ · 216 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="toque-ingles-salon"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51961452392?text=Buenas.%20Vi%20Toque%20Ingles%20Salon%20y%20sus%20216%20rese%C3%B1as%20en%20Google.%0A%0ALe%20voy%20a%20ser%20honesto%3A%20revis%C3%A9%20qui%C3%A9n%20sale%20primero%20cuando%20uno%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20Lince%2C%20y%20no%20son%20ustedes%20pese%20a%20tener%20mejor%20reputaci%C3%B3n.%20Les%20prepar%C3%A9%20una%20muestra%2C%20ya%20est%C3%A1%20en%20l%C3%ADnea.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Toque%20Ingles%20Salon%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51961452392?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Ftoque-ingles-salon%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/toque-ingles-salon/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">San Martin de Porres <span class="group-count">4</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="barberia-ercovoz">
+        <div class="card-top">
+          <span class="order-badge">16</span>
+          <div class="card-heading">
+            <h3>Barberia Ercovoz</h3>
+            <p class="meta">San Martin de Porres · Salón de belleza</p>
+            <span class="chip chip-rating">4.6★ · 205 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="barberia-ercovoz"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51980572356?text=Buenas.%20Vi%20Barberia%20Ercovoz%20y%20sus%20205%20rese%C3%B1as%20en%20Google.%0A%0ALes%20hice%20una%20p%C3%A1gina%20de%20muestra%20con%20su%20nombre%2C%20sus%20servicios%20y%20contacto%20directo%20por%20WhatsApp.%20Ya%20est%C3%A1%20hecha%2C%20se%20la%20puedo%20mostrar.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Barberia%20Ercovoz%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51980572356?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fbarberia-ercovoz%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/barberia-ercovoz/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="veterinaria-6-huellitas">
+        <div class="card-top">
+          <span class="order-badge">17</span>
+          <div class="card-heading">
+            <h3>Veterinaria 6 Huellitas</h3>
+            <p class="meta">San Martin de Porres · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.4★ · 84 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="veterinaria-6-huellitas"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51970509200?text=Buenas.%20Vi%20Veterinaria%206%20Huellitas%20y%20sus%2084%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20que%20busca%20una%20veterinaria%20en%20San%20Martin%20de%20Porres%20no%20los%20ve.%20Prepar%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20su%20p%C3%A1gina%20resolviendo%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Veterinaria%206%20Huellitas%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51970509200?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fveterinaria-6-huellitas%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/veterinaria-6-huellitas/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="veterinaria-teran-vet">
+        <div class="card-top">
+          <span class="order-badge">18</span>
+          <div class="card-heading">
+            <h3>Veterinaria Teran Vet</h3>
+            <p class="meta">San Martin de Porres · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.5★ · 77 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="veterinaria-teran-vet"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51947884669?text=Buenas.%20Vi%20Veterinaria%20Teran%20Vet%20y%20sus%2077%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20que%20busca%20una%20veterinaria%20en%20San%20Martin%20de%20Porres%20no%20los%20ve.%20Prepar%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20su%20p%C3%A1gina%20resolviendo%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Veterinaria%20Teran%20Vet%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51947884669?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fveterinaria-teran-vet%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/veterinaria-teran-vet/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="veterinaria-mazvet">
+        <div class="card-top">
+          <span class="order-badge">19</span>
+          <div class="card-heading">
+            <h3>Veterinaria Mazvet</h3>
+            <p class="meta">San Martin de Porres · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.5★ · 76 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="veterinaria-mazvet"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51985965504?text=Buenas.%20Vi%20Veterinaria%20Mazvet%20y%20sus%2076%20rese%C3%B1as%20en%20Google.%0A%0AEsas%2076%20rese%C3%B1as%20se%20las%20gan%C3%B3%20atendiendo%20bien.%20Lo%20raro%20es%20que%20quien%20busca%20una%20veterinaria%20en%20San%20Martin%20de%20Porres%20en%20Google%20no%20llega%20a%20ustedes.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20arregla.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Veterinaria%20Mazvet%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51985965504?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fveterinaria-mazvet%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/veterinaria-mazvet/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">San Juan de Lurigancho <span class="group-count">8</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="ramses-gym">
+        <div class="card-top">
+          <span class="order-badge">20</span>
+          <div class="card-heading">
+            <h3>Ramses Gym</h3>
+            <p class="meta">San Juan de Lurigancho · Gimnasio</p>
+            <span class="chip chip-rating">4.2★ · 197 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="ramses-gym"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51948134014?text=Buenas.%20Vi%20Ramses%20Gym%20y%20sus%20197%20rese%C3%B1as%20en%20Google.%0A%0ALe%20voy%20a%20ser%20honesto%3A%20revis%C3%A9%20qui%C3%A9n%20sale%20primero%20cuando%20uno%20busca%20un%20gimnasio%20en%20San%20Juan%20de%20Lurigancho%2C%20y%20no%20son%20ustedes%20pese%20a%20tener%20mejor%20reputaci%C3%B3n.%20Les%20prepar%C3%A9%20una%20muestra%2C%20ya%20est%C3%A1%20en%20l%C3%ADnea.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Ramses%20Gym%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51948134014?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Framses-gym%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/ramses-gym/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="pet-point-clinica-veterinaria">
+        <div class="card-top">
+          <span class="order-badge">21</span>
+          <div class="card-heading">
+            <h3>Pet Point Clinica Veterinaria</h3>
+            <p class="meta">San Juan de Lurigancho · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.5★ · 181 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="pet-point-clinica-veterinaria"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51926717956?text=Buenas.%20Vi%20Pet%20Point%20Clinica%20Veterinaria%20y%20sus%20181%20rese%C3%B1as%20en%20Google.%0A%0ALes%20prepar%C3%A9%20una%20p%C3%A1gina%20de%20muestra%2C%20ya%20est%C3%A1%20lista.%20La%20idea%20es%20que%20cuando%20busquen%20una%20veterinaria%20en%20San%20Juan%20de%20Lurigancho%20aparezcan%20ustedes.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Pet%20Point%20Clinica%20Veterinaria%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51926717956?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fpet-point-clinica-veterinaria%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/pet-point-clinica-veterinaria/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="barberia-skills">
+        <div class="card-top">
+          <span class="order-badge">22</span>
+          <div class="card-heading">
+            <h3>Barberia Skills</h3>
+            <p class="meta">San Juan de Lurigancho · Salón de belleza</p>
+            <span class="chip chip-rating">4.6★ · 176 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="barberia-skills"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51977365766?text=Buenas.%20Vi%20Barberia%20Skills%20y%20sus%20176%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20cliente%20decide%20en%20el%20celular%20antes%20de%20ir.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20Barberia%20Skills%20cuando%20lo%20buscan%3A%20sus%20servicios%2C%20sus%20fotos%20y%20un%20bot%C3%B3n%20para%20escribirle%20directo.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Barberia%20Skills%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51977365766?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fbarberia-skills%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/barberia-skills/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="centro-veterinario-santa-rita">
+        <div class="card-top">
+          <span class="order-badge">23</span>
+          <div class="card-heading">
+            <h3>Centro Veterinario Santa Rita</h3>
+            <p class="meta">San Juan de Lurigancho · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.8★ · 169 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="centro-veterinario-santa-rita"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51993893538?text=Buenas.%20Vi%20Centro%20Veterinario%20Santa%20Rita%20y%20sus%20169%20rese%C3%B1as%20en%20Google.%0A%0ACuando%20alguien%20busca%20una%20veterinaria%20en%20San%20Juan%20de%20Lurigancho%20no%20los%20encuentra%2C%20y%20ese%20cliente%20se%20va%20con%20el%20de%20al%20lado.%20Les%20arm%C3%A9%20una%20p%C3%A1gina%20de%20muestra%20con%20sus%20datos%2C%20ya%20funcionando.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Centro%20Veterinario%20Santa%20Rita%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51993893538?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fcentro-veterinario-santa-rita%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/centro-veterinario-santa-rita/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="almajo-gym">
+        <div class="card-top">
+          <span class="order-badge">24</span>
+          <div class="card-heading">
+            <h3>Almajo Gym</h3>
+            <p class="meta">San Juan de Lurigancho · Gimnasio</p>
+            <span class="chip chip-rating">4.3★ · 117 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="almajo-gym"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51952603470?text=Buenas.%20Vi%20Almajo%20Gym%20y%20sus%20117%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20cliente%20decide%20en%20el%20celular%20antes%20de%20ir.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20Almajo%20Gym%20cuando%20lo%20buscan%3A%20sus%20servicios%2C%20sus%20fotos%20y%20un%20bot%C3%B3n%20para%20escribirle%20directo.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Almajo%20Gym%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51952603470?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Falmajo-gym%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/almajo-gym/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="centro-veterinario-friendly-pets">
+        <div class="card-top">
+          <span class="order-badge">25</span>
+          <div class="card-heading">
+            <h3>Centro Veterinario Friendly Pets</h3>
+            <p class="meta">San Juan de Lurigancho · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.3★ · 69 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="centro-veterinario-friendly-pets"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51995172652?text=Buenas.%20Vi%20Centro%20Veterinario%20Friendly%20Pets%20y%20sus%2069%20rese%C3%B1as%20en%20Google.%0A%0AEl%20que%20ya%20los%20conoce%20los%20ubica.%20El%20que%20no%2C%20busca%20una%20veterinaria%20en%20San%20Juan%20de%20Lurigancho%20y%20llega%20a%20otro.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20resuelve%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Centro%20Veterinario%20Friendly%20Pets%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51995172652?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fcentro-veterinario-friendly-pets%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/centro-veterinario-friendly-pets/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="veterinaria-los-jazmines-de-san-juan">
+        <div class="card-top">
+          <span class="order-badge">26</span>
+          <div class="card-heading">
+            <h3>Veterinaria Los Jazmines de San Juan</h3>
+            <p class="meta">San Juan de Lurigancho · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.0★ · 66 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="veterinaria-los-jazmines-de-san-juan"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51988322016?text=Buenas.%20Vi%20Veterinaria%20Los%20Jazmines%20de%20San%20Juan%20y%20sus%2066%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20que%20busca%20una%20veterinaria%20en%20San%20Juan%20de%20Lurigancho%20no%20los%20ve.%20Prepar%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20su%20p%C3%A1gina%20resolviendo%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Veterinaria%20Los%20Jazmines%20de%20San%20Juan%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51988322016?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fveterinaria-los-jazmines-de-san-juan%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/veterinaria-los-jazmines-de-san-juan/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="gimnasio-zeus">
+        <div class="card-top">
+          <span class="order-badge">27</span>
+          <div class="card-heading">
+            <h3>Gimnasio Zeus</h3>
+            <p class="meta">San Juan de Lurigancho · Gimnasio</p>
+            <span class="chip chip-rating">3.9★ · 55 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="gimnasio-zeus"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51949598868?text=Buenas.%20Vi%20Gimnasio%20Zeus%20y%20sus%2055%20rese%C3%B1as%20en%20Google.%0A%0AEsas%2055%20rese%C3%B1as%20se%20las%20gan%C3%B3%20atendiendo%20bien.%20Lo%20raro%20es%20que%20quien%20busca%20un%20gimnasio%20en%20San%20Juan%20de%20Lurigancho%20en%20Google%20no%20llega%20a%20ustedes.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20arregla.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Gimnasio%20Zeus%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51949598868?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fgimnasio-zeus%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/gimnasio-zeus/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Puente Piedra <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="clinica-veterinaria-sava">
+        <div class="card-top">
+          <span class="order-badge">28</span>
+          <div class="card-heading">
+            <h3>Clinica Veterinaria Sava</h3>
+            <p class="meta">Puente Piedra · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.4★ · 131 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="clinica-veterinaria-sava"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51935814611?text=Buenas.%20Vi%20Clinica%20Veterinaria%20Sava%20y%20sus%20131%20rese%C3%B1as%20en%20Google.%0A%0ALes%20hice%20una%20p%C3%A1gina%20de%20muestra%20con%20su%20nombre%2C%20sus%20servicios%20y%20contacto%20directo%20por%20WhatsApp.%20Ya%20est%C3%A1%20hecha%2C%20se%20la%20puedo%20mostrar.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Clinica%20Veterinaria%20Sava%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51935814611?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fclinica-veterinaria-sava%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/clinica-veterinaria-sava/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Comas <span class="group-count">2</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="608-barberia">
+        <div class="card-top">
+          <span class="order-badge">29</span>
+          <div class="card-heading">
+            <h3>608 Barberia</h3>
+            <p class="meta">Comas · Salón de belleza</p>
+            <span class="chip chip-rating">4.8★ · 115 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="608-barberia"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51933050778?text=Buenas.%20Vi%20608%20Barberia%20y%20sus%20115%20rese%C3%B1as%20en%20Google.%0A%0ALes%20arm%C3%A9%20una%20p%C3%A1gina%20de%20muestra%20con%20los%20datos%20de%20608%20Barberia.%20Est%C3%A1%20terminada%2C%20no%20le%20tengo%20que%20hacer%20nada%20m%C3%A1s%20para%20ense%C3%B1%C3%A1rsela.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20608%20Barberia%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51933050778?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2F608-barberia%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/608-barberia/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="gym-total-fitness">
+        <div class="card-top">
+          <span class="order-badge">30</span>
+          <div class="card-heading">
+            <h3>Gym Total Fitness</h3>
+            <p class="meta">Comas · Gimnasio</p>
+            <span class="chip chip-rating">4.3★ · 82 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="gym-total-fitness"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51967797860?text=Buenas.%20Vi%20Gym%20Total%20Fitness%20y%20sus%2082%20rese%C3%B1as%20en%20Google.%0A%0AEsas%2082%20rese%C3%B1as%20se%20las%20gan%C3%B3%20atendiendo%20bien.%20Lo%20raro%20es%20que%20quien%20busca%20un%20gimnasio%20en%20Comas%20en%20Google%20no%20llega%20a%20ustedes.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20arregla.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Gym%20Total%20Fitness%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51967797860?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fgym-total-fitness%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/gym-total-fitness/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Ate <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="gladiadores-gym">
+        <div class="card-top">
+          <span class="order-badge">31</span>
+          <div class="card-heading">
+            <h3>Gladiadores Gym</h3>
+            <p class="meta">Ate · Gimnasio</p>
+            <span class="chip chip-rating">4.0★ · 105 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="gladiadores-gym"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51947397667?text=Buenas.%20Vi%20Gladiadores%20Gym%20y%20sus%20105%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20cliente%20decide%20en%20el%20celular%20antes%20de%20ir.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20Gladiadores%20Gym%20cuando%20lo%20buscan%3A%20sus%20servicios%2C%20sus%20fotos%20y%20un%20bot%C3%B3n%20para%20escribirle%20directo.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Gladiadores%20Gym%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51947397667?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fgladiadores-gym%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/gladiadores-gym/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Chorrillos <span class="group-count">2</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="gimnasio-netfit-premium">
+        <div class="card-top">
+          <span class="order-badge">32</span>
+          <div class="card-heading">
+            <h3>Gimnasio Netfit Premium</h3>
+            <p class="meta">Chorrillos · Gimnasio</p>
+            <span class="chip chip-rating">4.3★ · 90 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="gimnasio-netfit-premium"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51950430940?text=Buenas.%20Vi%20Gimnasio%20Netfit%20Premium%20y%20sus%2090%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20cliente%20decide%20en%20el%20celular%20antes%20de%20ir.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20Gimnasio%20Netfit%20Premium%20cuando%20lo%20buscan%3A%20sus%20servicios%2C%20sus%20fotos%20y%20un%20bot%C3%B3n%20para%20escribirle%20directo.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Gimnasio%20Netfit%20Premium%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51950430940?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fgimnasio-netfit-premium%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/gimnasio-netfit-premium/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="salon-peluqueria-retos">
+        <div class="card-top">
+          <span class="order-badge">33</span>
+          <div class="card-heading">
+            <h3>Salon Peluqueria Retos</h3>
+            <p class="meta">Chorrillos · Salón de belleza</p>
+            <span class="chip chip-rating">4.4★ · 46 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="salon-peluqueria-retos"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51989846064?text=Buenas.%20Vi%20Salon%20Peluqueria%20Retos%20y%20sus%2046%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20que%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20Chorrillos%20no%20los%20ve.%20Prepar%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20su%20p%C3%A1gina%20resolviendo%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Salon%20Peluqueria%20Retos%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51989846064?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fsalon-peluqueria-retos%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/salon-peluqueria-retos/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Villa Maria del Triunfo <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="iron-house-gym-san-gabriel">
+        <div class="card-top">
+          <span class="order-badge">34</span>
+          <div class="card-heading">
+            <h3>Iron House Gym - San Gabriel</h3>
+            <p class="meta">Villa Maria del Triunfo · Gimnasio</p>
+            <span class="chip chip-rating">4.3★ · 76 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="iron-house-gym-san-gabriel"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51924282253?text=Buenas.%20Vi%20Iron%20House%20Gym%20-%20San%20Gabriel%20y%20sus%2076%20rese%C3%B1as%20en%20Google.%0A%0ALes%20prepar%C3%A9%20una%20p%C3%A1gina%20de%20muestra%2C%20ya%20est%C3%A1%20lista.%20La%20idea%20es%20que%20cuando%20busquen%20un%20gimnasio%20en%20Villa%20Maria%20del%20Triunfo%20aparezcan%20ustedes.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Iron%20House%20Gym%20-%20San%20Gabriel%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51924282253?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Firon-house-gym-san-gabriel%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/iron-house-gym-san-gabriel/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Santiago de Surco <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="factory-gym">
+        <div class="card-top">
+          <span class="order-badge">35</span>
+          <div class="card-heading">
+            <h3>Factory Gym</h3>
+            <p class="meta">Santiago de Surco · Gimnasio</p>
+            <span class="chip chip-rating">4.6★ · 71 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="factory-gym"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51952910604?text=Buenas.%20Vi%20Factory%20Gym%20y%20sus%2071%20rese%C3%B1as%20en%20Google.%0A%0ALes%20hice%20una%20p%C3%A1gina%20de%20muestra%20con%20su%20nombre%2C%20sus%20servicios%20y%20contacto%20directo%20por%20WhatsApp.%20Ya%20est%C3%A1%20hecha%2C%20se%20la%20puedo%20mostrar.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Factory%20Gym%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51952910604?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Ffactory-gym%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/factory-gym/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Carabayllo <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="jorge-cabrera-veterinario">
+        <div class="card-top">
+          <span class="order-badge">36</span>
+          <div class="card-heading">
+            <h3>Jorge Cabrera Veterinario</h3>
+            <p class="meta">Carabayllo · Clínica veterinaria</p>
+            <span class="chip chip-rating">4.3★ · 65 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="jorge-cabrera-veterinario"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51991360688?text=Buenas.%20Vi%20Jorge%20Cabrera%20Veterinario%20y%20sus%2065%20rese%C3%B1as%20en%20Google.%0A%0ALes%20arm%C3%A9%20una%20p%C3%A1gina%20de%20muestra%20con%20los%20datos%20de%20Jorge%20Cabrera%20Veterinario.%20Est%C3%A1%20terminada%2C%20no%20le%20tengo%20que%20hacer%20nada%20m%C3%A1s%20para%20ense%C3%B1%C3%A1rsela.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Jorge%20Cabrera%20Veterinario%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51991360688?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fjorge-cabrera-veterinario%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/jorge-cabrera-veterinario/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">La Victoria <span class="group-count">2</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="nautilus-gym">
+        <div class="card-top">
+          <span class="order-badge">37</span>
+          <div class="card-heading">
+            <h3>Nautilus Gym</h3>
+            <p class="meta">La Victoria · Gimnasio</p>
+            <span class="chip chip-rating">4.6★ · 63 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="nautilus-gym"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51985523840?text=Buenas.%20Vi%20Nautilus%20Gym%20y%20sus%2063%20rese%C3%B1as%20en%20Google.%0A%0ALes%20arm%C3%A9%20una%20p%C3%A1gina%20de%20muestra%20con%20los%20datos%20de%20Nautilus%20Gym.%20Est%C3%A1%20terminada%2C%20no%20le%20tengo%20que%20hacer%20nada%20m%C3%A1s%20para%20ense%C3%B1%C3%A1rsela.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Nautilus%20Gym%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51985523840?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fnautilus-gym%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/nautilus-gym/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+
+      <article class="card" data-slug="mb-gym">
+        <div class="card-top">
+          <span class="order-badge">38</span>
+          <div class="card-heading">
+            <h3>MB Gym</h3>
+            <p class="meta">La Victoria · Gimnasio</p>
+            <span class="chip chip-rating">4.2★ · 60 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="mb-gym"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51996660360?text=Buenas.%20Vi%20MB%20Gym%20y%20sus%2060%20rese%C3%B1as%20en%20Google.%0A%0ALes%20hice%20una%20p%C3%A1gina%20de%20muestra%20con%20su%20nombre%2C%20sus%20servicios%20y%20contacto%20directo%20por%20WhatsApp.%20Ya%20est%C3%A1%20hecha%2C%20se%20la%20puedo%20mostrar.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20MB%20Gym%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51996660360?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fmb-gym%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/mb-gym/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">Villa El Salvador <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="baron-s-barber-shop-peru">
+        <div class="card-top">
+          <span class="order-badge">39</span>
+          <div class="card-heading">
+            <h3>Baron's Barber Shop Peru</h3>
+            <p class="meta">Villa El Salvador · Salón de belleza</p>
+            <span class="chip chip-rating">4.4★ · 61 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="baron-s-barber-shop-peru"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51965720183?text=Buenas.%20Vi%20Baron's%20Barber%20Shop%20Peru%20y%20sus%2061%20rese%C3%B1as%20en%20Google.%0A%0AHoy%20el%20que%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20Villa%20El%20Salvador%20no%20los%20ve.%20Prepar%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20ver%C3%ADa%20su%20p%C3%A1gina%20resolviendo%20eso.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Baron's%20Barber%20Shop%20Peru%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51965720183?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fbaron-s-barber-shop-peru%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/baron-s-barber-shop-peru/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">San Juan de Miraflores <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="evolution-center-fit">
+        <div class="card-top">
+          <span class="order-badge">40</span>
+          <div class="card-heading">
+            <h3>Evolution Center Fit</h3>
+            <p class="meta">San Juan de Miraflores · Gimnasio</p>
+            <span class="chip chip-rating">4.6★ · 61 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="evolution-center-fit"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51906395640?text=Buenas.%20Vi%20Evolution%20Center%20Fit%20y%20sus%2061%20rese%C3%B1as%20en%20Google.%0A%0ALe%20voy%20a%20ser%20honesto%3A%20revis%C3%A9%20qui%C3%A9n%20sale%20primero%20cuando%20uno%20busca%20un%20gimnasio%20en%20San%20Juan%20de%20Miraflores%2C%20y%20no%20son%20ustedes%20pese%20a%20tener%20mejor%20reputaci%C3%B3n.%20Les%20prepar%C3%A9%20una%20muestra%2C%20ya%20est%C3%A1%20en%20l%C3%ADnea.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Evolution%20Center%20Fit%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51906395640?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fevolution-center-fit%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/evolution-center-fit/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2 class="group-title">San Miguel <span class="group-count">1</span></h2>
+    <div class="cards">
+
+      <article class="card" data-slug="osadia-salon-spa">
+        <div class="card-top">
+          <span class="order-badge">41</span>
+          <div class="card-heading">
+            <h3>Osadia Salon Spa</h3>
+            <p class="meta">San Miguel · Salón de belleza</p>
+            <span class="chip chip-rating">4.3★ · 57 reseñas</span>
+          </div>
+          <label class="sent-toggle"><input type="checkbox" class="sent-checkbox" data-slug="osadia-salon-spa"><span>Enviado</span></label>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://wa.me/51960613845?text=Buenas.%20Vi%20Osadia%20Salon%20Spa%20y%20sus%2057%20rese%C3%B1as%20en%20Google.%0A%0AEsas%2057%20rese%C3%B1as%20se%20las%20gan%C3%B3%20atendiendo%20bien.%20Lo%20raro%20es%20que%20quien%20busca%20una%20barber%C3%ADa%20o%20sal%C3%B3n%20en%20San%20Miguel%20en%20Google%20no%20llega%20a%20ustedes.%20Les%20arm%C3%A9%20una%20muestra%20de%20c%C3%B3mo%20se%20arregla.%0A%0A%C2%BFHablo%20con%20el%20due%C3%B1o%20de%20Osadia%20Salon%20Spa%3F" target="_blank" rel="noopener">1 · Romper el hielo</a>
+          <a class="btn btn-second" href="https://wa.me/51960613845?text=Ac%C3%A1%20est%C3%A1%3A%20https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fosadia-salon-spa%2F%0A%0A%C3%81brala%20del%20celular%2C%20es%20un%20minuto.%20Cualquier%20cosa%20que%20quiera%20cambiada%20me%20dice%20y%20se%20la%20cambio." target="_blank" rel="noopener">2 · Mandar la demo</a>
+          <a class="btn btn-ghost" href="https://by0nder.github.io/demos-restaurantes/osadia-salon-spa/" target="_blank" rel="noopener">Ver demo</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var STORAGE_KEY = "outreach-sent-luis-v1";
+    var total = document.querySelectorAll(".sent-checkbox").length;
+    function load() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch (e) { return {}; }
+    }
+    function save(state) { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    function updateProgress(state) {
+      var count = Object.keys(state).filter(function (k) { return state[k]; }).length;
+      document.getElementById("progressLabel").textContent = count + "/" + total + " contactados";
+      document.getElementById("progressFill").style.width = (total ? (count / total) * 100 : 0) + "%";
+    }
+    var state = load();
+    document.querySelectorAll(".sent-checkbox").forEach(function (box) {
+      var slug = box.dataset.slug;
+      var card = box.closest(".card");
+      if (state[slug]) { box.checked = true; card.classList.add("is-sent"); }
+      box.addEventListener("change", function () {
+        state[slug] = box.checked;
+        card.classList.toggle("is-sent", box.checked);
+        save(state); updateProgress(state);
+      });
+    });
+    updateProgress(state);
+  })();
+</script>
