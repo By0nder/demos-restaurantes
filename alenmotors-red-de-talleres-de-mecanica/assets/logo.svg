@@ -1,21 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 150" role="img" aria-label="ALENMOTORS">
-  <!-- Reconstrucción vectorial del logo de la tarjeta de ALENMOTORS.
-       Va sobre placa negra a propósito: el logo original es negro sobre blanco y
-       en el modo oscuro del sitio desaparecería. Con la placa se ve igual en los
-       dos temas. Se reemplaza en cuanto el dueño mande su archivo original.
-       La bajada "red de talleres" NO va: no lo es. -->
-  <rect width="440" height="150" rx="18" fill="#12141a"/>
-
-  <!-- Silueta del auto: el trazo dorado que corona la marca en la tarjeta. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 110" role="img" aria-label="ALENMOTORS">
+  <!-- Logo de ALENMOTORS, reconstruido de su tarjeta: el arco dorado con forma de
+       auto sobre el nombre. Sin la bajada "red de talleres" — no lo es.
+       El texto va en `currentColor` a propósito: así sale negro sobre el fondo
+       claro y blanco en modo oscuro, sin necesidad de dos archivos. -->
   <g fill="#d4a017">
-    <path d="M116 66c14-19 30-30 52-33 24-3 44 4 61 17 9 7 17 12 27 13l38 4c9 1 15 5 18 12 2 5 1 9-4 10l-13 2c-2-11-11-19-22-19s-20 8-22 19H197c-2-11-11-19-22-19s-20 8-22 19l-19-2c-8-1-12-5-11-13 1-6 3-11 5-15z"/>
-    <circle cx="175" cy="93" r="12"/>
-    <circle cx="273" cy="93" r="12"/>
-    <!-- El barrido que sale hacia la izquierda, la firma del logo. -->
-    <path d="M42 78c22-14 47-23 74-27l-3 11c-24 4-46 12-66 24-4 2-8 1-9-2-1-2 1-5 4-6z"/>
+    <!-- El arco: la silueta del techo y el capó que corona la marca. -->
+    <path d="M22 74C34 40 74 16 132 12c62-4 122 14 160 44 8 6 15 10 24 12l14 3-2 12-18-4c-13-3-22-9-32-17C246 36 192 22 137 25 86 28 51 48 39 78z"/>
+    <!-- Las dos ruedas insinuadas bajo el arco. -->
+    <circle cx="96" cy="80" r="9"/>
+    <circle cx="248" cy="80" r="9"/>
   </g>
-
-  <text x="220" y="130" text-anchor="middle"
+  <text x="170" y="100" text-anchor="middle"
         font-family="Archivo, Arial Black, Helvetica, sans-serif"
-        font-size="42" font-weight="800" letter-spacing="1.5" fill="#ffffff">ALENMOTORS</text>
+        font-size="40" font-weight="800" font-style="italic" letter-spacing="0.5"
+        fill="currentColor">ALENMOTORS</text>
 </svg>
