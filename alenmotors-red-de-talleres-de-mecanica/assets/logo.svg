@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 150" role="img" aria-label="ALENMOTORS">
+  <!-- Reconstrucción vectorial del logo de la tarjeta de ALENMOTORS.
+       Va sobre placa negra a propósito: el logo original es negro sobre blanco y
+       en el modo oscuro del sitio desaparecería. Con la placa se ve igual en los
+       dos temas. Se reemplaza en cuanto el dueño mande su archivo original.
+       La bajada "red de talleres" NO va: no lo es. -->
+  <rect width="440" height="150" rx="18" fill="#12141a"/>
+
+  <!-- Silueta del auto: el trazo dorado que corona la marca en la tarjeta. -->
+  <g fill="#d4a017">
+    <path d="M116 66c14-19 30-30 52-33 24-3 44 4 61 17 9 7 17 12 27 13l38 4c9 1 15 5 18 12 2 5 1 9-4 10l-13 2c-2-11-11-19-22-19s-20 8-22 19H197c-2-11-11-19-22-19s-20 8-22 19l-19-2c-8-1-12-5-11-13 1-6 3-11 5-15z"/>
+    <circle cx="175" cy="93" r="12"/>
+    <circle cx="273" cy="93" r="12"/>
+    <!-- El barrido que sale hacia la izquierda, la firma del logo. -->
+    <path d="M42 78c22-14 47-23 74-27l-3 11c-24 4-46 12-66 24-4 2-8 1-9-2-1-2 1-5 4-6z"/>
+  </g>
+
+  <text x="220" y="130" text-anchor="middle"
+        font-family="Archivo, Arial Black, Helvetica, sans-serif"
+        font-size="42" font-weight="800" letter-spacing="1.5" fill="#ffffff">ALENMOTORS</text>
+</svg>
