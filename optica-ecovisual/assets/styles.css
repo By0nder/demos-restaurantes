@@ -1,10 +1,12 @@
 /* Tema generado automáticamente — colores del cliente */
 :root {
-  --color-primario: #0e7490;
-  --color-secundario: #155e75;
-  --color-acento: #0e7490;
-  --color-fondo: #f7fbfc;
-  --color-texto: #14262b;
+  --color-primario: #155e75;
+  --color-secundario: #0e7490;
+  --color-acento: #0891b2;
+  --color-acento-texto: #17191c;
+  --color-primario-texto: #ffffff;
+  --color-fondo: #f7fafb;
+  --color-texto: #17191c;
 }
 
 /* MODO OSCURO: solo cambian el papel y la tinta; los colores del negocio
