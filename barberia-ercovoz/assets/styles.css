@@ -4,27 +4,26 @@
    variables para poder darlo vuelta en modo oscuro sin tocar el HTML.
    =========================================================================== */
 :root {
-  --color-primario: #9d174d;        /* magenta de la marca */
-  --color-secundario: #701a3f;      /* magenta oscurecido, para degradados */
-  --color-acento: #9d174d;
+  --color-primario: #17161a;        /* negro del logo */
+  --color-secundario: #2f2a20;      /* negro entibiado, para degradados */
+  --color-acento: #c9a227;          /* dorado de las lineas del logo */
 
-  /* Tinta que va ENCIMA del magenta (botones, chips): blanco da 7.9:1. */
-  --color-acento-texto: #ffffff;
+  /* Tinta que va ENCIMA del dorado (botones, chips). */
+  --color-acento-texto: #17191c;    /* tinta ENCIMA del dorado: 7.3:1 */
 
-  /* El magenta como TEXTO sobre el papel claro da 7.6:1, así que acá no hace
-     falta oscurecerlo: es el mismo color de la marca. En oscuro sí cambia. */
-  --color-acento-fuerte: #9d174d;
+  /* El dorado puro no se lee sobre papel claro, así que como TEXTO va una
+     versión oscurecida. En tema oscuro se usa la aclarada. */
+  --color-acento-fuerte: #836a19;  /* dorado como TEXTO sobre papel: 4.9:1 */
 
-  /* El mismo magenta aclarado, para cuando va sobre fondo oscuro: la foto del
-     hero, la franja del salón y el pie. Ahí el magenta de marca se pierde
-     (2.4:1 sobre negro); este rosa da entre 7:1 y 11:1. */
-  --color-acento-claro: #f7b6d0;
+  /* El dorado aclarado, para cuando va sobre fondo oscuro: la foto del hero,
+     la franja del salón y el pie. */
+  --color-acento-claro: #e3c25a;    /* dorado claro, para fondos oscuros: 10.9:1 */
 
-  --color-fondo: #fdf9fa;           /* blanco con una gota de rosa */
-  --color-texto: #241a1e;
+  --color-fondo: #faf8f4;           /* blanco entibiado */
+  --color-texto: #17191c;
   --color-superficie: #ffffff;
-  --color-borde: rgba(157, 23, 77, 0.14);
-  --color-suave: rgba(157, 23, 77, 0.05);
+  --color-borde: rgba(201, 162, 39, 0.20);
+  --color-suave: rgba(201, 162, 39, 0.07);
   --color-titulo: var(--color-primario);
 
   /* ---------------------------------------------------------------------------
@@ -48,9 +47,9 @@
   --color-superficie: #171b21;
   --color-borde: rgba(255, 255, 255, 0.12);
   --color-suave: rgba(255, 255, 255, 0.06);
-  --color-acento-fuerte: #e8639b;   /* 6.0:1 sobre el fondo, 5.5:1 sobre tarjeta */
-  /* El magenta de marca como título sobre fondo negro casi no se lee, así que
-     se usa una versión aclarada del mismo color: se mantiene la identidad. */
+  --color-acento-fuerte: #e3c25a;   /* 10.9:1 sobre el fondo, 10.0:1 sobre tarjeta */
+  /* El negro de marca como título sobre fondo negro no se lee, así que se usa
+     una versión aclarada del mismo color. */
   --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
 }
 
