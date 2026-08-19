@@ -38,7 +38,8 @@
 
   <!-- Monograma provisional como icono de pestaña, para no depender de un
        archivo que todavía no existe. EDITAR: reemplazar por el logo real. -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239d174d'/%3E%3Ctext x='32' y='45' font-family='Archivo,Helvetica,Arial,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EB%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icono-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icono-180.png">
 
   <script>
     // Se aplica el tema antes de pintar nada para que no haya fogonazo blanco
@@ -59,10 +60,10 @@
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
 
-    <!-- EDITAR: pedirle al cliente el logo en PNG con fondo transparente.
-         Mientras tanto va este monograma. -->
+    <!-- Logo tomado de su avatar de redes (150x150). Para impresion o pantallas
+         grandes conviene pedirle el original en alta. -->
     <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
-      <span class="marca-monograma font-display flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-bold" aria-hidden="true">S</span>
+      <img src="assets/logo.png" alt="" width="40" height="40" class="h-10 w-10 shrink-0 rounded-full object-cover">
       <span class="truncate font-semibold text-lg">Salón Ercovoz</span>
     </a>
 
@@ -685,7 +686,7 @@
 <footer class="py-10 bg-gray-900 text-gray-300">
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
-      <span class="marca-monograma font-display flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-bold" aria-hidden="true">S</span>
+      <img src="assets/logo.png" alt="" width="36" height="36" class="h-9 w-9 shrink-0 rounded-full object-cover">
       <p class="text-sm">© 2026 Salón Ercovoz. Todos los derechos reservados.</p>
     </div>
     <p class="text-sm opacity-70">Av. Eduardo de Habich 293, San Martin de Porres · +51 980 572 356</p>
