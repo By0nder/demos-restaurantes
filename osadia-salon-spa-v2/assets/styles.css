@@ -1,20 +1,112 @@
-/* Tema generado automáticamente — colores del cliente */
+/* ===========================================================================
+   OSADIA SALÓN SPA — colores de la marca
+   El logo es una silueta dorada sobre negro, así que la página se arma con
+   esos dos colores y nada más. Todo lo demás (papel, tinta, bordes) sale de
+   variables para poder darlo vuelta en modo oscuro sin tocar el HTML.
+   =========================================================================== */
 :root {
-  --color-primario: #A16207;
-  --color-secundario: #1C1917;
-  --color-fondo: #FAF8F4;
-  --color-texto: #1C1917;
-}
-/* ============================================
-   Estilos base del sitio (independientes del tema)
-   Las variables de color se inyectan arriba en el build.
-   ============================================ */
+  --color-primario: #171a1f;        /* negro del logo */
+  --color-secundario: #2b3038;      /* negro aclarado, solo para degradados */
+  --color-acento: #c79a2e;          /* dorado del logo */
+  --color-acento-texto: #17191c;    /* tinta que va ENCIMA del dorado (6.6:1) */
 
+  /* El dorado de marca sobre papel blanco da 2.6:1 — no se lee. Para texto
+     sobre fondo claro se usa esta versión oscurecida, que da 5.0:1 y sigue
+     siendo el mismo dorado, solo que más tostado. */
+  --color-acento-fuerte: #8a6414;
+
+  --color-fondo: #faf8f4;           /* blanco cálido, no blanco de hospital */
+  --color-texto: #1f2226;
+  --color-superficie: #ffffff;
+  --color-borde: rgba(23, 26, 31, 0.12);
+  --color-suave: rgba(23, 26, 31, 0.04);
+  --color-titulo: var(--color-primario);
+
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-texto: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* MODO OSCURO: solo cambian el papel y la tinta. El negro y el dorado de la
+   marca se respetan, que para eso son de ella. Sobre fondo oscuro el dorado
+   de marca sí se lee (7.2:1), así que el "acento fuerte" vuelve a ser el
+   dorado normal. */
+:root[data-tema="oscuro"] {
+  --color-fondo: #0f1216;
+  --color-texto: #e9ebee;
+  --color-superficie: #171b21;
+  --color-borde: rgba(255, 255, 255, 0.12);
+  --color-suave: rgba(255, 255, 255, 0.06);
+  --color-acento-fuerte: var(--color-acento);
+  /* El primario de esta marca es casi negro: como título sobre fondo oscuro
+     sería invisible, así que se usa una versión aclarada del mismo color. */
+  --color-titulo: color-mix(in srgb, var(--color-primario) 25%, #ffffff);
+}
+
+/* ---------------------------------------------------------------------------
+   BASE
+--------------------------------------------------------------------------- */
 html {
   scroll-behavior: smooth;
 }
 
-/* Animación de aparición al hacer scroll (activada por main.js) */
+body {
+  font-family: var(--font-texto);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Evita que un título quede con una palabra sola colgando en la última línea */
+h1, h2 {
+  text-wrap: balance;
+}
+
+/* El header queda pegado arriba (~68px). Sin esto, al tocar "Servicios" en el
+   menú el título quedaba justo debajo del header, tapado. */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+::selection {
+  background-color: var(--color-primario);
+  color: #ffffff;
+}
+
+/* Nada de transición al cambiar de tema: al animar el fondo del <body>
+   mientras cambia una variable CSS, Chrome se queda con el color viejo y la
+   página queda oscura con las tarjetas blancas encima. */
+
+/* ---------------------------------------------------------------------------
+   FOCO VISIBLE PARA TECLADO
+   Solo `:focus-visible` (y no `:focus`) para que el recuadro aparezca cuando
+   se navega con Tab y no cada vez que alguien toca con el dedo.
+--------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-acento-fuerte);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sobre el hero, las franjas negras y el pie el dorado oscuro se pierde:
+   ahí el contorno va en blanco, que siempre contrasta. */
+#hero a:focus-visible,
+#salon a:focus-visible,
+#contacto a:focus-visible,
+footer a:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   ANIMACIÓN DE APARICIÓN AL HACER SCROLL (la activa main.js)
+--------------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -26,7 +118,154 @@ html {
   transform: translateY(0);
 }
 
-/* Respeta la preferencia de menos movimiento */
+/* ---------------------------------------------------------------------------
+   HERO SIN FOTOS
+   El salón todavía no tiene fotos propias y poner fotos de banco de imágenes
+   es peor que no poner ninguna: se nota y no es su local. Así que el fondo se
+   arma con el negro y el dorado de la marca, y un brillo que se mueve despacio
+   para que no se vea plano. Solo se animan `opacity` y `transform`, que el
+   navegador resuelve en la GPU: no traba ni en un celular de gama baja.
+--------------------------------------------------------------------------- */
+.hero-fondo {
+  background:
+    radial-gradient(120% 90% at 12% 0%, rgba(199, 154, 46, 0.30) 0%, rgba(199, 154, 46, 0) 55%),
+    radial-gradient(100% 80% at 88% 100%, rgba(199, 154, 46, 0.18) 0%, rgba(199, 154, 46, 0) 60%),
+    linear-gradient(165deg, #22262d 0%, #171a1f 45%, #0c0e11 100%);
+}
+
+.hero-brillo {
+  background: radial-gradient(58% 55% at 50% 32%, rgba(199, 154, 46, 0.22) 0%, rgba(199, 154, 46, 0) 70%);
+  animation: brillo 16s ease-in-out infinite alternate;
+  will-change: opacity, transform;
+}
+
+@keyframes brillo {
+  from { opacity: 0.35; transform: translate3d(-4%, 0, 0) scale(1); }
+  to   { opacity: 0.9;  transform: translate3d(4%, 0, 0) scale(1.08); }
+}
+
+/* Hilo dorado que cierra el hero por abajo */
+.hilo-dorado {
+  background: linear-gradient(
+    to right,
+    rgba(199, 154, 46, 0) 0%,
+    rgba(199, 154, 46, 0.85) 50%,
+    rgba(199, 154, 46, 0) 100%
+  );
+}
+
+/* Franja de datos reales bajo el hero (dirección, reseñas: lo que sí sabemos) */
+.franja-dato {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------------------------------------------------------------------------
+   TARJETAS
+   Se levantan un poco con el mouse y marcan el borde en dorado. En celular no
+   hay hover, así que el peso visual lo lleva la línea dorada de arriba.
+--------------------------------------------------------------------------- */
+.tarjeta {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-acento);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.45);
+}
+
+/* Monograma provisional del header y del pie */
+.marca-monograma {
+  background: var(--color-primario);
+  color: var(--color-acento);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-acento) 45%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+   MARCADOR "EDITAR"
+   Esta es una demo: donde falta un dato de la clienta se deja dicho, a la
+   vista, en vez de inventarlo. Van con borde punteado para que se note que
+   no forman parte del texto final.
+--------------------------------------------------------------------------- */
+.editar {
+  display: inline-block;
+  border: 1px dashed color-mix(in srgb, var(--color-acento) 55%, transparent);
+  background: color-mix(in srgb, var(--color-acento) 10%, transparent);
+  /* Dorado todavía más tostado que el "acento fuerte": estos avisos van en
+     letra chica (13px) y tienen que pasar 4.5:1 sobre su propio fondo. */
+  color: #7a5811;
+  border-radius: 0.6rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+:root[data-tema="oscuro"] .editar {
+  color: var(--color-acento);
+}
+
+.editar b {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Sobre fondo oscuro (franja negra de contacto) el marcador se aclara */
+.editar-claro {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Hueco donde irán las fotos propias del local */
+.marco-foto {
+  border: 2px dashed color-mix(in srgb, var(--color-acento) 45%, transparent);
+  background: color-mix(in srgb, var(--color-acento) 6%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+   PREGUNTAS FRECUENTES
+   Safari sigue pintando su propio triangulito aunque el <summary> tenga
+   list-style: none.
+--------------------------------------------------------------------------- */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   FORMULARIO DE CITA
+--------------------------------------------------------------------------- */
+.campo-cita:focus {
+  border-color: var(--color-acento);
+}
+
+.campo-cita::placeholder {
+  color: color-mix(in srgb, var(--color-texto) 45%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+   BARRA DE ACCIÓN EN EL CELULAR
+   Reemplaza al botón flotante en pantallas chicas: ocupa el ancho completo,
+   el pulgar cae justo encima y suma "cómo llegar", que es la otra cosa que la
+   gente busca. `env(safe-area-inset-bottom)` evita quedar debajo de la barra
+   de gestos del iPhone.
+--------------------------------------------------------------------------- */
+.barra-movil {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+body.con-barra-movil {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  body.con-barra-movil {
+    padding-bottom: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   MENOS MOVIMIENTO PARA QUIEN LO PIDE
+--------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -36,9 +275,11 @@ html {
     transform: none;
     transition: none;
   }
-}
-
-::selection {
-  background-color: var(--color-primario);
-  color: #ffffff;
+  .hero-brillo {
+    animation: none;
+    opacity: 0.6;
+  }
+  .tarjeta:hover {
+    transform: none;
+  }
 }

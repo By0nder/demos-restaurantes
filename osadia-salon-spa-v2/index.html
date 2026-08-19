@@ -3,605 +3,939 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Osadia Salón Spa — Su cabello en manos que saben</title>
-  <meta name="description" content="Salón y spa de belleza. Trabajamos con líneas profesionales de tratamiento capilar y atendemos con cita para que nadie espere.">
-  
-  
-    <meta name="robots" content="noindex, nofollow">
-  
+  <title>Osadia Salón Spa — Salón de belleza en San Miguel</title>
+  <meta name="description" content="Corte, color, mechas, keratina y peinados para eventos. También vendemos los productos que usamos. Av. Rafael Escardo 599, San Miguel, Lima.">
+
+  <!-- Página de demostración: no queremos que aparezca en Google antes de que la clienta la apruebe. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta property="og:title" content="Osadia Salón Spa — Salón de belleza en San Miguel">
+  <meta property="og:description" content="Corte, color, mechas, keratina y peinados para eventos. También vendemos los productos que usamos. Av. Rafael Escardo 599, San Miguel, Lima.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta property="og:site_name" content="Osadia Salón Spa">
+  <!-- EDITAR: falta la imagen para compartir (og.jpg). Sale de una foto propia del local. -->
+
+  <meta name="theme-color" content="#171a1f">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BeautySalon","name":"Osadia Salón Spa","description":"Salón de belleza y spa en San Miguel: corte, color, mechas, keratina y peinados para eventos.","telephone":"+51 960 613 845","address":{"@type":"PostalAddress","streetAddress":"Av. Rafael Escardo 599","addressLocality":"San Miguel","postalCode":"15088","addressRegion":"Lima","addressCountry":"PE"}}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- Monograma provisional como icono de pestaña, para no depender de un
+       archivo que todavía no existe. EDITAR: reemplazar por el logo real. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171a1f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' text-anchor='middle' fill='%23c79a2e'%3EO%3C/text%3E%3C/svg%3E">
+
+  <script>
+    // Se aplica el tema antes de pintar nada para que no haya fogonazo blanco
+    // en quien navega en oscuro.
+    (function () {
+      try {
+        var elegido = localStorage.getItem("tema");
+        var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (elegido === "oscuro" || (!elegido && oscuroSistema)) {
+          document.documentElement.setAttribute("data-tema", "oscuro");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body class="bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
 
-  <header class="sticky top-0 z-50 bg-[var(--color-fondo)]/90 backdrop-blur border-b border-black/5 shadow-sm">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3">
-      
-        <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
-          O
-        </span>
-      
-      <span class="font-semibold text-lg">Osadia Salón Spa</span>
+<header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
+
+    <!-- EDITAR: pedirle a la clienta el logo (silueta dorada sobre negro) en PNG
+         con fondo transparente. Mientras tanto va este monograma. -->
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
+      <span class="marca-monograma font-display flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lg font-bold" aria-hidden="true">O</span>
+      <span class="truncate font-semibold text-lg">Osadia Salón Spa</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-      
-      
-        <a href="#menu" class="hover:opacity-70 transition-opacity">Menú</a>
-      
-        <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
-      
-        <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
-      
-        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Testimonios</a>
-      
-        <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
-      
+    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
+      <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
+      <a href="#productos" class="hover:opacity-70 transition-opacity">Productos</a>
+      <a href="#cita" class="hover:opacity-70 transition-opacity">Pedir cita</a>
+      <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
+      <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
+      <a href="https://wa.me/51960613845?text=Hola%20Osadia%20Sal%C3%B3n%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
+         target="_blank" rel="noopener"
+         class="inline-flex min-h-[44px] items-center rounded-full px-5 font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+         style="background: var(--color-acento)">
+        Escríbanos
+      </a>
     </nav>
 
-    <button id="menu-toggle" class="md:hidden p-2" aria-label="Abrir menú">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <button id="tema-toggle" type="button"
+            class="ml-auto lg:ml-4 mr-1 flex h-11 w-11 items-center justify-center rounded-full hover:bg-[var(--color-suave)] transition-colors"
+            aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
+      <svg data-icono="luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      <svg data-icono="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    </button>
+
+    <button id="menu-toggle" type="button" class="lg:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden md:hidden border-t border-black/5 px-4 pb-4">
-    
-      <a href="#menu" class="block py-2 text-sm font-medium">Menú</a>
-    
-      <a href="#servicios" class="block py-2 text-sm font-medium">Servicios</a>
-    
-      <a href="#galeria" class="block py-2 text-sm font-medium">Galería</a>
-    
-      <a href="#testimonios" class="block py-2 text-sm font-medium">Testimonios</a>
-    
-      <a href="#contacto" class="block py-2 text-sm font-medium">Contacto</a>
-    
+  <nav id="mobile-menu" class="hidden lg:hidden border-t border-[var(--color-borde)] px-4 pb-4">
+    <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
+    <a href="#productos" class="flex items-center min-h-[44px] py-2 text-base font-medium">Productos</a>
+    <a href="#cita" class="flex items-center min-h-[44px] py-2 text-base font-medium">Pedir cita</a>
+    <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
+    <a href="#contacto" class="flex items-center min-h-[44px] py-2 text-base font-medium">Contacto</a>
   </nav>
 </header>
 
+<main>
 
-  <main>
-    
-      <section id="hero" class="relative overflow-hidden">
-  
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))"></div>
-  
+  <!-- ======================= HERO ======================= -->
+  <section id="hero" class="hero-fondo relative overflow-hidden">
+    <div class="hero-brillo absolute inset-0" aria-hidden="true"></div>
 
-  <div class="relative max-w-6xl mx-auto px-4 py-24 md:py-36 text-center text-white">
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight reveal">Osadia Salón Spa</h1>
-    
-      <p class="mt-4 text-lg md:text-2xl opacity-90 max-w-2xl mx-auto reveal">Cuidado capilar profesional y estilos que sí le quedan</p>
-    
-    
-      <p class="mt-3 text-base opacity-75 max-w-xl mx-auto reveal">Salón y spa de belleza. Trabajamos con líneas profesionales de tratamiento capilar y atendemos con cita para que nadie espere.</p>
-    
-    <a href="#contacto" class="reveal inline-block mt-8 px-8 py-3 rounded-full font-semibold text-[var(--color-primario)] bg-white hover:scale-105 transition-transform shadow-lg">
-      Reservar por WhatsApp
-    </a>
-  </div>
-</section>
+    <div class="relative max-w-6xl mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24 text-white">
+      <div class="max-w-3xl">
+        <p class="reveal inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-sm font-medium ring-1 ring-white/25">
+          <span class="font-bold">4.3</span><span aria-hidden="true" style="color: var(--color-acento)">★</span>
+          <span>57 reseñas en Google</span>
+        </p>
 
-    
-      <section id="menu" class="py-20 bg-black/[0.02]">
-  <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Productos</h2>
+        <h1 class="mt-5 text-4xl md:text-6xl font-bold leading-[1.08] reveal">Osadia Salón Spa</h1>
 
-    
-    
-      <div class="mt-12 reveal">
-        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-primario); color: var(--color-primario)">
-          Shampoos y acondicionadores
-        </h3>
-        <ul class="mt-6 space-y-5">
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">Bed Head Self Absorbed — shampoo</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: confirmar presentación (ml) y para qué tipo de cabello lo recomiendan.</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20Bed%20Head%20Self%20Absorbed%20%E2%80%94%20shampoo"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">Bed Head Self Absorbed — acondicionador</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: confirmar presentación y beneficio principal.</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20Bed%20Head%20Self%20Absorbed%20%E2%80%94%20acondicionador"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">Recamier línea IN</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: confirmar variante exacta (nutrición, reconstrucción, color).</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20Recamier%20l%C3%ADnea%20IN"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-        </ul>
+        <p class="mt-4 text-lg md:text-2xl font-medium text-white/90 reveal">
+          Corte, color y tratamiento capilar en San Miguel
+        </p>
+
+        <p class="mt-3 text-base md:text-lg text-white/75 max-w-xl reveal">
+          Escríbanos por WhatsApp con lo que tiene en mente y le decimos qué le conviene, cuánto demora y cuánto sale, antes de que venga.
+        </p>
+
+        <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center reveal">
+          <a href="https://wa.me/51960613845?text=Hola%20Osadia%20Sal%C3%B3n%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20reservar%20una%20cita."
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-full font-semibold text-[var(--color-acento-texto)] shadow-lg shadow-black/30 hover:brightness-110 hover:scale-[1.02] transition"
+             style="background: var(--color-acento)">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+            Pedir mi cita por WhatsApp
+          </a>
+          <a href="#servicios"
+             class="inline-flex items-center justify-center min-h-[52px] px-8 rounded-full font-semibold text-white ring-1 ring-white/45 bg-white/10 backdrop-blur hover:bg-white/20 transition">
+            Ver estilos y servicios
+          </a>
+        </div>
       </div>
-    
-      <div class="mt-12 reveal">
-        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-primario); color: var(--color-primario)">
-          Mascarillas y tratamientos
-        </h3>
-        <ul class="mt-6 space-y-5">
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">L&#39;Oréal Metal Detox — mascarilla</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: describir para qué sirve en palabras de la clienta.</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20L&#39;Or%C3%A9al%20Metal%20Detox%20%E2%80%94%20mascarilla"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">Mascarilla de nutrición profunda</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: confirmar marca y presentación.</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20Mascarilla%20de%20nutrici%C3%B3n%20profunda"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">Ampollas y tratamiento intensivo</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: confirmar marca, presentación y precio.</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20Ampollas%20y%20tratamiento%20intensivo"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-        </ul>
-      </div>
-    
-      <div class="mt-12 reveal">
-        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-primario); color: var(--color-primario)">
-          Cuidado personal
-        </h3>
-        <ul class="mt-6 space-y-5">
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">Protector térmico</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: confirmar marca y presentación.</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20Protector%20t%C3%A9rmico"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">Sérum y aceite capilar</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: confirmar marca y presentación.</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20S%C3%A9rum%20y%20aceite%20capilar"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-            <li class="flex items-baseline justify-between gap-4">
-              <div>
-                <p class="font-semibold">EDITAR: agregar otros productos del catálogo</p>
-                
-                  <p class="text-sm opacity-70">EDITAR: pedirle a la clienta la lista completa con precios.</p>
-                
-                
-                
-                  <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20pedir%3A%20EDITAR%3A%20agregar%20otros%20productos%20del%20cat%C3%A1logo"
-                     target="_blank" rel="noopener"
-                     class="mt-1 inline-flex items-center gap-1 text-xs font-semibold opacity-80 hover:opacity-100 hover:underline"
-                     style="color: var(--color-primario)">
-                    Pedir por WhatsApp <span aria-hidden="true">&rarr;</span>
-                  </a>
-                
-              </div>
-              <span class="font-bold whitespace-nowrap" style="color: var(--color-primario)">Consultar</span>
-            </li>
-          
-        </ul>
-      </div>
-    
-  </div>
-</section>
-
-    
-      <section id="servicios" class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Estilos y servicios</h2>
-    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      
-      
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">✂️</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Corte de cabello</h3>
-          
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Corte con asesoría según su tipo de rostro y cabello.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">EDITAR: desde S/</p>
-          
-          
-          
-            <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Corte%20de%20cabello"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
-      
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">💇‍♀️</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Corte con lavado y peinado</h3>
-          
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Lavado, corte y peinado terminado. Sale lista de aquí.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">EDITAR: desde S/</p>
-          
-          
-          
-            <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Corte%20con%20lavado%20y%20peinado"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
-      
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">🎨</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Corte, lavado y tinte</h3>
-          
-            <p class="mt-2 text-sm leading-relaxed opacity-80">El combo completo: corte, lavado y color en una sola cita.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">EDITAR: desde S/</p>
-          
-          
-          
-            <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Corte%2C%20lavado%20y%20tinte"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
-      
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">🖌️</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Tinte y retoque de raíz</h3>
-          
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Color parejo con productos de línea profesional.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">EDITAR: desde S/</p>
-          
-          
-          
-            <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Tinte%20y%20retoque%20de%20ra%C3%ADz"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
-      
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">✨</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Mechas y balayage</h3>
-          
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Iluminación y mechas trabajadas a mano, cuidando el cabello.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">EDITAR: desde S/</p>
-          
-          
-          
-            <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Mechas%20y%20balayage"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
-      
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">💫</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Keratina y alisado</h3>
-          
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Tratamiento de keratina, dura varios meses.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">EDITAR: desde S/</p>
-          
-          
-          
-            <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Keratina%20y%20alisado"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
-      
-        <div class="reveal flex flex-col rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-lg transition-shadow bg-white">
-          
-            <div class="text-4xl">👰</div>
-          
-          <h3 class="mt-4 text-xl font-semibold" style="color: var(--color-primario)">Peinado para eventos</h3>
-          
-            <p class="mt-2 text-sm leading-relaxed opacity-80">Novias, quinceañeras y sesiones de fotos. Con cita previa.</p>
-          
-          
-            <p class="mt-4 font-bold text-lg">EDITAR: desde S/</p>
-          
-          
-          
-            <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Peinado%20para%20eventos"
-               target="_blank" rel="noopener"
-               class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
-               style="color: var(--color-primario)">
-              Consultar por WhatsApp
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          
-        </div>
-      
     </div>
-  </div>
-</section>
 
-    
-      <section id="galeria" class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
-    <div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
-      
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&amp;q=80" alt="Foto de Osadia Salón Spa" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
-      
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&amp;q=80" alt="Foto de Osadia Salón Spa" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
-      
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&amp;q=80" alt="Foto de Osadia Salón Spa" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
-      
+    <div class="hilo-dorado relative h-px" aria-hidden="true"></div>
+
+    <div class="relative border-t franja-dato bg-black/35 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 text-white/90 text-sm md:text-base">
+        <p class="flex items-start gap-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Av. Rafael Escardo 599, San Miguel, Lima</span>
+        </p>
+        <p class="flex items-start gap-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+          <span>Le respondemos por WhatsApp</span>
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-    
-      <section id="testimonios" class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen nuestras clientas</h2>
-    <div class="mt-12 grid gap-8 md:grid-cols-2">
-      
-        <figure class="reveal rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
-          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+  <!-- ======================= LO QUE HACEMOS (franja negra) ======================= -->
+  <section id="salon" class="py-20" style="background: var(--color-primario)">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="text-center text-sm font-bold uppercase tracking-[0.2em] reveal" style="color: var(--color-acento)">
+        En el salón
+      </p>
+      <h2 class="mt-3 text-center text-3xl md:text-4xl font-bold reveal" style="color: #ffffff">
+        Todo para su cabello en un solo lugar
+      </h2>
+      <p class="mt-4 text-center text-lg reveal" style="color: rgba(255,255,255,0.72)">
+        Del corte de siempre al cambio de color que viene pensando hace meses. Y si le gustó cómo le quedó, se lleva el producto para mantenerlo en casa.
+      </p>
+
+      <div class="mt-10 grid gap-3 sm:grid-cols-2 reveal">
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span class="text-base font-medium" style="color: #ffffff">Corte, lavado y peinado</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span class="text-base font-medium" style="color: #ffffff">Tinte, retoque de raíz y color</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span class="text-base font-medium" style="color: #ffffff">Mechas y balayage</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span class="text-base font-medium" style="color: #ffffff">Keratina y alisado</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span class="text-base font-medium" style="color: #ffffff">Peinados para novias y quinceañeras</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span class="text-base font-medium" style="color: #ffffff">Venta de productos de línea profesional</span>
+        </div>
+      </div>
+
+      <div class="mt-10 grid gap-6 border-t pt-10 sm:grid-cols-2 lg:grid-cols-3 reveal" style="border-color: rgba(255,255,255,0.14)">
+        <div>
+          <h3 class="text-base font-bold" style="color: var(--color-acento)">Primero conversamos</h3>
+          <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Cuéntenos qué quiere y cómo tiene el cabello hoy. Le decimos qué se puede hacer y qué conviene esperar.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold" style="color: var(--color-acento)">Productos de línea profesional</h3>
+          <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Trabajamos con Bed Head de TIGI, L'Oréal Metal Detox y Recamier línea IN, y los mismos productos se los puede llevar.</p>
+        </div>
+        <div>
+          <h3 class="text-base font-bold" style="color: var(--color-acento)">El precio, antes de empezar</h3>
+          <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Depende del largo y del trabajo, así que se lo decimos por WhatsApp antes de que venga. Nada de sorpresas al final.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 text-center reveal">
+        <a href="#cita"
+           class="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full px-8 text-lg font-bold transition hover:brightness-110"
+           style="background: var(--color-acento); color: var(--color-acento-texto)">
+          Pedir mi cita
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ESTILOS Y SERVICIOS ======================= -->
+  <section id="servicios" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Estilos y servicios</h2>
+      <p class="mt-4 text-center text-lg opacity-75 max-w-2xl mx-auto reveal">
+        El precio de cada uno depende del largo de su cabello y de lo que haya que hacer. Escríbanos y se lo decimos al toque.
+      </p>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                   style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento-fuerte)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg>
+              </div>
+              <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                    style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Corte de cabello</h3>
+            <p class="mt-2 text-base leading-relaxed opacity-75">Corte con asesoría según su tipo de rostro y de cabello. Le decimos qué le va a quedar bien antes de tocar la tijera.</p>
+            <a href="https://wa.me/51960613845?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Corte%20de%20cabello"
+               target="_blank" rel="noopener"
+               class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+               style="background: var(--color-acento)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                   style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento-fuerte)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+              </div>
+              <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                    style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Corte con lavado y peinado</h3>
+            <p class="mt-2 text-base leading-relaxed opacity-75">Lavado, corte y peinado terminado. Sale del salón lista, sin tener que retocarse en casa.</p>
+            <a href="https://wa.me/51960613845?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Corte%20con%20lavado%20y%20peinado"
+               target="_blank" rel="noopener"
+               class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+               style="background: var(--color-acento)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                   style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento-fuerte)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+              </div>
+              <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                    style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Corte, lavado y tinte</h3>
+            <p class="mt-2 text-base leading-relaxed opacity-75">El combo completo en una sola visita: corte, lavado y color. Ideal cuando quiere cambiar de una vez.</p>
+            <a href="https://wa.me/51960613845?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Corte%2C%20lavado%20y%20tinte"
+               target="_blank" rel="noopener"
+               class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+               style="background: var(--color-acento)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                   style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento-fuerte)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M3 3h.01"/><path d="M7 5h.01"/><path d="M11 7h.01"/><path d="M3 7h.01"/><path d="M7 9h.01"/><path d="M3 11h.01"/><rect width="4" height="4" x="15" y="5"/><path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2"/><path d="m13 14 8-2"/><path d="m13 19 8-2"/></svg>
+              </div>
+              <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                    style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Tinte y retoque de raíz</h3>
+            <p class="mt-2 text-base leading-relaxed opacity-75">Color parejo de punta a raíz con productos de línea profesional. También solo el retoque, si el largo todavía está bien.</p>
+            <a href="https://wa.me/51960613845?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Tinte%20y%20retoque%20de%20ra%C3%ADz"
+               target="_blank" rel="noopener"
+               class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+               style="background: var(--color-acento)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                   style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento-fuerte)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+              </div>
+              <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                    style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Mechas y balayage</h3>
+            <p class="mt-2 text-base leading-relaxed opacity-75">Iluminación y mechas trabajadas a mano, cuidando el cabello. Le mostramos hasta dónde se puede llegar en una sola sesión.</p>
+            <a href="https://wa.me/51960613845?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Mechas%20y%20balayage"
+               target="_blank" rel="noopener"
+               class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+               style="background: var(--color-acento)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                   style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento-fuerte)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+              </div>
+              <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                    style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Keratina y alisado</h3>
+            <p class="mt-2 text-base leading-relaxed opacity-75">Tratamiento de keratina para dejar el cabello liso y manejable. Le explicamos cómo cuidarlo para que dure.</p>
+            <a href="https://wa.me/51960613845?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Keratina%20y%20alisado"
+               target="_blank" rel="noopener"
+               class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+               style="background: var(--color-acento)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                   style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento-fuerte)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></svg>
+              </div>
+              <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold"
+                    style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+            </div>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Peinado para eventos</h3>
+            <p class="mt-2 text-base leading-relaxed opacity-75">Novias, quinceañeras y sesiones de fotos. Conviene coordinar la fecha con tiempo para asegurar el horario.</p>
+            <a href="https://wa.me/51960613845?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Peinado%20para%20eventos"
+               target="_blank" rel="noopener"
+               class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+               style="background: var(--color-acento)">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+              Consultar
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PRODUCTOS (en tres partes) ======================= -->
+  <section id="productos" class="py-20" style="background: var(--color-suave)">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Productos que vendemos</h2>
+      <p class="mt-4 text-center text-lg opacity-75 max-w-2xl mx-auto reveal">
+        Los mismos que usamos en el salón, para que mantenga el resultado en casa. Escríbanos por WhatsApp y le confirmamos stock y precio.
+      </p>
+
+      <!-- 1 de 3 -->
+      <div class="mt-14 reveal">
+        <div class="flex items-center gap-3 border-b-2 pb-3" style="border-color: var(--color-acento)">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
+                style="background: color-mix(in srgb, var(--color-acento) 16%, transparent); color: var(--color-acento-fuerte)" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+          </span>
+          <h3 class="text-2xl font-bold" style="color: var(--color-titulo)">Shampoos y acondicionadores</h3>
+        </div>
+
+        <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">Bed Head Self Absorbed — shampoo</p>
+            <p class="mt-1 text-sm opacity-70">Línea TIGI. Para cabello que necesita hidratación diaria.</p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Bed%20Head%20Self%20Absorbed%20%E2%80%94%20shampoo"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">Bed Head Self Absorbed — acondicionador</p>
+            <p class="mt-1 text-sm opacity-70">El compañero del shampoo de la misma línea.</p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Bed%20Head%20Self%20Absorbed%20%E2%80%94%20acondicionador"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">Recamier línea IN</p>
+            <p class="mt-1"><span class="editar"><b>EDITAR:</b> confirmar qué productos de la línea IN tiene (shampoo, acondicionador, ambos).</span></p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Recamier%20l%C3%ADnea%20IN"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">Shampoo para cabello teñido</p>
+            <p class="mt-1"><span class="editar"><b>EDITAR:</b> confirmar marca y presentación.</span></p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Shampoo%20para%20cabello%20te%C3%B1ido"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2 de 3 -->
+      <div class="mt-14 reveal">
+        <div class="flex items-center gap-3 border-b-2 pb-3" style="border-color: var(--color-acento)">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
+                style="background: color-mix(in srgb, var(--color-acento) 16%, transparent); color: var(--color-acento-fuerte)" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.58 16.5h12.85"/></svg>
+          </span>
+          <h3 class="text-2xl font-bold" style="color: var(--color-titulo)">Mascarillas y tratamientos</h3>
+        </div>
+
+        <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">L'Oréal Metal Detox — mascarilla</p>
+            <p class="mt-1 text-sm opacity-70">Pensada para cabello con color o decoloración.</p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20L%27Or%C3%A9al%20Metal%20Detox%20%E2%80%94%20mascarilla"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">Mascarilla de nutrición profunda</p>
+            <p class="mt-1"><span class="editar"><b>EDITAR:</b> confirmar marca y presentación.</span></p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Mascarilla%20de%20nutrici%C3%B3n%20profunda"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">Ampollas y tratamiento intensivo</p>
+            <p class="mt-1"><span class="editar"><b>EDITAR:</b> confirmar marca, presentación y para qué tipo de cabello.</span></p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Ampollas%20y%20tratamiento%20intensivo"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3 de 3 -->
+      <div class="mt-14 reveal">
+        <div class="flex items-center gap-3 border-b-2 pb-3" style="border-color: var(--color-acento)">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
+                style="background: color-mix(in srgb, var(--color-acento) 16%, transparent); color: var(--color-acento-fuerte)" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg>
+          </span>
+          <h3 class="text-2xl font-bold" style="color: var(--color-titulo)">Cuidado personal</h3>
+        </div>
+
+        <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">Protector térmico</p>
+            <p class="mt-1 text-sm opacity-70">Para usar antes de la plancha o el secador.</p>
+            <p class="mt-2"><span class="editar"><b>EDITAR:</b> confirmar marca y presentación.</span></p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20Protector%20t%C3%A9rmico"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">Sérum y aceite capilar</p>
+            <p class="mt-1 text-sm opacity-70">Para puntas secas y para dar brillo.</p>
+            <p class="mt-2"><span class="editar"><b>EDITAR:</b> confirmar marca y presentación.</span></p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20S%C3%A9rum%20y%20aceite%20capilar"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+
+          <li class="tarjeta rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-5 shadow-sm sm:col-span-2">
+            <p class="text-lg font-semibold" style="color: var(--color-titulo)">El resto del catálogo</p>
+            <p class="mt-1"><span class="editar"><b>EDITAR:</b> pedirle a la clienta la lista completa de productos que vende, con marca y presentación.</span></p>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span class="rounded-full px-3 py-1 text-sm font-bold" style="background: var(--color-suave); color: var(--color-titulo)">Consultar</span>
+              <a href="https://wa.me/51960613845?text=Hola%2C%20quisiera%20consultar%20por%3A%20otros%20productos%20del%20cat%C3%A1logo"
+                 target="_blank" rel="noopener"
+                 class="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-4 text-sm font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1rem;height:1rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Preguntar
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PEDIR CITA ======================= -->
+  <section id="cita" class="py-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Pida su cita en 1 minuto</h2>
+      <p class="mt-4 text-center text-lg opacity-75 reveal">
+        Llene estos datos y le respondemos por WhatsApp con el horario disponible y cuánto sale.
+      </p>
+
+      <form id="form-cita" class="tarjeta reveal mt-10 rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-6 sm:p-8 shadow-sm" novalidate>
+        <div class="grid gap-5 sm:grid-cols-2">
+
+          <div class="sm:col-span-2">
+            <label for="cita-servicio" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Qué se quiere hacer? <span style="color: var(--color-acento-fuerte)">*</span>
+            </label>
+            <select id="cita-servicio" name="servicio" data-etiqueta="Servicio" data-requerido
+                    class="campo-cita mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+              <option value="">Seleccione…</option>
+              <option value="Corte de cabello">Corte de cabello</option>
+              <option value="Corte con lavado y peinado">Corte con lavado y peinado</option>
+              <option value="Corte, lavado y tinte">Corte, lavado y tinte</option>
+              <option value="Tinte y retoque de raíz">Tinte y retoque de raíz</option>
+              <option value="Mechas y balayage">Mechas y balayage</option>
+              <option value="Keratina y alisado">Keratina y alisado</option>
+              <option value="Peinado para eventos">Peinado para eventos</option>
+              <option value="Todavía no sé, quisiera que me aconsejen">Todavía no sé, quisiera que me aconsejen</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cita-largo" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Largo del cabello <span style="color: var(--color-acento-fuerte)">*</span>
+            </label>
+            <p class="mt-0.5 text-xs opacity-60">De esto depende el tiempo y el precio</p>
+            <select id="cita-largo" name="largo" data-etiqueta="Largo del cabello" data-requerido
+                    class="campo-cita mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+              <option value="">Seleccione…</option>
+              <option value="Corto">Corto</option>
+              <option value="A los hombros">A los hombros</option>
+              <option value="Largo">Largo</option>
+              <option value="Muy largo">Muy largo</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cita-color" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Tiene color o decoloración?
+            </label>
+            <p class="mt-0.5 text-xs opacity-60">Aunque sea de hace meses</p>
+            <select id="cita-color" name="color" data-etiqueta="Color anterior"
+                    class="campo-cita mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+              <option value="">Seleccione…</option>
+              <option value="Sí, tinte">Sí, tinte</option>
+              <option value="Sí, mechas o decoloración">Sí, mechas o decoloración</option>
+              <option value="No, cabello natural">No, cabello natural</option>
+              <option value="No estoy segura">No estoy segura</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cita-dia" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Qué día le queda mejor? <span style="color: var(--color-acento-fuerte)">*</span>
+            </label>
+            <input id="cita-dia" name="dia" data-etiqueta="Día que le queda mejor" data-requerido type="text"
+                   placeholder="Martes por la tarde"
+                   class="campo-cita mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+          </div>
+
+          <div>
+            <label for="cita-nombre" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Su nombre
+            </label>
+            <p class="mt-0.5 text-xs opacity-60">Para saber a quién esperamos</p>
+            <input id="cita-nombre" name="nombre" data-etiqueta="Nombre" type="text"
+                   autocomplete="given-name" placeholder="Su nombre"
+                   class="campo-cita mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+          </div>
+
+          <div class="sm:col-span-2">
+            <label for="cita-detalle" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Algo más que debamos saber?
+            </label>
+            <textarea id="cita-detalle" name="detalle" data-etiqueta="Detalle" rows="3"
+                      placeholder="Quiero aclararme el color, tengo el cabello maltratado por la plancha, voy a un matrimonio el sábado…"
+                      class="campo-cita mt-2 w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 py-3 text-base"></textarea>
+          </div>
+        </div>
+
+        <p id="cita-error" class="mt-5 hidden rounded-xl px-4 py-3 text-sm font-medium"
+           style="background: color-mix(in srgb, var(--color-acento) 16%, transparent); color: var(--color-titulo)"></p>
+
+        <button type="submit"
+                class="mt-6 flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full bg-[#25D366] text-lg font-bold text-[#0b3d20] transition hover:brightness-105">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+          Pedir mi cita por WhatsApp
+        </button>
+
+        <p class="mt-3 text-center text-sm opacity-65">
+          No se envía a ningún correo: se abre su WhatsApp con el mensaje ya escrito.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======================= FOTOS DEL LOCAL (pendiente) ======================= -->
+  <!-- A propósito NO se pusieron fotos de banco de imágenes: se nota que no son
+       del salón y le quita seriedad a la página. Este hueco se llena con fotos
+       propias apenas la clienta las mande. -->
+  <section id="fotos" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Fotos del salón</h2>
+      <p class="mt-4 text-center text-base opacity-75 max-w-2xl mx-auto reveal">
+        <span class="editar"><b>EDITAR:</b> fotos propias del local y de trabajos hechos (mínimo 3, tomadas con el celular sirve). No se usan fotos de internet.</span>
+      </p>
+
+      <div class="mt-10 grid gap-4 grid-cols-1 sm:grid-cols-3">
+        <div class="marco-foto reveal flex aspect-[4/3] items-center justify-center rounded-xl p-6 text-center">
+          <span class="text-sm font-semibold" style="color: var(--color-acento-fuerte)">Foto del local</span>
+        </div>
+        <div class="marco-foto reveal flex aspect-[4/3] items-center justify-center rounded-xl p-6 text-center">
+          <span class="text-sm font-semibold" style="color: var(--color-acento-fuerte)">Un trabajo terminado</span>
+        </div>
+        <div class="marco-foto reveal flex aspect-[4/3] items-center justify-center rounded-xl p-6 text-center">
+          <span class="text-sm font-semibold" style="color: var(--color-acento-fuerte)">El equipo del salón</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= RESEÑAS ======================= -->
+  <section id="testimonios" class="py-20" style="background: var(--color-suave)">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen en Google</h2>
+
+      <p class="mt-4 flex flex-wrap items-center justify-center gap-2 text-lg reveal">
+        <span class="font-bold" style="color: var(--color-titulo)">4.3</span>
+        <span aria-hidden="true" style="color: var(--color-acento-fuerte)">★★★★</span>
+        <span class="opacity-75">· 57 reseñas en Google</span>
+      </p>
+
+      <!-- Las reseñas reales están en Google. Acá van parafraseadas, nunca inventadas. -->
+      <div class="mt-12 grid gap-8 md:grid-cols-3">
+        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
+          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
           </svg>
-          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"EDITAR: parafrasear una reseña real de Google Maps."</blockquote>
+          <blockquote class="mt-4 text-sm leading-relaxed">
+            <span class="editar"><b>EDITAR:</b> parafrasear una reseña real de Google.</span>
+          </blockquote>
           <figcaption class="mt-5 flex items-center gap-3">
-            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
-              E
-            </span>
+            <span class="marca-monograma h-9 w-9 rounded-full flex items-center justify-center text-sm font-bold" aria-hidden="true">?</span>
             <div>
-              <p class="text-sm font-semibold">EDITAR: nombre o &#39;Cliente frecuente&#39;</p>
+              <p class="text-sm font-semibold">EDITAR: nombre de la clienta</p>
               <p class="text-xs opacity-60">Reseña de Google</p>
             </div>
           </figcaption>
         </figure>
-      
-        <figure class="reveal rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
-          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
+
+        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
+          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
           </svg>
-          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"EDITAR: segunda reseña real."</blockquote>
+          <blockquote class="mt-4 text-sm leading-relaxed">
+            <span class="editar"><b>EDITAR:</b> parafrasear una segunda reseña real de Google.</span>
+          </blockquote>
           <figcaption class="mt-5 flex items-center gap-3">
-            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
-              E
-            </span>
+            <span class="marca-monograma h-9 w-9 rounded-full flex items-center justify-center text-sm font-bold" aria-hidden="true">?</span>
             <div>
-              <p class="text-sm font-semibold">EDITAR: otra clienta</p>
+              <p class="text-sm font-semibold">EDITAR: nombre de la clienta</p>
               <p class="text-xs opacity-60">Reseña de Google</p>
             </div>
           </figcaption>
         </figure>
-      
+
+        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
+          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
+          </svg>
+          <blockquote class="mt-4 text-sm leading-relaxed">
+            <span class="editar"><b>EDITAR:</b> parafrasear una tercera reseña real de Google.</span>
+          </blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <span class="marca-monograma h-9 w-9 rounded-full flex items-center justify-center text-sm font-bold" aria-hidden="true">?</span>
+            <div>
+              <p class="text-sm font-semibold">EDITAR: nombre de la clienta</p>
+              <p class="text-xs opacity-60">Reseña de Google</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-    
-      <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
-  <div class="max-w-4xl mx-auto px-4 text-center text-white">
-    <h2 class="text-3xl md:text-4xl font-bold reveal">Reserve su cita</h2>
+  <!-- ======================= PREGUNTAS FRECUENTES ======================= -->
+  <section id="faq" class="py-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
 
-    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-sm">
-      
+      <div class="mt-10 divide-y divide-[var(--color-borde)]">
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Atienden con cita o puedo ir nomás?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">
+            Lo más seguro es escribirnos antes por WhatsApp: le decimos a qué hora hay espacio y así no espera. Para tintes, mechas y peinados de evento conviene coordinar con más tiempo, porque toman varias horas.
+          </p>
+          <p class="mt-3"><span class="editar"><b>EDITAR:</b> confirmar con la clienta si también atiende sin cita.</span></p>
+        </details>
+
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Cuánto cuesta un corte o un tinte?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">
+            Depende del largo de su cabello y de lo que haya que hacer: no es lo mismo un retoque de raíz que aclarar todo el cabello. Escríbanos por WhatsApp contándonos qué quiere y le pasamos el precio antes de que venga.
+            <br><span class="editar mt-2"><b>EDITAR:</b> si la clienta quiere mostrar precios "desde", pedírselos y ponerlos acá.</span>
+          </p>
+        </details>
+
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Dónde quedan?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">
+            En Av. Rafael Escardo 599, San Miguel, Lima. Toque la dirección en la sección de contacto y se le abre la ruta en el mapa.
+          </p>
+        </details>
+
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Atienden domingos?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">
+            Los martes atendemos de 10:00 a. m. a 8:00 p. m. Para cualquier otro día, escríbanos por WhatsApp y le confirmamos.
+            <br><span class="editar mt-2"><b>EDITAR:</b> falta el horario del resto de la semana, incluido si abren domingos.</span>
+          </p>
+        </details>
+
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Venden los productos que usan en el salón?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">
+            Sí. Tenemos Bed Head Self Absorbed de TIGI, L'Oréal Metal Detox y Recamier línea IN, además de mascarillas, protector térmico y sérum. Pregúntenos por WhatsApp y le confirmamos qué hay disponible.
+          </p>
+        </details>
+      </div>
+
+      <p class="mt-8 text-center text-base opacity-80">
+        ¿Tiene otra consulta?
+        <a href="https://wa.me/51960613845?text=Hola%20Osadia%20Sal%C3%B3n%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20tengo%20una%20consulta."
+           target="_blank" rel="noopener"
+           class="inline-flex items-center min-h-[44px] font-semibold underline"
+           style="color: var(--color-acento-fuerte)">Escríbanos por WhatsApp</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================= CONTACTO ======================= -->
+  <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
+    <div class="max-w-4xl mx-auto px-4 text-center text-white">
+      <h2 class="text-3xl md:text-4xl font-bold reveal">Reserve su cita</h2>
+      <p class="mt-4 text-lg reveal" style="color: rgba(255,255,255,0.75)">Estamos en San Miguel, a una llamada o un mensaje de distancia.</p>
+
+      <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-sm">
         <div class="reveal">
-          <p class="font-semibold uppercase tracking-wide text-xs opacity-75">Teléfono</p>
+          <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Teléfono y WhatsApp</p>
           <a href="tel:+51960613845" class="mt-1 block text-lg font-medium hover:underline">+51 960 613 845</a>
         </div>
-      
-      
-      
-        <div class="reveal">
-          <p class="font-semibold uppercase tracking-wide text-xs opacity-75">Dirección</p>
-          <p class="mt-1 text-lg font-medium">Av. Rafael Escardo 599, San Miguel 15088</p>
-        </div>
-      
-      
-        <div class="reveal">
-          <p class="font-semibold uppercase tracking-wide text-xs opacity-75">Horario</p>
-          <p class="mt-1 text-lg font-medium">EDITAR: horario completo (en WhatsApp solo se ve martes 10:00 a. m. - 8:00 p. m.)</p>
-        </div>
-      
-    </div>
 
-    
-      <a href="https://wa.me/51960613845" target="_blank" rel="noopener"
-         class="reveal inline-flex items-center gap-2 mt-10 px-8 py-3 rounded-full font-semibold bg-white text-[var(--color-primario)] hover:scale-105 transition-transform shadow-lg">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <div class="reveal">
+          <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Dirección</p>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20Rafael%20Escardo%20599%2C%20San%20Miguel%2015088%2C%20Lima"
+             target="_blank" rel="noopener"
+             class="mt-1 inline-flex items-start gap-1.5 min-h-[44px] py-1 text-lg font-medium hover:underline">
+            <svg class="w-5 h-5 mt-0.5 shrink-0 opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Av. Rafael Escardo 599, San Miguel 15088, Lima</span>
+          </a>
+          <p class="mt-1 text-sm opacity-75">Toque para abrir el mapa</p>
+        </div>
+
+        <div class="reveal">
+          <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Horario</p>
+          <p class="mt-1 text-lg font-medium">Martes de 10:00 a. m. a 8:00 p. m.</p>
+          <p class="mt-2"><span class="editar editar-claro"><b>EDITAR:</b> falta el horario del resto de la semana. Es lo único que figura en su WhatsApp.</span></p>
+        </div>
+      </div>
+
+      <a href="https://wa.me/51960613845?text=Hola%20Osadia%20Sal%C3%B3n%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20reservar%20una%20cita."
+         target="_blank" rel="noopener"
+         class="reveal inline-flex items-center gap-2 mt-10 px-8 py-3 min-h-[52px] rounded-full font-semibold bg-white text-[var(--color-primario)] hover:scale-105 transition-transform shadow-lg">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Escríbanos por WhatsApp
       </a>
-    
-  </div>
-</section>
+    </div>
+  </section>
 
-    
-  </main>
+</main>
 
-  <footer class="py-10 bg-gray-900 text-gray-300">
+<footer class="py-10 bg-gray-900 text-gray-300">
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
-      
+      <span class="marca-monograma font-display flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base font-bold" aria-hidden="true">O</span>
       <p class="text-sm">© 2026 Osadia Salón Spa. Todos los derechos reservados.</p>
     </div>
-
-    
-    
+    <p class="text-sm opacity-70">Av. Rafael Escardo 599, San Miguel, Lima · +51 960 613 845</p>
   </div>
 </footer>
 
+<!-- Botón flotante de WhatsApp: solo en pantallas grandes. En el celular su
+     lugar lo toma la barra de abajo, que se alcanza con el pulgar. -->
+<a href="https://wa.me/51960613845?text=Hola%20Osadia%20Sal%C3%B3n%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
+   target="_blank" rel="noopener"
+   aria-label="Escribir por WhatsApp"
+   class="hidden md:inline-flex fixed bottom-5 right-5 z-50 items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 font-semibold text-[#0b3d20] shadow-lg shadow-black/25 transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b3d20]">
+  <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
+    <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/>
+  </svg>
+  <span>Escríbanos</span>
+</a>
 
-  
-  
-    
-    <a href="https://wa.me/51960613845?text=Hola%20Osadia%20Sal%C3%B3n%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
-       target="_blank" rel="noopener"
-       aria-label="Escribir por WhatsApp"
-       class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3.5 font-semibold text-white shadow-lg shadow-black/25 transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]">
-      <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true">
-        <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
-        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/>
-      </svg>
-      <span>Escríbanos</span>
-    </a>
-  
+<div class="barra-movil md:hidden fixed bottom-0 inset-x-0 z-50 flex gap-2 border-t border-[var(--color-borde)] bg-[var(--color-fondo)] px-3 pt-3 backdrop-blur">
+  <a href="https://wa.me/51960613845?text=Hola%20Osadia%20Sal%C3%B3n%20Spa%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
+     target="_blank" rel="noopener"
+     class="flex flex-1 min-h-[52px] items-center justify-center gap-2 rounded-full bg-[#25D366] font-semibold text-[#0b3d20]">
+    <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+    Escríbanos
+  </a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20Rafael%20Escardo%20599%2C%20San%20Miguel%2015088%2C%20Lima"
+     target="_blank" rel="noopener"
+     class="flex min-h-[52px] items-center justify-center gap-1.5 rounded-full border border-[var(--color-borde)] px-5 font-semibold">
+    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+    Llegar
+  </a>
+</div>
+<script>document.body.classList.add("con-barra-movil");</script>
 
-  <script src="assets/main.js"></script>
+<script src="assets/main.js"></script>
 </body>
 </html>
