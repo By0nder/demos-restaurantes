@@ -50,8 +50,13 @@
 
 <main>
 
-  <section id="inicio" class="px-4 pb-8 pt-10" style="background: var(--color-acento); color: var(--color-acento-texto)">
-    <div class="mx-auto max-w-5xl">
+  <section id="inicio" class="relative overflow-hidden px-4 pb-10 pt-12" style="color: #ffffff">
+    <div class="absolute inset-0" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=1600&q=78" alt="" fetchpriority="high" decoding="async"
+           class="h-full w-full object-cover">
+      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(9,26,44,0.86) 0%, rgba(9,26,44,0.72) 55%, rgba(18,58,99,0.92) 100%)"></div>
+    </div>
+    <div class="relative mx-auto max-w-5xl">
       <p class="font-display m-0 text-[14px] tracking-wide">CEVICHERÍA · TERMINAL</p>
       <h1 class="font-display m-0 mt-3 text-[38px] uppercase leading-none md:text-[54px]">¿Qué se<br>le antoja?</h1>
       <p class="m-0 mt-4 max-w-lg text-[15px] leading-relaxed md:text-[17px]">98 platos con su precio a la vista. Toque el que quiera y le llega el pedido escrito a WhatsApp, sin llamadas.</p>
@@ -125,10 +130,15 @@
     </div>
   </section>
 
-  <section id="carta" class="franja-salon px-4 py-14 text-white">
-    <div class="mx-auto max-w-5xl">
+  <section id="carta" class="relative overflow-hidden px-4 py-16 text-white">
+    <div class="absolute inset-0" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=1200&q=75" alt="" loading="lazy" decoding="async" class="h-full w-full object-cover">
+      <div class="absolute inset-0" style="background: rgba(11,32,51,0.82)"></div>
+    </div>
+    <div class="relative mx-auto max-w-5xl">
       <h2 class="font-display m-0 text-center text-[30px] uppercase md:text-[40px]">Nuestra carta</h2>
-      <p class="m-0 mt-3 text-center text-[15px] opacity-90">98 platos en 13 secciones · Adelante siempre voy</p>
+      <p class="m-0 mt-3 text-center text-[15px]">98 platos en 13 secciones · Adelante siempre voy</p>
+      <p class="m-0 mt-1 text-center text-[13px] opacity-85">Toque una sección para abrirla</p>
     </div>
   </section>
 
@@ -162,11 +172,14 @@
         <a href="#para-la-sed" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
            style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Para la sed</a>
       </div>
-      <div id="ceviches-y-tiraditos" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Ceviches y tiraditos</h3>
+      <details class="categoria scroll-mt-24" id="ceviches-y-tiraditos" open>
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Ceviches y tiraditos</span>
+          <span class="texto-suave shrink-0 text-[13px]">10 · desde S/ 25</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Ceviche Los Bull's</p>
@@ -268,12 +281,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
             </li>
         </ul>
-      </div>
-      <div id="leches-de-tigre" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Leches de tigre</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="leches-de-tigre">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Leches de tigre</span>
+          <span class="texto-suave shrink-0 text-[13px]">4 · desde S/ 15</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Leche de tigre de pescado</p>
@@ -315,12 +331,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 20</span>
             </li>
         </ul>
-      </div>
-      <div id="causas-y-entradas-frias" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Causas y entradas frías</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="causas-y-entradas-frias">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Causas y entradas frías</span>
+          <span class="texto-suave shrink-0 text-[13px]">6 · desde S/ 19</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Causa con pulpa de cangrejo</p>
@@ -382,12 +401,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 19</span>
             </li>
         </ul>
-      </div>
-      <div id="yo-soy-los-bull-s" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Yo soy Los Bull's</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="yo-soy-los-bull-s">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Yo soy Los Bull's</span>
+          <span class="texto-suave shrink-0 text-[13px]">5 · desde S/ 30</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Arrisotado con langostino</p>
@@ -439,12 +461,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
             </li>
         </ul>
-      </div>
-      <div id="festival-criollo" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Festival criollo</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="festival-criollo">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Festival criollo</span>
+          <span class="texto-suave shrink-0 text-[13px]">3 · desde S/ 30</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Arroz con pato</p>
@@ -476,12 +501,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
             </li>
         </ul>
-      </div>
-      <div id="para-calentar" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Para calentar</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="para-calentar">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Para calentar</span>
+          <span class="texto-suave shrink-0 text-[13px]">20 · desde S/ 8</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Chilcano</p>
@@ -683,12 +711,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
             </li>
         </ul>
-      </div>
-      <div id="frituras-chicharrones-y-jaleas" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Frituras: chicharrones y jaleas</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="frituras-chicharrones-y-jaleas">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Frituras: chicharrones y jaleas</span>
+          <span class="texto-suave shrink-0 text-[13px]">8 · desde S/ 25</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Chicharrón de pota</p>
@@ -770,12 +801,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
             </li>
         </ul>
-      </div>
-      <div id="sobre-las-olas-pescados-enteros" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Sobre las olas: pescados enteros</h3>
-        <p class="texto-suave reveal m-0 mt-2 text-[13px]">Todos van acompañados de arroz, yuca frita y sarsa criolla</p>
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+      </details>
+      <details class="categoria scroll-mt-24" id="sobre-las-olas-pescados-enteros">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Sobre las olas: pescados enteros</span>
+          <span class="texto-suave shrink-0 text-[13px]">8 · desde S/ 40</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
+        <p class="texto-suave m-0 mb-1 text-[13px]">Todos van acompañados de arroz, yuca frita y sarsa criolla</p>
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Chita frita o al ajo crocante</p>
@@ -857,12 +891,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
             </li>
         </ul>
-      </div>
-      <div id="afro-latinos-tacu-tacu" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Afro latinos: tacu tacu</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="afro-latinos-tacu-tacu">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Afro latinos: tacu tacu</span>
+          <span class="texto-suave shrink-0 text-[13px]">4 · desde S/ 30</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Tacu tacu con filete frito o a la plancha</p>
@@ -904,12 +941,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
             </li>
         </ul>
-      </div>
-      <div id="amor-de-lujo-arroces-y-chaufas" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Amor de lujo: arroces y chaufas</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="amor-de-lujo-arroces-y-chaufas">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Amor de lujo: arroces y chaufas</span>
+          <span class="texto-suave shrink-0 text-[13px]">7 · desde S/ 28</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Arroz con mariscos</p>
@@ -981,12 +1021,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
             </li>
         </ul>
-      </div>
-      <div id="para-compartir" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Para compartir</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="para-compartir">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Para compartir</span>
+          <span class="texto-suave shrink-0 text-[13px]">5 · desde S/ 35</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Combinados</p>
@@ -1038,12 +1081,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 100</span>
             </li>
         </ul>
-      </div>
-      <div id="porciones" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Porciones</h3>
-        <p class="texto-suave reveal m-0 mt-2 text-[13px]">Cada una a S/ 7</p>
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+      </details>
+      <details class="categoria scroll-mt-24" id="porciones">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Porciones</span>
+          <span class="texto-suave shrink-0 text-[13px]">6 · desde S/ 7</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
+        <p class="texto-suave m-0 mb-1 text-[13px]">Cada una a S/ 7</p>
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Arroz blanco</p>
@@ -1105,12 +1151,15 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
             </li>
         </ul>
-      </div>
-      <div id="para-la-sed" class="scroll-mt-24">
-        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
-            style="background: var(--color-acento); color: var(--color-acento-texto)">Para la sed</h3>
+      </details>
+      <details class="categoria scroll-mt-24" id="para-la-sed">
+        <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
+          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Para la sed</span>
+          <span class="texto-suave shrink-0 text-[13px]">12 · desde S/ 4</span>
+          <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+        </summary>
         
-        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+        <ul class="m-0 mb-4 list-none divide-y p-0" style="border-color: var(--color-borde)">
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
                 <p class="m-0 text-[15px] font-semibold">Vaso de chicha</p>
@@ -1232,7 +1281,7 @@
               <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 16</span>
             </li>
         </ul>
-      </div>
+      </details>
     </div>
   </section>
 
@@ -1241,35 +1290,35 @@
       <h2 class="font-display reveal m-0 text-center text-[28px] uppercase md:text-[34px]">Preguntas</h2>
       <div class="mt-8 divide-y" style="border-color: var(--color-borde)">
         <details class="group reveal py-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+          <summary class="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-1 text-[16px] font-semibold">
             ¿Hacen delivery?
             <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
           </summary>
           <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">Escríbanos por WhatsApp con su pedido y su dirección, y le confirmamos si llegamos a su zona y en cuánto tiempo.</p>
         </details>
         <details class="group reveal py-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+          <summary class="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-1 text-[16px] font-semibold">
             ¿Se puede reservar mesa?
             <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
           </summary>
           <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">Sí. Escríbanos por WhatsApp indicando el día, la hora y cuántas personas son.</p>
         </details>
         <details class="group reveal py-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+          <summary class="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-1 text-[16px] font-semibold">
             ¿Las fuentes para cuántos alcanzan?
             <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
           </summary>
           <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">La fuente Para picar rinde de 3 a 4 personas. La ronda marina y los tríos alcanzan para 2 o 3.</p>
         </details>
         <details class="group reveal py-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+          <summary class="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-1 text-[16px] font-semibold">
             ¿El pescado es del día?
             <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
           </summary>
           <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">Sí. Somos cevichería de terminal: trabajamos con lo que entra en la mañana.</p>
         </details>
         <details class="group reveal py-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+          <summary class="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-1 text-[16px] font-semibold">
             ¿Qué horario tienen?
             <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
           </summary>
@@ -1322,5 +1371,16 @@
 </div>
 
 <script src="assets/main.js"></script>
+<script>
+  // El índice apunta a un <details>: hay que abrirlo, no solo saltar a él.
+  (function () {
+    function abrir() {
+      var d = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (d && d.tagName === "DETAILS") { d.open = true; d.scrollIntoView({ block: "start" }); }
+    }
+    window.addEventListener("hashchange", abrir);
+    if (location.hash) abrir();
+  })();
+</script>
 </body>
 </html>
