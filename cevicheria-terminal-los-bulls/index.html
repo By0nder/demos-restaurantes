@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cevichería Terminal Los Bull's — Carta y pedidos por WhatsApp</title>
+  <meta name="description" content="Cevichería en Lima. 98 platos con su precio: ceviches, parihuelas, chicharrones y fuentes para compartir. Pida por WhatsApp.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#123a63">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123a63'/%3E%3Ctext x='32' y='45' font-family='Archivo,Helvetica,Arial,sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='%2329abe2'%3ELB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Cevichería Terminal Los Bull's",
+  "servesCuisine": "Peruana, cevichería",
+  "telephone": "+51981531329",
+  "priceRange": "S/ 4 - S/ 100",
+  "url": "https://by0nder.github.io/demos-restaurantes/cevicheria-terminal-los-bulls"
+}
+  </script>
+</head>
+<body class="con-barra-movil bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
+
+<header class="sticky top-0 z-40 border-b backdrop-blur" style="background: color-mix(in srgb, var(--color-fondo) 88%, transparent); border-color: var(--color-borde)">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
+    <a href="#" class="flex min-h-[44px] min-w-0 shrink items-center gap-2.5 no-underline" style="color: inherit">
+      <!-- EDITAR: pedirle el logo en PNG. Mientras va el monograma. -->
+      <span class="marca-monograma font-display flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm" aria-hidden="true">LB</span>
+      <span class="truncate text-[17px] font-semibold">Los Bull's</span>
+    </a>
+    <nav class="hidden items-center gap-5 text-sm font-medium md:flex">
+      <a href="#carta" class="no-underline hover:opacity-70" style="color: inherit">Carta</a>
+      <a href="#preguntas" class="no-underline hover:opacity-70" style="color: inherit">Preguntas</a>
+      <a href="#contacto" class="no-underline hover:opacity-70" style="color: inherit">Contacto</a>
+    </nav>
+    <button id="tema-toggle" type="button"
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-[var(--color-suave)]"
+            aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
+      <svg data-icono="luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      <svg data-icono="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section id="inicio" class="px-4 pb-8 pt-10" style="background: var(--color-acento); color: var(--color-acento-texto)">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-display m-0 text-[14px] tracking-wide">CEVICHERÍA · TERMINAL</p>
+      <h1 class="font-display m-0 mt-3 text-[38px] uppercase leading-none md:text-[54px]">¿Qué se<br>le antoja?</h1>
+      <p class="m-0 mt-4 max-w-lg text-[15px] leading-relaxed md:text-[17px]">98 platos con su precio a la vista. Toque el que quiera y le llega el pedido escrito a WhatsApp, sin llamadas.</p>
+      <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20un%20pedido." target="_blank" rel="noopener"
+           class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-7 text-[16px] font-bold no-underline shadow-lg transition hover:scale-[1.02]"
+           style="background: #25d366; color: #062b13">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12 2C6.6 2 2.1 6.4 2.1 11.9c0 1.8.5 3.5 1.3 5L2 22l5.3-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 9.9-4.4 9.9-9.9S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.8-1.3-1.3-2.8-1.3-4.4C3.7 7.3 7.4 3.6 12 3.6s8.2 3.7 8.2 8.3-3.7 8.1-8.2 8.1z"/></svg>
+          Pedir por WhatsApp
+        </a>
+        <a href="#carta" class="inline-flex min-h-[52px] items-center justify-center rounded-full px-7 text-[15px] font-semibold no-underline ring-1 ring-white/50 transition hover:bg-white/10" style="color: inherit">Ver la carta</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-8">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <a href="#ceviches-y-tiraditos" class="ficha reveal flex min-h-[104px] flex-col justify-between rounded-2xl p-4 no-underline transition hover:brightness-110"
+           style="background: var(--color-primario); color: #ffffff">
+          <span class="font-display text-[15px] leading-tight">CEVICHES</span>
+          <span class="text-xs font-semibold" style="color: #8fd3f4">10 platos · desde S/ 25</span>
+        </a>
+        <a href="#para-calentar" class="ficha reveal flex min-h-[104px] flex-col justify-between rounded-2xl p-4 no-underline transition hover:brightness-110"
+           style="background: var(--color-acento); color: #ffffff">
+          <span class="font-display text-[15px] leading-tight">PARA<br>CALENTAR</span>
+          <span class="text-xs font-semibold" style="color: #cfe6f6">20 platos · desde S/ 8</span>
+        </a>
+        <a href="#frituras-chicharrones-y-jaleas" class="ficha reveal flex min-h-[104px] flex-col justify-between rounded-2xl p-4 no-underline transition hover:brightness-110"
+           style="background: #0e6b8f; color: #ffffff">
+          <span class="font-display text-[15px] leading-tight">CHICHARRONES<br>Y JALEAS</span>
+          <span class="text-xs font-semibold" style="color: #cfe6f6">8 platos · desde S/ 25</span>
+        </a>
+        <a href="#para-compartir" class="ficha reveal flex min-h-[104px] flex-col justify-between rounded-2xl p-4 no-underline transition hover:brightness-110"
+           style="background: #f2b705; color: #2a1f00">
+          <span class="font-display text-[15px] leading-tight">PARA<br>COMPARTIR</span>
+          <span class="text-xs font-semibold" style="color: #5a4700">5 platos · desde S/ 35</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 pb-10">
+    <div class="mx-auto max-w-5xl">
+      <div class="tarjeta rounded-2xl border p-5" style="border-color: var(--color-borde)">
+        <p class="font-display m-0 text-[14px] tracking-wide" style="color: var(--color-acento-fuerte)">LO MÁS PEDIDO</p>
+        <ul class="m-0 mt-2 list-none divide-y p-0" style="border-color: var(--color-borde)">
+          <li class="flex items-center gap-3 py-3">
+            <div class="min-w-0 flex-1">
+              <p class="m-0 text-[15px] font-semibold">Ceviche Los Bull's</p>
+              <p class="texto-suave m-0 mt-0.5 text-[13px]">Con chicharrón de pota montado</p>
+            </div>
+            <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 25</span>
+          </li>
+          <li class="flex items-center gap-3 py-3">
+            <div class="min-w-0 flex-1">
+              <p class="m-0 text-[15px] font-semibold">Parihuela Los Bull's</p>
+              <p class="texto-suave m-0 mt-0.5 text-[13px]">La de la casa</p>
+            </div>
+            <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+          </li>
+          <li class="flex items-center gap-3 py-3">
+            <div class="min-w-0 flex-1">
+              <p class="m-0 text-[15px] font-semibold">Ronda marina</p>
+              <p class="texto-suave m-0 mt-0.5 text-[13px]">Cinco tiempos en una sola fuente</p>
+            </div>
+            <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 85</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="carta" class="franja-salon px-4 py-14 text-white">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="font-display m-0 text-center text-[30px] uppercase md:text-[40px]">Nuestra carta</h2>
+      <p class="m-0 mt-3 text-center text-[15px] opacity-90">98 platos en 13 secciones · Adelante siempre voy</p>
+    </div>
+  </section>
+
+  <section class="px-4 py-10">
+    <div class="mx-auto max-w-5xl">
+      <div class="flex flex-wrap gap-2">
+        <a href="#ceviches-y-tiraditos" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Ceviches y tiraditos</a>
+        <a href="#leches-de-tigre" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Leches de tigre</a>
+        <a href="#causas-y-entradas-frias" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Causas y entradas frías</a>
+        <a href="#yo-soy-los-bull-s" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Yo soy Los Bull's</a>
+        <a href="#festival-criollo" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Festival criollo</a>
+        <a href="#para-calentar" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Para calentar</a>
+        <a href="#frituras-chicharrones-y-jaleas" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Frituras: chicharrones y jaleas</a>
+        <a href="#sobre-las-olas-pescados-enteros" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Sobre las olas: pescados enteros</a>
+        <a href="#afro-latinos-tacu-tacu" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Afro latinos: tacu tacu</a>
+        <a href="#amor-de-lujo-arroces-y-chaufas" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Amor de lujo: arroces y chaufas</a>
+        <a href="#para-compartir" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Para compartir</a>
+        <a href="#porciones" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Porciones</a>
+        <a href="#para-la-sed" class="inline-flex min-h-[44px] items-center rounded-full border px-4 text-[13px] font-medium no-underline transition hover:brightness-95"
+           style="border-color: var(--color-borde); color: var(--color-acento-fuerte)">Para la sed</a>
+      </div>
+      <div id="ceviches-y-tiraditos" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Ceviches y tiraditos</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Ceviche Los Bull's</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Ceviche de pescado con chicharrón de pota montado</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Ceviche%20Los%20Bull's%20(S%2F%2025)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 25</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Ceviche de pescado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Ceviche%20de%20pescado%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Ceviche de pescado a lo norteño</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Ceviche%20de%20pescado%20a%20lo%20norte%C3%B1o%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Ceviche mixto</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Ceviche%20mixto%20(S%2F%2035)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Ceviche de mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Ceviche%20de%20mariscos%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Ceviche de conchas negras</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Ceviche%20de%20conchas%20negras%20(S%2F%2034)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 34</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Ceviche clásico</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Ceviche de pescado con conchas negras</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Ceviche%20cl%C3%A1sico%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Ronda marina</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Ceviche de pescado, chicharrón de pescado, causa, chaufa de mariscos y ceviche clásico</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Ronda%20marina%20(S%2F%2085)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 85</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Tiradito crema de ají amarillo</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Tiradito%20crema%20de%20aj%C3%AD%20amarillo%20(S%2F%2028)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Tiradito crema blanca</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Tiradito%20crema%20blanca%20(S%2F%2028)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
+            </li>
+        </ul>
+      </div>
+      <div id="leches-de-tigre" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Leches de tigre</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Leche de tigre de pescado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Leche%20de%20tigre%20de%20pescado%20(S%2F%2015)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 15</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Leche de tigre de mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Leche%20de%20tigre%20de%20mariscos%20(S%2F%2024)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 24</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Leche de tigre mixto</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Leche%20de%20tigre%20mixto%20(S%2F%2022)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 22</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Leche de pantera</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Leche%20de%20pantera%20(S%2F%2020)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 20</span>
+            </li>
+        </ul>
+      </div>
+      <div id="causas-y-entradas-frias" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Causas y entradas frías</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Causa con pulpa de cangrejo</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Causa%20con%20pulpa%20de%20cangrejo%20(S%2F%2024)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 24</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Causa acevichada</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Causa%20acevichada%20(S%2F%2032)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 32</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Causa con langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Causa%20con%20langostinos%20(S%2F%2034)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 34</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Pulpo al olivo</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Con palta y galleta</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Pulpo%20al%20olivo%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Conchitas a la chalaca, 10 unidades</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Conchitas%20a%20la%20chalaca%2C%2010%20unidades%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Conchitas a la chalaca, 5 unidades</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Conchitas%20a%20la%20chalaca%2C%205%20unidades%20(S%2F%2019)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 19</span>
+            </li>
+        </ul>
+      </div>
+      <div id="yo-soy-los-bull-s" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Yo soy Los Bull's</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Arrisotado con langostino</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Arrisotado%20con%20langostino%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Arrisotado con pulpo a la parrilla</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Arrisotado%20con%20pulpo%20a%20la%20parrilla%20(S%2F%2055)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Fetuccini a la huancaína</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Con saltado de pescado o de marisco</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Fetuccini%20a%20la%20huanca%C3%ADna%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Fetuccini a lo alfredo</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Fetuccini%20a%20lo%20alfredo%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Picante de mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Picante%20de%20mariscos%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+        </ul>
+      </div>
+      <div id="festival-criollo" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Festival criollo</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Arroz con pato</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Arroz%20con%20pato%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Seco de cabrito a la norteña</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Con frejoles, arroz o tacu tacu y sarsa criolla</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Seco%20de%20cabrito%20a%20la%20norte%C3%B1a%20(S%2F%2039)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 39</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Lomo saltado</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">200 gr de lomo fino, con fetuccini a la huancaína, tacu tacu o arroz y papas fritas</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Lomo%20saltado%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+        </ul>
+      </div>
+      <div id="para-calentar" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Para calentar</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chilcano</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chilcano%20(S%2F%208)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 8</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chilcano especial</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chilcano%20especial%20(S%2F%2014)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 14</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Aguadito de mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Aguadito%20de%20mariscos%20(S%2F%2025)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 25</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Sudado de filete</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Sudado%20de%20filete%20(S%2F%2033)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 33</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Sudado de cabrilla</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Sudado%20de%20cabrilla%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Sudado de tramboyo</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Sudado%20de%20tramboyo%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Sudado de lenguado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Sudado%20de%20lenguado%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Sudado de chita</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Sudado%20de%20chita%20(S%2F%2050)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Sudado de mero</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Sudado%20de%20mero%20(S%2F%2050)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Parihuela de filete</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Parihuela%20de%20filete%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Parihuela de cabrilla</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Parihuela%20de%20cabrilla%20(S%2F%2045)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Parihuela de tramboyo</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Parihuela%20de%20tramboyo%20(S%2F%2045)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Parihuela de lenguado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Parihuela%20de%20lenguado%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Parihuela de mero</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Parihuela%20de%20mero%20(S%2F%2060)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 60</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Parihuela de chita</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Parihuela%20de%20chita%20(S%2F%2060)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 60</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Parihuela Los Bull's</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Parihuela%20Los%20Bull's%20(S%2F%2045)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chupe de camarones</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chupe%20de%20camarones%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chupe de pescado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chupe%20de%20pescado%20(S%2F%2028)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chupe de mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chupe%20de%20mariscos%20(S%2F%2032)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 32</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chupe de langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chupe%20de%20langostinos%20(S%2F%2035)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+            </li>
+        </ul>
+      </div>
+      <div id="frituras-chicharrones-y-jaleas" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Frituras: chicharrones y jaleas</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chicharrón de pota</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chicharr%C3%B3n%20de%20pota%20(S%2F%2025)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 25</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chicharrón de pescado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chicharr%C3%B3n%20de%20pescado%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chicharrón mixto</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chicharr%C3%B3n%20mixto%20(S%2F%2035)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chicharrón de mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chicharr%C3%B3n%20de%20mariscos%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chicharrón de calamar</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chicharr%C3%B3n%20de%20calamar%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Jalea de pescado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Jalea%20de%20pescado%20(S%2F%2034)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 34</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Jalea mixta</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Jalea%20mixta%20(S%2F%2039)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 39</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Jalea norteña</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Mixtura con pescado entero</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Jalea%20norte%C3%B1a%20(S%2F%2055)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+            </li>
+        </ul>
+      </div>
+      <div id="sobre-las-olas-pescados-enteros" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Sobre las olas: pescados enteros</h3>
+        <p class="texto-suave reveal m-0 mt-2 text-[13px]">Todos van acompañados de arroz, yuca frita y sarsa criolla</p>
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chita frita o al ajo crocante</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chita%20frita%20o%20al%20ajo%20crocante%20(S%2F%2055)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chita a lo macho o en salsa de langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chita%20a%20lo%20macho%20o%20en%20salsa%20de%20langostinos%20(S%2F%2060)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 60</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Cabrilla frita o al ajo crocante</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Cabrilla%20frita%20o%20al%20ajo%20crocante%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Cabrilla a lo macho o en salsa de langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Cabrilla%20a%20lo%20macho%20o%20en%20salsa%20de%20langostinos%20(S%2F%2050)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Mero frito o al ajo crocante</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Mero%20frito%20o%20al%20ajo%20crocante%20(S%2F%2055)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Mero a lo macho o en salsa de langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Mero%20a%20lo%20macho%20o%20en%20salsa%20de%20langostinos%20(S%2F%2060)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 60</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Lenguado frito o al ajo crocante</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Lenguado%20frito%20o%20al%20ajo%20crocante%20(S%2F%2040)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Lenguado a lo macho o en salsa de langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Lenguado%20a%20lo%20macho%20o%20en%20salsa%20de%20langostinos%20(S%2F%2050)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
+            </li>
+        </ul>
+      </div>
+      <div id="afro-latinos-tacu-tacu" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Afro latinos: tacu tacu</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Tacu tacu con filete frito o a la plancha</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Tacu%20tacu%20con%20filete%20frito%20o%20a%20la%20plancha%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Tacu tacu con salsa de pescado o en saltado de pescado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Tacu%20tacu%20con%20salsa%20de%20pescado%20o%20en%20saltado%20de%20pescado%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Tacu tacu con salsa de mariscos o en saltado de mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Tacu%20tacu%20con%20salsa%20de%20mariscos%20o%20en%20saltado%20de%20mariscos%20(S%2F%2035)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Tacu tacu en salsa de langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Tacu%20tacu%20en%20salsa%20de%20langostinos%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+        </ul>
+      </div>
+      <div id="amor-de-lujo-arroces-y-chaufas" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Amor de lujo: arroces y chaufas</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Arroz con mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Arroz%20con%20mariscos%20(S%2F%2038)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Arroz en salsa de pescado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Arroz%20en%20salsa%20de%20pescado%20(S%2F%2033)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 33</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chaufa de pescado</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chaufa%20de%20pescado%20(S%2F%2028)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chaufa de mariscos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chaufa%20de%20mariscos%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chaufa de langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chaufa%20de%20langostinos%20(S%2F%2039)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 39</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chaufa de pescado con tortilla de langostinos</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chaufa%20de%20pescado%20con%20tortilla%20de%20langostinos%20(S%2F%2045)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Filete frito o a la plancha</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Filete%20frito%20o%20a%20la%20plancha%20(S%2F%2030)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+            </li>
+        </ul>
+      </div>
+      <div id="para-compartir" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Para compartir</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Combinados</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Elija 2: chicharrón de pescado, causa, leche de tigre, chaufa de pescado o de marisco</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Combinados%20(S%2F%2035)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Tríos</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Elija 3 de la misma lista</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Tr%C3%ADos%20(S%2F%2055)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Combinados especial</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Elija 2: ceviche de pescado, arroz con marisco, conchas negras, chaufa de marisco, chicharrón de calamar o chicharrón mixto</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Combinados%20especial%20(S%2F%2045)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Trío especial</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Elija 3 de la lista especial</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Tr%C3%ADo%20especial%20(S%2F%2070)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 70</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Para picar</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Fuente de 3 a 4 personas. Elija una: chicharrón de pescado, chicharrón mixto, chaufa de pescado, mariscos, arroz con mariscos o chaufa mixto</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Para%20picar%20(S%2F%20100)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 100</span>
+            </li>
+        </ul>
+      </div>
+      <div id="porciones" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Porciones</h3>
+        <p class="texto-suave reveal m-0 mt-2 text-[13px]">Cada una a S/ 7</p>
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Arroz blanco</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Arroz%20blanco%20(S%2F%207)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Salsa criolla</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Salsa%20criolla%20(S%2F%207)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Cancha</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Cancha%20(S%2F%207)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Chifle</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Chifle%20(S%2F%207)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Yuca frita o sancochada</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Yuca%20frita%20o%20sancochada%20(S%2F%207)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Camote</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Camote%20(S%2F%207)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+            </li>
+        </ul>
+      </div>
+      <div id="para-la-sed" class="scroll-mt-24">
+        <h3 class="font-display reveal m-0 mt-10 inline-block rounded-md px-3 py-1.5 text-[15px] uppercase tracking-wide"
+            style="background: var(--color-acento); color: var(--color-acento-texto)">Para la sed</h3>
+        
+        <ul class="reveal m-0 mt-3 list-none divide-y p-0" style="border-color: var(--color-borde)">
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Vaso de chicha</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Vaso%20de%20chicha%20(S%2F%207)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Jarra de chicha 1/2 L</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Jarra%20de%20chicha%201%2F2%20L%20(S%2F%2010)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 10</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Jarra de chicha 1 L</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Jarra%20de%20chicha%201%20L%20(S%2F%2016)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 16</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Agua San Luis 1/2 L</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Agua%20San%20Luis%201%2F2%20L%20(S%2F%204)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 4</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Gaseosa 1/2 L</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Gaseosa%201%2F2%20L%20(S%2F%205)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 5</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Gaseosa 1.5 L</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Gaseosa%201.5%20L%20(S%2F%2012)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 12</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Gaseosa 3 L</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Gaseosa%203%20L%20(S%2F%2018)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 18</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Cerveza pequeña</p>
+                <p class="texto-suave m-0 mt-1 text-[13px] leading-snug">Pilsen, Cusqueña, Negra, Dorada o Trigo</p>
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Cerveza%20peque%C3%B1a%20(S%2F%207)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Cerveza Cristal</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Cerveza%20Cristal%20(S%2F%2010)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 10</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Cerveza Pilsen</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Cerveza%20Pilsen%20(S%2F%2012)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 12</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Cusqueña Trigo</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Cusque%C3%B1a%20Trigo%20(S%2F%2014)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 14</span>
+            </li>
+            <li class="plato flex items-start gap-3 py-3">
+              <div class="min-w-0 flex-1">
+                <p class="m-0 text-[15px] font-semibold">Cusqueña Negra</p>
+                
+                <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20quisiera%20pedir%3A%20Cusque%C3%B1a%20Negra%20(S%2F%2016)." target="_blank" rel="noopener"
+                   class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
+                   style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
+              </div>
+              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 16</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas" class="px-4 py-14" style="background: var(--color-suave)">
+    <div class="mx-auto max-w-3xl">
+      <h2 class="font-display reveal m-0 text-center text-[28px] uppercase md:text-[34px]">Preguntas</h2>
+      <div class="mt-8 divide-y" style="border-color: var(--color-borde)">
+        <details class="group reveal py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+            ¿Hacen delivery?
+            <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+          </summary>
+          <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">Escríbanos por WhatsApp con su pedido y su dirección, y le confirmamos si llegamos a su zona y en cuánto tiempo.</p>
+        </details>
+        <details class="group reveal py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+            ¿Se puede reservar mesa?
+            <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+          </summary>
+          <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">Sí. Escríbanos por WhatsApp indicando el día, la hora y cuántas personas son.</p>
+        </details>
+        <details class="group reveal py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+            ¿Las fuentes para cuántos alcanzan?
+            <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+          </summary>
+          <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">La fuente Para picar rinde de 3 a 4 personas. La ronda marina y los tríos alcanzan para 2 o 3.</p>
+        </details>
+        <details class="group reveal py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+            ¿El pescado es del día?
+            <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+          </summary>
+          <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">Sí. Somos cevichería de terminal: trabajamos con lo que entra en la mañana.</p>
+        </details>
+        <details class="group reveal py-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-semibold">
+            ¿Qué horario tienen?
+            <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+          </summary>
+          <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed"><span class="editar"><b>EDITAR:</b> falta el horario de atención. Es de lo que más preguntan.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="px-4 py-14" style="background: var(--color-primario); color: #ffffff">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="font-display m-0 text-[28px] uppercase md:text-[34px]">Venga o pida</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 sm:text-left">
+        <div>
+          <p class="m-0 text-xs font-bold uppercase tracking-widest" style="color: #8fd3f4">Dirección</p>
+          <p class="m-0 mt-1.5 text-[15px]"><span class="editar editar-claro"><b>EDITAR:</b> falta la dirección del local</span></p>
+        </div>
+        <div>
+          <p class="m-0 text-xs font-bold uppercase tracking-widest" style="color: #8fd3f4">Horario</p>
+          <p class="m-0 mt-1.5 text-[15px]"><span class="editar editar-claro"><b>EDITAR:</b> falta el horario de atención</span></p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <p class="m-0 text-xs font-bold uppercase tracking-widest" style="color: #8fd3f4">WhatsApp</p>
+        <a href="tel:+51981531329" class="mt-1.5 inline-flex min-h-[44px] items-center text-[19px] font-semibold no-underline hover:underline" style="color: #ffffff">+51 981 531 329</a>
+      </div>
+      <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener"
+         class="mt-8 inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-8 text-[16px] font-bold no-underline shadow-lg transition hover:scale-[1.02]"
+         style="background: #25d366; color: #062b13">Escríbanos por WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="px-4 py-8" style="background: var(--color-secundario); color: #a8c4d8">
+  <div class="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center text-sm">
+    <p class="m-0">© 2026 Cevichería Terminal Los Bull's</p>
+    <p class="m-0 text-xs opacity-80">El sabor que estabas buscando</p>
+  </div>
+</footer>
+
+<div class="barra-movil fixed inset-x-0 bottom-0 z-50 border-t px-3 py-2.5 md:hidden" style="background: color-mix(in srgb, var(--color-fondo) 94%, transparent); border-color: var(--color-borde)">
+  <div class="flex gap-2">
+    <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20un%20pedido." target="_blank" rel="noopener"
+       class="inline-flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-full text-[15px] font-bold no-underline"
+       style="background: #25d366; color: #062b13">Pedir por WhatsApp</a>
+    <a href="#carta" class="inline-flex min-h-[48px] items-center justify-center rounded-full border px-5 text-[15px] font-semibold no-underline"
+       style="border-color: var(--color-borde); color: var(--color-texto)">Carta</a>
+  </div>
+</div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
