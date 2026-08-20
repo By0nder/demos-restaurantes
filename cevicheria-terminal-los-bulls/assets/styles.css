@@ -348,3 +348,30 @@ body.con-barra-movil {
 /* Igual que .texto-suave pero mas tenue, para textos de ayuda. Atenuar por
    color y no por opacity mantiene el contraste sobre el minimo AA. */
 .texto-tenue { color: color-mix(in srgb, var(--color-texto) 70%, var(--color-fondo)); }
+
+/* ---------------------------------------------------------------------------
+   CARTA EN ACORDEON
+   Con 98 platos abiertos la pagina medía 29.000px. Cada categoria va plegada;
+   el indice de arriba salta y abre la que toque.
+--------------------------------------------------------------------------- */
+.categoria {
+  border-bottom: 1px solid var(--color-borde);
+}
+.categoria > summary::-webkit-details-marker { display: none; }
+.categoria > summary::marker { content: ''; }
+.categoria > summary:hover .chevron { opacity: 0.7; }
+.categoria > summary:focus-visible {
+  outline: 3px solid var(--color-acento-fuerte);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+.categoria[open] > summary .chevron {
+  transform: rotate(45deg);
+}
+.categoria .chevron {
+  display: inline-block;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .categoria .chevron { transition: none; }
+}
