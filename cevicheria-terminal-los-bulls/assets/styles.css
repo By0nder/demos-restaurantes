@@ -1,0 +1,350 @@
+/* ===========================================================================
+   BARBERIA ERCOVOZ — colores de la marca
+   El magenta del negocio manda. Todo lo demás (papel, tinta, bordes) sale de
+   variables para poder darlo vuelta en modo oscuro sin tocar el HTML.
+   =========================================================================== */
+:root {
+  --color-primario: #123a63;        /* azul profundo de la carta */
+  --color-secundario: #0b2033;      /* azul noche, para degradados */
+  --color-acento: #1b5a91;          /* azul medio; blanco encima da 7.2:1 */
+
+  /* Tinta que va ENCIMA del dorado (botones, chips). */
+  --color-acento-texto: #ffffff;    /* tinta ENCIMA del azul */
+
+  /* El dorado puro no se lee sobre papel claro, así que como TEXTO va una
+     versión oscurecida. En tema oscuro se usa la aclarada. */
+  --color-acento-fuerte: #14507f;   /* azul como TEXTO sobre papel: 7.8:1 */
+
+  /* El dorado aclarado, para cuando va sobre fondo oscuro: la foto del hero,
+     la franja del salón y el pie. */
+  --color-acento-claro: #5cc4ea;    /* celeste para fondos oscuros: 9.1:1 */
+
+  --color-fondo: #f4f6f8;           /* papel con un toque frío */
+  --color-texto: #16202c;
+  --color-superficie: #ffffff;
+  --color-borde: rgba(18, 58, 99, 0.16);
+  --color-suave: rgba(18, 58, 99, 0.06);
+  --color-titulo: var(--color-primario);
+
+  /* ---------------------------------------------------------------------------
+     TIPOGRAFÍA
+     Dos familias, cargadas con display=swap para que el texto se vea aunque la
+     fuente demore:
+       - Archivo para los títulos: grotesca ancha, se lee fuerte en un celular
+         al sol.
+       - Inter para el texto corrido: hecha para pantalla, no cansa.
+  --------------------------------------------------------------------------- */
+  --font-display: "Archivo Black", "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-texto: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* MODO OSCURO: solo cambian el papel y la tinta. El magenta de la marca se
+   respeta, que para eso es de ella. Lo único que se aclara es el magenta
+   cuando hace de texto: sobre el fondo negro el de marca daría 2.4:1. */
+:root[data-tema="oscuro"] {
+  --color-fondo: #0d1620;
+  --color-texto: #e6edf3;
+  --color-superficie: #152230;
+  --color-borde: rgba(255, 255, 255, 0.12);
+  --color-suave: rgba(255, 255, 255, 0.06);
+  --color-acento-fuerte: #5cc4ea;   /* 9.1:1 sobre el fondo, 8.1:1 sobre tarjeta */
+  /* El negro de marca como título sobre fondo negro no se lee, así que se usa
+     una versión aclarada del mismo color. */
+  --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
+}
+
+/* ---------------------------------------------------------------------------
+   BASE
+--------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-texto);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Evita que un título quede con una palabra sola colgando en la última línea */
+h1, h2 {
+  text-wrap: balance;
+}
+
+/* ---------------------------------------------------------------------------
+   ANCLAS BAJO EL HEADER FIJO
+   El header se queda pegado arriba (~68px). Sin esto, al tocar "Servicios" en
+   el menú el título quedaba justo debajo del header, tapado: se veía como si
+   el enlace estuviera roto.
+--------------------------------------------------------------------------- */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+::selection {
+  background-color: var(--color-primario);
+  color: #ffffff;
+}
+
+/* Sin transición al cambiar de tema, y es a propósito.
+   Al animar `background-color` en <body> mientras cambia una variable CSS,
+   Chrome se queda con el color viejo: el fondo quedaba oscuro con las tarjetas
+   blancas encima. El cambio instantáneo se ve bien y no tiene ese riesgo. */
+
+/* ---------------------------------------------------------------------------
+   FOCO VISIBLE PARA TECLADO
+   `:focus-visible` (y no `:focus`) es a propósito: solo se pinta cuando el
+   navegador detecta navegación por teclado, así que al tocar con el dedo o
+   hacer clic no aparece el recuadro.
+--------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-acento-fuerte);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sobre el hero, la franja del salón, el bloque de contacto y el pie, que van
+   sobre fondo oscuro, el magenta se pierde: ahí el contorno va en blanco. */
+#hero a:focus-visible,
+#salon a:focus-visible,
+#contacto a:focus-visible,
+footer a:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   ANIMACIÓN DE APARICIÓN AL HACER SCROLL (la activa main.js)
+--------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------------------------
+   HERO: velo en degradado, no un plano negro al 50%
+   El plano apagaba la foto por igual: el salón se veía gris y el texto igual
+   de contrastado arriba que abajo. Con degradado la foto respira en el medio
+   y el texto se apoya en la parte más oscura.
+--------------------------------------------------------------------------- */
+.hero-velo {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.5) 45%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* ---------------------------------------------------------------------------
+   FOTO VIVA EN EL HERO
+   La foto se acerca despacio (Ken Burns) y las otras se turnan encima. Cero
+   kilobytes de video. Solo se animan `transform` y `opacity`, que el navegador
+   resuelve en la GPU: no traba ni en un celular de gama baja.
+   Las tres fotos son de banco de imágenes a propósito: las fotos propias del
+   salón miden 278 px de ancho y a este tamaño saldrían borrosas. Van abajo,
+   en "Nuestro trabajo", donde se ven nítidas.
+--------------------------------------------------------------------------- */
+.hero-foto {
+  animation: kenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(0, -1.5%, 0);
+  }
+}
+
+/* Las fotos de relevo empiezan invisibles y aparecen por turnos. La primera
+   nunca se apaga: siempre hay algo debajo, así que jamás se ve un hueco. */
+.hero-capa {
+  opacity: 0;
+  animation: kenburns 28s ease-in-out infinite alternate,
+             hero-crossfade 24s linear infinite;
+}
+
+@keyframes hero-crossfade {
+  0%, 30% { opacity: 0; }
+  33%, 63% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+/* Hilo rosa que cierra el hero por abajo */
+.hilo-marca {
+  background: linear-gradient(
+    to right,
+    rgba(143, 211, 244, 0) 0%,
+    rgba(143, 211, 244, 0.8) 50%,
+    rgba(143, 211, 244, 0) 100%
+  );
+}
+
+/* Franja de datos reales bajo el hero (dirección, WhatsApp: lo que sí sabemos) */
+.franja-dato {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------------------------------------------------------------------------
+   FRANJA DEL SALÓN
+   Ciruela casi negra: es el magenta de la marca llevado al fondo de la escala.
+   Sobre el magenta puro no se podría escribir en magenta claro (2.5:1); sobre
+   esta ciruela el rosa da 5.6:1 y el blanco 17:1.
+--------------------------------------------------------------------------- */
+.franja-salon {
+  background:
+    radial-gradient(120% 90% at 12% 0%, rgba(143, 211, 244, 0.14) 0%, rgba(143, 211, 244, 0) 55%),
+    radial-gradient(100% 80% at 88% 100%, rgba(143, 211, 244, 0.10) 0%, rgba(143, 211, 244, 0) 60%),
+    linear-gradient(165deg, #123a63 0%, #0b2033 45%, #071722 100%);
+}
+
+/* ---------------------------------------------------------------------------
+   TARJETAS
+   Se levantan un poco con el mouse y marcan el borde en magenta. En celular no
+   hay hover, así que el peso visual lo lleva la línea de arriba.
+--------------------------------------------------------------------------- */
+.tarjeta {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-acento);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.45);
+}
+
+/* Monograma provisional del header y del pie */
+.marca-monograma {
+  background: var(--color-primario);
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+/* ---------------------------------------------------------------------------
+   MARCADOR "EDITAR"
+   Esta es una demo: donde falta un dato del cliente se deja dicho, a la vista,
+   en vez de inventarlo. Van con borde punteado para que se note que no forman
+   parte del texto final.
+--------------------------------------------------------------------------- */
+.editar {
+  display: inline-block;
+  border: 1px dashed color-mix(in srgb, var(--color-acento) 55%, transparent);
+  background: color-mix(in srgb, var(--color-acento) 10%, transparent);
+  /* Magenta más oscuro que el de marca: estos avisos van en letra chica
+     (13 px) y tienen que pasar 4.5:1 sobre su propio fondo. Este da 8.8:1. */
+  color: var(--color-secundario);
+  border-radius: 0.6rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+:root[data-tema="oscuro"] .editar {
+  color: var(--color-acento-fuerte);
+}
+
+.editar b {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Sobre fondo oscuro (franja del salón, bloque de contacto) el marcador se aclara */
+.editar-claro {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+:root[data-tema="oscuro"] .editar-claro {
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   PREGUNTAS FRECUENTES
+   Safari sigue pintando su propio triangulito aunque el <summary> tenga
+   list-style: none.
+--------------------------------------------------------------------------- */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------------
+   FORMULARIO DE CITA
+--------------------------------------------------------------------------- */
+.campo-cita:focus {
+  border-color: var(--color-acento);
+}
+
+.campo-cita::placeholder {
+  color: color-mix(in srgb, var(--color-texto) 45%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+   BARRA DE ACCIÓN EN EL CELULAR
+   Reemplaza al botón flotante en pantallas chicas: ocupa el ancho completo, el
+   pulgar cae justo encima y suma "cómo llegar", que es la otra cosa que la
+   gente busca. `env(safe-area-inset-bottom)` evita quedar debajo de la barra
+   de gestos del iPhone.
+--------------------------------------------------------------------------- */
+.barra-movil {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+body.con-barra-movil {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  body.con-barra-movil {
+    padding-bottom: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   MENOS MOVIMIENTO PARA QUIEN LO PIDE
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-foto,
+  .hero-capa {
+    animation: none;
+  }
+  .hero-capa {
+    opacity: 0;
+  }
+  .tarjeta:hover {
+    transform: none;
+  }
+}
+
+/* Atenua el parrafo SIN apagar a sus hijos: opacity compondria tambien
+   los marcadores EDITAR y el enlace de WhatsApp, y los dejaba en 4.2:1. */
+.texto-suave { color: color-mix(in srgb, var(--color-texto) 82%, var(--color-fondo)); }
+
+/* Igual que .texto-suave pero mas tenue, para textos de ayuda. Atenuar por
+   color y no por opacity mantiene el contraste sobre el minimo AA. */
+.texto-tenue { color: color-mix(in srgb, var(--color-texto) 70%, var(--color-fondo)); }
