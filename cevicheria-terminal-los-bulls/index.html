@@ -45,7 +45,7 @@
 }
   </script>
 </head>
-<body class="con-barra-movil bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
+<body class="papel con-barra-movil bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
 
 <header class="sticky top-0 z-40 border-b backdrop-blur" style="background: color-mix(in srgb, var(--color-fondo) 88%, transparent); border-color: var(--color-borde)">
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3">
@@ -93,27 +93,30 @@
         <a href="#carta" class="inline-flex min-h-[52px] items-center justify-center rounded-full px-7 text-[15px] font-semibold no-underline ring-1 ring-white/50 transition hover:bg-white/10" style="color: inherit">Ver la carta</a>
       </div>
     </div>
+      <svg class="ola" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,52 C180,92 360,12 540,36 C720,60 900,96 1080,72 C1260,48 1350,28 1440,34 L1440,90 L0,90 Z"></path>
+      </svg>
   </section>
 
   <section class="px-4 py-8">
     <div class="mx-auto max-w-5xl">
       <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
-        <a href="#ceviches-y-tiraditos" class="ficha reveal flex min-h-[104px] flex-col justify-between rounded-2xl p-4 no-underline transition hover:brightness-110"
+        <a href="#ceviches-y-tiraditos" class="ficha reveal flex min-h-[112px] flex-col justify-between rounded-2xl p-4 no-underline"
            style="background: var(--color-primario); color: #ffffff">
           <span class="font-display text-[15px] leading-tight">CEVICHES</span>
           <span class="text-xs font-semibold" style="color: #8fd3f4">10 platos · desde S/ 25</span>
         </a>
-        <a href="#para-calentar" class="ficha reveal flex min-h-[104px] flex-col justify-between rounded-2xl p-4 no-underline transition hover:brightness-110"
+        <a href="#para-calentar" class="ficha reveal flex min-h-[112px] flex-col justify-between rounded-2xl p-4 no-underline"
            style="background: var(--color-acento); color: #ffffff">
           <span class="font-display text-[15px] leading-tight">PARA<br>CALENTAR</span>
           <span class="text-xs font-semibold" style="color: #cfe6f6">20 platos · desde S/ 8</span>
         </a>
-        <a href="#frituras-chicharrones-y-jaleas" class="ficha reveal flex min-h-[104px] flex-col justify-between rounded-2xl p-4 no-underline transition hover:brightness-110"
+        <a href="#frituras-chicharrones-y-jaleas" class="ficha reveal flex min-h-[112px] flex-col justify-between rounded-2xl p-4 no-underline"
            style="background: #0e6b8f; color: #ffffff">
           <span class="font-display text-[15px] leading-tight">CHICHARRONES<br>Y JALEAS</span>
           <span class="text-xs font-semibold" style="color: #cfe6f6">8 platos · desde S/ 25</span>
         </a>
-        <a href="#para-compartir" class="ficha reveal flex min-h-[104px] flex-col justify-between rounded-2xl p-4 no-underline transition hover:brightness-110"
+        <a href="#para-compartir" class="ficha reveal flex min-h-[112px] flex-col justify-between rounded-2xl p-4 no-underline"
            style="background: #f2b705; color: #2a1f00">
           <span class="font-display text-[15px] leading-tight">PARA<br>COMPARTIR</span>
           <span class="text-xs font-semibold" style="color: #5a4700">5 platos · desde S/ 35</span>
@@ -132,21 +135,21 @@
               <p class="m-0 text-[15px] font-semibold">Ceviche Los Bull's</p>
               <p class="texto-suave m-0 mt-0.5 text-[13px]">Con chicharrón de pota montado</p>
             </div>
-            <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 25</span>
+            <span class="precio shrink-0">S/ 25</span>
           </li>
           <li class="flex items-center gap-3 py-3">
             <div class="min-w-0 flex-1">
               <p class="m-0 text-[15px] font-semibold">Parihuela Los Bull's</p>
               <p class="texto-suave m-0 mt-0.5 text-[13px]">La de la casa</p>
             </div>
-            <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+            <span class="precio shrink-0">S/ 45</span>
           </li>
           <li class="flex items-center gap-3 py-3">
             <div class="min-w-0 flex-1">
               <p class="m-0 text-[15px] font-semibold">Ronda marina</p>
               <p class="texto-suave m-0 mt-0.5 text-[13px]">Cinco tiempos en una sola fuente</p>
             </div>
-            <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 85</span>
+            <span class="precio shrink-0">S/ 85</span>
           </li>
         </ul>
       </div>
@@ -197,7 +200,7 @@
       </div>
       <details class="categoria scroll-mt-24" id="ceviches-y-tiraditos" open>
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Ceviches y tiraditos</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Ceviches y tiraditos</span></span>
           <span class="texto-suave shrink-0 text-[13px]">10 · desde S/ 25</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -211,7 +214,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 25</span>
+              <span class="precio shrink-0">S/ 25</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -221,7 +224,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -231,7 +234,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -241,7 +244,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+              <span class="precio shrink-0">S/ 35</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -251,7 +254,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -261,7 +264,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 34</span>
+              <span class="precio shrink-0">S/ 34</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -271,7 +274,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -281,7 +284,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 85</span>
+              <span class="precio shrink-0">S/ 85</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -291,7 +294,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
+              <span class="precio shrink-0">S/ 28</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -301,13 +304,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
+              <span class="precio shrink-0">S/ 28</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="leches-de-tigre">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Leches de tigre</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Leches de tigre</span></span>
           <span class="texto-suave shrink-0 text-[13px]">4 · desde S/ 15</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -321,7 +324,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 15</span>
+              <span class="precio shrink-0">S/ 15</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -331,7 +334,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 24</span>
+              <span class="precio shrink-0">S/ 24</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -341,7 +344,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 22</span>
+              <span class="precio shrink-0">S/ 22</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -351,13 +354,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 20</span>
+              <span class="precio shrink-0">S/ 20</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="causas-y-entradas-frias">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Causas y entradas frías</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Causas y entradas frías</span></span>
           <span class="texto-suave shrink-0 text-[13px]">6 · desde S/ 19</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -371,7 +374,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 24</span>
+              <span class="precio shrink-0">S/ 24</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -381,7 +384,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 32</span>
+              <span class="precio shrink-0">S/ 32</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -391,7 +394,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 34</span>
+              <span class="precio shrink-0">S/ 34</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -401,7 +404,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -411,7 +414,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -421,13 +424,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 19</span>
+              <span class="precio shrink-0">S/ 19</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="yo-soy-los-bull-s">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Yo soy Los Bull's</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Yo soy Los Bull's</span></span>
           <span class="texto-suave shrink-0 text-[13px]">5 · desde S/ 30</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -441,7 +444,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -451,7 +454,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+              <span class="precio shrink-0">S/ 55</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -461,7 +464,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -471,7 +474,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -481,13 +484,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="festival-criollo">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Festival criollo</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Festival criollo</span></span>
           <span class="texto-suave shrink-0 text-[13px]">3 · desde S/ 30</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -501,7 +504,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -511,7 +514,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 39</span>
+              <span class="precio shrink-0">S/ 39</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -521,13 +524,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="para-calentar">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Para calentar</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Para calentar</span></span>
           <span class="texto-suave shrink-0 text-[13px]">20 · desde S/ 8</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -541,7 +544,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 8</span>
+              <span class="precio shrink-0">S/ 8</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -551,7 +554,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 14</span>
+              <span class="precio shrink-0">S/ 14</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -561,7 +564,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 25</span>
+              <span class="precio shrink-0">S/ 25</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -571,7 +574,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 33</span>
+              <span class="precio shrink-0">S/ 33</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -581,7 +584,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -591,7 +594,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -601,7 +604,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -611,7 +614,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
+              <span class="precio shrink-0">S/ 50</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -621,7 +624,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
+              <span class="precio shrink-0">S/ 50</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -631,7 +634,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -641,7 +644,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+              <span class="precio shrink-0">S/ 45</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -651,7 +654,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+              <span class="precio shrink-0">S/ 45</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -661,7 +664,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -671,7 +674,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 60</span>
+              <span class="precio shrink-0">S/ 60</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -681,7 +684,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 60</span>
+              <span class="precio shrink-0">S/ 60</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -691,7 +694,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+              <span class="precio shrink-0">S/ 45</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -701,7 +704,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -711,7 +714,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
+              <span class="precio shrink-0">S/ 28</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -721,7 +724,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 32</span>
+              <span class="precio shrink-0">S/ 32</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -731,13 +734,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+              <span class="precio shrink-0">S/ 35</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="frituras-chicharrones-y-jaleas">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Frituras: chicharrones y jaleas</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Frituras: chicharrones y jaleas</span></span>
           <span class="texto-suave shrink-0 text-[13px]">8 · desde S/ 25</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -751,7 +754,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 25</span>
+              <span class="precio shrink-0">S/ 25</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -761,7 +764,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -771,7 +774,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+              <span class="precio shrink-0">S/ 35</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -781,7 +784,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -791,7 +794,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -801,7 +804,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 34</span>
+              <span class="precio shrink-0">S/ 34</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -811,7 +814,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 39</span>
+              <span class="precio shrink-0">S/ 39</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -821,13 +824,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+              <span class="precio shrink-0">S/ 55</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="sobre-las-olas-pescados-enteros">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Sobre las olas: pescados enteros</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Sobre las olas: pescados enteros</span></span>
           <span class="texto-suave shrink-0 text-[13px]">8 · desde S/ 40</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -841,7 +844,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+              <span class="precio shrink-0">S/ 55</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -851,7 +854,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 60</span>
+              <span class="precio shrink-0">S/ 60</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -861,7 +864,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -871,7 +874,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
+              <span class="precio shrink-0">S/ 50</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -881,7 +884,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+              <span class="precio shrink-0">S/ 55</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -891,7 +894,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 60</span>
+              <span class="precio shrink-0">S/ 60</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -901,7 +904,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 40</span>
+              <span class="precio shrink-0">S/ 40</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -911,13 +914,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 50</span>
+              <span class="precio shrink-0">S/ 50</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="afro-latinos-tacu-tacu">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Afro latinos: tacu tacu</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Afro latinos: tacu tacu</span></span>
           <span class="texto-suave shrink-0 text-[13px]">4 · desde S/ 30</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -931,7 +934,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -941,7 +944,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -951,7 +954,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+              <span class="precio shrink-0">S/ 35</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -961,13 +964,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="amor-de-lujo-arroces-y-chaufas">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Amor de lujo: arroces y chaufas</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Amor de lujo: arroces y chaufas</span></span>
           <span class="texto-suave shrink-0 text-[13px]">7 · desde S/ 28</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -981,7 +984,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 38</span>
+              <span class="precio shrink-0">S/ 38</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -991,7 +994,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 33</span>
+              <span class="precio shrink-0">S/ 33</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1001,7 +1004,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 28</span>
+              <span class="precio shrink-0">S/ 28</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1011,7 +1014,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1021,7 +1024,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 39</span>
+              <span class="precio shrink-0">S/ 39</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1031,7 +1034,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+              <span class="precio shrink-0">S/ 45</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1041,13 +1044,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 30</span>
+              <span class="precio shrink-0">S/ 30</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="para-compartir">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Para compartir</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Para compartir</span></span>
           <span class="texto-suave shrink-0 text-[13px]">5 · desde S/ 35</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -1061,7 +1064,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 35</span>
+              <span class="precio shrink-0">S/ 35</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1071,7 +1074,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 55</span>
+              <span class="precio shrink-0">S/ 55</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1081,7 +1084,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 45</span>
+              <span class="precio shrink-0">S/ 45</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1091,7 +1094,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 70</span>
+              <span class="precio shrink-0">S/ 70</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1101,13 +1104,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 100</span>
+              <span class="precio shrink-0">S/ 100</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="porciones">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Porciones</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Porciones</span></span>
           <span class="texto-suave shrink-0 text-[13px]">6 · desde S/ 7</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -1121,7 +1124,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+              <span class="precio shrink-0">S/ 7</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1131,7 +1134,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+              <span class="precio shrink-0">S/ 7</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1141,7 +1144,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+              <span class="precio shrink-0">S/ 7</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1151,7 +1154,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+              <span class="precio shrink-0">S/ 7</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1161,7 +1164,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+              <span class="precio shrink-0">S/ 7</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1171,13 +1174,13 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+              <span class="precio shrink-0">S/ 7</span>
             </li>
         </ul>
       </details>
       <details class="categoria scroll-mt-24" id="para-la-sed">
         <summary class="flex min-h-[64px] cursor-pointer list-none items-center gap-3 py-4">
-          <span class="font-display flex-1 text-[16px] uppercase tracking-wide">Para la sed</span>
+          <span class="cinta flex-1"><span class="cinta-txt font-display text-[15px] uppercase">Para la sed</span></span>
           <span class="texto-suave shrink-0 text-[13px]">12 · desde S/ 4</span>
           <span class="chevron shrink-0 text-[22px] leading-none" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
         </summary>
@@ -1191,7 +1194,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+              <span class="precio shrink-0">S/ 7</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1201,7 +1204,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 10</span>
+              <span class="precio shrink-0">S/ 10</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1211,7 +1214,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 16</span>
+              <span class="precio shrink-0">S/ 16</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1221,7 +1224,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 4</span>
+              <span class="precio shrink-0">S/ 4</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1231,7 +1234,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 5</span>
+              <span class="precio shrink-0">S/ 5</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1241,7 +1244,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 12</span>
+              <span class="precio shrink-0">S/ 12</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1251,7 +1254,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 18</span>
+              <span class="precio shrink-0">S/ 18</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1261,7 +1264,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 7</span>
+              <span class="precio shrink-0">S/ 7</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1271,7 +1274,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 10</span>
+              <span class="precio shrink-0">S/ 10</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1281,7 +1284,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 12</span>
+              <span class="precio shrink-0">S/ 12</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1291,7 +1294,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 14</span>
+              <span class="precio shrink-0">S/ 14</span>
             </li>
             <li class="plato flex items-start gap-3 py-3">
               <div class="min-w-0 flex-1">
@@ -1301,7 +1304,7 @@
                    class="mt-1 inline-flex min-h-[44px] items-center gap-1.5 text-[13px] font-semibold no-underline hover:underline"
                    style="color: var(--color-acento-fuerte)">Pedir este plato →</a>
               </div>
-              <span class="font-display shrink-0 text-[16px]" style="color: var(--color-acento-fuerte)">S/ 16</span>
+              <span class="precio shrink-0">S/ 16</span>
             </li>
         </ul>
       </details>
