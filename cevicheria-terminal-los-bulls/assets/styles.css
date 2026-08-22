@@ -466,20 +466,33 @@ body.con-barra-movil {
 --------------------------------------------------------------------------- */
 .ficha-ilus {
   position: absolute;
-  right: -18px;
-  bottom: -20px;
-  width: 118px;
-  height: 118px;
+  right: -16px;
+  bottom: -18px;
+  width: 112px;
+  height: 112px;
   opacity: 0.34;
   pointer-events: none;
   z-index: -1;
 }
-.ficha-ilus-ancha {
-  right: 58px;
-  bottom: -26px;
+
+.ficha-foto {
+  position: absolute;
+  right: -10px;
+  bottom: -14px;
+  width: 124px;
+  height: auto;
+  max-height: 118px;
+  object-fit: contain;
+  object-position: bottom right;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+  z-index: -1;
+}
+.ficha-foto-ancha {
+  right: 52px;
+  bottom: -10px;
   width: 132px;
-  height: 132px;
-  opacity: 0.28;
+  max-height: 126px;
 }
 
 /* El numero de platos, en grande y muy tenue, como foliatura */
@@ -518,6 +531,6 @@ body.con-barra-movil {
   box-shadow: 0 5px 0 rgba(0, 0, 0, 0.22);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .ficha, .ficha-ilus, .ficha-flecha { transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease, background 0.16s ease; }
-  .ficha:hover .ficha-ilus, .ficha:focus-visible .ficha-ilus { opacity: 0.46; }
+  .ficha, .ficha-foto, .ficha-flecha { transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease, background 0.16s ease; }
+  .ficha:hover .ficha-foto, .ficha:focus-visible .ficha-foto { transform: scale(1.06); }
 }

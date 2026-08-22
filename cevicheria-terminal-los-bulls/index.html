@@ -24,7 +24,10 @@
   "@type": "Restaurant",
   "name": "Cevichería Terminal Los Bull's",
   "servesCuisine": "Peruana, cevichería",
-  "telephone": "+51981531329",
+  "telephone": [
+    "+51981531329",
+    "+51926335001"
+  ],
   "priceRange": "S/ 4 - S/ 100",
   "address": {
     "@type": "PostalAddress",
@@ -77,7 +80,7 @@
 
   <section id="inicio" class="relative overflow-hidden px-4 pb-10 pt-12" style="color: #ffffff">
     <div class="absolute inset-0" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=1600&q=78" alt="" fetchpriority="high" decoding="async"
+      <img src="assets/hero.jpg" alt="" fetchpriority="high" decoding="async"
            class="h-full w-full object-cover">
       <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(9,26,44,0.86) 0%, rgba(9,26,44,0.72) 55%, rgba(18,58,99,0.92) 100%)"></div>
     </div>
@@ -108,7 +111,7 @@
       <div class="grid grid-cols-2 gap-3">
         <a href="#ceviches-y-tiraditos" class="ficha reveal group relative isolate flex overflow-hidden rounded-2xl no-underline col-span-2 min-h-[124px] items-center gap-4 p-5"
            style="background: var(--color-primario); color: #ffffff">
-          <svg class="ficha-ilus ficha-ilus-ancha" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 33h50c0 12-11 21-25 21S7 45 7 33Z"/><path d="M20 25a7 7 0 1 1 14 0"/><path d="M27 18v7M20 25h14"/><path d="M40 20c7 0 12 3 15 6-3 3-8 6-15 6-6 0-10-3-10-6s4-6 10-6Z"/></svg>
+          <img src="assets/plato-ceviches.png" alt="" loading="lazy" decoding="async" class="ficha-foto ficha-foto-ancha">
           <span class="ficha-num" aria-hidden="true">10</span>
           <span class="relative flex min-w-0 flex-1 flex-col gap-1">
             <span class="font-display text-[15px] leading-tight ">CEVICHES</span>
@@ -124,7 +127,7 @@
         </a>
         <a href="#para-calentar" class="ficha reveal group relative isolate flex overflow-hidden rounded-2xl no-underline col-span-1 min-h-[150px] flex-col justify-between p-4"
            style="background: var(--color-acento); color: #ffffff">
-          <svg class="ficha-ilus " viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 28h38v18a7 7 0 0 1-7 7H20a7 7 0 0 1-7-7V28Z"/><path d="M8 28h48"/><path d="M13 36H8a4 4 0 0 1 0-8h5M51 36h5a4 4 0 0 0 0-8h-5"/><path d="M25 20c0-4 4-5 4-9M35 20c0-4 4-5 4-9"/></svg>
+          <svg class="ficha-ilus" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 28h38v18a7 7 0 0 1-7 7H20a7 7 0 0 1-7-7V28Z"/><path d="M8 28h48"/><path d="M13 36H8a4 4 0 0 1 0-8h5M51 36h5a4 4 0 0 0 0-8h-5"/><path d="M25 20c0-4 4-5 4-9M35 20c0-4 4-5 4-9"/></svg>
           <span class="ficha-num" aria-hidden="true">20</span>
           <span class="relative flex min-w-0 flex-1 flex-col gap-0 justify-between h-full">
             <span class="font-display text-[15px] leading-tight mb-auto">PARA<br>CALENTAR</span>
@@ -140,7 +143,7 @@
         </a>
         <a href="#frituras-chicharrones-y-jaleas" class="ficha reveal group relative isolate flex overflow-hidden rounded-2xl no-underline col-span-1 min-h-[150px] flex-col justify-between p-4"
            style="background: #0e6b8f; color: #ffffff">
-          <svg class="ficha-ilus " viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 32c8-9 21-13 30-9 6 2 10 5 12 9-2 4-6 7-12 9-9 4-22 0-30-9Z"/><circle cx="44" cy="28" r="2"/><path d="M12 32L5 25v14l7-7Z"/><path d="M26 24c2 4 2 12 0 16"/></svg>
+          <img src="assets/plato-frituras.png" alt="" loading="lazy" decoding="async" class="ficha-foto ">
           <span class="ficha-num" aria-hidden="true">8</span>
           <span class="relative flex min-w-0 flex-1 flex-col gap-0 justify-between h-full">
             <span class="font-display text-[15px] leading-tight mb-auto">CHICHARRONES<br>Y JALEAS</span>
@@ -156,7 +159,7 @@
         </a>
         <a href="#para-compartir" class="ficha reveal group relative isolate flex overflow-hidden rounded-2xl no-underline col-span-2 min-h-[124px] items-center gap-4 p-5"
            style="background: #f2b705; color: #2a1f00">
-          <svg class="ficha-ilus ficha-ilus-ancha" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="32" cy="35" rx="27" ry="14"/><ellipse cx="32" cy="34" rx="20" ry="9"/><circle cx="24" cy="32" r="4"/><circle cx="35" cy="36" r="4"/><circle cx="43" cy="31" r="3"/></svg>
+          <img src="assets/plato-compartir.png" alt="" loading="lazy" decoding="async" class="ficha-foto ficha-foto-ancha">
           <span class="ficha-num" aria-hidden="true">5</span>
           <span class="relative flex min-w-0 flex-1 flex-col gap-1">
             <span class="font-display text-[15px] leading-tight ">PARA COMPARTIR</span>
@@ -207,7 +210,7 @@
 
   <section id="carta" class="relative overflow-hidden px-4 py-16 text-white">
     <div class="absolute inset-0" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=1200&q=75" alt="" loading="lazy" decoding="async" class="h-full w-full object-cover">
+      <img src="assets/banda.jpg" alt="" loading="lazy" decoding="async" class="h-full w-full object-cover">
       <div class="absolute inset-0" style="background: rgba(11,32,51,0.82)"></div>
     </div>
     <div class="relative mx-auto max-w-5xl">
@@ -1428,7 +1431,10 @@
       </div>
       <div class="mt-8">
         <p class="m-0 text-xs font-bold uppercase tracking-widest" style="color: #8fd3f4">WhatsApp</p>
-        <a href="tel:+51981531329" class="mt-1.5 inline-flex min-h-[44px] items-center text-[19px] font-semibold no-underline hover:underline" style="color: #ffffff">+51 981 531 329</a>
+        <div class="mt-1.5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 sm:justify-start">
+          <a href="tel:+51981531329" class="inline-flex min-h-[44px] items-center text-[19px] font-semibold no-underline hover:underline" style="color: #ffffff">+51 981 531 329</a>
+          <a href="tel:+51926335001" class="inline-flex min-h-[44px] items-center text-[19px] font-semibold no-underline hover:underline" style="color: #ffffff">+51 926 335 001</a>
+        </div>
       </div>
       <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener"
          class="mt-8 inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-8 text-[16px] font-bold no-underline shadow-lg transition hover:scale-[1.02]"
