@@ -375,3 +375,83 @@ body.con-barra-movil {
 @media (prefers-reduced-motion: reduce) {
   .categoria .chevron { transition: none; }
 }
+
+/* ---------------------------------------------------------------------------
+   LENGUAJE DE LA CARTA IMPRESA
+   La carta del local tiene cintas inclinadas en los titulos, precios en
+   pastilla, olas y textura de papel. Esto trae eso a la web.
+--------------------------------------------------------------------------- */
+
+/* Precio en pastilla, como los recuadros de su carta */
+.precio {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 0.42rem 0.7rem;
+  border-radius: 0.55rem;
+  background: var(--color-acento);
+  color: var(--color-acento-texto);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* Cinta inclinada del titulo de seccion */
+.cinta {
+  display: inline-block;
+  min-width: 0;
+  transform: skewX(-9deg);
+  background: var(--color-primario);
+  color: #ffffff;
+  padding: 0.42rem 0.95rem;
+  border-radius: 0.3rem;
+  box-shadow: 3px 3px 0 var(--color-acento);
+}
+.cinta-txt {
+  display: block;
+  transform: skewX(9deg);
+  letter-spacing: 0.045em;
+}
+:root[data-tema="oscuro"] .cinta {
+  background: var(--color-acento);
+  box-shadow: 3px 3px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* Ola al pie del hero */
+.ola {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 58px;
+  display: block;
+  fill: var(--color-fondo);
+  pointer-events: none;
+}
+
+/* Textura de papel: dos tramas muy tenues, sin peso de imagen */
+.papel {
+  background-image:
+    repeating-linear-gradient(103deg, rgba(18, 58, 99, 0.022) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(7deg, rgba(18, 58, 99, 0.016) 0 3px, transparent 3px 7px);
+}
+:root[data-tema="oscuro"] .papel {
+  background-image:
+    repeating-linear-gradient(103deg, rgba(143, 211, 244, 0.028) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(7deg, rgba(143, 211, 244, 0.02) 0 3px, transparent 3px 7px);
+}
+
+/* Fichas de categoria con relieve */
+.ficha {
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.ficha:hover, .ficha:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.22);
+  filter: brightness(1.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ficha { transition: none; }
+  .ficha:hover, .ficha:focus-visible { transform: none; }
+}
