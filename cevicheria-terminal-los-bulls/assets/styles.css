@@ -456,22 +456,68 @@ body.con-barra-movil {
   .ficha:hover, .ficha:focus-visible { transform: none; }
 }
 
-/* La ilustracion vive detras del texto, sangrada por la esquina.
-   currentColor la hace seguir la tinta de cada ficha sin definir un color
-   por rubro, y la opacidad la deja como marca de agua, no como icono. */
+
+
+/* ---------------------------------------------------------------------------
+   FICHAS DE CATEGORIA
+   La ilustracion pasa de marca de agua a elemento grafico: mas grande, mas
+   presente, sangrada. La cifra de platos hace de numero de pagina, como en
+   una carta impresa.
+--------------------------------------------------------------------------- */
 .ficha-ilus {
   position: absolute;
-  right: -14px;
-  bottom: -14px;
-  width: 92px;
-  height: 92px;
-  opacity: 0.26;
+  right: -18px;
+  bottom: -20px;
+  width: 118px;
+  height: 118px;
+  opacity: 0.34;
   pointer-events: none;
+  z-index: -1;
 }
-.ficha:hover .ficha-ilus,
-.ficha:focus-visible .ficha-ilus {
-  opacity: 0.4;
+.ficha-ilus-ancha {
+  right: 58px;
+  bottom: -26px;
+  width: 132px;
+  height: 132px;
+  opacity: 0.28;
+}
+
+/* El numero de platos, en grande y muy tenue, como foliatura */
+.ficha-num {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-family: var(--font-display);
+  font-size: 3.1rem;
+  line-height: 0.9;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Flecha: dice que la ficha lleva a algun lado */
+.ficha-flecha {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  align-self: center;
+}
+.ficha-flecha svg { width: 17px; height: 17px; }
+.ficha:hover .ficha-flecha,
+.ficha:focus-visible .ficha-flecha { background: rgba(255, 255, 255, 0.3); }
+
+.ficha {
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.22);
+}
+.ficha:hover, .ficha:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.22);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .ficha-ilus { transition: opacity 0.18s ease; }
+  .ficha, .ficha-ilus, .ficha-flecha { transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease, background 0.16s ease; }
+  .ficha:hover .ficha-ilus, .ficha:focus-visible .ficha-ilus { opacity: 0.46; }
 }
