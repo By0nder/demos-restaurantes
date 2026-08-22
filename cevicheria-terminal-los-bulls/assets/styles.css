@@ -455,3 +455,23 @@ body.con-barra-movil {
   .ficha { transition: none; }
   .ficha:hover, .ficha:focus-visible { transform: none; }
 }
+
+/* La ilustracion vive detras del texto, sangrada por la esquina.
+   currentColor la hace seguir la tinta de cada ficha sin definir un color
+   por rubro, y la opacidad la deja como marca de agua, no como icono. */
+.ficha-ilus {
+  position: absolute;
+  right: -14px;
+  bottom: -14px;
+  width: 92px;
+  height: 92px;
+  opacity: 0.26;
+  pointer-events: none;
+}
+.ficha:hover .ficha-ilus,
+.ficha:focus-visible .ficha-ilus {
+  opacity: 0.4;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ficha-ilus { transition: opacity 0.18s ease; }
+}
