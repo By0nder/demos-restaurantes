@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cevichería Terminal Los Bull's — Carta y pedidos por WhatsApp</title>
-  <meta name="description" content="Cevichería en Lima. 98 platos con su precio: ceviches, parihuelas, chicharrones y fuentes para compartir. Pida por WhatsApp.">
+  <meta name="description" content="Cevichería en Breña, Lima. 98 platos con su precio: ceviches, parihuelas, chicharrones y fuentes para compartir. Pida por WhatsApp.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#123a63">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123a63'/%3E%3Ctext x='32' y='45' font-family='Archivo,Helvetica,Arial,sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='%2329abe2'%3ELB%3C/text%3E%3C/svg%3E">
@@ -21,6 +21,26 @@
   "servesCuisine": "Peruana, cevichería",
   "telephone": "+51981531329",
   "priceRange": "S/ 4 - S/ 100",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jr. Napo con Jr. Succha 299, Breña, Lima",
+    "addressLocality": "Breña",
+    "addressRegion": "Lima",
+    "addressCountry": "PE"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "10:00",
+    "closes": "18:00"
+  },
   "url": "https://by0nder.github.io/demos-restaurantes/cevicheria-terminal-los-bulls"
 }
   </script>
@@ -60,6 +80,9 @@
       <p class="font-display m-0 text-[14px] tracking-wide">CEVICHERÍA · TERMINAL</p>
       <h1 class="font-display m-0 mt-3 text-[38px] uppercase leading-none md:text-[54px]">¿Qué se<br>le antoja?</h1>
       <p class="m-0 mt-4 max-w-lg text-[15px] leading-relaxed md:text-[17px]">98 platos con su precio a la vista. Toque el que quiera y le llega el pedido escrito a WhatsApp, sin llamadas.</p>
+      <p class="m-0 mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] font-semibold">
+        <span>10:00 a. m. – 6:00 p. m.</span><span aria-hidden="true">·</span><span>Martes cerrado</span><span aria-hidden="true">·</span><span>Breña</span>
+      </p>
       <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
         <a href="https://wa.me/51981531329?text=Hola%20Los%20Bull's%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20un%20pedido." target="_blank" rel="noopener"
            class="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-7 text-[16px] font-bold no-underline shadow-lg transition hover:scale-[1.02]"
@@ -1322,7 +1345,14 @@
             ¿Qué horario tienen?
             <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
           </summary>
-          <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed"><span class="editar"><b>EDITAR:</b> falta el horario de atención. Es de lo que más preguntan.</span></p>
+          <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">Atendemos de 10:00 a. m. – 6:00 p. m.. Todos los días, menos los martes — los martes el local está cerrado.</p>
+        </details>
+        <details class="group reveal py-4">
+          <summary class="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-1 text-[16px] font-semibold">
+            ¿Dónde quedan?
+            <span class="shrink-0 text-xl transition group-open:rotate-45" style="color: var(--color-acento-fuerte)" aria-hidden="true">+</span>
+          </summary>
+          <p class="texto-suave m-0 mt-3 text-[15px] leading-relaxed">En Jr. Napo con Jr. Succha 299, Breña, Lima. En la sección de contacto puede tocar la dirección y se le abre el mapa.</p>
         </details>
       </div>
     </div>
@@ -1334,11 +1364,14 @@
       <div class="mt-8 grid gap-6 sm:grid-cols-2 sm:text-left">
         <div>
           <p class="m-0 text-xs font-bold uppercase tracking-widest" style="color: #8fd3f4">Dirección</p>
-          <p class="m-0 mt-1.5 text-[15px]"><span class="editar editar-claro"><b>EDITAR:</b> falta la dirección del local</span></p>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Jr.%20Napo%20con%20Jr.%20Succha%20299%2C%20Bre%C3%B1a%2C%20Lima%2C%20Per%C3%BA" target="_blank" rel="noopener"
+             class="mt-1.5 inline-flex min-h-[44px] items-center text-[15px] no-underline hover:underline" style="color: #ffffff">Jr. Napo con Jr. Succha 299, Breña, Lima</a>
+          <p class="m-0 text-[13px]" style="color: #8fd3f4">Toque para abrir el mapa</p>
         </div>
         <div>
           <p class="m-0 text-xs font-bold uppercase tracking-widest" style="color: #8fd3f4">Horario</p>
-          <p class="m-0 mt-1.5 text-[15px]"><span class="editar editar-claro"><b>EDITAR:</b> falta el horario de atención</span></p>
+          <p class="m-0 mt-1.5 text-[15px]">10:00 a. m. – 6:00 p. m.</p>
+          <p class="m-0 text-[13px]" style="color: #8fd3f4">Todos los días, menos los martes</p>
         </div>
       </div>
       <div class="mt-8">
