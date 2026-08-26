@@ -16,7 +16,7 @@
    "alt": "Área verde del condominio con grass sembrado y los cerros al fondo",
    "leyenda": "Grass sembrado y regado",
    "orden": 2,
-   "galeria": true
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -31,7 +31,7 @@
    "alt": "Banca de madera junto a un camino empedrado, entre los árboles del condominio",
    "leyenda": "Camino empedrado y zona de descanso",
    "orden": 3,
-   "galeria": true
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -75,8 +75,8 @@
    "orientacion": "horizontal",
    "alt": "El ingreso de Alta Colina con el cerro detrás",
    "leyenda": "El ingreso y el cerro",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -119,9 +119,9 @@
    "h": 1204,
    "orientacion": "horizontal",
    "alt": "La pérgola del condominio en construcción, con el jardín de piedras",
-   "leyenda": "La pérgola",
-   "galeria": false,
-   "orden": 900
+   "leyenda": "La pérgola y el jardín de piedras",
+   "orden": 3,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -150,8 +150,8 @@
    "orientacion": "horizontal",
    "alt": "Pórtico de ladrillo cara vista del condominio, con portón de madera y el cerro verde con neblina detrás",
    "leyenda": "El ingreso al condominio",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -164,9 +164,9 @@
    "h": 1204,
    "orientacion": "horizontal",
    "alt": "El ingreso del condominio visto desde el camino de acceso",
-   "leyenda": "Desde el camino de acceso",
-   "galeria": false,
-   "orden": 900
+   "leyenda": "El ingreso desde el camino",
+   "orden": 2,
+   "galeria": true
   },
   {
    "tipo": "foto",
@@ -179,9 +179,9 @@
    "h": 1204,
    "orientacion": "horizontal",
    "alt": "El portón del condominio entre la neblina de la mañana",
-   "leyenda": "La neblina de la mañana",
-   "galeria": false,
-   "orden": 900
+   "leyenda": "El portón entre la neblina de la mañana",
+   "orden": 12,
+   "galeria": true
   },
   {
    "tipo": "foto",
@@ -196,7 +196,7 @@
    "alt": "Terreno del condominio con árboles jóvenes plantados y el cerro al fondo",
    "leyenda": "Arbolado joven en las parcelas",
    "orden": 12,
-   "galeria": true
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -224,9 +224,9 @@
    "h": 1204,
    "orientacion": "horizontal",
    "alt": "Cartel de bienvenida en el terreno del condominio",
-   "leyenda": "Bienvenida",
-   "galeria": false,
-   "orden": 900
+   "leyenda": "El terreno, con el cerro detrás",
+   "orden": 3,
+   "galeria": true
   },
   {
    "tipo": "foto",
@@ -240,8 +240,8 @@
    "orientacion": "horizontal",
    "alt": "Una de las vías interiores del condominio, con una camioneta y arbolado",
    "leyenda": "Vías interiores",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -272,8 +272,8 @@
    "orientacion": "vertical",
    "alt": "El portón se abre y el carro entra al condominio, con el cerro verde al fondo",
    "leyenda": "La entrada al condominio",
-   "galeria": true,
-   "orden": 8
+   "orden": 8,
+   "galeria": true
   },
   {
    "tipo": "video",
@@ -338,8 +338,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -353,8 +353,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -368,8 +368,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -383,8 +383,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -398,8 +398,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -413,8 +413,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -428,8 +428,8 @@
    "orientacion": "vertical",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -443,8 +443,8 @@
    "orientacion": "panoramica",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -458,8 +458,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -473,8 +473,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -488,8 +488,8 @@
    "orientacion": "vertical",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -503,8 +503,8 @@
    "orientacion": "horizontal",
    "alt": "Ronivel Jiménez García, asesor inmobiliario de Alta Colina",
    "leyenda": "Ronivel Jiménez García",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -518,8 +518,8 @@
    "orientacion": "panoramica",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -533,8 +533,8 @@
    "orientacion": "panoramica",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -548,8 +548,8 @@
    "orientacion": "panoramica",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -563,8 +563,8 @@
    "orientacion": "horizontal",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   },
   {
    "tipo": "foto",
@@ -578,8 +578,8 @@
    "orientacion": "panoramica",
    "alt": "",
    "leyenda": "",
-   "galeria": false,
-   "orden": 900
+   "orden": 900,
+   "galeria": false
   }
  ]
 }
