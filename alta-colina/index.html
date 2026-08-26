@@ -105,8 +105,9 @@
 <!-- ============================================================
      EL LUGAR
      ============================================================ -->
-<section class="seccion" id="lugar">
-  <div class="envoltura lugar">
+<section class="seccion lugar" id="lugar">
+  <div class="envoltura lugar__reja">
+
     <div class="lugar__texto revela">
       <p class="rotulo">El lugar</p>
       <h2 class="titulo-seccion">Espacios saludables para vivir</h2>
@@ -120,21 +121,65 @@
           a lo largo de la mayor parte del año.
         </p>
       </div>
-
-      <div class="lugar__nota">
-        <strong>Por qué el cerro está verde.</strong> Entre junio y noviembre la neblina
-        de la costa se condensa sobre estas laderas y las cubre de vegetación. Es el mismo
-        fenómeno que forma las Lomas de Lúcumo, aquí al lado. No es riego: es el clima
-        del lugar.
-      </div>
     </div>
 
+    <!-- la foto se sale del margen hacia el borde de la pantalla -->
     <figure class="lugar__figura revela">
       <img src="material/web/proyecto-banca-camino.jpg"
            alt="Banca de madera junto a un camino empedrado dentro del condominio, rodeada de árboles jóvenes"
-           loading="lazy" decoding="async" width="400" height="303">
-      <figcaption>Áreas verdes interconectadas · Alta Colina</figcaption>
+           loading="lazy" decoding="async">
+      <figcaption>Áreas verdes interconectadas</figcaption>
     </figure>
+
+    <div class="lugar__nota revela">
+      <p class="lugar__nota-titulo">Por qué el cerro está verde</p>
+      <p>
+        Entre junio y noviembre la neblina de la costa se condensa sobre estas laderas
+        y las cubre de vegetación. Es el mismo fenómeno que forma las Lomas de Lúcumo,
+        aquí al lado.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     BANDA — la loma a sangre completa. Corta el ritmo de secciones
+     apiladas y pone el argumento del lugar en grande.
+     ============================================================ -->
+<section class="banda" id="loma" aria-labelledby="loma-frase">
+  <div class="banda__fondo">
+    <img src="material/web/proyecto-cerro-verde.jpg"
+         alt="El cerro del condominio cubierto de vegetación en temporada de lomas"
+         loading="lazy" decoding="async">
+  </div>
+  <div class="banda__velo"></div>
+  <div class="banda__contenido envoltura">
+    <p class="banda__rotulo">Entre junio y noviembre</p>
+    <p class="banda__frase" id="loma-frase">
+      El cerro verdea con la neblina.<br>No es riego: es el clima del lugar.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     LAS CIFRAS — en este rubro los números son el argumento.
+     Estaban diminutos en la cinta de la portada.
+     ============================================================ -->
+<section class="cifras" aria-label="El proyecto en números">
+  <div class="envoltura cifras__fila">
+    <div class="cifra">
+      <span class="cifra__n">106</span>
+      <span class="cifra__t">Sub-parcelas<br>independizadas</span>
+    </div>
+    <div class="cifra">
+      <span class="cifra__n">16<span class="cifra__mil">,000</span></span>
+      <span class="cifra__t">Metros cuadrados<br>de áreas verdes</span>
+    </div>
+    <div class="cifra">
+      <span class="cifra__n">15<span class="cifra__u">min</span></span>
+      <span class="cifra__t">De la Plaza<br>de Pachacámac</span>
+    </div>
   </div>
 </section>
 
@@ -449,6 +494,25 @@
         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BANDA — el letrero de noche, antes del cierre.
+     ============================================================ -->
+<section class="banda banda--alta" id="noche" aria-labelledby="noche-frase">
+  <div class="banda__fondo">
+    <img src="material/web/proyecto-letrero-noche.jpg"
+         alt="El letrero de Alta Colina iluminado de noche"
+         loading="lazy" decoding="async">
+  </div>
+  <div class="banda__velo"></div>
+  <div class="banda__contenido envoltura">
+    <p class="banda__rotulo">El Manzano, Pampa El Taro</p>
+    <p class="banda__frase" id="noche-frase">
+      Su parcela lo espera<br>con la luz prendida.
+    </p>
   </div>
 </section>
 

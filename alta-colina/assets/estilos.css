@@ -363,11 +363,6 @@ a { color: inherit; }
    EL LUGAR
    ============================================================ */
 
-.lugar { display: grid; gap: clamp(2.5rem, 6vw, 5rem); }
-@media (min-width: 62rem) {
-  .lugar { grid-template-columns: 1fr 1fr; align-items: start; }
-}
-
 .lugar__texto p + p { margin-top: 1.25rem; }
 
 .lugar__nota {
@@ -1282,3 +1277,192 @@ select.campo__caja { appearance: none; cursor: pointer; padding-right: 2.5rem;
 /* el video de la entrada es vertical: se le da su proporción y se centra */
 .llegada video { aspect-ratio: 3 / 4; max-block-size: 30rem; inline-size: auto; margin-inline: auto; }
 @media (max-width: 62rem) { .llegada video { inline-size: 100%; max-block-size: none; } }
+
+/* ============================================================
+   BANDAS A SANGRE — cortan el ritmo de secciones apiladas
+   La página era diez bloques con la misma forma. Estas bandas
+   ocupan todo el ancho, se apoyan en una sola foto y una sola
+   frase, y dan el respiro entre argumento y argumento.
+   ============================================================ */
+
+.banda {
+  position: relative;
+  min-block-size: clamp(24rem, 62vh, 40rem);
+  display: grid;
+  align-content: end;
+  padding-block: clamp(3rem, 8vh, 6rem);
+  color: var(--garua-luz);
+  isolation: isolate;
+  overflow: hidden;
+}
+.banda--alta { min-block-size: clamp(28rem, 78vh, 48rem); }
+
+.banda__fondo { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.banda__fondo img {
+  inline-size: 100%;
+  block-size: 120%;          /* de más, para que el parallax tenga recorrido */
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+
+/* parallax en CSS puro: la foto se mueve menos que la página */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .banda__fondo img {
+      animation: correr linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+    @keyframes correr {
+      from { transform: translateY(-8%); }
+      to   { transform: translateY(0%); }
+    }
+  }
+}
+
+.banda__velo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top,
+    color-mix(in srgb, var(--pizarra) 88%, transparent) 0%,
+    color-mix(in srgb, var(--pizarra) 52%, transparent) 44%,
+    color-mix(in srgb, var(--pizarra) 18%, transparent) 100%);
+}
+
+.banda__contenido { display: grid; gap: 1rem; }
+
+.banda__rotulo {
+  margin: 0;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--garua-luz) 82%, transparent);
+}
+
+.banda__frase {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.75rem, 1rem + 3.4vw, 4rem);
+  font-variation-settings: "SOFT" 30, "WONK" 1, "opsz" 120;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+/* ============================================================
+   LAS CIFRAS — los números son el argumento, no una nota al pie
+   ============================================================ */
+
+.cifras {
+  background: var(--loma);
+  color: var(--garua-luz);
+  padding-block: clamp(3rem, 8vw, 5rem);
+}
+
+.cifras__fila {
+  display: grid;
+  gap: 3rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+}
+
+.cifra { display: grid; gap: 1rem; align-content: start; }
+
+.cifra__n {
+  font-family: var(--display);
+  font-size: clamp(3.5rem, 1.5rem + 8vw, 8rem);
+  font-variation-settings: "SOFT" 20, "WONK" 1, "opsz" 144;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  color: var(--garua-luz);
+}
+.cifra__mil { font-size: 0.62em; letter-spacing: -0.02em; }
+.cifra__u {
+  font-family: var(--dato);
+  font-size: 0.24em;
+  letter-spacing: 0.08em;
+  margin-inline-start: 0.35em;
+  vertical-align: 0.9em;
+  color: var(--arena);
+}
+
+.cifra__t {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--garua-luz) 72%, transparent);
+  padding-block-start: 1rem;
+  border-block-start: 1px solid color-mix(in srgb, var(--garua-luz) 24%, transparent);
+}
+
+/* ============================================================
+   EL LUGAR — composición asimétrica
+   Era título + texto + foto en su caja, igual que todo lo demás.
+   Ahora la foto se sale del margen y la nota se monta sobre ella.
+   ============================================================ */
+
+.lugar__reja { display: grid; gap: 2.5rem; }
+
+@media (min-width: 62rem) {
+  /* En vez de sacar la imagen con un margen negativo (que colapsaba la
+     columna), esta sección suelta su tope de ancho por la derecha: el texto
+     sigue alineado con el resto de la página y la foto llega hasta el borde. */
+  .lugar > .envoltura {
+    inline-size: 100%;
+    max-inline-size: none;
+    margin-inline: 0;
+    padding-inline-start: max(var(--margen), calc((100vw - var(--ancho)) / 2));
+    padding-inline-end: 0;
+  }
+  .lugar__reja {
+    grid-template-columns: minmax(0, 24rem) minmax(0, 1fr);
+    grid-template-areas:
+      "texto figura"
+      "nota  figura";
+    align-items: start;
+    column-gap: clamp(2rem, 5vw, 4rem);
+    row-gap: 2rem;
+  }
+  .lugar__texto  { grid-area: texto; }
+  .lugar__nota   { grid-area: nota; align-self: start; }
+  .lugar__figura { grid-area: figura; }
+  .lugar__figura img { border-start-end-radius: 0; border-end-end-radius: 0; }
+}
+
+.lugar__figura { display: grid; gap: 0.75rem; margin: 0; }
+.lugar__figura img {
+  inline-size: 100%;
+  block-size: clamp(20rem, 46vw, 34rem);
+  object-fit: cover;
+  border-radius: var(--radio);
+  box-shadow: var(--flota);
+}
+.lugar__figura figcaption {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pizarra-sua);
+}
+
+.lugar__nota {
+  padding: 1.5rem;
+  background: var(--loma);
+  color: var(--garua-luz);
+  border-radius: var(--radio);
+  font-size: var(--t-s);
+  line-height: 1.65;
+  box-shadow: var(--flota);
+}
+.lugar__nota p { color: color-mix(in srgb, var(--garua-luz) 84%, transparent); }
+.lugar__nota-titulo {
+  font-family: var(--display);
+  font-size: var(--t-m);
+  line-height: 1.15;
+  color: var(--garua-luz);
+  margin-bottom: 0.75rem;
+}
