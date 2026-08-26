@@ -1278,3 +1278,7 @@ select.campo__caja { appearance: none; cursor: pointer; padding-right: 2.5rem;
 .carrusel__flecha svg { inline-size: 1.15rem; block-size: 1.15rem; }
 .carrusel__flecha:hover:not(:disabled) { background: var(--garua); border-color: var(--pizarra); }
 .carrusel__flecha:disabled { opacity: .3; cursor: default; }
+
+/* el video de la entrada es vertical: se le da su proporción y se centra */
+.llegada video { aspect-ratio: 3 / 4; max-block-size: 30rem; inline-size: auto; margin-inline: auto; }
+@media (max-width: 62rem) { .llegada video { inline-size: 100%; max-block-size: none; } }
