@@ -1,0 +1,1280 @@
+/* ============================================================
+   ALTA COLINA — Condominio
+   Paleta muestreada de las fotos del terreno. Ver direccion-de-arte.md
+   ============================================================ */
+
+:root {
+  /* --- color: del sitio, no de una tendencia --- */
+  --garua-luz:   #EDF1F2;  /* neblina abierta — fondo base            */
+  --garua:       #D6E0E3;  /* neblina — bloques y bordes suaves       */
+  --garua-honda: #A9BBC1;  /* neblina cerrada — trazos, apoyos        */
+  --loma:        #3F4E26;  /* vegetación del cerro                    */
+  --loma-honda:  #2B3719;  /* la misma, en sombra                     */
+  --pizarra:     #23281F;  /* el portón negro — texto                 */
+  --pizarra-sua: #55604E;  /* texto secundario                        */
+  --ladrillo:    #9A6350;  /* el cara vista del pórtico               */
+  --arena:       #B9AE96;  /* tierra ocre seca                        */
+  --bosque:      #0E4A38;  /* el verde exacto del logo — SOLO acción  */
+  --bosque-vivo: #12694E;
+
+  --papel:       var(--garua-luz);
+  --tinta:       var(--pizarra);
+
+  /* --- tipografía --- */
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --cuerpo:  "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --dato:    "IBM Plex Mono", ui-monospace, "Cascadia Code", monospace;
+  --marca:   "Cinzel", var(--display);
+
+  /* --- escala: potencias de 1.5 sobre 16px --- */
+  --t-xs:   0.75rem;
+  --t-s:    0.875rem;
+  --t-base: 1.0625rem;
+  --t-m:    clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem);
+  --t-l:    clamp(2rem, 1.5rem + 2.1vw, 3.25rem);
+  --t-xl:   clamp(2.4rem, 1.6rem + 3.8vw, 5rem);
+  --t-xxl:  clamp(3rem, 1.6rem + 6.4vw, 7.5rem);
+
+  /* --- ritmo --- */
+  --aire:    clamp(4.5rem, 9vw, 10rem);   /* entre secciones */
+  --margen:  clamp(1.25rem, 5vw, 5.5rem); /* lateral         */
+  --ancho:   76rem;
+  --lectura: 38rem;
+
+  --borde: 1px solid color-mix(in srgb, var(--pizarra) 16%, transparent);
+  --radio: 2px;                            /* casi recto: es arquitectura */
+
+  /* --- espaciado: solo multiplos de 4px ---
+     0.25 · 0.5 · 0.75 · 1 · 1.25 · 1.5 · 2 · 2.5 · 3 · 3.5 · 4 · 5 · 6 · 8 rem */
+
+  /* --- profundidad: tres alturas, no mas --- */
+  --alza:    0 1px 2px rgb(35 40 31 / .05);                                  /* apenas levantado */
+  --flota:   0 1px 2px rgb(35 40 31 / .05), 0 12px 32px -18px rgb(35 40 31 / .28);
+  --encima:  0 18px 44px -20px rgb(35 40 31 / .55);                          /* sobre todo lo demas */
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--cuerpo);
+  font-size: var(--t-base);
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+img, video { height: auto; }
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-variation-settings: "SOFT" 20, "WONK" 1, "opsz" 100;
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p { margin: 0; text-wrap: pretty; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--bosque);
+  outline-offset: 3px;
+  border-radius: var(--radio);
+}
+
+::selection { background: var(--loma); color: var(--garua-luz); }
+
+/* ============================================================
+   PIEZAS COMPARTIDAS
+   ============================================================ */
+
+.envoltura {
+  width: min(100% - var(--margen) * 2, var(--ancho));
+  margin-inline: auto;
+}
+
+.seccion { padding-block: var(--aire); }
+
+/* etiqueta técnica — el lenguaje del plano */
+.rotulo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pizarra-sua);
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  margin: 0 0 1.5rem;
+}
+.rotulo::before {
+  content: "";
+  inline-size: 1.75rem;
+  block-size: 1px;
+  background: var(--ladrillo);
+  flex: none;
+}
+
+.titulo-seccion {
+  font-size: var(--t-l);
+  max-width: 18ch;
+  font-variation-settings: "SOFT" 24, "WONK" 1, "opsz" 110;
+}
+
+.bajada {
+  max-width: var(--lectura);
+  color: var(--pizarra-sua);
+  font-size: var(--t-m);
+  line-height: 1.5;
+  margin-top: 1.5rem;
+}
+
+/* --- botones --- */
+.boton {
+  --fondo: var(--bosque);
+  --texto: var(--garua-luz);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-block-size: 3rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--fondo);
+  color: var(--texto);
+  border: 1px solid var(--fondo);
+  border-radius: var(--radio);
+  font: 500 var(--t-s) / 1 var(--cuerpo);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .25s, color .25s, border-color .25s, transform .25s;
+}
+.boton:hover { background: var(--bosque-vivo); border-color: var(--bosque-vivo); transform: translateY(-1px); }
+.boton:active { transform: translateY(0); }
+
+.boton--linea {
+  --fondo: transparent;
+  --texto: currentColor;
+  border-color: color-mix(in srgb, currentColor 34%, transparent);
+}
+.boton--linea:hover {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  border-color: currentColor;
+  transform: translateY(-1px);
+}
+
+.boton svg { inline-size: 1.15em; block-size: 1.15em; flex: none; }
+
+/* ============================================================
+   MOVIMIENTO — reveals en CSS puro, sin JavaScript
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .revela {
+      animation: surgir linear both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 26%;
+    }
+    @keyframes surgir {
+      from { opacity: 0; transform: translateY(1.75rem); }
+      to   { opacity: 1; transform: none; }
+    }
+  }
+}
+
+/* ============================================================
+   CABECERA
+   ============================================================ */
+
+.cabecera {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem var(--margen);
+  color: var(--garua-luz);
+  transition: background .4s, color .4s, backdrop-filter .4s, box-shadow .4s;
+}
+.cabecera[data-pegada="si"] {
+  background: color-mix(in srgb, var(--garua-luz) 88%, transparent);
+  backdrop-filter: blur(14px) saturate(1.3);
+  color: var(--pizarra);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--pizarra) 12%, transparent);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+.marca__cerro { inline-size: 2.5rem; color: currentColor; flex: none; }
+.marca__nombre {
+  font-family: var(--marca);
+  font-size: var(--t-s);
+  font-weight: 500;
+  letter-spacing: 0.19em;
+  line-height: 1;
+}
+.marca__bajada {
+  display: block;
+  font-family: var(--dato);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18em;
+  opacity: .68;
+  margin-top: 0.28em;
+}
+
+.navegacion { display: flex; align-items: center; gap: 2rem; }
+.navegacion a {
+  font-size: var(--t-s);
+  text-decoration: none;
+  opacity: .82;
+  transition: opacity .2s;
+}
+.navegacion a:hover { opacity: 1; }
+@media (max-width: 60rem) { .navegacion__enlaces { display: none; } }
+
+/* ============================================================
+   PORTADA
+   ============================================================ */
+
+.portada {
+  position: relative;
+  min-block-size: 100svh;
+  display: grid;
+  align-content: end;
+  padding: var(--margen);
+  padding-block-end: clamp(2.5rem, 6vh, 5rem);
+  color: var(--garua-luz);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.portada__fondo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.portada__fondo img,
+.portada__fondo video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+/* la neblina: velo frío que ata la foto a la paleta */
+.portada__velo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* el velo oscurece justo donde va el texto y deja respirar el cerro arriba */
+  background:
+    linear-gradient(to top,
+      color-mix(in srgb, var(--pizarra) 90%, transparent) 0%,
+      color-mix(in srgb, var(--pizarra) 76%, transparent) 30%,
+      color-mix(in srgb, var(--pizarra) 58%, transparent) 52%,
+      color-mix(in srgb, var(--pizarra) 22%, transparent) 78%,
+      color-mix(in srgb, var(--pizarra) 42%, transparent) 100%),
+    linear-gradient(160deg,
+      color-mix(in srgb, var(--garua-honda) 26%, transparent),
+      transparent 55%);
+}
+
+.portada__contenido {
+  width: min(100%, var(--ancho));
+  margin-inline: auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.portada__rotulo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--garua-luz) 94%, transparent);
+  margin: 0;
+}
+
+.portada__titular {
+  font-size: var(--t-xxl);
+  max-width: 15ch;
+  font-variation-settings: "SOFT" 30, "WONK" 1, "opsz" 144;
+}
+
+.portada__bajada {
+  max-width: 46ch;
+  font-size: var(--t-m);
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--garua-luz) 88%, transparent);
+}
+
+.portada__acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+
+/* la cinta de datos: el proyecto hablando en números */
+.cinta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 26%, transparent);
+}
+.cinta__dato { display: grid; gap: 0.25rem; padding-block: 0.5rem; }
+.cinta__cifra {
+  font-family: var(--dato);
+  font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.cinta__pie {
+  font-family: var(--dato);
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+/* ============================================================
+   EL LUGAR
+   ============================================================ */
+
+.lugar { display: grid; gap: clamp(2.5rem, 6vw, 5rem); }
+@media (min-width: 62rem) {
+  .lugar { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+
+.lugar__texto p + p { margin-top: 1.25rem; }
+
+.lugar__nota {
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.5rem;
+  background: var(--garua);
+  border-inline-start: 2px solid var(--loma);
+  border-radius: var(--radio);
+  font-size: var(--t-s);
+  color: var(--pizarra-sua);
+}
+.lugar__nota strong { color: var(--loma); font-weight: 600; }
+
+.lugar__figura { display: grid; gap: 0.75rem; }
+.lugar__figura img { inline-size: 100%; border-radius: var(--radio); }
+.lugar__figura figcaption {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.06em;
+  color: var(--pizarra-sua);
+}
+
+/* ============================================================
+   QUÉ RECIBE
+   ============================================================ */
+
+.recibe { background: var(--loma); color: var(--garua-luz); }
+.recibe .rotulo { color: color-mix(in srgb, var(--garua-luz) 72%, transparent); }
+.recibe .rotulo::before { background: var(--arena); }
+
+.lista-obra {
+  list-style: none;
+  margin: 3.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid color-mix(in srgb, var(--garua-luz) 22%, transparent);
+}
+@media (min-width: 48rem) { .lista-obra { grid-template-columns: 1fr 1fr; column-gap: clamp(2rem, 5vw, 5rem); } }
+
+.lista-obra li {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.25rem;
+  align-items: baseline;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--garua-luz) 22%, transparent);
+}
+.lista-obra__n {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  color: var(--arena);
+}
+.lista-obra__t { font-size: var(--t-m); font-family: var(--display); line-height: 1.2; }
+.lista-obra__d {
+  display: block;
+  font-family: var(--cuerpo);
+  font-size: var(--t-s);
+  color: color-mix(in srgb, var(--garua-luz) 74%, transparent);
+  margin-top: 0.5rem;
+  line-height: 1.55;
+}
+
+/* ============================================================
+   LA FORMALIDAD — el bloque que vence el miedo
+   ============================================================ */
+
+.formalidad { background: var(--garua); }
+
+.formalidad__cuerpo { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
+@media (min-width: 62rem) { .formalidad__cuerpo { grid-template-columns: 1.15fr 1fr; align-items: center; } }
+
+/* la partida como un documento */
+.partida {
+  background: var(--garua-luz);
+  border: var(--borde);
+  border-radius: var(--radio);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--flota);
+}
+.partida__encabezado {
+  font-family: var(--dato);
+  font-size: 0.625rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--pizarra-sua);
+  padding-bottom: 1rem;
+  border-bottom: var(--borde);
+}
+.partida__numero {
+  font-family: var(--dato);
+  font-size: clamp(2rem, 1.2rem + 3.4vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 1.25rem 0 0.25rem;
+  color: var(--loma);
+}
+.partida__glosa { font-size: var(--t-s); color: var(--pizarra-sua); }
+.partida__filas { margin-top: 1.5rem; display: grid; gap: 0; }
+.partida__fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.75rem;
+  border-top: var(--borde);
+  font-size: var(--t-s);
+}
+.partida__fila dt { color: var(--pizarra-sua); }
+.partida__fila dd { margin: 0; font-family: var(--dato); font-size: var(--t-xs); text-align: end; }
+
+.sello {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: color-mix(in srgb, var(--bosque) 10%, transparent);
+  color: var(--bosque);
+  border: 1px solid color-mix(in srgb, var(--bosque) 30%, transparent);
+  border-radius: 999px;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.05em;
+}
+.sello svg { inline-size: 1em; block-size: 1em; }
+
+/* ============================================================
+   EL PLANO VIVO — la pieza firma
+   ============================================================ */
+
+.plano { background: var(--pizarra); color: var(--garua-luz); overflow: hidden; }
+.plano .rotulo { color: color-mix(in srgb, var(--garua-luz) 66%, transparent); }
+.plano .rotulo::before { background: var(--ladrillo); }
+.plano .bajada { color: color-mix(in srgb, var(--garua-luz) 76%, transparent); }
+
+.plano__cabeza {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 62rem) {
+  .plano__cabeza { grid-template-columns: 1fr auto; align-items: end; }
+}
+
+.leyenda { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.leyenda__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--garua-luz) 76%, transparent);
+}
+.leyenda__muestra {
+  inline-size: 0.9rem;
+  block-size: 0.9rem;
+  border-radius: 1px;
+  flex: none;
+  border: 1px solid color-mix(in srgb, var(--garua-luz) 30%, transparent);
+}
+.leyenda__muestra[data-estado="disponible"] { background: #C9D6DB; }
+.leyenda__muestra[data-estado="reservada"]  { background: var(--arena); }
+.leyenda__muestra[data-estado="vendida"]    { background: #4A5341; }
+
+.plano__lienzo {
+  position: relative;
+  background: color-mix(in srgb, var(--garua-luz) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--garua-luz) 14%, transparent);
+  border-radius: var(--radio);
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  touch-action: pan-y pinch-zoom;
+}
+
+.plano__svg { inline-size: 100%; block-size: auto; overflow: visible; }
+
+.plano__terreno { fill: #E4EBE0; stroke: color-mix(in srgb, var(--garua-luz) 26%, transparent); stroke-width: 2; }
+.plano__verde   { fill: #7E9B5E; opacity: .55; }
+.plano__camino  { fill: var(--ladrillo); opacity: .9; }
+
+.parcela {
+  fill: #C9D6DB;
+  stroke: #8FA3A9;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: fill .18s ease, stroke .18s ease;
+}
+.parcela:hover,
+.parcela:focus-visible { fill: #FFFFFF; stroke: var(--bosque); stroke-width: 3; outline: none; }
+.parcela[data-estado="reservada"] { fill: var(--arena); }
+.parcela[data-estado="vendida"]   { fill: #4A5341; stroke: #3A4234; cursor: default; }
+.parcela[data-estado="vendida"]:hover { fill: #4A5341; stroke: #3A4234; stroke-width: 1; }
+.parcela[aria-current="true"] { fill: #FFFFFF; stroke: var(--bosque); stroke-width: 4; }
+
+.parcela__num {
+  font-family: var(--dato);
+  font-size: 15px;
+  fill: var(--pizarra);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+  user-select: none;
+}
+.parcela__num[data-estado="vendida"] { fill: color-mix(in srgb, #FFF 62%, transparent); }
+
+.ficha {
+  position: absolute;
+  inset-block-end: clamp(0.75rem, 2vw, 1.5rem);
+  inset-inline-start: clamp(0.75rem, 2vw, 1.5rem);
+  inline-size: min(20rem, calc(100% - 1.5rem));
+  background: var(--garua-luz);
+  color: var(--pizarra);
+  border-radius: var(--radio);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--encima);
+  display: grid;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  pointer-events: none;
+  transition: opacity .22s, transform .22s;
+}
+.ficha[data-visible="si"] { opacity: 1; transform: none; pointer-events: auto; }
+
+.ficha__cabeza { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.ficha__num { font-family: var(--dato); font-size: 1.5rem; font-weight: 500; letter-spacing: -0.02em; }
+.ficha__estado {
+  font-family: var(--dato);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3em 0.7em;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bosque) 12%, transparent);
+  color: var(--bosque);
+}
+.ficha__estado[data-estado="reservada"] { background: color-mix(in srgb, var(--ladrillo) 16%, transparent); color: #7A4A38; }
+.ficha__estado[data-estado="vendida"]   { background: color-mix(in srgb, var(--pizarra) 10%, transparent); color: var(--pizarra-sua); }
+
+.ficha__datos { display: grid; gap: 0.25rem; font-size: var(--t-s); color: var(--pizarra-sua); }
+.ficha__datos b { font-family: var(--dato); font-weight: 500; color: var(--pizarra); }
+.ficha__cerrar {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-end: 0.5rem;
+  inline-size: 2rem;
+  block-size: 2rem;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  border-radius: var(--radio);
+  color: var(--pizarra-sua);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.ficha__cerrar:hover { background: var(--garua); color: var(--pizarra); }
+
+.plano__pie {
+  margin-top: 1.5rem;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--garua-luz) 55%, transparent);
+  max-width: 60ch;
+}
+
+/* ============================================================
+   SU CASA — los planos que entregan
+   ============================================================ */
+
+.laminas { display: grid; gap: 1.5rem; margin-top: 3.5rem; }
+@media (min-width: 48rem) { .laminas { grid-template-columns: 1fr 1fr; } }
+
+.lamina {
+  background: #FFFFFF;
+  box-shadow: var(--alza);
+  border: var(--borde);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+.lamina img { inline-size: 100%; }
+.lamina figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.06em;
+  color: var(--pizarra-sua);
+  padding-top: 1rem;
+  border-top: var(--borde);
+}
+
+/* ============================================================
+   RECORRIDO — galería que crece sola
+   ============================================================ */
+
+.recorrido__vacio {
+  margin-top: 3.5rem;
+  padding: clamp(2rem, 6vw, 4rem);
+  border: 1px dashed color-mix(in srgb, var(--pizarra) 22%, transparent);
+  border-radius: var(--radio);
+  text-align: center;
+  color: var(--pizarra-sua);
+  font-size: var(--t-s);
+}
+
+.visor {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  inline-size: 100%;
+  block-size: 100%;
+}
+.visor::backdrop { background: color-mix(in srgb, var(--pizarra) 92%, transparent); backdrop-filter: blur(4px); }
+.visor__caja { display: grid; place-items: center; block-size: 100%; padding: clamp(1rem, 4vw, 3rem); }
+.visor__caja img, .visor__caja video { max-block-size: 84svh; max-inline-size: 100%; inline-size: auto; border-radius: var(--radio); }
+.visor__pie {
+  margin-top: 1rem;
+  color: var(--garua-luz);
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  text-align: center;
+}
+.visor__cerrar {
+  position: fixed;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
+  inline-size: 3rem;
+  block-size: 3rem;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--garua-luz) 14%, transparent);
+  color: var(--garua-luz);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.visor__cerrar:hover { background: color-mix(in srgb, var(--garua-luz) 26%, transparent); }
+
+/* ============================================================
+   LOS ALREDEDORES
+   ============================================================ */
+
+.alrededores__grilla {
+  margin-top: 3.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(17rem, 100%), 1fr));
+}
+
+.vecino { margin: 0; display: grid; gap: 1rem; }
+.vecino__foto {
+  border-radius: var(--radio);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--garua);
+  box-shadow: var(--alza);
+}
+.vecino__foto img { inline-size: 100%; block-size: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.3,1); }
+.vecino:hover .vecino__foto img { transform: scale(1.04); }
+.vecino__nombre { font-family: var(--display); font-size: var(--t-m); line-height: 1.2; }
+.vecino__glosa { font-size: var(--t-s); color: var(--pizarra-sua); margin-top: 0.5rem; }
+
+/* ============================================================
+   CÓMO LLEGAR
+   ============================================================ */
+
+.llegar { background: var(--garua); }
+.llegar__cuerpo { display: grid; gap: clamp(2rem, 5vw, 4rem); }
+@media (min-width: 62rem) { .llegar__cuerpo { grid-template-columns: 1fr 1.2fr; align-items: center; } }
+
+.ruta { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; gap: 0; }
+.ruta li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1.25rem;
+  align-items: baseline;
+  padding-block: 1rem;
+  border-top: var(--borde);
+  font-size: var(--t-s);
+}
+.ruta li:last-child { border-bottom: var(--borde); }
+.ruta__km { font-family: var(--dato); font-size: var(--t-xs); color: var(--ladrillo); letter-spacing: 0.06em; }
+
+.mapa {
+  border-radius: var(--radio);
+  overflow: hidden;
+  border: var(--borde);
+  background: var(--garua-luz);
+  aspect-ratio: 4 / 3;
+}
+.mapa iframe { inline-size: 100%; block-size: 100%; border: 0; }
+
+/* ============================================================
+   VISITA — el cierre
+   ============================================================ */
+
+.visita { background: var(--pizarra); color: var(--garua-luz); }
+.visita .rotulo { color: color-mix(in srgb, var(--garua-luz) 66%, transparent); }
+.visita .rotulo::before { background: var(--ladrillo); }
+
+.visita__titular { font-size: var(--t-xl); max-width: 16ch; }
+.visita__bajada {
+  margin-top: 1.5rem;
+  max-width: 44ch;
+  font-size: var(--t-m);
+  color: color-mix(in srgb, var(--garua-luz) 78%, transparent);
+}
+.visita__acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
+
+.canales {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--garua-luz) 20%, transparent);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+}
+.canal { display: grid; gap: 0.5rem; }
+.canal dt {
+  font-family: var(--dato);
+  font-size: 0.625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--garua-luz) 60%, transparent);
+}
+.canal dd { margin: 0; }
+.canal a { text-decoration: none; border-bottom: 1px solid color-mix(in srgb, currentColor 30%, transparent); transition: border-color .2s; }
+.canal a:hover { border-color: currentColor; }
+
+/* ============================================================
+   PIE
+   ============================================================ */
+
+.pie {
+  background: var(--pizarra);
+  color: color-mix(in srgb, var(--garua-luz) 58%, transparent);
+  padding: 2.5rem 0 3.5rem;
+  font-size: var(--t-xs);
+}
+.pie__cuerpo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--garua-luz) 14%, transparent);
+}
+.pie__legal { font-family: var(--dato); line-height: 1.7; max-width: 52ch; }
+
+/* ============================================================
+   WHATSAPP FLOTANTE — la acción, siempre a la mano
+   ============================================================ */
+
+.flotante {
+  position: fixed;
+  inset-block-end: 1.25rem;
+  inset-inline-end: 1.25rem;
+  z-index: 70;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65em;
+  min-block-size: 3.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--bosque);
+  color: var(--garua-luz);
+  border-radius: 999px;
+  text-decoration: none;
+  font: 500 var(--t-s) / 1 var(--cuerpo);
+  box-shadow: 0 10px 30px -10px rgb(14 74 56 / .65);
+  transition: transform .25s, background .25s, box-shadow .25s;
+}
+.flotante:hover { background: var(--bosque-vivo); transform: translateY(-2px); box-shadow: 0 14px 34px -10px rgb(14 74 56 / .7); }
+.flotante svg { inline-size: 1.35em; block-size: 1.35em; flex: none; }
+@media (max-width: 30rem) {
+  .flotante__texto { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); }
+  .flotante { padding: 1rem; }
+}
+
+/* ============================================================
+   UTILIDADES
+   ============================================================ */
+
+.solo-lectores {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.saltar {
+  position: absolute;
+  inset-block-start: -100%;
+  inset-inline-start: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--bosque);
+  color: var(--garua-luz);
+  border-radius: var(--radio);
+  text-decoration: none;
+  font-size: var(--t-s);
+}
+.saltar:focus { inset-block-start: 1rem; }
+
+/* ============================================================
+   REMATES — lo que salió del pase de revisión en móvil
+   ============================================================ */
+
+.navegacion__enlaces { display: flex; gap: 2rem; }
+@media (max-width: 60rem) { .navegacion__enlaces { display: none; } }
+
+.ficha__wsp { inline-size: 100%; }
+.llegar__acciones { margin-block-start: 2rem; }
+.formalidad .bajada p + p { margin-block-start: 1.25rem; }
+
+/* la cabecera es fija: la portada le reserva su sitio para no encimarse */
+.portada { padding-block-start: clamp(5rem, 14vh, 8rem); }
+
+/* en pantallas cortas el plano no debe obligar a un scroll eterno */
+@media (max-width: 48rem) {
+  .plano__lienzo { padding: 0.5rem; }
+  .parcela__num { font-size: 22px; }
+  .ficha { inline-size: calc(100% - 1rem); inset-inline-start: 0.5rem; inset-block-end: 0.5rem; }
+}
+
+/* el plano en celular: se desplaza de lado para que las parcelas se puedan tocar */
+.plano__marco { overflow: hidden; }
+.plano__pista { display: none; }
+
+@media (max-width: 62rem) {
+  .plano__marco {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--garua-luz) 34%, transparent) transparent;
+  }
+  .plano__marco .plano__svg { min-inline-size: 52rem; }
+  .plano__pista {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 1rem 0 0;
+    font-family: var(--dato);
+    font-size: var(--t-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--garua-luz) 55%, transparent);
+  }
+  .plano__pista::after {
+    content: "";
+    flex: 1;
+    block-size: 1px;
+    background: linear-gradient(to right,
+      color-mix(in srgb, var(--garua-luz) 30%, transparent), transparent);
+  }
+}
+
+/* ============================================================
+   MATERIAL NUEVO — video de portada, asesor, formulario
+   ============================================================ */
+
+/* --- el claim del propio proyecto --- */
+.portada__claim {
+  margin: 0;
+  font-family: var(--display);
+  font-size: var(--t-m);
+  font-style: italic;
+  font-variation-settings: "SOFT" 40, "WONK" 1, "opsz" 40;
+  color: color-mix(in srgb, var(--garua-luz) 88%, transparent);
+  letter-spacing: -0.01em;
+}
+
+/* --- el video de portada entra recién cuando tiene algo que mostrar --- */
+.portada__fondo { display: grid; }
+.portada__fondo > * { grid-area: 1 / 1; }
+.portada__fondo img { transition: opacity .6s ease; }
+.portada__video { opacity: 0; transition: opacity .8s ease; }
+.portada__video[data-listo="si"] { opacity: 1; }
+
+/* --- la casa de referencia --- */
+.referencia {
+  margin: 3.5rem 0 0;
+  display: grid;
+  gap: 1.25rem;
+  border-radius: var(--radio);
+}
+.referencia img { inline-size: 100%; border-radius: var(--radio); }
+.referencia figcaption {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 54ch;
+  font-size: var(--t-s);
+  color: var(--pizarra-sua);
+}
+.referencia__aviso {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.04em;
+  color: var(--ladrillo);
+}
+
+/* --- el video de la llegada --- */
+.llegada { margin: 0; display: grid; gap: 1rem; }
+.llegada video {
+  inline-size: 100%;
+  max-block-size: 32rem;
+  border-radius: var(--radio);
+  background: var(--pizarra);
+  object-fit: cover;
+}
+.llegada figcaption {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.05em;
+  color: var(--pizarra-sua);
+}
+
+/* ============================================================
+   VISITA — quién atiende y el formulario
+   ============================================================ */
+
+.visita__cuerpo { display: grid; gap: clamp(3rem, 6vw, 5rem); }
+@media (min-width: 62rem) {
+  .visita__cuerpo { grid-template-columns: 1fr 24rem; align-items: start; }
+}
+
+/* --- el asesor: poner cara vale más que cualquier promesa --- */
+.asesor {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--garua-luz) 20%, transparent);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.asesor__retrato {
+  position: relative;
+  inline-size: 7.5rem;
+  block-size: 7.5rem;
+  flex: none;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--loma);
+  display: grid;
+  place-items: center;
+}
+/* si la foto todavía no está, quedan las iniciales — nunca un hueco roto */
+.asesor__retrato::before {
+  content: attr(data-iniciales);
+  font-family: var(--display);
+  font-size: 2rem;
+  color: color-mix(in srgb, var(--garua-luz) 80%, transparent);
+}
+.asesor__retrato img {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+}
+
+.asesor__ficha { display: grid; gap: 0.25rem; }
+.asesor__nombre { font-family: var(--display); font-size: var(--t-m); line-height: 1.2; }
+.asesor__cargo {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--garua-luz) 62%, transparent);
+}
+.asesor__lema {
+  margin-top: 0.5rem;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: var(--t-s);
+  color: color-mix(in srgb, var(--garua-luz) 80%, transparent);
+}
+.asesor__wsp { margin-top: 1rem; justify-self: start; }
+
+/* --- el formulario: tres datos y se abre el WhatsApp escrito --- */
+.peticion {
+  background: color-mix(in srgb, var(--garua-luz) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--garua-luz) 18%, transparent);
+  border-radius: var(--radio);
+  padding: clamp(1.5rem, 3.5vw, 2rem);
+  display: grid;
+  gap: 1rem;
+}
+.peticion__titulo { font-family: var(--display); font-size: var(--t-m); line-height: 1.2; }
+.peticion__glosa {
+  font-size: var(--t-s);
+  color: color-mix(in srgb, var(--garua-luz) 72%, transparent);
+  margin-bottom: 0.25rem;
+}
+
+.campo { display: grid; gap: 0.5rem; }
+.campo__nombre {
+  font-family: var(--dato);
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--garua-luz) 66%, transparent);
+}
+.campo__caja {
+  inline-size: 100%;
+  min-block-size: 3rem;
+  padding: 0.75rem 1rem;
+  background: color-mix(in srgb, var(--garua-luz) 96%, transparent);
+  color: var(--pizarra);
+  border: 1px solid transparent;
+  border-radius: var(--radio);
+  font: 400 var(--t-base) / 1.3 var(--cuerpo);
+  transition: border-color .2s, box-shadow .2s;
+}
+.campo__caja::placeholder { color: color-mix(in srgb, var(--pizarra) 45%, transparent); }
+.campo__caja:focus-visible {
+  outline: none;
+  border-color: var(--bosque);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--bosque) 30%, transparent);
+}
+select.campo__caja { appearance: none; cursor: pointer; padding-right: 2.5rem;
+  background-image: linear-gradient(45deg, transparent 50%, #55604E 50%),
+                    linear-gradient(135deg, #55604E 50%, transparent 50%);
+  background-position: calc(100% - 1.1rem) 1.35rem, calc(100% - 0.75rem) 1.35rem;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.peticion__enviar { inline-size: 100%; margin-top: 0.25rem; }
+.peticion__nota {
+  font-size: var(--t-xs);
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--garua-luz) 58%, transparent);
+}
+#pedir-info-listo { color: var(--arena); }
+
+.pie__lema {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: var(--t-s);
+  color: color-mix(in srgb, var(--garua-luz) 72%, transparent);
+}
+
+/* remates del pase con el material nuevo */
+.vecino__nombre { display: block; }
+.vecino__glosa  { display: block; }
+.recorrido__mas { margin-top: 2rem; }
+
+/* [hidden] pierde contra el display de .medio: hay que decirlo explícito */
+.medio[hidden] { display: none; }
+
+/* el video de la llegada y el mapa van juntos en la columna de la derecha */
+.llegar__visual { display: grid; gap: 1.5rem; align-content: start; }
+.llegar__visual .mapa { aspect-ratio: 16 / 10; }
+.llegada video { max-block-size: none; aspect-ratio: 16 / 10; }
+
+/* el retrato ya viene recortado al rostro: no hace falta reencuadrar por CSS */
+.asesor__retrato { inline-size: 8.5rem; block-size: 8.5rem; }
+.asesor__retrato img { object-position: 50% 50%; }
+
+/* --- pie: datos legales y el Libro de Reclamaciones (obligatorio en Perú) --- */
+.pie__datos { display: grid; gap: 1.25rem; justify-items: start; }
+
+.reclamaciones {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--garua-luz) 26%, transparent);
+  border-radius: var(--radio);
+  color: color-mix(in srgb, var(--garua-luz) 72%, transparent);
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color .2s, border-color .2s;
+}
+.reclamaciones:hover { color: var(--garua-luz); border-color: color-mix(in srgb, var(--garua-luz) 50%, transparent); }
+.reclamaciones svg { inline-size: 1.15em; block-size: 1.15em; }
+
+/* ============================================================
+   EL CARRUSEL — una tira, no un mosaico
+   Con fotos del mismo sitio desde ángulos parecidos, la grilla
+   se llenaba de huecos y de repeticiones. Una tira de altura
+   uniforme se lee como una secuencia y se recorre con el dedo.
+   ============================================================ */
+
+.carrusel { margin-top: 3rem; display: grid; gap: 1.5rem; }
+
+.carrusel__tira {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--margen);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* sale del contenedor para que la tira toque los bordes de la pantalla */
+  margin-inline: calc(var(--margen) * -1);
+  padding-inline: var(--margen);
+  padding-block-end: 0.5rem;
+}
+.carrusel__tira::-webkit-scrollbar { display: none; }
+.carrusel__tira:focus-visible { outline: 2px solid var(--bosque); outline-offset: 4px; }
+
+.medio {
+  position: relative;
+  flex: none;
+  block-size: clamp(15rem, 34vw, 26rem);
+  inline-size: auto;
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radio);
+  overflow: hidden;
+  background: var(--garua);
+  box-shadow: var(--alza);
+  cursor: zoom-in;
+  transition: transform .4s cubic-bezier(.2,.7,.3,1), box-shadow .4s;
+}
+.medio[data-orientacion="vertical"]   { aspect-ratio: 3 / 4; }
+.medio[data-orientacion="panoramica"] { aspect-ratio: 16 / 9; }
+
+.medio img { inline-size: 100%; block-size: 100%; object-fit: cover;
+             transition: transform .6s cubic-bezier(.2,.7,.3,1); }
+.medio:hover { box-shadow: var(--flota); }
+.medio:hover img { transform: scale(1.04); }
+.medio:focus-visible { outline: 2px solid var(--bosque); outline-offset: 3px; }
+
+.medio__marca {
+  position: absolute;
+  inset-block-end: 0.75rem;
+  inset-inline-start: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.25rem 0.75rem;
+  background: color-mix(in srgb, var(--pizarra) 72%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--garua-luz);
+  border-radius: 999px;
+  font-family: var(--dato);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.medio__marca svg { inline-size: 0.85em; block-size: 0.85em; }
+
+/* --- mando: la leyenda de lo que se está viendo, y las flechas --- */
+.carrusel__mando {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.carrusel__leyenda {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.06em;
+  color: var(--pizarra-sua);
+  min-block-size: 1.2em;
+}
+.carrusel__botones { display: flex; align-items: center; gap: 0.75rem; }
+.carrusel__cuenta {
+  font-family: var(--dato);
+  font-size: var(--t-xs);
+  letter-spacing: 0.08em;
+  color: var(--pizarra-sua);
+  min-inline-size: 4.5em;
+  text-align: center;
+}
+.carrusel__flecha {
+  inline-size: 3rem;
+  block-size: 3rem;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  color: var(--pizarra);
+  border: 1px solid color-mix(in srgb, var(--pizarra) 22%, transparent);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.carrusel__flecha svg { inline-size: 1.15rem; block-size: 1.15rem; }
+.carrusel__flecha:hover:not(:disabled) { background: var(--garua); border-color: var(--pizarra); }
+.carrusel__flecha:disabled { opacity: .3; cursor: default; }

@@ -1,0 +1,9 @@
+Foto del asesor: Ronivel Jimenez Garcia.
+
+  ronivel-jimenez.jpg          <- la que usa la web (recortada al rostro, cuadrada)
+  original/…-completa.jpg      <- la foto entera, por si se necesita en otro lado
+
+La marca de agua de Gemini que traia abajo a la derecha ya fue borrada.
+
+Si mandan otra foto: tirarla aca, recortarla cuadrada centrada en la cara, y correr
+    py indexar-medios.py

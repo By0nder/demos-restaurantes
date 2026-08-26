@@ -1,0 +1,21 @@
+# --- notas internas de trabajo: no van al repo del cliente ---
+datos-proyecto.md
+direccion-de-arte.md
+NOTAS-INTERNAS.md
+herramientas/
+
+# --- originales pesados: la web usa las versiones de material/web ---
+material/brochure-original.pdf
+material/videos/
+material/asesor/original/
+material/duplicadas/
+material/por-confirmar/
+
+# --- basura del sistema ---
+Thumbs.db
+desktop.ini
+.DS_Store
+*.bak
+_full.html
+_movil.html
+_cap_movil.html

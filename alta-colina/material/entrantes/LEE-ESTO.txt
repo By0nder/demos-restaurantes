@@ -1,0 +1,23 @@
+=========================================================
+  ALTA COLINA — dónde tirar las fotos y videos nuevos
+=========================================================
+
+Tira TODO acá dentro, sin ordenar y sin renombrar nada.
+Fotos, videos, capturas, planos, lo que sea. Da igual el
+nombre que traigan del celular.
+
+Después corre esto y se ordena solo:
+
+    py indexar-medios.py
+
+Eso hace tres cosas:
+  1. Separa fotos de videos
+  2. Genera versiones optimizadas para la web (pesan 10x menos)
+  3. Escribe medios.json, que es lo que la página lee
+
+Cuando llegue material nuevo: lo tiras acá, corres el
+comando otra vez, y la galería de la página se actualiza
+sola. No hay que tocar código.
+
+-- Si un video es de dron sobre el terreno, avísame:
+   ese va en la portada, no en la galería.
