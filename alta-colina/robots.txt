@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://by0nder.github.io/alta-colina/sitemap.xml

@@ -227,6 +227,19 @@ def main():
         huellas.append((m["slug"], h))
     for m in medios:
         m.pop("_origen_ruta", None)
+    # avisar de fotos con muy poca resolucion: puestas grandes se pixelan
+    chicas = [m for m in medios
+              if m["tipo"] == "foto" and m["cat"] in ("proyecto", "alrededores", "sin-clasificar")
+              and m.get("w", 0) and m["w"] < 900]
+    if chicas:
+        print("")
+        print("  OJO, estas fotos son chicas para mostrarlas grandes:")
+        for m in sorted(chicas, key=lambda x: x["w"]):
+            uso = " (esta en el carrusel)" if m.get("galeria") else ""
+            print(f"    {m['w']}x{m['h']}  {m['origen']}{uso}")
+        print("  Menos de 900 px de ancho se pixela en pantalla grande.")
+        print("  Pideles el original a mejor resolucion, o usalas chicas.")
+
     if repetidas:
         print("")
         print("  OJO, parecen la misma foto:")
