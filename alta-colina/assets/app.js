@@ -232,50 +232,135 @@ const ICONO_VIDEO =
   `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>`;
 
 function dibujarGaleria(datos) {
-  const grilla = $("#galeria");
-  if (!grilla) return;
+  const tira = $("#galeria");
+  if (!tira) return;
 
-  // solo lo que es del proyecto: nada de stock, logos ni marcas de terceros
+  // solo entra lo que se eligió a mano: con siete fotos del mismo portón
+  // la galería se volvía repetitiva. La curaduría vive en medios.json.
   const medios = (datos?.medios || [])
-    .filter((m) => ["proyecto", "video", "portada", "sin-clasificar"].includes(m.cat))
+    .filter((m) => m.galeria)
     .sort((a, b) => (a.orden ?? 900) - (b.orden ?? 900));
 
   if (!medios.length) {
-    grilla.outerHTML =
+    tira.closest(".carrusel").outerHTML =
       `<p class="recorrido__vacio">Las fotos y el video del terreno se publican aquí
        en cuanto estén listos.</p>`;
     return;
   }
 
-  const TOPE = 12;   // con 26 piezas la grilla se vuelve interminable
-  grilla.innerHTML = medios
+  tira.innerHTML = medios
     .map((m, i) => {
-      const alt = m.alt || m.leyenda || `Alta Colina — ${m.origen.replace(/\.[a-z0-9]+$/i, "").replace(/[-_]/g, " ")}`;
-      const orientacion = m.orientacion || "horizontal";
+      const alt = m.alt || m.leyenda || "Alta Colina";
       const interior =
         m.tipo === "video"
           ? `<img src="${m.thumb || m.poster || ""}" alt="${alt}" loading="lazy" decoding="async">
              <span class="medio__marca">${ICONO_VIDEO} Video</span>`
           : `<img src="${m.thumb || m.src}" alt="${alt}" loading="lazy" decoding="async">`;
       return `<button class="medio" type="button" data-i="${i}"
-                data-orientacion="${orientacion}"
-                ${i >= TOPE ? 'hidden' : ""}>${interior}</button>`;
+                data-orientacion="${m.orientacion || "horizontal"}">${interior}</button>`;
     })
     .join("");
 
-  if (medios.length > TOPE) {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "boton boton--linea recorrido__mas";
-    b.textContent = `Ver las ${medios.length - TOPE} fotos restantes`;
-    b.addEventListener("click", () => {
-      $$(".medio[hidden]", grilla).forEach((el) => el.removeAttribute("hidden"));
-      b.remove();
-    });
-    grilla.after(b);
-  }
-
+  armarCarrusel(tira, medios);
   armarVisor(medios);
+}
+
+/* ------------------------------------------------------------
+   El mando del carrusel: flechas, cuenta y la leyenda de lo que
+   se está viendo. Se apoya en scroll-snap, así que el dedo y el
+   teclado funcionan solos.
+   ------------------------------------------------------------ */
+function armarCarrusel(tira, medios) {
+  const cuenta   = $("#carrusel-cuenta");
+  const leyenda  = $("#carrusel-leyenda");
+  const flechas  = $$(".carrusel__flecha");
+  const piezas   = () => $$(".medio", tira);
+
+  // offsetLeft no sirve aquí: las piezas no se posicionan contra la tira.
+  // Se comparan rectángulos reales, que sí dan la distancia al borde visible.
+  const visible = () => {
+    const borde = tira.getBoundingClientRect().left;
+    let mejor = 0, dif = Infinity;
+    piezas().forEach((p, i) => {
+      const d = Math.abs(p.getBoundingClientRect().left - borde);
+      if (d < dif) { dif = d; mejor = i; }
+    });
+    return mejor;
+  };
+
+  const refrescar = () => {
+    const i = visible();
+    if (cuenta) cuenta.textContent = `${i + 1} / ${medios.length}`;
+    if (leyenda) leyenda.textContent = medios[i]?.leyenda || "";
+    const fin = tira.scrollLeft >= tira.scrollWidth - tira.clientWidth - 4;
+    flechas.forEach((f) => {
+      f.disabled = +f.dataset.paso < 0 ? tira.scrollLeft <= 4 : fin;
+    });
+  };
+
+  // scroll-snap cancela el desplazamiento suave del navegador, así que la
+  // animación se hace a mano. De paso se apaga el snap mientras dura, si no
+  // pelea con cada cuadro.
+  // requestAnimationFrame se duerme cuando la pestaña no está pintando
+  // (segundo plano, vistas incrustadas). El temporizador lo releva para que
+  // la tira nunca se quede a medio camino.
+  const siguienteCuadro = (fn) => {
+    let servido = false;
+    const una = () => { if (!servido) { servido = true; fn(); } };
+    requestAnimationFrame(una);
+    setTimeout(una, 32);
+  };
+
+  let animando = false;
+  const deslizar = (hasta) => {
+    const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const desde = tira.scrollLeft;
+    const dist = hasta - desde;
+    if (quieto || Math.abs(dist) < 2) { tira.scrollLeft = hasta; refrescar(); return; }
+
+    const dura = Math.min(620, 240 + Math.abs(dist) * 0.32);
+    const snap = tira.style.scrollSnapType;
+    tira.style.scrollSnapType = "none";
+    const arranque = performance.now();
+    animando = true;
+
+    const cuadro = () => {
+      const avance = Math.min(1, (performance.now() - arranque) / dura);
+      const suave = 1 - Math.pow(1 - avance, 3);   // arranca rápido, frena al final
+      tira.scrollLeft = desde + dist * suave;
+      if (avance < 1) {
+        siguienteCuadro(cuadro);
+      } else {
+        animando = false;
+        tira.style.scrollSnapType = snap;
+        refrescar();
+      }
+    };
+    siguienteCuadro(cuadro);
+  };
+
+  const mover = (paso) => {
+    const p = piezas();
+    const destino = p[Math.max(0, Math.min(p.length - 1, visible() + paso))];
+    if (!destino) return;
+    const salto = destino.getBoundingClientRect().left - tira.getBoundingClientRect().left;
+    deslizar(tira.scrollLeft + salto);
+  };
+
+  flechas.forEach((f) => f.addEventListener("click", () => mover(+f.dataset.paso)));
+  tira.addEventListener("scroll", () => {
+    if (animando) return;              // durante la animación manda deslizar()
+    clearTimeout(tira._t);
+    tira._t = setTimeout(refrescar, 90);
+  }, { passive: true });
+  tira.addEventListener("keydown", (e) => {
+    const pasos = { ArrowRight: 1, ArrowLeft: -1, Home: -medios.length, End: medios.length };
+    if (!(e.key in pasos)) return;
+    e.preventDefault();
+    mover(pasos[e.key]);
+  });
+
+  refrescar();
 }
 
 function armarVisor(medios) {
