@@ -3,6 +3,8 @@
   --color-primario: #b91c1c;
   --color-secundario: #7f1d1d;
   --color-acento: #b91c1c;
+  --color-acento-texto: #ffffff;
+  --color-primario-texto: #ffffff;
   --color-fondo: #fffbf5;
   --color-texto: #292524;
 }
@@ -259,3 +261,15 @@ body.con-barra-movil {
     transform: none;
   }
 }
+
+/* LOGO POR TEMA.
+   El logo del cliente suele venir recortado de su tarjeta: tinta negra sobre
+   blanco. Quitarle el fondo lo deja invisible en modo oscuro, y dejarle una
+   placa blanca le mete un parche que no es parte de su marca. La solución son
+   dos archivos —el mismo logo con la tinta negra y con la tinta blanca— y se
+   muestra el que corresponde. Si el cliente no tiene versión oscura, no pasa
+   nada: `.logo-oscuro` simplemente no existe en su HTML. */
+.logo-oscuro { display: none; }
+:root[data-tema="oscuro"] .logo-claro { display: none; }
+:root[data-tema="oscuro"] .logo-oscuro { display: block; }
+
