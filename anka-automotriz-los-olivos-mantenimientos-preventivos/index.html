@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anka Automotriz/ Los Olivos /Mantenimientos Preventivos — Su carro en buenas manos en Los Olivos</title>
-  <meta name="description" content="Taller mecánico automotriz en Los Olivos. Av. Angélica Gamarra de León Velarde 737, Los Olivos 15302.">
+  <title>Anka Mastertech Automotriz — Taller mecánico en Los Olivos</title>
+  <meta name="description" content="Mantenimiento preventivo y mecánica automotriz en Los Olivos. Su servicio queda registrado en video, del ingreso a la entrega. Av. Angélica Gamarra de León Velarde 737, Urb. El Trébol, Los Olivos, Lima.">
   
-  <meta property="og:title" content="Anka Automotriz/ Los Olivos /Mantenimientos Preventivos — Su carro en buenas manos en Los Olivos">
-  <meta property="og:description" content="Taller mecánico automotriz en Los Olivos. Av. Angélica Gamarra de León Velarde 737, Los Olivos 15302.">
+  <meta property="og:title" content="Anka Mastertech Automotriz — Taller mecánico en Los Olivos">
+  <meta property="og:description" content="Mantenimiento preventivo y mecánica automotriz en Los Olivos. Su servicio queda registrado en video, del ingreso a la entrega. Av. Angélica Gamarra de León Velarde 737, Urb. El Trébol, Los Olivos, Lima.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_PE">
-  <meta property="og:site_name" content="Anka Automotriz/ Los Olivos /Mantenimientos Preventivos">
+  <meta property="og:site_name" content="Anka Mastertech Automotriz">
   
   <meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&amp;q=80">
-  <meta property="og:image:alt" content="Anka Automotriz/ Los Olivos /Mantenimientos Preventivos">
+  <meta property="og:image:alt" content="Anka Mastertech Automotriz">
   <meta name="twitter:card" content="summary_large_image">
   
-  <meta name="theme-color" content="#c2410c">
+  <meta name="theme-color" content="#1d2530">
 
   
   
@@ -26,15 +26,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <link rel="stylesheet" href="assets/styles.css">
+  
+  
+  
+  
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231d2530%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2236%22%20font-weight%3D%22bold%22%20fill%3D%22%23f97316%22%20text-anchor%3D%22middle%22%3EA%3C%2Ftext%3E%3C%2Fsvg%3E">
+  
   
   <script>
     (function () {
       try {
         var elegido = localStorage.getItem("tema");
         var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (elegido === "oscuro" || (!elegido && oscuroSistema)) {
+        var baseOscura = false;
+        if (elegido === "oscuro" || (!elegido && (baseOscura || oscuroSistema))) {
           document.documentElement.setAttribute("data-tema", "oscuro");
         }
       } catch (e) {}
@@ -45,23 +57,27 @@
 
   
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3 min-h-[44px]">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
+    
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           A
         </span>
       
-      <span class="font-semibold text-lg">Anka Automotriz/ Los Olivos /Mantenimientos Preventivos</span>
+      
+      <span class="truncate font-semibold text-lg">Anka Mastertech Automotriz</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-6 text-base font-medium">
+    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
       
       
+      
+        <a href="#paquete" class="hover:opacity-70 transition-opacity">Premium</a>
       
         <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
       
-        <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
+        <a href="#cotizador" class="hover:opacity-70 transition-opacity">Cotizar</a>
       
         <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
       
@@ -69,9 +85,9 @@
       
       
       
-        <a href="https://wa.me/51942128971?text=Hola%20Anka%20Automotriz%2F%20Los%20Olivos%20%2FMantenimientos%20Preventivos%2C%20vi%20su%20p%C3%A1gina%20y%20quisiera%20hacer%20una%20consulta."
+        <a href="https://wa.me/51942128971?text=Hola%20Anka%20Mastertech%20Automotriz%2C%20vi%20su%20p%C3%A1gina%20y%20quisiera%20hacer%20una%20consulta."
            target="_blank" rel="noopener"
-           class="inline-flex min-h-[44px] items-center rounded-full px-5 font-semibold text-white transition hover:brightness-110"
+           class="inline-flex min-h-[44px] items-center rounded-full px-5 font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
            style="background: var(--color-acento)">
           Escríbanos
         </a>
@@ -80,24 +96,26 @@
 
     
     <button id="tema-toggle" type="button"
-            class="ml-auto md:ml-4 mr-1 flex h-11 w-11 items-center justify-center rounded-full hover:bg-[var(--color-suave)] transition-colors"
+            class="ml-auto lg:ml-4 mr-1 flex h-11 w-11 items-center justify-center rounded-full hover:bg-[var(--color-suave)] transition-colors"
             aria-label="Cambiar entre modo claro y oscuro" title="Modo claro / oscuro">
       <svg data-icono="luna" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>
       <svg data-icono="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
     </button>
 
-    <button id="menu-toggle" class="md:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
+    <button id="menu-toggle" class="lg:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
   </div>
 
-  <nav id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-borde)] px-4 pb-4">
+  <nav id="mobile-menu" class="hidden lg:hidden border-t border-[var(--color-borde)] px-4 pb-4">
+    
+      <a href="#paquete" class="flex items-center min-h-[44px] py-2 text-base font-medium">Premium</a>
     
       <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
     
-      <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
+      <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Cotizar</a>
     
       <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
     
@@ -120,16 +138,6 @@
            fetchpriority="high" decoding="async"
            class="hero-foto w-full h-full object-cover">
       
-        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=1200&amp;q=80" alt="" aria-hidden="true"
-             fetchpriority="low" decoding="async" loading="lazy"
-             class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
-             style="animation-delay: 0s, 0s">
-      
-        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&amp;q=80" alt="" aria-hidden="true"
-             fetchpriority="low" decoding="async" loading="lazy"
-             class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
-             style="animation-delay: 8s, 8s">
-      
       <div class="absolute inset-0 hero-velo"></div>
     </div>
   
@@ -140,58 +148,50 @@
     <div class="max-w-3xl">
       
         <p class="reveal inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-sm font-medium ring-1 ring-white/25">
-          <span class="font-bold">4.6</span><span aria-hidden="true" class="text-[var(--color-acento)]">★</span>
-          <span>52 reseñas en Google</span>
+          <span class="font-bold">4.7</span><span aria-hidden="true" class="text-[var(--color-acento)]">★</span>
+          <span>61 reseñas en Google</span>
         </p>
       
 
-      <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] reveal">Anka Automotriz/ Los Olivos /Mantenimientos Preventivos</h1>
+      <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] reveal">Anka Mastertech Automotriz</h1>
 
       
-        <p class="mt-4 text-lg md:text-2xl font-medium text-white/90 reveal">Taller mecánico automotriz · Los Olivos</p>
+        <p class="mt-4 text-lg md:text-2xl font-medium text-white/90 reveal">Taller mecánico en Los Olivos · 4.7★ con 61 reseñas en Google · Su carro queda grabado en video, del ingreso a la entrega</p>
       
 
       
       
-        <p class="mt-3 text-base md:text-lg text-white/75 max-w-xl reveal">Av. Angélica Gamarra de León Velarde 737, Los Olivos 15302.</p>
+        <p class="mt-3 text-base md:text-lg text-white/75 max-w-xl reveal">Mantenimiento preventivo y mecánica automotriz en Los Olivos. Su servicio queda registrado en video, del ingreso a la entrega. Av. Angélica Gamarra de León Velarde 737, Urb. El Trébol, Los Olivos, Lima.</p>
       
 
       <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center reveal">
-        <a href="https://wa.me/51942128971?text=Hola%20Anka%20Automotriz%2F%20Los%20Olivos%20%2FMantenimientos%20Preventivos%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%20un%20servicio."
+        <a href="https://wa.me/51942128971?text=Hola%20Anka%20Mastertech%20Automotriz%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%20un%20servicio."
            target="_blank" rel="noopener"
-           class="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-full font-semibold text-white bg-[var(--color-acento)] shadow-lg shadow-black/30 hover:brightness-110 hover:scale-[1.02] transition">
+           class="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-full font-semibold text-[var(--color-acento-texto)] bg-[var(--color-acento)] shadow-lg shadow-black/30 hover:brightness-110 hover:scale-[1.02] transition">
           
             <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
           
           Escríbanos por WhatsApp
         </a>
-        <a href="#servicios"
+        
+        <a href="#cotizador"
            class="inline-flex items-center justify-center min-h-[52px] px-8 rounded-full font-semibold text-white ring-1 ring-white/45 bg-white/10 backdrop-blur hover:bg-white/20 transition">
-          Ver servicios y precios
+          Cotizar en 1 minuto
         </a>
+        
       </div>
     </div>
   </div>
 
   
     <div class="relative border-t franja-dato bg-black/35 backdrop-blur">
-      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3 text-white/90 text-sm md:text-base">
+      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-2 text-white/90 text-sm md:text-base">
         
           
           <p class="flex items-start gap-2">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg>
             <span>
-              Av. Angélica Gamarra de León Velarde 737, Los Olivos 15302
-              
-              
-            </span>
-          </p>
-        
-          
-          <p class="flex items-start gap-2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="m9 12 2 2 4-4" /></svg>
-            <span>
-              Diagnóstico por escáner: gratis
+              Av. Angélica Gamarra de León Velarde 737, Urb. El Trébol, Los Olivos, Lima
               
               
             </span>
@@ -213,19 +213,168 @@
 </section>
 
     
+      
+
+
+
+
+
+<section id="paquete" class="py-20" style="background: var(--color-primario)">
+  <div class="max-w-5xl mx-auto px-4">
+    <p class="text-center text-sm font-bold uppercase tracking-[0.2em] reveal" style="color: var(--color-acento)">
+      Nuestra forma de trabajar
+    </p>
+    <h2 class="mt-3 text-center text-3xl md:text-4xl font-bold reveal" style="color: #ffffff">
+      Su carro, grabado de principio a fin
+    </h2>
+    
+      <p class="mt-4 text-center text-lg reveal" style="color: rgba(255,255,255,0.72)">Ningún otro taller de Los Olivos le da esto por escrito: todo su servicio queda registrado en video.</p>
+    
+
+    
+    <div class="mt-10 grid gap-3 sm:grid-cols-2 reveal">
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Al ingresar, grabamos el estado de su vehículo: interior, exterior y motor</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Durante el servicio le mandamos videos del avance a su WhatsApp</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Más de 690 videos y 122 informes entregados a nuestros clientes</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Las piezas reemplazadas se le entregan si usted las pide</span>
+        </div>
+      
+        <div class="flex items-center gap-3 rounded-xl px-4 py-3.5" style="background: rgba(255,255,255,0.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium" style="color: #ffffff">Garantía sobre los trabajos del taller y los repuestos que nosotros suministramos</span>
+        </div>
+      
+    </div>
+
+    
+      <div class="mt-10 grid gap-6 border-t pt-10 sm:grid-cols-2 lg:grid-cols-4 reveal" style="border-color: rgba(255,255,255,0.14)">
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento)">Usted ve lo que pagó</h3>
+            
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Los videos del avance llegan a su WhatsApp. No tiene que creernos: lo ve.</p>
+            
+          </div>
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento)">Recepción transparente</h3>
+            
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">El video del ingreso registra cómo entró su carro. Sin discusiones a la entrega.</p>
+            
+          </div>
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento)">Preventivos en el día</h3>
+            
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Lo deja en la mañana y lo recoge en la tarde, con todo documentado.</p>
+            
+          </div>
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento)">Precio antes de empezar</h3>
+            
+              <p class="mt-1.5 text-sm leading-relaxed" style="color: rgba(255,255,255,0.7)">Nada se toca sin su autorización por WhatsApp, que vale como aprobación escrita.</p>
+            
+          </div>
+        
+      </div>
+    
+
+    
+      <div class="mt-10 text-center reveal">
+        <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20agendar%3A%20Su%20carro%2C%20grabado%20de%20principio%20a%20fin"
+           target="_blank" rel="noopener"
+           class="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full px-8 text-lg font-bold transition hover:brightness-110"
+           style="background: var(--color-acento); color: var(--color-acento-texto)">
+          Agendar mi servicio
+        </a>
+      </div>
+    
+  </div>
+</section>
+
+
+    
       <section id="servicios" class="py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Servicios y precios</h2>
 
     
     
-      <p class="mt-4 text-center text-base opacity-70 reveal">
-        Los precios que ve son <strong>de ejemplo</strong>. Se reemplazan por los suyos.
-      </p>
-    
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       
+      
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl"
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
+                  🗓️
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
+                      style="background: var(--color-suave); color: var(--color-titulo)">
+                  desde S/ 260
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Mantenimiento preventivo</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Por grupo de vehículo, de auto ligero a SUV y 6 cilindros. Lo deja en la mañana y lo recoge el mismo día, con los videos de todo lo que se hizo.</p>
+            
+
+            
+            
+
+              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Mantenimiento%20preventivo"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
       
         
         
@@ -244,22 +393,22 @@
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
                       style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 180
+                  desde S/ 250
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Afinamiento completo</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Afinamiento electrónico</h3>
             
-              <p class="mt-2 text-base leading-relaxed opacity-75">Bujías, filtros de aire y aceite, más revisión de 20 puntos.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Motores 4 cilindros, con o sin múltiple. Incluye la revisión con escáner.</p>
             
 
-              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Afinamiento%20completo"
+            
+            
+
+              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Afinamiento%20electr%C3%B3nico"
                  target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Consultar
@@ -285,14 +434,14 @@
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
                       style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 150
+                  desde S/ 40
                 </span>
               
             </div>
 
             <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Sistema de frenos</h3>
             
-              <p class="mt-2 text-base leading-relaxed opacity-75">Cambio de pastillas, rectificado de discos y prueba en ruta.</p>
+              <p class="mt-2 text-base leading-relaxed opacity-75">Limpieza y regulación por eje, rectificado de discos y tambores, mantenimiento de calipers y cambio de líquido de freno.</p>
             
 
             
@@ -300,89 +449,7 @@
 
               <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Sistema%20de%20frenos"
                  target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
-                 style="background: var(--color-acento)">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
-              </a>
-            
-          </div>
-        </article>
-      
-        
-        
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
-          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
-          <div class="flex flex-1 flex-col p-7">
-            <div class="flex items-start justify-between gap-4">
-              
-              
-                
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M11 10.27 7 3.34" /> <path d="m11 13.73-4 6.93" /> <path d="M12 22v-2" /> <path d="M12 2v2" /> <path d="M14 12h8" /> <path d="m17 20.66-1-1.73" /> <path d="m17 3.34-1 1.73" /> <path d="M2 12h2" /> <path d="m20.66 17-1.73-1" /> <path d="m20.66 7-1.73 1" /> <path d="m3.34 17 1.73-1" /> <path d="m3.34 7 1.73 1" /> <circle cx="12" cy="12" r="2" /> <circle cx="12" cy="12" r="8" /></svg>
-                </div>
-              
-              
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 220
-                </span>
-              
-            </div>
-
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Suspensión y alineamiento</h3>
-            
-              <p class="mt-2 text-base leading-relaxed opacity-75">Amortiguadores, rótulas y alineamiento computarizado.</p>
-            
-
-            
-            
-
-              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Suspensi%C3%B3n%20y%20alineamiento"
-                 target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
-                 style="background: var(--color-acento)">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
-              </a>
-            
-          </div>
-        </article>
-      
-        
-        
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
-          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
-          <div class="flex flex-1 flex-col p-7">
-            <div class="flex items-start justify-between gap-4">
-              
-              
-                
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2" /> <path d="M17 3h2a2 2 0 0 1 2 2v2" /> <path d="M21 17v2a2 2 0 0 1-2 2h-2" /> <path d="M7 21H5a2 2 0 0 1-2-2v-2" /> <path d="M7 12h10" /></svg>
-                </div>
-              
-              
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold text-white"
-                      style="background: var(--color-acento)">
-                  Gratis
-                </span>
-              
-            </div>
-
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Diagnóstico por escáner</h3>
-            
-              <p class="mt-2 text-base leading-relaxed opacity-75">Leemos los códigos y le decimos qué urge y qué puede esperar.</p>
-            
-
-            
-            
-
-              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Diagn%C3%B3stico%20por%20esc%C3%A1ner"
-                 target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Consultar
@@ -408,22 +475,145 @@
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
                       style="background: var(--color-suave); color: var(--color-titulo)">
-                  desde S/ 90
+                  desde S/ 269
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Cambio de aceite</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Aceites y fluidos</h3>
             
-              <p class="mt-2 text-base leading-relaxed opacity-75">Aceite y filtro, mientras espera.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Caja mecánica, diferencial, dirección hidráulica y refrigerante. Con el grado que pide su vehículo.</p>
             
 
-              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Cambio%20de%20aceite"
+            
+            
+
+              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Aceites%20y%20fluidos"
                  target="_blank" rel="noopener"
-                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-white transition hover:brightness-110"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
+      
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2" /> <path d="M17 3h2a2 2 0 0 1 2 2v2" /> <path d="M21 17v2a2 2 0 0 1-2 2h-2" /> <path d="M7 21H5a2 2 0 0 1-2-2v-2" /> <path d="M7 12h10" /></svg>
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
+                      style="background: var(--color-suave); color: var(--color-titulo)">
+                  desde S/ 50
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Diagnóstico y pruebas</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Escaneo, tester de batería y arrancador, prueba de hermeticidad, prueba de fuga de cilindros y revisión integral de 20 puntos.</p>
+            
+
+            
+            
+
+              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Diagn%C3%B3stico%20y%20pruebas"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
+      
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M11 10.27 7 3.34" /> <path d="m11 13.73-4 6.93" /> <path d="M12 22v-2" /> <path d="M12 2v2" /> <path d="M14 12h8" /> <path d="m17 20.66-1-1.73" /> <path d="m17 3.34-1 1.73" /> <path d="M2 12h2" /> <path d="m20.66 17-1.73-1" /> <path d="m20.66 7-1.73 1" /> <path d="m3.34 17 1.73-1" /> <path d="m3.34 7 1.73 1" /> <circle cx="12" cy="12" r="2" /> <circle cx="12" cy="12" r="8" /></svg>
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
+                      style="background: var(--color-suave); color: var(--color-titulo)">
+                  desde S/ 120
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Suspensión y dirección</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Mantenimiento de palieres por eje y de cremallera. Si suena en los huecos o jala a un lado, es acá.</p>
+            
+
+            
+            
+
+              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Suspensi%C3%B3n%20y%20direcci%C3%B3n"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
+                 style="background: var(--color-acento)">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                Consultar
+              </a>
+            
+          </div>
+        </article>
+      
+        
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+          <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
+          <div class="flex flex-1 flex-col p-7">
+            <div class="flex items-start justify-between gap-4">
+              
+              
+                
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl"
+                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
+                  🛡️
+                </div>
+              
+              
+                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
+                      style="background: var(--color-suave); color: var(--color-titulo)">
+                  desde S/ 280
+                </span>
+              
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Protección de carrocería</h3>
+            
+              <p class="mt-2 text-base leading-relaxed opacity-75">Undercoating y zincado: protegen los bajos del óxido y la salitre. Ideal si vive cerca al mar o guarda el carro a la intemperie.</p>
+            
+
+            
+            
+
+              <a href="https://wa.me/51942128971?text=Hola%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Protecci%C3%B3n%20de%20carrocer%C3%ADa"
+                 target="_blank" rel="noopener"
+                 class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Consultar
@@ -437,44 +627,199 @@
 </section>
 
     
-      <section id="galeria" class="py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
-    <div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
       
+
+
+
+
+<section id="cotizador" class="py-20" style="background: var(--color-suave)">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">
+      Cotice su servicio en 1 minuto
+    </h2>
+    
+      <p class="mt-4 text-center text-lg opacity-75 reveal">Llene los datos de su vehículo y le respondemos por WhatsApp con el monto.</p>
+    
+
+    <form id="form-cotizador" class="tarjeta reveal mt-10 rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-6 sm:p-8 shadow-sm" novalidate>
+      <div class="grid gap-5 sm:grid-cols-2">
         
+          
+          <div class="sm:col-span-2">
+            <label for="cot-servicio" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Qué servicio necesita? <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <select id="cot-servicio" name="servicio" data-etiqueta="¿Qué servicio necesita?"
+                      data-requerido
+                      class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+                <option value="">Seleccione…</option>
+                
+                  <option value="Mantenimiento preventivo">Mantenimiento preventivo</option>
+                
+                  <option value="Afinamiento electrónico">Afinamiento electrónico</option>
+                
+                  <option value="Sistema de frenos">Sistema de frenos</option>
+                
+                  <option value="Cambio de aceite o fluidos">Cambio de aceite o fluidos</option>
+                
+                  <option value="Diagnóstico / revisión">Diagnóstico / revisión</option>
+                
+                  <option value="Suspensión y dirección">Suspensión y dirección</option>
+                
+                  <option value="Undercoating o zincado">Undercoating o zincado</option>
+                
+                  <option value="Todavía no sé, necesito que lo revisen">Todavía no sé, necesito que lo revisen</option>
+                
+              </select>
+            
+          </div>
         
+          
+          <div class="">
+            <label for="cot-vehiculo" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Marca y modelo <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <input id="cot-vehiculo" name="vehiculo" data-etiqueta="Marca y modelo"
+                     data-requerido
+                     type="text"
+                     
+                     placeholder="Toyota Corolla"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
         
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&amp;q=80" alt="Foto de Anka Automotriz/ Los Olivos /Mantenimientos Preventivos"
-               srcset="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
+          
+          <div class="">
+            <label for="cot-anio" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Año <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <input id="cot-anio" name="anio" data-etiqueta="Año"
+                     data-requerido
+                     type="number"
+                     inputmode=&#34;numeric&#34; min=&#34;0&#34;
+                     placeholder="2019"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-placa" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Placa
+            </label>
+            
+              <p class="mt-0.5 text-xs opacity-60">Nos ayuda a ubicar su historial si ya vino antes</p>
+            
+
+            
+              <input id="cot-placa" name="placa" data-etiqueta="Placa"
+                     
+                     type="text"
+                     
+                     placeholder="ABC-123"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-kilometraje" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Kilometraje actual (km)
+            </label>
+            
+
+            
+              <input id="cot-kilometraje" name="kilometraje" data-etiqueta="Kilometraje actual (km)"
+                     
+                     type="number"
+                     inputmode=&#34;numeric&#34; min=&#34;0&#34;
+                     placeholder="60000"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="sm:col-span-2">
+            <label for="cot-detalle" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Qué le pasa a su carro?
+            </label>
+            
+
+            
+              <textarea id="cot-detalle" name="detalle" data-etiqueta="¿Qué le pasa a su carro?"
+                        
+                        rows="3" placeholder="Suena al frenar, se prendió el check, le toca su mantenimiento…"
+                        class="campo-cot mt-2 w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 py-3 text-base"></textarea>
+            
+          </div>
+        
+      </div>
+
+      <p id="cot-error" class="mt-5 hidden rounded-xl px-4 py-3 text-sm font-medium"
+         style="background: color-mix(in srgb, var(--color-acento) 14%, transparent); color: var(--color-titulo)"></p>
+
       
-        
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&amp;q=80" alt="Foto de Anka Automotriz/ Los Olivos /Mantenimientos Preventivos"
-               srcset="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
-      
-        
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&amp;q=80" alt="Foto de Anka Automotriz/ Los Olivos /Mantenimientos Preventivos"
-               srcset="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
-      
-    </div>
+      <button type="submit"
+              class="mt-6 flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full bg-[#25D366] text-lg font-bold text-[#0b3d20] transition hover:brightness-105">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+        Pedir mi cotización por WhatsApp
+      </button>
+
+      <p class="mt-3 text-center text-sm opacity-65">
+        No se envía a ningún correo: se abre su WhatsApp con el mensaje ya escrito.
+      </p>
+    </form>
   </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById("form-cotizador");
+      if (!form) return;
+      var aviso = document.getElementById("cot-error");
+      var wsp = "51942128971";
+      var encabezado = "Hola Anka Mastertech, vi su página web y quisiera cotizar un servicio:";
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var campos = form.querySelectorAll(".campo-cot");
+        var faltan = [];
+        var lineas = [];
+
+        campos.forEach(function (c) {
+          var valor = (c.value || "").trim();
+          var etiqueta = c.getAttribute("data-etiqueta") || c.name;
+          if (c.hasAttribute("data-requerido") && !valor) {
+            faltan.push(etiqueta);
+            c.style.borderColor = "var(--color-acento)";
+            return;
+          }
+          c.style.borderColor = "";
+          if (valor) lineas.push("• " + etiqueta + ": " + valor);
+        });
+
+        if (faltan.length) {
+          aviso.textContent = "Nos falta: " + faltan.join(", ") + ".";
+          aviso.classList.remove("hidden");
+          return;
+        }
+        aviso.classList.add("hidden");
+
+        var texto = encabezado + "\n\n" + lineas.join("\n");
+        window.open("https://wa.me/" + wsp + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+      });
+    })();
+  </script>
 </section>
+
 
     
       
@@ -487,10 +832,42 @@
       
         <details class="group py-4 reveal">
           <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
-            <span>¿Necesito cita o puedo llegar directo?</span>
+            <span>¿Cuánto demora un mantenimiento preventivo?</span>
             <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
           </summary>
-          <p class="mt-3 text-base leading-relaxed opacity-80">Escríbanos por WhatsApp antes de venir y le confirmamos si hay espacio en el taller ese día.</p>
+          <p class="mt-3 text-base leading-relaxed opacity-80">En el día: lo deja en la mañana y lo recoge en la tarde. Los trabajos con desarmado o repuestos de por medio toman más y le damos el estimado al revisar el vehículo.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Cómo sé qué le hicieron a mi carro?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Queda grabado. Al ingresar registramos el estado de su vehículo en video (interior, exterior y motor) y durante el servicio le mandamos los videos del avance a su WhatsApp.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Dan garantía?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Sí. La garantía cubre los trabajos realizados por el taller y los repuestos que nosotros suministramos. Si usted trae sus propios repuestos, garantizamos la instalación.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Puedo traer mis propios repuestos?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Sí puede. En ese caso garantizamos la correcta instalación; la calidad y duración del repuesto dependen del fabricante. Las piezas reemplazadas se le entregan si las pide.</p>
+        </details>
+      
+        <details class="group py-4 reveal">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
+            <span>¿Puedo saber el precio antes de llevar el carro?</span>
+            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Sí. Llene el formulario de cotización de esta página con los datos de su vehículo y le respondemos por WhatsApp con el monto.</p>
         </details>
       
         <details class="group py-4 reveal">
@@ -498,23 +875,7 @@
             <span>¿Dónde están ubicados?</span>
             <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
           </summary>
-          <p class="mt-3 text-base leading-relaxed opacity-80">Estamos en Av. Angélica Gamarra de León Velarde 737, Los Olivos 15302. Toque el mapa en la sección de contacto y le abre la ruta.</p>
-        </details>
-      
-        <details class="group py-4 reveal">
-          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
-            <span>¿Revisan el vehículo antes de dar un presupuesto?</span>
-            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
-          </summary>
-          <p class="mt-3 text-base leading-relaxed opacity-80">Sí. Cuéntenos por WhatsApp qué le pasa a su vehículo y coordinamos la revisión.</p>
-        </details>
-      
-        <details class="group py-4 reveal">
-          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none min-h-[44px] text-lg font-semibold">
-            <span>¿Atienden todas las marcas?</span>
-            <span class="shrink-0 transition-transform group-open:rotate-45 text-2xl leading-none" aria-hidden="true">+</span>
-          </summary>
-          <p class="mt-3 text-base leading-relaxed opacity-80">Escríbanos con la marca y el año de su vehículo y le confirmamos al toque.</p>
+          <p class="mt-3 text-base leading-relaxed opacity-80">Estamos en Av. Angélica Gamarra de León Velarde 737, Urb. El Trébol, Los Olivos, Lima. Toque el mapa en la sección de contacto y le abre la ruta.</p>
         </details>
       
     </div>
@@ -522,7 +883,7 @@
     
       <p class="mt-8 text-center text-base opacity-80">
         ¿Tiene otra consulta?
-        <a href="https://wa.me/51942128971?text=Hola%20Anka%20Automotriz%2F%20Los%20Olivos%20%2FMantenimientos%20Preventivos%2C%20vi%20su%20p%C3%A1gina%20web%20y%20tengo%20una%20consulta." target="_blank" rel="noopener"
+        <a href="https://wa.me/51942128971?text=Hola%20Anka%20Mastertech%20Automotriz%2C%20vi%20su%20p%C3%A1gina%20web%20y%20tengo%20una%20consulta." target="_blank" rel="noopener"
            class="inline-flex items-center min-h-[44px] font-semibold underline"
            style="color: var(--color-titulo)">Escríbanos por WhatsApp</a>
       </p>
@@ -536,19 +897,29 @@
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
     <h2 class="text-3xl md:text-4xl font-bold reveal">Traiga su carro o escríbanos</h2>
 
-    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-1 text-sm">
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-sm">
       
+        <div class="reveal">
+          <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Teléfono</p>
+          <a href="tel:942128971" class="mt-1 block text-lg font-medium hover:underline">942 128 971</a>
+        </div>
+      
+      
+        <div class="reveal">
+          <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Email</p>
+          <a href="mailto:ibrautomotriz@gmail.com" class="mt-1 block text-lg font-medium hover:underline">ibrautomotriz@gmail.com</a>
+        </div>
       
       
       
         <div class="reveal">
           <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Dirección</p>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Ang%C3%A9lica%20Gamarra%20de%20Le%C3%B3n%20Velarde%20737%2C%20Los%20Olivos%2015302"
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Ang%C3%A9lica%20Gamarra%20de%20Le%C3%B3n%20Velarde%20737%2C%20Urb.%20El%20Tr%C3%A9bol%2C%20Los%20Olivos%2C%20Lima"
              target="_blank" rel="noopener"
              
              class="mt-1 inline-flex items-start gap-1.5 min-h-[44px] py-1 text-lg font-medium hover:underline">
             <svg class="w-5 h-5 mt-0.5 shrink-0 opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <span>Av. Angélica Gamarra de León Velarde 737, Los Olivos 15302</span>
+            <span>Av. Angélica Gamarra de León Velarde 737, Urb. El Trébol, Los Olivos, Lima</span>
           </a>
           <p class="mt-1 text-sm opacity-75">Toque para abrir el mapa</p>
         </div>
@@ -558,7 +929,7 @@
 
     
 
-      <a href="https://wa.me/51942128971?text=Hola%20Anka%20Automotriz%2F%20Los%20Olivos%20%2FMantenimientos%20Preventivos%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener"
+      <a href="https://wa.me/51942128971?text=Hola%20Anka%20Mastertech%20Automotriz%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener"
          class="reveal inline-flex items-center gap-2 mt-10 px-8 py-3 rounded-full font-semibold bg-white text-[var(--color-primario)] hover:scale-105 transition-transform shadow-lg">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Escríbanos por WhatsApp
@@ -574,7 +945,7 @@
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       
-      <p class="text-sm">© 2026 Anka Automotriz/ Los Olivos /Mantenimientos Preventivos. Todos los derechos reservados.</p>
+      <p class="text-sm">© 2026 Anka Mastertech Automotriz. Todos los derechos reservados.</p>
     </div>
 
     
@@ -586,7 +957,7 @@
   
   
     
-    <a href="https://wa.me/51942128971?text=Hola%20Anka%20Automotriz%2F%20Los%20Olivos%20%2FMantenimientos%20Preventivos%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
+    <a href="https://wa.me/51942128971?text=Hola%20Anka%20Mastertech%20Automotriz%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
        target="_blank" rel="noopener"
        aria-label="Escribir por WhatsApp"
        
@@ -604,14 +975,14 @@
   
     
     <div class="barra-movil md:hidden fixed bottom-0 inset-x-0 z-50 flex gap-2 border-t border-[var(--color-borde)] bg-[var(--color-fondo)] px-3 pt-3 backdrop-blur">
-      <a href="https://wa.me/51942128971?text=Hola%20Anka%20Automotriz%2F%20Los%20Olivos%20%2FMantenimientos%20Preventivos%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
+      <a href="https://wa.me/51942128971?text=Hola%20Anka%20Mastertech%20Automotriz%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
          target="_blank" rel="noopener"
          class="flex flex-1 min-h-[52px] items-center justify-center gap-2 rounded-full bg-[#25D366] font-semibold text-[#0b3d20]">
         <svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
         Escríbanos
       </a>
       
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Ang%C3%A9lica%20Gamarra%20de%20Le%C3%B3n%20Velarde%20737%2C%20Los%20Olivos%2015302"
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Ang%C3%A9lica%20Gamarra%20de%20Le%C3%B3n%20Velarde%20737%2C%20Urb.%20El%20Tr%C3%A9bol%2C%20Los%20Olivos%2C%20Lima"
            target="_blank" rel="noopener"
            class="flex min-h-[52px] items-center justify-center gap-1.5 rounded-full border border-[var(--color-borde)] px-5 font-semibold">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
