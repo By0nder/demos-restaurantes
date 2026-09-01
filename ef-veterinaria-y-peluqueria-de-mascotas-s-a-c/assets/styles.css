@@ -4,6 +4,8 @@
   --color-secundario: #701a3f;
   --color-acento: #9d174d;
   --color-acento-texto: #ffffff;
+  --color-acento-fuerte: #9d174d;
+  --color-acento-claro: #bf688b;
   --color-primario-texto: #ffffff;
   --color-fondo: #fdf9fa;
   --color-texto: #241a1e;
@@ -23,6 +25,8 @@
      usa una versión aclarada del mismo color: se mantiene la identidad y se
      puede leer. */
   --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
+  /* En oscuro, el acento-de-texto legible es la versión clara. */
+  --color-acento-fuerte: #bf688b;
 }
 /* ============================================
    Estilos base del sitio (independientes del tema)
@@ -261,3 +265,22 @@ body.con-barra-movil {
     transform: none;
   }
 }
+
+/* LOGO POR TEMA.
+   El logo del cliente suele venir recortado de su tarjeta: tinta negra sobre
+   blanco. Quitarle el fondo lo deja invisible en modo oscuro, y dejarle una
+   placa blanca le mete un parche que no es parte de su marca. La solución son
+   dos archivos —el mismo logo con la tinta negra y con la tinta blanca— y se
+   muestra el que corresponde. Si el cliente no tiene versión oscura, no pasa
+   nada: `.logo-oscuro` simplemente no existe en su HTML. */
+.logo-oscuro { display: none; }
+:root[data-tema="oscuro"] .logo-claro { display: none; }
+:root[data-tema="oscuro"] .logo-oscuro { display: block; }
+
+/* TEXTO ATENUADO POR COLOR, NO POR OPACIDAD (destilado de Los Bull's y Ercovoz).
+   opacity-70 en un parrafo tambien atenua a sus HIJOS: el enlace "Pedir por
+   WhatsApp" dentro del bloque quedaba bajo el contraste minimo. Atenuar por
+   color-mix deja el gris deseado en el parrafo y a los hijos con su color pleno. */
+.texto-suave { color: color-mix(in srgb, var(--color-texto) 82%, var(--color-fondo)); }
+.texto-tenue { color: color-mix(in srgb, var(--color-texto) 70%, var(--color-fondo)); }
+

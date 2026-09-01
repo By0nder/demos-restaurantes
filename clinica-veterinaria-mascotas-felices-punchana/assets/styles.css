@@ -4,6 +4,8 @@
   --color-secundario: #166534;
   --color-acento: #15803d;
   --color-acento-texto: #ffffff;
+  --color-acento-fuerte: #15803d;
+  --color-acento-claro: #38935a;
   --color-primario-texto: #ffffff;
   --color-fondo: #f8fbf7;
   --color-texto: #1c2b1f;
@@ -23,6 +25,8 @@
      usa una versión aclarada del mismo color: se mantiene la identidad y se
      puede leer. */
   --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
+  /* En oscuro, el acento-de-texto legible es la versión clara. */
+  --color-acento-fuerte: #38935a;
 }
 /* ============================================
    Estilos base del sitio (independientes del tema)
@@ -272,4 +276,11 @@ body.con-barra-movil {
 .logo-oscuro { display: none; }
 :root[data-tema="oscuro"] .logo-claro { display: none; }
 :root[data-tema="oscuro"] .logo-oscuro { display: block; }
+
+/* TEXTO ATENUADO POR COLOR, NO POR OPACIDAD (destilado de Los Bull's y Ercovoz).
+   opacity-70 en un parrafo tambien atenua a sus HIJOS: el enlace "Pedir por
+   WhatsApp" dentro del bloque quedaba bajo el contraste minimo. Atenuar por
+   color-mix deja el gris deseado en el parrafo y a los hijos con su color pleno. */
+.texto-suave { color: color-mix(in srgb, var(--color-texto) 82%, var(--color-fondo)); }
+.texto-tenue { color: color-mix(in srgb, var(--color-texto) 70%, var(--color-fondo)); }
 
