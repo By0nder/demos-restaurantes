@@ -145,3 +145,24 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((el) => el.classList.add("visible"));
   }
 });
+
+/* ---------------------------------------------------------------------------
+   CARTA EN ACORDEÓN: abrir la categoría a la que apunta el ancla (2026-09-01)
+   Los chips del índice enlazan a un <details> cerrado. El navegador salta al
+   sitio, pero la pestaña sigue cerrada y el visitante ve solo el título: cree
+   que el chip no hizo nada. Aquí se abre y se vuelve a alinear (el salto pasó
+   antes de que existiera el contenido). Cubre también llegar con el ancla en
+   la URL, como un QR o un link compartido a #carta-postres.
+   Los ids son slugs ASCII, así que el hash se lee tal cual, sin decodificar.
+--------------------------------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  if (!document.querySelector(".categoria")) return; // demos sin la feature: no corre
+  const abrirCategoria = () => {
+    const cat = document.getElementById(location.hash.slice(1));
+    if (!cat || !cat.classList.contains("categoria") || cat.open) return;
+    cat.open = true;
+    cat.scrollIntoView({ block: "start" });
+  };
+  window.addEventListener("hashchange", abrirCategoria);
+  abrirCategoria();
+});
