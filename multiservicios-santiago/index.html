@@ -18,7 +18,7 @@
   <meta property="og:image:alt" content="Multiservicios &#34;Santiago&#34;">
   <meta name="twitter:card" content="summary_large_image">
   
-  <meta name="theme-color" content="#c2410c">
+  <meta name="theme-color" content="#1C1F23">
 
   
   
@@ -30,7 +30,10 @@
   
   
   
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
   
   
   
@@ -39,12 +42,24 @@
   <link rel="stylesheet" href="assets/styles.css">
   
   
+  <style>:root { --font-display: "Barlow Condensed", "Archivo", ui-sans-serif, system-ui, sans-serif; --font-texto: "Barlow", "Inter", ui-sans-serif, system-ui, sans-serif; }</style>
+  
+  
+  <style>h1, h2, h3, .font-display { font-weight: 700 !important; }</style>
+  
+  
+  
+  <style>h1, h2, h3, .font-display { font-weight: 700 !important; }</style>
+  
+  
+  
+  
   
   
   
   
     
-    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23c2410c%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2236%22%20font-weight%3D%22bold%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%3EM%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231C1F23%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2236%22%20font-weight%3D%22bold%22%20fill%3D%22%23F5B301%22%20text-anchor%3D%22middle%22%3EM%3C%2Ftext%3E%3C%2Fsvg%3E">
   
   
   <script>
@@ -69,21 +84,27 @@
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
     
-    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px] lg:max-w-[24rem]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           M
         </span>
       
       
-      <span class="truncate font-semibold text-lg">Multiservicios &#34;Santiago&#34;</span>
+      <span class="line-clamp-2 font-semibold text-base sm:text-lg leading-tight">Multiservicios &#34;Santiago&#34;</span>
     </a>
 
-    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
+    <nav class="hidden lg:flex shrink-0 items-center gap-4 text-[15px] font-medium">
       
       
+      
+      
+      
+        <a href="#franja" class="hover:opacity-70 transition-opacity">Cómo trabajamos</a>
       
         <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
+      
+        <a href="#cotizador" class="hover:opacity-70 transition-opacity">Cotizar</a>
       
         <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
       
@@ -119,7 +140,11 @@
 
   <nav id="mobile-menu" class="hidden lg:hidden border-t border-[var(--color-borde)] px-4 pb-4">
     
+      <a href="#franja" class="flex items-center min-h-[44px] py-2 text-base font-medium">Cómo trabajamos</a>
+    
       <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
+    
+      <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Cotizar</a>
     
       <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
     
@@ -191,9 +216,9 @@
           Cotizar por WhatsApp
         </a>
         
-        <a href="#servicios"
+        <a href="#cotizador"
            class="inline-flex items-center justify-center min-h-[52px] px-8 rounded-full font-semibold text-white ring-1 ring-white/45 bg-white/10 backdrop-blur hover:bg-white/20 transition">
-          Ver servicios y precios
+          Cotizar en 1 minuto
         </a>
         
       </div>
@@ -221,7 +246,7 @@
           <p class="flex items-start gap-2">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="m9 12 2 2 4-4" /></svg>
             <span>
-              Diagnóstico por escáner: gratis
+              Se prendió el check: gratis
               
               
             </span>
@@ -243,7 +268,125 @@
 </section>
 
     
-      <section id="servicios" class="py-20">
+      
+
+
+
+
+
+
+<style>
+  /* El degradado arranca en el primario del negocio y se apaga rápido hacia
+     casi negro: el texto cae sobre la parte oscura y se lee AA con cualquier
+     marca. Los dos brillos radiales del acento son lo que evita que parezca
+     una placa plana. Van en el componente y no en styles.css a propósito. */
+  .franja-marca {
+    color: #ffffff;
+    background:
+      radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--color-acento) 20%, transparent) 0, transparent 46%),
+      radial-gradient(circle at 88% 84%, color-mix(in srgb, var(--color-acento) 14%, transparent) 0, transparent 42%),
+      linear-gradient(165deg, var(--color-primario) 0%, color-mix(in srgb, var(--color-primario) 45%, #0b0d10) 42%, #0b0d10 100%);
+  }
+  .franja-marca-chip { background: rgba(255, 255, 255, 0.06); }
+  .franja-marca-columnas { border-color: rgba(255, 255, 255, 0.14); }
+  .franja-marca-detalle { color: rgba(255, 255, 255, 0.72); }
+  /* El foco por teclado del sitio usa el primario, que aquí ES el fondo. */
+  .franja-marca a:focus-visible { outline-color: #ffffff; }
+</style>
+<section id="franja" class="franja-marca py-20">
+  <div class="max-w-5xl mx-auto px-4">
+    <p class="text-center text-sm font-bold uppercase tracking-[0.2em] reveal" style="color: var(--color-acento-claro)">
+      Cómo trabajamos
+    </p>
+    <h2 class="mt-3 text-center text-3xl md:text-4xl font-bold reveal" style="color: #ffffff">
+      Le decimos cuánto y cuándo, antes de tocar su carro
+    </h2>
+    
+      <p class="franja-marca-detalle mt-4 text-center text-lg max-w-2xl mx-auto reveal">Escríbanos antes de venir: le confirmamos si hay espacio ese día y le damos un precio de referencia por WhatsApp.</p>
+    
+
+    
+    <div class="mt-10 grid gap-3 sm:grid-cols-2 reveal">
+      
+        <div class="franja-marca-chip flex items-center gap-3 rounded-xl px-4 py-3.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento-claro)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium">Diagnóstico explicado en simple, sin términos raros</span>
+        </div>
+      
+        <div class="franja-marca-chip flex items-center gap-3 rounded-xl px-4 py-3.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento-claro)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium">Repuestos conversados antes de comprarlos</span>
+        </div>
+      
+        <div class="franja-marca-chip flex items-center gap-3 rounded-xl px-4 py-3.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento-claro)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium">Fotos del avance por el mismo chat</span>
+        </div>
+      
+        <div class="franja-marca-chip flex items-center gap-3 rounded-xl px-4 py-3.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 shrink-0" style="color: var(--color-acento-claro)" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+          <span class="text-base font-medium">Entrega en la fecha acordada</span>
+        </div>
+      
+    </div>
+
+    
+    
+      <div class="franja-marca-columnas mt-10 grid gap-6 border-t pt-10 sm:grid-cols-3 reveal">
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento-claro)">Escríbanos antes de venir</h3>
+            
+              <p class="franja-marca-detalle mt-1.5 text-sm leading-relaxed">Marca, modelo, año y qué le pasa. Le confirmamos si hay espacio.</p>
+            
+          </div>
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento-claro)">El precio, antes de empezar</h3>
+            
+              <p class="franja-marca-detalle mt-1.5 text-sm leading-relaxed">Nada se toca sin que usted sepa cuánto cuesta.</p>
+            
+          </div>
+        
+          <div>
+            <h3 class="text-base font-bold" style="color: var(--color-acento-claro)">Todo por WhatsApp</h3>
+            
+              <p class="franja-marca-detalle mt-1.5 text-sm leading-relaxed">Le avisamos por el mismo chat cuando su carro esté listo.</p>
+            
+          </div>
+        
+      </div>
+    
+
+    
+    <div class="mt-10 text-center reveal">
+      
+        <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
+           target="_blank" rel="noopener"
+           class="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full px-8 text-lg font-bold transition hover:brightness-110"
+           style="background: var(--color-acento); color: var(--color-acento-texto)">
+          Cotizar por WhatsApp
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+
+    
+      <section id="servicios" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Servicios y precios</h2>
 
@@ -265,34 +408,28 @@
             <div class="flex items-start justify-between gap-4">
               
               
-                
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" /></svg>
-                </div>
-              
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
                       style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 180
+                  desde S/ 150
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Afinamiento completo</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Chilla o vibra al frenar</h3>
             
-              <p class="mt-2 text-base leading-relaxed texto-suave">Bujías, filtros de aire y aceite, más revisión de 20 puntos.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed texto-suave">Pastillas, rectificado de discos y prueba en ruta. Frenos de las 4 ruedas.</p>
             
 
-              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Afinamiento%20completo%20(S%2F%20180)"
+            
+            
+
+              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Chilla%20o%20vibra%20al%20frenar%20(desde%20S%2F%20150)"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
+                Cotizar por WhatsApp
               </a>
             
           </div>
@@ -306,34 +443,28 @@
             <div class="flex items-start justify-between gap-4">
               
               
-                
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="M6 12c0-1.7.7-3.2 1.8-4.2" /> <circle cx="12" cy="12" r="2" /> <path d="M18 12c0 1.7-.7 3.2-1.8 4.2" /></svg>
-                </div>
-              
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
                       style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 150
+                  desde S/ 180
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Sistema de frenos</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Jalonea o gasta mucha gasolina</h3>
             
-              <p class="mt-2 text-base leading-relaxed texto-suave">Cambio de pastillas, rectificado de discos y prueba en ruta.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed texto-suave">Afinamiento: bujías, filtros y limpieza de inyectores.</p>
             
 
-              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Sistema%20de%20frenos%20(S%2F%20150)"
+            
+            
+
+              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Jalonea%20o%20gasta%20mucha%20gasolina%20(desde%20S%2F%20180)"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
+                Cotizar por WhatsApp
               </a>
             
           </div>
@@ -347,34 +478,28 @@
             <div class="flex items-start justify-between gap-4">
               
               
-                
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M11 10.27 7 3.34" /> <path d="m11 13.73-4 6.93" /> <path d="M12 22v-2" /> <path d="M12 2v2" /> <path d="M14 12h8" /> <path d="m17 20.66-1-1.73" /> <path d="m17 3.34-1 1.73" /> <path d="M2 12h2" /> <path d="m20.66 17-1.73-1" /> <path d="m20.66 7-1.73 1" /> <path d="m3.34 17 1.73-1" /> <path d="m3.34 7 1.73 1" /> <circle cx="12" cy="12" r="2" /> <circle cx="12" cy="12" r="8" /></svg>
-                </div>
-              
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
                       style="background: var(--color-suave); color: var(--color-titulo)">
-                  S/ 220
+                  desde S/ 220
                 </span>
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Suspensión y alineamiento</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Suena en los huecos o jala a un lado</h3>
             
-              <p class="mt-2 text-base leading-relaxed texto-suave">Amortiguadores, rótulas y alineamiento computarizado.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed texto-suave">Suspensión y dirección: amortiguadores, rótulas, terminales.</p>
             
 
-              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Suspensi%C3%B3n%20y%20alineamiento%20(S%2F%20220)"
+            
+            
+
+              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Suena%20en%20los%20huecos%20o%20jala%20a%20un%20lado%20(desde%20S%2F%20220)"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
+                Cotizar por WhatsApp
               </a>
             
           </div>
@@ -387,12 +512,6 @@
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
               
-              
-                
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2" /> <path d="M17 3h2a2 2 0 0 1 2 2v2" /> <path d="M21 17v2a2 2 0 0 1-2 2h-2" /> <path d="M7 21H5a2 2 0 0 1-2-2v-2" /> <path d="M7 12h10" /></svg>
-                </div>
               
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold text-[var(--color-acento-texto)]"
@@ -402,20 +521,20 @@
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Diagnóstico por escáner</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Se prendió el check</h3>
             
-              <p class="mt-2 text-base leading-relaxed texto-suave">Leemos los códigos y le decimos qué urge y qué puede esperar.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed texto-suave">Diagnóstico por escáner. Le decimos qué urge y qué puede esperar.</p>
             
 
-              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Diagn%C3%B3stico%20por%20esc%C3%A1ner"
+            
+            
+
+              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Se%20prendi%C3%B3%20el%20check"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
+                Cotizar por WhatsApp
               </a>
             
           </div>
@@ -429,12 +548,6 @@
             <div class="flex items-start justify-between gap-4">
               
               
-                
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl "
-                     style="background: color-mix(in srgb, var(--color-acento) 14%, var(--color-superficie)); color: var(--color-acento)">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" aria-hidden="true"><path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0v-6.998a2 2 0 0 0-.59-1.42L18 5" /> <path d="M14 21V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v16" /> <path d="M2 21h13" /> <path d="M3 9h11" /></svg>
-                </div>
-              
               
                 <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
                       style="background: var(--color-suave); color: var(--color-titulo)">
@@ -443,20 +556,20 @@
               
             </div>
 
-            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Cambio de aceite</h3>
+            <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Le toca su cambio de aceite</h3>
             
-              <p class="mt-2 text-base leading-relaxed texto-suave">Aceite y filtro, mientras espera.</p>
-            
-
-            
+              <p class="mt-2 text-base leading-relaxed texto-suave">Aceite y filtro con el grado que pide su motor, mientras espera.</p>
             
 
-              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Cambio%20de%20aceite%20(desde%20S%2F%2090)"
+            
+            
+
+              <a href="https://wa.me/51982051012?text=Hola%20Multiservicios%20%22Santiago%22%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Le%20toca%20su%20cambio%20de%20aceite%20(desde%20S%2F%2090)"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
+                Cotizar por WhatsApp
               </a>
             
           </div>
@@ -467,20 +580,137 @@
 </section>
 
     
-      <section id="galeria" class="py-20">
+      
+
+
+
+
+<section id="cotizador" class="py-14 md:py-20" style="background: var(--color-suave)">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">
+      Cotice en 1 minuto
+    </h2>
+    
+      <p class="mt-4 text-center text-lg opacity-75 reveal">El precio depende de su carro y de qué le pasa. Llene esto y le respondemos por WhatsApp con el monto.</p>
+    
+
+    <form id="form-cotizador" class="tarjeta reveal mt-10 rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-6 sm:p-8 shadow-sm" novalidate>
+      <div class="grid gap-5 sm:grid-cols-2">
+        
+          
+          <div class="">
+            <label for="cot-vehiculo" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Marca y modelo <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <input id="cot-vehiculo" name="vehiculo" data-etiqueta="Marca y modelo"
+                     data-requerido
+                     type="text"
+                     
+                     placeholder="Toyota Yaris"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="">
+            <label for="cot-anio" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              Año <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <input id="cot-anio" name="anio" data-etiqueta="Año"
+                     data-requerido
+                     type="number"
+                     inputmode=&#34;numeric&#34; min=&#34;0&#34;
+                     placeholder="2016"
+                     class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
+            
+          </div>
+        
+          
+          <div class="sm:col-span-2">
+            <label for="cot-sintoma" class="block text-sm font-semibold" style="color: var(--color-titulo)">
+              ¿Qué le pasa a su carro? <span style="color: var(--color-acento)">*</span>
+            </label>
+            
+
+            
+              <textarea id="cot-sintoma" name="sintoma" data-etiqueta="¿Qué le pasa a su carro?"
+                        data-requerido
+                        rows="3" placeholder="Suena al frenar, jala al lado izquierdo, se prendió el check…"
+                        class="campo-cot mt-2 w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 py-3 text-base"></textarea>
+            
+          </div>
+        
+      </div>
+
+      <p id="cot-error" class="mt-5 hidden rounded-xl px-4 py-3 text-sm font-medium"
+         style="background: color-mix(in srgb, var(--color-acento) 14%, transparent); color: var(--color-titulo)"></p>
+
+      
+      <button type="submit"
+              class="mt-6 flex min-h-[54px] w-full items-center justify-center gap-2 rounded-full bg-[#25D366] text-lg font-bold text-[#0b3d20] transition hover:brightness-105">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+        Pedir mi cotización por WhatsApp
+      </button>
+
+      <p class="mt-3 text-center text-sm opacity-65">
+        No se envía a ningún correo: se abre su WhatsApp con el mensaje ya escrito.
+      </p>
+    </form>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById("form-cotizador");
+      if (!form) return;
+      var aviso = document.getElementById("cot-error");
+      var wsp = "51982051012";
+      var encabezado = "Hola, vi su página web y quisiera cotizar un servicio:";
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var campos = form.querySelectorAll(".campo-cot");
+        var faltan = [];
+        var lineas = [];
+
+        campos.forEach(function (c) {
+          var valor = (c.value || "").trim();
+          var etiqueta = c.getAttribute("data-etiqueta") || c.name;
+          if (c.hasAttribute("data-requerido") && !valor) {
+            faltan.push(etiqueta);
+            c.style.borderColor = "var(--color-acento)";
+            return;
+          }
+          c.style.borderColor = "";
+          if (valor) lineas.push("• " + etiqueta + ": " + valor);
+        });
+
+        if (faltan.length) {
+          aviso.textContent = "Nos falta: " + faltan.join(", ") + ".";
+          aviso.classList.remove("hidden");
+          return;
+        }
+        aviso.classList.add("hidden");
+
+        var texto = encabezado + "\n\n" + lineas.join("\n");
+        window.open("https://wa.me/" + wsp + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+      });
+    })();
+  </script>
+</section>
+
+
+    
+      <section id="galeria" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
+    
     <div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
-      
-        
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&amp;q=80" alt="Foto de Multiservicios &#34;Santiago&#34;"
-               srcset="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
       
         
         
@@ -509,7 +739,7 @@
     
       
 
-<section id="faq" class="py-20" style="background-color: var(--color-fondo)">
+<section id="faq" class="py-14 md:py-20" style="background-color: var(--color-fondo)">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
 
@@ -562,7 +792,7 @@
 
 
     
-      <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
+      <section id="contacto" class="py-14 md:py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro))">
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
     <h2 class="text-3xl md:text-4xl font-bold reveal">Traiga su carro o escríbanos</h2>
 
@@ -600,7 +830,7 @@
     
   </main>
 
-  <footer class="py-10 bg-gray-900 text-gray-300">
+  <footer class="py-10" style="background: var(--color-primario-oscuro); color: var(--color-primario-texto); opacity: 0.95">
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       
@@ -653,5 +883,7 @@
   
 
   <script src="assets/main.js"></script>
+  
+  
 </body>
 </html>

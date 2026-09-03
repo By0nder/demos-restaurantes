@@ -1,14 +1,17 @@
 /* Tema generado automáticamente — colores del cliente */
 :root {
-  --color-primario: #9d174d;
-  --color-secundario: #701a3f;
-  --color-acento: #9d174d;
+  --color-primario: #2A2223;
+  --color-secundario: #E9CFC3;
+  --color-acento: #A8502F;
   --color-acento-texto: #ffffff;
-  --color-acento-fuerte: #9d174d;
-  --color-acento-claro: #bf688b;
+  --color-acento-fuerte: #A8502F;
+  --color-acento-claro: #b56a4e;
   --color-primario-texto: #ffffff;
-  --color-fondo: #fdf9fa;
-  --color-texto: #241a1e;
+  --color-primario-oscuro: #1d1718;
+  --color-primario-oscuro: #1d1718;
+  --color-primario-oscuro: #1d1718;
+  --color-fondo: #F7F1EA;
+  --color-texto: #2A2223;
 }
 
 /* MODO OSCURO: solo cambian el papel y la tinta; los colores del negocio
@@ -26,7 +29,7 @@
      puede leer. */
   --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
   /* En oscuro, el acento-de-texto legible es la versión clara. */
-  --color-acento-fuerte: #bf688b;
+  --color-acento-fuerte: #b56a4e;
 }
 /* ============================================
    Estilos base del sitio (independientes del tema)
@@ -283,4 +286,40 @@ body.con-barra-movil {
    color-mix deja el gris deseado en el parrafo y a los hijos con su color pleno. */
 .texto-suave { color: color-mix(in srgb, var(--color-texto) 82%, var(--color-fondo)); }
 .texto-tenue { color: color-mix(in srgb, var(--color-texto) 70%, var(--color-fondo)); }
+
+/* ---------------------------------------------------------------------------
+   CARTA EN ACORDEÓN (destilado de Los Bull's, 2026-09-01)
+   Con 100 platos la carta abierta medía ~29,000 px: en el celular era un
+   scroll sin fin y nadie llegaba a los postres. Cada categoría es un <details>
+   nativo: cerrada ocupa una línea y se abre con un toque, sin JS de por medio
+   (main.js solo abre la que pide el ancla). Se enciende por cliente con
+   `cartaAcordeon: true`; sin el flag no hay `.categoria` y este bloque no
+   pinta nada.
+--------------------------------------------------------------------------- */
+.categoria summary {
+  cursor: pointer;
+  min-height: 44px; /* área táctil mínima: el pulgar no falla */
+  list-style: none; /* fuera el triángulo del navegador: el chevron propio marca el estado */
+}
+
+/* Safari todavía dibuja su marcador aunque summary lleve list-style: none */
+.categoria summary::-webkit-details-marker {
+  display: none;
+}
+
+/* El chevron gira en vez de cambiar de icono: un solo SVG, y el giro dice
+   "esto se abre y se cierra" sin texto. */
+.chevron {
+  transition: transform 0.25s ease;
+}
+
+.categoria[open] .chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
 

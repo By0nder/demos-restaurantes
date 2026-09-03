@@ -30,6 +30,9 @@
   
   
   
+  
+  
+  
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   
@@ -37,6 +40,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <link rel="stylesheet" href="assets/styles.css">
+  
+  
   
   
   
@@ -69,17 +74,19 @@
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
     
-    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px] lg:max-w-[24rem]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           L
         </span>
       
       
-      <span class="truncate font-semibold text-lg">La Mordida Restaurant &amp; Parrillas</span>
+      <span class="line-clamp-2 font-semibold text-base sm:text-lg leading-tight">La Mordida Restaurant &amp; Parrillas</span>
     </a>
 
-    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
+    <nav class="hidden lg:flex shrink-0 items-center gap-4 text-[15px] font-medium">
+      
+      
       
       
       
@@ -381,20 +388,11 @@
 </section>
 
     
-      <section id="galeria" class="py-20">
+      <section id="galeria" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
+    
     <div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
-      
-        
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;q=80" alt="Foto de La Mordida Restaurant &amp; Parrillas"
-               srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
       
         
         
@@ -423,7 +421,7 @@
     
       
 
-<section id="faq" class="py-20" style="background-color: var(--color-fondo)">
+<section id="faq" class="py-14 md:py-20" style="background-color: var(--color-fondo)">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
 
@@ -476,7 +474,7 @@
 
 
     
-      <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
+      <section id="contacto" class="py-14 md:py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro))">
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
     <h2 class="text-3xl md:text-4xl font-bold reveal">Reserva tu mesa</h2>
 
@@ -514,7 +512,7 @@
     
   </main>
 
-  <footer class="py-10 bg-gray-900 text-gray-300">
+  <footer class="py-10" style="background: var(--color-primario-oscuro); color: var(--color-primario-texto); opacity: 0.95">
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       
@@ -565,5 +563,7 @@
   
 
   <script src="assets/main.js"></script>
+  
+  
 </body>
 </html>

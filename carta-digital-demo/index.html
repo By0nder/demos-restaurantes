@@ -30,6 +30,9 @@
   
   
   
+  
+  
+  
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   
@@ -37,6 +40,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <link rel="stylesheet" href="assets/styles.css">
+  
+  
   
   
   
@@ -69,17 +74,19 @@
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
     
-    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px] lg:max-w-[24rem]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           E
         </span>
       
       
-      <span class="truncate font-semibold text-lg">El Buen Sabor Criollo</span>
+      <span class="line-clamp-2 font-semibold text-base sm:text-lg leading-tight">El Buen Sabor Criollo</span>
     </a>
 
-    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
+    <nav class="hidden lg:flex shrink-0 items-center gap-4 text-[15px] font-medium">
+      
+      
       
       
       
@@ -214,11 +221,30 @@
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Nuestro Menú</h2>
 
     
+      <nav class="mt-8 flex flex-wrap justify-center gap-2 reveal" aria-label="Categorías de la carta">
+        
+          <a href="#carta-entradas"
+             class="inline-flex items-center rounded-full border px-4 min-h-[44px] text-sm font-semibold transition-colors hover:border-[var(--color-acento)]"
+             style="border-color: var(--color-borde); background-color: var(--color-superficie); color: var(--color-titulo)">Entradas</a>
+        
+          <a href="#carta-platos-de-fondo"
+             class="inline-flex items-center rounded-full border px-4 min-h-[44px] text-sm font-semibold transition-colors hover:border-[var(--color-acento)]"
+             style="border-color: var(--color-borde); background-color: var(--color-superficie); color: var(--color-titulo)">Platos de fondo</a>
+        
+          <a href="#carta-bebidas-y-postres"
+             class="inline-flex items-center rounded-full border px-4 min-h-[44px] text-sm font-semibold transition-colors hover:border-[var(--color-acento)]"
+             style="border-color: var(--color-borde); background-color: var(--color-superficie); color: var(--color-titulo)">Bebidas y postres</a>
+        
+      </nav>
     
-      <div class="mt-12 reveal">
-        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-titulo); color: var(--color-titulo)">
-          Entradas
-        </h3>
+      <details class="categoria mt-6 scroll-mt-24 reveal" id="carta-entradas" open>
+        <summary class="flex items-center justify-between gap-4 border-b-2 pb-2" style="border-color: var(--color-titulo); color: var(--color-titulo)">
+          <div class="min-w-0">
+            <h3 class="text-2xl font-semibold">Entradas</h3>
+            <p class="text-sm font-medium texto-tenue">3 · desde S/ 12</p>
+          </div>
+          <svg class="chevron h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
         <ul class="mt-6 space-y-5">
           
             <li class="flex items-baseline justify-between gap-4">
@@ -285,12 +311,16 @@
             </li>
           
         </ul>
-      </div>
+      </details>
     
-      <div class="mt-12 reveal">
-        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-titulo); color: var(--color-titulo)">
-          Platos de fondo
-        </h3>
+      <details class="categoria mt-6 scroll-mt-24 reveal" id="carta-platos-de-fondo">
+        <summary class="flex items-center justify-between gap-4 border-b-2 pb-2" style="border-color: var(--color-titulo); color: var(--color-titulo)">
+          <div class="min-w-0">
+            <h3 class="text-2xl font-semibold">Platos de fondo</h3>
+            <p class="text-sm font-medium texto-tenue">5 · desde S/ 18</p>
+          </div>
+          <svg class="chevron h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
         <ul class="mt-6 space-y-5">
           
             <li class="flex items-baseline justify-between gap-4">
@@ -399,12 +429,16 @@
             </li>
           
         </ul>
-      </div>
+      </details>
     
-      <div class="mt-12 reveal">
-        <h3 class="text-2xl font-semibold border-b-2 pb-2" style="border-color: var(--color-titulo); color: var(--color-titulo)">
-          Bebidas y postres
-        </h3>
+      <details class="categoria mt-6 scroll-mt-24 reveal" id="carta-bebidas-y-postres">
+        <summary class="flex items-center justify-between gap-4 border-b-2 pb-2" style="border-color: var(--color-titulo); color: var(--color-titulo)">
+          <div class="min-w-0">
+            <h3 class="text-2xl font-semibold">Bebidas y postres</h3>
+            <p class="text-sm font-medium texto-tenue">4 · desde S/ 8</p>
+          </div>
+          <svg class="chevron h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
         <ul class="mt-6 space-y-5">
           
             <li class="flex items-baseline justify-between gap-4">
@@ -492,13 +526,13 @@
             </li>
           
         </ul>
-      </div>
+      </details>
     
   </div>
 </section>
 
     
-      <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
+      <section id="contacto" class="py-14 md:py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro))">
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
     <h2 class="text-3xl md:text-4xl font-bold reveal">Reserva tu mesa</h2>
 
@@ -536,7 +570,7 @@
     
   </main>
 
-  <footer class="py-10 bg-gray-900 text-gray-300">
+  <footer class="py-10" style="background: var(--color-primario-oscuro); color: var(--color-primario-texto); opacity: 0.95">
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       
@@ -587,5 +621,7 @@
   
 
   <script src="assets/main.js"></script>
+  
+  
 </body>
 </html>

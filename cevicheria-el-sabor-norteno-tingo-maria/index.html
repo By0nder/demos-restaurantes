@@ -18,7 +18,7 @@
   <meta property="og:image:alt" content="Cevicheria El Sabor Norteno Tingo Maria">
   <meta name="twitter:card" content="summary_large_image">
   
-  <meta name="theme-color" content="#0369a1">
+  <meta name="theme-color" content="#0B3D5C">
 
   
   
@@ -30,7 +30,10 @@
   
   
   
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Fraunces:wght@700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
   
   
   
@@ -39,12 +42,24 @@
   <link rel="stylesheet" href="assets/styles.css">
   
   
+  <style>:root { --font-display: "Fraunces", "Archivo", ui-sans-serif, system-ui, sans-serif; --font-texto: "Public Sans", "Inter", ui-sans-serif, system-ui, sans-serif; }</style>
+  
+  
+  <style>h1, h2, h3, .font-display { font-weight: 700 !important; }</style>
+  
+  
+  
+  <style>h1, h2, h3, .font-display { font-weight: 700 !important; }</style>
+  
+  
+  
+  
   
   
   
   
     
-    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230369a1%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2236%22%20font-weight%3D%22bold%22%20fill%3D%22%23ffffff%22%20text-anchor%3D%22middle%22%3EC%3C%2Ftext%3E%3C%2Fsvg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230B3D5C%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22Arial%2CHelvetica%2Csans-serif%22%20font-size%3D%2236%22%20font-weight%3D%22bold%22%20fill%3D%22%23C9421C%22%20text-anchor%3D%22middle%22%3EC%3C%2Ftext%3E%3C%2Fsvg%3E">
   
   
   <script>
@@ -69,17 +84,19 @@
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
     
-    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px] lg:max-w-[24rem]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           C
         </span>
       
       
-      <span class="truncate font-semibold text-lg">Cevicheria El Sabor Norteno Tingo Maria</span>
+      <span class="line-clamp-2 font-semibold text-base sm:text-lg leading-tight">Cevicheria El Sabor Norteno Tingo Maria</span>
     </a>
 
-    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
+    <nav class="hidden lg:flex shrink-0 items-center gap-4 text-[15px] font-medium">
+      
+      
       
       
       
@@ -87,7 +104,7 @@
       
         <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
       
-        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Testimonios</a>
+        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Opiniones</a>
       
         <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
       
@@ -125,7 +142,7 @@
     
       <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
     
-      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Testimonios</a>
+      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Opiniones</a>
     
       <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
     
@@ -148,7 +165,7 @@
            fetchpriority="high" decoding="async"
            class="hero-foto w-full h-full object-cover">
       
-        <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=1200&amp;q=80" alt="" aria-hidden="true"
+        <img src="https://images.unsplash.com/photo-1535400255456-984241443b29?w=1200&amp;q=80" alt="" aria-hidden="true"
              fetchpriority="low" decoding="async" loading="lazy"
              class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
              style="animation-delay: 0s, 0s">
@@ -397,27 +414,18 @@
 </section>
 
     
-      <section id="galeria" class="py-20">
+      <section id="galeria" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
+    
     <div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
       
         
         
         
         <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=800&amp;q=80" alt="Foto de Cevicheria El Sabor Norteno Tingo Maria"
-               srcset="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
-      
-        
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=800&amp;q=80" alt="Foto de Cevicheria El Sabor Norteno Tingo Maria"
-               srcset="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+          <img src="https://images.unsplash.com/photo-1535400255456-984241443b29?w=800&amp;q=80" alt="Foto de Cevicheria El Sabor Norteno Tingo Maria"
+               srcset="https://images.unsplash.com/photo-1535400255456-984241443b29?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1535400255456-984241443b29?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1535400255456-984241443b29?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1535400255456-984241443b29?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
@@ -437,14 +445,14 @@
 </section>
 
     
-      <section id="testimonios" class="py-20">
+      <section id="testimonios" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen nuestros comensales</h2>
     
     
     
     
-    <div class="mt-12 grid gap-8 md:grid-cols-1">
+    <div class="mt-12 grid gap-8 md:grid-cols-1 max-w-2xl mx-auto">
       
         <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
           <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
@@ -471,7 +479,7 @@
     
       
 
-<section id="faq" class="py-20" style="background-color: var(--color-fondo)">
+<section id="faq" class="py-14 md:py-20" style="background-color: var(--color-fondo)">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
 
@@ -532,7 +540,7 @@
 
 
     
-      <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
+      <section id="contacto" class="py-14 md:py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro))">
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
     <h2 class="text-3xl md:text-4xl font-bold reveal">Reserva tu mesa</h2>
 
@@ -575,7 +583,7 @@
     
   </main>
 
-  <footer class="py-10 bg-gray-900 text-gray-300">
+  <footer class="py-10" style="background: var(--color-primario-oscuro); color: var(--color-primario-texto); opacity: 0.95">
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       
@@ -626,5 +634,7 @@
   
 
   <script src="assets/main.js"></script>
+  
+  
 </body>
 </html>
