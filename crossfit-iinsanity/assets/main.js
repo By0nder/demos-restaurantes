@@ -143,8 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((el) => observer.observe(el));
     // Red de seguridad: pase lo que pase, nada se queda invisible.
     setTimeout(() => revealElements.forEach((el) => el.classList.add("visible")), 2500);
-    // Red de seguridad: pase lo que pase, nada se queda invisible.
-    setTimeout(() => revealElements.forEach((el) => el.classList.add("visible")), 2500);
   } else {
     revealElements.forEach((el) => el.classList.add("visible"));
   }

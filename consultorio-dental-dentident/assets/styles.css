@@ -8,8 +8,6 @@
   --color-acento-claro: #D9A441;
   --color-primario-texto: #ffffff;
   --color-primario-oscuro: #0a3434;
-  --color-primario-oscuro: #0a3434;
-  --color-primario-oscuro: #0a3434;
   --color-fondo: #FAF8F3;
   --color-texto: #14211F;
 }
@@ -321,5 +319,13 @@ body.con-barra-movil {
   .chevron {
     transition: none;
   }
+}
+
+/* --- Encuadre del hero (QA 2026-09-02) ---
+   Con object-position centrado, a 1366 px el recorte cortaba la cara del perro
+   de la veterinaria y dejaba solo el hocico. El punto de interés de una foto de
+   comida o de local casi siempre está en el tercio superior. */
+.hero-foto, .hero-media img, #hero img {
+  object-position: 50% 35%;
 }
 
