@@ -49,10 +49,6 @@
   
   
   
-  <style>h1, h2, h3, .font-display { font-weight: 700 !important; }</style>
-  
-  
-  
   
   
   
@@ -95,6 +91,8 @@
     </a>
 
     <nav class="hidden lg:flex shrink-0 items-center gap-4 text-[15px] font-medium">
+      
+      
       
       
       
@@ -273,6 +271,12 @@
 
 
 
+
+
+
+
+
+
 <style>
   /* El degradado arranca en el primario del negocio y se apaga rápido hacia
      casi negro: el texto cae sobre la parte oscura y se lee AA con cualquier
@@ -395,12 +399,16 @@
       </p>
     
 
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    
+    
+    
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
       
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm lg:col-span-2">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -435,7 +443,8 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm lg:col-span-2">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -470,7 +479,8 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm lg:col-span-2">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -505,7 +515,8 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm lg:col-span-2 lg:col-start-2">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -540,7 +551,8 @@
       
         
         
-        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm">
+        
+        <article class="tarjeta reveal flex flex-col overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] shadow-sm lg:col-span-2">
           <div class="h-1.5 w-full" style="background: var(--color-acento)"></div>
           <div class="flex flex-1 flex-col p-7">
             <div class="flex items-start justify-between gap-4">
@@ -730,6 +742,16 @@
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
       
+        
+        
+        
+        <div class="reveal overflow-hidden rounded-xl col-span-2 md:col-span-1 aspect-[2/1] md:aspect-square">
+          <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800&amp;q=80" alt="Foto de Mecanica Juancho"
+               srcset="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+               loading="lazy" decoding="async"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        </div>
+      
     </div>
   </div>
 </section>
@@ -860,6 +882,9 @@
     
       <section id="contacto" class="py-14 md:py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro))">
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
+    
+    
+    
     <h2 class="text-3xl md:text-4xl font-bold reveal">Traiga su carro o escríbanos</h2>
 
     <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-1 text-sm">
@@ -867,9 +892,12 @@
       
       
       
+      
+      
+      
         <div class="reveal">
           <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Dirección</p>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Mariscal%20Castilla%2C%20Huanta"
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20Mariscal%20Castilla%2C%20Huanta"
              target="_blank" rel="noopener"
              
              class="mt-1 inline-flex items-start gap-1.5 min-h-[44px] py-1 text-lg font-medium hover:underline">
