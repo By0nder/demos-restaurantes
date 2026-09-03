@@ -45,6 +45,14 @@
   <style>:root { --font-display: "Lora", "Archivo", ui-sans-serif, system-ui, sans-serif; --font-texto: "Source Sans 3", "Inter", ui-sans-serif, system-ui, sans-serif; }</style>
   
   
+  <style>h1, h2, h3, .font-display { font-weight: 700 !important; }</style>
+  
+  
+  
+  <style>h1, h2, h3, .font-display { font-weight: 700 !important; }</style>
+  
+  
+  
   
   
   
@@ -76,27 +84,29 @@
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
     
-    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px] lg:max-w-[24rem]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           I
         </span>
       
       
-      <span class="truncate font-semibold text-lg">I.E.P JUAN ESPINOZA MEDRANO</span>
+      <span class="line-clamp-2 font-semibold text-base sm:text-lg leading-tight">I.E.P JUAN ESPINOZA MEDRANO</span>
     </a>
 
-    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
+    <nav class="hidden lg:flex shrink-0 items-center gap-4 text-[15px] font-medium">
       
       
       
-        <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
       
-        <a href="#cotizador" class="hover:opacity-70 transition-opacity">Cotizar</a>
+      
+        <a href="#servicios" class="hover:opacity-70 transition-opacity">Niveles</a>
+      
+        <a href="#cotizador" class="hover:opacity-70 transition-opacity">Vacantes 2027</a>
       
         <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
       
-        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Testimonios</a>
+        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Opiniones</a>
       
         <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
       
@@ -130,13 +140,13 @@
 
   <nav id="mobile-menu" class="hidden lg:hidden border-t border-[var(--color-borde)] px-4 pb-4">
     
-      <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
+      <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Niveles</a>
     
-      <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Cotizar</a>
+      <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Vacantes 2027</a>
     
       <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
     
-      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Testimonios</a>
+      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Opiniones</a>
     
       <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
     
@@ -202,7 +212,7 @@
         
         <a href="#cotizador"
            class="inline-flex items-center justify-center min-h-[52px] px-8 rounded-full font-semibold text-white ring-1 ring-white/45 bg-white/10 backdrop-blur hover:bg-white/20 transition">
-          Pedir informes
+          Separar vacante 2027
         </a>
         
       </div>
@@ -242,7 +252,7 @@
 </section>
 
     
-      <section id="servicios" class="py-20">
+      <section id="servicios" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Nuestros niveles</h2>
 
@@ -285,7 +295,7 @@
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
+                Pedir informes
               </a>
             
           </div>
@@ -320,7 +330,7 @@
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
+                Pedir informes
               </a>
             
           </div>
@@ -355,7 +365,7 @@
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
                 <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
-                Consultar
+                Pedir informes
               </a>
             
           </div>
@@ -371,7 +381,7 @@
 
 
 
-<section id="cotizador" class="py-20" style="background: var(--color-suave)">
+<section id="cotizador" class="py-14 md:py-20" style="background: var(--color-suave)">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">
       Separe su vacante 2027
@@ -541,20 +551,11 @@
 
 
     
-      <section id="galeria" class="py-20">
+      <section id="galeria" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
+    
     <div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
-      
-        
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&amp;q=80" alt="Foto de I.E.P JUAN ESPINOZA MEDRANO"
-               srcset="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
       
         
         
@@ -581,7 +582,7 @@
 </section>
 
     
-      <section id="testimonios" class="py-20">
+      <section id="testimonios" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen las familias</h2>
     
@@ -651,7 +652,7 @@
     
       
 
-<section id="faq" class="py-20" style="background-color: var(--color-fondo)">
+<section id="faq" class="py-14 md:py-20" style="background-color: var(--color-fondo)">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
 
@@ -712,7 +713,7 @@
 
 
     
-      <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
+      <section id="contacto" class="py-14 md:py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro))">
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
     <h2 class="text-3xl md:text-4xl font-bold reveal">Visítenos o escríbanos</h2>
 
@@ -750,7 +751,7 @@
     
   </main>
 
-  <footer class="py-10 bg-gray-900 text-gray-300">
+  <footer class="py-10" style="background: var(--color-primario-oscuro); color: var(--color-primario-texto); opacity: 0.95">
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       

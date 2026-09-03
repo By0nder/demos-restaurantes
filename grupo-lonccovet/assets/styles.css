@@ -1,14 +1,17 @@
 /* Tema generado automáticamente — colores del cliente */
 :root {
-  --color-primario: #15803d;
-  --color-secundario: #166534;
-  --color-acento: #15803d;
-  --color-acento-texto: #ffffff;
-  --color-acento-fuerte: #15803d;
-  --color-acento-claro: #38935a;
+  --color-primario: #2F6B4F;
+  --color-secundario: #E8EFE6;
+  --color-acento: #F0883A;
+  --color-acento-texto: #17191c;
+  --color-acento-fuerte: #995c2e;
+  --color-acento-claro: #F0883A;
   --color-primario-texto: #ffffff;
-  --color-fondo: #f8fbf7;
-  --color-texto: #1c2b1f;
+  --color-primario-oscuro: #204936;
+  --color-primario-oscuro: #204936;
+  --color-primario-oscuro: #204936;
+  --color-fondo: #F7F5EE;
+  --color-texto: #1E2A22;
 }
 
 /* MODO OSCURO: solo cambian el papel y la tinta; los colores del negocio
@@ -26,7 +29,7 @@
      puede leer. */
   --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
   /* En oscuro, el acento-de-texto legible es la versión clara. */
-  --color-acento-fuerte: #38935a;
+  --color-acento-fuerte: #F0883A;
 }
 /* ============================================
    Estilos base del sitio (independientes del tema)

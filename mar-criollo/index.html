@@ -14,7 +14,7 @@
   
   
   
-  <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&amp;q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1713742000609-7dfb86bfc720?w=1600&amp;q=80">
   <meta property="og:image:alt" content="Mar Criollo">
   <meta name="twitter:card" content="summary_large_image">
   
@@ -30,6 +30,9 @@
   
   
   
+  
+  
+  
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   
@@ -37,6 +40,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <link rel="stylesheet" href="assets/styles.css">
+  
+  
   
   
   
@@ -69,17 +74,19 @@
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
   <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-6">
     
-    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px]">
+    <a href="#" class="flex min-w-0 shrink items-center gap-3 min-h-[44px] lg:max-w-[24rem]">
       
         <span class="h-10 w-10 rounded-full flex items-center justify-center text-white font-bold text-lg" style="background-color: var(--color-primario)">
           M
         </span>
       
       
-      <span class="truncate font-semibold text-lg">Mar Criollo</span>
+      <span class="line-clamp-2 font-semibold text-base sm:text-lg leading-tight">Mar Criollo</span>
     </a>
 
-    <nav class="hidden lg:flex shrink-0 items-center gap-5 text-base font-medium">
+    <nav class="hidden lg:flex shrink-0 items-center gap-4 text-[15px] font-medium">
+      
+      
       
       
       
@@ -87,7 +94,7 @@
       
         <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
       
-        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Testimonios</a>
+        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Opiniones</a>
       
         <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
       
@@ -125,7 +132,7 @@
     
       <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
     
-      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Testimonios</a>
+      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Opiniones</a>
     
       <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
     
@@ -142,8 +149,8 @@
     
     
     <div class="absolute inset-0 overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&amp;q=80"
-           srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=480&amp;q=80 480w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;q=80 800w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&amp;q=80 1600w" sizes="100vw"
+      <img src="https://images.unsplash.com/photo-1713742000609-7dfb86bfc720?w=1600&amp;q=80"
+           srcset="https://images.unsplash.com/photo-1713742000609-7dfb86bfc720?w=480&amp;q=80 480w, https://images.unsplash.com/photo-1713742000609-7dfb86bfc720?w=800&amp;q=80 800w, https://images.unsplash.com/photo-1713742000609-7dfb86bfc720?w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1713742000609-7dfb86bfc720?w=1600&amp;q=80 1600w" sizes="100vw"
            alt=""
            fetchpriority="high" decoding="async"
            class="hero-foto w-full h-full object-cover">
@@ -153,7 +160,7 @@
              class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
              style="animation-delay: 0s, 0s">
       
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&amp;q=80" alt="" aria-hidden="true"
+        <img src="https://images.unsplash.com/photo-1535400255456-984241443b29?w=1200&amp;q=80" alt="" aria-hidden="true"
              fetchpriority="low" decoding="async" loading="lazy"
              class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
              style="animation-delay: 8s, 8s">
@@ -397,20 +404,11 @@
 </section>
 
     
-      <section id="galeria" class="py-20">
+      <section id="galeria" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
+    
     <div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
-      
-        
-        
-        
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;q=80" alt="Foto de Mar Criollo"
-               srcset="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async"
-               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
       
         
         
@@ -426,8 +424,8 @@
         
         
         <div class="reveal overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&amp;q=80" alt="Foto de Mar Criollo"
-               srcset="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+          <img src="https://images.unsplash.com/photo-1535400255456-984241443b29?w=800&amp;q=80" alt="Foto de Mar Criollo"
+               srcset="https://images.unsplash.com/photo-1535400255456-984241443b29?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1535400255456-984241443b29?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1535400255456-984241443b29?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1535400255456-984241443b29?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
@@ -437,7 +435,7 @@
 </section>
 
     
-      <section id="testimonios" class="py-20">
+      <section id="testimonios" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen nuestros comensales</h2>
     
@@ -487,7 +485,7 @@
     
       
 
-<section id="faq" class="py-20" style="background-color: var(--color-fondo)">
+<section id="faq" class="py-14 md:py-20" style="background-color: var(--color-fondo)">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Preguntas frecuentes</h2>
 
@@ -548,7 +546,7 @@
 
 
     
-      <section id="contacto" class="py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-secundario))">
+      <section id="contacto" class="py-14 md:py-20" style="background: linear-gradient(135deg, var(--color-primario), var(--color-primario-oscuro))">
   <div class="max-w-4xl mx-auto px-4 text-center text-white">
     <h2 class="text-3xl md:text-4xl font-bold reveal">Reserva tu mesa</h2>
 
@@ -596,7 +594,7 @@
     
   </main>
 
-  <footer class="py-10 bg-gray-900 text-gray-300">
+  <footer class="py-10" style="background: var(--color-primario-oscuro); color: var(--color-primario-texto); opacity: 0.95">
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       
@@ -647,5 +645,7 @@
   
 
   <script src="assets/main.js"></script>
+  
+  
 </body>
 </html>
