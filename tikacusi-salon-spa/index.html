@@ -62,9 +62,8 @@
     (function () {
       try {
         var elegido = localStorage.getItem("tema");
-        var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
         var baseOscura = false;
-        if (elegido === "oscuro" || (!elegido && (baseOscura || oscuroSistema))) {
+        if (elegido === "oscuro" || (!elegido && baseOscura)) {
           document.documentElement.setAttribute("data-tema", "oscuro");
         }
       } catch (e) {}
@@ -106,6 +105,8 @@
       
         <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
       
+        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Opiniones</a>
+      
         <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
       
         <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
@@ -145,6 +146,8 @@
       <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Reservar</a>
     
       <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
+    
+      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Opiniones</a>
     
       <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
     
@@ -784,6 +787,30 @@
         </div>
       
     </div>
+  </div>
+</section>
+
+    
+      <section id="testimonios" class="py-14 md:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen nuestras clientas</h2>
+    
+    
+      <p class="mt-4 text-center text-lg reveal">
+        <span class="font-bold">4.4</span>
+        <span aria-hidden="true" style="color: var(--color-acento-fuerte); letter-spacing: 2px">★★★★★</span>
+        <span class="texto-suave">· 66 reseñas en Google</span>
+      </p>
+    
+    
+    
+    
+    <div class="mt-12 grid gap-8 md:grid-cols-0">
+      
+    </div>
+    
+    
+    
   </div>
 </section>
 

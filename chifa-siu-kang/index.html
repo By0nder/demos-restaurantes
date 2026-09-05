@@ -62,9 +62,8 @@
     (function () {
       try {
         var elegido = localStorage.getItem("tema");
-        var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
         var baseOscura = false;
-        if (elegido === "oscuro" || (!elegido && (baseOscura || oscuroSistema))) {
+        if (elegido === "oscuro" || (!elegido && baseOscura)) {
           document.documentElement.setAttribute("data-tema", "oscuro");
         }
       } catch (e) {}
@@ -448,6 +447,7 @@
     
     
     
+    
     <div class="mt-12 grid gap-8 md:grid-cols-2">
       
         <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
@@ -483,6 +483,7 @@
         </figure>
       
     </div>
+    
     
     
   </div>
