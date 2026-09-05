@@ -62,9 +62,8 @@
     (function () {
       try {
         var elegido = localStorage.getItem("tema");
-        var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
         var baseOscura = false;
-        if (elegido === "oscuro" || (!elegido && (baseOscura || oscuroSistema))) {
+        if (elegido === "oscuro" || (!elegido && baseOscura)) {
           document.documentElement.setAttribute("data-tema", "oscuro");
         }
       } catch (e) {}
@@ -104,8 +103,6 @@
       
         <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
       
-        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Opiniones</a>
-      
         <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
       
         <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
@@ -143,8 +140,6 @@
       <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Vacantes 2027</a>
     
       <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
-    
-      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Opiniones</a>
     
       <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
     
@@ -254,9 +249,8 @@
 
     
     
-      <p class="mt-4 text-center text-base opacity-70 reveal">
-        Los precios que ve son <strong>de ejemplo</strong>. Se reemplazan por los suyos.
-      </p>
+      
+      <p class="mt-4 text-center text-base opacity-70 reveal">Las pensiones y la matrícula se informan por WhatsApp, según el grado.</p>
     
 
     
@@ -275,11 +269,6 @@
               
               
               
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: var(--color-suave); color: var(--color-titulo)">
-                  Pensión S/ 380
-                </span>
-              
             </div>
 
             <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Inicial (3 a 5 años)</h3>
@@ -290,7 +279,7 @@
             
             
 
-              <a href="https://wa.me/51953811583?text=Hola%20Emmanuel%20School%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Inicial%20(3%20a%205%20a%C3%B1os)%20(Pensi%C3%B3n%20S%2F%20380)"
+              <a href="https://wa.me/51953811583?text=Hola%20Emmanuel%20School%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Inicial%20(3%20a%205%20a%C3%B1os)"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
@@ -310,11 +299,6 @@
             <div class="flex items-start justify-between gap-4">
               
               
-              
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: var(--color-suave); color: var(--color-titulo)">
-                  Pensión S/ 420
-                </span>
               
             </div>
 
@@ -326,7 +310,7 @@
             
             
 
-              <a href="https://wa.me/51953811583?text=Hola%20Emmanuel%20School%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Primaria%20(1%C2%B0%20a%206%C2%B0)%20(Pensi%C3%B3n%20S%2F%20420)"
+              <a href="https://wa.me/51953811583?text=Hola%20Emmanuel%20School%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Primaria%20(1%C2%B0%20a%206%C2%B0)"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
@@ -347,11 +331,6 @@
               
               
               
-                <span class="shrink-0 rounded-full px-3 py-1 text-sm font-bold "
-                      style="background: var(--color-suave); color: var(--color-titulo)">
-                  Pensión S/ 480
-                </span>
-              
             </div>
 
             <h3 class="mt-5 text-xl font-bold" style="color: var(--color-titulo)">Secundaria (1° a 5°)</h3>
@@ -362,7 +341,7 @@
             
             
 
-              <a href="https://wa.me/51953811583?text=Hola%20Emmanuel%20School%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Secundaria%20(1%C2%B0%20a%205%C2%B0)%20(Pensi%C3%B3n%20S%2F%20480)"
+              <a href="https://wa.me/51953811583?text=Hola%20Emmanuel%20School%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Secundaria%20(1%C2%B0%20a%205%C2%B0)"
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
@@ -590,74 +569,6 @@
         </div>
       
     </div>
-  </div>
-</section>
-
-    
-      <section id="testimonios" class="py-14 md:py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Lo que dicen las familias</h2>
-    
-    
-    
-    
-      <p class="mt-4 text-center text-base texto-suave reveal">
-        Los comentarios que ve son <strong>de ejemplo</strong>. Se reemplazan por reseñas reales de sus clientes.
-      </p>
-    
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      
-        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
-          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
-          </svg>
-          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"Las pensiones fueron las que nos dijeron desde el inicio, sin sorpresas."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
-              M
-            </span>
-            <div>
-              <p class="text-sm font-semibold">Miguel A.</p>
-              <p class="text-xs texto-tenue">Padre de familia</p>
-            </div>
-          </figcaption>
-        </figure>
-      
-        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
-          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
-          </svg>
-          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"Aulas pequeñas y profesores que conocen a cada niño por su nombre."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
-              L
-            </span>
-            <div>
-              <p class="text-sm font-semibold">Liliana R.</p>
-              <p class="text-xs texto-tenue">Madre de familia</p>
-            </div>
-          </figcaption>
-        </figure>
-      
-        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
-          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
-          </svg>
-          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"Separamos la vacante por WhatsApp en un minuto. Así debería ser todo."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
-              E
-            </span>
-            <div>
-              <p class="text-sm font-semibold">Ernesto V.</p>
-              <p class="text-xs texto-tenue">Padre de familia</p>
-            </div>
-          </figcaption>
-        </figure>
-      
-    </div>
-    
-    
   </div>
 </section>
 

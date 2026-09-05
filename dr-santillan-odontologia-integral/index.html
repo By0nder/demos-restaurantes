@@ -62,9 +62,8 @@
     (function () {
       try {
         var elegido = localStorage.getItem("tema");
-        var oscuroSistema = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
         var baseOscura = false;
-        if (elegido === "oscuro" || (!elegido && (baseOscura || oscuroSistema))) {
+        if (elegido === "oscuro" || (!elegido && baseOscura)) {
           document.documentElement.setAttribute("data-tema", "oscuro");
         }
       } catch (e) {}
@@ -106,8 +105,6 @@
       
         <a href="#galeria" class="hover:opacity-70 transition-opacity">Galería</a>
       
-        <a href="#testimonios" class="hover:opacity-70 transition-opacity">Opiniones</a>
-      
         <a href="#faq" class="hover:opacity-70 transition-opacity">Preguntas</a>
       
         <a href="#contacto" class="hover:opacity-70 transition-opacity">Contacto</a>
@@ -147,8 +144,6 @@
       <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Reservar</a>
     
       <a href="#galeria" class="flex items-center min-h-[44px] py-2 text-base font-medium">Galería</a>
-    
-      <a href="#testimonios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Opiniones</a>
     
       <a href="#faq" class="flex items-center min-h-[44px] py-2 text-base font-medium">Preguntas</a>
     
@@ -786,74 +781,6 @@
         </div>
       
     </div>
-  </div>
-</section>
-
-    
-      <section id="testimonios" class="py-14 md:py-20">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Pacientes que confían en nosotros</h2>
-    
-    
-    
-    
-      <p class="mt-4 text-center text-base texto-suave reveal">
-        Los comentarios que ve son <strong>de ejemplo</strong>. Se reemplazan por reseñas reales de sus clientes.
-      </p>
-    
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      
-        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
-          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
-          </svg>
-          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"El precio fue el que me dijeron desde el inicio, sin sorpresas al final."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
-              D
-            </span>
-            <div>
-              <p class="text-sm font-semibold">Diego H.</p>
-              <p class="text-xs texto-tenue">Paciente</p>
-            </div>
-          </figcaption>
-        </figure>
-      
-        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
-          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
-          </svg>
-          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"Vine por una limpieza y terminé trayendo a toda mi familia."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
-              L
-            </span>
-            <div>
-              <p class="text-sm font-semibold">Lucía F.</p>
-              <p class="text-xs texto-tenue">Paciente</p>
-            </div>
-          </figcaption>
-        </figure>
-      
-        <figure class="reveal rounded-2xl border border-[var(--color-borde)] bg-[var(--color-superficie)] p-8 shadow-sm">
-          <svg class="w-8 h-8 opacity-20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M14.017 21v-7.391C14.017 8.554 17.03 5.32 21 4l.995 2.151C19.563 7.06 18.13 9.006 18.13 11h2.87v10h-6.983zM3.017 21v-7.391C3.017 8.554 6.03 5.32 10 4l.996 2.151C8.563 7.06 7.13 9.006 7.13 11H10v10H3.017z"/>
-          </svg>
-          <blockquote class="mt-4 text-sm leading-relaxed italic opacity-90">"Me atendieron con cita y no perdí la mañana en la sala de espera."</blockquote>
-          <figcaption class="mt-5 flex items-center gap-3">
-            <span class="h-9 w-9 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--color-secundario)">
-              R
-            </span>
-            <div>
-              <p class="text-sm font-semibold">Raúl C.</p>
-              <p class="text-xs texto-tenue">Paciente</p>
-            </div>
-          </figcaption>
-        </figure>
-      
-    </div>
-    
-    
   </div>
 </section>
 
