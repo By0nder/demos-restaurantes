@@ -21,8 +21,8 @@ gh api repos/By0nder/by0nder-fuentes/contents/ESTADO.md --jq .content | base64 -
 | `web-generator` | Privado. El generador masivo. **Va ~18 días detrás de lo publicado.** |
 | `by0nder-fuentes` | Privado. Fuentes, entregables y `ESTADO.md`. |
 
-El panel de prospección de José no es un repo: es un artifact privado en
-`claude.ai/code/artifact/d3fe5ccd-4d99-4b4b-846c-055e54303fb4`.
+El panel de prospección de José no es un repo: es un artifact privado de claude.ai.
+Su enlace NO va aquí: este archivo es público.
 
 En `by0nder-fuentes/memoria-de-claude/` están sus preferencias de trabajo. Si la
 memoria de esta máquina todavía no las tiene, vale copiarlas: evitan repetir
@@ -49,10 +49,10 @@ va a quedar viejo. Ya pasó con el bloque "Lo más pedido" de Los Bull's.
 
 ## Los paneles de prospección
 
-Las carpetas con nombre y hash — `luis-7d0c90`, `henry-76807538`, `leonardo-k7m2p9`,
-`luis-hechos-774aa9` — son los paneles de cada vendedor. El hash es lo único que
-protege el enlace, así que **rotarlo revoca el acceso**; si se rota un panel hay que
-rotar también su guía, que lo enlaza.
+Cada vendedor tiene su panel en una carpeta con nombre y hash. **Los hashes NO se
+escriben aquí: este archivo es público y el hash es la única protección del enlace.**
+Están en `by0nder-fuentes`, que es privado. Rotar un hash revoca el acceso; si se
+rota un panel hay que rotar también su guía, que lo enlaza.
 
 Dos reglas que ya costaron caro:
 
