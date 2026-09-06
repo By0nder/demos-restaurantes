@@ -5,7 +5,7 @@
   --color-acento: #b91c1c;
   --color-acento-texto: #ffffff;
   --color-acento-fuerte: #b91c1c;
-  --color-acento-claro: #ce6060;
+  --color-acento-claro: #dc8e8e;
   --color-primario-texto: #ffffff;
   --color-primario-oscuro: #7e1313;
   --color-fondo: #fffcf7;
@@ -27,7 +27,7 @@
      puede leer. */
   --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
   /* En oscuro, el acento-de-texto legible es la versión clara. */
-  --color-acento-fuerte: #ce6060;
+  --color-acento-fuerte: #dc8e8e;
 }
 /* ============================================
    Estilos base del sitio (independientes del tema)
@@ -92,16 +92,23 @@ section[id] {
   scroll-margin-top: 84px;
 }
 
-/* Animación de aparición al hacer scroll (activada por main.js) */
+/* ---------------------------------------------------------------------------
+   APARICIÓN AL HACER SCROLL (activada por main.js). Sprint 1, 2026-09-05:
+   - Solo se esconde algo si el JS corre: `html.js` lo pone el script del tema
+     en el <head>. Sin JS nada nace invisible.
+   - El hero YA NO lleva .reveal: el nombre y el botón de WhatsApp se pintan en
+     el primer frame. Antes eran invisibles hasta que main.js (al final del body,
+     detrás del CDN) corría, el observer disparaba y pasaban 600 ms; y Chrome no
+     cuenta como LCP un elemento con opacity 0.
+   - 0.35 s y 12 px en vez de 0.6 s y 24 px: se nota menos "a plantilla".
+--------------------------------------------------------------------------- */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+html.js .reveal:not(.visible) {
+  opacity: 0;
+  transform: translateY(12px);
 }
 
 /* Respeta la preferencia de menos movimiento */
@@ -109,12 +116,18 @@ section[id] {
   html {
     scroll-behavior: auto;
   }
-  .reveal {
+  .reveal,
+  html.js .reveal:not(.visible) {
     opacity: 1;
     transform: none;
     transition: none;
   }
 }
+
+/* Comillas tipográficas de las reseñas, por CSS: fuera el SVG gigante al 20 %
+   que llevaba cada testimonio (seña de plantilla, QA 2026-09-02). */
+.cita::before { content: "\201C"; }
+.cita::after { content: "\201D"; }
 
 ::selection {
   background-color: var(--color-primario);
