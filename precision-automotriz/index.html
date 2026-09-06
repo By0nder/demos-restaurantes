@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Precisión Automotriz — Taller mecánico en Villa El Salvador</title>
-  <meta name="description" content="Taller de mecánica automotriz en Villa El Salvador. Diagnóstico, mantenimiento y reparación, con el precio conversado antes de empezar.">
   
-  <meta property="og:title" content="Precisión Automotriz — Taller mecánico en Villa El Salvador">
+  
+  <title>Precisión Automotriz · Taller mecánico en Villa El Salvador</title>
+  <meta name="description" content="Taller de mecánica automotriz en Villa El Salvador. Diagnóstico, mantenimiento y reparación, con el precio conversado antes de empezar.">
+  <meta property="og:title" content="Precisión Automotriz · Taller mecánico en Villa El Salvador">
   <meta property="og:description" content="Taller de mecánica automotriz en Villa El Salvador. Diagnóstico, mantenimiento y reparación, con el precio conversado antes de empezar.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_PE">
@@ -14,7 +15,12 @@
   
   
   
-  <meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600&amp;q=80">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1200&amp;h=630&amp;fit=crop&amp;q=70&amp;fm=jpg">
+  
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  
   <meta property="og:image:alt" content="Precisión Automotriz">
   <meta name="twitter:card" content="summary_large_image">
   
@@ -60,6 +66,9 @@
   
   <script>
     (function () {
+      // `html.js`: solo con JS corriendo se esconden los .reveal (styles.css).
+      // Va antes del try para que un fallo de localStorage no lo salte.
+      document.documentElement.classList.add("js");
       try {
         var elegido = localStorage.getItem("tema");
         var baseOscura = false;
@@ -73,7 +82,9 @@
 <body class="bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
 
 
-<!-- barra-dueno --><div style="background:#171a1f;color:#eee7d9;padding:10px 14px;font-size:14px;line-height:1.45;text-align:center;font-family:system-ui,sans-serif">📌 ¿Este negocio es suyo? Esta página es una muestra hecha para usted. <a href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20le%20escribo%20de%20Precisi%C3%B3n%20Automotriz.%20Vi%20la%20p%C3%A1gina%20de%20muestra%20que%20hizo%20(https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fprecision-automotriz%2F)%20y%20quiero%20conversar." target="_blank" rel="noopener" style="color:#4ade80;font-weight:700;text-decoration:underline;white-space:nowrap">Escríbame y la activamos →</a></div>
+
+
+<!-- barra-dueno --><div style="background:#171a1f;color:#eee7d9;padding:8px 14px;font-size:14px;line-height:1.4;font-family:system-ui,sans-serif;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 14px"><span>¿Es su negocio?<span class="hidden sm:inline"> Esta página es una muestra hecha para usted.</span></span><a href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20le%20escribo%20de%20Precisi%C3%B3n%20Automotriz.%20Vi%20la%20p%C3%A1gina%20de%20muestra%20(https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fprecision-automotriz%2F)%20y%20quiero%20activarla." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border-radius:999px;background:#f3ecdc;color:#171a1f;font-weight:700;text-decoration:none;white-space:nowrap">Activar mi página →</a></div>
 
   
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
@@ -101,7 +112,7 @@
       
         <a href="#servicios" class="hover:opacity-70 transition-opacity">Servicios</a>
       
-        <a href="#marcas" class="hover:opacity-70 transition-opacity">marcas</a>
+        <a href="#marcas" class="hover:opacity-70 transition-opacity">Marcas</a>
       
         <a href="#cotizador" class="hover:opacity-70 transition-opacity">Cotizar</a>
       
@@ -143,7 +154,7 @@
     
       <a href="#servicios" class="flex items-center min-h-[44px] py-2 text-base font-medium">Servicios</a>
     
-      <a href="#marcas" class="flex items-center min-h-[44px] py-2 text-base font-medium">marcas</a>
+      <a href="#marcas" class="flex items-center min-h-[44px] py-2 text-base font-medium">Marcas</a>
     
       <a href="#cotizador" class="flex items-center min-h-[44px] py-2 text-base font-medium">Cotizar</a>
     
@@ -186,22 +197,25 @@
 
   
 
-  <div class="relative max-w-6xl mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24 text-white">
+  
+  <div class="relative max-w-6xl mx-auto px-4 pt-10 pb-10 md:pt-32 md:pb-24 text-white">
     <div class="max-w-3xl">
       
 
-      <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05] reveal">Precisión Automotriz</h1>
+      
+      <h1 class="text-[2.5rem] md:text-6xl font-extrabold leading-[1.05]">Precisión Automotriz</h1>
 
       
-        <p class="mt-4 text-lg md:text-2xl font-medium text-white/90 reveal">Usted decide en qué gasta y en qué no.</p>
+        <p class="mt-3 md:mt-4 text-lg md:text-2xl font-medium text-white/90">Usted decide en qué gasta y en qué no.</p>
       
 
       
       
-        <p class="mt-3 text-base md:text-lg text-white/75 max-w-xl reveal">Taller de mecánica automotriz en Villa El Salvador. Diagnóstico, mantenimiento y reparación, con el precio conversado antes de empezar.</p>
+      
+        <p class="mt-3 text-base md:text-lg text-white/75 max-w-xl">Taller de mecánica automotriz en Villa El Salvador. Diagnóstico, mantenimiento y reparación, con el precio conversado antes de empezar.</p>
       
 
-      <div class="mt-9 flex flex-col sm:flex-row gap-3 sm:items-center reveal">
+      <div class="mt-6 sm:mt-9 flex flex-col sm:flex-row gap-3 sm:items-center">
         <a href="https://wa.me/51922742443?text=Hola%20Precisi%C3%B3n%20Automotriz%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20cotizar%20un%20servicio."
            target="_blank" rel="noopener"
            class="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-full font-semibold text-[var(--color-acento-texto)] bg-[var(--color-acento)] shadow-lg shadow-black/30 hover:brightness-110 hover:scale-[1.02] transition">
@@ -225,37 +239,36 @@
 
   
     <div class="relative border-t franja-dato bg-black/35 backdrop-blur">
-      <div class="max-w-6xl mx-auto px-4 py-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3 text-white/90 text-sm md:text-base">
+      
+      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap gap-x-12 gap-y-3 text-white/90 text-sm md:text-base">
         
           
-          <p class="flex items-start gap-2">
+          
+          
+          <a class="flex items-start gap-2 py-3 -my-3 hover:underline" href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%201%20de%20Mayo%20Mz.%20N%2C%20Villa%20El%20Salvador" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg>
             <span>
               Av. 1 de Mayo Mz. N, Villa El Salvador
               
-              
-            </span>
-          </p>
-        
-          
-          <p class="flex items-start gap-2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /> <path d="m9 12 2 2 4-4" /></svg>
-            <span>
-              Se prendió el check: gratis
+              <span class="hidden sm:inline"> ·</span> <span class="block sm:inline font-semibold whitespace-nowrap" style="color: var(--color-acento-claro)">Cómo llegar &rarr;</span>
               
               
             </span>
-          </p>
+          </a>
         
           
-          <p class="flex items-start gap-2">
+          
+          
+          <a class="flex items-start gap-2 py-3 -my-3 hover:underline" href="https://wa.me/51922742443?text=Hola%20Precisi%C3%B3n%20Automotriz%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20cotizar%20un%20servicio." target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mt-0.5 shrink-0 opacity-80" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg>
             <span>
-              Le respondemos por WhatsApp
+              +51 922 742 443
+              
+              
               
               
             </span>
-          </p>
+          </a>
         
       </div>
     </div>
@@ -393,11 +406,23 @@
 
     
     
-      <p class="mt-4 text-center text-base opacity-70 reveal">
-        Los precios que ve son <strong>de ejemplo</strong>. Se reemplazan por los suyos.
-      </p>
+      
+      
+
+<p class="mt-4 text-center text-base leading-relaxed texto-suave reveal">
+  Los precios que ve son de referencia.
+  
+    <a href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20soy%20de%20Precisi%C3%B3n%20Automotriz.%20Le%20paso%20mis%20precios%20reales%20para%20la%20p%C3%A1gina%3A%20"
+       target="_blank" rel="noopener"
+       class="inline py-2 font-semibold underline underline-offset-4"
+       style="color: var(--color-acento-fuerte)">¿Es su negocio? Mándeme sus precios y quedan puestos&nbsp;&rarr;</a>
+  
+</p>
+
     
 
+    
+    
     
     
     
@@ -944,6 +969,7 @@
       
       
       
+      
         <div class="reveal">
           <p class="font-semibold uppercase tracking-wide text-sm opacity-75">Dirección</p>
           <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%201%20de%20Mayo%20Mz.%20N%2C%20Villa%20El%20Salvador"
@@ -951,9 +977,9 @@
              
              class="mt-1 inline-flex items-start gap-1.5 min-h-[44px] py-1 text-lg font-medium hover:underline">
             <svg class="w-5 h-5 mt-0.5 shrink-0 opacity-80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            <span>Av. 1 de Mayo Mz. N, Villa El Salvador</span>
+            
+            <span>Av. 1 de Mayo Mz. N, Villa El Salvador<span class="block mt-1 text-sm font-semibold opacity-80">Cómo llegar →</span></span>
           </a>
-          <p class="mt-1 text-sm opacity-75">Toque para abrir el mapa</p>
         </div>
       
       
@@ -974,6 +1000,17 @@
   </main>
 
   <footer class="py-10" style="background: var(--color-primario-oscuro); color: var(--color-primario-texto); opacity: 0.95">
+  
+  
+  <div id="activar" class="max-w-6xl mx-auto px-4 mb-10 pb-10 border-b border-white/15 text-center">
+    <p class="text-lg font-semibold">¿Es su negocio?</p>
+    <p class="mt-1 text-sm opacity-80">Esta página es una muestra: se activa con sus fotos, sus precios y su dominio propio.</p>
+    <a href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20le%20escribo%20de%20Precisi%C3%B3n%20Automotriz.%20Vi%20la%20p%C3%A1gina%20de%20muestra%20(https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fprecision-automotriz%2F)%20y%20quiero%20activarla."
+       target="_blank" rel="noopener"
+       class="mt-4 inline-flex min-h-[48px] items-center justify-center rounded-full px-7 font-bold text-[var(--color-acento-texto)] transition hover:brightness-110"
+       style="background: var(--color-acento)">Activar mi página con José&nbsp;&rarr;</a>
+  </div>
+  
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       
@@ -1014,7 +1051,7 @@
         Cotizar por WhatsApp
       </a>
       
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%201%20de%20Mayo%20Mz.%20N%2C%20Villa%20El%20Salvador"
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%201%20de%20Mayo%20Mz.%20N%2C%20Villa%20El%20Salvador"
            target="_blank" rel="noopener"
            class="flex min-h-[52px] items-center justify-center gap-1.5 rounded-full border border-[var(--color-borde)] px-5 font-semibold">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
