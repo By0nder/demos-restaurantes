@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Calculadora de cuota · SQ 2 Work &amp; Living</title>
+<meta property="og:title" content="¿Cuánto pagaría al mes por un depa en SQ 2?">
+<meta property="og:description" content="Calcule su cuota inicial y su cuota mensual en 30 segundos. Con el bono verde ya aplicado.">
+<style>
+  /* ---------------------------------------------------------------
+     Demo para HL Desarrollos Inmobiliarios — SQ 2 Work & Living.
+     Sin dependencias externas a propósito: abre igual sin internet,
+     porque en una reunión el wifi es lo primero que falla.
+     Los colores son neutros; se cambian por los de la marca en un rato.
+     --------------------------------------------------------------- */
+  :root{
+    --tinta:#12211c;
+    --tinta-2:#4a5c55;
+    --tinta-3:#7b8a84;
+    --fondo:#f6f7f5;
+    --papel:#ffffff;
+    --borde:#e2e6e2;
+    --marca:#124734;
+    --marca-clara:#e8f0eb;
+    --acento:#c98b2e;
+    --verde:#1a7f4b;
+    --radio:16px;
+    --sombra:0 1px 2px rgba(18,33,28,.05), 0 8px 24px -12px rgba(18,33,28,.18);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--fondo); color:var(--tinta);
+    font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px; line-height:1.5; padding-bottom:132px;
+  }
+  .envoltura{max-width:1080px; margin:0 auto; padding:0 16px}
+
+  /* ---- Cabecera ---- */
+  header{background:var(--marca); color:#fff; padding:22px 0 26px}
+  header .marca{font-size:13px; letter-spacing:.16em; text-transform:uppercase; opacity:.72}
+  header h1{margin:8px 0 6px; font-size:26px; line-height:1.18; font-weight:700}
+  header p{margin:0; font-size:15px; opacity:.85; max-width:46ch}
+  .ficha{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+  .ficha span{
+    background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18);
+    border-radius:999px; padding:5px 12px; font-size:13px;
+  }
+
+  /* ---- Rejilla ---- */
+  .cuerpo{display:grid; gap:16px; padding:20px 0 24px}
+  @media(min-width:900px){
+    .cuerpo{grid-template-columns:1.15fr .85fr; align-items:start}
+    body{padding-bottom:32px}
+  }
+
+  .tarjeta{
+    background:var(--papel); border:1px solid var(--borde);
+    border-radius:var(--radio); box-shadow:var(--sombra); padding:20px;
+  }
+  .tarjeta + .tarjeta{margin-top:16px}
+
+  .paso{display:flex; align-items:center; gap:10px; margin:0 0 14px}
+  .paso b{
+    width:26px; height:26px; flex:none; border-radius:50%;
+    background:var(--marca-clara); color:var(--marca);
+    display:grid; place-items:center; font-size:13px; font-weight:700;
+  }
+  .paso h2{margin:0; font-size:17px; font-weight:700}
+
+  /* ---- Tipos ---- */
+  .tipos{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+  .tipos button{
+    font:inherit; cursor:pointer; text-align:center; padding:12px 6px;
+    border:1.5px solid var(--borde); border-radius:12px; background:var(--papel);
+    color:var(--tinta-2); transition:.15s;
+  }
+  .tipos button strong{display:block; font-size:15px; color:var(--tinta)}
+  .tipos button small{display:block; font-size:12px; margin-top:2px; color:var(--tinta-3)}
+  .tipos button[aria-pressed="true"]{
+    border-color:var(--marca); background:var(--marca-clara); color:var(--marca);
+  }
+  .tipos button[aria-pressed="true"] strong{color:var(--marca)}
+
+  /* ---- Controles ---- */
+  .campo{margin-top:18px}
+  .campo:first-child{margin-top:0}
+  .etiqueta{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:8px}
+  .etiqueta label{font-size:14px; font-weight:600; color:var(--tinta-2)}
+  .valor{font-size:19px; font-weight:700; font-variant-numeric:tabular-nums}
+  .valor small{font-size:13px; font-weight:600; color:var(--tinta-3)}
+
+  input[type=range]{
+    -webkit-appearance:none; appearance:none; width:100%; height:34px;
+    background:transparent; margin:0; cursor:pointer; display:block;
+  }
+  input[type=range]::-webkit-slider-runnable-track{height:6px; border-radius:999px; background:var(--borde)}
+  input[type=range]::-moz-range-track{height:6px; border-radius:999px; background:var(--borde)}
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:26px; height:26px; margin-top:-10px; border-radius:50%;
+    background:var(--marca); border:3px solid #fff; box-shadow:0 1px 5px rgba(0,0,0,.28);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:20px; height:20px; border-radius:50%;
+    background:var(--marca); border:3px solid #fff; box-shadow:0 1px 5px rgba(0,0,0,.28);
+  }
+  .limites{display:flex; justify-content:space-between; font-size:12px; color:var(--tinta-3); margin-top:-2px}
+
+  .pastillas{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+  .pastillas button{
+    font:inherit; font-size:13px; cursor:pointer; padding:8px 13px; border-radius:999px;
+    border:1.5px solid var(--borde); background:var(--papel); color:var(--tinta-2); transition:.15s;
+  }
+  .pastillas button[aria-pressed="true"]{border-color:var(--marca); background:var(--marca-clara); color:var(--marca); font-weight:600}
+
+  .bono{
+    display:flex; gap:12px; align-items:flex-start; margin-top:18px; padding:14px;
+    border:1.5px solid var(--borde); border-radius:12px; background:#fbfcfb; cursor:pointer;
+  }
+  .bono.activo{border-color:var(--verde); background:#f1f8f4}
+  .bono input{width:20px; height:20px; margin:2px 0 0; flex:none; accent-color:var(--verde)}
+  .bono div{font-size:14px; color:var(--tinta-2)}
+  .bono strong{display:block; color:var(--tinta); font-size:15px}
+  .bono em{font-style:normal; color:var(--verde); font-weight:700}
+
+  /* ---- Resultado ---- */
+  .resultado{background:var(--marca); color:#fff; border:0}
+  .resultado .rotulo{font-size:13px; letter-spacing:.1em; text-transform:uppercase; opacity:.7}
+  .cuota{font-size:44px; font-weight:800; line-height:1.05; margin:6px 0 2px; font-variant-numeric:tabular-nums}
+  .cuota span{font-size:20px; font-weight:600; opacity:.75}
+  .plazo-txt{font-size:14px; opacity:.8; margin:0 0 18px}
+  .desglose{border-top:1px solid rgba(255,255,255,.18); padding-top:14px}
+  .fila{display:flex; justify-content:space-between; gap:14px; padding:7px 0; font-size:14.5px}
+  .fila span:first-child{opacity:.8}
+  .fila span:last-child{font-weight:700; font-variant-numeric:tabular-nums; text-align:right}
+  .fila.bonito span:last-child{color:#8fe0b0}
+  .ingreso{
+    margin-top:14px; padding:13px 14px; border-radius:12px;
+    background:rgba(255,255,255,.1); font-size:14px;
+  }
+  .ingreso b{display:block; font-size:20px; margin-top:2px; font-variant-numeric:tabular-nums}
+
+  .wsp{
+    display:flex; align-items:center; justify-content:center; gap:9px; width:100%;
+    margin-top:16px; padding:15px; border-radius:12px; border:0; cursor:pointer;
+    background:var(--acento); color:#26190a; font:inherit; font-size:16px; font-weight:700;
+    text-decoration:none; transition:.15s;
+  }
+  .wsp:hover{filter:brightness(1.07)}
+  .wsp svg{width:20px; height:20px; flex:none}
+
+  .letra-chica{font-size:12.5px; color:var(--tinta-3); line-height:1.45; margin:14px 0 0}
+  .letra-chica b{color:var(--tinta-2)}
+
+  /* ---- Barra fija de celular ---- */
+  .barra{
+    position:fixed; left:0; right:0; bottom:0; z-index:40;
+    background:var(--marca); color:#fff; border-top:1px solid rgba(255,255,255,.14);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    display:flex; align-items:center; gap:12px;
+    box-shadow:0 -6px 24px -14px rgba(0,0,0,.6);
+  }
+  .barra .txt{flex:1; min-width:0}
+  .barra .txt small{display:block; font-size:11.5px; opacity:.72; letter-spacing:.06em; text-transform:uppercase}
+  .barra .txt b{font-size:22px; font-variant-numeric:tabular-nums; line-height:1.15}
+  .barra a{
+    flex:none; background:var(--acento); color:#26190a; text-decoration:none;
+    padding:12px 16px; border-radius:11px; font-weight:700; font-size:15px;
+  }
+  @media(min-width:900px){.barra{display:none}}
+
+  .nota-demo{
+    margin:0 0 20px; padding:12px 14px; border-radius:12px;
+    background:#fff7e6; border:1px solid #f0dcb4; color:#6b5220; font-size:13.5px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="envoltura">
+    <div class="marca">HL Desarrollos Inmobiliarios</div>
+    <h1>¿Cuánto pagaría al mes por su depa en SQ 2?</h1>
+    <p>Mueva los controles y vea su cuota al instante. Con el bono verde de MiVivienda ya descontado.</p>
+    <div class="ficha">
+      <span>SQ 2 Work &amp; Living</span>
+      <span>Av. Paseo de la República 4069, Surquillo</span>
+      <span>40 – 58 m²</span>
+      <span>1, 2 y 3 ambientes</span>
+    </div>
+  </div>
+</header>
+
+<div class="envoltura">
+  <div class="cuerpo">
+
+    <!-- ============ COLUMNA IZQUIERDA: los controles ============ -->
+    <div>
+      <div class="tarjeta">
+        <div class="paso"><b>1</b><h2>Elija su departamento</h2></div>
+
+        <div class="tipos" id="tipos">
+          <button type="button" data-m2="40" aria-pressed="false"><strong>1 amb.</strong><small>desde 40 m²</small></button>
+          <button type="button" data-m2="48" aria-pressed="true"><strong>2 amb.</strong><small>aprox. 48 m²</small></button>
+          <button type="button" data-m2="58" aria-pressed="false"><strong>3 amb.</strong><small>hasta 58 m²</small></button>
+        </div>
+
+        <div class="campo" style="margin-top:20px">
+          <div class="etiqueta">
+            <label for="precio">Valor del departamento</label>
+            <div class="valor" id="precio-txt">S/ 292,769</div>
+          </div>
+          <input type="range" id="precio" min="292769" max="520000" step="1000" value="292769">
+          <div class="limites"><span>desde S/ 292,769</span><span>S/ 520,000</span></div>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <div class="paso"><b>2</b><h2>Su cuota inicial</h2></div>
+        <div class="campo">
+          <div class="etiqueta">
+            <label for="inicial">Porcentaje de inicial</label>
+            <div class="valor"><span id="inicial-pct">10</span>% <small id="inicial-txt">· S/ 29,277</small></div>
+          </div>
+          <input type="range" id="inicial" min="10" max="40" step="1" value="10">
+          <div class="limites"><span>10% (mínimo con crédito)</span><span>40%</span></div>
+        </div>
+
+        <label class="bono activo" id="bono-caja">
+          <input type="checkbox" id="bono" checked>
+          <div>
+            <strong>Aplicar el bono MiVivienda Sostenible</strong>
+            SQ 2 califica al programa MiVivienda Verde. El bono se descuenta del monto a financiar:
+            <em id="bono-txt">S/ 14,300 menos de deuda</em>
+          </div>
+        </label>
+      </div>
+
+      <div class="tarjeta">
+        <div class="paso"><b>3</b><h2>Plazo y banco</h2></div>
+
+        <div class="campo">
+          <div class="etiqueta">
+            <label for="plazo">Plazo del crédito</label>
+            <div class="valor"><span id="plazo-txt">20</span> <small>años</small></div>
+          </div>
+          <input type="range" id="plazo" min="5" max="25" step="1" value="20">
+          <div class="limites"><span>5 años</span><span>25 años</span></div>
+        </div>
+
+        <div class="campo">
+          <div class="etiqueta">
+            <label>Banco</label>
+            <div class="valor" id="tea-txt">7.74% <small>TEA</small></div>
+          </div>
+          <div class="pastillas" id="bancos">
+            <button type="button" data-tea="7.74" aria-pressed="true">BBVA</button>
+            <button type="button" data-tea="7.24" aria-pressed="false">Scotiabank</button>
+            <button type="button" data-tea="7.77" aria-pressed="false">Promedio del mercado</button>
+          </div>
+          <p class="letra-chica">
+            TEA referenciales del reporte de la SBS (abril 2026). La tasa final la fija el banco
+            según el perfil de cada persona.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ COLUMNA DERECHA: el resultado ============ -->
+    <div>
+      <div class="tarjeta resultado">
+        <div class="rotulo">Su cuota mensual sería</div>
+        <div class="cuota" id="cuota">S/ 2,004 <span>al mes</span></div>
+        <p class="plazo-txt" id="resumen">2 ambientes · 48 m² · 20 años · BBVA 7.74% TEA</p>
+
+        <div class="desglose">
+          <div class="fila"><span>Valor del departamento</span><span id="r-precio">S/ 292,769</span></div>
+          <div class="fila"><span id="r-inicial-lbl">Cuota inicial (10%)</span><span id="r-inicial">S/ 29,277</span></div>
+          <div class="fila bonito"><span>Bono MiVivienda Sostenible</span><span id="r-bono">− S/ 14,300</span></div>
+          <div class="fila"><span>Monto a financiar</span><span id="r-credito">S/ 249,192</span></div>
+        </div>
+
+        <div class="ingreso">
+          Ingreso familiar sugerido
+          <b id="r-ingreso">S/ 6,681 al mes</b>
+        </div>
+
+        <a class="wsp" id="wsp" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+          Quiero que me contacten con estos números
+        </a>
+
+        <p class="letra-chica" style="color:rgba(255,255,255,.6)">
+          Al enviar, el asesor recibe el departamento, la inicial, el plazo y la cuota ya calculados.
+          No tiene que preguntar nada de eso.
+        </p>
+      </div>
+
+      <div class="tarjeta">
+        <p class="letra-chica" style="margin:0">
+          <b>Cómo se calcula.</b> Cuota fija en soles (sistema francés) sobre el monto a financiar,
+          con la TEA convertida a tasa mensual efectiva. El bono se descuenta del monto financiado.<br><br>
+          <b>Lo que no incluye:</b> seguro de desgravamen, seguro del inmueble ni gastos de tasación y
+          notaría, que el banco suma aparte. <b>El resultado es referencial</b> y no constituye una
+          oferta de crédito. El ingreso sugerido asume que la cuota no supere el 30% del ingreso
+          familiar, que es el criterio habitual de evaluación.<br><br>
+          <b>Fuentes de los datos:</b> precio "desde", dirección, metrajes y programa MiVivienda Verde,
+          publicados en hldi.pe. Montos del Bono del Buen Pagador para vivienda sostenible, cuadro
+          vigente del Fondo MIVIVIENDA. TEA de referencia, reporte SBS de abril 2026.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="nota-demo">
+    <b>Demo de trabajo.</b> Los precios por tipo de departamento salen de su lista interna;
+    acá figura el único precio publicado en su web. El botón de WhatsApp apunta por ahora a
+    Kallari para que vea llegar el mensaje; en la versión suya llega a su equipo de ventas.
+  </p>
+</div>
+
+<!-- Barra fija: en celular la cuota nunca se pierde de vista -->
+<div class="barra">
+  <div class="txt">
+    <small>Cuota mensual</small>
+    <b id="barra-cuota">S/ 2,004</b>
+  </div>
+  <a id="barra-wsp" href="#" target="_blank" rel="noopener">Me interesa</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Bono del Buen Pagador — VIVIENDA SOSTENIBLE (cuadro vigente del Fondo MIVIVIENDA).
+     El tramo se decide por el valor de la vivienda, no por el crédito. */
+  var TRAMOS_BONO = [
+    { hasta:  99600, bono: 34200 },
+    { hasta: 149200, bono: 29600 },
+    { hasta: 248300, bono: 27600 },
+    { hasta: 367600, bono: 14300 },
+    { hasta: 496200, bono:     0 }   // R5: el BBP no aplica en este tramo
+  ];
+  var WSP = "51941571821";           // demo: llega al celular de Kallari
+
+  var estado = { precio:292769, inicialPct:10, plazo:20, tea:7.74, bono:true, amb:"2 ambientes", m2:48 };
+
+  var $ = function(id){ return document.getElementById(id); };
+  var soles = function(n){ return "S/ " + Math.round(n).toLocaleString("es-PE"); };
+
+  function bonoQueAplica(precio){
+    if (precio < 69900) return 0;                       // bajo el piso del programa
+    for (var i=0;i<TRAMOS_BONO.length;i++){
+      if (precio <= TRAMOS_BONO[i].hasta) return TRAMOS_BONO[i].bono;
+    }
+    return 0;                                           // sobre el techo: fuera de MiVivienda
+  }
+
+  function calcular(){
+    var inicial = estado.precio * estado.inicialPct / 100;
+    var bono    = estado.bono ? bonoQueAplica(estado.precio) : 0;
+    var credito = Math.max(estado.precio - inicial - bono, 0);
+
+    /* TEA -> tasa efectiva MENSUAL. No se divide entre 12: en el Perú los créditos
+       trabajan con tasa efectiva, y dividir da una cuota más baja de la real. */
+    var i = Math.pow(1 + estado.tea/100, 1/12) - 1;
+    var n = estado.plazo * 12;
+    var cuota = credito * i / (1 - Math.pow(1 + i, -n));
+
+    return { inicial:inicial, bono:bono, credito:credito, cuota:cuota, ingreso: cuota / 0.30 };
+  }
+
+  function mensaje(r){
+    return "Hola, calculé mi cuota para SQ 2 en la página y quiero avanzar:\n\n" +
+      "• Depa: " + estado.amb + " (aprox. " + estado.m2 + " m²)\n" +
+      "• Valor: " + soles(estado.precio) + "\n" +
+      "• Inicial: " + estado.inicialPct + "% = " + soles(r.inicial) + "\n" +
+      (r.bono ? "• Bono MiVivienda Sostenible: " + soles(r.bono) + "\n" : "") +
+      "• A financiar: " + soles(r.credito) + "\n" +
+      "• Plazo: " + estado.plazo + " años · TEA " + estado.tea.toFixed(2) + "%\n" +
+      "• Cuota estimada: " + soles(r.cuota) + " al mes\n\n" +
+      "¿Me confirman disponibilidad y me dicen el siguiente paso?";
+  }
+
+  function pintar(){
+    var r = calcular();
+    var bonoDisp = bonoQueAplica(estado.precio);
+
+    $("precio-txt").textContent  = soles(estado.precio);
+    $("inicial-pct").textContent = estado.inicialPct;
+    $("inicial-txt").textContent = "· " + soles(r.inicial);
+    $("plazo-txt").textContent   = estado.plazo;
+    $("tea-txt").innerHTML       = estado.tea.toFixed(2) + "% <small>TEA</small>";
+
+    /* Sobre S/ 367,600 el bono ya no existe: hay que decirlo, no dejar el número viejo. */
+    $("bono-txt").textContent = bonoDisp
+      ? soles(bonoDisp) + " menos de deuda"
+      : "En este rango de precio el bono ya no aplica";
+    $("bono").disabled = !bonoDisp;
+    $("bono-caja").classList.toggle("activo", estado.bono && bonoDisp > 0);
+
+    $("cuota").innerHTML   = soles(r.cuota) + ' <span>al mes</span>';
+    $("barra-cuota").textContent = soles(r.cuota);
+    $("resumen").textContent = estado.amb + " · " + estado.m2 + " m² · " +
+                               estado.plazo + " años · " + estado.tea.toFixed(2) + "% TEA";
+
+    $("r-precio").textContent  = soles(estado.precio);
+    $("r-inicial").textContent = soles(r.inicial);
+    $("r-bono").textContent    = r.bono ? "− " + soles(r.bono) : "no aplica";
+    $("r-credito").textContent = soles(r.credito);
+    $("r-ingreso").textContent = soles(r.ingreso) + " al mes";
+    $("r-inicial-lbl").textContent = "Cuota inicial (" + estado.inicialPct + "%)";
+
+    var url = "https://wa.me/" + WSP + "?text=" + encodeURIComponent(mensaje(r));
+    $("wsp").href = url;
+    $("barra-wsp").href = url;
+  }
+
+  /* ---- Enganches ---- */
+  $("precio").addEventListener("input", function(){ estado.precio = +this.value; pintar(); });
+  $("inicial").addEventListener("input", function(){ estado.inicialPct = +this.value; pintar(); });
+  $("plazo").addEventListener("input", function(){ estado.plazo = +this.value; pintar(); });
+  $("bono").addEventListener("change", function(){ estado.bono = this.checked; pintar(); });
+
+  Array.prototype.forEach.call($("tipos").children, function(b){
+    b.addEventListener("click", function(){
+      Array.prototype.forEach.call($("tipos").children, function(o){ o.setAttribute("aria-pressed","false"); });
+      b.setAttribute("aria-pressed","true");
+      estado.m2  = +b.dataset.m2;
+      estado.amb = b.querySelector("strong").textContent.replace("amb.","ambientes").trim();
+      pintar();
+    });
+  });
+
+  Array.prototype.forEach.call($("bancos").children, function(b){
+    b.addEventListener("click", function(){
+      Array.prototype.forEach.call($("bancos").children, function(o){ o.setAttribute("aria-pressed","false"); });
+      b.setAttribute("aria-pressed","true");
+      estado.tea = +b.dataset.tea;
+      pintar();
+    });
+  });
+
+  pintar();
+})();
+</script>
+</body>
+</html>
