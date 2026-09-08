@@ -138,9 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      { threshold: 0.15 }
+      // 0.05: con 0.15 las secciones aparecían "tarde" al bajar rápido.
+      { threshold: 0.05 }
     );
     revealElements.forEach((el) => observer.observe(el));
+    // Red de seguridad: pase lo que pase, nada se queda invisible.
+    setTimeout(() => revealElements.forEach((el) => el.classList.add("visible")), 1200);
   } else {
     revealElements.forEach((el) => el.classList.add("visible"));
   }
