@@ -17340,8 +17340,16 @@
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
   function save(s) { localStorage.setItem(KEY, JSON.stringify(s)); }
+  // Los slugs marcados viven en un solo localStorage compartido por TODOS los
+  // paneles. Contar todas las claves contra las tarjetas de ESTE panel daba un
+  // porcentaje inventado: el 2026-09-09 la barra decía "938/1062 · 88%" sin que
+  // hubiera una sola tarjeta de este panel tildada — los 938 eran del panel
+  // archivo. Con el panel casi lleno la barra decía que ya estaba casi
+  // terminado. Solo se cuentan las claves que existen como tarjeta aquí.
+  var presentes = {};
+  cards.forEach(function (el) { var sl = el.getAttribute("data-slug"); if (sl) presentes[sl] = true; });
   function up(s) {
-    var c = Object.keys(s).filter(function (k) { return s[k]; }).length;
+    var c = Object.keys(s).filter(function (k) { return s[k] && presentes[k]; }).length;
     document.getElementById("progressLabel").textContent = c + "/" + total + " contactados";
     document.getElementById("progressFill").style.width = (total ? (c / total) * 100 : 0) + "%";
   }
