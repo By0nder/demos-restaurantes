@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0616">
+<title>Para Alexa</title>
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:title" content="Alexa, esto es para ti">
+<meta property="og:description" content="Ábrelo. Y sube el volumen.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --noche-0:#07040f;
+  --noche-1:#150b28;
+  --noche-2:#2b1450;
+  --oro:#ffd27a;
+  --oro-2:#fff3d1;
+  --rosa:#ff9ec0;
+  --lila:#c9a6ff;
+  --crema:#fdf6e9;
+  --papel:#fbf3e4;
+  --tinta:#3a2c2a;
+  --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
+html,body{height:100%}
+body{
+  margin:0;
+  background:
+    radial-gradient(120% 80% at 50% 110%, rgba(120,60,180,.38) 0%, transparent 60%),
+    radial-gradient(90% 60% at 15% 0%, rgba(255,158,192,.16) 0%, transparent 55%),
+    linear-gradient(170deg, var(--noche-0) 0%, var(--noche-1) 45%, #1c0d33 75%, var(--noche-0) 100%);
+  background-attachment:fixed;
+  color:var(--crema);
+  font-family:var(--sans);
+  overflow:hidden;
+  overscroll-behavior:none;
+}
+
+canvas.capa{
+  position:fixed; inset:0; width:100%; height:100%;
+  pointer-events:none;
+}
+#cv-bg{z-index:0}
+#cv-fx{z-index:60}
+
+/* ---------- estructura de escenas ---------- */
+main{
+  position:relative; z-index:10;
+  height:100dvh;
+  display:grid;
+  place-items:center;
+  padding:max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
+}
+.escena{
+  grid-area:1/1;
+  width:min(560px, 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(18px) scale(.98);
+  transition:opacity .5s ease, transform .55s cubic-bezier(.2,.8,.3,1), visibility 0s linear .5s;
+}
+.escena.activa{
+  opacity:1; visibility:visible; transform:none;
+  transition:opacity .6s ease, transform .7s cubic-bezier(.2,.8,.3,1), visibility 0s linear 0s;
+}
+.escena.saliendo{
+  opacity:0; visibility:visible;
+  transform:translateY(-14px) scale(.985);
+  transition:opacity .42s ease, transform .42s ease, visibility 0s linear .42s;
+}
+
+/* ---------- tipografía compartida ---------- */
+.kicker{
+  margin:0 0 .5rem;
+  font-size:clamp(11.5px,2.9vw,13px);
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:rgba(253,246,233,.62);
+  font-weight:400;
+}
+.nombre{
+  margin:0;
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:clamp(52px, 17vw, 108px);
+  line-height:.95;
+  letter-spacing:-.02em;
+  background:linear-gradient(180deg, #fffaf0 0%, var(--oro) 55%, #e8a94e 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 6px 30px rgba(255,196,110,.28));
+}
+.sub{
+  margin:1.1rem 0 0;
+  font-size:clamp(13px,3.4vw,15px);
+  color:rgba(253,246,233,.62);
+  font-weight:300;
+  letter-spacing:.02em;
+}
+
+/* ---------- escena 1: contador ---------- */
+.reloj{
+  display:flex;
+  gap:clamp(6px,2.4vw,16px);
+  margin-top:clamp(20px,5vw,30px);
+  align-items:flex-start;
+}
+.unidad{
+  min-width:clamp(58px,17vw,86px);
+  padding:clamp(10px,2.6vw,14px) clamp(4px,1.5vw,8px) clamp(8px,2vw,11px);
+  border-radius:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.028));
+  border:1px solid rgba(255,210,122,.20);
+  box-shadow:0 10px 34px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.12);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.unidad b{
+  display:block;
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(28px,8.4vw,44px);
+  line-height:1;
+  color:var(--oro-2);
+  font-variant-numeric:tabular-nums;
+  transition:transform .18s ease;
+}
+.unidad b.tic{transform:translateY(-3px) scale(1.06)}
+.unidad small{
+  display:block;
+  margin-top:7px;
+  font-size:clamp(8.5px,2.1vw,10px);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:rgba(253,246,233,.42);
+}
+
+/* ---------- botones ---------- */
+.btn{
+  margin-top:clamp(24px,6vw,34px);
+  border:0;
+  cursor:pointer;
+  font-family:var(--sans);
+  font-size:clamp(14px,3.6vw,16px);
+  font-weight:500;
+  letter-spacing:.01em;
+  color:#2a1608;
+  padding:15px 32px;
+  border-radius:999px;
+  background:linear-gradient(180deg, #ffe6ad 0%, var(--oro) 60%, #edb45f 100%);
+  box-shadow:0 12px 34px rgba(255,190,100,.30), inset 0 1px 0 rgba(255,255,255,.7);
+  transition:transform .2s cubic-bezier(.2,.8,.3,1), box-shadow .2s, filter .2s;
+}
+.btn:hover{transform:translateY(-2px); box-shadow:0 16px 40px rgba(255,190,100,.38), inset 0 1px 0 rgba(255,255,255,.7)}
+.btn:active{transform:translateY(1px) scale(.985)}
+.btn.fantasma{
+  background:transparent;
+  color:rgba(253,246,233,.55);
+  box-shadow:none;
+  border:1px solid rgba(253,246,233,.18);
+  padding:12px 24px;
+  font-size:clamp(12px,3.2vw,13.5px);
+  font-weight:400;
+}
+.btn.fantasma:hover{color:var(--crema); border-color:rgba(255,210,122,.4); transform:none; box-shadow:none}
+.enlace-sutil{
+  margin-top:18px;
+  background:none;border:0;cursor:pointer;
+  font-family:var(--sans);
+  font-size:clamp(11.5px,3vw,13px);
+  color:rgba(253,246,233,.34);
+  letter-spacing:.04em;
+  padding:8px 12px;
+  transition:color .25s;
+}
+.enlace-sutil:hover{color:rgba(255,210,122,.8)}
+
+/* ---------- escena 2: el sobre ---------- */
+.sobre-wrap{perspective:1400px; padding:10px}
+.sobre{
+  position:relative;
+  width:min(330px, 82vw);
+  aspect-ratio:1.5/1;
+  cursor:pointer;
+  transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.2,.8,.3,1);
+  animation:respira 3.6s ease-in-out infinite;
+}
+.sobre:hover{transform:translateY(-6px)}
+.sobre.abierto{animation:none; transform:translateY(-4px) scale(1.02)}
+@keyframes respira{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+.sobre-fondo{
+  position:absolute; inset:0;
+  border-radius:10px;
+  background:linear-gradient(160deg,#9c6386,#7d4a6b);
+  box-shadow:0 26px 60px rgba(0,0,0,.5), inset 0 6px 18px rgba(0,0,0,.35);
+}
+.carta-chica{
+  position:absolute;
+  left:6%; width:88%;
+  bottom:4%;
+  height:92%;
+  background:linear-gradient(175deg,#fffdf7 0%,var(--papel) 70%,#f2e7d3 100%);
+  border-radius:5px;
+  box-shadow:0 8px 26px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.8);
+  transform:translateY(0);
+  transition:transform 1.05s cubic-bezier(.3,.9,.25,1) .35s;
+  display:flex; align-items:center; justify-content:center;
+  padding-bottom:22%;
+  z-index:1;
+}
+.carta-chica span{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(15px,4.2vw,20px);
+  color:#8a5f76;
+  opacity:0;
+  transition:opacity .5s ease 1.1s;
+}
+.sobre.abierto .carta-chica{transform:translateY(-70%)}
+.sobre.abierto .carta-chica span{opacity:1}
+
+.sobre-frente{
+  position:absolute; inset:0;
+  border-radius:10px;
+  background:linear-gradient(165deg,#e0a7c4 0%, #c98fb0 45%, #b47b9e 100%);
+  clip-path:polygon(0 0, 0 100%, 100% 100%, 100% 0, 50% 56%);
+  z-index:2;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28);
+}
+.sobre-frente::before,.sobre-frente::after{
+  content:''; position:absolute; bottom:0; width:52%; height:100%;
+  background:linear-gradient(180deg, rgba(255,255,255,.10), transparent);
+}
+.sobre-frente::before{left:0; clip-path:polygon(0 0,0 100%,100% 100%)}
+.sobre-frente::after{right:0; clip-path:polygon(100% 0,100% 100%,0 100%)}
+
+.sobre-solapa{
+  position:absolute; top:0; left:0; right:0; height:57%;
+  background:linear-gradient(180deg,#e8b3ce,#cf95b6);
+  clip-path:polygon(0 0, 100% 0, 50% 100%);
+  transform-origin:top center;
+  transform:rotateX(0deg);
+  transition:transform .8s cubic-bezier(.5,-0.25,.3,1.1);
+  z-index:4;
+  backface-visibility:hidden;
+}
+.sobre.abierto .sobre-solapa{transform:rotateX(178deg); z-index:0}
+.sello{
+  position:absolute; left:50%; top:74%;
+  width:clamp(42px,12vw,54px); aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 30%, #ff8fa8, #b93a5c 70%, #8e2743);
+  box-shadow:0 4px 14px rgba(0,0,0,.35), inset 0 -2px 6px rgba(0,0,0,.28), inset 0 2px 4px rgba(255,255,255,.35);
+  display:grid; place-items:center;
+  font-family:var(--serif);
+  font-size:clamp(17px,5vw,22px);
+  color:#ffe3ea;
+  text-shadow:0 1px 2px rgba(0,0,0,.4);
+}
+.hint{
+  margin-top:26px;
+  font-size:clamp(12px,3.2vw,13.5px);
+  color:rgba(253,246,233,.42);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  animation:pulso 2.2s ease-in-out infinite;
+}
+@keyframes pulso{0%,100%{opacity:.4}50%{opacity:.85}}
+
+/* ---------- escena 3: el pastel ---------- */
+.escena-pastel{gap:0}
+.titulo-pastel{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(21px,5.6vw,30px);
+  margin:0 0 4px;
+  color:var(--oro-2);
+  letter-spacing:-.01em;
+}
+.instruccion{
+  margin:0 0 clamp(14px,4vw,22px);
+  font-size:clamp(12.5px,3.3vw,14.5px);
+  color:rgba(253,246,233,.55);
+  font-weight:300;
+  min-height:1.3em;
+  transition:color .3s;
+}
+.instruccion.alerta{color:var(--rosa)}
+
+.pastel-zona{position:relative; display:grid; place-items:end center; padding-top:clamp(30px,9vw,46px)}
+.resplandor{
+  position:absolute;
+  left:50%; top:16%;
+  width:clamp(240px,72vw,340px); aspect-ratio:1;
+  transform:translate(-50%,-30%);
+  background:radial-gradient(circle, rgba(255,196,110,.42) 0%, rgba(255,150,80,.14) 38%, transparent 68%);
+  pointer-events:none;
+  transition:opacity 1.1s ease;
+  animation:latir 3.4s ease-in-out infinite;
+}
+@keyframes latir{0%,100%{opacity:.85}50%{opacity:1}}
+.apagado .resplandor{opacity:0; animation:none}
+
+.pastel{position:relative; width:min(280px,70vw)}
+.velas{
+  display:flex; justify-content:center;
+  gap:clamp(22px,7vw,34px);
+  margin-bottom:-4px;
+  position:relative; z-index:3;
+}
+.vela{position:relative; width:clamp(9px,2.6vw,12px); height:clamp(40px,11vw,52px)}
+.vela .cera{
+  position:absolute; inset:0; top:auto; height:100%;
+  border-radius:3px 3px 1px 1px;
+  background:repeating-linear-gradient(135deg,#fff1f5 0 5px,#ffd0de 5px 10px);
+  box-shadow:inset -2px 0 3px rgba(0,0,0,.14), 0 2px 5px rgba(0,0,0,.2);
+}
+.vela .pabilo{
+  position:absolute; left:50%; top:-4px;
+  width:1.5px; height:5px; background:#4a3a30;
+  transform:translateX(-50%);
+}
+.llama{
+  position:absolute;
+  left:50%; top:-4px;
+  width:clamp(11px,3vw,14px); height:clamp(20px,5.4vw,26px);
+  transform-origin:50% 100%;
+  transform:translate(-50%,-100%) rotate(calc(var(--sopla,0) * 26deg)) scaleY(calc(1 - var(--sopla,0) * .38));
+  border-radius:50% 50% 42% 42% / 68% 68% 32% 32%;
+  background:radial-gradient(ellipse at 50% 78%, #fff8d6 0%, #ffd166 34%, #ff9a3c 62%, rgba(255,110,40,.25) 88%, transparent 100%);
+  box-shadow:0 0 18px 6px rgba(255,168,66,.45), 0 0 42px 16px rgba(255,140,50,.22);
+  animation:titila .28s ease-in-out infinite alternate;
+  transition:opacity .45s ease, transform .12s linear;
+}
+@keyframes titila{
+  from{filter:brightness(1) hue-rotate(0deg)}
+  to{filter:brightness(1.16) hue-rotate(-6deg)}
+}
+.vela.off .llama{opacity:0; transform:translate(-50%,-100%) rotate(38deg) scaleY(.1)}
+.humo{
+  position:absolute; left:50%; top:-8px;
+  width:5px; height:5px; border-radius:50%;
+  background:rgba(230,225,235,.5);
+  opacity:0;
+  filter:blur(2.5px);
+  transform:translate(-50%,0);
+}
+.vela.off .humo{animation:humear 2.4s ease-out .12s 2}
+@keyframes humear{
+  0%{opacity:.7; transform:translate(-50%,0) scale(.6)}
+  100%{opacity:0; transform:translate(calc(-50% + 16px),-70px) scale(3.4)}
+}
+
+.piso{margin:0 auto; border-radius:8px 8px 5px 5px; position:relative}
+.piso-alto{
+  width:62%; height:clamp(34px,9vw,44px);
+  background:linear-gradient(180deg,#ffe3ee 0%,#ffc9dd 42%,#f3aec6 100%);
+  box-shadow:inset 0 -6px 12px rgba(180,110,140,.22), 0 3px 8px rgba(0,0,0,.18);
+}
+.piso-alto::after{
+  content:''; position:absolute; left:0; right:0; top:-7px; height:14px;
+  background:radial-gradient(circle at 8px 7px, #fff8fb 6.6px, rgba(255,248,251,0) 7.1px) 0 0/16px 14px repeat-x;
+  filter:drop-shadow(0 2px 2px rgba(150,90,120,.20));
+}
+.piso-bajo{
+  width:100%; height:clamp(46px,12vw,58px);
+  margin-top:-2px;
+  background:linear-gradient(180deg,#f7d9b0 0%,#e9bd8a 44%,#d9a370 100%);
+  box-shadow:inset 0 -8px 16px rgba(140,90,50,.24), 0 6px 18px rgba(0,0,0,.28);
+}
+.piso-bajo::after{
+  content:''; position:absolute; left:0; right:0; top:-9px; height:19px;
+  background:radial-gradient(circle at 11px 9.5px, #ffe6f0 9px, rgba(255,230,240,0) 9.6px) 0 0/22px 19px repeat-x;
+  filter:drop-shadow(0 2px 3px rgba(160,100,60,.22));
+}
+.cereza{
+  position:absolute; top:-13px;
+  width:10px; height:10px; border-radius:50%;
+  transform:translateX(-50%);
+  background:radial-gradient(circle at 34% 28%, #ff9fb5, #c62d54 72%, #94183a);
+  box-shadow:0 2px 5px rgba(0,0,0,.3);
+  z-index:2;
+}
+.plato{
+  width:122%;
+  margin-left:-11%;
+  height:14px;
+  margin-top:-2px;
+  border-radius:3px 3px 999px 999px / 3px 3px 26px 26px;
+  background:linear-gradient(180deg,#f2edf9 0%,#dcd4ea 38%,#a89ec2 100%);
+  box-shadow:0 16px 36px rgba(0,0,0,.48), inset 0 1px 0 rgba(255,255,255,.6);
+}
+
+/* medidor de soplido */
+.medidor{
+  width:min(280px,72vw);
+  height:5px;
+  margin-top:clamp(20px,5vw,28px);
+  border-radius:999px;
+  background:rgba(255,255,255,.09);
+  overflow:hidden;
+  opacity:0; transition:opacity .4s;
+}
+.medidor.visible{opacity:1}
+.medidor i{
+  display:block; height:100%; width:0%;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--lila),var(--oro));
+  transition:width .07s linear;
+}
+.marca-umbral{
+  position:relative;
+  width:min(280px,72vw);
+  height:0;
+}
+.fila-botones{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:center}
+.btn-soplar{
+  margin-top:clamp(18px,4.5vw,24px);
+  touch-action:none;
+  user-select:none;
+}
+.btn-soplar.presionado{transform:scale(.96); filter:brightness(1.08)}
+
+/* ---------- escena 4: la carta ---------- */
+.carta{
+  position:relative;
+  width:min(480px,90vw);
+  max-height:78dvh;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  padding:clamp(28px,7vw,44px) clamp(24px,6vw,40px) clamp(26px,6vw,38px);
+  border-radius:4px;
+  background:
+    repeating-linear-gradient(0deg, rgba(160,130,90,.028) 0 2px, transparent 2px 4px),
+    linear-gradient(168deg,#fffdf8 0%,var(--papel) 55%,#f4e9d4 100%);
+  color:var(--tinta);
+  text-align:left;
+  box-shadow:0 30px 70px rgba(0,0,0,.55), 0 2px 0 rgba(255,255,255,.3) inset;
+  transform:rotate(-.5deg);
+}
+.carta::before{
+  content:''; position:absolute; inset:8px;
+  border:1px solid rgba(160,120,80,.16);
+  border-radius:2px;
+  pointer-events:none;
+}
+.carta h2{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:clamp(26px,7vw,38px);
+  line-height:1.1;
+  margin:0 0 .2em;
+  color:#7a3f55;
+  letter-spacing:-.015em;
+}
+.carta .fecha-linea{
+  font-size:11px; letter-spacing:.24em; text-transform:uppercase;
+  color:rgba(122,63,85,.5);
+  margin:0 0 1.5em;
+}
+.carta p{
+  font-size:clamp(14.5px,3.8vw,16.5px);
+  line-height:1.72;
+  margin:0 0 1.05em;
+  color:#4a3733;
+  font-weight:400;
+  min-height:1.72em;
+}
+.carta p.firma{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(19px,5vw,25px);
+  color:#7a3f55;
+  text-align:right;
+  margin-top:1.4em;
+}
+.cursor-escritura{
+  display:inline-block;
+  width:2px; height:1.05em;
+  vertical-align:-.16em;
+  background:#7a3f55;
+  margin-left:2px;
+  animation:parpadea .75s steps(1) infinite;
+}
+@keyframes parpadea{0%,49%{opacity:1}50%,100%{opacity:0}}
+.acciones-carta{
+  display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+  margin-top:22px;
+  opacity:0; transition:opacity .8s ease;
+}
+.acciones-carta.visible{opacity:1}
+
+/* ---------- control de sonido ---------- */
+.ctrl{
+  position:fixed;
+  top:max(14px, env(safe-area-inset-top));
+  right:14px;
+  z-index:80;
+  width:40px; height:40px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  color:rgba(253,246,233,.8);
+  font-size:16px;
+  cursor:pointer;
+  transition:background .25s, transform .2s, opacity .4s;
+}
+.ctrl:hover{background:rgba(255,255,255,.13); transform:scale(1.06)}
+.ctrl.mudo{color:rgba(253,246,233,.32)}
+
+/* ---------- utilidades ---------- */
+.oculto{display:none !important}
+.escena-carta{width:auto}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important; animation-iteration-count:1 !important}
+  .escena{transition-duration:.2s}
+}
+@media (max-height:640px){
+  .nombre{font-size:clamp(40px,13vw,64px)}
+  .reloj{margin-top:16px}
+  .pastel{width:min(220px,58vw)}
+}
+</style>
+</head>
+<body>
+
+<canvas id="cv-bg" class="capa"></canvas>
+<canvas id="cv-fx" class="capa"></canvas>
+
+<button class="ctrl" id="btn-sonido" aria-label="Silenciar música">♪</button>
+
+<main>
+
+  <!-- ============ ESCENA 1 · CUENTA REGRESIVA ============ -->
+  <section class="escena activa" id="esc-contador">
+    <p class="kicker" id="kicker-1">falta poco para el cumple de</p>
+    <h1 class="nombre" id="nombre-1">Alexa</h1>
+
+    <div class="reloj" id="reloj">
+      <div class="unidad"><b id="u-dia">00</b><small>días</small></div>
+      <div class="unidad"><b id="u-hora">00</b><small>horas</small></div>
+      <div class="unidad"><b id="u-min">00</b><small>min</small></div>
+      <div class="unidad"><b id="u-seg">00</b><small>seg</small></div>
+    </div>
+
+    <p class="sub" id="sub-1">vuelve cuando el reloj llegue a cero 🤍</p>
+    <button class="btn oculto" id="btn-abrir-ya">Ábrelo</button>
+    <button class="enlace-sutil" id="btn-espiar">no aguanto, quiero espiar →</button>
+  </section>
+
+  <!-- ============ ESCENA 2 · EL SOBRE ============ -->
+  <section class="escena" id="esc-sobre">
+    <p class="kicker">llegó algo para ti</p>
+    <div class="sobre-wrap">
+      <div class="sobre" id="sobre" role="button" tabindex="0" aria-label="Abrir el sobre">
+        <div class="sobre-fondo"></div>
+        <div class="carta-chica"><span>ábreme 🤍</span></div>
+        <div class="sobre-frente"></div>
+        <div class="sobre-solapa"><div class="sello" id="sello">A</div></div>
+      </div>
+    </div>
+    <p class="hint" id="hint-sobre">toca el sobre</p>
+  </section>
+
+  <!-- ============ ESCENA 3 · EL PASTEL ============ -->
+  <section class="escena escena-pastel" id="esc-pastel">
+    <h2 class="titulo-pastel" id="titulo-pastel">Pide un deseo</h2>
+    <p class="instruccion" id="instruccion">y sopla las velitas… en serio, sopla</p>
+
+    <div class="pastel-zona">
+      <div class="resplandor" id="resplandor"></div>
+      <div class="pastel" id="pastel">
+        <div class="velas" id="velas">
+          <div class="vela"><i class="cera"></i><i class="pabilo"></i><i class="humo"></i><i class="llama"></i></div>
+          <div class="vela"><i class="cera"></i><i class="pabilo"></i><i class="humo"></i><i class="llama"></i></div>
+          <div class="vela"><i class="cera"></i><i class="pabilo"></i><i class="humo"></i><i class="llama"></i></div>
+        </div>
+        <div class="piso piso-alto">
+          <i class="cereza" style="left:22%"></i>
+          <i class="cereza" style="left:50%"></i>
+          <i class="cereza" style="left:78%"></i>
+        </div>
+        <div class="piso piso-bajo"></div>
+        <div class="plato"></div>
+      </div>
+    </div>
+
+    <div class="medidor" id="medidor"><i id="medidor-barra"></i></div>
+
+    <div class="fila-botones">
+      <button class="btn" id="btn-micro">🎤 Activar micrófono</button>
+    </div>
+    <button class="enlace-sutil" id="btn-manual">o toca aquí para soplar sin micrófono</button>
+    <button class="btn btn-soplar oculto" id="btn-soplar-manual">Mantén presionado para soplar 💨</button>
+  </section>
+
+  <!-- ============ ESCENA 4 · LA CARTA ============ -->
+  <section class="escena escena-carta" id="esc-carta">
+    <article class="carta" id="carta">
+      <h2 id="carta-titulo"></h2>
+      <p class="fecha-linea" id="carta-fecha"></p>
+      <div id="carta-cuerpo"></div>
+    </article>
+    <div class="acciones-carta" id="acciones-carta">
+      <button class="btn fantasma" id="btn-otravez">🎂 soplar otra vez</button>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* ============================================================
+   ⚙️  CONFIGURACIÓN — lo único que hay que tocar
+   ============================================================ */
+const CONFIG = {
+  nombre: "Alexa",
+  inicialSello: "A",
+
+  // Fecha y hora del cumpleaños (hora de Perú, -05:00).
+  // Formato: "AAAA-MM-DDTHH:MM:SS-05:00"
+  fecha: "2026-09-12T00:00:00-05:00",
+
+  // Título grande de la carta final
+  tituloCarta: "Feliz cumpleaños,<br>Alexa",
+  fechaCarta: "12 de septiembre de 2026",
+
+  // Cada línea es un párrafo. Se escriben solos, uno tras otro.
+  mensaje: [
+    "Sé que hoy te van a llegar mil mensajes iguales, así que me puse a programar el mío. Sí, esto existe solo porque hoy es tu cumpleaños.",
+    "Gracias por ser de las personas con las que uno puede hablar sin estar midiendo lo que dice. Eso no abunda, y tú lo haces fácil.",
+    "Ojalá este año te pasen cosas buenas de las que no se planean. Y que cuando te toque una difícil, te acuerdes de que hay gente que te tiene cariño de verdad.",
+    "Que la pases increíble hoy. Te lo mereces."
+  ],
+  firma: "— José",
+
+  // Música de fondo (se puede apagar con el botón de arriba)
+  musica: true
+};
+/* ========================================================== */
+
+
+/* ------------------------------------------------------------
+   Utilidades
+------------------------------------------------------------ */
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const clamp = (v,a,b) => Math.min(b, Math.max(a,v));
+const rand = (a,b) => a + Math.random()*(b-a);
+const espera = ms => new Promise(r => setTimeout(r, ms));
+const menosMovimiento = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ------------------------------------------------------------
+   Aplicar configuración al DOM
+------------------------------------------------------------ */
+$('#nombre-1').textContent = CONFIG.nombre;
+$('#sello').textContent = CONFIG.inicialSello;
+$('#carta-titulo').innerHTML = CONFIG.tituloCarta;
+$('#carta-fecha').textContent = CONFIG.fechaCarta;
+document.title = "Para " + CONFIG.nombre;
+
+const FECHA_OBJETIVO = new Date(CONFIG.fecha).getTime();
+
+/* ------------------------------------------------------------
+   Motor de escenas
+------------------------------------------------------------ */
+let escenaActual = 'esc-contador';
+let cambiando = false;
+
+async function irA(id){
+  if (escenaActual === id || cambiando) return;
+  cambiando = true;
+  const viejo = $('#'+escenaActual);
+  const nuevo = $('#'+id);
+  escenaActual = id;
+
+  // 1) sale la escena vieja … 2) recién entra la nueva (sin superponerse)
+  viejo.classList.remove('activa');
+  viejo.classList.add('saliendo');
+  await espera(440);
+  viejo.classList.remove('saliendo');
+  await espera(90);
+  nuevo.classList.add('activa');
+  await espera(120);
+  cambiando = false;
+}
+
+/* ============================================================
+   AUDIO — todo sintetizado, sin archivos externos
+   ============================================================ */
+const Audio_ = {
+  ctx: null,
+  master: null,
+  activo: CONFIG.musica,
+  loopId: null,
+
+  init(){
+    if (this.ctx) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) { this.activo = false; return; }
+    this.ctx = new AC();
+    this.master = this.ctx.createGain();
+    this.master.gain.value = this.activo ? 0.22 : 0;
+    const comp = this.ctx.createDynamicsCompressor();
+    this.master.connect(comp).connect(this.ctx.destination);
+  },
+
+  resume(){
+    this.init();
+    if (this.ctx && this.ctx.state === 'suspended') this.ctx.resume();
+  },
+
+  // Una nota tipo campana / celesta
+  nota(freq, t0, dur = 1.6, vol = .5, tipo = 'sine'){
+    if (!this.ctx) return;
+    const ct = this.ctx;
+    const o = ct.createOscillator();
+    const o2 = ct.createOscillator();
+    const g = ct.createGain();
+    o.type = tipo; o.frequency.value = freq;
+    o2.type = 'triangle'; o2.frequency.value = freq * 2.004;
+    const g2 = ct.createGain(); g2.gain.value = .22;
+    g.gain.setValueAtTime(0, t0);
+    g.gain.linearRampToValueAtTime(vol, t0 + .012);
+    g.gain.exponentialRampToValueAtTime(0.0008, t0 + dur);
+    o.connect(g); o2.connect(g2).connect(g);
+    g.connect(this.master);
+    o.start(t0); o2.start(t0);
+    o.stop(t0 + dur + .05); o2.stop(t0 + dur + .05);
+  },
+
+  // Arpegio ascendente (para el sobre)
+  arpegio(){
+    this.resume();
+    if (!this.ctx) return;
+    const t = this.ctx.currentTime;
+    [523.25, 659.25, 783.99, 1046.5, 1318.5].forEach((f,i) =>
+      this.nota(f, t + i*.09, 1.9, .42));
+  },
+
+  // Sonido de vela apagándose
+  puff(){
+    this.resume();
+    if (!this.ctx) return;
+    const ct = this.ctx, t = ct.currentTime;
+    const buf = ct.createBuffer(1, ct.sampleRate * .35, ct.sampleRate);
+    const d = buf.getChannelData(0);
+    for (let i = 0; i < d.length; i++){
+      d[i] = (Math.random()*2 - 1) * Math.pow(1 - i/d.length, 2.5);
+    }
+    const src = ct.createBufferSource(); src.buffer = buf;
+    const f = ct.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 900;
+    const g = ct.createGain(); g.gain.value = .5;
+    src.connect(f).connect(g).connect(this.master);
+    src.start(t);
+  },
+
+  // Fanfarria del final
+  fanfarria(){
+    this.resume();
+    if (!this.ctx) return;
+    const t = this.ctx.currentTime;
+    const mel = [
+      [523.25,0,.9],[659.25,.16,.9],[783.99,.32,.9],[1046.5,.48,1.6],
+      [987.77,.80,.5],[1046.5,.92,2.4]
+    ];
+    mel.forEach(([f,dt,dur]) => this.nota(f, t+dt, dur, .5));
+    [261.63, 392.00, 523.25].forEach(f => this.nota(f, t+.48, 3.2, .16, 'triangle'));
+  },
+
+  // Colchón ambiental en bucle
+  ambiente(){
+    this.resume();
+    if (!this.ctx || this.loopId) return;
+    const escala = [523.25, 587.33, 698.46, 783.99, 880.00, 1046.50];
+    const paso = () => {
+      if (!this.ctx) return;
+      const t = this.ctx.currentTime;
+      const f = escala[Math.floor(Math.random()*escala.length)];
+      this.nota(f, t + .02, rand(2.4, 3.8), .10);
+      if (Math.random() < .4) this.nota(f/2, t + .3, 3.6, .07, 'triangle');
+      this.loopId = setTimeout(paso, rand(1800, 3400));
+    };
+    paso();
+  },
+
+  toggle(){
+    this.resume();
+    this.activo = !this.activo;
+    if (this.master){
+      const t = this.ctx.currentTime;
+      this.master.gain.cancelScheduledValues(t);
+      this.master.gain.setTargetAtTime(this.activo ? .22 : 0, t, .12);
+    }
+    return this.activo;
+  }
+};
+
+$('#btn-sonido').addEventListener('click', () => {
+  const on = Audio_.toggle();
+  $('#btn-sonido').textContent = on ? '♪' : '✕';
+  $('#btn-sonido').classList.toggle('mudo', !on);
+  $('#btn-sonido').setAttribute('aria-label', on ? 'Silenciar música' : 'Activar música');
+  if (on) Audio_.ambiente();
+});
+
+// El primer toque en cualquier parte despierta el audio (requisito de iOS)
+['pointerdown','keydown'].forEach(ev =>
+  document.addEventListener(ev, () => Audio_.resume(), { once:true }));
+
+
+/* ============================================================
+   CANVAS DE FONDO — estrellas + pétalos
+   ============================================================ */
+const cvBg = $('#cv-bg'), ctxBg = cvBg.getContext('2d');
+const cvFx = $('#cv-fx'), ctxFx = cvFx.getContext('2d');
+let W = 0, H = 0, DPR = 1;
+
+function dimensionar(){
+  DPR = Math.min(window.devicePixelRatio || 1, 2);
+  W = window.innerWidth; H = window.innerHeight;
+  [cvBg, cvFx].forEach(c => {
+    c.width = W * DPR; c.height = H * DPR;
+    c.getContext('2d').setTransform(DPR, 0, 0, DPR, 0, 0);
+  });
+}
+dimensionar();
+addEventListener('resize', () => { dimensionar(); sembrarEstrellas(); });
+
+let estrellas = [];
+function sembrarEstrellas(){
+  const n = Math.round(clamp(W*H/9000, 60, 190));
+  estrellas = Array.from({length:n}, () => ({
+    x: Math.random()*W,
+    y: Math.random()*H,
+    r: Math.pow(Math.random(), 2.2) * 1.7 + .35,
+    a: rand(.15,.85),
+    v: rand(.0008,.0035),
+    fase: Math.random()*Math.PI*2,
+    tono: Math.random() < .22 ? 'rosa' : (Math.random() < .3 ? 'oro' : 'blanco')
+  }));
+}
+sembrarEstrellas();
+
+let petalos = [];
+let petalosActivos = false;
+function nuevoPetalo(desdeArriba = false){
+  return {
+    x: rand(-40, W+40),
+    y: desdeArriba ? rand(-H*.4, -20) : rand(-60,-10),
+    w: rand(7,15),
+    h: rand(5,10),
+    vy: rand(.32,.95),
+    sway: rand(.5,1.7),
+    fase: Math.random()*Math.PI*2,
+    giro: rand(-.02,.02),
+    rot: Math.random()*Math.PI,
+    col: Math.random() < .55 ? [255,158,192] : (Math.random() < .5 ? [201,166,255] : [255,210,122]),
+    op: rand(.28,.72)
+  };
+}
+function lloverPetalos(cant = 34){
+  petalosActivos = true;
+  for (let i = 0; i < cant; i++) petalos.push(nuevoPetalo(true));
+}
+
+let t0 = performance.now();
+function pintarFondo(ahora){
+  const dt = Math.min((ahora - t0)/16.67, 3); t0 = ahora;
+  ctxBg.clearRect(0,0,W,H);
+
+  // estrellas
+  for (const e of estrellas){
+    e.fase += e.v * dt * 16;
+    const brillo = e.a * (0.55 + 0.45*Math.sin(e.fase));
+    let c;
+    if (e.tono === 'rosa') c = `rgba(255,190,215,${brillo})`;
+    else if (e.tono === 'oro') c = `rgba(255,225,170,${brillo})`;
+    else c = `rgba(255,255,255,${brillo})`;
+    ctxBg.beginPath();
+    ctxBg.fillStyle = c;
+    ctxBg.arc(e.x, e.y, e.r, 0, 6.2832);
+    ctxBg.fill();
+    if (e.r > 1.4){
+      ctxBg.beginPath();
+      ctxBg.fillStyle = c.replace(/[\d.]+\)$/, (brillo*.12)+')');
+      ctxBg.arc(e.x, e.y, e.r*4.5, 0, 6.2832);
+      ctxBg.fill();
+    }
+  }
+
+  // pétalos
+  if (petalosActivos){
+    for (let i = petalos.length-1; i >= 0; i--){
+      const p = petalos[i];
+      p.fase += .018*dt;
+      p.y += p.vy*dt;
+      p.x += Math.sin(p.fase)*p.sway*dt*.55;
+      p.rot += p.giro*dt;
+      ctxBg.save();
+      ctxBg.translate(p.x, p.y);
+      ctxBg.rotate(p.rot);
+      ctxBg.beginPath();
+      ctxBg.ellipse(0, 0, p.w/2, p.h/2 * (0.5+0.5*Math.abs(Math.cos(p.fase))), 0, 0, 6.2832);
+      ctxBg.fillStyle = `rgba(${p.col[0]},${p.col[1]},${p.col[2]},${p.op})`;
+      ctxBg.fill();
+      ctxBg.restore();
+      if (p.y > H + 30){
+        if (petalosActivos) Object.assign(p, nuevoPetalo(false));
+        else petalos.splice(i,1);
+      }
+    }
+  }
+  requestAnimationFrame(pintarFondo);
+}
+requestAnimationFrame(pintarFondo);
+
+
+/* ============================================================
+   CONFETI
+   ============================================================ */
+let confeti = [];
+const COLORES = ['#ffd27a','#ff9ec0','#c9a6ff','#fff3d1','#7fe3d4','#ffb37a','#ffffff'];
+
+function lanzarConfeti(cant = 130, origen = null){
+  const ox = origen ? origen.x : W/2;
+  const oy = origen ? origen.y : H*0.42;
+  for (let i = 0; i < cant; i++){
+    const ang = rand(-Math.PI, 0) + rand(-.35,.35);
+    const vel = rand(6, 17);
+    confeti.push({
+      x: ox + rand(-30,30),
+      y: oy + rand(-16,16),
+      vx: Math.cos(ang)*vel*rand(.6,1.25),
+      vy: Math.sin(ang)*vel - rand(2,6),
+      w: rand(5,11),
+      h: rand(7,15),
+      rot: Math.random()*6.28,
+      vr: rand(-.24,.24),
+      flip: Math.random()*6.28,
+      vf: rand(.09,.26),
+      col: COLORES[Math.floor(Math.random()*COLORES.length)],
+      vida: 1,
+      cinta: Math.random() < .3
+    });
+  }
+  if (!fxCorriendo) { fxCorriendo = true; requestAnimationFrame(pintarFx); }
+}
+
+// Chorros laterales, estilo cañón
+function canionesConfeti(){
+  lanzarConfeti(60, {x: W*0.06, y: H*0.78});
+  lanzarConfeti(60, {x: W*0.94, y: H*0.78});
+  setTimeout(() => lanzarConfeti(90, {x: W/2, y: H*0.55}), 180);
+}
+
+let fxCorriendo = false;
+let tf = performance.now();
+function pintarFx(ahora){
+  const dt = Math.min((ahora - tf)/16.67, 3); tf = ahora;
+  ctxFx.clearRect(0,0,W,H);
+  for (let i = confeti.length-1; i >= 0; i--){
+    const c = confeti[i];
+    c.vy += .30*dt;
+    c.vx *= Math.pow(.988, dt);
+    c.vy *= Math.pow(.994, dt);
+    c.x += c.vx*dt; c.y += c.vy*dt;
+    c.rot += c.vr*dt; c.flip += c.vf*dt;
+    if (c.y > H*0.72) c.vida -= .006*dt;
+
+    ctxFx.save();
+    ctxFx.globalAlpha = clamp(c.vida,0,1);
+    ctxFx.translate(c.x, c.y);
+    ctxFx.rotate(c.rot);
+    ctxFx.scale(1, Math.cos(c.flip));
+    ctxFx.fillStyle = c.col;
+    if (c.cinta){
+      ctxFx.fillRect(-c.w/2, -c.h, c.w*.5, c.h*2.1);
+    } else {
+      ctxFx.fillRect(-c.w/2, -c.h/2, c.w, c.h);
+    }
+    ctxFx.restore();
+
+    if (c.y > H + 60 || c.vida <= 0) confeti.splice(i,1);
+  }
+  if (confeti.length) requestAnimationFrame(pintarFx);
+  else { fxCorriendo = false; ctxFx.clearRect(0,0,W,H); }
+}
+
+
+/* ============================================================
+   ESCENA 1 · CUENTA REGRESIVA
+   ============================================================ */
+const uds = { dia: $('#u-dia'), hora: $('#u-hora'), min: $('#u-min'), seg: $('#u-seg') };
+let previo = {};
+let llegoLaHora = false;
+
+function pintarUnidad(k, valor){
+  const txt = String(valor).padStart(2,'0');
+  if (previo[k] === txt) return;
+  previo[k] = txt;
+  const el = uds[k];
+  el.textContent = txt;
+  el.classList.add('tic');
+  setTimeout(() => el.classList.remove('tic'), 180);
+}
+
+function tick(){
+  const falta = FECHA_OBJETIVO - Date.now();
+
+  if (falta <= 0){
+    if (!llegoLaHora){
+      llegoLaHora = true;
+      $('#reloj').classList.add('oculto');
+      $('#kicker-1').textContent = 'hoy es el cumpleaños de';
+      $('#sub-1').textContent = 'y te dejé algo aquí adentro';
+      $('#btn-abrir-ya').classList.remove('oculto');
+      $('#btn-espiar').classList.add('oculto');
+      if (!menosMovimiento) canionesConfeti();
+      Audio_.arpegio();
+    }
+    return;
+  }
+
+  const s = Math.floor(falta/1000);
+  pintarUnidad('dia',  Math.floor(s/86400));
+  pintarUnidad('hora', Math.floor(s/3600) % 24);
+  pintarUnidad('min',  Math.floor(s/60) % 60);
+  pintarUnidad('seg',  s % 60);
+}
+tick();
+setInterval(tick, 250);
+
+$('#btn-abrir-ya').addEventListener('click', () => { Audio_.ambiente(); irA('esc-sobre'); });
+$('#btn-espiar').addEventListener('click', () => { Audio_.ambiente(); irA('esc-sobre'); });
+
+
+/* ============================================================
+   ESCENA 2 · EL SOBRE
+   ============================================================ */
+const sobre = $('#sobre');
+let sobreAbierto = false;
+
+async function abrirSobre(){
+  if (sobreAbierto) return;
+  sobreAbierto = true;
+  Audio_.arpegio();
+  sobre.classList.add('abierto');
+  $('#hint-sobre').textContent = '';
+  lloverPetalos(30);
+  await espera(1900);
+  await irA('esc-pastel');
+  await espera(400);
+  $('#instruccion').textContent = 'y sopla las velitas… en serio, sopla';
+}
+sobre.addEventListener('click', abrirSobre);
+sobre.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrirSobre(); } });
+
+
+/* ============================================================
+   ESCENA 3 · SOPLAR LAS VELAS
+   ============================================================ */
+const velas = $$('#velas .vela');
+const llamas = $$('#velas .llama');
+const medidor = $('#medidor');
+const barra = $('#medidor-barra');
+const instruccion = $('#instruccion');
+
+let apagadas = 0;
+let escuchando = false;
+let acumulado = 0;
+let ultimaApagada = 0;
+let nivelManual = 0;
+let terminado = false;
+
+function setSopla(v){
+  llamas.forEach(l => l.style.setProperty('--sopla', v.toFixed(3)));
+}
+
+function apagarUna(){
+  if (apagadas >= velas.length) return;
+  velas[apagadas].classList.add('off');
+  apagadas++;
+  Audio_.puff();
+  if (apagadas < velas.length){
+    instruccion.textContent = apagadas === 1
+      ? '¡eso! sigue soplando 💨'
+      : 'una más… ya casi';
+  }
+  if (apagadas === velas.length) finalizarSoplido();
+}
+
+async function finalizarSoplido(){
+  if (terminado) return;
+  terminado = true;
+  escuchando = false;
+  $('#pastel').closest('.escena').classList.add('apagado');
+  $('#resplandor').style.opacity = 0;
+  setSopla(0);
+  medidor.classList.remove('visible');
+  $('#titulo-pastel').textContent = '¡Se apagaron! 🎉';
+  instruccion.textContent = 'ojalá se cumpla';
+  detenerMicro();
+
+  await espera(400);
+  if (!menosMovimiento) canionesConfeti();
+  Audio_.fanfarria();
+  await espera(1500);
+  await irA('esc-carta');
+  escribirCarta();
+}
+
+/* ---------- micrófono ---------- */
+let audioCtxMic = null, analizador = null, streamMic = null, rafMic = null;
+let ruidoBase = 0.02, calibrando = true, muestrasCalib = [];
+
+async function activarMicro(){
+  $('#btn-micro').disabled = true;
+  instruccion.classList.remove('alerta');
+  instruccion.textContent = 'pidiendo permiso del micrófono…';
+  try{
+    streamMic = await navigator.mediaDevices.getUserMedia({
+      audio: { echoCancellation:false, noiseSuppression:false, autoGainControl:false }
+    });
+  } catch(err){
+    $('#btn-micro').disabled = false;
+    instruccion.classList.add('alerta');
+    instruccion.textContent = 'sin micro no hay problema — sopla con el botón 👇';
+    mostrarManual();
+    return;
+  }
+
+  Audio_.resume();
+  const AC = window.AudioContext || window.webkitAudioContext;
+  audioCtxMic = new AC();
+  if (audioCtxMic.state === 'suspended') await audioCtxMic.resume();
+  const src = audioCtxMic.createMediaStreamSource(streamMic);
+  analizador = audioCtxMic.createAnalyser();
+  analizador.fftSize = 1024;
+  analizador.smoothingTimeConstant = 0.35;
+  src.connect(analizador);
+
+  $('#btn-micro').classList.add('oculto');
+  $('#btn-manual').textContent = '¿no te toma el soplido? toca aquí';
+  medidor.classList.add('visible');
+  escuchando = true;
+  calibrando = true; muestrasCalib = [];
+  instruccion.textContent = 'quédate calladita un segundito… calibrando';
+  setTimeout(() => {
+    calibrando = false;
+    const prom = muestrasCalib.length
+      ? muestrasCalib.reduce((a,b)=>a+b,0)/muestrasCalib.length : 0.015;
+    ruidoBase = prom;
+    instruccion.textContent = 'listo — ahora SOPLA al micrófono 💨';
+  }, 1300);
+
+  escucharLoop();
+}
+
+function detenerMicro(){
+  if (rafMic) cancelAnimationFrame(rafMic);
+  if (streamMic) streamMic.getTracks().forEach(t => t.stop());
+  if (audioCtxMic && audioCtxMic.state !== 'closed') audioCtxMic.close().catch(()=>{});
+  streamMic = null; analizador = null; audioCtxMic = null;
+}
+
+const bufT = new Uint8Array(1024);
+const bufF = new Uint8Array(512);
+let ultimoT = performance.now();
+
+function escucharLoop(){
+  rafMic = requestAnimationFrame(escucharLoop);
+  const ahora = performance.now();
+  const dt = ahora - ultimoT; ultimoT = ahora;
+  if (!analizador) return;
+
+  analizador.getByteTimeDomainData(bufT);
+  analizador.getByteFrequencyData(bufF);
+
+  // RMS del dominio de tiempo
+  let suma = 0;
+  for (let i = 0; i < bufT.length; i++){
+    const v = (bufT[i] - 128) / 128;
+    suma += v*v;
+  }
+  const rms = Math.sqrt(suma / bufT.length);
+
+  // energía en frecuencias bajas (el soplido las carga mucho)
+  let bajas = 0;
+  for (let i = 2; i < 28; i++) bajas += bufF[i];
+  bajas = bajas / (26*255);
+
+  if (calibrando){
+    muestrasCalib.push(rms);
+    barra.style.width = '0%';
+    return;
+  }
+
+  const umbral = clamp(ruidoBase * 2.6 + 0.030, 0.045, 0.22);
+  const fuerza = clamp((rms - umbral) / (umbral * 2.6), 0, 1);
+  const esSoplido = rms > umbral && bajas > 0.16;
+
+  procesarSoplido(esSoplido ? Math.max(fuerza, .35) : 0, dt);
+}
+
+function procesarSoplido(fuerza, dt){
+  if (terminado) return;
+  const total = Math.max(fuerza, nivelManual);
+  setSopla(total);
+  barra.style.width = (clamp(total,0,1)*100).toFixed(0) + '%';
+
+  if (total > 0.3){
+    acumulado += dt;
+    const ahora = performance.now();
+    if (acumulado > 340 && ahora - ultimaApagada > 320){
+      acumulado = 0;
+      ultimaApagada = ahora;
+      apagarUna();
+    }
+  } else {
+    acumulado = Math.max(0, acumulado - dt*0.7);
+  }
+}
+
+$('#btn-micro').addEventListener('click', activarMicro);
+
+/* ---------- modo manual (sin micrófono) ---------- */
+function mostrarManual(){
+  $('#btn-manual').classList.add('oculto');
+  $('#btn-micro').classList.add('oculto');
+  $('#btn-soplar-manual').classList.remove('oculto');
+  medidor.classList.add('visible');
+  if (!bucleManualActivo){
+    bucleManualActivo = true;
+    requestAnimationFrame(bucleManual);
+  }
+}
+$('#btn-manual').addEventListener('click', mostrarManual);
+
+const btnSoplar = $('#btn-soplar-manual');
+let bucleManualActivo = false;
+let tm = performance.now();
+
+function bucleManual(ahora){
+  if (terminado) return;
+  const dt = ahora - tm; tm = ahora;
+  if (!escuchando) procesarSoplido(0, dt);
+  requestAnimationFrame(bucleManual);
+}
+
+function presionar(e){
+  e.preventDefault();
+  btnSoplar.classList.add('presionado');
+  nivelManual = 0.9;
+}
+function soltar(){
+  btnSoplar.classList.remove('presionado');
+  nivelManual = 0;
+}
+['pointerdown'].forEach(ev => btnSoplar.addEventListener(ev, presionar));
+['pointerup','pointerleave','pointercancel'].forEach(ev => btnSoplar.addEventListener(ev, soltar));
+
+
+/* ============================================================
+   ESCENA 4 · LA CARTA QUE SE ESCRIBE SOLA
+   ============================================================ */
+let cartaEscrita = false;
+
+async function escribirCarta(){
+  if (cartaEscrita) return;
+  cartaEscrita = true;
+  lloverPetalos(26);
+  const cuerpo = $('#carta-cuerpo');
+  cuerpo.innerHTML = '';
+
+  const velocidad = menosMovimiento ? 0 : 22;
+
+  for (const parrafo of CONFIG.mensaje){
+    const p = document.createElement('p');
+    const span = document.createElement('span');
+    const cursor = document.createElement('i');
+    cursor.className = 'cursor-escritura';
+    p.append(span, cursor);
+    cuerpo.appendChild(p);
+
+    if (velocidad === 0){
+      span.textContent = parrafo;
+    } else {
+      for (let i = 0; i < parrafo.length; i++){
+        span.textContent += parrafo[i];
+        const c = parrafo[i];
+        let pausa = velocidad;
+        if (c === ',') pausa = 190;
+        else if (c === '.' || c === '!' || c === '?') pausa = 320;
+        else if (c === ' ') pausa = velocidad * 1.4;
+        await espera(pausa + Math.random()*18);
+        $('#carta').scrollTop = $('#carta').scrollHeight;
+      }
+    }
+    cursor.remove();
+    await espera(velocidad === 0 ? 0 : 420);
+  }
+
+  const firma = document.createElement('p');
+  firma.className = 'firma';
+  firma.textContent = CONFIG.firma;
+  firma.style.opacity = 0;
+  firma.style.transition = 'opacity 1s ease';
+  cuerpo.appendChild(firma);
+  $('#carta').scrollTop = $('#carta').scrollHeight;
+  await espera(60);
+  firma.style.opacity = 1;
+
+  await espera(700);
+  $('#acciones-carta').classList.add('visible');
+  if (!menosMovimiento) lanzarConfeti(70, {x: W/2, y: H*.35});
+}
+
+/* ---------- volver a soplar ---------- */
+$('#btn-otravez').addEventListener('click', async () => {
+  await irA('esc-pastel');
+  velas.forEach(v => v.classList.remove('off'));
+  apagadas = 0; terminado = false; acumulado = 0; nivelManual = 0;
+  cartaEscrita = false;
+  $('#esc-pastel').classList.remove('apagado');
+  $('#resplandor').style.opacity = '';
+  $('#titulo-pastel').textContent = 'Otro deseo más 🤍';
+  instruccion.textContent = 'todas las que quieras';
+  instruccion.classList.remove('alerta');
+  setSopla(0);
+  barra.style.width = '0%';
+  $('#btn-micro').classList.remove('oculto');
+  $('#btn-micro').disabled = false;
+  $('#btn-manual').classList.remove('oculto');
+  $('#btn-soplar-manual').classList.add('oculto');
+  escuchando = false;
+  bucleManualActivo = false;
+  medidor.classList.remove('visible');
+  $('#acciones-carta').classList.remove('visible');
+});
+
+/* ---------- atajo de prueba: tecla "d" salta de escena ---------- */
+addEventListener('keydown', e => {
+  if (e.key.toLowerCase() !== 'd' || !e.shiftKey) return;
+  const orden = ['esc-contador','esc-sobre','esc-pastel','esc-carta'];
+  const i = orden.indexOf(escenaActual);
+  const sig = orden[(i+1) % orden.length];
+  irA(sig);
+  if (sig === 'esc-carta') escribirCarta();
+});
+</script>
+</body>
+</html>
