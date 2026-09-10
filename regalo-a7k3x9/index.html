@@ -303,6 +303,8 @@ main{
   color:rgba(253,246,233,.55);
   font-weight:300;
   min-height:1.3em;
+  line-height:1.5;
+  max-width:32ch;
   transition:color .3s;
 }
 .instruccion.alerta{color:var(--rosa)}
@@ -1148,7 +1150,9 @@ async function activarMicro(){
   } catch(err){
     $('#btn-micro').disabled = false;
     instruccion.classList.add('alerta');
-    instruccion.textContent = 'sin micro no hay problema — sopla con el botón 👇';
+    instruccion.innerHTML = (err && err.name === 'NotAllowedError')
+      ? 'no diste permiso 😅 — sopla con el botón 👇'
+      : 'aquí no hay micro (¿lo abriste dentro de WhatsApp?).<br>Ábrelo en Chrome, o sopla con el botón 👇';
     mostrarManual();
     return;
   }
