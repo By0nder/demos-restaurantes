@@ -84,7 +84,7 @@
 
 
 
-
+<!-- barra-dueno --><div style="background:#171a1f;color:#eee7d9;padding:8px 14px;font-size:14px;line-height:1.4;font-family:system-ui,sans-serif;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 14px"><span>¿Es su negocio?<span class="hidden sm:inline"> Esta página es una muestra hecha para usted.</span></span><a href="https://wa.me/51941571821?text=Hola%20Leonardo%2C%20le%20escribo%20de%20Mec%C3%A1nica%20C%C3%A1ceres.%20Vi%20la%20p%C3%A1gina%20de%20muestra%20(https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fmecanica-caceres%2F)%20y%20quiero%20activarla." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border-radius:999px;background:#f3ecdc;color:#171a1f;font-weight:700;text-decoration:none;white-space:nowrap">Activar mi página →</a></div>
 
   
 <header class="sticky top-0 z-50 bg-[var(--color-fondo)] backdrop-blur border-b border-[var(--color-borde)] shadow-sm">
@@ -124,7 +124,7 @@
       
       
       
-        <a href="https://wa.me/51964010392?text=Hola%20Mec%C3%A1nica%20C%C3%A1ceres%2C%20vi%20su%20p%C3%A1gina%20y%20quisiera%20hacer%20una%20consulta."
+        <a href="https://wa.me/51964010392?text=Hola%20Mec%C3%A1nica%20C%C3%A1ceres%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta."
            target="_blank" rel="noopener"
            class="inline-flex min-h-[44px] items-center rounded-full px-5 font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
            style="background: var(--color-acento)">
@@ -141,7 +141,7 @@
       <svg data-icono="sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="hidden h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2" /><path d="M12 20v2" /><path d="m4.93 4.93 1.41 1.41" /><path d="m17.66 17.66 1.41 1.41" /><path d="M2 12h2" /><path d="M20 12h2" /><path d="m6.34 17.66-1.41 1.41" /><path d="m19.07 4.93-1.41 1.41" /></svg>
     </button>
 
-    <button id="menu-toggle" class="lg:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú">
+    <button id="menu-toggle" class="lg:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
@@ -410,7 +410,10 @@
 <p class="mt-4 text-center text-base leading-relaxed texto-suave reveal">
   Los precios que ve son de referencia.
   
-    Se reemplazan por los suyos.
+    <a href="https://wa.me/51941571821?text=Hola%20Leonardo%2C%20soy%20de%20Mec%C3%A1nica%20C%C3%A1ceres.%20Le%20paso%20mis%20precios%20reales%20para%20la%20p%C3%A1gina%3A%20"
+       target="_blank" rel="noopener"
+       class="inline py-2 font-semibold underline underline-offset-4"
+       style="color: var(--color-acento-fuerte)">¿Es su negocio? Mándeme sus precios y quedan puestos&nbsp;&rarr;</a>
   
 </p>
 
@@ -453,7 +456,7 @@
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Cotizar por WhatsApp
               </a>
             
@@ -489,7 +492,7 @@
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Cotizar por WhatsApp
               </a>
             
@@ -525,7 +528,7 @@
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Cotizar por WhatsApp
               </a>
             
@@ -561,7 +564,7 @@
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Cotizar por WhatsApp
               </a>
             
@@ -597,7 +600,7 @@
                  target="_blank" rel="noopener"
                  class="mt-6 inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full px-5 text-base font-semibold text-[var(--color-acento-texto)] transition hover:brightness-110"
                  style="background: var(--color-acento)">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4.5 w-4.5" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:1.15rem;height:1.15rem"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm4.43 12.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
                 Cotizar por WhatsApp
               </a>
             
@@ -747,13 +750,13 @@
           
           <div class="">
             <label for="cot-vehiculo" class="block text-sm font-semibold" style="color: var(--color-titulo)">
-              Marca y modelo <span style="color: var(--color-acento)">*</span>
+              Marca y modelo <span style="color: var(--color-acento)" aria-hidden="true">*</span>
             </label>
             
 
             
               <input id="cot-vehiculo" name="vehiculo" data-etiqueta="Marca y modelo"
-                     data-requerido
+                      required aria-required="true" data-requerido
                      type="text"
                      
                      placeholder="Toyota Yaris"
@@ -764,15 +767,15 @@
           
           <div class="">
             <label for="cot-anio" class="block text-sm font-semibold" style="color: var(--color-titulo)">
-              Año <span style="color: var(--color-acento)">*</span>
+              Año <span style="color: var(--color-acento)" aria-hidden="true">*</span>
             </label>
             
 
             
               <input id="cot-anio" name="anio" data-etiqueta="Año"
-                     data-requerido
+                      required aria-required="true" data-requerido
                      type="number"
-                     inputmode=&#34;numeric&#34; min=&#34;0&#34;
+                     inputmode="numeric" min="0"
                      placeholder="2016"
                      class="campo-cot mt-2 min-h-[48px] w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 text-base">
             
@@ -781,13 +784,13 @@
           
           <div class="sm:col-span-2">
             <label for="cot-sintoma" class="block text-sm font-semibold" style="color: var(--color-titulo)">
-              ¿Qué le pasa a su carro? <span style="color: var(--color-acento)">*</span>
+              ¿Qué le pasa a su carro? <span style="color: var(--color-acento)" aria-hidden="true">*</span>
             </label>
             
 
             
               <textarea id="cot-sintoma" name="sintoma" data-etiqueta="¿Qué le pasa a su carro?"
-                        data-requerido
+                         required aria-required="true" data-requerido
                         rows="3" placeholder="Suena al frenar, jala al lado izquierdo, se prendió el check…"
                         class="campo-cot mt-2 w-full rounded-xl border border-[var(--color-borde)] bg-[var(--color-fondo)] px-4 py-3 text-base"></textarea>
             
@@ -795,7 +798,8 @@
         
       </div>
 
-      <p id="cot-error" class="mt-5 hidden rounded-xl px-4 py-3 text-sm font-medium"
+      <p id="cot-error" role="status" aria-live="polite" aria-atomic="true"
+         class="mt-5 hidden rounded-xl px-4 py-3 text-sm font-medium"
          style="background: color-mix(in srgb, var(--color-acento) 14%, transparent); color: var(--color-titulo)"></p>
 
       
@@ -816,33 +820,62 @@
       var form = document.getElementById("form-cotizador");
       if (!form) return;
       var aviso = document.getElementById("cot-error");
+      var campos = form.querySelectorAll(".campo-cot");
       var wsp = "51964010392";
       var encabezado = "Hola, vi su página web y quisiera cotizar un servicio:";
 
+      // Guardamos a qué apuntaba cada campo (su texto de ayuda, si lo tiene) ANTES
+      // de tocar nada: al marcar el error hay que sumarle el aviso, no pisarle la
+      // ayuda, y al corregirse hay que devolver exactamente lo que había.
+      campos.forEach(function (c) { c._describeBase = c.getAttribute("aria-describedby") || ""; });
+
+      // El borde rojo solo lo ve quien ve. `aria-invalid` marca el campo como
+      // inválido y `aria-describedby` lo enlaza con el aviso, así el lector de
+      // pantalla dice "no válido" y lee qué falta al pararse en el campo.
+      function marcar(c, falta) {
+        if (falta) {
+          c.style.borderColor = "var(--color-acento)";
+          c.setAttribute("aria-invalid", "true");
+          c.setAttribute("aria-describedby", ("cot-error " + c._describeBase).trim());
+          return;
+        }
+        c.style.borderColor = "";
+        c.removeAttribute("aria-invalid");
+        if (c._describeBase) c.setAttribute("aria-describedby", c._describeBase);
+        else c.removeAttribute("aria-describedby");
+      }
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        var campos = form.querySelectorAll(".campo-cot");
         var faltan = [];
         var lineas = [];
+        var primerFalta = null;
 
         campos.forEach(function (c) {
           var valor = (c.value || "").trim();
           var etiqueta = c.getAttribute("data-etiqueta") || c.name;
           if (c.hasAttribute("data-requerido") && !valor) {
             faltan.push(etiqueta);
-            c.style.borderColor = "var(--color-acento)";
+            marcar(c, true);
+            if (!primerFalta) primerFalta = c;
             return;
           }
-          c.style.borderColor = "";
+          marcar(c, false);
           if (valor) lineas.push("• " + etiqueta + ": " + valor);
         });
 
         if (faltan.length) {
-          aviso.textContent = "Nos falta: " + faltan.join(", ") + ".";
+          // Primero se muestra y después se escribe el texto: una región viva que
+          // está en display:none no se anuncia, así que el cambio tiene que pasar
+          // con el aviso ya visible. Y el foco al primer campo que falta, para no
+          // dejar a nadie buscando cuál de los seis es.
           aviso.classList.remove("hidden");
+          aviso.textContent = "Nos falta: " + faltan.join(", ") + ".";
+          if (primerFalta) primerFalta.focus();
           return;
         }
         aviso.classList.add("hidden");
+        aviso.textContent = "";
 
         var texto = encabezado + "\n\n" + lineas.join("\n");
         window.open("https://wa.me/" + wsp + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
@@ -862,32 +895,35 @@
         
         
         
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
+                
+        <figure class="reveal relative overflow-hidden rounded-xl aspect-square">
           <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&amp;q=80" alt="Foto de Mecánica Cáceres"
                srcset="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
+                  </figure>
       
         
         
         
-        <div class="reveal overflow-hidden rounded-xl aspect-square">
+                
+        <figure class="reveal relative overflow-hidden rounded-xl aspect-square">
           <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&amp;q=80" alt="Foto de Mecánica Cáceres"
                srcset="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
+                  </figure>
       
         
         
         
-        <div class="reveal overflow-hidden rounded-xl col-span-2 md:col-span-1 aspect-[2/1] md:aspect-square">
+                
+        <figure class="reveal relative overflow-hidden rounded-xl col-span-2 md:col-span-1 aspect-[2/1] md:aspect-square">
           <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800&amp;q=80" alt="Foto de Mecánica Cáceres"
                srcset="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
                loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-        </div>
+                  </figure>
       
     </div>
   </div>
@@ -979,6 +1015,8 @@
       
       
     </div>
+    
+    
 
     
 
@@ -997,10 +1035,22 @@
   <footer class="py-10" style="background: var(--color-primario-oscuro); color: var(--color-primario-texto); opacity: 0.95">
   
   
+  <div id="activar" class="max-w-6xl mx-auto px-4 mb-10 pb-10 border-b border-white/15 text-center">
+    <p class="text-lg font-semibold">¿Es su negocio?</p>
+    <p class="mt-1 text-sm opacity-80">Esta página es una muestra: se activa con sus fotos, sus precios y su dominio propio.</p>
+    <a href="https://wa.me/51941571821?text=Hola%20Leonardo%2C%20le%20escribo%20de%20Mec%C3%A1nica%20C%C3%A1ceres.%20Vi%20la%20p%C3%A1gina%20de%20muestra%20(https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fmecanica-caceres%2F)%20y%20quiero%20activarla."
+       target="_blank" rel="noopener"
+       class="mt-4 inline-flex min-h-[48px] items-center justify-center rounded-full px-7 font-bold text-[var(--color-acento-texto)] transition hover:brightness-110"
+       style="background: var(--color-acento)">Activar mi página con Leonardo&nbsp;&rarr;</a>
+  </div>
+  
   <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-3">
       
-      <p class="text-sm">© 2026 Mecánica Cáceres. Todos los derechos reservados.</p>
+      
+      <div>
+        <p class="text-sm">© 2026 Mecánica Cáceres. Todos los derechos reservados.</p>
+                      </div>
     </div>
 
     
