@@ -17,12 +17,13 @@ gh api repos/By0nder/by0nder-fuentes/contents/ESTADO.md --jq .content | base64 -
 | Repo | Qué es |
 |---|---|
 | `demos-restaurantes` | Público. Las páginas publicadas y los paneles de prospección. Es lo que ve el cliente. |
-| `demos-chile` | Público. Demos de Chile. |
+| `demos-chile` | Público. Demos de Chile — proyecto muerto (31-ago-2026). |
 | `web-generator` | Privado. El generador masivo. **Va ~18 días detrás de lo publicado.** |
 | `by0nder-fuentes` | Privado. Fuentes, entregables y `ESTADO.md`. |
 
-El panel de prospección de José no es un repo: es un artifact privado de claude.ai.
-Su enlace NO va aquí: este archivo es público.
+El panel de prospección de José vive en este mismo repo, en una carpeta con nombre y
+hash como los demás paneles (desde el 29-ago-2026). El hash NO va aquí: este archivo
+es público.
 
 En `by0nder-fuentes/memoria-de-claude/` están sus preferencias de trabajo. Si la
 memoria de esta máquina todavía no las tiene, vale copiarlas: evitan repetir
@@ -39,8 +40,11 @@ Todo lo de esta carpeta se sirve en GitHub Pages: **lo que se commitea, se publi
 
 Casi ninguna se edita a mano. Cada una se genera desde un archivo de datos:
 
-- **Cevichería Los Bull's** → `by0nder-fuentes/los-bulls/carta.json` + `construir.js`.
-  Editar el HTML directamente hace que el próximo build lo pise.
+- **Cevichería Los Bull's** ya no vive acá: desde el 29-ago-2026 está en su repo propio
+  `By0nder/cevicheria-terminal-los-bulls-web` (Cloudflare Pages, cevicheriaterminallosbulls.pe);
+  su carpeta en este repo solo redirige al dominio. Se genera desde
+  `by0nder-fuentes/los-bulls/carta.json` + `construir.js` — editar el HTML directamente
+  hace que el próximo build lo pise.
 - El resto salió de `web-generator`, aunque ese repo va detrás de lo publicado:
   antes de regenerar algo, comparar contra lo que está acá.
 
