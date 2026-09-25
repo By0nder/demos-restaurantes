@@ -376,11 +376,13 @@
   <div class="brief" style="border-color:var(--warn);background:var(--warn-soft)">
     <h2>Los precios, para que no dudes</h2>
     <ul>
-      <li>Página de consultorio dental: <strong>S/ 500 a S/ 700</strong> según cuántos tratamientos y fotos lleve.</li>
-      <li>Incluye <strong>dominio propio .pe</strong> el primer año. La renovación es <strong>S/ 150 al año</strong>.</li>
+      <li>Página de consultorio dental: <strong>S/ 900</strong> la sencilla (la que ya vio) · <strong>S/ 1,400</strong> con todos sus tratamientos, fotos y que salga en Google · <strong>S/ 2,000</strong> la premium. Ofrece primero la de <strong>S/ 1,400</strong>.</li>
+      <li>Pago único, no mensualidad. Incluye <strong>dominio propio .pe</strong> el primer año; desde el segundo año, <strong>S/ 150 al año</strong>. Dilo tú, antes de que pregunte.</li>
+      <li><strong>Piso: S/ 700.</strong> Si regatea, se le quita alcance (menos secciones, menos fotos), nunca se baja el precio. <strong>Lo ya cotizado no se recotiza</strong> (Smile Dent quedó en S/ 500): la tabla nueva es para los que recién preguntan.</li>
       <li>Si piden factura o algo más grande (varias sedes, sistema de citas), <strong>no improvises</strong>: pásaselo a José.</li>
       <li><strong>Regla desde el 16 de setiembre:</strong> WhatsApp tiene un cupo mensual de <strong>300 chats nuevos por número y por mes</strong> (confirmado el 17-sep con el aviso "271 de 300"): cada chat que abres con alguien que <em>no te responde</em> cuenta; se libera apenas contestan. <strong>Un solo mensaje por consultorio, nunca insistir a quien no contestó</strong>, y gasta el cupo solo en los consultorios con más reseñas; seguimiento solo a quien respondió alguna vez; un <strong>NO</strong> es definitivo. Si te aparece un aviso de "límite mensual", captura y avísale a José.</li>
     </ul>
+    <p class="nota-pasos" style="margin:12px 0 0">Tu guía de una hoja (qué decir, objeciones, qué pedir cuando dicen que sí): <a href="https://by0nder.github.io/demos-restaurantes/fernando-guia-4a71e8/" target="_blank" rel="noopener"><strong>abrir la guía</strong></a>.</p>
   </div>
 
   <div class="group">
@@ -4969,12 +4971,72 @@
       var card = box.closest(".card");
       if (state[slug]) { box.checked = true; card.classList.add("is-sent"); }
       box.addEventListener("change", function () {
-        state[slug] = box.checked;
+        state[slug] = box.checked ? { t: new Date().toISOString() } : false; // fecha para el resumen del día
         card.classList.toggle("is-sent", box.checked);
         save(state); updateProgress(state);
       });
     });
     updateProgress(state);
+  })();
+</script>
+
+<!-- Resumen del día → José (2026-09-24). Lee los "Enviado" guardados en este navegador y abre
+     el WhatsApp de José con el conteo de hoy. El vendedor aprieta enviar: nada es automático. -->
+<style id="estilo-resumen-dia">
+  body { padding-bottom: 96px; }
+  .resumen-dia {
+    position: fixed; right: 16px; bottom: 16px; z-index: 50;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 18px; border-radius: 999px; border: 0; cursor: pointer;
+    background: var(--accent); color: var(--accent-ink); text-decoration: none;
+    font-family: var(--font-body); font-size: .95rem; font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0,0,0,.28);
+  }
+  .resumen-dia:hover { background: var(--accent-strong); }
+  .resumen-dia small { font-weight: 500; opacity: .85; }
+</style>
+<a class="resumen-dia" id="resumenDia" href="#" target="_blank" rel="noopener" title="Arma el resumen de hoy y lo abre en el WhatsApp de José. Tú le das enviar.">Resumen del día → José <small id="resumenDiaHoy"></small></a>
+<script>
+  (function () {
+    var KEY = "outreach-sent-fernando-v1", VENDEDOR = "Fernando", JOSE = "51941571821", TOPE = 150;
+    var presentes = {}, total = 0;
+    document.querySelectorAll(".sent-checkbox").forEach(function (b) {
+      var sl = b.getAttribute("data-slug");
+      if (sl && !presentes[sl]) { presentes[sl] = true; total++; }
+    });
+    function leer() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+    // Acepta los dos formatos guardados: true (viejo) y {t: "<ISO>"} (desde el 24-sep-2026).
+    function esHoy(v) {
+      if (!v || typeof v !== "object" || !v.t) return false;
+      var d = new Date(v.t);
+      return !isNaN(d.getTime()) && d.toDateString() === new Date().toDateString();
+    }
+    function contar() {
+      var s = leer(), hoy = [], todos = 0;
+      Object.keys(s).forEach(function (k) {
+        if (!s[k] || !presentes[k]) return;
+        todos++;
+        if (esHoy(s[k])) hoy.push(k);
+      });
+      return { hoy: hoy, todos: todos };
+    }
+    function texto() {
+      var r = contar();
+      var fecha = new Date().toLocaleDateString("es-PE");
+      var lista = r.hoy.length ? r.hoy.slice(0, TOPE).join(", ") + (r.hoy.length > TOPE ? " (+" + (r.hoy.length - TOPE) + " más)" : "") : "ninguno";
+      return VENDEDOR + " · " + fecha + " · hoy " + r.hoy.length + " · total " + r.todos + "/" + total + " · " + lista;
+    }
+    var boton = document.getElementById("resumenDia"), chip = document.getElementById("resumenDiaHoy");
+    if (!boton) return;
+    function pintar() { chip.textContent = "(hoy " + contar().hoy.length + ")"; }
+    boton.addEventListener("click", function () {
+      // El href se arma recién al apretar, con lo marcado hasta ese momento.
+      boton.href = "https://wa.me/" + JOSE + "?text=" + encodeURIComponent(texto());
+    });
+    document.addEventListener("change", function (e) {
+      if (e.target && e.target.classList && e.target.classList.contains("sent-checkbox")) setTimeout(pintar, 0);
+    });
+    pintar();
   })();
 </script>
 

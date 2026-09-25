@@ -3955,7 +3955,7 @@
     var sl = b.dataset.slug, cd = b.closest(".card");
     if (st[sl]) { b.checked = true; cd.classList.add("is-sent"); }
     b.addEventListener("change", function () {
-      st[sl] = b.checked; cd.classList.toggle("is-sent", b.checked); save(st); up(st);
+      st[sl] = b.checked ? { t: new Date().toISOString() } : false; cd.classList.toggle("is-sent", b.checked); save(st); up(st);
     });
   });
   up(st);
@@ -3970,4 +3970,64 @@
     }, 120);
   });
 })();
+</script>
+
+<!-- Resumen del día → José (2026-09-24). Lee los "Enviado" guardados en este navegador y abre
+     el WhatsApp de José con el conteo de hoy. El vendedor aprieta enviar: nada es automático. -->
+<style id="estilo-resumen-dia">
+  body { padding-bottom: 96px; }
+  .resumen-dia {
+    position: fixed; right: 16px; bottom: 16px; z-index: 50;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 18px; border-radius: 999px; border: 0; cursor: pointer;
+    background: var(--accent); color: var(--accent-ink); text-decoration: none;
+    font-family: var(--font-body); font-size: .95rem; font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0,0,0,.28);
+  }
+  .resumen-dia:hover { background: var(--accent-strong); }
+  .resumen-dia small { font-weight: 500; opacity: .85; }
+</style>
+<a class="resumen-dia" id="resumenDia" href="#" target="_blank" rel="noopener" title="Arma el resumen de hoy y lo abre en el WhatsApp de José. Tú le das enviar.">Resumen del día → José <small id="resumenDiaHoy"></small></a>
+<script>
+  (function () {
+    var KEY = "outreach-sent-aaron-v1", VENDEDOR = "Aaron", JOSE = "51941571821", TOPE = 150;
+    var presentes = {}, total = 0;
+    document.querySelectorAll(".sent-checkbox").forEach(function (b) {
+      var sl = b.getAttribute("data-slug");
+      if (sl && !presentes[sl]) { presentes[sl] = true; total++; }
+    });
+    function leer() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+    // Acepta los dos formatos guardados: true (viejo) y {t: "<ISO>"} (desde el 24-sep-2026).
+    function esHoy(v) {
+      if (!v || typeof v !== "object" || !v.t) return false;
+      var d = new Date(v.t);
+      return !isNaN(d.getTime()) && d.toDateString() === new Date().toDateString();
+    }
+    function contar() {
+      var s = leer(), hoy = [], todos = 0;
+      Object.keys(s).forEach(function (k) {
+        if (!s[k] || !presentes[k]) return;
+        todos++;
+        if (esHoy(s[k])) hoy.push(k);
+      });
+      return { hoy: hoy, todos: todos };
+    }
+    function texto() {
+      var r = contar();
+      var fecha = new Date().toLocaleDateString("es-PE");
+      var lista = r.hoy.length ? r.hoy.slice(0, TOPE).join(", ") + (r.hoy.length > TOPE ? " (+" + (r.hoy.length - TOPE) + " más)" : "") : "ninguno";
+      return VENDEDOR + " · " + fecha + " · hoy " + r.hoy.length + " · total " + r.todos + "/" + total + " · " + lista;
+    }
+    var boton = document.getElementById("resumenDia"), chip = document.getElementById("resumenDiaHoy");
+    if (!boton) return;
+    function pintar() { chip.textContent = "(hoy " + contar().hoy.length + ")"; }
+    boton.addEventListener("click", function () {
+      // El href se arma recién al apretar, con lo marcado hasta ese momento.
+      boton.href = "https://wa.me/" + JOSE + "?text=" + encodeURIComponent(texto());
+    });
+    document.addEventListener("change", function (e) {
+      if (e.target && e.target.classList && e.target.classList.contains("sent-checkbox")) setTimeout(pintar, 0);
+    });
+    pintar();
+  })();
 </script>
