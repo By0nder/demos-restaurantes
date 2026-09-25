@@ -13082,24 +13082,31 @@
       var d = new Date(v.t);
       return !isNaN(d.getTime()) && d.toDateString() === new Date().toDateString();
     }
+    // Semana = desde el lunes 00:00 (2026-09-25).
+    function esSemana(v) {
+      if (!v || typeof v !== "object" || !v.t) return false;
+      var d = new Date(v.t), l = new Date(); l.setHours(0, 0, 0, 0); l.setDate(l.getDate() - ((l.getDay() + 6) % 7));
+      return !isNaN(d.getTime()) && d >= l;
+    }
     function contar() {
-      var s = leer(), hoy = [], todos = 0;
+      var s = leer(), hoy = [], todos = 0, semana = 0;
       Object.keys(s).forEach(function (k) {
         if (!s[k] || !presentes[k]) return;
         todos++;
         if (esHoy(s[k])) hoy.push(k);
+        if (esSemana(s[k])) semana++;
       });
-      return { hoy: hoy, todos: todos };
+      return { hoy: hoy, todos: todos, semana: semana };
     }
     function texto() {
       var r = contar();
       var fecha = new Date().toLocaleDateString("es-PE");
       var lista = r.hoy.length ? r.hoy.slice(0, TOPE).join(", ") + (r.hoy.length > TOPE ? " (+" + (r.hoy.length - TOPE) + " más)" : "") : "ninguno";
-      return VENDEDOR + " · " + fecha + " · hoy " + r.hoy.length + " · total " + r.todos + "/" + total + " · " + lista;
+      return VENDEDOR + " · " + fecha + " · hoy " + r.hoy.length + " · semana " + r.semana + " · total " + r.todos + "/" + total + " · " + lista;
     }
     var boton = document.getElementById("resumenDia"), chip = document.getElementById("resumenDiaHoy");
     if (!boton) return;
-    function pintar() { chip.textContent = "(hoy " + contar().hoy.length + ")"; }
+    function pintar() { var r = contar(); chip.textContent = "(hoy " + r.hoy.length + " · semana " + r.semana + ")"; }
     boton.addEventListener("click", function () {
       // El href se arma recién al apretar, con lo marcado hasta ese momento.
       boton.href = "https://wa.me/" + JOSE + "?text=" + encodeURIComponent(texto());
