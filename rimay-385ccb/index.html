@@ -1,0 +1,507 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Rimay — Midwar Cacya</title><style>@page { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #FFFFFF; }
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #14173A;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+b { font-weight: 700; }
+
+/* ---------- lámina ---------- */
+.slide {
+  width: 1280px; height: 720px; position: relative; overflow: hidden;
+  padding: 58px 80px 0; background: #FFFFFF;
+  break-after: page; page-break-after: always;
+}
+.slide:last-child { break-after: auto; page-break-after: auto; }
+.slide.dark { background: #14173A; color: #FFFFFF; }
+
+.tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
+  color: #3B47E0;
+}
+.tag .dot { width: 9px; height: 9px; border-radius: 50%; background: #FF5A3C; }
+.tag.on-dark { color: #A9B0FF; }
+
+.title {
+  font-family: "Bahnschrift", "Segoe UI", sans-serif; font-weight: 700;
+  font-size: 50px; line-height: 1.06; letter-spacing: -.01em; margin-top: 14px; color: #14173A;
+}
+.title.on-dark { color: #FFFFFF; }
+.mt32 { margin-top: 32px; } .mt40 { margin-top: 40px; } .mt48 { margin-top: 48px; }
+
+.pg { position: absolute; right: 80px; bottom: 26px; font-size: 12.5px; font-weight: 600; color: #9A9EB8; letter-spacing: .04em; }
+.pg span { color: #FF5A3C; }
+.dark .pg { color: #6E74A8; }
+.src { position: absolute; left: 80px; right: 260px; bottom: 26px; font-size: 11px; line-height: 1.35; color: #9A9EB8; }
+.dark .src { color: #6E74A8; }
+
+/* ---------- piezas comunes ---------- */
+.icbox {
+  width: 58px; height: 58px; border-radius: 16px; background: #E6E9FF; color: #3B47E0;
+  display: flex; align-items: center; justify-content: center; flex: none;
+}
+.icbox.coral { background: #FFE7E1; color: #FF5A3C; }
+.icbox.sm { width: 48px; height: 48px; border-radius: 13px; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.grid5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+
+.card { background: #F3F4FF; border-radius: 22px; padding: 30px 30px 32px; }
+.card.sm { padding: 26px 24px 28px; }
+.ct { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 27px; margin-top: 22px; }
+.cd { font-size: 17px; line-height: 1.42; color: #4E5374; margin-top: 10px; }
+.n2 { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 38px; color: #FF5A3C; margin-top: 20px; line-height: 1; letter-spacing: -.01em; }
+.card.sm .cd { font-size: 15.5px; }
+.n2.long { font-size: 30px; }
+
+.strip {
+  position: absolute; left: 80px; right: 80px; bottom: 74px;
+  background: #14173A; color: #FFFFFF; border-radius: 16px;
+  padding: 20px 28px; font-size: 20px; font-weight: 600;
+}
+.strip.soft { background: #F3F4FF; color: #14173A; }
+.strip.ghost { background: #FFFFFF; color: #14173A; }
+.strip b { color: #FF5A3C; }
+.strip.soft b { color: #3B47E0; }
+
+/* ---------- 1 portada ---------- */
+.cover { padding-top: 66px; }
+.cover-title { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 150px; line-height: 1; letter-spacing: -.03em; margin-top: 70px; }
+.cover-sub { font-size: 27px; line-height: 1.38; color: #C9CDF5; margin-top: 22px; }
+.cover-sub b { color: #FFFFFF; font-weight: 600; }
+.cover-wave { position: absolute; right: 78px; top: 214px; }
+.cover-foot { position: absolute; left: 80px; bottom: 56px; }
+.who { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 26px; }
+.who2 { font-size: 16px; color: #A9B0FF; margin-top: 4px; }
+.meaning { position: absolute; right: 80px; bottom: 60px; font-size: 16px; color: #8A90C8; font-style: italic; }
+.meaning b { color: #FF5A3C; font-style: normal; }
+
+/* ---------- 2 problema ---------- */
+.stat { background: #FFF6F3; border-radius: 24px; padding: 32px 36px 34px; }
+.big { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 84px; line-height: 1; color: #FF5A3C; margin-top: 22px; letter-spacing: -.02em; }
+.lbl { font-size: 20px; line-height: 1.35; color: #3E4366; margin-top: 12px; max-width: 470px; }
+
+/* ---------- 3 negocio ---------- */
+.chips { position: absolute; left: 80px; bottom: 78px; display: flex; align-items: center; gap: 12px; }
+.chip-lbl { font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #9A9EB8; margin-right: 6px; }
+.chip { background: #14173A; color: #FFFFFF; border-radius: 999px; padding: 10px 20px; font-size: 16.5px; font-weight: 600; }
+
+/* ---------- 4 flujo ---------- */
+.flow { display: flex; align-items: stretch; margin-top: 70px; }
+.step { flex: 1; background: #F3F4FF; border-radius: 20px; padding: 34px 18px 30px; text-align: center; position: relative; min-height: 250px; }
+.step.last { background: #FFF1ED; }
+.sn { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 50%; background: #14173A; color: #FFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.step.last .sn { background: #FF5A3C; }
+.sic { margin-top: 10px; }
+.st { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 21px; margin-top: 18px; line-height: 1.15; }
+.sd { font-size: 15.5px; color: #5C6180; margin-top: 10px; line-height: 1.38; }
+.sa { width: 38px; display: flex; align-items: center; justify-content: center; flex: none; }
+
+/* ---------- 5 monetización ---------- */
+.money { display: flex; gap: 26px; margin-top: 32px; align-items: stretch; }
+.price { flex: 1.6; background: #FF5A3C; border-radius: 24px; padding: 28px 36px; display: flex; align-items: center; gap: 30px; }
+.p-big { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 104px; line-height: 1; letter-spacing: -.02em; }
+.p-lbl { font-size: 23px; line-height: 1.3; font-weight: 600; }
+.zero { flex: 1; border: 2px dashed #3A4180; border-radius: 24px; padding: 28px 32px; display: flex; flex-direction: column; justify-content: center; }
+.z-big { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 64px; line-height: 1; color: #A9B0FF; }
+.z-lbl { font-size: 19px; color: #C9CDF5; margin-top: 8px; }
+.unit { display: flex; align-items: stretch; margin-top: 26px; }
+.u { flex: 1; background: #1E2250; border-radius: 18px; padding: 18px 24px; }
+.u.hl { background: #262B66; }
+.u-k { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8A90C8; }
+.u-v { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 38px; margin-top: 6px; line-height: 1.05; }
+.u.hl .u-v { color: #FF7A60; }
+.u-d { font-size: 15px; color: #B7BCE6; margin-top: 4px; }
+.ua { width: 44px; display: flex; align-items: center; justify-content: center; flex: none; }
+
+/* ---------- 6 proyección ---------- */
+.proj { display: flex; gap: 56px; margin-top: 40px; align-items: flex-end; }
+.assume { width: 330px; flex: none; background: #F3F4FF; border-radius: 22px; padding: 26px 28px; }
+.as-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: #FF5A3C; background: #FFE7E1; border-radius: 999px; padding: 5px 12px; margin-bottom: 16px; }
+.as-row { display: flex; align-items: center; gap: 16px; }
+.as-n { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 40px; line-height: 1; min-width: 104px; }
+.as-t { font-size: 15px; line-height: 1.3; color: #4E5374; }
+.as-x { font-size: 26px; color: #9A9EB8; margin: 8px 0 8px 34px; }
+.as-eq { height: 2px; background: #C9CDF0; margin: 16px 0; }
+.as-row.tot .as-n { color: #FF5A3C; }
+.bars { flex: 1; display: flex; align-items: flex-end; gap: 36px; height: 330px; }
+.bar { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+.bv { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 32px; margin-bottom: 10px; white-space: nowrap; }
+.bv small { font-size: 16px; color: #9A9EB8; font-weight: 600; margin-left: 2px; }
+.bb { width: 100%; border-radius: 14px 14px 4px 4px; background: #3B47E0; }
+.bar:last-child .bb { background: #FF5A3C; }
+.bl { font-size: 16.5px; font-weight: 600; color: #4E5374; margin-top: 12px; }
+
+/* ---------- 8 promotores ---------- */
+.promo { display: flex; gap: 40px; align-items: stretch; }
+.me { width: 360px; flex: none; background: #14173A; color: #FFF; border-radius: 24px; padding: 34px 32px; }
+.avatar { width: 96px; height: 96px; border-radius: 50%; background: #FF5A3C; display: flex; align-items: center; justify-content: center; font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 38px; }
+.me-n { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 30px; margin-top: 22px; }
+.me-r { font-size: 14px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: #FF7A60; margin-top: 6px; }
+.me-d { font-size: 17px; color: #C9CDF5; margin-top: 6px; }
+.me-u { display: flex; align-items: center; gap: 8px; font-size: 14.5px; color: #A9B0FF; margin-top: 22px; padding-top: 18px; border-top: 1px solid #2C3170; }
+.me-u svg { stroke: #A9B0FF; }
+.rows { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+.row { flex: 1; display: flex; align-items: center; gap: 22px; background: #F3F4FF; border-radius: 20px; padding: 0 28px; }
+.row b { display: block; font-family: "Bahnschrift", sans-serif; font-size: 22px; }
+.row span { display: block; font-size: 16.5px; color: #4E5374; margin-top: 4px; line-height: 1.35; }
+
+/* ---------- 9 misión y visión ---------- */
+.split { display: flex; padding: 0; }
+.half { flex: 1; padding: 64px 64px 0 80px; position: relative; }
+.half + .half { padding-left: 64px; padding-right: 80px; }
+.dark-half { background: #14173A; color: #FFF; }
+.mv-ic { margin-top: 70px; }
+.mv-t { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 38px; line-height: 1.22; margin-top: 26px; color: #FFFFFF; }
+.mv-t.dark-t { color: #14173A; font-size: 34px; }
+
+/* ---------- 10 claves ---------- */
+.key { background: #F3F4FF; border-radius: 20px; padding: 26px 22px 30px; position: relative; min-height: 290px; }
+.k-n { position: absolute; top: 22px; right: 22px; font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 20px; color: #C3C8EE; }
+.k-t { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 21px; line-height: 1.15; margin-top: 20px; }
+.k-d { font-size: 15px; line-height: 1.4; color: #4E5374; margin-top: 10px; }
+
+/* ---------- 11 riesgos ---------- */
+.risks { display: flex; flex-direction: column; gap: 12px; }
+.risk { display: grid; grid-template-columns: 50px 440px 40px 1fr; align-items: center; background: #F7F8FF; border-radius: 16px; padding: 14px 22px; min-height: 72px; }
+.r-ic { width: 38px; height: 38px; border-radius: 11px; background: #FFE7E1; display: flex; align-items: center; justify-content: center; }
+.r-t { font-size: 17.5px; font-weight: 700; line-height: 1.3; padding-right: 12px; }
+.r-a { display: flex; justify-content: center; }
+.r-m { font-size: 16px; line-height: 1.38; color: #3E4366; }
+
+/* ---------- 13 cierre ---------- */
+.end { display: flex; flex-direction: column; justify-content: center; padding-top: 0; }
+.end-wave { position: absolute; left: 80px; top: 70px; }
+.end-big { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 110px; line-height: 1; letter-spacing: -.02em; color: #FF5A3C; margin-top: 40px; }
+.end-sub { font-family: "Bahnschrift", sans-serif; font-weight: 700; font-size: 44px; margin-top: 18px; }
+.end-name { position: absolute; left: 80px; bottom: 60px; font-size: 17px; color: #A9B0FF; }
+.end-name b { color: #FFF; }
+
+html,body{margin:0;height:100%;background:#0B0D24;overflow:hidden}
+#deck{position:absolute;left:50%;top:50%;width:1280px;height:720px;transform-origin:center center}
+#deck .slide{position:absolute;left:0;top:0;visibility:hidden;break-after:auto;page-break-after:auto}
+#deck .slide.on{visibility:visible}
+#hint{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:rgba(20,23,58,.92);color:#fff;
+  font:600 14px "Segoe UI",sans-serif;padding:10px 18px;border-radius:999px;transition:opacity .6s;z-index:9}
+#hint b{color:#FF7A60}
+#pdf{position:fixed;right:14px;top:12px;font:600 12px "Segoe UI",sans-serif;color:#8A90C8;text-decoration:none;z-index:9;opacity:.55}
+#pdf:hover{opacity:1}
+@media print{#hint,#pdf{display:none}}</style></head><body><a id="pdf" href="Rimay-Midwar-Cacya.pdf" target="_blank">Descargar PDF</a><div id="deck"><section class="slide dark cover">
+  <div class="tag on-dark"><span class="dot"></span>Formación de Empresas · UNMSM</div>
+  <div class="cover-title">Rimay</div>
+  <div class="cover-sub">La recepcionista con inteligencia artificial<br>que <b>cobra solo cuando consigue la cita</b>.</div>
+  <div class="cover-wave"><svg width="470" height="190" viewBox="0 0 470 190"><rect x="0.0" y="74.1" width="9.8" height="41.8" rx="4.9" fill="#5B67FF"/><rect x="21.4" y="57.0" width="9.8" height="76.0" rx="4.9" fill="#FF5A3C"/><rect x="42.7" y="32.3" width="9.8" height="125.4" rx="4.9" fill="#5B67FF"/><rect x="64.1" y="7.6" width="9.8" height="174.8" rx="4.9" fill="#5B67FF"/><rect x="85.5" y="39.9" width="9.8" height="110.2" rx="4.9" fill="#FF5A3C"/><rect x="106.8" y="64.6" width="9.8" height="60.8" rx="4.9" fill="#5B67FF"/><rect x="128.2" y="20.9" width="9.8" height="148.2" rx="4.9" fill="#5B67FF"/><rect x="149.5" y="0.0" width="9.8" height="190.0" rx="4.9" fill="#FF5A3C"/><rect x="170.9" y="45.6" width="9.8" height="98.8" rx="4.9" fill="#5B67FF"/><rect x="192.3" y="68.4" width="9.8" height="53.2" rx="4.9" fill="#5B67FF"/><rect x="213.6" y="36.1" width="9.8" height="117.8" rx="4.9" fill="#FF5A3C"/><rect x="235.0" y="11.4" width="9.8" height="167.2" rx="4.9" fill="#5B67FF"/><rect x="256.4" y="51.3" width="9.8" height="87.4" rx="4.9" fill="#5B67FF"/><rect x="277.7" y="72.2" width="9.8" height="45.6" rx="4.9" fill="#FF5A3C"/><rect x="299.1" y="58.9" width="9.8" height="72.2" rx="4.9" fill="#5B67FF"/><rect x="320.5" y="26.6" width="9.8" height="136.8" rx="4.9" fill="#5B67FF"/><rect x="341.8" y="55.1" width="9.8" height="79.8" rx="4.9" fill="#FF5A3C"/><rect x="363.2" y="76.0" width="9.8" height="38.0" rx="4.9" fill="#5B67FF"/><rect x="384.5" y="62.7" width="9.8" height="64.6" rx="4.9" fill="#5B67FF"/><rect x="405.9" y="41.8" width="9.8" height="106.4" rx="4.9" fill="#FF5A3C"/><rect x="427.3" y="66.5" width="9.8" height="57.0" rx="4.9" fill="#5B67FF"/><rect x="448.6" y="79.8" width="9.8" height="30.4" rx="4.9" fill="#5B67FF"/></svg></div>
+  <div class="cover-foot">
+    <div class="who">Midwar Cacya</div>
+    <div class="who2">Ingeniería de Software · FISI</div>
+  </div>
+  <div class="meaning"><b>rimay</b> — «hablar» en quechua</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>La idea de negocio · el problema</div>
+  <h1 class="title">Los negocios pierden clientes<br>por el teléfono</h1>
+  <div class="grid2 mt48">
+    <div class="stat">
+      <div class="icbox coral"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="22" y1="2" x2="16" y2="8"/><line x1="16" y1="2" x2="22" y2="8"/></svg></div>
+      <div class="big">4 de 10</div>
+      <div class="lbl">llamadas a un negocio llegan fuera del horario de atención</div>
+    </div>
+    <div class="stat">
+      <div class="icbox coral"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" y1="8" x2="22" y2="13"/><line x1="22" y1="8" x2="17" y2="13"/></svg></div>
+      <div class="big">1 de 5</div>
+      <div class="lbl">pacientes no llega a su cita en el Perú. El motivo número uno: se olvidó.</div>
+    </div>
+  </div>
+  <div class="strip">Cada llamada perdida y cada silla vacía es plata que no entra.</div>
+  <div class="src">Ruby Receptionists, análisis de 25 millones de llamadas (EE. UU., 2022) · Hospital Nacional Daniel A. Carrión, Horizonte Médico (USMP), 2024: 19.6% de inasistencia en 15,088 citas; olvido, 29.6% de los casos.</div>
+  <div class="pg">Rimay <span>·</span> 02</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>1 · El negocio</div>
+  <h1 class="title">Rimay contesta, agenda y confirma.<br>Solo.</h1>
+  <div class="grid3 mt48">
+    <div class="card">
+      <div class="icbox"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <div class="ct">Contesta</div>
+      <div class="cd">Las llamadas que nadie alcanza a atender. Las 24 horas.</div>
+    </div>
+    <div class="card">
+      <div class="icbox"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg></div>
+      <div class="ct">Agenda</div>
+      <div class="cd">Busca un horario libre y separa la cita en la agenda.</div>
+    </div>
+    <div class="card">
+      <div class="icbox"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+      <div class="ct">Confirma</div>
+      <div class="cd">Llama un día antes. Si el cliente no puede, la reprograma.</div>
+    </div>
+  </div>
+  <div class="chips">
+    <span class="chip-lbl">Para</span>
+    <span class="chip">Clínicas dentales</span><span class="chip">Consultorios</span><span class="chip">Veterinarias</span><span class="chip">Talleres</span>
+  </div>
+  <div class="pg">Rimay <span>·</span> 03</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>1 · El negocio</div>
+  <h1 class="title">Así funciona</h1>
+  <div class="flow">
+    <div class="step">
+        <div class="sn">1</div>
+        <div class="sic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3B47E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="st">El cliente llama</div>
+        <div class="sd">a cualquier hora</div>
+      </div><div class="sa"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div><div class="step">
+        <div class="sn">2</div>
+        <div class="sic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3B47E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
+        <div class="st">Rimay responde</div>
+        <div class="sd">voz natural, en peruano</div>
+      </div><div class="sa"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div><div class="step">
+        <div class="sn">3</div>
+        <div class="sic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3B47E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg></div>
+        <div class="st">Cita en la agenda</div>
+        <div class="sd">sin que nadie toque nada</div>
+      </div><div class="sa"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div><div class="step">
+        <div class="sn">4</div>
+        <div class="sic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#3B47E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></div>
+        <div class="st">Confirma un día antes</div>
+        <div class="sd">y reprograma si hace falta</div>
+      </div><div class="sa"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div><div class="step last">
+        <div class="sn">5</div>
+        <div class="sic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FF5A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></div>
+        <div class="st">Se cobra la cita</div>
+        <div class="sd">solo si se consiguió</div>
+      </div>
+  </div>
+  <div class="strip soft">El dueño solo mira su agenda llenarse.</div>
+  <div class="pg">Rimay <span>·</span> 04</div>
+</section>
+<section class="slide dark">
+  <div class="tag on-dark"><span class="dot"></span>¿Cómo voy a monetizar?</div>
+  <h1 class="title on-dark">Pagas por cita, no por mes.</h1>
+  <div class="money">
+    <div class="price">
+      <div class="p-big">S/ 10</div>
+      <div class="p-lbl">por cada cita que Rimay<br>agenda o rescata</div>
+    </div>
+    <div class="zero">
+      <div class="z-big">S/ 0</div>
+      <div class="z-lbl">si no consigue ninguna</div>
+    </div>
+  </div>
+  <div class="unit">
+    <div class="u"><div class="u-k">Nos cuesta</div><div class="u-v">S/ 2.50</div><div class="u-d">unas 2 llamadas de IA</div></div>
+    <div class="ua"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6F78C9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    <div class="u hl"><div class="u-k">Cobramos</div><div class="u-v">S/ 10</div><div class="u-d">por cita conseguida</div></div>
+    <div class="ua"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6F78C9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    <div class="u"><div class="u-k">El negocio gana</div><div class="u-v">S/ 40–150</div><div class="u-d">una consulta dental en Lima</div></div>
+  </div>
+  <div class="strip ghost">Una recepcionista en Lima cuesta <b>~S/ 1,800 al mes</b> con beneficios y atiende 8 horas. Rimay cubre las 24 y cobra solo por cita.</div>
+  <div class="src">Costo por llamada: Retell AI / ElevenLabs (US$ 0.07–0.08/min) + Twilio a celular de Perú (US$ 0.074/min), 2026 · T.C. S/ 3.42 (BCRP) · Consulta dental en Lima, 2026 · Recepcionista: S/ 1,332 promedio (Computrabajo) + beneficios de ley.</div>
+  <div class="pg">Rimay <span>·</span> 05</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>¿Cómo voy a monetizar?</div>
+  <h1 class="title">Crece sin contratar a nadie</h1>
+  <div class="proj">
+    <div class="assume">
+      <div class="as-tag">Supuesto</div>
+      <div class="as-row"><span class="as-n">20</span><span class="as-t">citas al mes<br>por negocio</span></div>
+      <div class="as-x">×</div>
+      <div class="as-row"><span class="as-n">S/ 10</span><span class="as-t">por cita</span></div>
+      <div class="as-eq"></div>
+      <div class="as-row tot"><span class="as-n">S/ 200</span><span class="as-t">al mes<br>por negocio</span></div>
+    </div>
+    <div class="bars">
+      <div class="bar">
+        <div class="bv">S/ 2,000<small>/mes</small></div>
+        <div class="bb" style="height:28px"></div>
+        <div class="bl">10 negocios</div>
+      </div><div class="bar">
+        <div class="bv">S/ 10,000<small>/mes</small></div>
+        <div class="bb" style="height:63px"></div>
+        <div class="bl">50 negocios</div>
+      </div><div class="bar">
+        <div class="bv">S/ 40,000<small>/mes</small></div>
+        <div class="bb" style="height:250px"></div>
+        <div class="bl">200 negocios</div>
+      </div>
+    </div>
+  </div>
+  <div class="strip soft">Atender al negocio 200 cuesta casi lo mismo que atender al primero: la IA no se cansa.</div>
+  <div class="pg">Rimay <span>·</span> 06</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>2 · ¿Por qué este negocio?</div>
+  <h1 class="title">Funciona afuera.<br>Acá nadie cobra así.</h1>
+  <div class="grid4 mt40">
+    <div class="card sm">
+      <div class="icbox"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <div class="n2 long">US$ 15,800 M</div>
+      <div class="cd">vale Sierra (EE. UU.), que cobra solo cuando su IA resuelve</div>
+    </div><div class="card sm">
+      <div class="icbox"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="n2">0</div>
+      <div class="cd">empresas en Perú o Latinoamérica que cobren por cita conseguida</div>
+    </div><div class="card sm">
+      <div class="icbox"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9h18"/><path d="M9 20v-6h6v6"/></svg></div>
+      <div class="n2">+80 mil</div>
+      <div class="cd">talleres y veterinarias en el Perú, sin contar clínicas ni consultorios</div>
+    </div><div class="card sm">
+      <div class="icbox"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="n2">S/ 1.20</div>
+      <div class="cd">cuesta hoy una llamada de 2 minutos con IA. El cobro por cita deja margen</div>
+    </div>
+  </div>
+  <div class="strip">El modelo ya está probado afuera. En el Perú, nadie lo aplica a las citas.</div>
+  <div class="src">Sierra: TechCrunch, 4-may-2026 · Más de 20 proveedores revisados en Perú, México, Chile y Brasil (sep-2026) · AAP: 78,000 talleres; Euromonitor: ~4,950 veterinarias · Llamada: precios públicos de Retell, ElevenLabs y Twilio (2026).</div>
+  <div class="pg">Rimay <span>·</span> 07</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>3 · Los promotores</div>
+  <h1 class="title">Un fundador que ya le vende<br>a este cliente</h1>
+  <div class="promo mt40">
+    <div class="me">
+      <div class="avatar">MC</div>
+      <div class="me-n">Midwar Cacya</div>
+      <div class="me-r">Fundador</div>
+      <div class="me-d">Producto, tecnología y ventas</div>
+      <div class="me-u"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6A70A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Ingeniería de Software · FISI-UNMSM</div>
+    </div>
+    <div class="rows">
+      <div class="row"><div class="icbox sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><b>Construye el producto</b><span>Desarrolla software con inteligencia artificial.</span></div></div>
+      <div class="row"><div class="icbox sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M3 9h18"/><path d="M9 20v-6h6v6"/></svg></div><div><b>Ya vende a negocios locales</b><span>Clínicas, talleres y veterinarias: el mismo cliente de Rimay.</span></div></div>
+      <div class="row"><div class="icbox sm"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><b>Tiene el acceso</b><span>Una base propia de más de 4,000 negocios locales.</span></div></div>
+    </div>
+  </div>
+  <div class="pg">Rimay <span>·</span> 08</div>
+</section>
+<section class="slide split">
+  <div class="half dark-half">
+    <div class="tag on-dark"><span class="dot"></span>4 · Misión</div>
+    <div class="mv-ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#FF5A3C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+    <div class="mv-t">Que ningún negocio pierda un cliente por no contestar el teléfono.</div>
+  </div>
+  <div class="half">
+    <div class="tag"><span class="dot"></span>5 · Visión</div>
+    <div class="mv-ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#3B47E0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+    <div class="mv-t dark-t">Ser la recepcionista de los negocios de servicios de Latinoamérica, y el primer software que cobra solo cuando funciona.</div>
+  </div>
+  <div class="pg">Rimay <span>·</span> 09</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>6 · Puntos claves para el éxito</div>
+  <h1 class="title">Lo que tiene que salir bien</h1>
+  <div class="grid5 mt48">
+    <div class="key">
+      <div class="k-n">1</div>
+      <div class="icbox"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></div>
+      <div class="k-t">Cobro por resultado</div>
+      <div class="k-d">El negocio no arriesga nada: si no hay cita, no paga.</div>
+    </div><div class="key">
+      <div class="k-n">2</div>
+      <div class="icbox"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></div>
+      <div class="k-t">Una voz que suene peruana</div>
+      <div class="k-d">Si suena a robot extranjero, la gente cuelga.</div>
+    </div><div class="key">
+      <div class="k-n">3</div>
+      <div class="icbox"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="k-t">Acceso directo al cliente</div>
+      <div class="k-d">Empezar por negocios que ya nos conocen.</div>
+    </div><div class="key">
+      <div class="k-n">4</div>
+      <div class="icbox"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div>
+      <div class="k-t">Usar lo que ya tienen</div>
+      <div class="k-d">Su WhatsApp y su agenda, sin cambiar de sistema.</div>
+    </div><div class="key">
+      <div class="k-n">5</div>
+      <div class="icbox"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <div class="k-t">Cumplir la ley desde el diseño</div>
+      <div class="k-d">Solo llama a quien ya es cliente o dio permiso.</div>
+    </div>
+  </div>
+  <div class="strip">La innovación no es el bot: es cobrar solo cuando funciona.</div>
+  <div class="pg">Rimay <span>·</span> 10</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>7 · Riesgos</div>
+  <h1 class="title">Riesgos y cómo se responden</h1>
+  <div class="risks mt32">
+    <div class="risk">
+      <div class="r-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></div>
+      <div class="r-t">Ley 32323: llamar para vender sin permiso se multa con hasta 450 UIT</div>
+      <div class="r-a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="r-m">Rimay solo contesta, agenda y confirma. Para promociones, primero pide permiso.</div>
+    </div><div class="risk">
+      <div class="r-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+      <div class="r-t">Ya hay quien vende recepcionistas con IA en el Perú</div>
+      <div class="r-a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="r-m">Ninguno cobra por resultado. Rimay cobra solo por cita conseguida.</div>
+    </div><div class="risk">
+      <div class="r-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <div class="r-t">Sin empresa, no dan un número telefónico peruano</div>
+      <div class="r-a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="r-m">Se llama con el número del propio negocio, verificado.</div>
+    </div><div class="risk">
+      <div class="r-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div>
+      <div class="r-t">El costo por minuto de la IA</div>
+      <div class="r-a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="r-m">El precio por cita se fija sobre el costo medido en el piloto.</div>
+    </div><div class="risk">
+      <div class="r-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5A3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="r-t">Gente que no quiere hablar con una máquina</div>
+      <div class="r-a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B7BCE6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="r-m">Avisa que es un asistente y pasa la llamada a una persona.</div>
+    </div>
+  </div>
+  <div class="src">Ley 32323 (El Peruano, 2025) · UIT 2026: S/ 5,500 (D.S. 301-2025-EF): 450 UIT ≈ S/ 2.5 millones · Twilio no vende números locales ni móviles de Perú (twilio.com, 2026).</div>
+  <div class="pg">Rimay <span>·</span> 11</div>
+</section>
+<section class="slide">
+  <div class="tag"><span class="dot"></span>Lo que sigue en el curso</div>
+  <h1 class="title">Un proyecto que alcanza<br>para todo el ciclo</h1>
+  <div class="grid3 mt48">
+    <div class="card">
+      <div class="icbox"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+      <div class="ct">Experiencia de usuario</div>
+      <div class="cd">El panel del negocio: sus citas, sus llamadas y lo que paga.</div>
+    </div>
+    <div class="card">
+      <div class="icbox"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></div>
+      <div class="ct">Procesos en Bizagi</div>
+      <div class="cd">El flujo principal: llamada, cita, confirmación y cobro.</div>
+    </div>
+    <div class="card">
+      <div class="icbox"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+      <div class="ct">Arquitectura</div>
+      <div class="cd">Telefonía, IA de voz y nube, con sus planes y costos.</div>
+    </div>
+  </div>
+  <div class="strip soft"><b>Prototipo para la exposición:</b> una llamada en vivo donde Rimay agenda una cita.</div>
+  <div class="pg">Rimay <span>·</span> 12</div>
+</section>
+<section class="slide dark end">
+  <div class="end-wave"><svg width="1120" height="120" viewBox="0 0 1120 120"><rect x="0.0" y="46.8" width="12.9" height="26.4" rx="6.4" fill="#2C3170"/><rect x="28.0" y="36.0" width="12.9" height="48.0" rx="6.4" fill="#3A2F5A"/><rect x="56.0" y="20.4" width="12.9" height="79.2" rx="6.4" fill="#2C3170"/><rect x="84.0" y="4.8" width="12.9" height="110.4" rx="6.4" fill="#2C3170"/><rect x="112.0" y="25.2" width="12.9" height="69.6" rx="6.4" fill="#3A2F5A"/><rect x="140.0" y="40.8" width="12.9" height="38.4" rx="6.4" fill="#2C3170"/><rect x="168.0" y="13.2" width="12.9" height="93.6" rx="6.4" fill="#2C3170"/><rect x="196.0" y="0.0" width="12.9" height="120.0" rx="6.4" fill="#3A2F5A"/><rect x="224.0" y="28.8" width="12.9" height="62.4" rx="6.4" fill="#2C3170"/><rect x="252.0" y="43.2" width="12.9" height="33.6" rx="6.4" fill="#2C3170"/><rect x="280.0" y="22.8" width="12.9" height="74.4" rx="6.4" fill="#3A2F5A"/><rect x="308.0" y="7.2" width="12.9" height="105.6" rx="6.4" fill="#2C3170"/><rect x="336.0" y="32.4" width="12.9" height="55.2" rx="6.4" fill="#2C3170"/><rect x="364.0" y="45.6" width="12.9" height="28.8" rx="6.4" fill="#3A2F5A"/><rect x="392.0" y="37.2" width="12.9" height="45.6" rx="6.4" fill="#2C3170"/><rect x="420.0" y="16.8" width="12.9" height="86.4" rx="6.4" fill="#2C3170"/><rect x="448.0" y="34.8" width="12.9" height="50.4" rx="6.4" fill="#3A2F5A"/><rect x="476.0" y="48.0" width="12.9" height="24.0" rx="6.4" fill="#2C3170"/><rect x="504.0" y="39.6" width="12.9" height="40.8" rx="6.4" fill="#2C3170"/><rect x="532.0" y="26.4" width="12.9" height="67.2" rx="6.4" fill="#3A2F5A"/><rect x="560.0" y="42.0" width="12.9" height="36.0" rx="6.4" fill="#2C3170"/><rect x="588.0" y="50.4" width="12.9" height="19.2" rx="6.4" fill="#2C3170"/><rect x="616.0" y="46.8" width="12.9" height="26.4" rx="6.4" fill="#3A2F5A"/><rect x="644.0" y="36.0" width="12.9" height="48.0" rx="6.4" fill="#2C3170"/><rect x="672.0" y="20.4" width="12.9" height="79.2" rx="6.4" fill="#2C3170"/><rect x="700.0" y="4.8" width="12.9" height="110.4" rx="6.4" fill="#3A2F5A"/><rect x="728.0" y="25.2" width="12.9" height="69.6" rx="6.4" fill="#2C3170"/><rect x="756.0" y="40.8" width="12.9" height="38.4" rx="6.4" fill="#2C3170"/><rect x="784.0" y="13.2" width="12.9" height="93.6" rx="6.4" fill="#3A2F5A"/><rect x="812.0" y="0.0" width="12.9" height="120.0" rx="6.4" fill="#2C3170"/><rect x="840.0" y="28.8" width="12.9" height="62.4" rx="6.4" fill="#2C3170"/><rect x="868.0" y="43.2" width="12.9" height="33.6" rx="6.4" fill="#3A2F5A"/><rect x="896.0" y="22.8" width="12.9" height="74.4" rx="6.4" fill="#2C3170"/><rect x="924.0" y="7.2" width="12.9" height="105.6" rx="6.4" fill="#2C3170"/><rect x="952.0" y="32.4" width="12.9" height="55.2" rx="6.4" fill="#3A2F5A"/><rect x="980.0" y="45.6" width="12.9" height="28.8" rx="6.4" fill="#2C3170"/><rect x="1008.0" y="37.2" width="12.9" height="45.6" rx="6.4" fill="#2C3170"/><rect x="1036.0" y="16.8" width="12.9" height="86.4" rx="6.4" fill="#3A2F5A"/><rect x="1064.0" y="34.8" width="12.9" height="50.4" rx="6.4" fill="#2C3170"/><rect x="1092.0" y="48.0" width="12.9" height="24.0" rx="6.4" fill="#2C3170"/></svg></div>
+  <div class="end-big">S/ 10 por cita.</div>
+  <div class="end-sub">Si no consigue la cita, no cobra.</div>
+  <div class="end-name"><b>Rimay</b> · Midwar Cacya · Formación de Empresas</div>
+</section></div><div id="hint">Usa <b>← →</b> para pasar · <b>F</b> para pantalla completa</div><script>
+const sl=[...document.querySelectorAll('#deck .slide')];let i=0;
+const deck=document.getElementById('deck');
+function fit(){const s=Math.min(innerWidth/1280,innerHeight/720);deck.style.transform='translate(-50%,-50%) scale('+s+')'}
+function go(n){i=Math.max(0,Math.min(sl.length-1,n));sl.forEach((s,k)=>s.classList.toggle('on',k===i));location.hash=i+1}
+addEventListener('resize',fit);
+addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' ','Enter','ArrowDown'].includes(e.key)){e.preventDefault();go(i+1)}
+  else if(['ArrowLeft','PageUp','Backspace','ArrowUp'].includes(e.key)){e.preventDefault();go(i-1)}
+  else if(e.key==='Home')go(0);else if(e.key==='End')go(sl.length-1);
+  else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
+});
+addEventListener('click',e=>{if(e.target.closest('#pdf'))return;e.clientX>innerWidth/2?go(i+1):go(i-1)});
+fit();go((parseInt(location.hash.slice(1))||1)-1);
+setTimeout(()=>document.getElementById('hint').style.opacity=0,4500);</script></body></html>
