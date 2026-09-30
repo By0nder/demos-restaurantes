@@ -1,0 +1,111 @@
+{
+  "nombre": "AR MOTORS",
+  "ciudad": "Trujillo",
+  "whatsapp": "51972110957",
+  "direccion": "Av. Larco 2160",
+  "horario": "",
+  "heroTitulo": "SU CARRO,\nEN MARCHA.",
+  "heroTexto": "Mantenimiento, diagnóstico y reparación en Trujillo. Cuéntenos qué le pasa a su carro y encontremos el siguiente paso.",
+  "heroFoto": "assets/img/motor.jpg",
+  "tallerFoto": "assets/img/taller.jpg",
+  "preview": true,
+  "servicios": [
+    {
+      "id": "mantenimiento",
+      "categoria": "Mantenimiento",
+      "nombre": "Afinamiento de motor",
+      "sintoma": "¿Jalonea o consume más combustible?",
+      "descripcion": "Consulte por una revisión y afinamiento según el estado de su motor.",
+      "incluye": [
+        "Bujías, filtros e inyección",
+        "Atención según el vehículo"
+      ],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "frenos",
+      "categoria": "Reparación",
+      "nombre": "Sistema de frenos",
+      "sintoma": "¿Chilla o vibra al frenar?",
+      "descripcion": "Revisión del sistema de frenos para identificar el origen del ruido o la vibración.",
+      "incluye": [
+        "Pastillas y discos",
+        "Consulta sobre rectificado"
+      ],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "suspension",
+      "categoria": "Reparación",
+      "nombre": "Suspensión y dirección",
+      "sintoma": "¿Suena en los baches o se va de lado?",
+      "descripcion": "Consulte por amortiguadores, rótulas y componentes de dirección.",
+      "incluye": [
+        "Revisión de componentes",
+        "Diagnóstico del ruido"
+      ],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "escaner",
+      "categoria": "Diagnóstico",
+      "nombre": "Diagnóstico por escáner",
+      "sintoma": "¿Se encendió el check engine?",
+      "descripcion": "La lectura de fallas ayuda a orientar la revisión del vehículo.",
+      "incluye": [
+        "Lectura de códigos",
+        "Orientación sobre la revisión"
+      ],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "aceite",
+      "categoria": "Mantenimiento",
+      "nombre": "Cambio de aceite y filtros",
+      "sintoma": "¿Ya toca el próximo cambio?",
+      "descripcion": "Consulte el aceite y los filtros adecuados para la marca y modelo de su carro.",
+      "incluye": [
+        "Aceite según especificación",
+        "Revisión del filtro"
+      ],
+      "precio": "",
+      "destacado": false
+    }
+  ],
+  "pasos": [
+    {
+      "titulo": "Cuéntenos qué le pasa",
+      "texto": "Envíe la marca, el modelo y lo que ha notado. Coordinamos la revisión por WhatsApp."
+    },
+    {
+      "titulo": "Conozca el trabajo a realizar",
+      "texto": "La revisión permite explicar lo que necesita el vehículo y preparar su cotización."
+    },
+    {
+      "titulo": "Coordine los siguientes pasos",
+      "texto": "Con la cotización a la mano, converse con el taller sobre el trabajo y la entrega."
+    }
+  ],
+  "preguntas": [
+    {
+      "pregunta": "¿Cómo puedo cotizar un servicio?",
+      "respuesta": "Escríbanos por WhatsApp con la marca, el modelo y una descripción de lo que necesita. Puede usar el formulario de esta página para preparar el mensaje."
+    },
+    {
+      "pregunta": "¿Tengo que llevar el vehículo para saber el precio?",
+      "respuesta": "Depende del servicio. Para un mantenimiento puede indicar la marca y el modelo; si existe una falla, la revisión del vehículo permite precisar el trabajo."
+    },
+    {
+      "pregunta": "¿Puedo consultar antes de ir al taller?",
+      "respuesta": "Sí. Escriba por WhatsApp para consultar disponibilidad y coordinar su visita a Av. Larco 2160, Trujillo."
+    }
+  ],
+  "sheets": {
+    "ajustes": "",
+    "servicios": ""
+  }
+}
