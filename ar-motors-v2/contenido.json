@@ -2,8 +2,9 @@
   "nombre": "AR MOTORS",
   "ciudad": "Trujillo",
   "whatsapp": "51972110957",
-  "direccion": "Av. Larco 2160",
-  "horario": "",
+  "direccion": "Urb. Natasha Alta, Mz. O, Lt. 09",
+  "horario": "Lunes a viernes: 8:00 a. m. – 6:00 p. m.\nSábado: 8:00 a. m. – 1:00 p. m.",
+  "referencia": "Por la Corte, frente al Hotel AWQA",
   "heroTitulo": "SU CARRO,\nEN MARCHA.",
   "heroTexto": "Mantenimiento, diagnóstico y reparación en Trujillo. Cuéntenos qué le pasa a su carro y encontremos el siguiente paso.",
   "heroFoto": "assets/img/motor.jpg",
@@ -101,7 +102,7 @@
     },
     {
       "pregunta": "¿Puedo consultar antes de ir al taller?",
-      "respuesta": "Sí. Escriba por WhatsApp para consultar disponibilidad y coordinar su visita a Av. Larco 2160, Trujillo."
+      "respuesta": "Sí. Escriba por WhatsApp para consultar disponibilidad y coordinar su visita a Urb. Natasha Alta, Mz. O, Lt. 09, Trujillo."
     }
   ],
   "sheets": {
