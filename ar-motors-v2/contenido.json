@@ -1,82 +1,362 @@
 {
   "nombre": "AR MOTORS",
   "ciudad": "Trujillo",
+  "region": "La Libertad",
   "whatsapp": "51972110957",
   "direccion": "Urb. Natasha Alta, Mz. O, Lt. 09",
   "horario": "Lunes a viernes: 8:00 a. m. – 6:00 p. m.\nSábado: 8:00 a. m. – 1:00 p. m.",
   "referencia": "Por la Corte, frente al Hotel AWQA",
   "heroTitulo": "SU CARRO,\nEN MARCHA.",
   "heroTexto": "Mantenimiento, diagnóstico y reparación en Trujillo. Cuéntenos qué le pasa a su carro y encontremos el siguiente paso.",
-  "heroFoto": "assets/img/motor.jpg",
-  "tallerFoto": "assets/img/taller.jpg",
+  "heroEtiqueta": "MECÁNICA CLARA · AR MOTORS",
+  "heroLinea": "Taller automotriz en Trujillo",
+  "heroFoto": "assets/cliente/hero.jpg",
+  "heroAlt": "Interior del taller AR Motors en Trujillo, con vehículos en revisión",
+  "tallerFoto": "assets/cliente/taller.jpg",
+  "tallerAlt": "Técnico de AR Motors revisando el motor de un vehículo",
+  "fachadaFoto": "assets/cliente/fachada.jpg",
+  "fachadaAlt": "Fachada de AR Motors en Urb. Natasha Alta, Trujillo",
+  "logo": "assets/cliente/logo.png",
+  "logoAncho": 215,
+  "logoAlto": 60,
+  "iconos": {
+    "p32": "assets/cliente/icono-32.png",
+    "p180": "assets/cliente/icono-180.png",
+    "p512": "assets/cliente/icono-512.png"
+  },
+  "ogImagen": "assets/cliente/og.jpg",
+  "titulo": "AR Motors | Taller automotriz en Trujillo",
+  "metaDescripcion": "Taller automotriz en Trujillo: Revisión 360 desde S/ 99, frenos desde S/ 89, afinamiento y paquetes de mantenimiento, también diésel. Cotice por WhatsApp.",
+  "lemaPie": "Nivel de servicio que su motor merece.",
+  "acento": {
+    "fondo": "#d90000",
+    "hover": "#b30000",
+    "texto": "#ffffff",
+    "foco": "#e00000",
+    "vivo": "#fc0000"
+  },
+  "redes": {},
   "preview": true,
+  "sitioUrl": "",
   "servicios": [
     {
-      "id": "mantenimiento",
-      "categoria": "Mantenimiento",
-      "nombre": "Afinamiento de motor",
-      "sintoma": "¿Jalonea o consume más combustible?",
-      "descripcion": "Consulte por una revisión y afinamiento según el estado de su motor.",
+      "id": "revision-360",
+      "slug": "revision-360",
+      "categoria": "Paquetes",
+      "nombre": "Revisión 360",
+      "sintoma": "¿Quiere saber cómo está su carro?",
+      "descripcion": "Todo lo que su vehículo necesita, en una revisión completa.",
       "incluye": [
-        "Bujías, filtros e inyección",
-        "Atención según el vehículo"
+        "Revisión completa de frenos",
+        "Revisión de fluidos: aceite, líquido de frenos y refrigerante",
+        "Inspección de filtro de aire y de cabina",
+        "Revisión de suspensión y dirección",
+        "Revisión del estado de las bujías",
+        "Revisión del estado de la batería",
+        "Escaneo completo del vehículo",
+        "Revisión de aire de llantas"
+      ],
+      "gratis": [],
+      "precio": "Desde S/ 99",
+      "destacado": true
+    },
+    {
+      "id": "frenos",
+      "slug": "mantenimiento-de-frenos",
+      "categoria": "Frenos y suspensión",
+      "nombre": "Mantenimiento de frenos",
+      "sintoma": "¿Chilla o vibra al frenar?",
+      "descripcion": "Maneje sin preocupaciones: limpieza, regulación y prueba de todo el sistema de frenos.",
+      "incluye": [
+        "Limpieza y regulación de frenos delanteros y posteriores",
+        "Regulación de freno de mano",
+        "Engrasado de pines de caliper",
+        "Prueba de calidad de líquido de frenos",
+        "Relleno de líquido de frenos"
+      ],
+      "gratis": [
+        "Escaneo de motor"
+      ],
+      "precio": "Desde S/ 89",
+      "destacado": true
+    },
+    {
+      "id": "afinamiento-electronico",
+      "slug": "afinamiento-electronico",
+      "categoria": "Mantenimiento",
+      "nombre": "Afinamiento electrónico",
+      "sintoma": "¿Perdió potencia o gasta más combustible?",
+      "descripcion": "Recupere la potencia de su motor con la limpieza y calibración de sus componentes.",
+      "incluye": [
+        "Limpieza y calibración de obturador",
+        "Prueba y limpieza de inyectores",
+        "Limpieza y calibración de bujías",
+        "Revisión de bobinas de encendido",
+        "Revisión y limpieza de sensores MAF y MAP",
+        "Verificación de fluidos",
+        "Escaneo completo de motor y batería"
+      ],
+      "gratis": [
+        "Lavado de motor"
+      ],
+      "precio": "Desde S/ 149",
+      "destacado": true
+    },
+    {
+      "id": "mantenimiento-basico",
+      "slug": "mantenimiento-basico",
+      "categoria": "Paquetes",
+      "nombre": "Mantenimiento Básico",
+      "sintoma": "Lo esencial para el cuidado de su auto.",
+      "descripcion": "Aceite full sintético, filtro y una revisión general de su vehículo.",
+      "incluye": [
+        "Galón de aceite full sintético",
+        "Filtro de aceite",
+        "Prueba de calidad: refrigerante y líquido de frenos",
+        "Rellenado de fluidos",
+        "Inspección de suspensión y dirección",
+        "Revisión de carga de batería",
+        "Inspección de fugas",
+        "Inspección de fajas"
+      ],
+      "gratis": [
+        "Escaneo completo de motor",
+        "Lavado de motor"
       ],
       "precio": "",
       "destacado": false
     },
     {
-      "id": "frenos",
-      "categoria": "Reparación",
-      "nombre": "Sistema de frenos",
-      "sintoma": "¿Chilla o vibra al frenar?",
-      "descripcion": "Revisión del sistema de frenos para identificar el origen del ruido o la vibración.",
+      "id": "mantenimiento-general",
+      "slug": "mantenimiento-general",
+      "categoria": "Paquetes",
+      "nombre": "Mantenimiento General",
+      "sintoma": "Aceite, filtros, frenos y revisión general.",
+      "descripcion": "El mantenimiento completo: suma filtro de aire y el mantenimiento de frenos delanteros y posteriores.",
       "incluye": [
-        "Pastillas y discos",
-        "Consulta sobre rectificado"
+        "Galón de aceite full sintético",
+        "Filtro de aceite",
+        "Filtro de aire",
+        "Mantenimiento de frenos delanteros y posteriores",
+        "Regulación de freno de mano",
+        "Revisión de carga de batería",
+        "Prueba de calidad: refrigerante y líquido de frenos",
+        "Rellenado de fluidos",
+        "Inspección de suspensión y dirección",
+        "Inspección de fugas",
+        "Inspección de fajas",
+        "Escaneo completo de motor"
+      ],
+      "gratis": [
+        "Lavado de motor"
+      ],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "mantenimiento-afinamiento",
+      "slug": "mantenimiento-afinamiento",
+      "categoria": "Paquetes",
+      "nombre": "Mantenimiento + Afinamiento",
+      "sintoma": "Máximo rendimiento, mayor potencia y eficiencia para su motor.",
+      "descripcion": "El mantenimiento con afinamiento completo: inyectores en ultrasonido, bujías, obturador y sensores.",
+      "incluye": [
+        "Galón de aceite full sintético",
+        "Filtro de aceite",
+        "Filtro de aire",
+        "Limpieza de obturador",
+        "Limpieza y calibración de bujías",
+        "Revisión de bobinas",
+        "Prueba y limpieza de inyectores en ultrasonido",
+        "Limpieza de sensores MAP y MAF",
+        "Revisión de carga de batería",
+        "Prueba de calidad: refrigerante y líquido de frenos",
+        "Rellenado de fluidos",
+        "Inspección de suspensión y dirección",
+        "Inspección de fugas",
+        "Inspección de fajas"
+      ],
+      "gratis": [
+        "Escaneo completo de motor",
+        "Lavado de motor"
+      ],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "mantenimiento-premium",
+      "slug": "mantenimiento-premium",
+      "categoria": "Paquetes",
+      "nombre": "Mantenimiento Premium",
+      "sintoma": "El nivel más alto de cuidado para su auto.",
+      "descripcion": "Todo en una visita: mantenimiento, afinamiento y frenos, con extras sin costo.",
+      "incluye": [
+        "Galón de aceite full sintético",
+        "Filtro de aceite",
+        "Filtro de aire",
+        "Mantenimiento y regulación de frenos delanteros y posteriores",
+        "Regulación de freno de mano",
+        "Limpieza de obturador",
+        "Limpieza y calibración de bujías",
+        "Revisión de bobinas",
+        "Prueba y limpieza de inyectores en ultrasonido",
+        "Limpieza de sensores MAP y MAF",
+        "Revisión de carga de batería",
+        "Prueba de calidad: refrigerante y líquido de frenos",
+        "Rellenado de fluidos",
+        "Inspección de suspensión y dirección",
+        "Inspección de fugas",
+        "Inspección de fajas",
+        "Medición de aire de llantas"
+      ],
+      "gratis": [
+        "Escaneo completo de motor",
+        "Lavado de motor",
+        "Pintado de calipers y tambor de freno"
+      ],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "mantenimiento-general-diesel",
+      "slug": "mantenimiento-general-diesel",
+      "categoria": "Paquetes",
+      "nombre": "Mantenimiento General Diésel",
+      "sintoma": "Para motores diésel, con filtro de petróleo.",
+      "descripcion": "El mantenimiento completo para su diésel: aceite, filtros, frenos y revisión general.",
+      "incluye": [
+        "Galón de aceite full sintético",
+        "Filtro de aceite",
+        "Filtro de aire",
+        "Filtro de petróleo",
+        "Mantenimiento de frenos delanteros y posteriores",
+        "Regulación de freno de mano",
+        "Revisión de carga de batería",
+        "Prueba de calidad: refrigerante y líquido de frenos",
+        "Rellenado de fluidos",
+        "Inspección de suspensión y dirección",
+        "Inspección de fugas",
+        "Inspección de fajas",
+        "Escaneo completo de motor"
+      ],
+      "gratis": [
+        "Lavado de motor"
+      ],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "mantenimiento-menor-diesel",
+      "slug": "mantenimiento-menor-diesel",
+      "categoria": "Paquetes",
+      "nombre": "Mantenimiento Menor Diésel",
+      "sintoma": "Lo esencial para su motor diésel.",
+      "descripcion": "Aceite, filtros y revisión general para su camioneta o vehículo diésel.",
+      "incluye": [
+        "2 galones de aceite full sintético 5W-30",
+        "Filtro de aceite",
+        "Filtro de aire",
+        "Filtro de petróleo",
+        "Prueba de calidad: refrigerante y líquido de frenos",
+        "Rellenado de fluidos",
+        "Inspección de suspensión y dirección",
+        "Revisión de carga de batería",
+        "Inspección de fugas",
+        "Inspección de fajas",
+        "Escaneo completo de motor"
+      ],
+      "gratis": [
+        "Lavado de motor"
       ],
       "precio": "",
       "destacado": false
     },
     {
       "id": "suspension",
-      "categoria": "Reparación",
+      "slug": "suspension-y-direccion",
+      "categoria": "Frenos y suspensión",
       "nombre": "Suspensión y dirección",
       "sintoma": "¿Suena en los baches o se va de lado?",
-      "descripcion": "Consulte por amortiguadores, rótulas y componentes de dirección.",
+      "descripcion": "Revisión de amortiguadores, rótulas y componentes de dirección.",
       "incluye": [
         "Revisión de componentes",
         "Diagnóstico del ruido"
       ],
-      "precio": "",
-      "destacado": false
-    },
-    {
-      "id": "escaner",
-      "categoria": "Diagnóstico",
-      "nombre": "Diagnóstico por escáner",
-      "sintoma": "¿Se encendió el check engine?",
-      "descripcion": "La lectura de fallas ayuda a orientar la revisión del vehículo.",
-      "incluye": [
-        "Lectura de códigos",
-        "Orientación sobre la revisión"
-      ],
+      "gratis": [],
       "precio": "",
       "destacado": false
     },
     {
       "id": "aceite",
+      "slug": "cambio-de-aceite-y-filtros",
       "categoria": "Mantenimiento",
       "nombre": "Cambio de aceite y filtros",
       "sintoma": "¿Ya toca el próximo cambio?",
-      "descripcion": "Consulte el aceite y los filtros adecuados para la marca y modelo de su carro.",
+      "descripcion": "Aceites full sintéticos de marcas como Mobil, Castrol, Shell y Liqui Moly, según la especificación de su vehículo.",
       "incluye": [
-        "Aceite según especificación",
-        "Revisión del filtro"
+        "Aceite según especificación del fabricante",
+        "Filtro de aceite",
+        "Filtro de aire"
       ],
+      "gratis": [],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "diagnostico",
+      "slug": "escaneo-y-diagnostico-computarizado",
+      "categoria": "Diagnóstico",
+      "nombre": "Escaneo y diagnóstico computarizado",
+      "sintoma": "¿Se encendió el check engine?",
+      "descripcion": "La lectura de fallas con escáner orienta la revisión antes de cualquier reparación.",
+      "incluye": [
+        "Escaneo completo de motor",
+        "Diagnóstico computarizado"
+      ],
+      "gratis": [],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "undercoating",
+      "slug": "undercoating-y-zincado",
+      "categoria": "Mantenimiento",
+      "nombre": "Undercoating y zincado",
+      "sintoma": "¿Su carro vive cerca del mar o de la humedad?",
+      "descripcion": "Cuide su chasis de la oxidación con undercoating y zincado.",
+      "incluye": [
+        "Protege contra la oxidación y la corrosión",
+        "Mayor resistencia en ambientes húmedos o salinos",
+        "Extiende la vida útil del chasis"
+      ],
+      "gratis": [],
+      "precio": "",
+      "destacado": false
+    },
+    {
+      "id": "correctivo",
+      "slug": "mantenimiento-correctivo",
+      "categoria": "Reparación",
+      "nombre": "Mantenimiento correctivo",
+      "sintoma": "¿Algo dejó de funcionar bien?",
+      "descripcion": "Reparamos la falla que encuentre el diagnóstico, con su cotización antes de empezar.",
+      "incluye": [
+        "Diagnóstico previo",
+        "Cotización antes de reparar"
+      ],
+      "gratis": [],
       "precio": "",
       "destacado": false
     }
   ],
+  "categorias": [
+    "Paquetes",
+    "Frenos y suspensión",
+    "Mantenimiento",
+    "Diagnóstico",
+    "Reparación"
+  ],
+  "paginasServicios": false,
   "pasos": [
     {
       "titulo": "Cuéntenos qué le pasa",
@@ -103,6 +383,14 @@
     {
       "pregunta": "¿Puedo consultar antes de ir al taller?",
       "respuesta": "Sí. Escriba por WhatsApp para consultar disponibilidad y coordinar su visita a Urb. Natasha Alta, Mz. O, Lt. 09, Trujillo."
+    },
+    {
+      "pregunta": "¿Atienden vehículos diésel?",
+      "respuesta": "Sí. Tenemos dos paquetes para motores diésel, el General y el Menor, con filtro de petróleo incluido."
+    },
+    {
+      "pregunta": "¿Qué viene gratis en los paquetes?",
+      "respuesta": "En el Básico, en el Mantenimiento + Afinamiento y en el Premium, el escaneo completo de motor y el lavado de motor van sin costo; el Premium suma el pintado de calipers y tambor de freno. En el General y en los dos diésel, el lavado de motor va gratis."
     }
   ],
   "sheets": {
