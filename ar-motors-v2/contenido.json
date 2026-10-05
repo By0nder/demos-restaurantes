@@ -697,5 +697,16 @@
     ],
     "foto": "assets/cliente/paquetes/nosotros.webp",
     "fotoAlt": "Taller AR Motors en Trujillo, con una camioneta en el elevador y un técnico trabajando"
+  },
+  "testimonio": {
+    "src": "assets/cliente/testimonio/testimonio.mp4",
+    "poster": "assets/cliente/testimonio/poster.webp",
+    "cita": "Todo muy pulcro y la atención, A1. Vengo desde hace más de 4 años a este taller y siempre lo recomiendo.",
+    "autor": "Paolo Valdez · mantenimiento de los 130 000 km",
+    "ancho": 720,
+    "alto": 1280,
+    "vertical": true,
+    "proporcion": 0.5625,
+    "tipo": "video/mp4"
   }
 }
