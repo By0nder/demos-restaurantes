@@ -42,9 +42,13 @@
   document.addEventListener('click',e=>{if(!e.target.closest('.header'))closeMenu();});
 
   const grid=document.querySelector('#service-grid');
+  // Portada con paquetes elegidos (webDefinitiva.paquetesHome): sin filtros, y la hoja no reemplaza la selección.
+  const modoPaquetes=grid?.dataset.modo==='paquetes';
   const filters=[...document.querySelectorAll('[data-filter]')];
-  function filter(category){let count=0;grid.querySelectorAll('.service-card').forEach(card=>{card.hidden=category!=='Todos'&&card.dataset.category!==category;if(!card.hidden)count++;});filters.forEach(b=>{const active=b.dataset.filter===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});document.querySelector('#service-status').textContent=`${count} servicios disponibles`;
+  function filter(category){if(!grid)return;let count=0;grid.querySelectorAll('.service-card').forEach(card=>{card.hidden=category!=='Todos'&&card.dataset.category!==category;if(!card.hidden)count++;});filters.forEach(b=>{const active=b.dataset.filter===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});const status=document.querySelector('#service-status');if(status)status.textContent=`${count} servicios disponibles`;
   }
+  // Si una foto no llega, queda el fondo de color de su tarjeta o sección, nunca el ícono de imagen rota.
+  document.querySelectorAll('img[data-foto]').forEach(img=>img.addEventListener('error',()=>{img.parentElement.classList.add('sin-foto');img.remove();},{once:true}));
   filters.forEach(button=>button.addEventListener('click',()=>filter(button.dataset.filter)));
   let phone=new URL(document.querySelector('[data-wa]').href).pathname.slice(1);
   const wa=message=>'https://wa.me/'+phone+'?text='+encodeURIComponent(message);
@@ -65,6 +69,7 @@
   async function csv(url){const u=new URL(url);if(u.protocol!=='https:'||u.hostname!=='docs.google.com'||!u.pathname.startsWith('/spreadsheets/'))throw new Error('Fuente no válida');const response=await fetch(url,{signal:AbortSignal.timeout(7000),cache:'no-cache'});if(!response.ok)throw new Error('Hoja no disponible');const text=await response.text();if(text.trim().startsWith('<'))throw new Error('La hoja debe publicarse como CSV');return parseCSV(text);}
   async function loadUpdates(){
     // El HTML contiene una copia completa para funcionar aunque la hoja falle.
+    if(!('sheets' in document.body.dataset))return; // sin hoja conectada no hace falta descargar contenido.json
     const response=await fetch('contenido.json');if(!response.ok)return;const data=await response.json();
     if(data.sheets?.ajustes){try{
       const rows=await csv(data.sheets.ajustes);const config=Object.fromEntries(rows.filter(r=>r.clave).map(r=>[r.clave,r.valor]));
@@ -74,7 +79,7 @@
       const updatedPhone=(config.whatsapp||'').replace(/\D/g,'');if(/^\d{8,15}$/.test(updatedPhone)){phone=updatedPhone;document.querySelectorAll('[data-wa],[data-service]').forEach(a=>{const url=new URL(a.href);url.pathname='/'+phone;a.href=url.href;});}
       if(config.direccion)document.querySelectorAll('[data-map]').forEach(a=>a.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(data.nombre+' '+config.direccion+' '+data.ciudad));
     }catch(e){console.info('Se conserva el contenido local de la web.');}}
-    if(data.sheets?.servicios){try{const items=cleanServices(await csv(data.sheets.servicios));if(items.length)renderServices(items);}catch(e){console.info('Se conserva el catálogo local.');}}
+    if(data.sheets?.servicios&&!modoPaquetes){try{const items=cleanServices(await csv(data.sheets.servicios));if(items.length)renderServices(items);}catch(e){console.info('Se conserva el catálogo local.');}}
   }
   loadUpdates().catch(()=>{});
 })();

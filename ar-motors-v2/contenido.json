@@ -58,13 +58,16 @@
       ],
       "gratis": [],
       "precio": "Desde S/ 99",
-      "destacado": true
+      "destacado": true,
+      "resumen": "Conozca el estado de su carro de punta a punta y adelántese a las fallas.",
+      "imagen": "assets/cliente/paquetes/revision-360.webp",
+      "imagenAlt": "Auto con el capó abierto en el taller, listo para su revisión"
     },
     {
       "id": "frenos",
       "slug": "mantenimiento-de-frenos",
       "categoria": "Frenos y suspensión",
-      "nombre": "Mantenimiento de frenos",
+      "nombre": "Mantenimiento de Frenos",
       "sintoma": "¿Chilla o vibra al frenar?",
       "descripcion": "Maneje sin preocupaciones: limpieza, regulación y prueba de todo el sistema de frenos.",
       "incluye": [
@@ -78,13 +81,16 @@
         "Escaneo de motor"
       ],
       "precio": "Desde S/ 89",
-      "destacado": true
+      "destacado": true,
+      "resumen": "Frene firme cuando lo necesite y maneje sin preocupaciones.",
+      "imagen": "assets/cliente/paquetes/frenos.webp",
+      "imagenAlt": "Disco de freno y caliper rojo de un auto en el taller"
     },
     {
       "id": "afinamiento-electronico",
       "slug": "afinamiento-electronico",
       "categoria": "Mantenimiento",
-      "nombre": "Afinamiento electrónico",
+      "nombre": "Afinamiento Electrónico",
       "sintoma": "¿Perdió potencia o gasta más combustible?",
       "descripcion": "Recupere la potencia de su motor con la limpieza y calibración de sus componentes.",
       "incluye": [
@@ -100,7 +106,178 @@
         "Lavado de motor"
       ],
       "precio": "Desde S/ 149",
-      "destacado": true
+      "destacado": true,
+      "resumen": "Recupere la potencia de su motor y gaste menos en combustible.",
+      "imagen": "assets/cliente/paquetes/afinamiento.webp",
+      "imagenAlt": "Equipo Würth de prueba y limpieza de inyectores en el taller"
+    },
+    {
+      "id": "mantenimiento-preventivo",
+      "slug": "mantenimiento-preventivo",
+      "categoria": "Mantenimiento",
+      "nombre": "Mantenimiento Preventivo",
+      "sintoma": "¿Ya le toca su mantenimiento?",
+      "descripcion": "Seis paquetes, del Básico al Premium, con aceite full sintético, filtros y revisión general. También para motores diésel.",
+      "incluye": [
+        "Aceite full sintético",
+        "Filtro de aceite",
+        "Prueba de calidad: refrigerante y líquido de frenos",
+        "Rellenado de fluidos",
+        "Inspección de suspensión y dirección",
+        "Revisión de carga de batería",
+        "Inspección de fugas",
+        "Inspección de fajas",
+        "Escaneo completo de motor"
+      ],
+      "gratis": [
+        "Lavado de motor"
+      ],
+      "precio": "",
+      "destacado": false,
+      "resumen": "Proteja su motor con aceites full sintéticos y evite quedarse botado en plena pista.",
+      "imagen": "assets/cliente/paquetes/preventivo.webp",
+      "imagenAlt": "Técnico vertiendo aceite en el motor con un embudo",
+      "niveles": [
+        {
+          "id": "mantenimiento-basico",
+          "nombre": "Básico",
+          "precio": "",
+          "incluye": [
+            "Galón de aceite full sintético",
+            "Filtro de aceite",
+            "Prueba de calidad: refrigerante y líquido de frenos",
+            "Rellenado de fluidos",
+            "Inspección de suspensión y dirección",
+            "Revisión de carga de batería",
+            "Inspección de fugas",
+            "Inspección de fajas"
+          ],
+          "gratis": [
+            "Escaneo completo de motor",
+            "Lavado de motor"
+          ]
+        },
+        {
+          "id": "mantenimiento-general",
+          "nombre": "General",
+          "precio": "",
+          "incluye": [
+            "Galón de aceite full sintético",
+            "Filtro de aceite",
+            "Filtro de aire",
+            "Mantenimiento de frenos delanteros y posteriores",
+            "Regulación de freno de mano",
+            "Revisión de carga de batería",
+            "Prueba de calidad: refrigerante y líquido de frenos",
+            "Rellenado de fluidos",
+            "Inspección de suspensión y dirección",
+            "Inspección de fugas",
+            "Inspección de fajas",
+            "Escaneo completo de motor"
+          ],
+          "gratis": [
+            "Lavado de motor"
+          ]
+        },
+        {
+          "id": "mantenimiento-afinamiento",
+          "nombre": "+ Afinamiento",
+          "precio": "",
+          "incluye": [
+            "Galón de aceite full sintético",
+            "Filtro de aceite",
+            "Filtro de aire",
+            "Limpieza de obturador",
+            "Limpieza y calibración de bujías",
+            "Revisión de bobinas",
+            "Prueba y limpieza de inyectores en ultrasonido",
+            "Limpieza de sensores MAP y MAF",
+            "Revisión de carga de batería",
+            "Prueba de calidad: refrigerante y líquido de frenos",
+            "Rellenado de fluidos",
+            "Inspección de suspensión y dirección",
+            "Inspección de fugas",
+            "Inspección de fajas"
+          ],
+          "gratis": [
+            "Escaneo completo de motor",
+            "Lavado de motor"
+          ]
+        },
+        {
+          "id": "mantenimiento-premium",
+          "nombre": "Premium",
+          "precio": "",
+          "incluye": [
+            "Galón de aceite full sintético",
+            "Filtro de aceite",
+            "Filtro de aire",
+            "Mantenimiento y regulación de frenos delanteros y posteriores",
+            "Regulación de freno de mano",
+            "Limpieza de obturador",
+            "Limpieza y calibración de bujías",
+            "Revisión de bobinas",
+            "Prueba y limpieza de inyectores en ultrasonido",
+            "Limpieza de sensores MAP y MAF",
+            "Revisión de carga de batería",
+            "Prueba de calidad: refrigerante y líquido de frenos",
+            "Rellenado de fluidos",
+            "Inspección de suspensión y dirección",
+            "Inspección de fugas",
+            "Inspección de fajas",
+            "Medición de aire de llantas"
+          ],
+          "gratis": [
+            "Escaneo completo de motor",
+            "Lavado de motor",
+            "Pintado de calipers y tambor de freno"
+          ]
+        },
+        {
+          "id": "mantenimiento-general-diesel",
+          "nombre": "General Diésel",
+          "precio": "",
+          "incluye": [
+            "Galón de aceite full sintético",
+            "Filtro de aceite",
+            "Filtro de aire",
+            "Filtro de petróleo",
+            "Mantenimiento de frenos delanteros y posteriores",
+            "Regulación de freno de mano",
+            "Revisión de carga de batería",
+            "Prueba de calidad: refrigerante y líquido de frenos",
+            "Rellenado de fluidos",
+            "Inspección de suspensión y dirección",
+            "Inspección de fugas",
+            "Inspección de fajas",
+            "Escaneo completo de motor"
+          ],
+          "gratis": [
+            "Lavado de motor"
+          ]
+        },
+        {
+          "id": "mantenimiento-menor-diesel",
+          "nombre": "Menor Diésel",
+          "precio": "",
+          "incluye": [
+            "2 galones de aceite full sintético 5W-30",
+            "Filtro de aceite",
+            "Filtro de aire",
+            "Filtro de petróleo",
+            "Prueba de calidad: refrigerante y líquido de frenos",
+            "Rellenado de fluidos",
+            "Inspección de suspensión y dirección",
+            "Revisión de carga de batería",
+            "Inspección de fugas",
+            "Inspección de fajas",
+            "Escaneo completo de motor"
+          ],
+          "gratis": [
+            "Lavado de motor"
+          ]
+        }
+      ]
     },
     {
       "id": "mantenimiento-basico",
@@ -275,7 +452,7 @@
       "id": "suspension",
       "slug": "suspension-y-direccion",
       "categoria": "Frenos y suspensión",
-      "nombre": "Suspensión y dirección",
+      "nombre": "Suspensión y Dirección",
       "sintoma": "¿Suena en los baches o se va de lado?",
       "descripcion": "Revisión de amortiguadores, rótulas y componentes de dirección.",
       "incluye": [
@@ -284,13 +461,16 @@
       ],
       "gratis": [],
       "precio": "",
-      "destacado": false
+      "destacado": false,
+      "resumen": "Pase los baches sin golpes ni ruidos, con su carro firme y estable.",
+      "imagen": "assets/cliente/paquetes/suspension.webp",
+      "imagenAlt": "Amortiguador y suspensión delantera de un auto, con la rueda desmontada"
     },
     {
       "id": "aceite",
       "slug": "cambio-de-aceite-y-filtros",
       "categoria": "Mantenimiento",
-      "nombre": "Cambio de aceite y filtros",
+      "nombre": "Cambio de Aceite y Filtros",
       "sintoma": "¿Ya toca el próximo cambio?",
       "descripcion": "Aceites full sintéticos de marcas como Mobil, Castrol, Shell y Liqui Moly, según la especificación de su vehículo.",
       "incluye": [
@@ -306,7 +486,7 @@
       "id": "diagnostico",
       "slug": "escaneo-y-diagnostico-computarizado",
       "categoria": "Diagnóstico",
-      "nombre": "Escaneo y diagnóstico computarizado",
+      "nombre": "Escaneo y Diagnóstico Computarizado",
       "sintoma": "¿Se encendió el check engine?",
       "descripcion": "La lectura de fallas con escáner orienta la revisión antes de cualquier reparación.",
       "incluye": [
@@ -315,13 +495,15 @@
       ],
       "gratis": [],
       "precio": "",
-      "destacado": false
+      "destacado": false,
+      "imagen": "assets/cliente/paquetes/diagnostico.webp",
+      "imagenAlt": "Escáner conectado en la cabina de un carro, con la pantalla en Diagnóstico"
     },
     {
       "id": "undercoating",
       "slug": "undercoating-y-zincado",
       "categoria": "Mantenimiento",
-      "nombre": "Undercoating y zincado",
+      "nombre": "Undercoating y Zincado",
       "sintoma": "¿Su carro vive cerca del mar o de la humedad?",
       "descripcion": "Cuide su chasis de la oxidación con undercoating y zincado.",
       "incluye": [
@@ -331,13 +513,16 @@
       ],
       "gratis": [],
       "precio": "",
-      "destacado": false
+      "destacado": false,
+      "resumen": "Proteja su vehículo de la corrosión con productos de primera calidad.",
+      "imagen": "assets/cliente/paquetes/undercoating.webp",
+      "imagenAlt": "Aplicación de protector Würth en la parte baja de un vehículo"
     },
     {
       "id": "correctivo",
       "slug": "mantenimiento-correctivo",
       "categoria": "Reparación",
-      "nombre": "Mantenimiento correctivo",
+      "nombre": "Mantenimiento Correctivo",
       "sintoma": "¿Algo dejó de funcionar bien?",
       "descripcion": "Reparamos la falla que encuentre el diagnóstico, con su cotización antes de empezar.",
       "incluye": [
@@ -346,7 +531,10 @@
       ],
       "gratis": [],
       "precio": "",
-      "destacado": false
+      "destacado": false,
+      "resumen": "Reparamos lo que falló, con la cotización en su mano antes de empezar.",
+      "imagen": "assets/cliente/paquetes/correctivo.webp",
+      "imagenAlt": "Técnico con guantes trabajando en el embrague de un auto"
     }
   ],
   "categorias": [
@@ -396,5 +584,118 @@
   "sheets": {
     "ajustes": "",
     "servicios": ""
+  },
+  "paquetes": [
+    {
+      "id": "mantenimiento-preventivo",
+      "slug": "mantenimiento-preventivo",
+      "nombre": "Mantenimiento Preventivo",
+      "titulo": [
+        "Mantenimiento",
+        "Preventivo"
+      ],
+      "resumen": "Proteja su motor con aceites full sintéticos y evite quedarse botado en plena pista.",
+      "imagen": "assets/cliente/paquetes/preventivo.webp",
+      "imagenAlt": "Técnico vertiendo aceite en el motor con un embudo",
+      "clases": "paquete sm-a md-a lg-a md-completo lg-completo"
+    },
+    {
+      "id": "correctivo",
+      "slug": "mantenimiento-correctivo",
+      "nombre": "Mantenimiento Correctivo",
+      "titulo": [
+        "Mantenimiento",
+        "Correctivo"
+      ],
+      "resumen": "Reparamos lo que falló, con la cotización en su mano antes de empezar.",
+      "imagen": "assets/cliente/paquetes/correctivo.webp",
+      "imagenAlt": "Técnico con guantes trabajando en el embrague de un auto",
+      "clases": "paquete sm-b md-b lg-b"
+    },
+    {
+      "id": "frenos",
+      "slug": "mantenimiento-de-frenos",
+      "nombre": "Mantenimiento de Frenos",
+      "titulo": [
+        "Mantenimiento",
+        "de Frenos"
+      ],
+      "resumen": "Frene firme cuando lo necesite y maneje sin preocupaciones.",
+      "imagen": "assets/cliente/paquetes/frenos.webp",
+      "imagenAlt": "Disco de freno y caliper rojo de un auto en el taller",
+      "clases": "paquete sm-a md-a lg-a"
+    },
+    {
+      "id": "afinamiento-electronico",
+      "slug": "afinamiento-electronico",
+      "nombre": "Afinamiento Electrónico",
+      "titulo": [
+        "Afinamiento",
+        "Electrónico"
+      ],
+      "resumen": "Recupere la potencia de su motor y gaste menos en combustible.",
+      "imagen": "assets/cliente/paquetes/afinamiento.webp",
+      "imagenAlt": "Equipo Würth de prueba y limpieza de inyectores en el taller",
+      "clases": "paquete sm-b md-a lg-b"
+    },
+    {
+      "id": "revision-360",
+      "slug": "revision-360",
+      "nombre": "Revisión 360",
+      "titulo": [
+        "Revisión",
+        "360"
+      ],
+      "resumen": "Conozca el estado de su carro de punta a punta y adelántese a las fallas.",
+      "imagen": "assets/cliente/paquetes/revision-360.webp",
+      "imagenAlt": "Auto con el capó abierto en el taller, listo para su revisión",
+      "clases": "paquete sm-a md-b lg-a"
+    },
+    {
+      "id": "undercoating",
+      "slug": "undercoating-y-zincado",
+      "nombre": "Undercoating y Zincado",
+      "titulo": [
+        "Undercoating",
+        "y Zincado"
+      ],
+      "resumen": "Proteja su vehículo de la corrosión con productos de primera calidad.",
+      "imagen": "assets/cliente/paquetes/undercoating.webp",
+      "imagenAlt": "Aplicación de protector Würth en la parte baja de un vehículo",
+      "clases": "paquete sm-b md-b lg-b"
+    },
+    {
+      "id": "suspension",
+      "slug": "suspension-y-direccion",
+      "nombre": "Suspensión y Dirección",
+      "titulo": [
+        "Suspensión",
+        "y Dirección"
+      ],
+      "resumen": "Pase los baches sin golpes ni ruidos, con su carro firme y estable.",
+      "imagen": "assets/cliente/paquetes/suspension.webp",
+      "imagenAlt": "Amortiguador y suspensión delantera de un auto, con la rueda desmontada",
+      "clases": "paquete sm-a md-a lg-a"
+    }
+  ],
+  "otrosServicios": [
+    {
+      "nombre": "Cambio de Aceite y Filtros",
+      "slug": "cambio-de-aceite-y-filtros"
+    },
+    {
+      "nombre": "Escaneo y Diagnóstico Computarizado",
+      "slug": "escaneo-y-diagnostico-computarizado"
+    }
+  ],
+  "nosotros": {
+    "titulo": [
+      "Quiénes somos"
+    ],
+    "parrafos": [
+      "Somos AR Motors, una empresa automotriz trujillana especialista en mantenimiento preventivo y correctivo. Revisamos su carro, le explicamos qué necesita y le damos la cotización antes de empezar. Estamos en Urb. Natasha Alta, frente al Hotel AWQA."
+    ],
+    "foto": "assets/cliente/paquetes/nosotros.webp",
+    "fotoAlt": "Taller AR Motors en Trujillo, con una camioneta en el elevador y un técnico trabajando"
   }
 }
