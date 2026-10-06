@@ -976,7 +976,7 @@
       var nuevos=lista.filter(function(f){return antes.indexOf(f[0])<0;}).length;
       try{localStorage.setItem(RK,JSON.stringify({base:base,slugs:lista.map(function(f){return f[0];}),hecho:new Date().toISOString()}));}catch(e){}
       document.getElementById('hoy-confirmar').hidden=true;
-      estado(n?('Listo: entraron '+nuevos+' nuevos. Quedan '+Math.max(0,libres.length-n)+' por mandar despu\u00e9s de estos.'):'Ya no quedan prospectos por mandar en este panel: p\u00eddeme una recarga.');
+      subir();estado(n?('Listo: entraron '+nuevos+' nuevos. Quedan '+Math.max(0,libres.length-n)+' por mandar despu\u00e9s de estos.'):'Ya no quedan prospectos por mandar en este panel: p\u00eddeme una recarga.');
       v.scrollIntoView({behavior:'auto',block:'start'});}
     /* Al abrir: si en este celular ya se renovo sobre esta misma vista, se muestra la renovada. */
     /* Link "Pasar a otro equipo": lleva los enviados y la vista renovada (indices del ranking en base 36). */
@@ -991,19 +991,36 @@
       var l=m[3].split('.').filter(Boolean).map(function(x){return R.filas[parseInt(x,36)];}).filter(Boolean);
       if(l.length){pintarFilas(l);try{localStorage.setItem(RK,JSON.stringify({base:base,slugs:l.map(function(f){return f[0];}),hecho:new Date().toISOString()}));}catch(e){}}else pintar();
       estado('Sincronizado: '+n+' enviados y la misma vista del otro equipo.');return true;}
+    /* Sincronizacion entre equipos (celular, PC, otro navegador) por el Worker panel-sync:
+       los enviados se suman y gana la vista renovada mas reciente. Sin red, el panel sigue igual que antes. */
+    var SYNC='https://panel-sync.midwar37.workers.dev/s/jose-a9e4f9adb65bc1d613290400',_sub=null;
+    function vistaLocal(){try{return JSON.parse(localStorage.getItem(RK))||null;}catch(e){return null;}}
+    function aplicarRemoto(r){if(!r)return;var s=leer(),n=0;
+      Object.keys(r.env||{}).forEach(function(sl){if(r.env[sl]&&!s[sl]){marcar(sl);n++;}});
+      var rv=r.vista,lv=vistaLocal();
+      if(rv&&rv.base===base&&rv.slugs&&rv.slugs.length&&(!lv||lv.base!==base||String(rv.hecho||'')>String(lv.hecho||''))){
+        var mapa={};R.filas.forEach(function(f){mapa[f[0]]=f;});var l=rv.slugs.map(function(x){return mapa[x];}).filter(Boolean);
+        if(l.length){pintarFilas(l);try{localStorage.setItem(RK,JSON.stringify(rv));}catch(e){}estado('Sincronizado con tus otros equipos.');return;}}
+      if(n){pintar();estado('Sincronizado: '+n+' enviados desde tus otros equipos.');}}
+    function subir(){if(!window.fetch)return;clearTimeout(_sub);_sub=setTimeout(function(){
+      var s=leer(),env={};Object.keys(s).forEach(function(k){if(s[k])env[k]=s[k];});var lv=vistaLocal();
+      fetch(SYNC,{method:'PUT',headers:{'Content-Type':'text/plain'},body:JSON.stringify({env:env,vista:lv&&lv.base===base?lv:null})})
+        .then(function(r){return r.json();}).then(aplicarRemoto).catch(function(){});},800);}
+    function bajar(){if(!window.fetch)return;fetch(SYNC,{cache:'no-store'}).then(function(r){return r.json();}).then(function(r){aplicarRemoto(r);subir();}).catch(function(){});}
+    document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')bajar();});
     function restaurar(){if(importar())return;var st;try{st=JSON.parse(localStorage.getItem(RK));}catch(e){}
       if(!st||st.base!==base||!st.slugs||!st.slugs.length)return;
       var mapa={};R.filas.forEach(function(f){mapa[f[0]]=f;});
       var l=st.slugs.map(function(x){return mapa[x];}).filter(Boolean);
       if(l.length){pintarFilas(l);estado('Renovada en este celular el '+new Date(st.hecho).toLocaleString('es-PE',{hour12:false}).slice(0,16)+'.');}}
-    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',restaurar);else restaurar();
+    function arranque(){restaurar();bajar();}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arranque);else arranque();
     v.addEventListener('change',function(e){var c=e.target;if(!c||!c.hasAttribute('data-env'))return;var slug=c.getAttribute('data-env');
       var card=document.querySelector('.sent-checkbox[data-slug="'+slug+'"]');
       if(card){if(card.checked!==c.checked){card.checked=c.checked;card.dispatchEvent(new Event('change',{bubbles:true}));}}
       else{var s=leer();if(c.checked)s[slug]={t:new Date().toISOString()};else s[slug]=false;guardar(s);}
       pintar();});
     /* Si tilda en la tarjeta de abajo, la fila de la vista se entera. */
-    document.addEventListener('change',function(e){var c=e.target;if(c&&c.classList&&c.classList.contains('sent-checkbox'))pintar();});
+    document.addEventListener('change',function(e){var c=e.target;if(c&&c.classList&&c.classList.contains('sent-checkbox'))pintar();if(c&&(c.hasAttribute&&c.hasAttribute('data-env')||c.classList&&c.classList.contains('sent-checkbox')))subir();});
     v.addEventListener('click',function(e){
       var b=e.target.closest('[data-ir]');if(b){var c=document.querySelector('article[data-slug="'+b.getAttribute('data-ir')+'"]');if(c){c.scrollIntoView({behavior:'auto',block:'center'});c.style.outline='3px solid #d4a017';setTimeout(function(){c.style.outline='';},2500);}return;}
       var id=e.target.id;
