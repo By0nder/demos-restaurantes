@@ -47,7 +47,7 @@
   const filters=[...document.querySelectorAll('[data-filter]')];
   function filter(category){if(!grid)return;let count=0;grid.querySelectorAll('.service-card').forEach(card=>{card.hidden=category!=='Todos'&&card.dataset.category!==category;if(!card.hidden)count++;});filters.forEach(b=>{const active=b.dataset.filter===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});const status=document.querySelector('#service-status');if(status)status.textContent=`${count} servicios disponibles`;
   }
-  // Si una foto no llega, queda el fondo de color de su tarjeta o sección, nunca el ícono de imagen rota.
+  // Si una foto no llega, queda el fondo de color de la tarjeta o sección, nunca el ícono de imagen rota.
   document.querySelectorAll('img[data-foto]').forEach(img=>img.addEventListener('error',()=>{img.parentElement.classList.add('sin-foto');img.remove();},{once:true}));
   filters.forEach(button=>button.addEventListener('click',()=>filter(button.dataset.filter)));
   let phone=new URL(document.querySelector('[data-wa]').href).pathname.slice(1);
@@ -55,7 +55,7 @@
   document.querySelector('#quote-form').addEventListener('submit',e=>{
     e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;
     const values=new FormData(form), vehicle=String(values.get('vehiculo')).trim(),detail=String(values.get('detalle')).trim();
-    if(!vehicle||!detail){const input=form.elements[!vehicle?'vehiculo':'detalle'];input.setCustomValidity('Complete este dato para preparar su consulta.');input.reportValidity();input.addEventListener('input',()=>input.setCustomValidity(''),{once:true});return;}
+    if(!vehicle||!detail){const input=form.elements[!vehicle?'vehiculo':'detalle'];input.setCustomValidity('Completa este dato para preparar tu consulta.');input.reportValidity();input.addEventListener('input',()=>input.setCustomValidity(''),{once:true});return;}
     const message=['Hola, vi su página web y quisiera cotizar un servicio:', '', 'Vehículo: '+vehicle, values.get('anio')?'Año: '+values.get('anio'):'', 'Servicio: '+values.get('servicio'),'Detalle: '+detail].filter(Boolean).join('\n');
     window.open(wa(message),'_blank','noopener,noreferrer');
   });
@@ -63,7 +63,7 @@
   function icon(id){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','#'+id);svg.append(use);return svg;}
   function renderServices(services){
     const frag=document.createDocumentFragment();
-    services.forEach((s,i)=>{const card=node('article','service-card');card.dataset.category=s.categoria;const top=node('div','card-top');top.append(node('span','card-no',String(i+1).padStart(2,'0')),node('span','tag',s.categoria));const list=node('ul');s.incluye.forEach(item=>{const li=node('li');li.append(icon('check'),document.createTextNode(item));list.append(li);});const bottom=node('div','card-bottom');const a=node('a');a.href=wa('Hola, vi su página web y quisiera cotizar: '+s.nombre+'.');a.dataset.service=s.nombre;a.target='_blank';a.rel='noopener';a.setAttribute('aria-label','Consultar por '+s.nombre+' en WhatsApp');a.append(icon('arrow'));bottom.append(node('span','',s.precio||'Cotización según vehículo'),a);card.append(top,node('h3','',s.nombre),node('p','symptom',s.sintoma),node('p','service-description',s.descripcion),list,bottom);frag.append(card);});
+    services.forEach((s,i)=>{const card=node('article','service-card');card.dataset.category=s.categoria;const top=node('div','card-top');top.append(node('span','card-no',String(i+1).padStart(2,'0')),node('span','tag',s.categoria));const list=node('ul');s.incluye.forEach(item=>{const li=node('li');li.append(icon('check'),document.createTextNode(item));list.append(li);});const bottom=node('div','card-bottom');const a=node('a');a.href=wa('Hola, vi su página web y quisiera cotizar: '+s.nombre+'.');a.dataset.service=s.nombre;a.target='_blank';a.rel='noopener';a.setAttribute('aria-label','Contactar por WhatsApp: '+s.nombre);a.append(icon('arrow'));bottom.append(node('span','',s.precio||'Cotización según vehículo'),a);card.append(top,node('h3','',s.nombre),node('p','symptom',s.sintoma),node('p','service-description',s.descripcion),list,bottom);frag.append(card);});
     grid.replaceChildren(frag);const select=document.querySelector('#quote-service');const previous=select.value;select.replaceChildren(new Option('Necesito orientación','Necesito orientación'),...services.map(s=>new Option(s.nombre,s.nombre)));if(services.some(s=>s.nombre===previous))select.value=previous;filter('Todos');
   }
   async function csv(url){const u=new URL(url);if(u.protocol!=='https:'||u.hostname!=='docs.google.com'||!u.pathname.startsWith('/spreadsheets/'))throw new Error('Fuente no válida');const response=await fetch(url,{signal:AbortSignal.timeout(7000),cache:'no-cache'});if(!response.ok)throw new Error('Hoja no disponible');const text=await response.text();if(text.trim().startsWith('<'))throw new Error('La hoja debe publicarse como CSV');return parseCSV(text);}

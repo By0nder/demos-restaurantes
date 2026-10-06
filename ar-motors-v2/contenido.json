@@ -6,8 +6,9 @@
   "direccion": "Urb. Natasha Alta, Mz. O, Lt. 09",
   "horario": "Lunes a viernes: 8:00 a. m. – 6:00 p. m.\nSábado: 8:00 a. m. – 1:00 p. m.",
   "referencia": "Por la Corte, frente al Hotel AWQA",
-  "heroTitulo": "SU CARRO,\nEN MARCHA.",
-  "heroTexto": "Mantenimiento, diagnóstico y reparación en Trujillo. Cuéntenos qué le pasa a su carro y encontremos el siguiente paso.",
+  "heroTitulo": "TU MOTOR,\nEN MARCHA.",
+  "heroTexto": "Mantenimiento, diagnóstico y reparación en Trujillo. Cuéntanos qué necesita tu vehículo y te ayudamos a encontrar la solución adecuada.",
+  "heroFrase": "Tu motor, en marcha.",
   "heroEtiqueta": "MECÁNICA CLARA · AR MOTORS",
   "heroLinea": "Taller automotriz en Trujillo",
   "heroFoto": "assets/cliente/hero.jpg",
@@ -26,8 +27,8 @@
   },
   "ogImagen": "assets/cliente/og.jpg",
   "titulo": "AR Motors | Taller automotriz en Trujillo",
-  "metaDescripcion": "Taller automotriz en Trujillo: Revisión 360 desde S/ 99, frenos desde S/ 89, afinamiento y paquetes de mantenimiento, también diésel. Cotice por WhatsApp.",
-  "lemaPie": "Nivel de servicio que su motor merece.",
+  "metaDescripcion": "Taller automotriz en Trujillo: Revisión 360 desde S/ 99, frenos desde S/ 89, afinamiento y paquetes de mantenimiento, también diésel. Cotiza por WhatsApp.",
+  "lemaPie": "Nivel de servicio que tu motor merece.",
   "acento": {
     "fondo": "#d90000",
     "hover": "#b30000",
@@ -44,8 +45,8 @@
       "slug": "revision-360",
       "categoria": "Paquetes",
       "nombre": "Revisión 360",
-      "sintoma": "¿Quiere saber cómo está su carro?",
-      "descripcion": "Todo lo que su vehículo necesita, en una revisión completa.",
+      "sintoma": "¿Quieres saber cómo está tu vehículo?",
+      "descripcion": "Todo lo que tu vehículo necesita, en una revisión completa.",
       "incluye": [
         "Revisión completa de frenos",
         "Revisión de fluidos: aceite, líquido de frenos y refrigerante",
@@ -59,9 +60,9 @@
       "gratis": [],
       "precio": "Desde S/ 99",
       "destacado": true,
-      "resumen": "Conozca el estado de su carro de punta a punta y adelántese a las fallas.",
+      "resumen": "Conoce el estado de tu vehículo y detecta posibles fallas a tiempo.",
       "imagen": "assets/cliente/paquetes/revision-360.webp",
-      "imagenAlt": "Auto con el capó abierto en el taller, listo para su revisión"
+      "imagenAlt": "Vehículo con el capó abierto en el taller, listo para la revisión"
     },
     {
       "id": "frenos",
@@ -69,7 +70,7 @@
       "categoria": "Frenos y suspensión",
       "nombre": "Mantenimiento de Frenos",
       "sintoma": "¿Chilla o vibra al frenar?",
-      "descripcion": "Maneje sin preocupaciones: limpieza, regulación y prueba de todo el sistema de frenos.",
+      "descripcion": "Maneja sin preocupaciones: limpieza, regulación y prueba de todo el sistema de frenos.",
       "incluye": [
         "Limpieza y regulación de frenos delanteros y posteriores",
         "Regulación de freno de mano",
@@ -82,17 +83,17 @@
       ],
       "precio": "Desde S/ 89",
       "destacado": true,
-      "resumen": "Frene firme cuando lo necesite y maneje sin preocupaciones.",
+      "resumen": "Mantén tus frenos en buen estado y conduce con mayor seguridad.",
       "imagen": "assets/cliente/paquetes/frenos.webp",
-      "imagenAlt": "Disco de freno y caliper rojo de un auto en el taller"
+      "imagenAlt": "Disco de freno y caliper rojo de un vehículo en el taller"
     },
     {
       "id": "afinamiento-electronico",
       "slug": "afinamiento-electronico",
       "categoria": "Mantenimiento",
       "nombre": "Afinamiento Electrónico",
-      "sintoma": "¿Perdió potencia o gasta más combustible?",
-      "descripcion": "Recupere la potencia de su motor con la limpieza y calibración de sus componentes.",
+      "sintoma": "¿Tu vehículo perdió potencia o gasta más combustible?",
+      "descripcion": "Recupera la potencia de tu motor con la limpieza de inyectores, bujías, obturador y sensores.",
       "incluye": [
         "Limpieza y calibración de obturador",
         "Prueba y limpieza de inyectores",
@@ -107,7 +108,7 @@
       ],
       "precio": "Desde S/ 149",
       "destacado": true,
-      "resumen": "Recupere la potencia de su motor y gaste menos en combustible.",
+      "resumen": "Mejora el funcionamiento y rendimiento de tu motor.",
       "imagen": "assets/cliente/paquetes/afinamiento.webp",
       "imagenAlt": "Equipo Würth de prueba y limpieza de inyectores en el taller"
     },
@@ -116,8 +117,8 @@
       "slug": "mantenimiento-preventivo",
       "categoria": "Mantenimiento",
       "nombre": "Mantenimiento Preventivo",
-      "sintoma": "¿Ya le toca su mantenimiento?",
-      "descripcion": "Seis paquetes, del Básico al Premium, con aceite full sintético, filtros y revisión general. También para motores diésel.",
+      "sintoma": "¿Ya le toca mantenimiento a tu vehículo?",
+      "descripcion": "Elige entre seis paquetes, del Básico al Premium, con aceite full sintético, filtros y revisión general. También para motores diésel.",
       "incluye": [
         "Aceite full sintético",
         "Filtro de aceite",
@@ -134,7 +135,7 @@
       ],
       "precio": "",
       "destacado": false,
-      "resumen": "Proteja su motor con aceites full sintéticos y evite quedarse botado en plena pista.",
+      "resumen": "Cuida tu motor con aceites de alta calidad y haz que tu vehículo siga funcionando de forma segura y confiable.",
       "imagen": "assets/cliente/paquetes/preventivo.webp",
       "imagenAlt": "Técnico vertiendo aceite en el motor con un embudo",
       "niveles": [
@@ -284,8 +285,8 @@
       "slug": "mantenimiento-basico",
       "categoria": "Paquetes",
       "nombre": "Mantenimiento Básico",
-      "sintoma": "Lo esencial para el cuidado de su auto.",
-      "descripcion": "Aceite full sintético, filtro y una revisión general de su vehículo.",
+      "sintoma": "Lo esencial para el cuidado de tu vehículo.",
+      "descripcion": "Aceite full sintético, filtro y una revisión general de tu vehículo.",
       "incluye": [
         "Galón de aceite full sintético",
         "Filtro de aceite",
@@ -335,7 +336,7 @@
       "slug": "mantenimiento-afinamiento",
       "categoria": "Paquetes",
       "nombre": "Mantenimiento + Afinamiento",
-      "sintoma": "Máximo rendimiento, mayor potencia y eficiencia para su motor.",
+      "sintoma": "Máximo rendimiento, mayor potencia y eficiencia para tu motor.",
       "descripcion": "El mantenimiento con afinamiento completo: inyectores en ultrasonido, bujías, obturador y sensores.",
       "incluye": [
         "Galón de aceite full sintético",
@@ -365,7 +366,7 @@
       "slug": "mantenimiento-premium",
       "categoria": "Paquetes",
       "nombre": "Mantenimiento Premium",
-      "sintoma": "El nivel más alto de cuidado para su auto.",
+      "sintoma": "El nivel más alto de cuidado para tu vehículo.",
       "descripcion": "Todo en una visita: mantenimiento, afinamiento y frenos, con extras sin costo.",
       "incluye": [
         "Galón de aceite full sintético",
@@ -400,7 +401,7 @@
       "categoria": "Paquetes",
       "nombre": "Mantenimiento General Diésel",
       "sintoma": "Para motores diésel, con filtro de petróleo.",
-      "descripcion": "El mantenimiento completo para su diésel: aceite, filtros, frenos y revisión general.",
+      "descripcion": "El mantenimiento completo para tu vehículo diésel: aceite, filtros, frenos y revisión general.",
       "incluye": [
         "Galón de aceite full sintético",
         "Filtro de aceite",
@@ -427,8 +428,8 @@
       "slug": "mantenimiento-menor-diesel",
       "categoria": "Paquetes",
       "nombre": "Mantenimiento Menor Diésel",
-      "sintoma": "Lo esencial para su motor diésel.",
-      "descripcion": "Aceite, filtros y revisión general para su camioneta o vehículo diésel.",
+      "sintoma": "Lo esencial para tu motor diésel.",
+      "descripcion": "Aceite, filtros y revisión general para tu camioneta o vehículo diésel.",
       "incluye": [
         "2 galones de aceite full sintético 5W-30",
         "Filtro de aceite",
@@ -453,8 +454,8 @@
       "slug": "suspension-y-direccion",
       "categoria": "Frenos y suspensión",
       "nombre": "Suspensión y Dirección",
-      "sintoma": "¿Suena en los baches o se va de lado?",
-      "descripcion": "Revisión de amortiguadores, rótulas y componentes de dirección.",
+      "sintoma": "¿Tu vehículo suena en los baches o se va de lado?",
+      "descripcion": "Revisamos amortiguadores, rótulas y la dirección de tu vehículo.",
       "incluye": [
         "Revisión de componentes",
         "Diagnóstico del ruido"
@@ -462,17 +463,17 @@
       "gratis": [],
       "precio": "",
       "destacado": false,
-      "resumen": "Pase los baches sin golpes ni ruidos, con su carro firme y estable.",
+      "resumen": "Mejora la estabilidad y el control de tu vehículo para que conduzcas con mayor comodidad.",
       "imagen": "assets/cliente/paquetes/suspension.webp",
-      "imagenAlt": "Amortiguador y suspensión delantera de un auto, con la rueda desmontada"
+      "imagenAlt": "Amortiguador y suspensión delantera de un vehículo, con la rueda desmontada"
     },
     {
       "id": "aceite",
       "slug": "cambio-de-aceite-y-filtros",
       "categoria": "Mantenimiento",
       "nombre": "Cambio de Aceite y Filtros",
-      "sintoma": "¿Ya toca el próximo cambio?",
-      "descripcion": "Aceites full sintéticos de marcas como Mobil, Castrol, Shell y Liqui Moly, según la especificación de su vehículo.",
+      "sintoma": "¿Ya te toca el cambio de aceite?",
+      "descripcion": "Aceites full sintéticos de marcas como Mobil, Castrol, Shell y Liqui Moly, según la especificación de tu vehículo.",
       "incluye": [
         "Aceite según especificación del fabricante",
         "Filtro de aceite",
@@ -487,8 +488,8 @@
       "slug": "escaneo-y-diagnostico-computarizado",
       "categoria": "Diagnóstico",
       "nombre": "Escaneo y Diagnóstico Computarizado",
-      "sintoma": "¿Se encendió el check engine?",
-      "descripcion": "La lectura de fallas con escáner orienta la revisión antes de cualquier reparación.",
+      "sintoma": "¿Se prendió la luz del check engine?",
+      "descripcion": "Conectamos el escáner a tu vehículo para leer las fallas y saber qué revisar antes de reparar.",
       "incluye": [
         "Escaneo completo de motor",
         "Diagnóstico computarizado"
@@ -497,15 +498,15 @@
       "precio": "",
       "destacado": false,
       "imagen": "assets/cliente/paquetes/diagnostico.webp",
-      "imagenAlt": "Escáner conectado en la cabina de un carro, con la pantalla en Diagnóstico"
+      "imagenAlt": "Escáner conectado en la cabina de un vehículo, con la pantalla en Diagnóstico"
     },
     {
       "id": "undercoating",
       "slug": "undercoating-y-zincado",
       "categoria": "Mantenimiento",
       "nombre": "Undercoating y Zincado",
-      "sintoma": "¿Su carro vive cerca del mar o de la humedad?",
-      "descripcion": "Cuide su chasis de la oxidación con undercoating y zincado.",
+      "sintoma": "¿Tu vehículo vive cerca del mar o de la humedad?",
+      "descripcion": "Cuida tu chasis de la oxidación con undercoating y zincado.",
       "incluye": [
         "Protege contra la oxidación y la corrosión",
         "Mayor resistencia en ambientes húmedos o salinos",
@@ -514,7 +515,7 @@
       "gratis": [],
       "precio": "",
       "destacado": false,
-      "resumen": "Proteja su vehículo de la corrosión con productos de primera calidad.",
+      "resumen": "Protege el chasis de tu vehículo contra la humedad, la corrosión y el desgaste.",
       "imagen": "assets/cliente/paquetes/undercoating.webp",
       "imagenAlt": "Aplicación de protector Würth en la parte baja de un vehículo"
     },
@@ -523,8 +524,8 @@
       "slug": "mantenimiento-correctivo",
       "categoria": "Reparación",
       "nombre": "Mantenimiento Correctivo",
-      "sintoma": "¿Algo dejó de funcionar bien?",
-      "descripcion": "Reparamos la falla que encuentre el diagnóstico, con su cotización antes de empezar.",
+      "sintoma": "¿Algo dejó de funcionar bien en tu vehículo?",
+      "descripcion": "Reparamos la falla que encuentre el diagnóstico y te presentamos la cotización antes de empezar.",
       "incluye": [
         "Diagnóstico previo",
         "Cotización antes de reparar"
@@ -532,9 +533,9 @@
       "gratis": [],
       "precio": "",
       "destacado": false,
-      "resumen": "Reparamos lo que falló, con la cotización en su mano antes de empezar.",
+      "resumen": "Solucionamos las fallas de tu vehículo antes de que se conviertan en un problema mayor.",
       "imagen": "assets/cliente/paquetes/correctivo.webp",
-      "imagenAlt": "Técnico con guantes trabajando en el embrague de un auto"
+      "imagenAlt": "Técnico con guantes trabajando en el embrague de un vehículo"
     }
   ],
   "categorias": [
@@ -547,30 +548,30 @@
   "paginasServicios": false,
   "pasos": [
     {
-      "titulo": "Cuéntenos qué le pasa",
-      "texto": "Envíe la marca, el modelo y lo que ha notado. Coordinamos la revisión por WhatsApp."
+      "titulo": "Cuéntanos qué le pasa",
+      "texto": "Envíanos la marca, el modelo y lo que has notado en tu vehículo. Coordinamos la revisión por WhatsApp."
     },
     {
-      "titulo": "Conozca el trabajo a realizar",
-      "texto": "La revisión permite explicar lo que necesita el vehículo y preparar su cotización."
+      "titulo": "Recibe tu cotización",
+      "texto": "Revisamos tu vehículo y te decimos qué trabajo necesita y cuánto cuesta."
     },
     {
-      "titulo": "Coordine los siguientes pasos",
-      "texto": "Con la cotización a la mano, converse con el taller sobre el trabajo y la entrega."
+      "titulo": "Tú decides",
+      "texto": "Con la cotización en mano, eliges qué se hace y coordinamos el trabajo y la entrega."
     }
   ],
   "preguntas": [
     {
       "pregunta": "¿Cómo puedo cotizar un servicio?",
-      "respuesta": "Escríbanos por WhatsApp con la marca, el modelo y una descripción de lo que necesita. Puede usar el formulario de esta página para preparar el mensaje."
+      "respuesta": "Escríbenos por WhatsApp con la marca, el modelo y lo que necesita tu vehículo. También puedes usar el formulario de esta página para preparar el mensaje."
     },
     {
       "pregunta": "¿Tengo que llevar el vehículo para saber el precio?",
-      "respuesta": "Depende del servicio. Para un mantenimiento puede indicar la marca y el modelo; si existe una falla, la revisión del vehículo permite precisar el trabajo."
+      "respuesta": "Depende del servicio. Para un mantenimiento puedes indicarnos la marca y el modelo; si hay una falla, revisamos tu vehículo para precisar el trabajo."
     },
     {
       "pregunta": "¿Puedo consultar antes de ir al taller?",
-      "respuesta": "Sí. Escriba por WhatsApp para consultar disponibilidad y coordinar su visita a Urb. Natasha Alta, Mz. O, Lt. 09, Trujillo."
+      "respuesta": "Sí. Escríbenos por WhatsApp para consultar disponibilidad y coordinar tu visita a Urb. Natasha Alta, Mz. O, Lt. 09, Trujillo."
     },
     {
       "pregunta": "¿Atienden vehículos diésel?",
@@ -594,7 +595,7 @@
         "Mantenimiento",
         "Preventivo"
       ],
-      "resumen": "Proteja su motor con aceites full sintéticos y evite quedarse botado en plena pista.",
+      "resumen": "Cuida tu motor con aceites de alta calidad y haz que tu vehículo siga funcionando de forma segura y confiable.",
       "imagen": "assets/cliente/paquetes/preventivo.webp",
       "imagenAlt": "Técnico vertiendo aceite en el motor con un embudo",
       "clases": "paquete sm-a md-a lg-a md-completo lg-completo"
@@ -607,9 +608,9 @@
         "Mantenimiento",
         "Correctivo"
       ],
-      "resumen": "Reparamos lo que falló, con la cotización en su mano antes de empezar.",
+      "resumen": "Solucionamos las fallas de tu vehículo antes de que se conviertan en un problema mayor.",
       "imagen": "assets/cliente/paquetes/correctivo.webp",
-      "imagenAlt": "Técnico con guantes trabajando en el embrague de un auto",
+      "imagenAlt": "Técnico con guantes trabajando en el embrague de un vehículo",
       "clases": "paquete sm-b md-b lg-b"
     },
     {
@@ -620,9 +621,9 @@
         "Mantenimiento",
         "de Frenos"
       ],
-      "resumen": "Frene firme cuando lo necesite y maneje sin preocupaciones.",
+      "resumen": "Mantén tus frenos en buen estado y conduce con mayor seguridad.",
       "imagen": "assets/cliente/paquetes/frenos.webp",
-      "imagenAlt": "Disco de freno y caliper rojo de un auto en el taller",
+      "imagenAlt": "Disco de freno y caliper rojo de un vehículo en el taller",
       "clases": "paquete sm-a md-a lg-a"
     },
     {
@@ -633,7 +634,7 @@
         "Afinamiento",
         "Electrónico"
       ],
-      "resumen": "Recupere la potencia de su motor y gaste menos en combustible.",
+      "resumen": "Mejora el funcionamiento y rendimiento de tu motor.",
       "imagen": "assets/cliente/paquetes/afinamiento.webp",
       "imagenAlt": "Equipo Würth de prueba y limpieza de inyectores en el taller",
       "clases": "paquete sm-b md-a lg-b"
@@ -646,9 +647,9 @@
         "Revisión",
         "360"
       ],
-      "resumen": "Conozca el estado de su carro de punta a punta y adelántese a las fallas.",
+      "resumen": "Conoce el estado de tu vehículo y detecta posibles fallas a tiempo.",
       "imagen": "assets/cliente/paquetes/revision-360.webp",
-      "imagenAlt": "Auto con el capó abierto en el taller, listo para su revisión",
+      "imagenAlt": "Vehículo con el capó abierto en el taller, listo para la revisión",
       "clases": "paquete sm-a md-b lg-a"
     },
     {
@@ -659,7 +660,7 @@
         "Undercoating",
         "y Zincado"
       ],
-      "resumen": "Proteja su vehículo de la corrosión con productos de primera calidad.",
+      "resumen": "Protege el chasis de tu vehículo contra la humedad, la corrosión y el desgaste.",
       "imagen": "assets/cliente/paquetes/undercoating.webp",
       "imagenAlt": "Aplicación de protector Würth en la parte baja de un vehículo",
       "clases": "paquete sm-b md-b lg-b"
@@ -672,9 +673,9 @@
         "Suspensión",
         "y Dirección"
       ],
-      "resumen": "Pase los baches sin golpes ni ruidos, con su carro firme y estable.",
+      "resumen": "Mejora la estabilidad y el control de tu vehículo para que conduzcas con mayor comodidad.",
       "imagen": "assets/cliente/paquetes/suspension.webp",
-      "imagenAlt": "Amortiguador y suspensión delantera de un auto, con la rueda desmontada",
+      "imagenAlt": "Amortiguador y suspensión delantera de un vehículo, con la rueda desmontada",
       "clases": "paquete sm-a md-a lg-a"
     }
   ],
@@ -693,20 +694,218 @@
       "Quiénes somos"
     ],
     "parrafos": [
-      "Somos AR Motors, una empresa automotriz trujillana especialista en mantenimiento preventivo y correctivo. Revisamos su carro, le explicamos qué necesita y le damos la cotización antes de empezar. Estamos en Urb. Natasha Alta, frente al Hotel AWQA."
+      "Somos AR Motors, una empresa automotriz trujillana especializada en mantenimiento preventivo y correctivo de vehículos. Nuestro compromiso es brindar un servicio profesional, transparente y de calidad, buscando ser la mejor opción para el cuidado y mantenimiento de tu vehículo.",
+      "Contamos con un equipo capacitado que revisa tu vehículo, identifica lo que realmente necesita y te presenta una cotización antes de iniciar cualquier trabajo, para que tengas la seguridad de tomar una decisión informada."
     ],
     "foto": "assets/cliente/paquetes/nosotros.webp",
     "fotoAlt": "Taller AR Motors en Trujillo, con una camioneta en el elevador y un técnico trabajando"
+  },
+  "porQueElegirnos": {
+    "titulo": [
+      "¿Por qué elegir AR Motors?"
+    ],
+    "items": [
+      {
+        "icono": "cotizacion",
+        "titulo": "Cotización previa",
+        "texto": "Te presentamos la cotización antes de iniciar cualquier trabajo."
+      },
+      {
+        "icono": "diagnostico",
+        "titulo": "Diagnóstico con escáner",
+        "texto": "Usamos escáner y equipos de prueba para encontrar la falla antes de reparar."
+      },
+      {
+        "icono": "equipo",
+        "titulo": "Equipo capacitado",
+        "texto": "Técnicos preparados para el mantenimiento de autos, camionetas y SUV."
+      },
+      {
+        "icono": "calidad",
+        "titulo": "Productos de calidad",
+        "texto": "Trabajamos con productos de marcas reconocidas, como Castrol y Würth."
+      }
+    ],
+    "columnas": {
+      "md": 2,
+      "lg": 4
+    }
   },
   "testimonio": {
     "src": "assets/cliente/testimonio/testimonio.mp4",
     "poster": "assets/cliente/testimonio/poster.webp",
     "cita": "Todo muy pulcro y la atención, A1. Vengo desde hace más de 4 años a este taller y siempre lo recomiendo.",
-    "autor": "Paolo Valdez · mantenimiento de los 130 000 km",
+    "autor": "Paolo Valdez · mantenimiento de los 130 000 km",
     "ancho": 720,
     "alto": 1280,
     "vertical": true,
     "proporcion": 0.5625,
     "tipo": "video/mp4"
+  },
+  "marcasAtendidas": {
+    "titulo": [
+      "Marcas atendidas"
+    ],
+    "marcas": [
+      {
+        "nombre": "Toyota",
+        "slug": "toyota",
+        "logo": "assets/cliente/marcas/toyota.svg"
+      },
+      {
+        "nombre": "Hyundai",
+        "slug": "hyundai",
+        "logo": "assets/cliente/marcas/hyundai.svg"
+      },
+      {
+        "nombre": "Kia",
+        "slug": "kia",
+        "logo": "assets/cliente/marcas/kia.svg"
+      },
+      {
+        "nombre": "Nissan",
+        "slug": "nissan",
+        "logo": "assets/cliente/marcas/nissan.svg"
+      },
+      {
+        "nombre": "Chevrolet",
+        "slug": "chevrolet",
+        "logo": "assets/cliente/marcas/chevrolet.svg"
+      },
+      {
+        "nombre": "Suzuki",
+        "slug": "suzuki",
+        "logo": "assets/cliente/marcas/suzuki.svg"
+      },
+      {
+        "nombre": "Mitsubishi",
+        "slug": "mitsubishi",
+        "logo": "assets/cliente/marcas/mitsubishi.svg"
+      },
+      {
+        "nombre": "Volkswagen",
+        "slug": "volkswagen",
+        "logo": "assets/cliente/marcas/volkswagen.svg"
+      },
+      {
+        "nombre": "Ford",
+        "slug": "ford",
+        "logo": "assets/cliente/marcas/ford.svg"
+      },
+      {
+        "nombre": "Renault",
+        "slug": "renault",
+        "logo": "assets/cliente/marcas/renault.svg"
+      },
+      {
+        "nombre": "Peugeot",
+        "slug": "peugeot",
+        "logo": "assets/cliente/marcas/peugeot.svg"
+      },
+      {
+        "nombre": "Changan",
+        "slug": "changan",
+        "logo": "",
+        "placa": {
+          "lineas": [
+            "Changan"
+          ],
+          "tam": 0.86
+        }
+      },
+      {
+        "nombre": "JAC",
+        "slug": "jac",
+        "logo": "",
+        "placa": {
+          "lineas": [
+            "JAC"
+          ],
+          "tam": 1.15
+        }
+      },
+      {
+        "nombre": "Great Wall",
+        "slug": "great-wall",
+        "logo": "",
+        "placa": {
+          "lineas": [
+            "Great",
+            "Wall"
+          ],
+          "tam": 0.87
+        }
+      },
+      {
+        "nombre": "Haval",
+        "slug": "haval",
+        "logo": "",
+        "placa": {
+          "lineas": [
+            "Haval"
+          ],
+          "tam": 1.01
+        }
+      },
+      {
+        "nombre": "BYD",
+        "slug": "byd",
+        "logo": "",
+        "placa": {
+          "lineas": [
+            "BYD"
+          ],
+          "tam": 1.15
+        }
+      },
+      {
+        "nombre": "Chery",
+        "slug": "chery",
+        "logo": "",
+        "placa": {
+          "lineas": [
+            "Chery"
+          ],
+          "tam": 1.01
+        }
+      },
+      {
+        "nombre": "Geely",
+        "slug": "geely",
+        "logo": "",
+        "placa": {
+          "lineas": [
+            "Geely"
+          ],
+          "tam": 1.01
+        }
+      },
+      {
+        "nombre": "Dodge",
+        "slug": "dodge",
+        "logo": "",
+        "placa": {
+          "lineas": [
+            "Dodge"
+          ],
+          "tam": 1.01
+        }
+      },
+      {
+        "nombre": "BMW",
+        "slug": "bmw",
+        "logo": "assets/cliente/marcas/bmw.svg"
+      },
+      {
+        "nombre": "Audi",
+        "slug": "audi",
+        "logo": "assets/cliente/marcas/audi.svg"
+      }
+    ],
+    "columnas": {
+      "sm": 3,
+      "md": 7,
+      "lg": 7
+    }
   }
 }
