@@ -61,12 +61,16 @@
 .paquete.lg-completo .paquete-resumen{font-size:19px;max-width:34ch;margin-bottom:26px}
 .paquete.lg-completo .paquete-boton{margin-top:0;min-height:52px;padding:13px 22px;font-size:16px}
 }
-/* Los demás servicios, plegados bajo la grilla para que la portada no vuelva a llenarse de texto */
-.otros-servicios{margin-top:32px;border-top:1px solid var(--line)}
-.otros-servicios summary{font-size:16px;font-weight:600;padding:16px 0;min-height:56px;align-items:center}
-.otros-servicios ul{list-style:none;margin:0;padding:0 0 22px;display:flex;flex-wrap:wrap;gap:8px}
-.otros-servicios a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1px solid #b7bab3;border-radius:3px;font-size:14px;font-weight:600;transition:border-color .2s}
-.otros-servicios a:hover{border-color:var(--ink)}
+/* Los demás servicios (6-oct, pedido del taller): lista simple de viñetas, solo el nombre y a la vista */
+.otros-servicios{margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+.otros-servicios h3{font-size:12px;font-weight:700;letter-spacing:2px;line-height:1.4;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.otros-servicios ul{list-style:none;margin:0;padding:0 0 8px;column-gap:48px}
+.otros-servicios li{position:relative;padding-left:21px;break-inside:avoid}
+.otros-servicios li::before{content:'';position:absolute;left:1px;top:18.5px;width:7px;height:7px;background:var(--accent)}
+.otros-servicios a{display:inline-block;padding:10px 0;font-size:16px;line-height:24px;font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-color:#c3c6be;text-decoration-thickness:1px;text-underline-offset:5px;transition:text-decoration-color .2s}
+.otros-servicios a:hover{text-decoration-color:currentColor}
+@media(min-width:640px){.otros-servicios ul{columns:2}}
+@media(min-width:1024px){.otros-servicios ul{columns:3}}
 /* Quiénes somos: banda del color de marca con la foto del taller cortada en diagonal */
 .nosotros{display:grid;background:var(--accent);color:var(--accent-ink)}
 .nosotros-foto{position:relative;margin:0;aspect-ratio:3/2;overflow:hidden;background:var(--ink);clip-path:polygon(0 0,100% 0,100% calc(100% - 30px),0 100%)}
@@ -146,3 +150,36 @@
 .niveles-grid.n3,.niveles-grid.n6,.niveles-grid.n9{grid-template-columns:repeat(3,minmax(0,1fr))}
 .niveles-grid.n3>.nivel:last-child,.niveles-grid.n9>.nivel:last-child{grid-column:auto}
 }
+/* ===== Correcciones del 6-oct-2026: "¿Por qué elegirnos?" y "Marcas atendidas". Bandas carbón, como la de
+   cotización, que alternan con las secciones claras; tarjetas y placas parejas. Móvil primero. ===== */
+.por-que,.marcas{background:var(--ink);color:var(--paper)}
+.por-que .eyebrow,.marcas .eyebrow{color:#a8aba8}
+.por-que h2,.marcas h2{text-wrap:balance}
+.por-que h2 em,.marcas h2 em{color:#a4a7a2}
+.por-que+.quote{border-top:1px solid #2f3236}
+/* Por qué elegirnos: el ícono va en una ficha del color de marca con el corte diagonal de sus banners.
+   Celular: ícono a la izquierda; desde 560 px, arriba. Las columnas (--c-md, --c-lg) las calcula la lib. */
+.razones{--g:12px;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--g)}
+.razon{--c:1;flex:0 0 calc((100% - (var(--c) - 1) * var(--g)) / var(--c));display:grid;grid-template-columns:auto minmax(0,1fr);align-content:start;column-gap:18px;background:var(--ink2);border:1px solid #33363a;padding:20px 18px 22px}
+.razon-icono{grid-row:1/3;display:grid;place-items:center;width:48px;height:48px;background:var(--accent);color:var(--accent-ink);clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
+.razon-icono svg{width:26px;height:26px;stroke-width:1.7}
+.razon h3{font-family:var(--display);font-size:23px;font-weight:700;font-style:italic;line-height:1.05;letter-spacing:.2px;text-transform:uppercase;color:#fff;overflow-wrap:break-word}
+.razon p{margin-top:6px;font-size:15px;line-height:1.5;color:#c4c5c5}
+@media(min-width:560px){
+.razones{--g:16px}
+.razon{--c:var(--c-md,2);grid-template-columns:minmax(0,1fr);padding:28px 24px 30px}
+.razon-icono{grid-row:auto;width:54px;height:54px;margin-bottom:22px;clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
+.razon-icono svg{width:30px;height:30px}
+.razon h3{font-size:25px}
+.razon p{margin-top:10px}
+}
+@media(min-width:1024px){.razones{--g:20px}.razon{--c:var(--c-lg,4)}.razon h3{font-size:26px}}
+/* Marcas atendidas: placas del mismo tamaño en una grilla pareja (la última fila, si queda corta, va centrada).
+   Logo o nombre en un solo color; su tamaño va en em del marco, que escala con el ancho de la placa. */
+.marcas-lista{--g:10px;list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:var(--g)}
+.marca{--c:var(--c-sm,3);flex:0 0 calc((100% - (var(--c) - 1) * var(--g)) / var(--c));aspect-ratio:3/2;display:grid;place-items:center;background:var(--ink2);border:1px solid #303337;color:#d5d7d4;container-type:inline-size;overflow:hidden}
+.marca-marco{display:flex;align-items:center;justify-content:center;font-size:18px;font-size:clamp(10px,18cqw,30px)}
+.marca-logo{display:block;fill:currentColor;stroke:none}
+.marca-nombre{display:block;font-family:var(--display);font-weight:700;line-height:.95;letter-spacing:.04em;text-transform:uppercase;text-align:center;white-space:nowrap}
+@media(min-width:640px){.marcas-lista{--g:12px}.marca{--c:var(--c-md,5)}.marca-marco{font-size:20px;font-size:clamp(10px,18cqw,30px)}}
+@media(min-width:1024px){.marcas-lista{--g:14px}.marca{--c:var(--c-lg,6)}.marca-marco{font-size:26px;font-size:clamp(10px,18cqw,30px)}}
