@@ -433,7 +433,7 @@
   })();
   </script>
   <p id="hoy-presupuesto" style="margin:0 0 10px;font-weight:700;color:#e53935"></p>
-  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 8px"><span id="hoy-contador" style="font-size:.9em;opacity:.85"></span><button class="hoy-btn hoy-renovar" id="hoy-renovar">Renovar los 60</button><button class="hoy-btn hoy-copiar" id="hoy-copiar">Copiar enviados</button><span id="hoy-estado" style="font-size:.85em;opacity:.85"></span></div>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 8px"><span id="hoy-contador" style="font-size:.9em;opacity:.85"></span><button class="hoy-btn hoy-renovar" id="hoy-renovar">Renovar los 60</button><button class="hoy-btn hoy-copiar" id="hoy-copiar">Copiar enviados</button><button class="hoy-btn hoy-copiar" id="hoy-pasar">Pasar a otro equipo</button><span id="hoy-estado" style="font-size:.85em;opacity:.85"></span></div>
   <div id="hoy-confirmar" hidden style="margin:0 0 10px;padding:10px 12px;border-radius:10px;border:1px solid #7c3aed;background:rgba(124,58,237,.10);font-size:.9em">Las filas que no marcaste, ¿también las mandaste?<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button class="hoy-btn hoy-renovar" id="hoy-todas">Sí, mandé todas</button><button class="hoy-btn hoy-copiar" id="hoy-marcadas">No, solo las marcadas</button><button class="hoy-btn hoy-cancelar" id="hoy-cancelar">Cancelar</button></div></div>
   <style>
     .hoy-fila{display:flex;align-items:center;gap:8px;padding:7px 4px;border-bottom:1px solid rgba(128,128,128,.25);flex-wrap:wrap}
@@ -979,7 +979,19 @@
       estado(n?('Listo: entraron '+nuevos+' nuevos. Quedan '+Math.max(0,libres.length-n)+' por mandar despu\u00e9s de estos.'):'Ya no quedan prospectos por mandar en este panel: p\u00eddeme una recarga.');
       v.scrollIntoView({behavior:'auto',block:'start'});}
     /* Al abrir: si en este celular ya se renovo sobre esta misma vista, se muestra la renovada. */
-    function restaurar(){var st;try{st=JSON.parse(localStorage.getItem(RK));}catch(e){}
+    /* Link "Pasar a otro equipo": lleva los enviados y la vista renovada (indices del ranking en base 36). */
+    function idxDe(sl){for(var i=0;i<R.filas.length;i++)if(R.filas[i][0]===sl)return i;return -1;}
+    function linkSync(){var s=leer(),env=[],vis=[];R.filas.forEach(function(f,i){if(s[f[0]])env.push(i.toString(36));});
+      casillas().forEach(function(c){var i=idxDe(c.getAttribute('data-env'));if(i>=0)vis.push(i.toString(36));});
+      return location.href.split('#')[0]+'#sync='+encodeURIComponent(base)+'~'+env.join('.')+'~'+vis.join('.');}
+    function importar(){var m=/[#&]sync=([^~]*)~([^~]*)~(.*)$/.exec(location.hash);if(!m)return false;
+      try{history.replaceState(null,'',location.href.split('#')[0]);}catch(e){}
+      if(decodeURIComponent(m[1])!==base){estado('Ese link es de una vista anterior: en el servidor ya hay una recarga nueva.');return false;}
+      var n=0;m[2].split('.').filter(Boolean).forEach(function(x){var f=R.filas[parseInt(x,36)];if(f){marcar(f[0]);n++;}});
+      var l=m[3].split('.').filter(Boolean).map(function(x){return R.filas[parseInt(x,36)];}).filter(Boolean);
+      if(l.length){pintarFilas(l);try{localStorage.setItem(RK,JSON.stringify({base:base,slugs:l.map(function(f){return f[0];}),hecho:new Date().toISOString()}));}catch(e){}}else pintar();
+      estado('Sincronizado: '+n+' enviados y la misma vista del otro equipo.');return true;}
+    function restaurar(){if(importar())return;var st;try{st=JSON.parse(localStorage.getItem(RK));}catch(e){}
       if(!st||st.base!==base||!st.slugs||!st.slugs.length)return;
       var mapa={};R.filas.forEach(function(f){mapa[f[0]]=f;});
       var l=st.slugs.map(function(x){return mapa[x];}).filter(Boolean);
@@ -999,6 +1011,8 @@
         if(cs.length&&marc===cs.length){renovar(false);}else{document.getElementById('hoy-confirmar').hidden=false;}return;}
       if(id==='hoy-todas'){renovar(true);return;}
       if(id==='hoy-marcadas'){renovar(false);return;}
+      if(id==='hoy-pasar'){var u=linkSync();
+        (navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(function(){estado('Link copiado: mándatelo por WhatsApp y ábrelo en el otro equipo.');},function(){prompt('Copia este link y ábrelo en el otro equipo:',u);});return;}
       if(id==='hoy-cancelar'){document.getElementById('hoy-confirmar').hidden=true;return;}
       if(id==='hoy-copiar'){var s=leer(),l=Object.keys(s).filter(function(sl){return s[sl]&&enPanel()[sl];});var txt=l.join('\n');
         (l.length&&navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(function(){e.target.textContent='Copiado ('+l.length+')';setTimeout(function(){e.target.textContent='Copiar enviados';},1500);},function(){prompt(l.length?'Copia esto (un slug por linea):':'No hay enviados por archivar.',txt);});return;}
