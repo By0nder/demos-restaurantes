@@ -34,7 +34,7 @@
     
     
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"School","name":"Monterrico Christian School","description":"Colegio cristiano bilingüe en Santiago de Surco, Lima: Early Years (3 a 5 años), Elementary (1.er a 6.º grado) y High School (7.º a 11.º grado), con programa de inmersión en inglés.","image":"https://by0nder.github.io/demos-restaurantes/monterrico-christian-school/assets/og.jpg","telephone":"+5113442888","address":{"@type":"PostalAddress","streetAddress":"Av. De los Ingenieros 325, Urb. Casuarinas Sur, Santiago de Surco","addressLocality":"Santiago de Surco","addressRegion":"Lima","addressCountry":"PE"},"geo":{"@type":"GeoCoordinates","latitude":-12.1239632,"longitude":-76.9736073},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Monday","https://schema.org/Tuesday","https://schema.org/Wednesday","https://schema.org/Thursday","https://schema.org/Friday"],"opens":"08:00","closes":"16:30"}],"url":"https://mcslima.edu.pe/","sameAs":["https://www.facebook.com/MonterricoChristianSchool","https://www.instagram.com/monterricochristianschool/"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Early Years","description":"Inicial de 3 a 5 años: aprenden jugando, con inmersión en inglés desde el nivel inicial."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Elementary","description":"Primaria de 1.er a 6.º grado, con el programa de inmersión en inglés hasta sexto grado."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"High School","description":"Secundaria de 7.º a 11.º grado (1.° a 5.° de secundaria), bilingüe."}}]},"currenciesAccepted":"PEN","dateModified":"2026-10-06","alternateName":"MCS","foundingDate":"2001","slogan":"Colaborando en la formación de vidas íntegras","email":"admision@mcslima.edu.pe","logo":"https://by0nder.github.io/demos-restaurantes/monterrico-christian-school/assets/logo.png"}
+    {"@context":"https://schema.org","@type":"School","name":"Monterrico Christian School","description":"Colegio cristiano bilingüe en Santiago de Surco, Lima: Early Years (3 a 5 años), Elementary (1.er a 6.º grado) y High School (7.º a 11.º grado), con programa de inmersión en inglés.","image":"https://by0nder.github.io/demos-restaurantes/monterrico-christian-school/assets/og.jpg","telephone":"+5113442888","address":{"@type":"PostalAddress","streetAddress":"Av. De los Ingenieros 325, Urb. Casuarinas Sur, Santiago de Surco","addressLocality":"Santiago de Surco","addressRegion":"Lima","addressCountry":"PE"},"geo":{"@type":"GeoCoordinates","latitude":-12.1239632,"longitude":-76.9736073},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Monday","https://schema.org/Tuesday","https://schema.org/Wednesday","https://schema.org/Thursday","https://schema.org/Friday"],"opens":"08:00","closes":"16:30"}],"url":"https://mcslima.edu.pe/","sameAs":["https://www.facebook.com/MonterricoChristianSchool","https://www.instagram.com/monterricochristianschool/"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Early Years","description":"Inicial de 3 a 5 años: aprenden jugando, con inmersión en inglés desde el nivel inicial."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Elementary","description":"Primaria de 1.er a 6.º grado, con el programa de inmersión en inglés hasta sexto grado."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"High School","description":"Secundaria de 7.º a 11.º grado (1.° a 5.° de secundaria), bilingüe."}}]},"currenciesAccepted":"PEN","dateModified":"2026-10-07","alternateName":"MCS","foundingDate":"2001","slogan":"Colaborando en la formación de vidas íntegras","email":"admision@mcslima.edu.pe","logo":"https://by0nder.github.io/demos-restaurantes/monterrico-christian-school/assets/logo.png"}
     </script>
     
     
@@ -55,25 +55,33 @@
   
   
   
-  <link rel="stylesheet" href="assets/styles.css"><style>:root { --font-menu: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif; --color-titulos: #E44C00; --cab-fondo: rgba(4,8,66,0.43); --cab-solido: #040842; --pie-fondo: #040842; }
+  <link rel="stylesheet" href="assets/styles.css"><style>:root { --font-menu: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif; --color-titulos: #E44C00; --cab-fondo: rgba(4,8,66,0.43); --cab-solido: #040842; --pie-fondo: #040842; --radio: 16px; --sombra: 0 1px 2px rgba(0, 0, 0, .06), 0 12px 28px -14px color-mix(in srgb, var(--color-primario) 55%, transparent); --sombra-alta: 0 2px 6px rgba(0, 0, 0, .08), 0 24px 44px -18px color-mix(in srgb, var(--color-primario) 65%, transparent); }
 .font-menu { font-family: var(--font-menu); }
 h1, h2, h3 { text-transform: uppercase; }
 .sin-mayus, .sin-mayus h1, .sin-mayus h2, .sin-mayus h3 { text-transform: none; }
+h1, h2, h3 { text-wrap: balance; }
+main p, main li { text-wrap: pretty; }
+.sombra-marca { box-shadow: var(--sombra); }
+#cotizador { padding-top: 4rem; padding-bottom: 4rem; }
+@media (min-width: 768px) { #cotizador { padding-top: 5.5rem; padding-bottom: 5.5rem; } }
+#cotizador button[type="submit"] { font-family: var(--font-menu); font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
 main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titulos); }
-.cab-marca { position: sticky; top: 0; z-index: 50; background: var(--cab-solido); color: #fff; }
-@media (min-width: 1024px) {
-  .cab-marca { position: fixed; left: 0; right: 0; background: var(--cab-fondo); transition: background-color .25s ease, box-shadow .25s ease; }
-  .cab-marca.cab-solida, .cab-marca.cab-sin-foto { background: var(--cab-solido); box-shadow: 0 10px 26px -18px rgba(0, 0, 0, .7); }
-  .cab-marca.cab-sin-foto { position: sticky; }
-  .cab-marca:not(.cab-solida):not(.cab-sin-foto) .menu-item:not(.menu-destacado) { text-shadow: 0 1px 4px rgba(0, 0, 0, .55); }
-}
-.cab-marca .menu-item { font-family: var(--font-menu); text-transform: uppercase; letter-spacing: .06em; font-size: 15px; font-weight: 500; color: #fff; }
+.cab-marca { position: relative; z-index: 50; background: var(--cab-solido); color: #fff; }
+.cab-marca .cab-fila { height: 64px; }
+.cab-marca .cab-logo { height: 32px; width: auto; }
+.cab-marca .menu-item { position: relative; font-family: var(--font-menu); text-transform: uppercase; letter-spacing: .06em; font-size: 15px; font-weight: 500; color: #fff; }
 .cab-marca .menu-item:hover { color: var(--color-acento-claro); }
 .cab-marca .menu-item[aria-current="page"] { color: var(--color-acento-claro); }
 .cab-marca .menu-destacado { background: var(--color-acento); color: var(--color-acento-texto); padding-left: 1.1rem; padding-right: 1rem; font-weight: 700; }
 .cab-marca .menu-destacado:hover { color: var(--color-acento-texto); filter: brightness(1.08); }
 .cab-marca .submenu a[aria-current="page"] { color: var(--color-acento-fuerte); font-weight: 700; }
-.cab-marca a:focus-visible, .cab-marca button:focus-visible { outline-color: #fff; }</style>
+.cab-marca a:focus-visible, .cab-marca button:focus-visible { outline-color: #fff; }
+@media (min-width: 1024px) {
+  .cab-marca .cab-fila { height: 78px; }
+  .cab-marca .cab-logo { height: 40px; }
+  .cab-marca:not(.cab-sin-foto) { position: absolute; top: 0; left: 0; right: 0; background: var(--cab-fondo); }
+  .cab-marca:not(.cab-sin-foto):not(.cab-solida) .menu-item:not(.menu-destacado) { text-shadow: 0 1px 4px rgba(0, 0, 0, .55); }
+}</style>
   
   
   <style>:root { --font-display: "Roboto Slab", "Archivo", ui-sans-serif, system-ui, sans-serif; --font-texto: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif; }</style>
@@ -115,9 +123,9 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
 
 
 <header class="cab-marca">
-  <div class="max-w-6xl mx-auto px-4 h-16 lg:h-[78px] flex items-center justify-between gap-6">
+  <div class="cab-fila max-w-6xl mx-auto px-4 flex items-center justify-between gap-6">
     <a href="./" class="flex shrink-0 items-center min-h-[44px]" aria-label="Monterrico Christian School: inicio">
-      <img src="assets/logo-blanco.png" alt="Monterrico Christian School" class="h-8 lg:h-10 w-auto">
+      <img src="assets/logo-blanco.png" alt="Monterrico Christian School" class="cab-logo">
     </a>
     <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1" aria-label="Menú principal">
       
@@ -193,7 +201,7 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
     <ul class="mb-1 border-l border-white/20 pl-4"><li><a href="contactenos/" class="flex min-h-[44px] items-center text-[15px] text-white/85">Contáctenos</a></li><li><a href="trabaja-con-nosotros/" class="flex min-h-[44px] items-center text-[15px] text-white/85">Trabaja con nosotros</a></li></ul>
     
   </nav>
-  <script>(function () { var c = document.querySelector(".cab-marca"); if (!c) return; var f = function () { c.classList.toggle("cab-solida", window.scrollY > 24); }; f(); window.addEventListener("scroll", f, { passive: true }); })();</script>
+  
 </header>
 
 
@@ -208,6 +216,7 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
   .hero-pano-foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .9s ease; }
   .hero-pano-foto.activa { opacity: 1; }
   .hero-pano-velo { background: linear-gradient(to top, color-mix(in srgb, var(--color-primario) 78%, transparent) 0%, color-mix(in srgb, var(--color-primario) 30%, transparent) 42%, transparent 72%); }
+  .hero-pano-degradado { background: linear-gradient(to top, color-mix(in srgb, var(--color-primario) 62%, transparent) 0%, color-mix(in srgb, var(--color-primario) 22%, transparent) 20%, transparent 42%); }
   .hero-pano-punto span { background: rgba(255, 255, 255, .55); box-shadow: 0 0 0 1px rgba(0, 0, 0, .18); }
   .hero-pano-punto[aria-current="true"] span { background: #fff; }
   @media (prefers-reduced-motion: reduce) { .hero-pano-foto { transition: none; } }
@@ -225,7 +234,8 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
     
     
     
-    <a href="admision/" class="font-menu absolute bottom-6 right-6 lg:bottom-10 lg:right-10 hidden md:inline-flex min-h-[46px] items-center gap-1.5 rounded-full px-6 text-[15px] font-bold uppercase tracking-[0.06em] shadow-lg shadow-black/30 transition hover:brightness-110" style="background: var(--color-acento); color: var(--color-acento-texto)">Admisión 2027&nbsp;&rarr;</a>
+    
+    <a href="admision/" class="font-menu absolute bottom-6 right-6 lg:bottom-10 lg:right-10 hidden md:inline-flex min-h-[48px] items-center gap-2 rounded-full px-6 text-[15px] font-bold uppercase tracking-[0.06em] shadow-lg shadow-black/30 transition hover:brightness-110" style="background: var(--color-acento); color: var(--color-acento-texto)">Admisión 2027&nbsp;&rarr;</a>
     
     
     <div class="absolute inset-x-0 bottom-2 md:bottom-4 flex justify-center gap-1" role="group" aria-label="Fotos de la portada">
@@ -257,36 +267,43 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
     
       
 
-<section id="servicios" class="py-14 md:py-20">
+<section id="servicios" class="py-16 md:py-[5.5rem]">
   <div class="max-w-6xl mx-auto px-4">
-    <h1 class="text-3xl md:text-[2.6rem] font-bold text-center leading-tight reveal">¡Bienvenidos a Monterrico Christian School!</h1>
+    <h1 class="text-[2rem] md:text-[2.625rem] font-bold text-center leading-[1.15] reveal">¡Bienvenidos a Monterrico Christian School!</h1>
+    <p class="reveal mt-6 md:mt-7 mx-auto max-w-[44rem] text-center text-lg md:text-[1.375rem] leading-[1.6] font-medium" style="color: var(--color-primario)">Nos llena de alegría tener la oportunidad de recibirlos en nuestra comunidad educativa, un lugar donde la excelencia académica, el desarrollo integral y la fe de cada estudiante son los pilares fundamentales de nuestra misión.</p>
     
-    <div class="mt-6 md:mt-8 max-w-4xl mx-auto space-y-4 text-center text-base md:text-lg leading-relaxed reveal" style="color: var(--color-texto)">
-      <p>Nos llena de alegría tener la oportunidad de recibirlos en nuestra comunidad educativa, un lugar donde la excelencia académica, el desarrollo integral y la fe de cada estudiante son los pilares fundamentales de nuestra misión.</p><p>Como institución cristiana, nos comprometemos a ofrecer un ambiente donde se fomente no solo el conocimiento académico, sino también los valores cristianos, el amor por el prójimo, el respeto, la integridad y la responsabilidad.</p><p>En Monterrico Christian School (MCS) preparamos a los estudiantes para que vivan con propósito, sirvan con corazón y se conviertan en líderes que impacten positivamente en la sociedad. A través de programas académicos de alta calidad y una formación espiritual sólida, buscamos que cada uno de nuestros estudiantes crezca no solo en conocimiento, sino también en su relación con Dios y con los demás.</p><p>Estamos listos para acompañarlos en este hermoso viaje de aprendizaje y crecimiento. ¡Juntos, vamos a caminar hacia un futuro lleno de bendiciones y logros!</p>
+    <div class="reveal mt-6 md:mt-8 mx-auto max-w-[38rem] text-left text-base md:text-[1.0625rem] leading-[1.8]" style="color: var(--color-texto)">
+      <p class="">Como institución cristiana, nos comprometemos a ofrecer un ambiente donde se fomente no solo el conocimiento académico, sino también los valores cristianos, el amor por el prójimo, el respeto, la integridad y la responsabilidad.</p><p class="mt-4">En Monterrico Christian School (MCS) preparamos a los estudiantes para que vivan con propósito, sirvan con corazón y se conviertan en líderes que impacten positivamente en la sociedad. A través de programas académicos de alta calidad y una formación espiritual sólida, buscamos que cada uno de nuestros estudiantes crezca no solo en conocimiento, sino también en su relación con Dios y con los demás.</p><p class="mt-4">Estamos listos para acompañarlos en este hermoso viaje de aprendizaje y crecimiento. ¡Juntos, vamos a caminar hacia un futuro lleno de bendiciones y logros!</p>
     </div>
     
-    <div class="mt-12 md:mt-14 grid gap-7 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-12 md:mt-16 grid gap-6 md:gap-8 max-w-sm md:max-w-none mx-auto md:grid-cols-3">
       
-      <article class="tarjeta reveal flex flex-col rounded-[22px] p-4 md:p-5" style="background: #E44C00; box-shadow: 0 16px 32px -14px color-mix(in srgb, var(--color-primario) 70%, transparent)">
-        <img src="assets/nivel-early-years.webp" alt="Dos niñas de Early Years sonriendo en el patio" loading="lazy" decoding="async" class="aspect-[3/2] w-full rounded-2xl object-cover">
-        <h2 class="font-menu mt-5 text-center text-[1.4rem] md:text-2xl font-semibold uppercase tracking-[0.06em] leading-tight" style="color: var(--color-primario)">Early Years</h2>
-        <p class="mt-1 text-center text-[1.05rem] md:text-lg font-semibold" style="color: var(--color-primario)">3 años – 5 años</p>
-        <a href="early-years/" class="font-menu mt-4 self-center inline-flex min-h-[44px] items-center gap-1 rounded-full bg-white px-5 text-sm font-bold uppercase tracking-[0.06em] transition hover:brightness-95" style="color: var(--color-primario)">Conocer más&nbsp;&rarr;</a>
+      <div class="reveal">
+      <article class="tarjeta flex h-full flex-col rounded-[var(--radio,16px)] p-4 md:p-5" style="background: #E44C00; box-shadow: var(--sombra)">
+        <img src="assets/nivel-early-years.webp" alt="Dos niñas de Early Years sonriendo en el patio" loading="lazy" decoding="async" class="aspect-[3/2] w-full rounded-xl object-cover">
+        <h2 class="font-menu mt-5 text-center text-[1.375rem] md:text-2xl font-bold uppercase tracking-[0.06em] leading-tight" style="color: var(--color-primario)">Early Years</h2>
+        <p class="mt-1.5 text-center text-base md:text-lg font-semibold" style="color: var(--color-primario)">3 años – 5 años</p>
+        <div class="mt-auto flex justify-center pt-5"><a href="early-years/" class="font-menu inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-white px-6 text-[15px] font-bold uppercase tracking-[0.06em] transition hover:brightness-95" style="color: var(--color-primario)">Conocer más&nbsp;&rarr;</a></div>
       </article>
+      </div>
       
-      <article class="tarjeta reveal flex flex-col rounded-[22px] p-4 md:p-5" style="background: #7EB51F; box-shadow: 0 16px 32px -14px color-mix(in srgb, var(--color-primario) 70%, transparent)">
-        <img src="assets/nivel-elementary.webp" alt="Alumnas de Elementary con el polo rojo del colegio" loading="lazy" decoding="async" class="aspect-[3/2] w-full rounded-2xl object-cover">
-        <h2 class="font-menu mt-5 text-center text-[1.4rem] md:text-2xl font-semibold uppercase tracking-[0.06em] leading-tight" style="color: var(--color-primario)">Elementary</h2>
-        <p class="mt-1 text-center text-[1.05rem] md:text-lg font-semibold" style="color: var(--color-primario)">1.er grado – 6.º grado</p>
-        <a href="elementary/" class="font-menu mt-4 self-center inline-flex min-h-[44px] items-center gap-1 rounded-full bg-white px-5 text-sm font-bold uppercase tracking-[0.06em] transition hover:brightness-95" style="color: var(--color-primario)">Conocer más&nbsp;&rarr;</a>
+      <div class="reveal">
+      <article class="tarjeta flex h-full flex-col rounded-[var(--radio,16px)] p-4 md:p-5" style="background: #7EB51F; box-shadow: var(--sombra)">
+        <img src="assets/nivel-elementary.webp" alt="Alumnas de Elementary con el polo rojo del colegio" loading="lazy" decoding="async" class="aspect-[3/2] w-full rounded-xl object-cover">
+        <h2 class="font-menu mt-5 text-center text-[1.375rem] md:text-2xl font-bold uppercase tracking-[0.06em] leading-tight" style="color: var(--color-primario)">Elementary</h2>
+        <p class="mt-1.5 text-center text-base md:text-lg font-semibold" style="color: var(--color-primario)">1.er grado – 6.º grado</p>
+        <div class="mt-auto flex justify-center pt-5"><a href="elementary/" class="font-menu inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-white px-6 text-[15px] font-bold uppercase tracking-[0.06em] transition hover:brightness-95" style="color: var(--color-primario)">Conocer más&nbsp;&rarr;</a></div>
       </article>
+      </div>
       
-      <article class="tarjeta reveal flex flex-col rounded-[22px] p-4 md:p-5" style="background: #11B8C9; box-shadow: 0 16px 32px -14px color-mix(in srgb, var(--color-primario) 70%, transparent)">
-        <img src="assets/nivel-high-school.webp" alt="Alumna de High School junto a un árbol del jardín" loading="lazy" decoding="async" class="aspect-[3/2] w-full rounded-2xl object-cover">
-        <h2 class="font-menu mt-5 text-center text-[1.4rem] md:text-2xl font-semibold uppercase tracking-[0.06em] leading-tight" style="color: var(--color-primario)">High School</h2>
-        <p class="mt-1 text-center text-[1.05rem] md:text-lg font-semibold" style="color: var(--color-primario)">7.º grado – 11.º grado</p>
-        <a href="high-school/" class="font-menu mt-4 self-center inline-flex min-h-[44px] items-center gap-1 rounded-full bg-white px-5 text-sm font-bold uppercase tracking-[0.06em] transition hover:brightness-95" style="color: var(--color-primario)">Conocer más&nbsp;&rarr;</a>
+      <div class="reveal">
+      <article class="tarjeta flex h-full flex-col rounded-[var(--radio,16px)] p-4 md:p-5" style="background: #11B8C9; box-shadow: var(--sombra)">
+        <img src="assets/nivel-high-school.webp" alt="Alumna de High School junto a un árbol del jardín" loading="lazy" decoding="async" class="aspect-[3/2] w-full rounded-xl object-cover">
+        <h2 class="font-menu mt-5 text-center text-[1.375rem] md:text-2xl font-bold uppercase tracking-[0.06em] leading-tight" style="color: var(--color-primario)">High School</h2>
+        <p class="mt-1.5 text-center text-base md:text-lg font-semibold" style="color: var(--color-primario)">7.º grado – 11.º grado</p>
+        <div class="mt-auto flex justify-center pt-5"><a href="high-school/" class="font-menu inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-white px-6 text-[15px] font-bold uppercase tracking-[0.06em] transition hover:brightness-95" style="color: var(--color-primario)">Conocer más&nbsp;&rarr;</a></div>
       </article>
+      </div>
       
     </div>
   </div>
@@ -298,7 +315,7 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
 
 
 
-<section id="por-que-escoger-mcs" class="relative py-14 md:py-20" style="background: linear-gradient(180deg, #040842 0%, #1F90AA 78%, #2AAED6 100%)">
+<section id="por-que-escoger-mcs" class="relative py-16 md:py-[5.5rem]" style="background: linear-gradient(180deg, #040842 0%, #1F90AA 78%, #2AAED6 100%)">
   
   <div class="relative max-w-6xl mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
@@ -306,7 +323,7 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
       <div class="reveal text-center" style="color: #ffffff">
         
         
-        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center" style="color: #ffffff">¿Por qué escoger MCS?</h2>
+        <h2 class="text-[1.75rem] md:text-[2.25rem] leading-[1.2] font-bold text-center" style="color: #ffffff">¿Por qué escoger MCS?</h2>
         
         
         
@@ -317,33 +334,39 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
       </div>
     </div>
     
-    <div class="mt-10 md:mt-12 grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-10 md:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       
-      <div class="reveal block rounded-md border-2 p-6 md:p-7  text-center" style="border-color: #11B8C9; background: color-mix(in srgb, var(--color-primario) 34%, transparent); color: #ffffff">
-        <img src="assets/icono-bilingue.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 110px">
-        <h3 class="font-menu tracking-[0.04em] text-lg font-bold leading-snug" style="color: #ffffff">Educación bilingüe</h3>
-        <p class="mt-2 text-[15px] md:text-base leading-relaxed text-left">Nuestro programa de inmersión en el idioma inglés (EIP) se inicia en el nivel inicial, este programa cuenta con la participación de maestras nativas en dicho idioma, en un ambiente preparado para que el estudiante desarrolle su lenguaje utilizando diferentes métodos y herramientas de aprendizaje.</p>
+      <div class="reveal ">
+      <div class="flex h-full flex-col rounded-[var(--radio,16px)] border-2 p-6 md:p-7 items-center text-center" style="border-color: #11B8C9; background: color-mix(in srgb, var(--color-primario) 42%, transparent); color: #ffffff">
+        <img src="assets/icono-bilingue.png" alt="" loading="lazy" class="mb-5 shrink-0" style="height: 110px; width: 110px; object-fit: contain">
+        <h3 class="font-menu tracking-[0.04em] lg:min-h-[2.75em] text-lg font-bold leading-snug" style="color: #ffffff">Educación bilingüe</h3>
+        <p class="mt-2.5 self-stretch text-[15px] leading-[1.7] text-left">Nuestro programa de inmersión en el idioma inglés (EIP) se inicia en el nivel inicial, este programa cuenta con la participación de maestras nativas en dicho idioma, en un ambiente preparado para que el estudiante desarrolle su lenguaje utilizando diferentes métodos y herramientas de aprendizaje.</p>
         
         
         
       </div>
+      </div>
       
-      <div class="reveal block rounded-md border-2 p-6 md:p-7  text-center" style="border-color: #11B8C9; background: color-mix(in srgb, var(--color-primario) 34%, transparent); color: #ffffff">
-        <img src="assets/icono-cristiano.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 110px">
-        <h3 class="font-menu tracking-[0.04em] text-lg font-bold leading-snug" style="color: #ffffff">Valores cristianos</h3>
-        <p class="mt-2 text-[15px] md:text-base leading-relaxed text-left">La educación basada en valores cristianos permite a los estudiantes desarrollarse como personas íntegras, capaces de enfrentar los retos del presente y del futuro. Es nuestra convicción formar personas responsables delante de Dios, consigo mismas, con su familia y la sociedad.</p>
+      <div class="reveal ">
+      <div class="flex h-full flex-col rounded-[var(--radio,16px)] border-2 p-6 md:p-7 items-center text-center" style="border-color: #11B8C9; background: color-mix(in srgb, var(--color-primario) 42%, transparent); color: #ffffff">
+        <img src="assets/icono-cristiano.png" alt="" loading="lazy" class="mb-5 shrink-0" style="height: 110px; width: 110px; object-fit: contain">
+        <h3 class="font-menu tracking-[0.04em] lg:min-h-[2.75em] text-lg font-bold leading-snug" style="color: #ffffff">Valores cristianos</h3>
+        <p class="mt-2.5 self-stretch text-[15px] leading-[1.7] text-left">La educación basada en valores cristianos permite a los estudiantes desarrollarse como personas íntegras, capaces de enfrentar los retos del presente y del futuro. Es nuestra convicción formar personas responsables delante de Dios, consigo mismas, con su familia y la sociedad.</p>
         
         
         
       </div>
+      </div>
       
-      <div class="reveal block rounded-md border-2 p-6 md:p-7  text-center" style="border-color: #11B8C9; background: color-mix(in srgb, var(--color-primario) 34%, transparent); color: #ffffff">
-        <img src="assets/icono-excelencia.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 110px">
-        <h3 class="font-menu tracking-[0.04em] text-lg font-bold leading-snug" style="color: #ffffff">Excelencia académica</h3>
-        <p class="mt-2 text-[15px] md:text-base leading-relaxed text-left">Estamos comprometidos en proveer el mejor ambiente, recursos, calidad profesional y de enseñanza para que nuestros estudiantes alcancen su mayor potencial, utilizando los conocimientos adquiridos así como sus dones y talentos, formamos estudiantes con altos estándares académicos.</p>
+      <div class="reveal sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.75rem)] lg:col-span-1 lg:mx-0 lg:w-auto">
+      <div class="flex h-full flex-col rounded-[var(--radio,16px)] border-2 p-6 md:p-7 items-center text-center" style="border-color: #11B8C9; background: color-mix(in srgb, var(--color-primario) 42%, transparent); color: #ffffff">
+        <img src="assets/icono-excelencia.png" alt="" loading="lazy" class="mb-5 shrink-0" style="height: 110px; width: 110px; object-fit: contain">
+        <h3 class="font-menu tracking-[0.04em] lg:min-h-[2.75em] text-lg font-bold leading-snug" style="color: #ffffff">Excelencia académica</h3>
+        <p class="mt-2.5 self-stretch text-[15px] leading-[1.7] text-left">Estamos comprometidos en proveer el mejor ambiente, recursos, calidad profesional y de enseñanza para que nuestros estudiantes alcancen su mayor potencial, utilizando los conocimientos adquiridos así como sus dones y talentos, formamos estudiantes con altos estándares académicos.</p>
         
         
         
+      </div>
       </div>
       
     </div>
@@ -356,16 +379,16 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
 </section>
 
 
-<section id="proposito" class="sin-mayus py-10 md:py-14">
+<section id="proposito" class="sin-mayus py-12 md:py-16">
   <div class="max-w-4xl mx-auto px-4 text-center reveal">
     
-    <p class="text-2xl md:text-[2.15rem] font-semibold leading-snug" style="font-family: var(--font-display); color: var(--color-primario)">Monterrico Christian School existe para glorificar a Dios a través de la educación.</p>
+    <p class="text-[1.5rem] md:text-[2rem] font-semibold leading-snug" style="font-family: var(--font-display); text-wrap: balance; color: var(--color-primario)">Monterrico Christian School existe para glorificar a Dios a través de la educación.</p>
     
   </div>
 </section>
 
 
-<section id="mas-sobre-mcs" class="relative py-14 md:py-20" style="background: #E44C00">
+<section id="mas-sobre-mcs" class="relative py-16 md:py-[5.5rem]" style="background: #E44C00">
   
   <div class="relative max-w-6xl mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
@@ -373,7 +396,7 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
       <div class="reveal text-center" style="color: var(--color-texto)">
         
         
-        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center" style="color: #ffffff">Más sobre MCS</h2>
+        <h2 class="text-[1.75rem] md:text-[2.25rem] leading-[1.2] font-bold text-center" style="color: #ffffff">Más sobre MCS</h2>
         
         
         
@@ -384,51 +407,61 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
       </div>
     </div>
     
-    <div class="mt-10 md:mt-12 grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <div class="mt-10 md:mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
       
-      <div class="reveal block px-1 py-2  text-center" style="color: var(--color-texto)">
-        <img src="assets/icono-ensenanza.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 92px">
-        <h3 class="font-menu tracking-[0.04em] text-lg font-bold leading-snug" style="color: #040842">Enseñanza personalizada</h3>
-        <p class="mt-2 text-[15px] md:text-base leading-relaxed text-left">La cual nos permite conocer y atender las necesidades de nuestros estudiantes, desde el área cognitiva, emocional, así como también espiritual; entendiendo que cada uno tiene su propia forma y ritmo de aprendizaje.</p>
+      <div class="reveal ">
+      <div class="flex h-full flex-col px-1 py-2 items-center text-center" style="color: var(--color-texto)">
+        <img src="assets/icono-ensenanza.png" alt="" loading="lazy" class="mb-5 shrink-0" style="height: 92px; width: 92px; object-fit: contain">
+        <h3 class="font-menu tracking-[0.04em] lg:min-h-[2.75em] text-lg font-bold leading-snug" style="color: #040842">Enseñanza personalizada</h3>
+        <p class="mt-2.5 self-stretch text-[15px] leading-[1.7] text-left">La cual nos permite conocer y atender las necesidades de nuestros estudiantes, desde el área cognitiva, emocional, así como también espiritual; entendiendo que cada uno tiene su propia forma y ritmo de aprendizaje.</p>
         
         
         
       </div>
+      </div>
       
-      <div class="reveal block px-1 py-2  text-center" style="color: var(--color-texto)">
-        <img src="assets/icono-deportes.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 92px">
-        <h3 class="font-menu tracking-[0.04em] text-lg font-bold leading-snug" style="color: #040842">Deportes</h3>
-        <p class="mt-2 text-[15px] md:text-base leading-relaxed text-left">Se realizan durante todo el año y dentro del horario regular de clases, garantizando la actividad física en nuestros estudiantes. Contamos con áreas apropiadas para la realización de diferentes disciplinas. Promovemos un estilo de vida saludable.</p>
+      <div class="reveal ">
+      <div class="flex h-full flex-col px-1 py-2 items-center text-center" style="color: var(--color-texto)">
+        <img src="assets/icono-deportes.png" alt="" loading="lazy" class="mb-5 shrink-0" style="height: 92px; width: 92px; object-fit: contain">
+        <h3 class="font-menu tracking-[0.04em] lg:min-h-[2.75em] text-lg font-bold leading-snug" style="color: #040842">Deportes</h3>
+        <p class="mt-2.5 self-stretch text-[15px] leading-[1.7] text-left">Se realizan durante todo el año y dentro del horario regular de clases, garantizando la actividad física en nuestros estudiantes. Contamos con áreas apropiadas para la realización de diferentes disciplinas. Promovemos un estilo de vida saludable.</p>
         
         
         
       </div>
+      </div>
       
-      <div class="reveal block px-1 py-2  text-center" style="color: var(--color-texto)">
-        <img src="assets/icono-tecnologia.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 92px">
-        <h3 class="font-menu tracking-[0.04em] text-lg font-bold leading-snug" style="color: #040842">Tecnología</h3>
-        <p class="mt-2 text-[15px] md:text-base leading-relaxed text-left">Contamos con un laboratorio de cómputo y un laboratorio móvil, el cual se traslada a las aulas para servir como una herramienta más para el mejor aprendizaje de contenidos por parte de nuestros estudiantes.</p>
+      <div class="reveal ">
+      <div class="flex h-full flex-col px-1 py-2 items-center text-center" style="color: var(--color-texto)">
+        <img src="assets/icono-tecnologia.png" alt="" loading="lazy" class="mb-5 shrink-0" style="height: 92px; width: 92px; object-fit: contain">
+        <h3 class="font-menu tracking-[0.04em] lg:min-h-[2.75em] text-lg font-bold leading-snug" style="color: #040842">Tecnología</h3>
+        <p class="mt-2.5 self-stretch text-[15px] leading-[1.7] text-left">Contamos con un laboratorio de cómputo y un laboratorio móvil, el cual se traslada a las aulas para servir como una herramienta más para el mejor aprendizaje de contenidos por parte de nuestros estudiantes.</p>
         
         
         
       </div>
+      </div>
       
-      <div class="reveal block px-1 py-2  text-center" style="color: var(--color-texto)">
-        <img src="assets/icono-arte.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 92px">
-        <h3 class="font-menu tracking-[0.04em] text-lg font-bold leading-snug" style="color: #040842">Arte</h3>
-        <p class="mt-2 text-[15px] md:text-base leading-relaxed text-left">Buscamos fomentar la creatividad y la sensibilidad artística en los estudiantes. El arte les permite desarrollar su pensamiento crítico, habilidades cognitivas y motoras como la memoria y la coordinación. Ellos disfrutan de clases de artes plásticas, música y teatro.</p>
+      <div class="reveal ">
+      <div class="flex h-full flex-col px-1 py-2 items-center text-center" style="color: var(--color-texto)">
+        <img src="assets/icono-arte.png" alt="" loading="lazy" class="mb-5 shrink-0" style="height: 92px; width: 92px; object-fit: contain">
+        <h3 class="font-menu tracking-[0.04em] lg:min-h-[2.75em] text-lg font-bold leading-snug" style="color: #040842">Arte</h3>
+        <p class="mt-2.5 self-stretch text-[15px] leading-[1.7] text-left">Buscamos fomentar la creatividad y la sensibilidad artística en los estudiantes. El arte les permite desarrollar su pensamiento crítico, habilidades cognitivas y motoras como la memoria y la coordinación. Ellos disfrutan de clases de artes plásticas, música y teatro.</p>
         
         
         
       </div>
+      </div>
       
-      <div class="reveal block px-1 py-2  text-center" style="color: var(--color-texto)">
-        <img src="assets/icono-corazon.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 92px">
-        <h3 class="font-menu tracking-[0.04em] text-lg font-bold leading-snug" style="color: #040842">Ayuda social</h3>
-        <p class="mt-2 text-[15px] md:text-base leading-relaxed text-left">Enseñamos a nuestros estudiantes a amar y ayudar al prójimo, por esta razón ellos participan en visitas misioneras, así como también ellos planean, organizan y desarrollan programas que ayudarán a suplir las necesidades de una comunidad.</p>
+      <div class="reveal sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.75rem)] lg:col-span-1 lg:mx-0 lg:w-auto">
+      <div class="flex h-full flex-col px-1 py-2 items-center text-center" style="color: var(--color-texto)">
+        <img src="assets/icono-corazon.png" alt="" loading="lazy" class="mb-5 shrink-0" style="height: 92px; width: 92px; object-fit: contain">
+        <h3 class="font-menu tracking-[0.04em] lg:min-h-[2.75em] text-lg font-bold leading-snug" style="color: #040842">Ayuda social</h3>
+        <p class="mt-2.5 self-stretch text-[15px] leading-[1.7] text-left">Enseñamos a nuestros estudiantes a amar y ayudar al prójimo, por esta razón ellos participan en visitas misioneras, así como también ellos planean, organizan y desarrollan programas que ayudarán a suplir las necesidades de una comunidad.</p>
         
         
         
+      </div>
       </div>
       
     </div>
@@ -445,8 +478,10 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
       
 
 <section id="mapa" class="relative bg-white">
+  
   <h2 class="sr-only">Cómo llegar</h2>
   <iframe src="https://www.google.com/maps?q=Monterrico%20Christian%20School%2C%20Av.%20De%20los%20Ingenieros%20325%2C%20Urb.%20Casuarinas%20Sur%2C%20Santiago%20de%20Surco&amp;z=16&amp;hl=es&amp;output=embed" title="Mapa: cómo llegar a Monterrico Christian School" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="block h-[340px] w-full md:h-[440px]" style="border: 0" allowfullscreen></iframe>
+  
 </section>
 
 
@@ -459,21 +494,21 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
   <div class="absolute inset-0" style="background: rgba(4,8,66,0.5)" aria-hidden="true"></div>
   
   <h2 class="sr-only">Accesos rápidos</h2>
-  <div class="relative max-w-4xl mx-auto px-4 py-14 md:py-24 grid grid-cols-3 gap-4">
+  <div class="relative max-w-4xl mx-auto px-4 py-14 md:py-20 grid grid-cols-3 items-start gap-4 md:gap-8">
     
-    <a href="contactenos/" class="group flex flex-col items-center gap-3 rounded-2xl py-3 text-center text-white transition hover:bg-white/10">
-      <img src="assets/icono-contactanos.png" alt="" loading="lazy" class="h-14 w-auto md:h-24 transition-transform group-hover:scale-105">
-      <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.08em]" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Contáctenos</span>
+    <a href="contactenos/" class="group flex flex-col items-center gap-3 md:gap-4 rounded-[var(--radio,16px)] px-1 py-4 text-center text-white transition hover:bg-white/10">
+      <img src="assets/icono-contactanos.png" alt="" loading="lazy" class="h-14 w-14 md:h-[88px] md:w-[88px] object-contain transition-transform group-hover:scale-105">
+      <span class="font-menu text-[13px] sm:text-sm md:text-[15px] font-bold uppercase tracking-[0.08em] leading-snug" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Contáctenos</span>
     </a>
     
-    <a href="early-years/" class="group flex flex-col items-center gap-3 rounded-2xl py-3 text-center text-white transition hover:bg-white/10">
-      <img src="assets/icono-conoce-mas.png" alt="" loading="lazy" class="h-14 w-auto md:h-24 transition-transform group-hover:scale-105">
-      <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.08em]" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Conoce más</span>
+    <a href="early-years/" class="group flex flex-col items-center gap-3 md:gap-4 rounded-[var(--radio,16px)] px-1 py-4 text-center text-white transition hover:bg-white/10">
+      <img src="assets/icono-conoce-mas.png" alt="" loading="lazy" class="h-14 w-14 md:h-[88px] md:w-[88px] object-contain transition-transform group-hover:scale-105">
+      <span class="font-menu text-[13px] sm:text-sm md:text-[15px] font-bold uppercase tracking-[0.08em] leading-snug" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Conoce más</span>
     </a>
     
-    <a href="formato-de-postulacion/" class="group flex flex-col items-center gap-3 rounded-2xl py-3 text-center text-white transition hover:bg-white/10">
-      <img src="assets/icono-postula.png" alt="" loading="lazy" class="h-14 w-auto md:h-24 transition-transform group-hover:scale-105">
-      <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.08em]" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Postula ahora</span>
+    <a href="formato-de-postulacion/" class="group flex flex-col items-center gap-3 md:gap-4 rounded-[var(--radio,16px)] px-1 py-4 text-center text-white transition hover:bg-white/10">
+      <img src="assets/icono-postula.png" alt="" loading="lazy" class="h-14 w-14 md:h-[88px] md:w-[88px] object-contain transition-transform group-hover:scale-105">
+      <span class="font-menu text-[13px] sm:text-sm md:text-[15px] font-bold uppercase tracking-[0.08em] leading-snug" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Postula ahora</span>
     </a>
     
   </div>
@@ -487,25 +522,44 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
   
 
 <footer class="pie-marca text-white" style="background: var(--pie-fondo, var(--color-primario))">
-  <div class="max-w-6xl mx-auto px-4 py-10 md:py-12 grid items-center gap-8 md:grid-cols-3">
-    <div class="flex flex-col items-center gap-5 sm:flex-row sm:justify-center md:justify-start">
+  <div class="max-w-6xl mx-auto px-4 py-12 md:py-14 grid gap-10 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-[1.35fr_1fr_0.8fr_0.85fr] lg:gap-8">
+    <div class="flex flex-col items-center gap-5 sm:items-start">
       <img src="assets/logo-blanco-vertical.png" alt="Monterrico Christian School" loading="lazy" class="h-20 w-auto">
-      <address class="not-italic text-center sm:text-left text-[15px] leading-relaxed">
+      <address class="not-italic text-[15px] leading-relaxed text-white/90">
         <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20De%20los%20Ingenieros%20325%2C%20Urb.%20Casuarinas%20Sur%2C%20Santiago%20de%20Surco" target="_blank" rel="noopener" class="hover:underline">Av. De los Ingenieros 325<br>Urb. Casuarinas Sur<br>Santiago de Surco</a>
-        <br><a href="tel:+5113442888" class="inline-flex min-h-[44px] items-center font-semibold hover:underline">(01) 344-2888</a>
-        <br><a href="mailto:admision@mcslima.edu.pe" class="inline-flex min-h-[32px] items-center break-all hover:underline">admision@mcslima.edu.pe</a>
       </address>
     </div>
-    <div class="flex items-center justify-center gap-6">
-      <a href="https://www.facebook.com/MonterricoChristianSchool" target="_blank" rel="noopener" aria-label="Facebook de Monterrico Christian School" class="flex min-h-[48px] min-w-[48px] items-center justify-center transition-transform hover:scale-105" style="color: var(--pie-fondo, var(--color-primario))"><svg viewBox="0 0 24 24" class="h-9 w-9" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#fff"/><path fill="currentColor" d="M15.6 7.4h-1.7c-.6 0-.9.4-.9 1v1.7h2.6l-.4 2.7H13V20h-2.9v-7.2H8.4v-2.7h1.7V8.2c0-2.1 1.2-3.3 3.2-3.3.9 0 1.9.1 2.3.2z"/></svg></a>
-      <a href="https://www.instagram.com/monterricochristianschool/" target="_blank" rel="noopener" aria-label="Instagram de Monterrico Christian School" class="flex min-h-[48px] min-w-[48px] items-center justify-center transition-transform hover:scale-105"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-9 w-9" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><path d="M17.6 6.4h.01"/></svg></a>
+    <div>
+      <h2 class="font-menu text-[13px] font-bold uppercase tracking-[0.14em] text-white/70">Contacto</h2>
+      <ul class="mt-4 grid gap-1 text-[15px]">
+        <li><a href="tel:+5113442888" class="inline-flex min-h-[40px] items-center font-semibold hover:underline">(01) 344-2888</a></li>
+        <li><a href="mailto:admision@mcslima.edu.pe" class="inline-flex min-h-[40px] items-center break-all hover:underline">admision@mcslima.edu.pe</a></li>
+        <li class="pt-1 text-white/80 leading-relaxed">Lunes a viernes de 8:00 a. m. a 4:30 p. m.</li>
+      </ul>
     </div>
-    <div class="flex flex-col items-center gap-2 md:items-end">
-      <a href="https://www.sianet.info/MCS" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-white px-4 py-2 transition hover:brightness-95" aria-label="Intranet SiaNet"><img src="assets/sianet.png" alt="Intranet SiaNet" loading="lazy" class="h-9 w-auto"></a><span class="text-xs text-white/75">Intranet SiaNet</span>
+    
+    <div>
+      <h2 class="font-menu text-[13px] font-bold uppercase tracking-[0.14em] text-white/70">Síganos</h2>
+      <div class="mt-4 flex items-center justify-center gap-4 sm:justify-start">
+        <a href="https://www.facebook.com/MonterricoChristianSchool" target="_blank" rel="noopener" aria-label="Facebook de Monterrico Christian School" class="flex min-h-[48px] min-w-[48px] items-center justify-center transition-transform hover:scale-105" style="color: var(--pie-fondo, var(--color-primario))"><svg viewBox="0 0 24 24" class="h-9 w-9" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#fff"/><path fill="currentColor" d="M15.6 7.4h-1.7c-.6 0-.9.4-.9 1v1.7h2.6l-.4 2.7H13V20h-2.9v-7.2H8.4v-2.7h1.7V8.2c0-2.1 1.2-3.3 3.2-3.3.9 0 1.9.1 2.3.2z"/></svg></a>
+        <a href="https://www.instagram.com/monterricochristianschool/" target="_blank" rel="noopener" aria-label="Instagram de Monterrico Christian School" class="flex min-h-[48px] min-w-[48px] items-center justify-center transition-transform hover:scale-105"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-9 w-9" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><path d="M17.6 6.4h.01"/></svg></a>
+      </div>
     </div>
+    
+    
+    <div>
+      <h2 class="font-menu text-[13px] font-bold uppercase tracking-[0.14em] text-white/70">Intranet</h2>
+      <div class="mt-4 flex flex-col items-center gap-2 sm:items-start">
+        <a href="https://www.sianet.info/MCS" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-white px-4 py-2 transition hover:brightness-95" aria-label="Intranet SiaNet"><img src="assets/sianet.png" alt="Intranet SiaNet" loading="lazy" class="h-9 w-auto"></a><span class="text-xs text-white/75">Intranet SiaNet</span>
+      </div>
+    </div>
+    
   </div>
-  <p class="border-t border-white/15 px-4 py-4 text-center text-sm">Copyright © 2026 · Monterrico Christian School</p>
+  <div class="border-t border-white/15">
+    <p class="max-w-6xl mx-auto px-4 py-5 text-center text-sm text-white/80 sm:text-left">Copyright © 2026 · Monterrico Christian School</p>
+  </div>
 </footer>
+
 
 
 
