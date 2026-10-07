@@ -10,7 +10,7 @@
   "heroTexto": "Mantenimiento, diagnóstico y reparación en Trujillo. Cuéntanos qué necesita tu vehículo y te ayudamos a encontrar la solución adecuada.",
   "heroFrase": "Tu motor, en marcha.",
   "heroEtiqueta": "MECÁNICA CLARA · AR MOTORS",
-  "heroLinea": "Taller automotriz en Trujillo",
+  "heroLinea": "Taller multimarca",
   "heroFoto": "assets/cliente/hero.jpg",
   "heroAlt": "Interior del taller AR Motors en Trujillo, con vehículos en revisión",
   "tallerFoto": "assets/cliente/taller.jpg",
@@ -26,8 +26,8 @@
     "p512": "assets/cliente/icono-512.png"
   },
   "ogImagen": "assets/cliente/og.jpg",
-  "titulo": "AR Motors | Taller automotriz en Trujillo",
-  "metaDescripcion": "Taller automotriz en Trujillo: Revisión 360 desde S/ 99, frenos desde S/ 89, afinamiento y paquetes de mantenimiento, también diésel. Cotiza por WhatsApp.",
+  "titulo": "AR Motors | Taller automotriz multimarca en Trujillo",
+  "metaDescripcion": "Taller multimarca en Trujillo: Revisión 360 desde S/ 99, frenos desde S/ 89, afinamiento y paquetes de mantenimiento, también diésel. Cotiza por WhatsApp.",
   "lemaPie": "Nivel de servicio que tu motor merece.",
   "acento": {
     "fondo": "#d90000",
@@ -783,6 +783,21 @@
         "logo": "assets/cliente/marcas/mitsubishi.svg"
       },
       {
+        "nombre": "Honda",
+        "slug": "honda",
+        "logo": "assets/cliente/marcas/honda.svg"
+      },
+      {
+        "nombre": "Mazda",
+        "slug": "mazda",
+        "logo": "assets/cliente/marcas/mazda.svg"
+      },
+      {
+        "nombre": "Subaru",
+        "slug": "subaru",
+        "logo": "assets/cliente/marcas/subaru.svg"
+      },
+      {
         "nombre": "Volkswagen",
         "slug": "volkswagen",
         "logo": "assets/cliente/marcas/volkswagen.svg"
@@ -805,91 +820,57 @@
       {
         "nombre": "Changan",
         "slug": "changan",
-        "logo": "",
-        "placa": {
-          "lineas": [
-            "Changan"
-          ],
-          "tam": 0.86
-        }
+        "logo": "assets/cliente/marcas/changan.svg"
       },
       {
         "nombre": "JAC",
         "slug": "jac",
-        "logo": "",
-        "placa": {
-          "lineas": [
-            "JAC"
-          ],
-          "tam": 1.15
-        }
+        "logo": "assets/cliente/marcas/jac.svg"
       },
       {
         "nombre": "Great Wall",
         "slug": "great-wall",
-        "logo": "",
-        "placa": {
-          "lineas": [
-            "Great",
-            "Wall"
-          ],
-          "tam": 0.87
-        }
+        "logo": "assets/cliente/marcas/great-wall.svg"
       },
       {
         "nombre": "Haval",
         "slug": "haval",
-        "logo": "",
-        "placa": {
-          "lineas": [
-            "Haval"
-          ],
-          "tam": 1.01
-        }
+        "logo": "assets/cliente/marcas/haval.svg"
       },
       {
         "nombre": "BYD",
         "slug": "byd",
-        "logo": "",
-        "placa": {
-          "lineas": [
-            "BYD"
-          ],
-          "tam": 1.15
-        }
+        "logo": "assets/cliente/marcas/byd.svg"
       },
       {
         "nombre": "Chery",
         "slug": "chery",
-        "logo": "",
-        "placa": {
-          "lineas": [
-            "Chery"
-          ],
-          "tam": 1.01
-        }
+        "logo": "assets/cliente/marcas/chery.svg"
       },
       {
         "nombre": "Geely",
         "slug": "geely",
-        "logo": "",
-        "placa": {
-          "lineas": [
-            "Geely"
-          ],
-          "tam": 1.01
-        }
+        "logo": "assets/cliente/marcas/geely.svg"
+      },
+      {
+        "nombre": "DFSK",
+        "slug": "dfsk",
+        "logo": "assets/cliente/marcas/dfsk.svg"
+      },
+      {
+        "nombre": "Jetour",
+        "slug": "jetour",
+        "logo": "assets/cliente/marcas/jetour.svg"
       },
       {
         "nombre": "Dodge",
         "slug": "dodge",
-        "logo": "",
-        "placa": {
-          "lineas": [
-            "Dodge"
-          ],
-          "tam": 1.01
-        }
+        "logo": "assets/cliente/marcas/dodge.svg"
+      },
+      {
+        "nombre": "Mercedes-Benz",
+        "slug": "mercedes-benz",
+        "logo": "assets/cliente/marcas/mercedes-benz.svg"
       },
       {
         "nombre": "BMW",
@@ -900,11 +881,16 @@
         "nombre": "Audi",
         "slug": "audi",
         "logo": "assets/cliente/marcas/audi.svg"
+      },
+      {
+        "nombre": "Volvo",
+        "slug": "volvo",
+        "logo": "assets/cliente/marcas/volvo.svg"
       }
     ],
     "columnas": {
       "sm": 3,
-      "md": 7,
+      "md": 4,
       "lg": 7
     }
   }
