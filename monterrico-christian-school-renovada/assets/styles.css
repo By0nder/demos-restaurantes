@@ -1,0 +1,346 @@
+/* Tema generado automáticamente — colores del cliente */
+:root {
+  --color-primario: #040842;
+  --color-secundario: #EFE9E4;
+  --color-acento: #E44C00;
+  --color-acento-texto: #FFFFFF;
+  --color-acento-fuerte: #b13f07;
+  --color-acento-claro: #ec824d;
+  --color-primario-texto: #ffffff;
+  --color-primario-oscuro: #03052d;
+  --color-fondo: #EFE9E4;
+  --color-texto: #040842;
+}
+
+/* MODO OSCURO: solo cambian el papel y la tinta; los colores del negocio
+   (primario, secundario, acento) se respetan, que para eso son su marca.
+   Van aquí y no en styles.css porque necesitan pisar a las de arriba. */
+:root[data-tema="oscuro"] {
+  --color-fondo: #0f1216;
+  --color-texto: #e9ebee;
+  --color-superficie: #171b21;
+  --color-borde: rgba(255, 255, 255, 0.12);
+  --color-suave: rgba(255, 255, 255, 0.06);
+  /* El primario de varios rubros es oscuro (el gris acero de talleres, por
+     ejemplo). Sobre fondo negro sería ilegible, así que para los títulos se
+     usa una versión aclarada del mismo color: se mantiene la identidad y se
+     puede leer. */
+  --color-titulo: color-mix(in srgb, var(--color-primario) 30%, #ffffff);
+  /* En oscuro, el acento-de-texto legible es la versión clara. */
+  --color-acento-fuerte: #ec824d;
+}
+/* ============================================
+   Estilos base del sitio (independientes del tema)
+   Las variables de color se inyectan arriba en el build.
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------------------------------------------------------
+   TIPOGRAFÍA (2026-08-13)
+   Antes todo salía con la fuente por defecto del sistema. Funciona, pero es
+   exactamente lo que hace que una página "no se vea hecha por alguien": es la
+   misma letra del bloc de notas. Dos familias, cargadas con display=swap para
+   que el texto se vea aunque la fuente demore:
+     - Archivo para los títulos: grotesca ancha, aguanta mayúsculas y se lee
+       fuerte en un celular al sol.
+     - Inter para el texto corrido: hecha para pantalla, no cansa.
+   Se declaran como variables para que un rubro pueda cambiarlas sin tocar HTML.
+--------------------------------------------------------------------------- */
+:root {
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-texto: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Valores del modo claro. El oscuro los pisa en el bloque de tema que el
+     generador escribe arriba de este archivo. Se llaman "superficie", "borde"
+     y "suave" en vez de blanco/negro justamente para poder darlos vuelta. */
+  --color-superficie: #ffffff;
+  --color-borde: rgba(0, 0, 0, 0.10);
+  --color-suave: rgba(0, 0, 0, 0.035);
+  --color-titulo: var(--color-primario);
+}
+
+/* Sin transición al cambiar de tema, y es a propósito.
+   Al animar `background-color` en <body> mientras cambia una variable CSS,
+   Chrome se queda con el color viejo: se medía --color-fondo en #f7f8f9 y el
+   body seguía pintado de #0f1216. El fondo quedaba oscuro con las tarjetas
+   blancas encima. El cambio instantáneo se ve bien y no tiene ese riesgo. */
+
+body {
+  font-family: var(--font-texto);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Evita que un título quede con una palabra sola colgando en la última línea */
+h1, h2 {
+  text-wrap: balance;
+}
+
+/* ---------------------------------------------------------------------------
+   ANCLAS BAJO EL HEADER FIJO
+   El header se queda pegado arriba (~68px). Al tocar "Servicios" en el menú,
+   el navegador dejaba el título JUSTO debajo del header, tapado. Se veía como
+   si el enlace estuviera roto.
+--------------------------------------------------------------------------- */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* ---------------------------------------------------------------------------
+   APARICIÓN AL HACER SCROLL (activada por main.js). Sprint 1, 2026-09-05:
+   - Solo se esconde algo si el JS corre: `html.js` lo pone el script del tema
+     en el <head>. Sin JS nada nace invisible.
+   - El hero YA NO lleva .reveal: el nombre y el botón de WhatsApp se pintan en
+     el primer frame. Antes eran invisibles hasta que main.js (al final del body,
+     detrás del CDN) corría, el observer disparaba y pasaban 600 ms; y Chrome no
+     cuenta como LCP un elemento con opacity 0.
+   - 0.35 s y 12 px en vez de 0.6 s y 24 px: se nota menos "a plantilla".
+--------------------------------------------------------------------------- */
+.reveal {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+html.js .reveal:not(.visible) {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* Respeta la preferencia de menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  html.js .reveal:not(.visible) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Comillas tipográficas de las reseñas, por CSS: fuera el SVG gigante al 20 %
+   que llevaba cada testimonio (seña de plantilla, QA 2026-09-02). */
+.cita::before { content: "\201C"; }
+.cita::after { content: "\201D"; }
+
+::selection {
+  background-color: var(--color-primario);
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   FOCO VISIBLE PARA TECLADO (2026-08-13)
+   Medido en la demo publicada: de 11 elementos interactivos, 8 no mostraban
+   NADA al navegarlos con Tab. Solo lo tenían los que llevaban la clase de
+   focus-visible escrita a mano. Quien navega con teclado quedaba perdido sin
+   saber dónde está parado.
+   `:focus-visible` (y no `:focus`) es a propósito: solo se pinta cuando el
+   navegador detecta navegación por teclado, así que al tocar con el dedo o
+   hacer clic no aparece el recuadro.
+   Se usa el color primario del negocio para que no desentone con la paleta.
+--------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sobre el hero y el pie, que van sobre fondo oscuro, el primario puede perderse.
+   Ahí el contorno va en blanco, que siempre contrasta. */
+#hero a:focus-visible,
+footer a:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   HERO: velo en degradado, no un plano negro al 50%
+   El plano apagaba la foto por igual: el taller se veía gris y el texto igual
+   de contrastado arriba que abajo. Con degradado la foto respira en el medio
+   y el texto se apoya en la parte más oscura.
+--------------------------------------------------------------------------- */
+.hero-velo {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.5) 45%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* Barra de datos reales bajo el hero (dirección, reseñas, lo que sí sabemos) */
+.franja-dato {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ---------------------------------------------------------------------------
+   FOTO VIVA EN EL HERO (2026-08-13)
+   El pedido era "que no se vea tan simple, algo tipo video pero que no pese".
+   Esto es eso: la foto se acerca despacio (Ken Burns) y, si hay galería, las
+   otras fotos se turnan encima. Cero kilobytes de video.
+   Solo se animan `transform` y `opacity`, que el navegador resuelve en la GPU:
+   no obliga a recalcular el diseño de la página y por eso no traba ni en un
+   celular de gama baja.
+--------------------------------------------------------------------------- */
+.hero-foto {
+  animation: kenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(0, -1.5%, 0);
+  }
+}
+
+/* Las fotos de relevo empiezan invisibles y aparecen por turnos. La primera
+   nunca se apaga: siempre hay algo debajo, así que jamás se ve un hueco. */
+.hero-capa {
+  opacity: 0;
+  animation: kenburns 28s ease-in-out infinite alternate,
+             hero-crossfade 24s linear infinite;
+}
+
+@keyframes hero-crossfade {
+  0%, 30% { opacity: 0; }
+  33%, 63% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+/* ---------------------------------------------------------------------------
+   BARRA DE ACCIÓN EN EL CELULAR
+   Reemplaza al botón flotante en pantallas chicas: ocupa el ancho completo,
+   con el pulgar cae justo encima, y suma "cómo llegar" que es la otra cosa
+   que la gente busca. `env(safe-area-inset-bottom)` evita quedar debajo de la
+   barra de gestos del iPhone.
+--------------------------------------------------------------------------- */
+.barra-movil {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+body.con-barra-movil {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 768px) {
+  body.con-barra-movil {
+    padding-bottom: 0;
+  }
+}
+
+/* Punto verde que late cuando el negocio está abierto ahora mismo */
+.punto-abierto {
+  animation: latido 2.4s ease-in-out infinite;
+}
+
+@keyframes latido {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-foto,
+  .hero-capa,
+  .punto-abierto {
+    animation: none;
+  }
+  .hero-capa {
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   TARJETAS DE SERVICIO
+   Se levantan un poco al pasar el mouse y marcan el borde con el acento. En
+   celular no hay hover, así que el peso visual lo lleva el borde superior.
+--------------------------------------------------------------------------- */
+.tarjeta {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-acento);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta:hover {
+    transform: none;
+  }
+}
+
+/* LOGO POR TEMA.
+   El logo del cliente suele venir recortado de su tarjeta: tinta negra sobre
+   blanco. Quitarle el fondo lo deja invisible en modo oscuro, y dejarle una
+   placa blanca le mete un parche que no es parte de su marca. La solución son
+   dos archivos —el mismo logo con la tinta negra y con la tinta blanca— y se
+   muestra el que corresponde. Si el cliente no tiene versión oscura, no pasa
+   nada: `.logo-oscuro` simplemente no existe en su HTML. */
+.logo-oscuro { display: none; }
+:root[data-tema="oscuro"] .logo-claro { display: none; }
+:root[data-tema="oscuro"] .logo-oscuro { display: block; }
+
+/* TEXTO ATENUADO POR COLOR, NO POR OPACIDAD (destilado de Los Bull's y Ercovoz).
+   opacity-70 en un parrafo tambien atenua a sus HIJOS: el enlace "Pedir por
+   WhatsApp" dentro del bloque quedaba bajo el contraste minimo. Atenuar por
+   color-mix deja el gris deseado en el parrafo y a los hijos con su color pleno. */
+.texto-suave { color: color-mix(in srgb, var(--color-texto) 82%, var(--color-fondo)); }
+.texto-tenue { color: color-mix(in srgb, var(--color-texto) 70%, var(--color-fondo)); }
+
+/* ---------------------------------------------------------------------------
+   CARTA EN ACORDEÓN (destilado de Los Bull's, 2026-09-01)
+   Con 100 platos la carta abierta medía ~29,000 px: en el celular era un
+   scroll sin fin y nadie llegaba a los postres. Cada categoría es un <details>
+   nativo: cerrada ocupa una línea y se abre con un toque, sin JS de por medio
+   (main.js solo abre la que pide el ancla). Se enciende por cliente con
+   `cartaAcordeon: true`; sin el flag no hay `.categoria` y este bloque no
+   pinta nada.
+--------------------------------------------------------------------------- */
+.categoria summary {
+  cursor: pointer;
+  min-height: 44px; /* área táctil mínima: el pulgar no falla */
+  list-style: none; /* fuera el triángulo del navegador: el chevron propio marca el estado */
+}
+
+/* Safari todavía dibuja su marcador aunque summary lleve list-style: none */
+.categoria summary::-webkit-details-marker {
+  display: none;
+}
+
+/* El chevron gira en vez de cambiar de icono: un solo SVG, y el giro dice
+   "esto se abre y se cierra" sin texto. */
+.chevron {
+  transition: transform 0.25s ease;
+}
+
+.categoria[open] .chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chevron {
+    transition: none;
+  }
+}
+
+/* --- Encuadre del hero (QA 2026-09-02) ---
+   Con object-position centrado, a 1366 px el recorte cortaba la cara del perro
+   de la veterinaria y dejaba solo el hocico. El punto de interés de una foto de
+   comida o de local casi siempre está en el tercio superior. */
+.hero-foto, .hero-media img, #hero img {
+  object-position: 50% 35%;
+}
+
+*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }
+/*! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0}.inset-x-0{left:0;right:0}.bottom-0{bottom:0}.bottom-2{bottom:.5rem}.bottom-6{bottom:1.5rem}.left-0{left:0}.right-0{right:0}.right-6{right:1.5rem}.top-full{top:100%}.z-50{z-index:50}.col-span-2{grid-column:span 2/span 2}.mx-auto{margin-left:auto;margin-right:auto}.-mr-2{margin-right:-.5rem}.mb-1{margin-bottom:.25rem}.mb-5{margin-bottom:1.25rem}.ml-2{margin-left:.5rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\.5{margin-top:.375rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:.5rem}.mt-2\.5{margin-top:.625rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-7{margin-top:1.75rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[3\/2\]{aspect-ratio:3/2}.aspect-\[4\/3\]{aspect-ratio:4/3}.aspect-square{aspect-ratio:1/1}.h-14{height:3.5rem}.h-2{height:.5rem}.h-2\.5{height:.625rem}.h-20{height:5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-\[320px\]{height:320px}.h-full{height:100%}.max-h-\[calc\(100vh-4rem\)\]{max-height:calc(100vh - 4rem)}.min-h-\[40px\]{min-height:40px}.min-h-\[44px\]{min-height:44px}.min-h-\[48px\]{min-height:48px}.min-h-\[52px\]{min-height:52px}.min-h-\[54px\]{min-height:54px}.w-14{width:3.5rem}.w-2{width:.5rem}.w-2\.5{width:.625rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-auto{width:auto}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.min-w-\[240px\]{min-width:240px}.min-w-\[44px\]{min-width:44px}.min-w-\[48px\]{min-width:48px}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-\[16rem\]{max-width:16rem}.max-w-\[44rem\]{max-width:44rem}.max-w-\[68ch\]{max-width:68ch}.max-w-full{max-width:100%}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-items-start{justify-items:start}.gap-0\.5{gap:.125rem}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-10{gap:2.5rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-3\.5{gap:.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-x-12{-moz-column-gap:3rem;column-gap:3rem}.gap-y-8{row-gap:2rem}.self-stretch{align-self:stretch}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.text-wrap{text-wrap:wrap}.break-all{word-break:break-all}.rounded-2xl{border-radius:1rem}.rounded-\[var\(--radio\2c 16px\)\]{border-radius:var(--radio,16px)}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-l{border-left-width:1px}.border-t{border-top-width:1px}.border-\[var\(--color-borde\)\]{border-color:var(--color-borde)}.border-white\/15{border-color:hsla(0,0%,100%,.15)}.border-white\/20{border-color:hsla(0,0%,100%,.2)}.bg-\[var\(--color-acento\)\]{background-color:var(--color-acento)}.bg-\[var\(--color-fondo\)\]{background-color:var(--color-fondo)}.bg-\[var\(--color-superficie\)\]{background-color:var(--color-superficie)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\/15{background-color:hsla(0,0%,100%,.15)}.object-contain{-o-object-fit:contain;object-fit:contain}.object-cover{-o-object-fit:cover;object-fit:cover}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-5{padding-bottom:1.25rem}.pb-6{padding-bottom:1.5rem}.pl-4{padding-left:1rem}.pt-1{padding-top:.25rem}.pt-3{padding-top:.75rem}.pt-5{padding-top:1.25rem}.text-left{text-align:left}.text-center{text-align:center}.align-middle{vertical-align:middle}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[1\.1875rem\]{font-size:1.1875rem}.text-\[1\.375rem\]{font-size:1.375rem}.text-\[1\.5rem\]{font-size:1.5rem}.text-\[1\.75rem\]{font-size:1.75rem}.text-\[13px\]{font-size:13px}.text-\[14px\]{font-size:14px}.text-\[15px\]{font-size:15px}.text-\[2rem\]{font-size:2rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.normal-case{text-transform:none}.italic{font-style:italic}.not-italic{font-style:normal}.leading-\[1\.15\]{line-height:1.15}.leading-\[1\.2\]{line-height:1.2}.leading-\[1\.6\]{line-height:1.6}.leading-\[1\.75\]{line-height:1.75}.leading-\[1\.7\]{line-height:1.7}.leading-\[1\.8\]{line-height:1.8}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-\[0\.02em\]{letter-spacing:.02em}.tracking-\[0\.04em\]{letter-spacing:.04em}.tracking-\[0\.06em\]{letter-spacing:.06em}.tracking-\[0\.08em\]{letter-spacing:.08em}.tracking-\[0\.14em\]{letter-spacing:.14em}.text-\[var\(--color-acento-texto\)\]{color:var(--color-acento-texto)}.text-\[var\(--color-texto\)\]{color:var(--color-texto)}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\/70{color:hsla(0,0%,100%,.7)}.text-white\/75{color:hsla(0,0%,100%,.75)}.text-white\/80{color:hsla(0,0%,100%,.8)}.text-white\/85{color:hsla(0,0%,100%,.85)}.text-white\/90{color:hsla(0,0%,100%,.9)}.underline{text-decoration-line:underline}.underline-offset-4{text-underline-offset:4px}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-65{opacity:.65}.opacity-75{opacity:.75}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-lg,.shadow-sm{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-black\/30{--tw-shadow-color:rgba(0,0,0,.3);--tw-shadow:var(--tw-shadow-colored)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.ring-1,.ring-2{box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.ring-inset{--tw-ring-inset:inset}.ring-black\/5{--tw-ring-color:rgba(0,0,0,.05)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.hover\:-translate-y-1:hover{--tw-translate-y:-0.25rem}.hover\:-translate-y-1:hover,.hover\:scale-105:hover{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05}.hover\:bg-\[var\(--color-suave\)\]:hover{background-color:var(--color-suave)}.hover\:bg-white\/10:hover{background-color:hsla(0,0%,100%,.1)}.hover\:underline:hover{text-decoration-line:underline}.hover\:brightness-105:hover{--tw-brightness:brightness(1.05)}.hover\:brightness-105:hover,.hover\:brightness-110:hover{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.hover\:brightness-110:hover{--tw-brightness:brightness(1.1)}.hover\:brightness-95:hover{--tw-brightness:brightness(.95);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.group:focus-within .group-focus-within\:block{display:block}.group:hover .group-hover\:block{display:block}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width:640px){.sm\:col-span-2{grid-column:span 2/span 2}.sm\:mx-auto{margin-left:auto;margin-right:auto}.sm\:w-\[calc\(50\%-0\.75rem\)\]{width:calc(50% - .75rem)}.sm\:w-auto{width:auto}.sm\:flex-none{flex:none}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:items-start{align-items:flex-start}.sm\:justify-start{justify-content:flex-start}.sm\:p-8{padding:2rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-left{text-align:left}.sm\:text-\[15px\]{font-size:15px}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}}@media (min-width:768px){.md\:pointer-events-none{pointer-events:none}.md\:pointer-events-auto{pointer-events:auto}.md\:absolute{position:absolute}.md\:inset-0{inset:0}.md\:bottom-4{bottom:1rem}.md\:order-2{order:2}.md\:col-span-1{grid-column:span 1/span 1}.md\:mt-12{margin-top:3rem}.md\:mt-14{margin-top:3.5rem}.md\:mt-16{margin-top:4rem}.md\:mt-7{margin-top:1.75rem}.md\:mt-8{margin-top:2rem}.md\:flex{display:flex}.md\:inline-flex{display:inline-flex}.md\:hidden{display:none}.md\:h-\[540px\]{height:540px}.md\:h-\[88px\]{height:88px}.md\:w-\[88px\]{width:88px}.md\:max-w-none{max-width:none}.md\:columns-2{-moz-columns:2;column-count:2}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.md\:items-center{align-items:center}.md\:justify-end{justify-content:flex-end}.md\:justify-items-center{justify-items:center}.md\:gap-14{gap:3.5rem}.md\:gap-4{gap:1rem}.md\:gap-5{gap:1.25rem}.md\:gap-8{gap:2rem}.md\:gap-x-14{-moz-column-gap:3.5rem;column-gap:3.5rem}.md\:bg-transparent{background-color:transparent}.md\:p-5{padding:1.25rem}.md\:p-7{padding:1.75rem}.md\:p-8{padding:2rem}.md\:py-0{padding-top:0;padding-bottom:0}.md\:py-14{padding-top:3.5rem;padding-bottom:3.5rem}.md\:py-16{padding-top:4rem;padding-bottom:4rem}.md\:py-20{padding-top:5rem;padding-bottom:5rem}.md\:py-5{padding-top:1.25rem;padding-bottom:1.25rem}.md\:py-\[5\.5rem\]{padding-top:5.5rem;padding-bottom:5.5rem}.md\:pb-12{padding-bottom:3rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-\[1\.0625rem\]{font-size:1.0625rem}.md\:text-\[1\.375rem\]{font-size:1.375rem}.md\:text-\[15px\]{font-size:15px}.md\:text-\[2\.25rem\]{font-size:2.25rem}.md\:text-\[2\.625rem\]{font-size:2.625rem}.md\:text-\[2rem\]{font-size:2rem}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:1024px){.lg\:bottom-10{bottom:2.5rem}.lg\:right-10{right:2.5rem}.lg\:col-span-1{grid-column:span 1/span 1}.lg\:mx-0{margin-left:0;margin-right:0}.lg\:inline{display:inline}.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:min-h-\[2\.75em\]{min-height:2.75em}.lg\:w-auto{width:auto}.lg\:shrink-0{flex-shrink:0}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:grid-cols-\[1\.35fr_1fr_0\.8fr_0\.85fr\]{grid-template-columns:1.35fr 1fr .8fr .85fr}.lg\:flex-row{flex-direction:row}.lg\:justify-between{justify-content:space-between}.lg\:gap-8{gap:2rem}.lg\:border-l{border-left-width:1px}.lg\:text-left{text-align:left}}@media (min-width:1280px){.xl\:gap-1{gap:.25rem}.xl\:px-3\.5{padding-left:.875rem;padding-right:.875rem}}

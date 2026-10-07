@@ -45,25 +45,33 @@
   
   
   
-  <link rel="stylesheet" href="../assets/styles.css"><style>:root { --font-menu: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif; --color-titulos: #E44C00; --cab-fondo: rgba(4,8,66,0.43); --cab-solido: #040842; --pie-fondo: #040842; }
+  <link rel="stylesheet" href="../assets/styles.css"><style>:root { --font-menu: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif; --color-titulos: #E44C00; --cab-fondo: rgba(4,8,66,0.43); --cab-solido: #040842; --pie-fondo: #040842; --radio: 16px; --sombra: 0 1px 2px rgba(0, 0, 0, .06), 0 12px 28px -14px color-mix(in srgb, var(--color-primario) 55%, transparent); --sombra-alta: 0 2px 6px rgba(0, 0, 0, .08), 0 24px 44px -18px color-mix(in srgb, var(--color-primario) 65%, transparent); }
 .font-menu { font-family: var(--font-menu); }
 h1, h2, h3 { text-transform: uppercase; }
 .sin-mayus, .sin-mayus h1, .sin-mayus h2, .sin-mayus h3 { text-transform: none; }
+h1, h2, h3 { text-wrap: balance; }
+main p, main li { text-wrap: pretty; }
+.sombra-marca { box-shadow: var(--sombra); }
+#cotizador { padding-top: 4rem; padding-bottom: 4rem; }
+@media (min-width: 768px) { #cotizador { padding-top: 5.5rem; padding-bottom: 5.5rem; } }
+#cotizador button[type="submit"] { font-family: var(--font-menu); font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
 main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titulos); }
-.cab-marca { position: sticky; top: 0; z-index: 50; background: var(--cab-solido); color: #fff; }
-@media (min-width: 1024px) {
-  .cab-marca { position: fixed; left: 0; right: 0; background: var(--cab-fondo); transition: background-color .25s ease, box-shadow .25s ease; }
-  .cab-marca.cab-solida, .cab-marca.cab-sin-foto { background: var(--cab-solido); box-shadow: 0 10px 26px -18px rgba(0, 0, 0, .7); }
-  .cab-marca.cab-sin-foto { position: sticky; }
-  .cab-marca:not(.cab-solida):not(.cab-sin-foto) .menu-item:not(.menu-destacado) { text-shadow: 0 1px 4px rgba(0, 0, 0, .55); }
-}
-.cab-marca .menu-item { font-family: var(--font-menu); text-transform: uppercase; letter-spacing: .06em; font-size: 15px; font-weight: 500; color: #fff; }
+.cab-marca { position: relative; z-index: 50; background: var(--cab-solido); color: #fff; }
+.cab-marca .cab-fila { height: 64px; }
+.cab-marca .cab-logo { height: 32px; width: auto; }
+.cab-marca .menu-item { position: relative; font-family: var(--font-menu); text-transform: uppercase; letter-spacing: .06em; font-size: 15px; font-weight: 500; color: #fff; }
 .cab-marca .menu-item:hover { color: var(--color-acento-claro); }
 .cab-marca .menu-item[aria-current="page"] { color: var(--color-acento-claro); }
 .cab-marca .menu-destacado { background: var(--color-acento); color: var(--color-acento-texto); padding-left: 1.1rem; padding-right: 1rem; font-weight: 700; }
 .cab-marca .menu-destacado:hover { color: var(--color-acento-texto); filter: brightness(1.08); }
 .cab-marca .submenu a[aria-current="page"] { color: var(--color-acento-fuerte); font-weight: 700; }
-.cab-marca a:focus-visible, .cab-marca button:focus-visible { outline-color: #fff; }</style>
+.cab-marca a:focus-visible, .cab-marca button:focus-visible { outline-color: #fff; }
+@media (min-width: 1024px) {
+  .cab-marca .cab-fila { height: 78px; }
+  .cab-marca .cab-logo { height: 40px; }
+  .cab-marca:not(.cab-sin-foto) { position: absolute; top: 0; left: 0; right: 0; background: var(--cab-fondo); }
+  .cab-marca:not(.cab-sin-foto):not(.cab-solida) .menu-item:not(.menu-destacado) { text-shadow: 0 1px 4px rgba(0, 0, 0, .55); }
+}</style>
   
   
   <style>:root { --font-display: "Roboto Slab", "Archivo", ui-sans-serif, system-ui, sans-serif; --font-texto: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif; }</style>
@@ -105,9 +113,9 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
 
 
 <header class="cab-marca">
-  <div class="max-w-6xl mx-auto px-4 h-16 lg:h-[78px] flex items-center justify-between gap-6">
+  <div class="cab-fila max-w-6xl mx-auto px-4 flex items-center justify-between gap-6">
     <a href="../" class="flex shrink-0 items-center min-h-[44px]" aria-label="Monterrico Christian School: inicio">
-      <img src="../assets/logo-blanco.png" alt="Monterrico Christian School" class="h-8 lg:h-10 w-auto">
+      <img src="../assets/logo-blanco.png" alt="Monterrico Christian School" class="cab-logo">
     </a>
     <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1" aria-label="Menú principal">
       
@@ -183,7 +191,7 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
     <ul class="mb-1 border-l border-white/20 pl-4"><li><a href="../contactenos/" class="flex min-h-[44px] items-center text-[15px] text-white/85">Contáctenos</a></li><li><a href="../trabaja-con-nosotros/" class="flex min-h-[44px] items-center text-[15px] text-white/85">Trabaja con nosotros</a></li></ul>
     
   </nav>
-  <script>(function () { var c = document.querySelector(".cab-marca"); if (!c) return; var f = function () { c.classList.toggle("cab-solida", window.scrollY > 24); }; f(); window.addEventListener("scroll", f, { passive: true }); })();</script>
+  
 </header>
 
 
@@ -198,6 +206,7 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
   .hero-pano-foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .9s ease; }
   .hero-pano-foto.activa { opacity: 1; }
   .hero-pano-velo { background: linear-gradient(to top, color-mix(in srgb, var(--color-primario) 78%, transparent) 0%, color-mix(in srgb, var(--color-primario) 30%, transparent) 42%, transparent 72%); }
+  .hero-pano-degradado { background: linear-gradient(to top, color-mix(in srgb, var(--color-primario) 62%, transparent) 0%, color-mix(in srgb, var(--color-primario) 22%, transparent) 20%, transparent 42%); }
   .hero-pano-punto span { background: rgba(255, 255, 255, .55); box-shadow: 0 0 0 1px rgba(0, 0, 0, .18); }
   .hero-pano-punto[aria-current="true"] span { background: #fff; }
   @media (prefers-reduced-motion: reduce) { .hero-pano-foto { transition: none; } }
@@ -206,6 +215,7 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
   <div class="hero-pano-marco relative w-full">
     
     <img src="../assets/formato-hero.webp" alt="Niña pintando con acuarelas" fetchpriority="high" decoding="async" class="hero-pano-foto activa">
+    
     
     
     
@@ -493,9 +503,9 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
     <div class="max-w-4xl mx-auto text-center">
       
       <div class="reveal text-center" style="color: var(--color-texto)">
-        <img src="../assets/icono-ensenanza.png" alt="" loading="lazy" class="mx-auto mb-4 w-auto" style="height: 76px">
+        <img src="../assets/icono-ensenanza.png" alt="" loading="lazy" class="mx-auto mb-5 w-auto" style="height: 76px">
         
-        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-center" style="color: #ffffff">Comprometidos en brindar una educación de calidad</h2>
+        <h2 class="text-[1.75rem] md:text-[2.25rem] leading-[1.2] font-bold text-center" style="color: #ffffff">Comprometidos en brindar una educación de calidad</h2>
         
         
         
@@ -523,21 +533,21 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
   <div class="absolute inset-0" style="background: rgba(4,8,66,0.5)" aria-hidden="true"></div>
   
   <h2 class="sr-only">Accesos rápidos</h2>
-  <div class="relative max-w-4xl mx-auto px-4 py-14 md:py-24 grid grid-cols-3 gap-4">
+  <div class="relative max-w-4xl mx-auto px-4 py-14 md:py-20 grid grid-cols-3 items-start gap-4 md:gap-8">
     
-    <a href="../contactenos/" class="group flex flex-col items-center gap-3 rounded-2xl py-3 text-center text-white transition hover:bg-white/10">
-      <img src="../assets/icono-contactanos.png" alt="" loading="lazy" class="h-14 w-auto md:h-24 transition-transform group-hover:scale-105">
-      <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.08em]" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Contáctenos</span>
+    <a href="../contactenos/" class="group flex flex-col items-center gap-3 md:gap-4 rounded-[var(--radio,16px)] px-1 py-4 text-center text-white transition hover:bg-white/10">
+      <img src="../assets/icono-contactanos.png" alt="" loading="lazy" class="h-14 w-14 md:h-[88px] md:w-[88px] object-contain transition-transform group-hover:scale-105">
+      <span class="font-menu text-[13px] sm:text-sm md:text-[15px] font-bold uppercase tracking-[0.08em] leading-snug" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Contáctenos</span>
     </a>
     
-    <a href="../early-years/" class="group flex flex-col items-center gap-3 rounded-2xl py-3 text-center text-white transition hover:bg-white/10">
-      <img src="../assets/icono-conoce-mas.png" alt="" loading="lazy" class="h-14 w-auto md:h-24 transition-transform group-hover:scale-105">
-      <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.08em]" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Conoce más</span>
+    <a href="../early-years/" class="group flex flex-col items-center gap-3 md:gap-4 rounded-[var(--radio,16px)] px-1 py-4 text-center text-white transition hover:bg-white/10">
+      <img src="../assets/icono-conoce-mas.png" alt="" loading="lazy" class="h-14 w-14 md:h-[88px] md:w-[88px] object-contain transition-transform group-hover:scale-105">
+      <span class="font-menu text-[13px] sm:text-sm md:text-[15px] font-bold uppercase tracking-[0.08em] leading-snug" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Conoce más</span>
     </a>
     
-    <a href="../formato-de-postulacion/" class="group flex flex-col items-center gap-3 rounded-2xl py-3 text-center text-white transition hover:bg-white/10">
-      <img src="../assets/icono-postula.png" alt="" loading="lazy" class="h-14 w-auto md:h-24 transition-transform group-hover:scale-105">
-      <span class="font-menu text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.08em]" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Postula ahora</span>
+    <a href="../formato-de-postulacion/" class="group flex flex-col items-center gap-3 md:gap-4 rounded-[var(--radio,16px)] px-1 py-4 text-center text-white transition hover:bg-white/10">
+      <img src="../assets/icono-postula.png" alt="" loading="lazy" class="h-14 w-14 md:h-[88px] md:w-[88px] object-contain transition-transform group-hover:scale-105">
+      <span class="font-menu text-[13px] sm:text-sm md:text-[15px] font-bold uppercase tracking-[0.08em] leading-snug" style="text-shadow: 0 1px 8px rgba(0,0,0,.55)">Postula ahora</span>
     </a>
     
   </div>
@@ -551,25 +561,44 @@ main section:not(#hero) h1, main section:not(#hero) h2 { color: var(--color-titu
   
 
 <footer class="pie-marca text-white" style="background: var(--pie-fondo, var(--color-primario))">
-  <div class="max-w-6xl mx-auto px-4 py-10 md:py-12 grid items-center gap-8 md:grid-cols-3">
-    <div class="flex flex-col items-center gap-5 sm:flex-row sm:justify-center md:justify-start">
+  <div class="max-w-6xl mx-auto px-4 py-12 md:py-14 grid gap-10 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-[1.35fr_1fr_0.8fr_0.85fr] lg:gap-8">
+    <div class="flex flex-col items-center gap-5 sm:items-start">
       <img src="../assets/logo-blanco-vertical.png" alt="Monterrico Christian School" loading="lazy" class="h-20 w-auto">
-      <address class="not-italic text-center sm:text-left text-[15px] leading-relaxed">
+      <address class="not-italic text-[15px] leading-relaxed text-white/90">
         <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20De%20los%20Ingenieros%20325%2C%20Urb.%20Casuarinas%20Sur%2C%20Santiago%20de%20Surco" target="_blank" rel="noopener" class="hover:underline">Av. De los Ingenieros 325<br>Urb. Casuarinas Sur<br>Santiago de Surco</a>
-        <br><a href="tel:+5113442888" class="inline-flex min-h-[44px] items-center font-semibold hover:underline">(01) 344-2888</a>
-        <br><a href="mailto:admision@mcslima.edu.pe" class="inline-flex min-h-[32px] items-center break-all hover:underline">admision@mcslima.edu.pe</a>
       </address>
     </div>
-    <div class="flex items-center justify-center gap-6">
-      <a href="https://www.facebook.com/MonterricoChristianSchool" target="_blank" rel="noopener" aria-label="Facebook de Monterrico Christian School" class="flex min-h-[48px] min-w-[48px] items-center justify-center transition-transform hover:scale-105" style="color: var(--pie-fondo, var(--color-primario))"><svg viewBox="0 0 24 24" class="h-9 w-9" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#fff"/><path fill="currentColor" d="M15.6 7.4h-1.7c-.6 0-.9.4-.9 1v1.7h2.6l-.4 2.7H13V20h-2.9v-7.2H8.4v-2.7h1.7V8.2c0-2.1 1.2-3.3 3.2-3.3.9 0 1.9.1 2.3.2z"/></svg></a>
-      <a href="https://www.instagram.com/monterricochristianschool/" target="_blank" rel="noopener" aria-label="Instagram de Monterrico Christian School" class="flex min-h-[48px] min-w-[48px] items-center justify-center transition-transform hover:scale-105"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-9 w-9" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><path d="M17.6 6.4h.01"/></svg></a>
+    <div>
+      <h2 class="font-menu text-[13px] font-bold uppercase tracking-[0.14em] text-white/70">Contacto</h2>
+      <ul class="mt-4 grid gap-1 text-[15px]">
+        <li><a href="tel:+5113442888" class="inline-flex min-h-[40px] items-center font-semibold hover:underline">(01) 344-2888</a></li>
+        <li><a href="mailto:admision@mcslima.edu.pe" class="inline-flex min-h-[40px] items-center break-all hover:underline">admision@mcslima.edu.pe</a></li>
+        <li class="pt-1 text-white/80 leading-relaxed">Lunes a viernes de 8:00 a. m. a 4:30 p. m.</li>
+      </ul>
     </div>
-    <div class="flex flex-col items-center gap-2 md:items-end">
-      <a href="https://www.sianet.info/MCS" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-white px-4 py-2 transition hover:brightness-95" aria-label="Intranet SiaNet"><img src="../assets/sianet.png" alt="Intranet SiaNet" loading="lazy" class="h-9 w-auto"></a><span class="text-xs text-white/75">Intranet SiaNet</span>
+    
+    <div>
+      <h2 class="font-menu text-[13px] font-bold uppercase tracking-[0.14em] text-white/70">Síganos</h2>
+      <div class="mt-4 flex items-center justify-center gap-4 sm:justify-start">
+        <a href="https://www.facebook.com/MonterricoChristianSchool" target="_blank" rel="noopener" aria-label="Facebook de Monterrico Christian School" class="flex min-h-[48px] min-w-[48px] items-center justify-center transition-transform hover:scale-105" style="color: var(--pie-fondo, var(--color-primario))"><svg viewBox="0 0 24 24" class="h-9 w-9" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#fff"/><path fill="currentColor" d="M15.6 7.4h-1.7c-.6 0-.9.4-.9 1v1.7h2.6l-.4 2.7H13V20h-2.9v-7.2H8.4v-2.7h1.7V8.2c0-2.1 1.2-3.3 3.2-3.3.9 0 1.9.1 2.3.2z"/></svg></a>
+        <a href="https://www.instagram.com/monterricochristianschool/" target="_blank" rel="noopener" aria-label="Instagram de Monterrico Christian School" class="flex min-h-[48px] min-w-[48px] items-center justify-center transition-transform hover:scale-105"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-9 w-9" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><path d="M17.6 6.4h.01"/></svg></a>
+      </div>
     </div>
+    
+    
+    <div>
+      <h2 class="font-menu text-[13px] font-bold uppercase tracking-[0.14em] text-white/70">Intranet</h2>
+      <div class="mt-4 flex flex-col items-center gap-2 sm:items-start">
+        <a href="https://www.sianet.info/MCS" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-white px-4 py-2 transition hover:brightness-95" aria-label="Intranet SiaNet"><img src="../assets/sianet.png" alt="Intranet SiaNet" loading="lazy" class="h-9 w-auto"></a><span class="text-xs text-white/75">Intranet SiaNet</span>
+      </div>
+    </div>
+    
   </div>
-  <p class="border-t border-white/15 px-4 py-4 text-center text-sm">Copyright © 2026 · Monterrico Christian School</p>
+  <div class="border-t border-white/15">
+    <p class="max-w-6xl mx-auto px-4 py-5 text-center text-sm text-white/80 sm:text-left">Copyright © 2026 · Monterrico Christian School</p>
+  </div>
 </footer>
+
 
 
 
