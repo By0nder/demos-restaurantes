@@ -1,0 +1,8 @@
+Fuentes autoalojadas de la plantilla corporativa (subconjunto latin, woff2 de Google Fonts, 26-sep-2026).
+Las tres se distribuyen con la SIL Open Font License 1.1 (OFL), que permite usarlas e incluirlas en una web:
+
+- Schibsted Grotesk (fuente variable, pesos 400-900) - Schibsted Media Group. OFL 1.1.
+- Public Sans (fuente variable, pesos 100-900) - USWDS / General Services Administration. OFL 1.1.
+- JetBrains Mono (peso 500) - JetBrains. OFL 1.1.
+
+Texto de la licencia: https://openfontlicense.org
