@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Panel mudado · Kallari</title>
+<style>
+  :root { --bg:#EDEAE0; --card:#FFFFFF; --ink:#211E19; --muted:#6E6858; --line:#DBD5C4; --accent:#2F6B52; --accent-ink:#FDFBF6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1A1613; --card:#221D18; --ink:#EEE7D9; --muted:#A89E8A; --line:#3C352A; --accent:#57A184; --accent-ink:#0D1512; } }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px; background:var(--bg); color:var(--ink); font:17px/1.55 -apple-system, "Segoe UI", system-ui, sans-serif; }
+  main { max-width:460px; width:100%; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px 20px; }
+  .eyebrow { margin:0 0 6px; font:600 .72rem/1 ui-monospace, Consolas, monospace; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); }
+  h1 { margin:0 0 12px; font-size:1.45rem; line-height:1.25; }
+  p { margin:0 0 12px; }
+  .boton { display:block; margin-top:18px; padding:14px 16px; border-radius:12px; background:var(--accent); color:var(--accent-ink); text-align:center; font-weight:700; text-decoration:none; }
+  .estado { padding:10px 12px; border-radius:10px; border:1px solid var(--line); font-size:.95rem; }
+  .estado:empty { display:none; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Panel de envíos · Kallari</p>
+  <h1>Estefano, tu panel se mudó</h1>
+  <p>Desde el 30 de octubre tu lista está en un panel nuevo, con usuario y clave, que guarda en línea cada «Enviado»: se ve igual en todos tus celulares y ya no se pierde. Tu guía también está adentro.</p>
+  <p class="estado" id="estado"></p>
+  <p>Si marcabas en otro celular, abre esta página una vez también desde ese: sus marcas se pasan solas.</p>
+  <p><strong>Entra con el enlace y la clave que te pasa José.</strong></p>
+  <a class="boton" href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20soy%20Estefano%3A%20%C2%BFme%20pasas%20el%20enlace%20y%20la%20clave%20de%20mi%20panel%20nuevo%3F" target="_blank" rel="noopener">Pedirle el acceso a José</a>
+<script>
+(function () {
+  var KEY = "outreach-sent-estefano-v1", HECHO = KEY + ":pasadas-al-panel-nuevo", caja = document.getElementById("estado");
+  var marcas = {}, n = 0;
+  try { marcas = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { marcas = {}; }
+  Object.keys(marcas).forEach(function (k) { var v = marcas[k]; if (v === true || (v && typeof v === "object" && v.t)) n++; });
+  if (!n) { caja.textContent = "En este celular no había marcas de «Enviado» guardadas del panel viejo."; return; }
+  var ya = null; try { ya = localStorage.getItem(HECHO); } catch (e) {}
+  if (ya) { caja.textContent = "Tus " + n + " marcas de «Enviado» de este celular ya están en tu panel nuevo."; return; }
+  caja.textContent = "Pasando tus " + n + " marcas de «Enviado» a tu panel nuevo…";
+  fetch("https://panel-sync.midwar37.workers.dev/migrar/estefano", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ marcas: marcas }) })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function () { try { localStorage.setItem(HECHO, new Date().toISOString()); } catch (e) {} caja.textContent = "Listo: tus " + n + " marcas de «Enviado» de este celular ya están en tu panel nuevo."; })
+    .catch(function () { caja.textContent = "No se pudieron pasar tus " + n + " marcas: vuelve a abrir esta página con internet."; });
+})();
+</script>
+</main>
+</body>
+</html>

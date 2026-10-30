@@ -21,9 +21,9 @@ gh api repos/By0nder/by0nder-fuentes/contents/ESTADO.md --jq .content | base64 -
 | `web-generator` | Privado. El generador masivo. **Va ~18 días detrás de lo publicado.** |
 | `by0nder-fuentes` | Privado. Fuentes, entregables y `ESTADO.md`. |
 
-El panel de prospección de José vive en este mismo repo, en una carpeta con nombre y
-hash como los demás paneles (desde el 29-ago-2026). El hash NO va aquí: este archivo
-es público.
+Los paneles de prospección (el de José y los de los vendedores) YA NO viven en este
+repo: desde el 30-oct-2026 son privados, con usuario y clave, fuera de GitHub (dónde
+están: en la PC del negocio, no aquí; este archivo es público).
 
 En `by0nder-fuentes/memoria-de-claude/` están sus preferencias de trabajo. Si la
 memoria de esta máquina todavía no las tiene, vale copiarlas: evitan repetir
@@ -33,8 +33,9 @@ conversaciones que ya se tuvieron.
 
 # demos-restaurantes
 
-Aquí viven las páginas publicadas de los clientes y los paneles de prospección.
-Todo lo de esta carpeta se sirve en GitHub Pages: **lo que se commitea, se publica.**
+Aquí viven las páginas publicadas de los clientes y las demos.
+Todo lo de esta carpeta se sirve en GitHub Pages y el repo es público: **lo que se
+commitea, se publica, y cualquiera lo lee en github.com** (una URL rara no protege nada).
 
 ## Cómo se editan las páginas
 
@@ -53,19 +54,21 @@ va a quedar viejo. Ya pasó con el bloque "Lo más pedido" de Los Bull's.
 
 ## Los paneles de prospección
 
-Cada vendedor tiene su panel en una carpeta con nombre y hash. **Los hashes NO se
-escriben aquí: este archivo es público y el hash es la única protección del enlace.**
-Están en `by0nder-fuentes`, que es privado. Rotar un hash revoca el acceso; si se
-rota un panel hay que rotar también su guía, que lo enlaza.
+**Desde el 30-oct-2026 ningún panel ni guía de ventas va a este repo.** Con celulares,
+precios y guiones, un panel aquí quedaba a la vista de cualquiera en github.com aunque
+su carpeta tuviera un nombre con hash. Ahora son privados (usuario y clave validados en
+el servidor) y en sus carpetas viejas solo queda un aviso de mudanza, sin la dirección
+nueva. El `pre-commit` local frena un commit que vuelva a meter un panel. Cómo se
+publican: en la PC del negocio, no aquí.
 
-Dos reglas que ya costaron caro:
+Dos reglas que ya costaron caro (siguen valiendo en los paneles privados):
 
 **Un negocio pertenece a un solo vendedor.** Si aparece en dos paneles, recibe el
 mismo mensaje dos veces de dos personas distintas y se lee como spam. Antes de
 repartir, comparar los `data-slug` contra los paneles que ya existen.
 
-**El estado "Enviado" vive en el `localStorage` del navegador de cada vendedor, no
-en el HTML.** No se cambia editando el marcado. Para marcar en lote se siembra una
+**El estado "Enviado" vive en el `localStorage` del navegador de cada vendedor (y en
+línea, en los paneles privados), no en el HTML.** No se cambia editando el marcado. Para marcar en lote se siembra una
 lista fija de slugs que corre una sola vez por navegador. La lista tiene que ser
 fija: si se siembra "todas las tarjetas presentes", un lote cargado después también
 queda marcado sin haberse enviado.
