@@ -189,9 +189,10 @@ footer a:focus-visible {
    no obliga a recalcular el diseño de la página y por eso no traba ni en un
    celular de gama baja.
 --------------------------------------------------------------------------- */
+/* Sin `will-change` (30-oct-2026): el transform animado ya va a la GPU; fijo,
+   dejaba las 3 fotos del hero como capas permanentes en la memoria del celular. */
 .hero-foto {
   animation: kenburns 28s ease-in-out infinite alternate;
-  will-change: transform;
 }
 
 @keyframes kenburns {
@@ -290,6 +291,11 @@ body.con-barra-movil {
 .logo-oscuro { display: none; }
 :root[data-tema="oscuro"] .logo-claro { display: none; }
 :root[data-tema="oscuro"] .logo-oscuro { display: block; }
+
+/* Modo oscuro también para lo que dibuja el navegador (30-oct-2026): la barra de
+   scroll, la lista de un <select> y el calendario salían claros en 1,223 demos
+   oscuras (gimnasios, barberías). Los campos ya traen su fondo y su color. */
+:root[data-tema="oscuro"] { color-scheme: dark; }
 
 /* TEXTO ATENUADO POR COLOR, NO POR OPACIDAD (destilado de Los Bull's y Ercovoz).
    opacity-70 en un parrafo tambien atenua a sus HIJOS: el enlace "Pedir por

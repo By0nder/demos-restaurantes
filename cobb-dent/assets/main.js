@@ -367,6 +367,20 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     revealElements.forEach((el) => el.classList.add("visible"));
   }
+
+  // --- Fotos de relevo del hero, diferidas (30-oct-2026, M03) ---
+  // Las dos capas que se turnan sobre la foto principal llegan sin `src`
+  // (hero.ejs, solo demos): la primera recién se ve a los 8 s, así que se piden
+  // 1.5 s después del `load` y ya no le quitan datos a la foto principal. Con
+  // ahorro de datos, 2G/3G o "reducir movimiento" (ahí ni se muestran) no se piden.
+  window.addEventListener("load", () => setTimeout(() => {
+    const c = navigator.connection || {};
+    if (c.saveData || /(^|-)(2g|3g)$/.test(c.effectiveType || "") || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    document.querySelectorAll("img.hero-capa[data-src]").forEach((im) => {
+      if (im.dataset.srcset) im.srcset = im.dataset.srcset;
+      im.src = im.dataset.src;
+    });
+  }, 1500));
 });
 
 /* ---------------------------------------------------------------------------
