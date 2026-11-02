@@ -135,6 +135,11 @@ h1,h2,h3{margin:0;line-height:1.1}
 .categoria img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:76%;width:auto;max-width:96%;object-fit:contain;object-position:bottom;transition:transform .3s}
 .categoria:hover img{transform:translateX(-50%) scale(1.04)}
 @media (min-width:640px){.categorias{padding-top:44px}.categorias-fila{gap:22px}.categoria{height:340px;padding-top:28px;border-radius:24px}.categoria-pre{display:block}.categoria-palabra{font-size:58px}.categoria img{height:70%}}
+/* Más de 3 categorías (J&S, 2-nov): 3 por fila hasta escritorio y ahí 6 en una fila, más bajas; la palabra
+   larga («Accesorios») baja de tamaño para no salirse de la tarjeta. */
+.categoria-palabra.larga{font-size:17px}
+@media (min-width:640px){.muchas .categoria{height:280px}.muchas .categoria-palabra{font-size:44px}.muchas .categoria-palabra.larga{font-size:32px}}
+@media (min-width:1000px){.categorias-fila.muchas{grid-template-columns:repeat(6,1fr);gap:16px}.muchas .categoria{height:250px;padding-top:22px}.muchas .categoria-pre{font-size:14px}.muchas .categoria-palabra{font-size:34px}.muchas .categoria-palabra.larga{font-size:24px}.muchas .categoria img{height:66%}}
 
 /* Secciones */
 .seccion{padding:44px 0}
@@ -202,6 +207,14 @@ h1,h2,h3{margin:0;line-height:1.1}
 .filtro[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:#fff}
 .filtro[aria-pressed="true"] small{color:#C9D1D8}
 @media (min-width:900px){.filtros{flex-wrap:wrap;margin:0 0 26px;padding:0;overflow:visible}}
+.filtro[hidden]{display:none}
+.filtros+.filtros{margin-top:-10px}
+@media (min-width:900px){.filtros+.filtros{margin-top:-16px}}
+.ver-mas{text-align:center;margin-top:34px}
+.ver-mas[hidden]{display:none}
+.btn-borde{background:#fff;border:1.5px solid var(--tinta);color:var(--tinta)}
+.btn-borde:hover{background:var(--tinta);color:#fff}
+.btn-borde small{font-weight:500;opacity:.75}
 .cat-busqueda{margin:-6px 0 18px;font-size:14px;color:#5B6670}
 .cat-busqueda button,.enlace{border:0;background:none;padding:0;color:var(--accion);font-weight:600;text-decoration:underline;cursor:pointer;font-size:inherit}
 .grilla{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 12px}

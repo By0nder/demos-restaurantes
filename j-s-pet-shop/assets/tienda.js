@@ -58,40 +58,70 @@
     $$('.pres', p.parentNode).forEach(b => b.setAttribute('aria-pressed', b === p ? 'true' : 'false'));
   });
 
-  // Catálogo: filtros y búsqueda
+  // Catálogo: filtros y búsqueda. Los filtros van por grupo (mascota, tipo…): los grupos se combinan
+  // (Gatos + Snacks) y dentro de un grupo se elige uno. Una marca, el menú o una categoría que no está
+  // entre los botones filtra sola. Se muestran `porPagina` y «Ver más» trae los siguientes.
   const tarjetas = $$('#catalogo .prod');
+  tarjetas.forEach(t => { t._tags = t.dataset.tags.split(' '); t._texto = norm(t.dataset.buscar); });
   const filtros = $$('.filtro');
+  const grupoDe = Object.fromEntries(filtros.filter(f => f.dataset.filtro !== 'todos').map(f => [f.dataset.filtro, f.dataset.grupo]));
   const visibles = $('[data-visibles]');
-  let filtro = 'todos', termino = '';
-  const aplicar = () => {
+  const POR_PAGINA = D.porPagina || 24;
+  let sel = {}, termino = '', limite = POR_PAGINA;
+  const pasa = (t, s, palabras) => Object.values(s).every(id => t._tags.includes(id)) && palabras.every(w => t._texto.includes(w) || t._texto.includes(w.replace(/s$/, '')));
+  const verMas = $('[data-ver-mas]');
+  const aplicar = (incluir) => {
     const palabras = norm(termino).split(/\s+/).filter(Boolean);
-    let n = 0;
-    tarjetas.forEach(t => {
-      const tags = t.dataset.tags.split(' ');
-      const texto = norm(t.dataset.buscar);
-      const ok = (filtro === 'todos' || tags.includes(filtro)) && palabras.every(w => texto.includes(w) || texto.includes(w.replace(/s$/, '')));
-      t.hidden = !ok; if (ok) n++;
-    });
+    const ok = tarjetas.filter(t => pasa(t, sel, palabras));
+    // El producto elegido en las sugerencias tiene que quedar a la vista aunque esté más abajo.
+    if (incluir) { const k = ok.findIndex(t => t.dataset.id === incluir); if (k >= limite) limite = Math.ceil((k + 1) / POR_PAGINA) * POR_PAGINA; }
+    const vista = new Set(ok.slice(0, limite));
+    tarjetas.forEach(t => { t.hidden = !vista.has(t); });
+    const n = ok.length;
     visibles.textContent = n;
+    verMas.hidden = n <= limite;
+    $('[data-quedan]').textContent = n > limite ? `(${n - limite})` : '';
+    // Cada botón dice cuántos quedarían al tocarlo; los que dejarían la grilla vacía se esconden.
+    filtros.forEach(f => {
+      const g = f.dataset.grupo, id = f.dataset.filtro;
+      const s = { ...sel }; delete s[g]; if (id !== 'todos') s[g] = id;
+      const c = tarjetas.filter(t => pasa(t, s, palabras)).length;
+      f.querySelector('small').textContent = c;
+      const marcado = id === 'todos' ? !sel[g] : sel[g] === id;
+      f.setAttribute('aria-pressed', marcado ? 'true' : 'false');
+      f.hidden = !c && !marcado;
+    });
     $('[data-vacio]').hidden = n > 0;
+    // Una marca (o lo que no tiene botón) se nombra arriba de la grilla, con «Ver todo» para salir.
     const caja = $('[data-busqueda]');
-    caja.hidden = !termino;
-    $('[data-termino]').textContent = termino;
+    const marca = sel.otro && $(`.marca[data-filtro="${sel.otro}"] img`);
+    caja.hidden = !termino && !sel.otro;
+    $('[data-busqueda-txt]').textContent = termino ? 'Resultados para' : marca ? 'Marca' : 'Mostrando';
+    $('[data-termino]').textContent = termino || (marca ? marca.alt : sel.otro || '');
     const w = $('[data-wsp-busqueda]');
     if (w) w.href = 'https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(D.saludo + (termino ? 'quisiera saber si tienen ' + termino + '.' : 'quisiera saber si tienen un producto que no encontré en la página.'));
-    filtros.forEach(f => f.setAttribute('aria-pressed', f.dataset.filtro === filtro ? 'true' : 'false'));
   };
   const alCatalogo = () => $('#catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
   document.addEventListener('click', e => {
     const a = e.target.closest('[data-filtro]');
     if (!a) return;
     e.preventDefault();
-    filtro = a.dataset.filtro; termino = ''; q.value = '';
-    // Una marca o una categoría que no está entre los botones igual filtra (los botones quedan sin marcar).
+    const id = a.dataset.filtro;
+    if (a.classList.contains('filtro')) {
+      // Botón del catálogo: cambia solo su grupo y deja la búsqueda; tocar el marcado lo desmarca
+      // (los grupos sin «Todos» se vacían así).
+      const g = a.dataset.grupo, ya = sel[g] === id;
+      sel = { ...sel }; delete sel[g]; if (id !== 'todos' && !ya) sel[g] = id;
+    } else {
+      // Menú, marca, categoría o banner: empieza de cero con ese filtro.
+      sel = id === 'todos' ? {} : { [grupoDe[id] || 'otro']: id }; termino = ''; q.value = '';
+    }
+    limite = POR_PAGINA;
     aplicar();
     if (!a.classList.contains('filtro')) alCatalogo();
   });
-  $('[data-limpiar]').addEventListener('click', () => { termino = ''; q.value = ''; filtro = 'todos'; aplicar(); });
+  verMas.addEventListener('click', () => { limite += POR_PAGINA; aplicar(); });
+  $('[data-limpiar]').addEventListener('click', () => { termino = ''; q.value = ''; sel = {}; limite = POR_PAGINA; aplicar(); });
 
   // Buscador de la cabecera con sugerencias
   const q = $('#q'), sug = $('#sugerencias');
@@ -106,7 +136,7 @@
       + (hits.length ? `<button type="button" class="sug-todo" data-ver-todo>Ver los ${hits.length} resultados</button>` : `<p class="sug" style="cursor:default">No lo encontramos. <button type="button" class="enlace" data-ver-todo>Preguntar por WhatsApp</button></p>`);
     sug.hidden = false; q.setAttribute('aria-expanded', 'true');
   };
-  const verTodo = () => { termino = q.value.trim(); filtro = 'todos'; aplicar(); cerrarSug(); q.blur(); alCatalogo(); };
+  const verTodo = () => { termino = q.value.trim(); sel = {}; limite = POR_PAGINA; aplicar(); cerrarSug(); q.blur(); alCatalogo(); };
   q.addEventListener('input', buscar);
   q.addEventListener('keydown', e => {
     const ops = $$('.sug[data-ir-prod]', sug);
@@ -121,7 +151,7 @@
     const o = e.target.closest('[data-ir-prod]');
     if (e.target.closest('[data-ver-todo]')) return verTodo();
     if (!o) return;
-    cerrarSug(); q.blur(); filtro = 'todos'; termino = ''; aplicar();
+    cerrarSug(); q.blur(); sel = {}; termino = ''; limite = POR_PAGINA; aplicar(o.dataset.irProd);
     const t = $(`#catalogo .prod[data-id="${o.dataset.irProd}"]`);
     t.scrollIntoView({ behavior: 'smooth', block: 'center' });
     t.classList.add('resaltado'); setTimeout(() => t.classList.remove('resaltado'), 2200);
@@ -217,4 +247,5 @@
   });
 
   pintarCuenta(false); pintarLista();
+  aplicar();
 })();
