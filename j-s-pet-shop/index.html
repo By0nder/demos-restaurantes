@@ -60,6 +60,14 @@
 
 <main id="contenido">
 
+<div class="repetir" data-repetir hidden>
+  <div class="caja repetir-fila">
+    <p><strong>¿Le repetimos su último pedido?</strong> <span data-repetir-txt></span></p>
+    <button type="button" class="btn btn-accion" data-repetir-si>Repetir pedido</button>
+    <button type="button" class="repetir-cerrar" data-repetir-no aria-label="Ahora no"><svg class="ico " aria-hidden="true"><use href="#i-cerrar"/></svg></button>
+  </div>
+</div>
+
 <section class="banners" aria-roledescription="carrusel" aria-label="Novedades">
   <div class="banners-pista">
   
@@ -441,6 +449,19 @@
     
     <div class="filtros" role="group" aria-label="Edad y tamaño">
       <button type="button" class="filtro" data-filtro="cachorro" data-grupo="edad" aria-pressed="false">Cachorros <small>32</small></button><button type="button" class="filtro" data-filtro="gatito" data-grupo="edad" aria-pressed="false">Gatitos <small>18</small></button><button type="button" class="filtro" data-filtro="adulto" data-grupo="edad" aria-pressed="false">Adultos <small>128</small></button><button type="button" class="filtro" data-filtro="esterilizado" data-grupo="edad" aria-pressed="false">Esterilizados <small>5</small></button><button type="button" class="filtro" data-filtro="7-anos" data-grupo="edad" aria-pressed="false">+7 años <small>8</small></button><button type="button" class="filtro" data-filtro="saco" data-grupo="edad" aria-pressed="false">Sacos de 15 kg o más <small>47</small></button>
+    </div>
+    
+    
+    <div class="guia-intro" data-guia-intro="perro" hidden>
+      <h3>Alimento para perros</h3>
+      <p>Aquí está todo para su perro: croquetas, comida húmeda, snacks y accesorios, desde marcas para el día a día hasta fórmulas premium, en bolsitas o en sacos de hasta 25 kg. Elija según su edad y su tamaño, y dele lo que necesita para crecer sano, activo y feliz.</p>
+      <a href="#guia" data-ir-guia="perro">Cómo elegir el alimento de su perro <svg class="ico " aria-hidden="true"><use href="#i-flecha"/></svg></a>
+    </div>
+    
+    <div class="guia-intro" data-guia-intro="gato" hidden>
+      <h3>Alimento para gatos</h3>
+      <p>Dele a su gato la nutrición que necesita en cada etapa: croquetas, sobres y latas, snacks y su arena, todo en un solo pedido. Tenemos desde opciones para el día a día hasta fórmulas premium, para que crezca sano y se mantenga activo.</p>
+      <a href="#guia" data-ir-guia="gato">Cómo elegir el alimento de su gato <svg class="ico " aria-hidden="true"><use href="#i-flecha"/></svg></a>
     </div>
     
     <p class="cat-busqueda" data-busqueda hidden><span data-busqueda-txt>Resultados para</span> «<strong data-termino></strong>» · <button type="button" data-limpiar>Ver todo</button></p>
@@ -4130,6 +4151,98 @@
 </section>
 
 
+<section class="seccion seccion-suave" id="guia" aria-labelledby="t-guia">
+  <div class="caja">
+    <h2 class="titulo" id="t-guia">Guía para elegir su alimento</h2>
+    
+    <div class="guia-tabs" role="tablist" aria-label="Guía para elegir su alimento">
+      <button type="button" role="tab" class="guia-tab" id="tab-perro" aria-controls="guia-perro" aria-selected="true" tabindex="0" data-tab="perro">Perros</button><button type="button" role="tab" class="guia-tab" id="tab-gato" aria-controls="guia-gato" aria-selected="false" tabindex="-1" data-tab="gato">Gatos</button>
+    </div>
+    
+    
+    <div class="guia-panel" role="tabpanel" id="guia-perro" aria-labelledby="tab-perro" tabindex="0">
+      <div class="guia-bloques">
+        
+        <div class="guia-bloque">
+          <h3>¿Cómo elegir el alimento de su perro?</h3>
+          <p>La comida correcta se nota en su energía, su pelaje y su digestión. Antes de comprar, fíjese en cuatro cosas:</p>
+          <ul><li><strong>Su edad y su tamaño.</strong> Un cachorro, un adulto y un perro de más de 7 años no comen lo mismo, y la croqueta de raza pequeña es más chica que la de razas medianas y grandes.</li><li><strong>Lo que dice la bolsa.</strong> Que la proteína animal (carne, pollo o cordero) vaya entre los primeros ingredientes y que la fórmula traiga vitaminas y minerales.</li><li><strong>Si necesita algo especial.</strong> Para alergias, estómago delicado, sobrepeso o articulaciones hay fórmulas hechas para eso.</li><li><strong>Lo que indique su veterinario.</strong> Si su perro tiene alguna condición, él le dice qué fórmula darle; nosotros se la conseguimos.</li></ul>
+        </div>
+        
+        <div class="guia-bloque">
+          <h3>Lo que gana su perro con una buena comida</h3>
+          
+          <ul><li><strong>Pelaje brillante y piel sana:</strong> el omega 3 y 6 le dan brillo al pelo y reducen la caída.</li><li><strong>Más defensas:</strong> una dieta balanceada, con vitaminas C y E, lo ayuda a enfermarse menos.</li><li><strong>Huesos y músculos fuertes:</strong> la proteína de calidad, el calcio y el fósforo lo sostienen en cada etapa.</li><li><strong>Buena digestión:</strong> la fibra y los prebióticos cuidan su estómago y evitan el estreñimiento y la diarrea.</li><li><strong>Energía para todo el día:</strong> comer completo le da la vitalidad que necesita para jugar y pasear.</li></ul>
+        </div>
+        
+        <div class="guia-bloque guia-tienda">
+          <h3>¿Por qué pedirlo en J&amp;S?</h3>
+          
+          <ul><li><strong>Marcas para cada bolsillo:</strong> Ricocan, Canbo, Pro Plan, Dog Chow, Super Can, Thor, Bandido y Állkjoy.</li><li><strong>Bolsa o saco:</strong> lleve lo de la semana o ahorre con el saco de 15 a 25 kg.</li><li><strong>Delivery:</strong> arme su pedido aquí, envíelo por WhatsApp y se lo llevamos.</li><li><strong>¿No lo ve?</strong> Pregúntenos por la marca de su perro: se la conseguimos.</li></ul>
+        </div>
+        
+      </div>
+      
+      <div class="guia-dudas">
+        <h3>Dudas frecuentes sobre el alimento para perros</h3>
+        <details class="faq"><summary>¿Qué alimento es mejor para mi perro?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>El que va con su edad, su tamaño y cuánto se mueve. Busque una fórmula completa para su etapa, con proteína de buena calidad. Si tiene alguna sensibilidad, consulte a su veterinario; y si quiere, escríbanos la edad y el tamaño de su perro y le decimos qué opciones tenemos.</p></details><details class="faq"><summary>¿Croquetas o comida húmeda?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Las croquetas son prácticas, duran más una vez abiertas y su textura ayuda a limpiar los dientes. La comida húmeda tiene más agua, lo hidrata y les encanta a los perros que comen poco. Se pueden combinar: un sobre encima de las croquetas hace la comida más apetitosa.</p></details><details class="faq"><summary>¿Cuántas veces al día debe comer?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Los cachorros, de 3 a 4 veces al día en porciones pequeñas; los adultos, 1 o 2 veces. La cantidad la indica la tabla de la bolsa según su peso: repártala en esas comidas.</p></details><details class="faq"><summary>¿Puedo cambiarle la comida de un día para otro?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Mejor no: un cambio brusco puede darle diarrea o vómitos. Hágalo en 7 a 10 días: empiece mezclando un poco de la nueva con la de siempre y aumente la cantidad cada día hasta que solo coma la nueva.</p></details><details class="faq"><summary>¿Cómo sé si su comida le cae mal?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Si se rasca mucho, tiene la piel roja, otitis que vuelven, se le cae el pelo o anda mal del estómago, puede ser alergia a algún ingrediente. Llévelo a su veterinario para saber cuál es y elegir una fórmula sin él.</p></details>
+      </div>
+      
+      
+      <div class="guia-ayuda">
+        <p>¿No sabe cuál le conviene? Cuéntenos la edad, el tamaño y lo que come hoy su perro, y le recomendamos.</p>
+        <div class="guia-botones">
+          <a class="btn btn-wsp" href="https://wa.me/51947336916?text=Hola%20J%26S%20Pet%20Shop%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20que%20me%20recomienden%20un%20alimento%20para%20mi%20perro." target="_blank" rel="noopener"><svg class="ico " aria-hidden="true"><use href="#i-wa"/></svg><span>Pedir una recomendación</span></a>
+          <a class="btn btn-borde" href="#catalogo" data-filtro="perro">Ver alimento para perros</a>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="guia-panel" role="tabpanel" id="guia-gato" aria-labelledby="tab-gato" tabindex="0" hidden>
+      <div class="guia-bloques">
+        
+        <div class="guia-bloque">
+          <h3>¿Por qué importa lo que come su gato?</h3>
+          
+          <ul><li><strong>Una dieta completa:</strong> proteína, grasas buenas, vitaminas y minerales en la medida que su cuerpo pide.</li><li><strong>Un estómago tranquilo:</strong> los ingredientes de calidad se aprovechan mejor y evitan el estreñimiento y la diarrea.</li><li><strong>Pelaje suave y sin caspa:</strong> el omega 3 y 6 nutren su piel y reducen la caída del pelo.</li><li><strong>Defensas y energía:</strong> bien alimentado se mantiene activo y resiste mejor las enfermedades comunes.</li></ul>
+        </div>
+        
+        <div class="guia-bloque">
+          <h3>Consejos para alimentarlo bien</h3>
+          <p>Una buena comida rinde más con buenos hábitos:</p>
+          <ul><li><strong>Según su etapa:</strong> gatito, adulto, esterilizado o mayor: cada uno tiene su fórmula.</li><li><strong>Agua fresca siempre:</strong> cámbiela todos los días; una fuente lo anima a tomar más y cuida sus riñones.</li><li><strong>Cambios de a pocos:</strong> si le cambia la comida, mezcle la nueva con la de siempre durante varios días.</li><li><strong>Atento a las señales:</strong> si vomita, tiene diarrea o deja de comer, revise su dieta con su veterinario.</li></ul>
+        </div>
+        
+        <div class="guia-bloque guia-tienda">
+          <h3>¿Por qué pedirlo en J&amp;S?</h3>
+          
+          <ul><li><strong>Sus marcas:</strong> Ricocat, Super Cat, Michicat, Canbo, Cat Chow, Felix, Pro Plan y Churu.</li><li><strong>Para cada etapa:</strong> gatitos, adultos, esterilizados y cuidado urinario.</li><li><strong>Su arena en el mismo pedido:</strong> Happy Cat e INCAT.</li><li><strong>Delivery:</strong> arme su pedido aquí, envíelo por WhatsApp y se lo llevamos.</li></ul>
+        </div>
+        
+      </div>
+      
+      <div class="guia-dudas">
+        <h3>Dudas frecuentes sobre el alimento para gatos</h3>
+        <details class="faq"><summary>¿Cuál es el mejor alimento para gatos?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>El que va con su edad y su condición: gatito, adulto, esterilizado o con cuidado urinario. Hay opciones para el día a día, premium y dietas especiales que indica el veterinario. Lo importante es que sea completo y con proteína de buena calidad.</p></details><details class="faq"><summary>¿Cuántas veces al día debe comer un gato?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Un gato adulto, de 2 a 3 veces al día; los gatitos comen más seguido y en porciones pequeñas. La cantidad depende de su peso, de cuánto se mueve y de la comida: guíese por la tabla de la bolsa.</p></details><details class="faq"><summary>¿Puedo darle croquetas y comida húmeda juntas?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Sí, y le hace bien: el sobre o la lata le da agua extra, cuida sus vías urinarias y le da variedad. Solo baje un poco las croquetas para no pasarse de la cantidad del día.</p></details><details class="faq"><summary>¿Cómo le cambio la comida sin que le caiga mal?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>En 7 a 10 días: mezcle un poco de la nueva con la de siempre y vaya subiendo la proporción. Así su estómago se adapta y acepta mejor el nuevo sabor y la nueva textura.</p></details><details class="faq"><summary>¿Qué debo revisar en la bolsa?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Que diga «alimento completo» para su etapa, que la proteína animal esté entre los primeros ingredientes y la fecha de vencimiento. Si su gato tiene el estómago delicado, prefiera fórmulas con menos colorantes y cereales.</p></details>
+      </div>
+      
+      
+      <div class="guia-ayuda">
+        <p>¿No sabe cuál le conviene? Cuéntenos la edad de su gato, si está esterilizado y lo que come hoy, y le recomendamos.</p>
+        <div class="guia-botones">
+          <a class="btn btn-wsp" href="https://wa.me/51947336916?text=Hola%20J%26S%20Pet%20Shop%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20que%20me%20recomienden%20un%20alimento%20para%20mi%20gato." target="_blank" rel="noopener"><svg class="ico " aria-hidden="true"><use href="#i-wa"/></svg><span>Pedir una recomendación</span></a>
+          <a class="btn btn-borde" href="#catalogo" data-filtro="gato">Ver alimento para gatos</a>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
 <section class="seccion" id="mayor" aria-labelledby="t-mayor">
   <div class="caja">
     <div class="mayorista">
@@ -4149,7 +4262,7 @@
 <section class="seccion" id="preguntas" aria-labelledby="t-faq">
   <div class="caja caja-angosta">
     <h2 class="titulo" id="t-faq">Preguntas frecuentes</h2>
-    <details class="faq" open><summary>¿Hacen delivery?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Sí. Escríbanos por WhatsApp con lo que necesita y le confirmamos si llegamos a su zona y cuándo le llega.</p></details><details class="faq"><summary>¿Venden por mayor?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Sí, abastecemos bodegas y mercados. Pida la lista de mayorista por WhatsApp.</p></details><details class="faq"><summary>¿Tienen la marca que usa mi mascota?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Trabajamos Canbo, Ricocan, Ricocat, Super Can, Super Cat, Thor, Bandido y Michicat. Si busca otra, pregúntenos.</p></details><details class="faq"><summary>¿Venden por kilo o solo sacos?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Desde bolsas de 200 g y 1 kg hasta sacos de 25 kg, según la marca.</p></details>
+    <details class="faq" open><summary>¿Hacen delivery?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Sí. Escríbanos por WhatsApp con lo que necesita y le confirmamos si llegamos a su zona y cuándo le llega.</p></details><details class="faq"><summary>¿Venden por mayor?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Sí, abastecemos bodegas y mercados. Pida la lista de mayorista por WhatsApp.</p></details><details class="faq"><summary>¿Tienen la marca que usa mi mascota?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Trabajamos Ricocan, Ricocat, Canbo, Pro Plan, Dog Chow, Cat Chow, Felix, Churu, Super Can, Thor y más. Si busca otra, pregúntenos: se la conseguimos.</p></details><details class="faq"><summary>¿Venden por kilo o solo sacos?<svg class="ico " aria-hidden="true"><use href="#i-mas"/></svg></summary><p>Desde bolsas de 200 g y 1 kg hasta sacos de 25 kg, según la marca.</p></details>
   </div>
 </section>
 
@@ -4188,6 +4301,7 @@
       <img src="assets/tienda/plato.webp" alt="" width="150" height="100" loading="lazy">
       <p>Todavía no agregó productos. Elija los de su mascota y toque «Agregar al pedido».</p>
       <a class="btn btn-accion" href="#catalogo" data-cerrar-pedido><span>Ver productos</span></a>
+      <button type="button" class="btn btn-borde pedido-repetir" data-repetir-si hidden>Repetir mi último pedido</button>
     </div>
     <form class="pedido-form" data-form-pedido novalidate>
       <label for="p-libre">¿Algo más? Arena, pañales u otra marca</label>

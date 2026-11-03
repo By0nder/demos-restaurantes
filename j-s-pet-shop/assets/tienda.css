@@ -322,3 +322,48 @@ h1,h2,h3{margin:0;line-height:1.1}
 .pedido-error{margin:-4px 0 12px;color:#B42318;font-size:13.5px;font-weight:500}
 .pedido-nota{margin:10px 0 0;font-size:13px;color:#5B6670;text-align:center}
 body.con-pedido{overflow:hidden}
+
+/* Guías por mascota (3-nov-2026): intro arriba de la grilla y guía con pestañas después del catálogo */
+.guia-intro{margin:-4px 0 22px;padding:18px 20px;border-radius:18px;background:var(--crema)}
+.guia-intro[hidden]{display:none}
+.guia-intro h3{font-family:"Baloo 2",Poppins,sans-serif;font-weight:800;font-size:23px;color:var(--azul);margin-bottom:6px}
+.guia-intro p{margin:0 0 8px;color:#46515B;max-width:78ch;font-size:15px}
+.guia-intro a{display:inline-flex;align-items:center;gap:6px;color:var(--accion);font-weight:600;font-size:14px}
+.guia-intro .ico{width:18px;height:18px}
+.guia-tabs{display:flex;justify-content:center;gap:8px;margin:-6px 0 26px}
+.guia-tab{min-height:44px;padding:0 26px;border:1.5px solid #E1DAD3;border-radius:999px;background:#fff;font-weight:600;font-size:15px;cursor:pointer}
+.guia-tab:hover{border-color:var(--marca)}
+.guia-tab[aria-selected="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+.guia-panel[hidden]{display:none}
+.guia-panel:focus-visible{outline-offset:8px;border-radius:12px}
+.guia-bloques{display:grid;gap:16px}
+@media (min-width:900px){.guia-bloques{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}}
+.guia-bloque{padding:22px 22px 14px;border-radius:20px;background:#fff;border:1px solid #EFE6DC}
+.guia-bloque h3{font-family:"Baloo 2",Poppins,sans-serif;font-weight:800;font-size:21px;line-height:1.15;color:var(--azul);margin-bottom:10px;text-wrap:balance}
+.guia-bloque p{margin:0 0 10px;color:#46515B;font-size:15px}
+.guia-bloque ul{margin:0;padding:0;list-style:none}
+.guia-bloque li{position:relative;padding-left:20px;margin-bottom:10px;font-size:15px;line-height:1.5;color:#46515B}
+.guia-bloque li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--marca)}
+.guia-bloque strong{color:var(--tinta);font-weight:600}
+.guia-tienda{background:var(--azul);border-color:var(--azul)}
+.guia-tienda h3,.guia-tienda strong{color:#fff}
+.guia-tienda li{color:#DCE7F0}
+.guia-tienda li::before{background:#FFB574}
+.guia-dudas{max-width:860px;margin:40px auto 0}
+.guia-dudas h3{font-family:"Baloo 2",Poppins,sans-serif;font-weight:800;font-size:clamp(22px,4.4vw,28px);color:var(--azul);text-align:center;margin-bottom:16px;text-wrap:balance}
+.guia-ayuda{margin-top:30px;text-align:center}
+.guia-ayuda p{margin:0 auto 14px;max-width:52ch;font-weight:500}
+.guia-botones{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+
+/* Repetir el último pedido (3-nov-2026) */
+.repetir{background:var(--celeste)}
+.repetir[hidden]{display:none}
+.repetir-fila{display:flex;align-items:center;gap:10px;padding-top:10px;padding-bottom:10px}
+.repetir-fila p{flex:1;min-width:0;margin:0;font-size:14px;line-height:1.35}
+.repetir-fila p span{display:block;color:#46515B;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (min-width:700px){.repetir-fila p span{display:inline;white-space:normal}}
+.repetir-fila .btn{min-height:40px;padding:0 16px;font-size:14px;flex:none}
+.repetir-cerrar{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--tinta)}
+.repetir-cerrar:hover{background:rgba(0,0,0,.06)}
+.pedido-repetir{margin-top:10px}
+.pedido-repetir[hidden]{display:none}

@@ -70,6 +70,22 @@
   let sel = {}, termino = '', limite = POR_PAGINA;
   const pasa = (t, s, palabras) => Object.values(s).every(id => t._tags.includes(id)) && palabras.every(w => t._texto.includes(w) || t._texto.includes(w.replace(/s$/, '')));
   const verMas = $('[data-ver-mas]');
+  // Guías (3-nov-2026): una pestaña por mascota; la intro de la mascota filtrada va arriba de la grilla.
+  const intros = $$('[data-guia-intro]'), tabs = $$('.guia-tab');
+  const pestana = (id, foco) => tabs.forEach(t => {
+    const si = t.dataset.tab === id;
+    t.setAttribute('aria-selected', si ? 'true' : 'false'); t.tabIndex = si ? 0 : -1;
+    $('#guia-' + t.dataset.tab).hidden = !si;
+    if (si && foco) t.focus();
+  });
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => pestana(t.dataset.tab));
+    t.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d) { e.preventDefault(); pestana(tabs[(i + d + tabs.length) % tabs.length].dataset.tab, true); }
+    });
+  });
+  $$('[data-ir-guia]').forEach(a => a.addEventListener('click', () => pestana(a.dataset.irGuia)));
   const aplicar = (incluir) => {
     const palabras = norm(termino).split(/\s+/).filter(Boolean);
     const ok = tarjetas.filter(t => pasa(t, sel, palabras));
@@ -98,6 +114,10 @@
     caja.hidden = !termino && !sel.otro;
     $('[data-busqueda-txt]').textContent = termino ? 'Resultados para' : marca ? 'Marca' : 'Mostrando';
     $('[data-termino]').textContent = termino || (marca ? marca.alt : sel.otro || '');
+    const elegidos = Object.values(sel);
+    intros.forEach(d => { d.hidden = !!termino || !elegidos.includes(d.dataset.guiaIntro); });
+    const conGuia = elegidos.find(id => tabs.some(t => t.dataset.tab === id));
+    if (conGuia) pestana(conGuia);
     const w = $('[data-wsp-busqueda]');
     if (w) w.href = 'https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(D.saludo + (termino ? 'quisiera saber si tienen ' + termino + '.' : 'quisiera saber si tienen un producto que no encontré en la página.'));
   };
@@ -179,7 +199,7 @@
     }).join('');
     $('[data-pedido-vacio]').hidden = items.length > 0;
   };
-  const pintar = salta => { guardar(); pintarCuenta(salta); pintarLista(); };
+  const pintar = salta => { guardar(); pintarCuenta(salta); pintarLista(); pintarRepetir(); };
   const lista$ = $('[data-lista]');
   lista$.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
@@ -230,6 +250,30 @@
     }
   });
 
+  // Repetir el último pedido (3-nov-2026: el alimento se vuelve a comprar cada mes). Al enviarlo se guarda;
+  // si al volver, una hora después, el pedido sigue igual, ya salió: se vacía y arriba se ofrece repetirlo.
+  const ULTIMO = CLAVE + '-ultimo', SIN_BARRA = CLAVE + '-sin-repetir';
+  let ultimo = null;
+  try { ultimo = JSON.parse(localStorage.getItem(ULTIMO) || 'null'); } catch (e) {}
+  if (ultimo) { ultimo.items = (ultimo.items || []).filter(i => D.productos[i.id]); if (!ultimo.items.length) ultimo = null; }
+  if (ultimo && items.length && JSON.stringify(items) === JSON.stringify(ultimo.items) && Date.now() - ultimo.fecha > 36e5) { items = []; guardar(); }
+  const barra = $('[data-repetir]');
+  function pintarRepetir() {
+    const hay = !!ultimo && !items.length;
+    $$('.pedido-repetir').forEach(b => { b.hidden = !hay; });
+    let cerrada = false;
+    try { cerrada = sessionStorage.getItem(SIN_BARRA) === '1'; } catch (e) {}
+    barra.hidden = !hay || cerrada;
+    if (!hay) return;
+    const f = new Date(ultimo.fecha), p = D.productos[ultimo.items[0].id], mas = ultimo.items.length - 1;
+    const cuando = f.toDateString() === new Date().toDateString() ? 'De hoy' : 'Del ' + f.toLocaleDateString('es-PE', { day: 'numeric', month: 'long' });
+    $('[data-repetir-txt]').textContent = `${cuando}: ${p.n}${ultimo.items[0].pres ? ' ' + ultimo.items[0].pres : ''}${mas ? ` y ${mas} ${mas === 1 ? 'producto' : 'productos'} más` : ''}.`;
+  }
+  $$('[data-repetir-si]').forEach(b => b.addEventListener('click', () => {
+    items = ultimo.items.map(i => ({ ...i })); pintar(true); if (cajon.hidden) abrir();
+  }));
+  $('[data-repetir-no]').addEventListener('click', () => { barra.hidden = true; try { sessionStorage.setItem(SIN_BARRA, '1'); } catch (e) {} });
+
   // Enviar el pedido por WhatsApp
   const form = $('[data-form-pedido]');
   try { const g = JSON.parse(localStorage.getItem(CLAVE + '-datos') || '{}'); form.nombre.value = g.nombre || ''; form.distrito.value = g.distrito || ''; } catch (e) {}
@@ -241,11 +285,12 @@
     if (!items.length && !libre) { err.textContent = 'Agregue algún producto o escriba lo que necesita.'; err.hidden = false; return; }
     if (!nombre) { err.textContent = 'Escriba su nombre para que sepamos a quién atender.'; err.hidden = false; form.nombre.focus(); return; }
     try { localStorage.setItem(CLAVE + '-datos', JSON.stringify({ nombre, distrito })); } catch (e) {}
+    if (items.length) { ultimo = { items: items.map(i => ({ ...i })), fecha: Date.now() }; try { localStorage.setItem(ULTIMO, JSON.stringify(ultimo)); } catch (e) {} }
     const lineas = items.map((it, i) => `${i + 1}. ${D.productos[it.id].n}${it.pres ? ' — ' + it.pres : ''} × ${it.cant}`);
     const texto = [D.encabezado, '', ...lineas, ...(libre ? ['', (items.length ? 'Algo más: ' : '') + libre] : []), '', 'Nombre: ' + nombre, ...(distrito ? ['Distrito: ' + distrito] : [])].join('\n');
     window.open('https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');
   });
 
-  pintarCuenta(false); pintarLista();
+  pintarCuenta(false); pintarLista(); pintarRepetir();
   aplicar();
 })();
