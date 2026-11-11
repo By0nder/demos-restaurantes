@@ -81,8 +81,16 @@
       } catch (e) {}
     })();
   </script>
-</head>
-<body class="bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased">
+<style id="pb-estilo">
+.pb-barra{position:relative;z-index:2147483647;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 8px;padding:7px 12px;background:#0b1220;color:#fff;font:600 13px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif}
+.pb-barra a{display:inline-flex;align-items:center;min-height:30px;padding:3px 14px;border:1px solid rgba(255,255,255,.6);border-radius:6px;color:#fff;text-decoration:none}
+.pb-barra a:hover{background:rgba(255,255,255,.14)}
+.pb-barra a[aria-current]{background:#fff;color:#0b1220;border-color:#fff}
+.pb-barra a:focus-visible{outline:2px solid #7fd6f7;outline-offset:2px}
+.pb-txt{margin-right:6px;opacity:.85}
+@media (max-width:600px){.pb-txt{display:none}.pb-barra{gap:6px;padding:7px 8px}.pb-barra a{min-height:34px;padding:3px 12px}}
+</style></head>
+<body class="bg-[var(--color-fondo)] text-[var(--color-texto)] antialiased"><div class="pb-barra" role="navigation" aria-label="Propuestas de diseño"><span class="pb-txt">Neo Music · Propuestas de diseño</span><a href="../neo-music-clases-de-musica/" aria-current="page">Diseño 1</a><a href="../neo-music-clases-de-musica-diseno-2/">Diseño 2</a><a href="../neo-music-clases-de-musica-diseno-3/">Diseño 3</a></div>
 
 
 
@@ -174,18 +182,18 @@
     
     
     <div class="absolute inset-0 overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=1600&amp;q=80&amp;auto=format"
-           srcset="https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=480&amp;q=80&amp;auto=format 480w, https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=800&amp;q=80&amp;auto=format 800w, https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=1200&amp;q=80&amp;auto=format 1200w, https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=1600&amp;q=80&amp;auto=format 1600w" sizes="100vw"
+      <img src="https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=1600&amp;q=80"
+           srcset="https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=480&amp;q=80 480w, https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=800&amp;q=80 800w, https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=1200&amp;q=80 1200w, https://images.unsplash.com/photo-1758524944402-1903b38f848f?w=1600&amp;q=80 1600w" sizes="100vw"
            alt=""
            fetchpriority="high" decoding="async"
            class="hero-foto w-full h-full object-cover">
       
-        <img data-src="https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=800&amp;q=80&amp;auto=format" data-srcset="https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=480&amp;q=80&amp;auto=format 480w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=800&amp;q=80&amp;auto=format 800w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=1200&amp;q=80&amp;auto=format 1200w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=1600&amp;q=80&amp;auto=format 1600w" sizes="100vw" alt="" aria-hidden="true"
+        <img src="https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=1200&amp;q=80" alt="" aria-hidden="true"
              fetchpriority="low" decoding="async" loading="lazy"
              class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
              style="animation-delay: 0s, 0s">
       
-        <img data-src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=800&amp;q=80&amp;auto=format" data-srcset="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=480&amp;q=80&amp;auto=format 480w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=800&amp;q=80&amp;auto=format 800w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=1200&amp;q=80&amp;auto=format 1200w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=1600&amp;q=80&amp;auto=format 1600w" sizes="100vw" alt="" aria-hidden="true"
+        <img src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=1200&amp;q=80" alt="" aria-hidden="true"
              fetchpriority="low" decoding="async" loading="lazy"
              class="hero-foto hero-capa absolute inset-0 w-full h-full object-cover"
              style="animation-delay: 8s, 8s">
@@ -386,17 +394,6 @@
 
     
     
-
-<p class="mt-4 text-center text-base leading-relaxed texto-suave reveal">
-  Las clases y cursos que ve son de referencia.
-  
-    <a href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20soy%20de%20Neo%20Music%20Clases%20de%20M%C3%BAsica.%20Vi%20la%20versi%C3%B3n%20inicial%20de%20mi%20p%C3%A1gina%20y%20quiero%20activarla%20con%20mis%20cursos.%20Le%20paso%20la%20lista%20y%20los%20precios%3A%20"
-       target="_blank" rel="noopener"
-       class="inline py-2 font-semibold underline underline-offset-4"
-       style="color: var(--color-acento-fuerte)">¿Es su negocio? Mándeme sus cursos y precios y quedan puestos&nbsp;&rarr;</a>
-  
-</p>
-
 
     
     
@@ -750,27 +747,16 @@
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center reveal">Galería</h2>
     
-    
-
-<p class="mt-4 text-center text-base leading-relaxed texto-suave reveal">
-  Las fotos que ve son de referencia: sus clientes quieren ver su local antes de ir.
-  
-    <a href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20soy%20de%20Neo%20Music%20Clases%20de%20M%C3%BAsica.%20Le%20paso%20fotos%20de%20mi%20local%20para%20la%20p%C3%A1gina%3A%20"
-       target="_blank" rel="noopener"
-       class="inline py-2 font-semibold underline underline-offset-4"
-       style="color: var(--color-acento-fuerte)">¿Es su negocio? Mándeme 3 fotos de su local y quedan puestas&nbsp;&rarr;</a>
-  
-</p>
-<div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
+    <div class="mt-12 grid gap-4 grid-cols-2 md:grid-cols-3">
       
         
         
         
                 
         <figure class="reveal relative overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=800&amp;q=80&amp;auto=format" alt="Foto de referencia"
-               srcset="https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=200&amp;q=80&amp;auto=format 200w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=400&amp;q=80&amp;auto=format 400w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=600&amp;q=80&amp;auto=format 600w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=800&amp;q=80&amp;auto=format 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async" fetchpriority="low"
+          <img src="https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=800&amp;q=80" alt="Foto de Neo Music Clases de Música"
+               srcset="https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1696522732406-065ef560da8c?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+               loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                   </figure>
       
@@ -779,9 +765,9 @@
         
                 
         <figure class="reveal relative overflow-hidden rounded-xl aspect-square">
-          <img src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=800&amp;q=80&amp;auto=format" alt="Foto de referencia"
-               srcset="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=200&amp;q=80&amp;auto=format 200w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=400&amp;q=80&amp;auto=format 400w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=600&amp;q=80&amp;auto=format 600w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=800&amp;q=80&amp;auto=format 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async" fetchpriority="low"
+          <img src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=800&amp;q=80" alt="Foto de Neo Music Clases de Música"
+               srcset="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1453738773917-9c3eff1db985?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+               loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                   </figure>
       
@@ -790,9 +776,9 @@
         
                 
         <figure class="reveal relative overflow-hidden rounded-xl col-span-2 md:col-span-1 aspect-[2/1] md:aspect-square">
-          <img src="https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=800&amp;q=80&amp;auto=format" alt="Foto de referencia"
-               srcset="https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=200&amp;q=80&amp;auto=format 200w, https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=400&amp;q=80&amp;auto=format 400w, https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=600&amp;q=80&amp;auto=format 600w, https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=800&amp;q=80&amp;auto=format 800w" sizes="(min-width: 768px) 33vw, 50vw"
-               loading="lazy" decoding="async" fetchpriority="low"
+          <img src="https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=800&amp;q=80" alt="Foto de Neo Music Clases de Música"
+               srcset="https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=200&amp;q=80 200w, https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=400&amp;q=80 400w, https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=600&amp;q=80 600w, https://images.unsplash.com/photo-1465821185615-20b3c2fbf41b?w=800&amp;q=80 800w" sizes="(min-width: 768px) 33vw, 50vw"
+               loading="lazy" decoding="async"
                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                   </figure>
       
@@ -969,7 +955,7 @@
     <script>document.body.classList.add("con-barra-movil");</script>
   
 
-  <script src="../_comun/main.2dc936fd.js"></script><script>/* aperturas: lib/aperturas.js */(function(w,d){var S="neo-music-clases-de-musica",V="51941571821",U="https://v.somoskallari.com/e";if(w.location.hostname!=="by0nder.github.io"||navigator.webdriver)return;var ls=null;try{ls=w.localStorage}catch(e){}try{if(/[?&]yo=1(&|$)/.test(w.location.search))ls.setItem("kallari-yo","1");if(ls&&ls.getItem("kallari-yo"))return}catch(e){}var vid="";try{vid=ls.getItem("kv")||"";if(!vid){vid=Math.random().toString(36).slice(2,10)+Date.now().toString(36);ls.setItem("kv",vid)}}catch(e){}var t0=Date.now(),m=/Mobi|Android|iPhone/i.test(navigator.userAgent)?1:0,h={};function av(e,s){if(h[e])return;h[e]=1;var b=JSON.stringify({d:S,e:e,v:vid,m:m,s:s||0});try{if(navigator.sendBeacon&&navigator.sendBeacon(U,b))return}catch(x){}try{fetch(U,{method:"POST",body:b,keepalive:true,mode:"no-cors"})}catch(x){}}av("abrir");w.addEventListener("scroll",function(){var e=d.documentElement;if((w.scrollY+w.innerHeight)/e.scrollHeight>0.75)av("bajo")},{passive:true});d.addEventListener("click",function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest("a[href]");if(!a)return;var r=a.getAttribute("href")||"";if(V&&r.indexOf("wa.me/"+V)>=0)av("activar");else if(/wa\.me\/|api\.whatsapp|whatsapp:/.test(r))av("wa");else if(r.indexOf("tel:")===0)av("llamar")},true);d.addEventListener("visibilitychange",function(){if(d.visibilityState==="hidden")av("sale",Math.round((Date.now()-t0)/1000))})})(window,document);</script>
+  <script src="../_comun/main.2dc936fd.js"></script>
   
   
 </body>
