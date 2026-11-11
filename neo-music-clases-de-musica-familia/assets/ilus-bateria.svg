@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+  <!-- Ilustración de una batería (Neo Music, propuesta medida-familia): en el parche del bombo, las 4 barras del logo. -->
+  <defs>
+    <filter id="borde" x="-10%" y="-12%" width="120%" height="124%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="9" result="grueso"/>
+      <feFlood flood-color="#fff"/>
+      <feComposite in2="grueso" operator="in" result="blanco"/>
+      <feMerge><feMergeNode in="blanco"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#borde)" stroke="#2B292A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- soportes (detrás de todo) -->
+    <g fill="none" stroke-width="6">
+      <path d="M118 112V318M118 318L92 360M118 318L144 360"/>
+      <path d="M528 76L536 240M536 240L510 360M536 240L562 360"/>
+      <path d="M484 330L476 362M560 330L568 362"/>
+      <path d="M120 270L98 360M120 270L142 360"/>
+    </g>
+    <!-- platillo de choque -->
+    <ellipse cx="522" cy="74" rx="78" ry="12" fill="#FDDD3A" transform="rotate(-10 522 74)"/>
+    <circle cx="522" cy="74" r="5" fill="#2B292A"/>
+    <!-- hi-hat -->
+    <ellipse cx="118" cy="104" rx="64" ry="9" fill="#FDDD3A"/>
+    <ellipse cx="118" cy="117" rx="64" ry="9" fill="#FDDD3A"/>
+    <!-- toms de arriba -->
+    <path d="M320 142V164" stroke-width="8"/>
+    <circle cx="252" cy="128" r="50" fill="#FDDD3A"/>
+    <circle cx="252" cy="128" r="40" fill="#2B292A"/>
+    <circle cx="252" cy="128" r="33" fill="#fff" stroke="none"/>
+    <circle cx="388" cy="128" r="50" fill="#FDDD3A"/>
+    <circle cx="388" cy="128" r="40" fill="#2B292A"/>
+    <circle cx="388" cy="128" r="33" fill="#fff" stroke="none"/>
+    <!-- caja (redoblante) -->
+    <rect x="66" y="216" width="108" height="56" rx="10" fill="#fff"/>
+    <ellipse cx="120" cy="216" rx="54" ry="11" fill="#fff"/>
+    <path d="M84 226v38M102 228v40M120 228v41M138 228v40M156 226v38" stroke-width="3"/>
+    <!-- tom de piso -->
+    <rect x="468" y="226" width="108" height="106" rx="12" fill="#FDDD3A"/>
+    <ellipse cx="522" cy="226" rx="54" ry="11" fill="#fff"/>
+    <path d="M468 250h108M468 308h108" stroke-width="4"/>
+    <!-- bombo -->
+    <circle cx="320" cy="262" r="120" fill="#FDDD3A"/>
+    <circle cx="320" cy="262" r="104" fill="#2B292A"/>
+    <circle cx="320" cy="262" r="95" fill="#fff" stroke="none"/>
+    <path d="M232 372L246 344M408 372L394 344" stroke-width="7"/>
+  </g>
+  <!-- las 4 barras del logo en el parche del bombo -->
+  <g>
+    <rect x="286" y="214" width="68" height="20" rx="6.4" fill="#E42829"/>
+    <rect x="286" y="238" width="68" height="20" rx="6.4" fill="#F69939"/>
+    <rect x="286" y="262" width="68" height="20" rx="6.4" fill="#FDDD3A"/>
+    <rect x="286" y="286" width="68" height="20" rx="6.4" fill="#7BB94A"/>
+  </g>
+  <!-- baquetas -->
+  <g stroke="#2B292A" stroke-width="4" stroke-linecap="round">
+    <path d="M196 54L300 152" stroke-width="13"/>
+    <path d="M196 54L300 152" stroke="#F69939" stroke-width="7"/>
+    <path d="M444 54L340 152" stroke-width="13"/>
+    <path d="M444 54L340 152" stroke="#F69939" stroke-width="7"/>
+  </g>
+</svg>

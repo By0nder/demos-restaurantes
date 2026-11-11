@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neo Music · Clases de música en Santiago de Surco</title>
+<meta name="description" content="Clases de canto, guitarra, piano, bajo, batería, ukelele y producción musical en Santiago de Surco, para todas las edades.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F4F2ED">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Neo Music · Clases de música en Santiago de Surco">
+<meta property="og:description" content="Versión inicial de la página de Neo Music Clases de Música">
+<meta property="og:url" content="https://by0nder.github.io/demos-restaurantes/neo-music-clases-de-musica-revista/">
+<meta property="og:image" content="https://by0nder.github.io/demos-restaurantes/neo-music-clases-de-musica-revista/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" type="image/avif" imagesrcset="assets/fotos/portada-400.avif 400w, assets/fotos/portada-800.avif 800w, assets/fotos/portada-1333.avif 1333w" imagesizes="(min-width: 900px) 38vw, 64vw" fetchpriority="high">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400&amp;family=Jost:wght@400..600&amp;display=swap">
+<link rel="stylesheet" href="assets/revista.css">
+<style>:root{--papel:#F4F2ED;--papel-2:#E9E5DC;--tinta:#171513;--tinta-2:#4A4540;--tinta-3:#655F57;--rojo:#D62424;--rojo-texto:#BA1D1D;--rojo-claro:#FF6E61;--f-display:"Bodoni Moda","Bodoni MT", Didot, "Bodoni 72", "Times New Roman", serif;--f-texto:"Jost",Futura, "Century Gothic", "Trebuchet MS", system-ui, sans-serif}</style>
+<style id="pb-estilo">
+.pb-barra{position:relative;z-index:2147483647;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 8px;padding:7px 12px;background:#0b1220;color:#fff;font:600 13px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif}
+.pb-barra a{display:inline-flex;align-items:center;min-height:30px;padding:3px 14px;border:1px solid rgba(255,255,255,.6);border-radius:6px;color:#fff;text-decoration:none}
+.pb-barra a:hover{background:rgba(255,255,255,.14)}
+.pb-barra a[aria-current]{background:#fff;color:#0b1220;border-color:#fff}
+.pb-barra a:focus-visible{outline:2px solid #7fd6f7;outline-offset:2px}
+.pb-txt{margin-right:6px;opacity:.85}
+@media (max-width:600px){.pb-txt{display:none}.pb-barra{gap:6px;padding:7px 8px}.pb-barra a{min-height:34px;padding:3px 12px}}
+</style></head>
+<body><div class="pb-barra" role="navigation" aria-label="Propuestas de diseño"><span class="pb-txt">Neo Music · Propuestas de diseño</span><a href="../neo-music-clases-de-musica-estudio/">Diseño 1</a><a href="../neo-music-clases-de-musica-familia/">Diseño 2</a><a href="../neo-music-clases-de-musica-revista/" aria-current="page">Diseño 3</a></div>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<!-- barra-dueno: misma barra y mismo mensaje que las demos (templates/layout.ejs) -->
+<div class="dueno-barra">
+  <p class="dueno-barra__texto"><strong>Versión inicial de su página</strong><span>Hoy nadie la encuentra en Google</span></p>
+  <a class="dueno-barra__boton" href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20le%20escribo%20de%20Neo%20Music%20Clases%20de%20M%C3%BAsica.%20Vi%20la%20versi%C3%B3n%20inicial%20de%20mi%20p%C3%A1gina%20(https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fneo-music-clases-de-musica-revista%2F)%20y%20quiero%20activarla." target="_blank" rel="noopener">Activarla →</a>
+</div>
+
+
+<header class="cabecera">
+  <div class="pagina cabecera__fila">
+    <a class="cabecera__marca" href="#portada"><img src="assets/logo-240.webp" srcset="assets/logo-240.webp 240w, assets/logo-480.webp 480w" sizes="(min-width: 900px) 118px, 96px" width="240" height="95" alt="Neo Music Clases de Música"></a>
+    <nav class="cabecera__nav" aria-label="Secciones de la página">
+      <ul><li><a href="#sumario">Cursos</a></li><li><a href="#clases">Las clases</a></li><li><a href="#voces">Reseñas</a></li><li><a href="#estudio">Estudio</a></li><li><a href="#visitenos">Visítenos</a></li></ul>
+    </nav>
+    <a class="cabecera__movil" href="#sumario">Cursos<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
+    <a class="cabecera__wsp" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20sus%20clases." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Escríbanos</span></a>
+  </div>
+</header>
+
+<main id="contenido">
+<section class="portada" id="portada" aria-labelledby="portada-titulo">
+  <div class="pagina reticula portada__reticula">
+    <p class="portada__kicker"><span class="portada__que"><span class="rec" aria-hidden="true"></span>Escuela de música · Santiago de Surco</span><span class="portada__estado" data-estado>Lun. a sáb. · 10 a. m. a 7 p. m.</span></p>
+    <h1 class="portada__titulo" id="portada-titulo"><span class="solo-lector">Neo Music, escuela de música en Santiago de Surco. </span><span class="l l1">Nuevos</span> <span class="l l2"><em>métodos,</em></span> <span class="l l3">nuevos</span> <span class="l l4"><em>talentos.</em></span></h1>
+    <figure class="portada__foto">
+      <picture><source type="image/avif" srcset="assets/fotos/portada-400.avif 400w, assets/fotos/portada-800.avif 800w, assets/fotos/portada-1333.avif 1333w" sizes="(min-width: 900px) 38vw, 64vw"><img src="assets/fotos/portada-800.webp" srcset="assets/fotos/portada-400.webp 400w, assets/fotos/portada-800.webp 800w, assets/fotos/portada-1333.webp 1333w" sizes="(min-width: 900px) 38vw, 64vw" width="1333" height="1600" alt="Un joven toca la guitarra y una joven, sentada a su lado, lo escucha sonriendo." fetchpriority="high" decoding="async"></picture>
+      <figcaption class="pie-foto">Guitarra y voz. <span>Foto: Neo Music</span></figcaption>
+    </figure>
+    <nav class="portada__lineas" aria-label="Cursos">
+      <p class="portada__mini" aria-hidden="true">Cursos</p>
+      <ol><li><a href="#curso-canto"><span class="n">01</span><span class="t">Canto</span></a></li><li><a href="#curso-guitarra"><span class="n">02</span><span class="t">Guitarra</span></a></li><li><a href="#curso-piano"><span class="n">03</span><span class="t">Piano</span></a></li><li><a href="#curso-bajo"><span class="n">04</span><span class="t">Bajo</span></a></li><li><a href="#curso-bateria"><span class="n">05</span><span class="t">Batería</span></a></li><li><a href="#curso-ukelele"><span class="n">06</span><span class="t">Ukelele</span></a></li><li><a href="#curso-produccion"><span class="n">07</span><span class="t">Producción</span></a></li></ol>
+    </nav>
+    <p class="portada__bajada">Clases de canto, guitarra, piano, bajo, batería, ukelele y producción musical, para todas las edades.</p>
+    <div class="portada__acciones">
+      <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20reservar%20una%20clase%20de%20prueba." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Reservar una clase de prueba</span></a>
+      <a class="enlace-flecha" href="#sumario"><span>Ver los siete cursos</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg></a>
+    </div>
+    <p class="portada__prueba"><a href="https://www.google.com/maps?cid=14470686317448842399" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2.6l2.85 6.06 6.65.78-4.9 4.56 1.3 6.57L12 17.27l-5.9 3.3 1.3-6.57-4.9-4.56 6.65-.78z"/></svg><span>5.0 en Google · 75 reseñas</span></a></p>
+  </div>
+</section>
+
+<div class="tira" aria-hidden="true">
+  <div class="tira__pista"><ul class="tira__lista"><li>Canto</li><li>Guitarra</li><li>Piano</li><li>Bajo</li><li>Batería</li><li>Ukelele</li><li>Producción musical</li><li>Grabación</li><li>Mezcla</li></ul><ul class="tira__lista"><li>Canto</li><li>Guitarra</li><li>Piano</li><li>Bajo</li><li>Batería</li><li>Ukelele</li><li>Producción musical</li><li>Grabación</li><li>Mezcla</li></ul></div>
+</div>
+
+
+<section class="seccion sumario" id="sumario" aria-labelledby="sumario-titulo">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Sumario</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">Cursos 01 — 07</span></p>
+
+    <div class="reticula sumario__reticula">
+      <div class="sumario__cabeza">
+        <h2 class="titulo-2" id="sumario-titulo">Siete cursos. <em>Para todas las edades.</em></h2>
+        <p class="bajada">Elija su instrumento: en cada ficha está cómo es la clase y el botón para preguntar por horarios.</p>
+        <div class="sumario__vista" aria-hidden="true">
+          <div class="sumario__lamina es-activa" data-i="0"><picture><source type="image/avif" srcset="assets/fotos/canto-400.avif 400w, assets/fotos/canto-800.avif 800w" sizes="(min-width: 900px) 24vw, 1px"><img src="assets/fotos/canto-800.webp" srcset="assets/fotos/canto-400.webp 400w, assets/fotos/canto-800.webp 800w" sizes="(min-width: 900px) 24vw, 1px" width="819" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="sumario__lamina" data-i="1"><picture><source type="image/avif" srcset="assets/fotos/guitarra-nino-400.avif 400w, assets/fotos/guitarra-nino-800.avif 800w, assets/fotos/guitarra-nino-1080.avif 1080w" sizes="(min-width: 900px) 24vw, 1px"><img src="assets/fotos/guitarra-nino-800.webp" srcset="assets/fotos/guitarra-nino-400.webp 400w, assets/fotos/guitarra-nino-800.webp 800w, assets/fotos/guitarra-nino-1080.webp 1080w" sizes="(min-width: 900px) 24vw, 1px" width="1080" height="810" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="sumario__lamina" data-i="2"><picture><source type="image/avif" srcset="assets/fotos/piano-clase-400.avif 400w, assets/fotos/piano-clase-800.avif 800w" sizes="(min-width: 900px) 24vw, 1px"><img src="assets/fotos/piano-clase-800.webp" srcset="assets/fotos/piano-clase-400.webp 400w, assets/fotos/piano-clase-800.webp 800w" sizes="(min-width: 900px) 24vw, 1px" width="864" height="1080" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="sumario__lamina" data-i="3"><span class="sumario__tipo"><span>04</span>Bajo</span></div>
+          <div class="sumario__lamina" data-i="4"><span class="sumario__tipo"><span>05</span>Batería</span></div>
+          <div class="sumario__lamina" data-i="5"><picture><source type="image/avif" srcset="assets/fotos/ukelele-400.avif 400w, assets/fotos/ukelele-800.avif 800w" sizes="(min-width: 900px) 24vw, 1px"><img src="assets/fotos/ukelele-800.webp" srcset="assets/fotos/ukelele-400.webp 400w, assets/fotos/ukelele-800.webp 800w" sizes="(min-width: 900px) 24vw, 1px" width="819" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="sumario__lamina" data-i="6"><picture><source type="image/avif" srcset="assets/fotos/produccion-consola-400.avif 400w, assets/fotos/produccion-consola-800.avif 800w" sizes="(min-width: 900px) 24vw, 1px"><img src="assets/fotos/produccion-consola-800.webp" srcset="assets/fotos/produccion-consola-400.webp 400w, assets/fotos/produccion-consola-800.webp 800w" sizes="(min-width: 900px) 24vw, 1px" width="819" height="1024" alt="" loading="lazy" decoding="async"></picture></div>
+        </div>
+      </div>
+      <ol class="indice">
+        <li class="indice__fila" data-i="0"><a href="#curso-canto">
+          <span class="indice__num">01</span>
+          <span class="indice__nombre">Canto</span>
+          <span class="indice__dek">Su voz, con técnica.</span>
+          <span class="indice__mini" aria-hidden="true"><picture><source type="image/avif" srcset="assets/fotos/canto-400.avif 400w, assets/fotos/canto-800.avif 800w" sizes="72px"><img src="assets/fotos/canto-800.webp" srcset="assets/fotos/canto-400.webp 400w, assets/fotos/canto-800.webp 800w" sizes="72px" width="819" height="1024" alt="" loading="lazy" decoding="async"></picture></span>
+        </a></li>
+        <li class="indice__fila" data-i="1"><a href="#curso-guitarra">
+          <span class="indice__num">02</span>
+          <span class="indice__nombre">Guitarra</span>
+          <span class="indice__dek">Desde los primeros acordes.</span>
+          <span class="indice__mini" aria-hidden="true"><picture><source type="image/avif" srcset="assets/fotos/guitarra-nino-400.avif 400w, assets/fotos/guitarra-nino-800.avif 800w, assets/fotos/guitarra-nino-1080.avif 1080w" sizes="72px"><img src="assets/fotos/guitarra-nino-800.webp" srcset="assets/fotos/guitarra-nino-400.webp 400w, assets/fotos/guitarra-nino-800.webp 800w, assets/fotos/guitarra-nino-1080.webp 1080w" sizes="72px" width="1080" height="810" alt="" loading="lazy" decoding="async"></picture></span>
+        </a></li>
+        <li class="indice__fila" data-i="2"><a href="#curso-piano">
+          <span class="indice__num">03</span>
+          <span class="indice__nombre">Piano</span>
+          <span class="indice__dek">Las dos manos, a su tiempo.</span>
+          <span class="indice__mini" aria-hidden="true"><picture><source type="image/avif" srcset="assets/fotos/piano-clase-400.avif 400w, assets/fotos/piano-clase-800.avif 800w" sizes="72px"><img src="assets/fotos/piano-clase-800.webp" srcset="assets/fotos/piano-clase-400.webp 400w, assets/fotos/piano-clase-800.webp 800w" sizes="72px" width="864" height="1080" alt="" loading="lazy" decoding="async"></picture></span>
+        </a></li>
+        <li class="indice__fila" data-i="3"><a href="#curso-bajo">
+          <span class="indice__num">04</span>
+          <span class="indice__nombre">Bajo</span>
+          <span class="indice__dek">El pulso de la banda.</span>
+          <span class="indice__mini" aria-hidden="true"><span>04</span></span>
+        </a></li>
+        <li class="indice__fila" data-i="4"><a href="#curso-bateria">
+          <span class="indice__num">05</span>
+          <span class="indice__nombre">Batería</span>
+          <span class="indice__dek">Coordinación y tempo.</span>
+          <span class="indice__mini" aria-hidden="true"><span>05</span></span>
+        </a></li>
+        <li class="indice__fila" data-i="5"><a href="#curso-ukelele">
+          <span class="indice__num">06</span>
+          <span class="indice__nombre">Ukelele</span>
+          <span class="indice__dek">Cuatro cuerdas para empezar.</span>
+          <span class="indice__mini" aria-hidden="true"><picture><source type="image/avif" srcset="assets/fotos/ukelele-400.avif 400w, assets/fotos/ukelele-800.avif 800w" sizes="72px"><img src="assets/fotos/ukelele-800.webp" srcset="assets/fotos/ukelele-400.webp 400w, assets/fotos/ukelele-800.webp 800w" sizes="72px" width="819" height="1024" alt="" loading="lazy" decoding="async"></picture></span>
+        </a></li>
+        <li class="indice__fila" data-i="6"><a href="#curso-produccion">
+          <span class="indice__num">07</span>
+          <span class="indice__nombre">Producción musical</span>
+          <span class="indice__dek">De la idea a la canción terminada.</span>
+          <span class="indice__mini" aria-hidden="true"><picture><source type="image/avif" srcset="assets/fotos/produccion-consola-400.avif 400w, assets/fotos/produccion-consola-800.avif 800w" sizes="72px"><img src="assets/fotos/produccion-consola-800.webp" srcset="assets/fotos/produccion-consola-400.webp 400w, assets/fotos/produccion-consola-800.webp 800w" sizes="72px" width="819" height="1024" alt="" loading="lazy" decoding="async"></picture></span>
+        </a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="cursos"><article class="seccion curso curso--retrato" id="curso-canto" aria-labelledby="curso-canto-t" style="--letras:5">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Cursos</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">01 / 07</span></p>
+
+    <div class="reticula curso__reticula">
+      <p class="curso__num" aria-hidden="true">01</p>
+      <h3 class="curso__nombre" id="curso-canto-t"><span>Canto</span></h3>
+      <figure class="curso__foto curso__foto--1">
+        <picture><source type="image/avif" srcset="assets/fotos/canto-400.avif 400w, assets/fotos/canto-800.avif 800w" sizes="(min-width: 900px) 40vw, 84vw"><img src="assets/fotos/canto-800.webp" srcset="assets/fotos/canto-400.webp 400w, assets/fotos/canto-800.webp 800w" sizes="(min-width: 900px) 40vw, 84vw" width="819" height="1024" alt="Una joven canta con los ojos cerrados frente a un micrófono de estudio." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">En la cabina. <span>Foto: Neo Music</span></figcaption>
+      </figure>
+      <div class="curso__texto">
+        <p class="curso__dek">Su voz, con técnica.</p>
+        <p class="curso__cuerpo">Respiración, afinación y técnica vocal, paso a paso. Para empezar desde cero o para mejorar lo que ya sabe.</p>
+        <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20las%20clases%20de%20canto." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Quiero clases de canto</span></a>
+        <a class="volver" href="#sumario"><span>Volver al sumario</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="seccion curso curso--diptico" id="curso-guitarra" aria-labelledby="curso-guitarra-t" style="--letras:8">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Cursos</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">02 / 07</span></p>
+
+    <div class="reticula curso__reticula">
+      <p class="curso__num" aria-hidden="true">02</p>
+      <h3 class="curso__nombre" id="curso-guitarra-t"><span>Guitarra</span></h3>
+      <figure class="curso__foto curso__foto--1">
+        <picture><source type="image/avif" srcset="assets/fotos/guitarra-nino-400.avif 400w, assets/fotos/guitarra-nino-800.avif 800w, assets/fotos/guitarra-nino-1080.avif 1080w" sizes="(min-width: 900px) 33vw, 66vw"><img src="assets/fotos/guitarra-nino-800.webp" srcset="assets/fotos/guitarra-nino-400.webp 400w, assets/fotos/guitarra-nino-800.webp 800w, assets/fotos/guitarra-nino-1080.webp 1080w" sizes="(min-width: 900px) 33vw, 66vw" width="1080" height="810" alt="Un niño practica guitarra, concentrado en sus manos." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">Guitarra, a cualquier edad. <span>Foto: Neo Music</span></figcaption>
+      </figure>
+      <figure class="curso__foto curso__foto--2">
+        <picture><source type="image/avif" srcset="assets/fotos/guitarra-electrica-400.avif 400w, assets/fotos/guitarra-electrica-800.avif 800w, assets/fotos/guitarra-electrica-1600.avif 1600w, assets/fotos/guitarra-electrica-1911.avif 1911w" sizes="(min-width: 900px) 30vw, 52vw"><img src="assets/fotos/guitarra-electrica-800.webp" srcset="assets/fotos/guitarra-electrica-400.webp 400w, assets/fotos/guitarra-electrica-800.webp 800w, assets/fotos/guitarra-electrica-1600.webp 1600w, assets/fotos/guitarra-electrica-1911.webp 1911w" sizes="(min-width: 900px) 30vw, 52vw" width="1911" height="2389" alt="Un joven con lentes toca una guitarra eléctrica, sentado en la sala." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">Guitarra eléctrica. <span>Foto: Neo Music</span></figcaption>
+      </figure>
+      <div class="curso__texto">
+        <p class="curso__dek">Desde los primeros acordes.</p>
+        <p class="curso__cuerpo">Postura, acordes, ritmo y lectura, al paso de cada alumno: el niño que recién empieza y el adulto que quiere retomar.</p>
+        <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20las%20clases%20de%20guitarra." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Quiero clases de guitarra</span></a>
+        <a class="volver" href="#sumario"><span>Volver al sumario</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="seccion curso curso--retrato-inverso" id="curso-piano" aria-labelledby="curso-piano-t" style="--letras:5">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Cursos</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">03 / 07</span></p>
+
+    <div class="reticula curso__reticula">
+      <p class="curso__num" aria-hidden="true">03</p>
+      <h3 class="curso__nombre" id="curso-piano-t"><span>Piano</span></h3>
+      <figure class="curso__foto curso__foto--1">
+        <picture><source type="image/avif" srcset="assets/fotos/piano-clase-400.avif 400w, assets/fotos/piano-clase-800.avif 800w" sizes="(min-width: 900px) 40vw, 84vw"><img src="assets/fotos/piano-clase-800.webp" srcset="assets/fotos/piano-clase-400.webp 400w, assets/fotos/piano-clase-800.webp 800w" sizes="(min-width: 900px) 40vw, 84vw" width="864" height="1080" alt="Un profesor y un niño tocan juntos el piano." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">Cuatro manos. <span>Foto: Neo Music</span></figcaption>
+      </figure>
+      <figure class="curso__foto curso__foto--2">
+        <picture><source type="image/avif" srcset="assets/fotos/piano-teclas-400.avif 400w, assets/fotos/piano-teclas-800.avif 800w, assets/fotos/piano-teclas-1200.avif 1200w" sizes="(min-width: 900px) 20vw, 46vw"><img src="assets/fotos/piano-teclas-800.webp" srcset="assets/fotos/piano-teclas-400.webp 400w, assets/fotos/piano-teclas-800.webp 800w, assets/fotos/piano-teclas-1200.webp 1200w" sizes="(min-width: 900px) 20vw, 46vw" width="1200" height="900" alt="Teclas de un piano en penumbra, vistas de cerca." loading="lazy" decoding="async"></picture>
+      </figure>
+      <div class="curso__texto">
+        <p class="curso__dek">Las dos manos, a su tiempo.</p>
+        <p class="curso__cuerpo">Lectura de partitura, técnica y coordinación de ambas manos. Se avanza clase con clase, desde lo que usted ya sabe.</p>
+        <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20las%20clases%20de%20piano." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Quiero clases de piano</span></a>
+        <a class="volver" href="#sumario"><span>Volver al sumario</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</article>
+<section class="seccion ritmica" aria-label="La base rítmica.">
+  <div class="pagina">
+    <p class="folio folio--claro"><span class="folio__izq">Cursos</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">04 — 05 / 07</span></p>
+
+    <div class="ritmica__cabeza">
+      <p class="ritmica__titulo">La base <em>rítmica.</em></p>
+      <p class="ritmica__bajada">Bajo y batería: lo que hace que una banda suene junta.</p>
+    </div>
+    <div class="ritmica__par" style="--letras:7">
+      <article class="ritmica__curso" id="curso-bajo" aria-labelledby="curso-bajo-t">
+        <p class="curso__num" aria-hidden="true">04</p>
+        <h3 class="ritmica__nombre" id="curso-bajo-t">Bajo</h3>
+        <p class="curso__dek">El pulso de la banda.</p>
+        <p class="curso__cuerpo">Ritmo, groove y lectura: la base que sostiene cualquier canción.</p>
+        <a class="boton boton--papel" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20las%20clases%20de%20bajo." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Quiero clases de bajo</span></a>
+      </article>
+      <article class="ritmica__curso" id="curso-bateria" aria-labelledby="curso-bateria-t">
+        <p class="curso__num" aria-hidden="true">05</p>
+        <h3 class="ritmica__nombre" id="curso-bateria-t">Batería</h3>
+        <p class="curso__dek">Coordinación y tempo.</p>
+        <p class="curso__cuerpo">Manos y pies coordinados, tempo firme y ritmos de distintos estilos.</p>
+        <a class="boton boton--papel" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20las%20clases%20de%20bater%C3%ADa." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Quiero clases de batería</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+<article class="seccion curso curso--retrato" id="curso-ukelele" aria-labelledby="curso-ukelele-t" style="--letras:7">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Cursos</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">06 / 07</span></p>
+
+    <div class="reticula curso__reticula">
+      <p class="curso__num" aria-hidden="true">06</p>
+      <h3 class="curso__nombre" id="curso-ukelele-t"><span>Ukelele</span></h3>
+      <figure class="curso__foto curso__foto--1">
+        <picture><source type="image/avif" srcset="assets/fotos/ukelele-400.avif 400w, assets/fotos/ukelele-800.avif 800w" sizes="(min-width: 900px) 40vw, 84vw"><img src="assets/fotos/ukelele-800.webp" srcset="assets/fotos/ukelele-400.webp 400w, assets/fotos/ukelele-800.webp 800w" sizes="(min-width: 900px) 40vw, 84vw" width="819" height="1024" alt="Un joven con gorra toca un ukelele." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">Ukelele. <span>Foto: Neo Music</span></figcaption>
+      </figure>
+      <div class="curso__texto">
+        <p class="curso__dek">Cuatro cuerdas para empezar.</p>
+        <p class="curso__cuerpo">Pequeño, liviano y fácil de llevar: un buen primer instrumento para los niños y para quien nunca ha tocado.</p>
+        <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20las%20clases%20de%20ukelele." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Quiero clases de ukelele</span></a>
+        <a class="volver" href="#sumario"><span>Volver al sumario</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="seccion curso curso--retrato-inverso" id="curso-produccion" aria-labelledby="curso-produccion-t" style="--letras:10">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Cursos</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">07 / 07</span></p>
+
+    <div class="reticula curso__reticula">
+      <p class="curso__num" aria-hidden="true">07</p>
+      <h3 class="curso__nombre" id="curso-produccion-t"><span>Producción musical</span></h3>
+      <figure class="curso__foto curso__foto--1">
+        <picture><source type="image/avif" srcset="assets/fotos/produccion-consola-400.avif 400w, assets/fotos/produccion-consola-800.avif 800w" sizes="(min-width: 900px) 40vw, 84vw"><img src="assets/fotos/produccion-consola-800.webp" srcset="assets/fotos/produccion-consola-400.webp 400w, assets/fotos/produccion-consola-800.webp 800w" sizes="(min-width: 900px) 40vw, 84vw" width="819" height="1024" alt="Un joven ajusta los controles de una consola de mezcla." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">En la consola. <span>Foto: Neo Music</span></figcaption>
+      </figure>
+      <figure class="curso__foto curso__foto--2">
+        <picture><source type="image/avif" srcset="assets/fotos/produccion-clase-400.avif 400w, assets/fotos/produccion-clase-800.avif 800w, assets/fotos/produccion-clase-1080.avif 1080w" sizes="(min-width: 900px) 20vw, 46vw"><img src="assets/fotos/produccion-clase-800.webp" srcset="assets/fotos/produccion-clase-400.webp 400w, assets/fotos/produccion-clase-800.webp 800w, assets/fotos/produccion-clase-1080.webp 1080w" sizes="(min-width: 900px) 20vw, 46vw" width="1080" height="1080" alt="Dos personas trabajan una canción frente a la pantalla de la computadora." loading="lazy" decoding="async"></picture>
+      </figure>
+      <div class="curso__texto">
+        <p class="curso__dek">De la idea a la canción terminada.</p>
+        <p class="curso__cuerpo">Composición, arreglos, grabación y mezcla en la computadora, paso a paso.</p>
+        <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20las%20clases%20de%20producci%C3%B3n%20musical." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Quiero clases de producción</span></a>
+        <a class="volver" href="#sumario"><span>Volver al sumario</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
+
+<section class="seccion guia" id="clases" aria-labelledby="guia-t">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Las clases</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">Lo que hay que saber</span></p>
+
+    <div class="reticula guia__reticula">
+      <h2 class="titulo-2 guia__titulo" id="guia-t">Cómo son <em>las clases.</em></h2>
+      <dl class="guia__tabla">
+        <div class="guia__fila"><dt>Edades</dt><dd>Para todas las edades: niños, jóvenes y adultos.</dd></div>
+        <div class="guia__fila"><dt>Formato</dt><dd>Personalizadas, o en grupo de 2 a 3 alumnos.</dd></div>
+        <div class="guia__fila"><dt>Dónde</dt><dd>Presencial, en Santiago de Surco. Pregunte también por las clases virtuales.</dd></div>
+        <div class="guia__fila"><dt>Horario</dt><dd>Lunes a sábado, de 10 a. m. a 7 p. m.</dd></div>
+        <div class="guia__fila"><dt>Para empezar</dt><dd>Una clase de prueba, que se reserva por WhatsApp.</dd></div>
+      </dl>
+      <div class="guia__pie">
+        <p class="guia__nota">Los precios y los horarios libres se los pasamos por WhatsApp.</p>
+        <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20reservar%20una%20clase%20de%20prueba." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Reservar una clase de prueba</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion voces" id="voces" aria-labelledby="voces-t">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Reseñas</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">5.0 en Google · 75 reseñas</span></p>
+
+    <h2 class="titulo-2 voces__titulo" id="voces-t">Lo dicen <em>los alumnos.</em></h2>
+    <div class="reticula voces__reticula">
+      <figure class="voces__grande">
+        <span class="voces__comilla" aria-hidden="true">“</span>
+        <blockquote><p>Un excelente lugar donde aprender música. La enseñanza es personalizada y el profesor da seguimiento a los avances. Enseña muy bien y se ve en los resultados. 20/10</p></blockquote>
+        <figcaption><strong>Alfonso M.</strong><span>Reseña de Google</span></figcaption>
+      </figure>
+      <ul class="voces__resto">
+        <li><figure><blockquote><p>El profe es genial, muy amable, flexible con los horarios y se nota el aprendizaje clase con clase.</p></blockquote><figcaption><strong>Giane L.</strong><span>Reseña de Google</span></figcaption></figure></li>
+        <li><figure><blockquote><p>Un profesor muy atento, logró acomodar mi horario para las clases y aprendí un montón!!</p></blockquote><figcaption><strong>Abigail R.</strong><span>Reseña de Google</span></figcaption></figure></li>
+        <li><figure><blockquote><p>Excelentes clases, el profesor es muy profesional y da clases de gran calidad</p></blockquote><figcaption><strong>Nicolas D.</strong><span>Reseña de Google</span></figcaption></figure></li>
+      </ul>
+      <p class="voces__enlace"><a class="enlace-flecha" href="https://www.google.com/maps?cid=14470686317448842399" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M12 2.6l2.85 6.06 6.65.78-4.9 4.56 1.3 6.57L12 17.27l-5.9 3.3 1.3-6.57-4.9-4.56 6.65-.78z"/></svg><span>Leer las 75 reseñas en Google</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion estudio tinta" id="estudio" aria-labelledby="estudio-t">
+  <div class="pagina">
+    <p class="folio folio--claro"><span class="folio__izq">El estudio</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">Grabación y mezcla</span></p>
+
+    <div class="reticula estudio__reticula">
+      <h2 class="estudio__titulo" id="estudio-t">Grabe <em>su canción.</em></h2>
+      <figure class="estudio__foto estudio__foto--1">
+        <picture><source type="image/avif" srcset="assets/fotos/estudio-cabina-400.avif 400w, assets/fotos/estudio-cabina-800.avif 800w, assets/fotos/estudio-cabina-1200.avif 1200w" sizes="(min-width: 900px) 26vw, 62vw"><img src="assets/fotos/estudio-cabina-800.webp" srcset="assets/fotos/estudio-cabina-400.webp 400w, assets/fotos/estudio-cabina-800.webp 800w, assets/fotos/estudio-cabina-1200.webp 1200w" sizes="(min-width: 900px) 26vw, 62vw" width="1200" height="1600" alt="Un joven graba su voz con audífonos en una cabina forrada de madera." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">La cabina. <span>Foto: Neo Music</span></figcaption>
+      </figure>
+      <figure class="estudio__foto estudio__foto--2">
+        <picture><source type="image/avif" srcset="assets/fotos/estudio-consola-400.avif 400w, assets/fotos/estudio-consola-800.avif 800w, assets/fotos/estudio-consola-1024.avif 1024w" sizes="(min-width: 900px) 24vw, 52vw"><img src="assets/fotos/estudio-consola-800.webp" srcset="assets/fotos/estudio-consola-400.webp 400w, assets/fotos/estudio-consola-800.webp 800w, assets/fotos/estudio-consola-1024.webp 1024w" sizes="(min-width: 900px) 24vw, 52vw" width="1024" height="1280" alt="Un músico con la guitarra colgada ajusta una consola de mezcla." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">La consola. <span>Foto: Neo Music</span></figcaption>
+      </figure>
+      <figure class="estudio__foto estudio__foto--3">
+        <picture><source type="image/avif" srcset="assets/fotos/estudio-ampli-400.avif 400w, assets/fotos/estudio-ampli-640.avif 640w" sizes="(min-width: 900px) 18vw, 44vw"><img src="assets/fotos/estudio-ampli-640.webp" srcset="assets/fotos/estudio-ampli-400.webp 400w, assets/fotos/estudio-ampli-640.webp 640w" sizes="(min-width: 900px) 18vw, 44vw" width="640" height="480" alt="Un amplificador de guitarra con tres micrófonos alrededor, listo para grabar." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto">El amplificador, microfoneado.</figcaption>
+      </figure>
+      <div class="estudio__texto">
+        <p class="estudio__bajada">Además de las clases, en Neo Music se graba, se compone y se produce, para todos los géneros.</p>
+        <ul class="estudio__lista"><li>Grabación de canciones</li><li>Composición y producción</li><li>Arreglos de melodía y armonía</li><li>Diseño de sonido y mezcla</li></ul>
+        <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20cotizar%20la%20grabaci%C3%B3n%20de%20una%20canci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Cotizar una grabación</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion sala" id="sala" aria-labelledby="sala-t">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">En la sala</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">Fotos: Neo Music</span></p>
+
+    <div class="reticula sala__collage">
+      <h2 class="titulo-2 sala__titulo" id="sala-t">Así se ven <em>las clases.</em></h2>
+      <figure class="sala__foto sala__foto--1">
+        <picture><source type="image/avif" srcset="assets/fotos/sala-grupal-400.avif 400w, assets/fotos/sala-grupal-800.avif 800w, assets/fotos/sala-grupal-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 66vw"><img src="assets/fotos/sala-grupal-800.webp" srcset="assets/fotos/sala-grupal-400.webp 400w, assets/fotos/sala-grupal-800.webp 800w, assets/fotos/sala-grupal-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 66vw" width="1080" height="1080" alt="Un profesor con guitarra eléctrica y dos alumnas con sus instrumentos, en una sala con computadora y parlantes." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto"><span class="sala__n">1</span>En grupo.</figcaption>
+      </figure>
+      <figure class="sala__foto sala__foto--2">
+        <picture><source type="image/avif" srcset="assets/fotos/sala-instrumentos-400.avif 400w, assets/fotos/sala-instrumentos-800.avif 800w, assets/fotos/sala-instrumentos-1600.avif 1600w, assets/fotos/sala-instrumentos-1920.avif 1920w" sizes="(min-width: 900px) 24vw, 34vw"><img src="assets/fotos/sala-instrumentos-800.webp" srcset="assets/fotos/sala-instrumentos-400.webp 400w, assets/fotos/sala-instrumentos-800.webp 800w, assets/fotos/sala-instrumentos-1600.webp 1600w, assets/fotos/sala-instrumentos-1920.webp 1920w" sizes="(min-width: 900px) 24vw, 34vw" width="1920" height="2400" alt="Una guitarra en su soporte junto a un cajón, al aire libre." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto"><span class="sala__n">2</span>Guitarra y cajón.</figcaption>
+      </figure>
+      <figure class="sala__foto sala__foto--3">
+        <picture><source type="image/avif" srcset="assets/fotos/sala-ukelele-400.avif 400w, assets/fotos/sala-ukelele-800.avif 800w, assets/fotos/sala-ukelele-1080.avif 1080w" sizes="(min-width: 900px) 32vw, 50vw"><img src="assets/fotos/sala-ukelele-800.webp" srcset="assets/fotos/sala-ukelele-400.webp 400w, assets/fotos/sala-ukelele-800.webp 800w, assets/fotos/sala-ukelele-1080.webp 1080w" sizes="(min-width: 900px) 32vw, 50vw" width="1080" height="1080" alt="Dos alumnas practican ukelele y guitarra junto al piano." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto"><span class="sala__n">3</span>Ukelele y guitarra.</figcaption>
+      </figure>
+      <figure class="sala__foto sala__foto--4">
+        <picture><source type="image/avif" srcset="assets/fotos/sala-canto-400.avif 400w, assets/fotos/sala-canto-800.avif 800w, assets/fotos/sala-canto-1080.avif 1080w" sizes="(min-width: 900px) 32vw, 50vw"><img src="assets/fotos/sala-canto-800.webp" srcset="assets/fotos/sala-canto-400.webp 400w, assets/fotos/sala-canto-800.webp 800w, assets/fotos/sala-canto-1080.webp 1080w" sizes="(min-width: 900px) 32vw, 50vw" width="1080" height="1080" alt="Una alumna escucha a su profesor frente al micrófono." loading="lazy" decoding="async"></picture>
+        <figcaption class="pie-foto"><span class="sala__n">4</span>Frente al micrófono.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="seccion cupon" id="cupon" aria-labelledby="cupon-t">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Cupón</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">Complete y envíe</span></p>
+
+    <div class="cupon__caja">
+      <span class="cupon__tijera" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.6 7.6L20 18M8.6 16.4L20 6"/></svg></span>
+      <div class="cupon__intro">
+        <h2 class="titulo-2" id="cupon-t">Separe su <em>clase de prueba.</em></h2>
+        <p class="cupon__bajada">Complete los datos y se abre su WhatsApp con el mensaje listo. Le respondemos con horarios y precios.</p>
+      </div>
+      <form class="cupon__form" id="cupon-form" action="https://wa.me/51955176486" method="get" target="_blank" novalidate>
+        <div class="campo campo--instrumento">
+          <label for="c-instrumento">Instrumento</label>
+          <select id="c-instrumento" name="instrumento" required aria-describedby="c-instrumento-error">
+            <option value="">Elija uno</option>
+            <option value="0">Canto</option>
+            <option value="1">Guitarra</option>
+            <option value="2">Piano</option>
+            <option value="3">Bajo</option>
+            <option value="4">Batería</option>
+            <option value="5">Ukelele</option>
+            <option value="6">Producción musical</option>
+            <option value="7">Grabar en el estudio</option>
+            <option value="8">Aún no lo sé</option>
+          </select>
+          <p class="campo__error" id="c-instrumento-error" hidden>Elija un instrumento.</p>
+        </div>
+        <div class="campo campo--edad">
+          <label for="c-edad">Edad del alumno</label>
+          <input id="c-edad" name="edad" type="text" autocomplete="off" placeholder="Ej.: 9 años" maxlength="40">
+        </div>
+        <fieldset class="campo campo--chips campo--formato">
+          <legend>Clase</legend>
+          <div class="chips"><label class="chip"><input type="radio" name="formato" value="Personalizada"><span>Personalizada</span></label><label class="chip"><input type="radio" name="formato" value="En grupo"><span>En grupo</span></label></div>
+        </fieldset>
+        <fieldset class="campo campo--chips campo--lugar">
+          <legend>Modalidad</legend>
+          <div class="chips"><label class="chip"><input type="radio" name="lugar" value="Presencial"><span>Presencial</span></label><label class="chip"><input type="radio" name="lugar" value="Virtual"><span>Virtual</span></label></div>
+        </fieldset>
+        <div class="campo campo--nombre">
+          <label for="c-nombre">Su nombre</label>
+          <input id="c-nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Ej.: Mariela" maxlength="60" required aria-describedby="c-nombre-error">
+          <p class="campo__error" id="c-nombre-error" hidden>Escriba su nombre.</p>
+        </div>
+        <input type="hidden" name="text" value="Hola Neo Music, vi su página web y quisiera reservar una clase de prueba.">
+        <div class="cupon__enviar">
+          <button class="boton boton--rojo boton--ancho" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Enviar por WhatsApp</span></button>
+          <p class="cupon__nota">No se envía a ningún correo: se abre su WhatsApp con el mensaje escrito.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="seccion visitenos" id="visitenos" aria-labelledby="visitenos-t">
+  <div class="pagina">
+    <p class="folio"><span class="folio__izq">Visítenos</span><span class="folio__linea" aria-hidden="true"></span><span class="folio__der">Santiago de Surco, Lima</span></p>
+
+    <div class="reticula visitenos__reticula">
+      <div class="visitenos__direccion">
+        <h2 class="visitenos__titulo" id="visitenos-t"><span>Jr. Domingo de la Presa 256</span> <em>Santiago de Surco</em></h2>
+        <p class="visitenos__geo">12°06′43″ S · 76°58′31″ O</p>
+        <div class="visitenos__acciones">
+          <a class="boton boton--tinta" href="https://www.google.com/maps/dir/?api=1&amp;destination=Neo%20Music%20Clases%20de%20M%C3%BAsica%2C%20Jr.%20Domingo%20de%20la%20Presa%20256%2C%20Santiago%20de%20Surco" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg><span>Cómo llegar</span></a>
+          <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20sus%20clases." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Escribir por WhatsApp</span></a>
+        </div>
+      </div>
+      <dl class="visitenos__datos">
+        <div><dt>Horario</dt><dd>Lunes a sábado, de 10 a. m. a 7 p. m.<br><span class="estado-vivo" data-estado></span></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20sus%20clases." target="_blank" rel="noopener">955 176 486</a></dd></div>
+        <div><dt>Correo</dt><dd><a href="mailto:neomusic.pe@gmail.com">neomusic.pe@gmail.com</a></dd></div>
+        <div><dt>Redes</dt><dd class="visitenos__redes"><a href="https://www.instagram.com/neomusic.pe/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/NeoMusic.pe/" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@neomusic.pe" target="_blank" rel="noopener">TikTok</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="pie tinta">
+  <div class="pagina">
+    <div class="pie__cabeza">
+      <img class="pie__logo" src="assets/logo-claro-240.webp" srcset="assets/logo-claro-240.webp 240w, assets/logo-claro-480.webp 480w" sizes="132px" width="240" height="95" alt="Neo Music Clases de Música" loading="lazy" decoding="async">
+      <p class="pie__lema">Nuevos métodos, <em>nuevos talentos.</em></p>
+    </div>
+    <ul class="pie__datos">
+      <li>Jr. Domingo de la Presa 256, Santiago de Surco</li>
+      <li>Lunes a sábado, de 10 a. m. a 7 p. m.</li>
+      <li><a href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20sus%20clases." target="_blank" rel="noopener">WhatsApp 955 176 486</a></li>
+      <li><a href="https://www.instagram.com/neomusic.pe/" target="_blank" rel="noopener">Instagram @neomusic.pe</a></li>
+      <li><a href="https://www.facebook.com/NeoMusic.pe/" target="_blank" rel="noopener">Facebook NeoMusic.pe</a></li>
+      <li><a href="https://www.tiktok.com/@neomusic.pe" target="_blank" rel="noopener">TikTok @neomusic.pe</a></li>
+    </ul>
+    <div class="pie__dueno" id="activar">
+      <p class="pie__dueno-titulo">¿Es su escuela?</p>
+      <p class="pie__dueno-texto">Esta versión inicial ya lleva su nombre, su dirección, sus siete cursos y sus 75 reseñas de Google. Hoy, quien busca clases de música en Surco encuentra a otra escuela: con la página activa, lo encuentra a usted.</p>
+      <a class="boton boton--papel" href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20le%20escribo%20de%20Neo%20Music%20Clases%20de%20M%C3%BAsica.%20Vi%20la%20versi%C3%B3n%20inicial%20de%20mi%20p%C3%A1gina%20(https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fneo-music-clases-de-musica-revista%2F)%20y%20quiero%20activarla." target="_blank" rel="noopener">Activar mi página con José →</a>
+      <p class="pie__dueno-nota">Se abre su WhatsApp con el mensaje listo para José. No hay formularios ni pagos en este paso.</p>
+    </div>
+    <p class="pie__derechos">© 2026 Neo Music Clases de Música</p>
+  </div>
+</footer>
+
+<a class="flotante" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20sus%20clases." target="_blank" rel="noopener" aria-label="Escribir a Neo Music por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>WhatsApp</span></a>
+<nav class="barra-movil" aria-label="Escribir o llegar">
+  <a class="boton boton--rojo" href="https://wa.me/51955176486?text=Hola%20Neo%20Music%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20informaci%C3%B3n%20de%20sus%20clases." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23z"/></svg><span>Escríbanos</span></a>
+  <a class="boton boton--borde" href="https://www.google.com/maps/dir/?api=1&amp;destination=Neo%20Music%20Clases%20de%20M%C3%BAsica%2C%20Jr.%20Domingo%20de%20la%20Presa%20256%2C%20Santiago%20de%20Surco" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg><span>Cómo llegar</span></a>
+</nav>
+<div class="hoja-dueno" id="hoja-dueno" role="dialog" aria-labelledby="hoja-dueno-t" tabindex="-1" hidden>
+  <button type="button" class="hoja-dueno__cerrar" aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <p class="hoja-dueno__titulo" id="hoja-dueno-t">Así le escribirán sus alumnos desde su página</p>
+  <p class="hoja-dueno__texto">Este botón abre el WhatsApp de Neo Music con la consulta ya escrita. Hoy su página todavía no está activa: quien busca clases de música en Google no llega a este botón y le escribe a otra escuela.</p>
+  <a class="boton boton--papel" href="https://wa.me/51941571821?text=Hola%20Jos%C3%A9%2C%20le%20escribo%20de%20Neo%20Music%20Clases%20de%20M%C3%BAsica.%20Vi%20la%20versi%C3%B3n%20inicial%20de%20mi%20p%C3%A1gina%20(https%3A%2F%2Fby0nder.github.io%2Fdemos-restaurantes%2Fneo-music-clases-de-musica-revista%2F)%20y%20quiero%20activarla." target="_blank" rel="noopener">Activar mi página con José →</a>
+  <a class="hoja-dueno__seguir" id="hoja-dueno-seguir" href="#">Probar el botón igual</a>
+</div>
+
+<script>window.REVISTA={horario:{"semana":{"1":["10:00","19:00"],"2":["10:00","19:00"],"3":["10:00","19:00"],"4":["10:00","19:00"],"5":["10:00","19:00"],"6":["10:00","19:00"]},"textos":{"abierto":"Abierto ahora · hasta las {hora}","abreHoy":"Hoy abre a las {hora}","abreManana":"Abre mañana a las {hora}","abreDia":"Abre el {dia} a las {hora}","dias":["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]}},cupon:{"saludo":"Hola Neo Music, vi su página web y ","wsp":"51955176486","campos":{"instrumento":{"etiqueta":"Instrumento","elija":"Elija uno","opciones":[{"texto":"Canto","mensaje":"quisiera información de las clases de canto."},{"texto":"Guitarra","mensaje":"quisiera información de las clases de guitarra."},{"texto":"Piano","mensaje":"quisiera información de las clases de piano."},{"texto":"Bajo","mensaje":"quisiera información de las clases de bajo."},{"texto":"Batería","mensaje":"quisiera información de las clases de batería."},{"texto":"Ukelele","mensaje":"quisiera información de las clases de ukelele."},{"texto":"Producción musical","mensaje":"quisiera información de las clases de producción musical."},{"texto":"Grabar en el estudio","mensaje":"quisiera cotizar una grabación en su estudio."},{"texto":"Aún no lo sé","mensaje":"quisiera información de sus clases; todavía no elijo instrumento."}]},"edad":{"etiqueta":"Edad del alumno","ayuda":"Ej.: 9 años","linea":"Edad del alumno: {valor}."},"formato":{"etiqueta":"Clase","opciones":["Personalizada","En grupo"],"linea":"Clase: {valor}."},"lugar":{"etiqueta":"Modalidad","opciones":["Presencial","Virtual"],"linea":"Modalidad: {valor}."},"nombre":{"etiqueta":"Su nombre","ayuda":"Ej.: Mariela","linea":"Mi nombre es {valor}."}},"faltaInstrumento":"Elija un instrumento.","faltaNombre":"Escriba su nombre."},dueno:{"n":"51955176486","v":"51941571821"}};</script>
+<script src="assets/revista.js" defer></script>
+<script>/* aperturas: lib/aperturas.js */(function(w,d){var S="neo-music-clases-de-musica",V="51941571821",U="https://v.somoskallari.com/e";if(w.location.hostname!=="by0nder.github.io"||navigator.webdriver)return;var ls=null;try{ls=w.localStorage}catch(e){}try{if(/[?&]yo=1(&|$)/.test(w.location.search))ls.setItem("kallari-yo","1");if(ls&&ls.getItem("kallari-yo"))return}catch(e){}var vid="";try{vid=ls.getItem("kv")||"";if(!vid){vid=Math.random().toString(36).slice(2,10)+Date.now().toString(36);ls.setItem("kv",vid)}}catch(e){}var t0=Date.now(),m=/Mobi|Android|iPhone/i.test(navigator.userAgent)?1:0,h={};function av(e,s){if(h[e])return;h[e]=1;var b=JSON.stringify({d:S,e:e,v:vid,m:m,s:s||0});try{if(navigator.sendBeacon&&navigator.sendBeacon(U,b))return}catch(x){}try{fetch(U,{method:"POST",body:b,keepalive:true,mode:"no-cors"})}catch(x){}}av("abrir");w.addEventListener("scroll",function(){var e=d.documentElement;if((w.scrollY+w.innerHeight)/e.scrollHeight>0.75)av("bajo")},{passive:true});d.addEventListener("click",function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest("a[href]");if(!a)return;var r=a.getAttribute("href")||"";if(V&&r.indexOf("wa.me/"+V)>=0)av("activar");else if(/wa\.me\/|api\.whatsapp|whatsapp:/.test(r))av("wa");else if(r.indexOf("tel:")===0)av("llamar")},true);d.addEventListener("visibilitychange",function(){if(d.visibilityState==="hidden")av("sale",Math.round((Date.now()-t0)/1000))})})(window,document);</script>
+</body>
+</html>
