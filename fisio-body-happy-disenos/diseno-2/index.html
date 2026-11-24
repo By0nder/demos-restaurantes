@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fisio Body Happy · Terapia física en Pilcomayo, Huancayo</title>
+
+<meta name="description" content="Centro de terapia física y rehabilitación en Pilcomayo, Huancayo. Evaluación inicial, seguimiento en cada sesión y atención hasta las 10 p. m. de lunes a viernes. 5.0 en Google.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#2F4A3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Fisio Body Happy · Terapia física en Pilcomayo, Huancayo">
+<meta property="og:description" content="Versión inicial de la página de Fisio Body Happy: servicios, opiniones de Google, horario y reserva por WhatsApp.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1706353399656-210cca727a33?w=1200&h=630&fit=crop&crop=faces,center&q=70&fm=jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232F4A3E'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23F3EFE6'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400..700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap">
+<style>
+/* Diseño 2 · «Clínico y cálido» — Fisio Body Happy (propuesta de Kallari, 24-nov-2026) */
+:root {
+  --hueso: #F3EFE6;
+  --blanco: #FFFFFF;
+  --salvia: #2F4A3E;
+  --salvia-osc: #253B31;
+  --salvia-palida: #E4EAE3;
+  --tinta: #1D2B25;
+  --texto-2: #4A5A52;
+  --borde-campo: #6B7E73;
+  --linea: rgba(29, 43, 37, .16);
+  --terracota: #A64F30;
+  --terracota-osc: #8C4128;
+  --terracota-texto: #9A4A2E;
+  --terracota-suave: #E2B79F;
+  --abierto: #2E7A4F;
+  --foco: #A64F30;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ancho: 1200px;
+  --margen: clamp(16px, 4.5vw, 48px);
+  --seccion: clamp(72px, 9vw, 136px);
+  --radio: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  background: var(--hueso);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+p { margin: 0; }
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--salvia);
+  text-wrap: balance;
+}
+.sr {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+.nw { white-space: nowrap; }
+
+.saltar {
+  position: absolute; left: 12px; top: -120px; z-index: 100;
+  padding: 12px 18px; border-radius: var(--radio);
+  background: var(--salvia); color: var(--blanco);
+  font-weight: 700; text-decoration: none;
+}
+.saltar:focus { top: 12px; }
+
+.contenedor {
+  width: 100%;
+  max-width: calc(var(--ancho) + 2 * var(--margen));
+  margin-inline: auto;
+  padding-inline: var(--margen);
+}
+
+/* Íconos */
+.i { width: 20px; height: 20px; flex: none; fill: currentColor; }
+
+/* Botones */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 12px 24px;
+  border: 1.5px solid transparent; border-radius: var(--radio);
+  font: 700 1rem/1.2 var(--sans); letter-spacing: .01em;
+  text-decoration: none; text-align: center; cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn--accion { background: var(--terracota); color: var(--blanco); }
+.btn--accion:hover { background: var(--terracota-osc); }
+.btn--linea { background: transparent; border-color: var(--salvia); color: var(--salvia); }
+.btn--linea:hover { background: var(--salvia); color: var(--hueso); }
+.btn--chico { min-height: 44px; padding: 8px 16px; font-size: .9375rem; }
+
+/* Cabecera */
+.cabecera { background: var(--hueso); border-bottom: 1px solid var(--linea); }
+.cabecera__fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.marca {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--serif); font-size: 1.4375rem; font-weight: 500; letter-spacing: -.01em; line-height: 1.1;
+  color: var(--salvia); text-decoration: none;
+}
+.nav { display: none; }
+.nav ul { display: flex; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px;
+  font-size: .9375rem; color: var(--tinta); text-decoration: none; border-radius: var(--radio);
+}
+.nav a:hover { color: var(--salvia); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+.cabecera__extra { display: none; }
+@media (min-width: 600px) {
+  .cabecera__extra { display: inline; }
+}
+@media (min-width: 1100px) {
+  .cabecera__fila { min-height: 76px; }
+  .nav { display: block; margin-left: auto; }
+}
+
+/* Hero: texto a la izquierda, foto real a la derecha hasta el borde */
+.hero { border-bottom: 1px solid var(--linea); }
+.hero__texto { padding: 36px var(--margen) 44px; }
+.hero__lugar {
+  font-size: .8125rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--texto-2); text-wrap: balance;
+}
+.hero__titulo {
+  margin-top: 18px;
+  font-size: clamp(2.5rem, 1.6rem + 4vw, 3.5rem);
+  line-height: 1.04;
+  letter-spacing: -.02em;
+}
+.hero__titulo em { font-style: italic; }
+.hero__bajada { margin-top: 20px; max-width: 32em; font-size: clamp(1.0625rem, 1rem + .3vw, 1.25rem); line-height: 1.55; color: var(--texto-2); }
+.hero__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin-top: 30px; }
+.hero__acciones .btn--accion { width: 100%; }
+.enlace-tel {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: var(--salvia); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.enlace-tel:hover { color: var(--terracota-texto); }
+.hero__datos {
+  display: flex; flex-wrap: wrap; gap: 0 28px;
+  margin: 26px 0 0; padding: 14px 0 0; list-style: none;
+  border-top: 1px solid var(--linea);
+  font-size: .9375rem; color: var(--texto-2);
+}
+.hero__datos li { display: flex; align-items: center; min-height: 44px; }
+.dato-google { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: inherit; text-decoration: none; }
+.dato-google strong { color: var(--tinta); }
+.dato-google:hover .dato-google__txt { text-decoration: underline; text-underline-offset: 3px; }
+.estrellas { display: inline-flex; gap: 2px; color: var(--terracota); }
+.estrellas .i { width: 15px; height: 15px; }
+.estado { display: inline-flex; align-items: center; gap: 10px; }
+.estado__punto { display: none; width: 9px; height: 9px; border-radius: 50%; background: var(--abierto); flex: none; }
+.estado[data-abierto] .estado__punto { display: block; }
+.estado[data-abierto="no"] .estado__punto { background: var(--terracota); }
+.hero__foto { margin: 0; background: var(--salvia-palida); }
+.hero__foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 40% 35%; }
+
+@media (min-width: 480px) {
+  .hero__acciones .btn--accion { width: auto; }
+}
+@media (min-width: 900px) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(var(--margen), 1fr) minmax(0, 620px) minmax(0, 580px) minmax(0, 1fr);
+  }
+  .hero__texto { grid-column: 2; align-self: center; padding: clamp(56px, 7vw, 104px) clamp(36px, 4.5vw, 80px) clamp(56px, 7vw, 104px) 0; }
+  .hero__titulo { font-size: clamp(2.75rem, 1rem + 4vw, 4.5rem); line-height: 1.02; }
+  .hero__foto { grid-column: 3 / 5; position: relative; min-height: clamp(520px, 74vh, 760px); }
+  .hero__foto img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 40% 50%; }
+}
+
+/* Secciones */
+.seccion { padding-block: var(--seccion); }
+.seccion__titulo { font-size: clamp(2.125rem, 1.5rem + 2.4vw, 3.25rem); line-height: 1.06; letter-spacing: -.015em; }
+.seccion__intro { margin-top: 18px; max-width: 30em; font-size: 1.125rem; line-height: 1.55; color: var(--texto-2); }
+
+/* Servicios */
+.servicios__grid { display: grid; gap: 36px; }
+.servicios__foto { display: none; margin: 0; }
+.lista-servicios { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--linea); }
+.servicio { display: grid; gap: 16px; padding: 28px 0; border-top: 1px solid var(--linea); }
+.servicio__etiqueta {
+  margin-bottom: 8px;
+  font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--terracota-texto);
+}
+.servicio__nombre { font-size: clamp(1.375rem, 1.2rem + .7vw, 1.75rem); line-height: 1.18; letter-spacing: -.01em; }
+.servicio__texto { margin-top: 8px; max-width: 34em; color: var(--texto-2); }
+.servicio .btn { justify-self: start; }
+@media (min-width: 640px) {
+  .servicio { grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 40px; padding: 32px 0; }
+}
+@media (min-width: 900px) {
+  .servicios__grid { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(48px, 6vw, 112px); }
+  .servicios__foto { display: block; margin-top: clamp(40px, 5vw, 64px); max-width: 380px; }
+  .servicios__foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; }
+}
+
+/* Cómo trabajamos: foto hasta el borde izquierdo, pasos a la derecha */
+.metodo { background: var(--salvia-palida); }
+.metodo__foto { margin: 0; }
+.metodo__foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 55% 50%; }
+.metodo__texto { padding: clamp(56px, 9vw, 136px) var(--margen) var(--seccion); }
+.pasos { margin: 32px 0 0; padding: 0; list-style: none; }
+.paso { padding: 24px 0; border-top: 1px solid rgba(47, 74, 62, .22); }
+.paso__cuando { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--terracota-texto); }
+.paso__titulo { margin-top: 6px; font-size: clamp(1.375rem, 1.2rem + .6vw, 1.625rem); line-height: 1.2; }
+.paso__texto { margin-top: 8px; max-width: 32em; color: var(--texto-2); }
+.metodo__noche {
+  padding-top: 26px; border-top: 1px solid rgba(47, 74, 62, .22);
+  font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 1.1rem + .6vw, 1.5rem); line-height: 1.4;
+  color: var(--salvia);
+}
+@media (min-width: 900px) {
+  .metodo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 540px) minmax(0, 660px) minmax(var(--margen), 1fr);
+  }
+  .metodo__foto { grid-column: 1 / 3; position: relative; min-height: 560px; }
+  .metodo__foto img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 40% 50%; }
+  .metodo__texto { grid-column: 3; padding: var(--seccion) 0 var(--seccion) clamp(40px, 6vw, 104px); }
+}
+
+/* Opiniones */
+.opiniones__cabeza { display: grid; gap: 28px; align-items: end; }
+.nota-google { display: flex; align-items: center; gap: 18px; }
+.nota-google__cifra { font-family: var(--serif); font-size: clamp(3.25rem, 2.6rem + 2vw, 4.5rem); line-height: .9; color: var(--salvia); letter-spacing: -.02em; }
+.nota-google__detalle { display: grid; gap: 2px; font-size: .9375rem; color: var(--texto-2); }
+.nota-google__detalle .estrellas .i { width: 17px; height: 17px; }
+.enlace {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px;
+  color: var(--salvia); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.enlace:hover { color: var(--terracota-texto); }
+.enlace .i { width: 16px; height: 16px; }
+.opiniones__lista { display: grid; margin-top: clamp(36px, 5vw, 64px); }
+.opinion { margin: 0; padding: 28px 0 32px; border-top: 1px solid var(--linea); }
+.opinion blockquote { margin: 0; }
+.opinion blockquote p { font-family: var(--serif); font-size: clamp(1.1875rem, 1.08rem + .45vw, 1.4375rem); line-height: 1.45; color: var(--tinta); }
+.opinion figcaption { margin-top: 18px; font-size: .9375rem; color: var(--texto-2); }
+.opinion figcaption strong { color: var(--tinta); }
+@media (min-width: 900px) {
+  .opiniones__cabeza { grid-template-columns: minmax(0, 1fr) auto; }
+  .opiniones__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(32px, 4vw, 64px); }
+}
+
+/* Horario y ubicación */
+.horario { border-top: 1px solid var(--linea); }
+.horario__grid { display: grid; gap: 40px; }
+.horario__estado { margin-top: 18px; font-weight: 700; }
+.direccion { margin-top: 30px; font-family: var(--serif); font-style: normal; font-size: clamp(1.375rem, 1.2rem + .6vw, 1.75rem); line-height: 1.3; color: var(--salvia); }
+.horario__ruta { margin-top: 18px; }
+.horario__ruta .i { width: 18px; height: 18px; }
+.tabla-horario { width: 100%; margin-top: 36px; border-collapse: collapse; }
+.tabla-horario th, .tabla-horario td { padding: 14px 0; border-top: 1px solid var(--linea); text-align: left; vertical-align: top; }
+.tabla-horario tr:last-child th, .tabla-horario tr:last-child td { border-bottom: 1px solid var(--linea); }
+.tabla-horario th { padding-right: 16px; font-weight: 700; }
+.tabla-horario td { text-align: right; font-variant-numeric: tabular-nums; color: var(--texto-2); }
+.tabla-horario .es-hoy td { color: var(--tinta); }
+.hoy {
+  display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px;
+  background: var(--salvia); color: var(--hueso);
+  font-size: .75rem; font-weight: 700; letter-spacing: .04em; vertical-align: 2px;
+}
+.horario__contacto { margin-top: 28px; }
+.horario__etiqueta { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--texto-2); }
+.horario__numero { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--serif); font-size: 1.5rem; color: var(--salvia); text-decoration: none; }
+.horario__numero:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.horario__contacto .enlace { margin-left: 18px; }
+.mapa { position: relative; min-height: 320px; border: 1px solid var(--linea); background: var(--salvia-palida); }
+.mapa iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (min-width: 900px) {
+  .horario__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(48px, 6vw, 96px); }
+  .mapa { min-height: 520px; }
+}
+
+/* Reserva */
+.reserva { background: var(--salvia); color: var(--hueso); --foco: var(--terracota-suave); }
+.reserva .seccion__titulo { color: var(--hueso); }
+.reserva .seccion__intro { color: #DCE4DD; }
+.reserva__grid { display: grid; gap: 36px; }
+.ficha {
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: 6px;
+  background: var(--blanco); color: var(--tinta);
+  box-shadow: 0 30px 60px -30px rgba(10, 20, 15, .55);
+  --foco: var(--terracota);
+}
+.campo { display: grid; gap: 8px; margin-bottom: 22px; }
+.campo label { font-weight: 700; }
+.campo select, .campo input {
+  width: 100%; min-height: 54px; padding: 12px 14px;
+  font: inherit; font-size: 1.0625rem; color: var(--tinta);
+  background-color: var(--blanco);
+  border: 1.5px solid var(--borde-campo); border-radius: var(--radio);
+  -webkit-appearance: none; appearance: none;
+}
+.campo select {
+  padding-right: 46px; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 8l5 5 5-5' fill='none' stroke='%232F4A3E' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center; background-size: 20px;
+}
+.campo select:hover, .campo input:hover { border-color: var(--salvia); }
+.campo [aria-invalid="true"] { border-color: var(--terracota); box-shadow: inset 0 0 0 1px var(--terracota); }
+.campo__error { color: var(--terracota-texto); font-size: .9375rem; font-weight: 700; }
+.ficha .btn--accion { width: 100%; min-height: 56px; margin-top: 4px; font-size: 1.0625rem; }
+.ficha .btn .i { width: 22px; height: 22px; }
+.ficha__nota { margin-top: 16px; font-size: .9375rem; color: var(--texto-2); }
+.ficha__nota a { color: var(--salvia); font-weight: 700; text-underline-offset: 3px; }
+@media (min-width: 900px) {
+  .reserva__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(48px, 7vw, 120px); align-items: center; }
+}
+
+/* Pie */
+.pie {
+  padding: 36px 0 112px;
+  background: var(--salvia); color: #DCE4DD;
+  border-top: 1px solid rgba(243, 239, 230, .16);
+  font-size: .9375rem; line-height: 1.7;
+  --foco: var(--terracota-suave);
+}
+.pie strong { color: var(--hueso); font-weight: 700; }
+.pie a { color: var(--hueso); text-underline-offset: 3px; }
+.pie__datos > *, .pie__kallari > * { display: block; }
+.pie__datos .nw, .pie__kallari .nw { display: inline; }
+.pie__fila { display: grid; gap: 20px; }
+/* Enlaces sueltos dentro de un texto: área de toque de 44 px sin mover el renglón */
+.pie a, .ficha__nota a { display: inline-block; padding-block: 12px; margin-block: -12px; }
+@media (min-width: 900px) {
+  .pie { padding-bottom: 40px; }
+  .pie__fila { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; }
+  .pie__kallari { text-align: right; }
+}
+
+/* WhatsApp flotante */
+.wsp-flotante {
+  position: fixed; z-index: 50;
+  right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom));
+  display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%;
+  background: var(--terracota); color: var(--blanco);
+  box-shadow: 0 0 0 3px var(--hueso), 0 12px 26px -10px rgba(29, 43, 37, .6);
+  transition: background-color .15s ease;
+}
+.wsp-flotante:hover { background: var(--terracota-osc); }
+.wsp-flotante .i { width: 30px; height: 30px; }
+.wsp-flotante[data-oculto] { visibility: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+<meta name="robots" content="noindex, nofollow"><style>.pb-barra{position:relative;z-index:2147483647;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 8px;padding:7px 12px;background:#0b1220;color:#fff;font:600 13px/1.35 system-ui,-apple-system,"Segoe UI",sans-serif}.pb-barra a{display:inline-flex;align-items:center;min-height:30px;padding:3px 14px;border:1px solid rgba(255,255,255,.6);border-radius:6px;color:#fff;text-decoration:none}.pb-barra a:hover{background:rgba(255,255,255,.14)}.pb-barra a[aria-current]{background:#fff;color:#0b1220;border-color:#fff}.pb-txt{margin-right:6px;opacity:.85}@media (max-width:600px){.pb-txt{display:none}.pb-barra a{min-height:34px;padding:3px 12px}}</style></head>
+<body><div class="pb-barra" role="navigation" aria-label="Propuestas de diseño"><span class="pb-txt">Fisio Body Happy · Propuestas de diseño</span><a href="../">Diseño 1</a><a href="./" aria-current="page">Diseño 2</a><a href="../diseno-3/">Diseño 3</a></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-wsp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
+  <symbol id="i-estrella" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.8z"/></symbol>
+  <symbol id="i-salida" viewBox="0 0 20 20"><path d="M6.5 13.5l7-7M8 6.5h5.5V12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="marca" href="#inicio">Fisio Body Happy</a>
+    <nav class="nav" aria-label="Secciones de la página">
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+        <li><a href="#opiniones">Opiniones</a></li>
+        <li><a href="#horario">Horario y ubicación</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--linea btn--chico" href="#reserva"><span>Reservar<span class="cabecera__extra"> evaluación</span></span></a>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="hero" id="inicio" aria-labelledby="titulo-hero">
+    <div class="hero__texto">
+      <p class="hero__lugar">Terapia física y rehabilitación en&nbsp;Pilcomayo,&nbsp;Huancayo</p>
+      <h1 class="hero__titulo" id="titulo-hero">Recupere el <em>movimiento</em> que el dolor le quitó.</h1>
+      <p class="hero__bajada">Le evaluamos, le decimos cuántas sesiones necesita y seguimos su avance en cada una. De lunes a viernes atendemos hasta las <span class="nw">10:00 p.&nbsp;m.</span></p>
+      <div class="hero__acciones">
+        <a class="btn btn--accion" href="https://wa.me/51976997331?text=Hola%20Fisio%20Body%20Happy%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20reservar%20una%20evaluaci%C3%B3n." target="_blank" rel="noopener">
+          <svg class="i" aria-hidden="true" focusable="false"><use href="#i-wsp"/></svg>Reservar mi evaluación
+        </a>
+        <a class="enlace-tel" href="tel:+51976997331">o llame al <span class="nw">&nbsp;976 997 331</span></a>
+      </div>
+      <ul class="hero__datos" role="list">
+        <li>
+          <a class="dato-google" href="#opiniones">
+            <span class="estrellas" aria-hidden="true"><svg class="i"><use href="#i-estrella"/></svg><svg class="i"><use href="#i-estrella"/></svg><svg class="i"><use href="#i-estrella"/></svg><svg class="i"><use href="#i-estrella"/></svg><svg class="i"><use href="#i-estrella"/></svg></span>
+            <span class="dato-google__txt"><strong>5.0</strong> · 15 opiniones en Google</span>
+          </a>
+        </li>
+        <li class="estado" data-estado>
+          <span class="estado__punto" aria-hidden="true"></span><span data-estado-texto>Lunes a viernes, hasta las 10:00&nbsp;p.&nbsp;m.</span>
+        </li>
+      </ul>
+    </div>
+    <figure class="hero__foto">
+      <img src="https://images.unsplash.com/photo-1706353399656-210cca727a33?w=1600&q=80&auto=format"
+           srcset="https://images.unsplash.com/photo-1706353399656-210cca727a33?w=640&q=80&auto=format 640w,
+                   https://images.unsplash.com/photo-1706353399656-210cca727a33?w=960&q=80&auto=format 960w,
+                   https://images.unsplash.com/photo-1706353399656-210cca727a33?w=1280&q=80&auto=format 1280w,
+                   https://images.unsplash.com/photo-1706353399656-210cca727a33?w=1600&q=80&auto=format 1600w"
+           sizes="(min-width: 900px) 75vw, 100vw"
+           width="1600" height="1067" fetchpriority="high" decoding="async"
+           alt="Fisioterapeuta trabaja la movilidad del hombro de una paciente recostada de lado en la camilla.">
+    </figure>
+  </section>
+
+  <section class="seccion servicios" id="servicios" aria-labelledby="titulo-servicios">
+    <div class="contenedor servicios__grid">
+      <div class="servicios__cabeza">
+        <h2 class="seccion__titulo" id="titulo-servicios">Servicios</h2>
+        <p class="seccion__intro">Toque «Consultar» en el que necesita: se abre WhatsApp con su consulta ya escrita.</p>
+        <figure class="servicios__foto">
+          <img src="https://images.unsplash.com/photo-1768507423533-b87b62769758?w=1600&q=80&auto=format"
+               srcset="https://images.unsplash.com/photo-1768507423533-b87b62769758?w=480&q=80&auto=format 480w,
+                       https://images.unsplash.com/photo-1768507423533-b87b62769758?w=800&q=80&auto=format 800w,
+                       https://images.unsplash.com/photo-1768507423533-b87b62769758?w=1200&q=80&auto=format 1200w,
+                       https://images.unsplash.com/photo-1768507423533-b87b62769758?w=1600&q=80&auto=format 1600w"
+               sizes="380px" width="1600" height="2844" loading="lazy" decoding="async"
+               alt="Manos de un fisioterapeuta sobre la espalda de un paciente durante la terapia.">
+        </figure>
+      </div>
+      <ul class="lista-servicios" role="list">
+        <li class="servicio">
+          <div>
+            <p class="servicio__etiqueta">Por aquí se empieza</p>
+            <h3 class="servicio__nombre">Evaluación inicial</h3>
+            <p class="servicio__texto">Revisamos su dolor o lesión, cómo se mueve y qué le limita. Con eso le decimos cuántas sesiones necesita.</p>
+          </div>
+          <a class="btn btn--linea btn--chico" href="https://wa.me/51976997331?text=Hola%20Fisio%20Body%20Happy%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Evaluaci%C3%B3n%20inicial" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-wsp"/></svg>Consultar por WhatsApp<span class="sr">: evaluación inicial</span></a>
+        </li>
+        <li class="servicio">
+          <div>
+            <h3 class="servicio__nombre">Dolor de espalda, cintura o cuello</h3>
+            <p class="servicio__texto">Lumbalgia, ciática y tortícolis: el dolor que no le deja trabajar, dormir ni agacharse con tranquilidad.</p>
+          </div>
+          <a class="btn btn--linea btn--chico" href="https://wa.me/51976997331?text=Hola%20Fisio%20Body%20Happy%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Dolor%20de%20espalda%2C%20cintura%20o%20cuello" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-wsp"/></svg>Consultar por WhatsApp<span class="sr">: dolor de espalda, cintura o cuello</span></a>
+        </li>
+        <li class="servicio">
+          <div>
+            <h3 class="servicio__nombre">Rehabilitación después de una operación o fractura</h3>
+            <p class="servicio__texto">Para recuperar la fuerza y el movimiento paso a paso, con seguimiento en cada sesión.</p>
+          </div>
+          <a class="btn btn--linea btn--chico" href="https://wa.me/51976997331?text=Hola%20Fisio%20Body%20Happy%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Rehabilitaci%C3%B3n%20despu%C3%A9s%20de%20una%20operaci%C3%B3n%20o%20fractura" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-wsp"/></svg>Consultar por WhatsApp<span class="sr">: rehabilitación después de una operación o fractura</span></a>
+        </li>
+        <li class="servicio">
+          <div>
+            <h3 class="servicio__nombre">Lesiones deportivas</h3>
+            <p class="servicio__texto">Esguinces, desgarros y tendinitis. Para volver a entrenar o a jugar con seguridad.</p>
+          </div>
+          <a class="btn btn--linea btn--chico" href="https://wa.me/51976997331?text=Hola%20Fisio%20Body%20Happy%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Lesiones%20deportivas" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-wsp"/></svg>Consultar por WhatsApp<span class="sr">: lesiones deportivas</span></a>
+        </li>
+        <li class="servicio">
+          <div>
+            <h3 class="servicio__nombre">Terapia física con equipos</h3>
+            <p class="servicio__texto">Ultrasonido, electroterapia, compresas y ejercicios guiados, según lo que indique su evaluación.</p>
+          </div>
+          <a class="btn btn--linea btn--chico" href="https://wa.me/51976997331?text=Hola%20Fisio%20Body%20Happy%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20consultar%20por%3A%20Terapia%20f%C3%ADsica%20con%20equipos" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-wsp"/></svg>Consultar por WhatsApp<span class="sr">: terapia física con equipos</span></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="metodo" id="como-trabajamos" aria-labelledby="titulo-metodo">
+    <figure class="metodo__foto">
+      <img src="https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=1600&q=80&auto=format"
+           srcset="https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=640&q=80&auto=format 640w,
+                   https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=960&q=80&auto=format 960w,
+                   https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=1280&q=80&auto=format 1280w,
+                   https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=1600&q=80&auto=format 1600w"
+           sizes="(min-width: 900px) 70vw, 100vw"
+           width="1600" height="1067" loading="lazy" decoding="async"
+           alt="Fisioterapeuta corrige el movimiento de una paciente que hace ejercicios con mancuernas livianas.">
+    </figure>
+    <div class="metodo__texto">
+      <h2 class="seccion__titulo" id="titulo-metodo">Cómo trabajamos</h2>
+      <ol class="pasos" role="list">
+        <li class="paso">
+          <p class="paso__cuando">Primero</p>
+          <h3 class="paso__titulo">Le evaluamos</h3>
+          <p class="paso__texto">Vemos qué le duele, desde cuándo y qué movimientos le cuestan. Al terminar, le decimos cuántas sesiones va a necesitar.</p>
+        </li>
+        <li class="paso">
+          <p class="paso__cuando">En cada sesión</p>
+          <h3 class="paso__titulo">Seguimos su avance</h3>
+          <p class="paso__texto">Revisamos cómo va su recuperación y ajustamos la terapia a lo que necesita en ese momento.</p>
+        </li>
+        <li class="paso">
+          <p class="paso__cuando">Entre sesiones</p>
+          <h3 class="paso__titulo">Ejercicios para casa</h3>
+          <p class="paso__texto">Le enseñamos ejercicios para hacer en casa, así su recuperación no se detiene.</p>
+        </li>
+      </ol>
+      <p class="metodo__noche">¿Trabaja de día? De lunes a viernes atendemos hasta las <span class="nw">10:00 p.&nbsp;m.</span></p>
+    </div>
+  </section>
+
+  <section class="seccion opiniones" id="opiniones" aria-labelledby="titulo-opiniones">
+    <div class="contenedor">
+      <div class="opiniones__cabeza">
+        <h2 class="seccion__titulo" id="titulo-opiniones">Opiniones de pacientes</h2>
+        <div class="nota-google">
+          <p class="nota-google__cifra"><span class="sr">Calificación en Google: </span>5.0</p>
+          <div class="nota-google__detalle">
+            <span class="estrellas" aria-hidden="true"><svg class="i"><use href="#i-estrella"/></svg><svg class="i"><use href="#i-estrella"/></svg><svg class="i"><use href="#i-estrella"/></svg><svg class="i"><use href="#i-estrella"/></svg><svg class="i"><use href="#i-estrella"/></svg></span>
+            <p>15 opiniones en Google</p>
+            <a class="enlace" href="https://www.google.com/maps/search/?api=1&amp;query=Fisio%20Body%20Happy%20Pilcomayo%20Huancayo" target="_blank" rel="noopener">Verlas en Google Maps<svg class="i" aria-hidden="true" focusable="false"><use href="#i-salida"/></svg><span class="sr"> (se abre en otra pestaña)</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="opiniones__lista">
+        <figure class="opinion">
+          <blockquote><p>«Atención personalizada, profesionalismo, en todo momento van monitorizando tu proceso de recuperación.»</p></blockquote>
+          <figcaption><strong>Andy P.</strong></figcaption>
+        </figure>
+        <figure class="opinion">
+          <blockquote><p>«Tenía dolores, inmovilidad y tensión muscular por una fractura de la tibia y peroné. El licenciado fue muy profesional y me ayudó en mi recuperación. Se los recomiendo mucho.»</p></blockquote>
+          <figcaption><strong>Julio S.</strong> · Fractura de tibia y peroné</figcaption>
+        </figure>
+        <figure class="opinion">
+          <blockquote><p>«Tenía una afección en la lumbar por mucho tiempo. Gracias a la terapia que llevé, el malestar y las limitaciones que tenía se han ido.»</p></blockquote>
+          <figcaption><strong>Flor de Fátima O.</strong> · Dolor lumbar</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion horario" id="horario" aria-labelledby="titulo-horario">
+    <div class="contenedor horario__grid">
+      <div class="horario__info">
+        <h2 class="seccion__titulo" id="titulo-horario">Horario y ubicación</h2>
+        <p class="estado horario__estado" data-estado hidden><span class="estado__punto" aria-hidden="true"></span><span data-estado-texto></span></p>
+        <address class="direccion">Av. Daniel Alcides Carrión 2138<br>Pilcomayo, Huancayo</address>
+        <a class="btn btn--linea btn--chico horario__ruta" href="https://www.google.com/maps/dir/?api=1&amp;destination=Fisio%20Body%20Happy%2C%20Av.%20Daniel%20Alcides%20Carri%C3%B3n%202138%2C%20Huancayo" target="_blank" rel="noopener">Cómo llegar<svg class="i" aria-hidden="true" focusable="false"><use href="#i-salida"/></svg><span class="sr"> (Google Maps, se abre en otra pestaña)</span></a>
+        <table class="tabla-horario">
+          <caption class="sr">Horario de atención</caption>
+          <tbody>
+            <tr data-dias="1,2,3,4,5">
+              <th scope="row">Lunes a viernes</th>
+              <td><span class="nw">8:00 a.&nbsp;m. – 1:00 p.&nbsp;m.</span><br><span class="nw">3:00 – 10:00 p.&nbsp;m.</span></td>
+            </tr>
+            <tr data-dias="6">
+              <th scope="row">Sábados</th>
+              <td><span class="nw">8:00 a.&nbsp;m. – 1:00 p.&nbsp;m.</span></td>
+            </tr>
+            <tr data-dias="0">
+              <th scope="row">Domingos</th>
+              <td>Cerrado</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="horario__contacto">
+          <p class="horario__etiqueta">WhatsApp y teléfono</p>
+          <a class="horario__numero" href="tel:+51976997331">976 997 331</a>
+          <a class="enlace" href="https://wa.me/51976997331?text=Hola%20Fisio%20Body%20Happy%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+      </div>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps?q=Fisio%20Body%20Happy%2C%20Av.%20Daniel%20Alcides%20Carri%C3%B3n%202138%2C%20Huancayo&amp;z=16&amp;output=embed"
+                title="Mapa de Google con la ubicación de Fisio Body Happy, Av. Daniel Alcides Carrión 2138, Pilcomayo"
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion reserva" id="reserva" aria-labelledby="titulo-reserva">
+    <div class="contenedor reserva__grid">
+      <div class="reserva__texto">
+        <h2 class="seccion__titulo" id="titulo-reserva">Reserve su evaluación</h2>
+        <p class="seccion__intro">Díganos qué le duele y su nombre. Se abrirá WhatsApp con el mensaje listo para enviar.</p>
+      </div>
+      <form class="ficha" id="form-reserva" action="https://wa.me/51976997331" method="get" target="_blank">
+        <div class="campo">
+          <label for="motivo">¿Qué le duele?</label>
+          <select id="motivo" name="motivo" required aria-describedby="error-motivo">
+            <option value="" selected disabled>Elija una opción</option>
+            <option>Espalda o cintura (lumbalgia, ciática)</option>
+            <option>Cuello (tortícolis)</option>
+            <option>Recuperación de una operación o fractura</option>
+            <option>Lesión deportiva (esguince, desgarro, tendinitis)</option>
+            <option>Otra molestia</option>
+          </select>
+          <p class="campo__error" id="error-motivo" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="nombre">Su nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" maxlength="60" required aria-describedby="error-nombre">
+          <p class="campo__error" id="error-nombre" hidden></p>
+        </div>
+        <button class="btn btn--accion" type="submit"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-wsp"/></svg>Enviar por WhatsApp</button>
+        <p class="ficha__nota">Si prefiere llamar: <a href="tel:+51976997331">976 997 331</a></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__fila">
+    <p class="pie__datos">
+      <strong>Fisio Body Happy</strong>
+      <span>Centro de terapia física y rehabilitación</span>
+      <span>Av. Daniel Alcides Carrión 2138, <span class="nw">Pilcomayo, Huancayo</span></span>
+      <span><a href="tel:+51976997331">976 997 331</a></span>
+    </p>
+    <p class="pie__kallari">
+      <span>Versión inicial preparada por <span class="nw">Kallari · <a href="https://somoskallari.com" target="_blank" rel="noopener">somoskallari.com</a></span></span>
+      <span>Fotos referenciales</span>
+    </p>
+  </div>
+</footer>
+
+<a class="wsp-flotante" href="https://wa.me/51976997331?text=Hola%20Fisio%20Body%20Happy%2C%20vi%20su%20p%C3%A1gina%20web%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Fisio Body Happy">
+  <svg class="i" aria-hidden="true" focusable="false"><use href="#i-wsp"/></svg>
+</a>
+
+<script>
+(function () {
+  'use strict';
+  var WSP = '51976997331';
+
+  /* Abierto ahora y fila de «Hoy», con la hora de Lima. Minutos desde la medianoche. */
+  var HORARIO = {
+    0: [],
+    1: [[480, 780], [900, 1320]], 2: [[480, 780], [900, 1320]], 3: [[480, 780], [900, 1320]],
+    4: [[480, 780], [900, 1320]], 5: [[480, 780], [900, 1320]],
+    6: [[480, 780]]
+  };
+  var DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+
+  function ahoraEnLima() {
+    try {
+      var p = {};
+      new Intl.DateTimeFormat('en-US', { timeZone: 'America/Lima', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' })
+        .formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; });
+      var dia = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
+      if (dia < 0) { throw new Error('día'); }
+      return { dia: dia, min: (parseInt(p.hour, 10) % 24) * 60 + parseInt(p.minute, 10) };
+    } catch (e) {
+      var u = new Date(Date.now() - 5 * 3600 * 1000); /* Lima: UTC-5 todo el año */
+      return { dia: u.getUTCDay(), min: u.getUTCHours() * 60 + u.getUTCMinutes() };
+    }
+  }
+  function hora(m) {
+    var h = Math.floor(m / 60), mm = m % 60, h12 = h % 12 || 12;
+    return (h12 === 1 ? 'la ' : 'las ') + h12 + ':' + (mm < 10 ? '0' : '') + mm + ' ' + (h < 12 ? 'a. m.' : 'p. m.');
+  }
+
+  var t = ahoraEnLima(), hoy = HORARIO[t.dia], texto = '', abierto = false, i, k;
+  for (i = 0; i < hoy.length; i++) {
+    if (t.min >= hoy[i][0] && t.min < hoy[i][1]) { abierto = true; texto = 'Abierto ahora · hasta ' + hora(hoy[i][1]); }
+  }
+  if (!abierto) {
+    for (i = 0; i < hoy.length; i++) {
+      if (hoy[i][0] > t.min) { texto = 'Cerrado ahora · abrimos hoy a ' + hora(hoy[i][0]); break; }
+    }
+    for (k = 1; !texto && k <= 7; k++) {
+      var d = (t.dia + k) % 7;
+      if (HORARIO[d].length) { texto = 'Cerrado ahora · abrimos ' + (k === 1 ? 'mañana' : 'el ' + DIAS[d]) + ' a ' + hora(HORARIO[d][0][0]); }
+    }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-estado]'), function (el) {
+    var destino = el.querySelector('[data-estado-texto]') || el;
+    destino.textContent = texto;
+    el.setAttribute('data-abierto', abierto ? 'si' : 'no');
+    el.hidden = false;
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-dias]'), function (fila) {
+    if (fila.getAttribute('data-dias').split(',').indexOf(String(t.dia)) === -1) { return; }
+    fila.classList.add('es-hoy');
+    var marca = document.createElement('span');
+    marca.className = 'hoy';
+    marca.textContent = 'Hoy';
+    fila.querySelector('th').appendChild(marca);
+  });
+
+  /* Reserva: arma el mensaje y abre WhatsApp. No se guarda nada en la página. */
+  var form = document.getElementById('form-reserva');
+  if (form) {
+    form.noValidate = true;
+    var avisos = { motivo: 'Elija qué le duele para continuar.', nombre: 'Escriba su nombre para continuar.' };
+    var marcar = function (campo, mensaje) {
+      var control = form.elements[campo], error = document.getElementById('error-' + campo);
+      if (mensaje) { control.setAttribute('aria-invalid', 'true'); error.textContent = mensaje; error.hidden = false; }
+      else { control.removeAttribute('aria-invalid'); error.textContent = ''; error.hidden = true; }
+    };
+    form.elements.motivo.addEventListener('change', function () { if (this.value) { marcar('motivo', ''); } });
+    form.elements.nombre.addEventListener('input', function () { if (this.value.trim()) { marcar('nombre', ''); } });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var motivo = form.elements.motivo.value;
+      var nombre = form.elements.nombre.value.replace(/\s+/g, ' ').trim();
+      marcar('motivo', motivo ? '' : avisos.motivo);
+      marcar('nombre', nombre ? '' : avisos.nombre);
+      if (!motivo) { form.elements.motivo.focus(); return; }
+      if (!nombre) { form.elements.nombre.focus(); return; }
+      var mensaje = 'Hola Fisio Body Happy, soy ' + nombre + '. Vi su página web y quisiera reservar una evaluación por: ' + motivo + '.';
+      var url = 'https://wa.me/' + WSP + '?text=' + encodeURIComponent(mensaje);
+      var ventana = window.open(url, '_blank');
+      if (ventana) { try { ventana.opener = null; } catch (x) {} } else { window.location.href = url; }
+    });
+  }
+
+  /* El botón flotante se aparta mientras el formulario está a la vista (no tapa «Enviar»). */
+  var flotante = document.querySelector('.wsp-flotante'), reserva = document.getElementById('reserva');
+  if (flotante && reserva && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (en.isIntersecting) { flotante.setAttribute('data-oculto', ''); } else { flotante.removeAttribute('data-oculto'); }
+      });
+    }, { threshold: 0.2 }).observe(reserva);
+  }
+})();
+</script>
+</body>
+</html>
