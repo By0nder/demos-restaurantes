@@ -56,9 +56,22 @@
       etapa: p.etapa || '', detalle: p.detalle && !norm(p.nombre).includes(norm(p.detalle)) ? p.detalle : '',
       descripcion: p.descripcion || '', imagen: p.imagen,
       presentaciones: pres, precio: p.precio || '', destacado: !!p.destacado, tags: [...new Set(tags)],
-      buscar: [p.nombre, nombreMarca[marca], p.etapa, p.detalle, ...especies.map(e => e === 'gato' ? 'gato gatos' : e === 'perro' ? 'perro perros' : ''), PALABRAS_TIPO[tipo], ...pres].filter(Boolean).join(' ')
+      buscar: [p.nombre, nombreMarca[marca], p.etapa, p.detalle, ...especies.map(e => e === 'gato' ? 'gato gatos' : e === 'perro' ? 'perro perros' : ''), PALABRAS_TIPO[tipo], ...pres, ...palabrasCompat(p.compat)].filter(Boolean).join(' ')
     };
   }
+  // (25-nov-2026) Marcas y modelos de `compat` también al buscador (gemela de lib/tienda.js; sin `compat`, nada).
+  function palabrasCompat(c) { return Array.isArray(c) ? c.flatMap(x => (x && typeof x === 'object' ? [x.marca, ...[].concat(x.modelos || x.modelo || [])] : [])) : []; }
+  // ── Filtro por vehículo (25-nov-2026, versión final de Frenos Edgar; opt-in `tienda.vehiculos`) ──
+  // `c` = para qué carros sirve un producto, como lo deja lib/tienda.js: [[marca, modelo, desde, hasta], …] (modelo "" =
+  // toda la marca; año 0 = sin tope) o nada (sirve para todo carro: mano de obra, líquidos). `v` = el carro elegido
+  // {marca, modelo?, anio?}: sin modelo vale cualquiera de la marca; sin año, cualquier año.
+  function compatible(c, v) {
+    if (!v || !v.marca || !c) return true;
+    const anio = Number(v.anio) || 0;
+    return c.some(x => x[0] === v.marca && (!v.modelo || !x[1] || x[1] === v.modelo) && (!anio || ((!x[2] || anio >= x[2]) && (!x[3] || anio <= x[3]))));
+  }
+  // «Hyundai Accent 2016» (lo que va en «Su carro» del pedido y en los mensajes).
+  function nombreVehiculo(v) { return v ? [v.marca, v.modelo, v.anio].filter(Boolean).join(' ') : ''; }
   // Foto de la hoja: un enlace https o una ruta de la web («assets/productos/p05.webp», sin «..»). Devuelve lo
   // que va en `imagen` (la ruta SIN «assets/», como en el JSON, o el enlace) o null.
   function fotoSegura(v) {
@@ -137,7 +150,7 @@
       + p.presentaciones.map((x, i) => `<button type="button" class="pres" aria-pressed="${i === 0}" data-pres="${e(x)}">${e(x)}</button>`).join('')
       + `</div><button type="button" class="btn btn-accion prod-btn" data-agregar="${e(p.id)}"><svg class="ico " aria-hidden="true"><use href="#i-carrito"/></svg><span>Agregar<span class="largo"> al pedido</span></span></button></article>`;
   }
-  if (typeof module !== 'undefined' && module.exports) module.exports = { parseCSV, separador, presentaciones, normalizar, fotoSegura, catalogoDeHoja, tarjeta, src };
+  if (typeof module !== 'undefined' && module.exports) module.exports = { parseCSV, separador, presentaciones, normalizar, fotoSegura, catalogoDeHoja, tarjeta, src, compatible, nombreVehiculo };
   if (typeof document === 'undefined') return;
 
   const D = JSON.parse(document.getElementById('datos-tienda').textContent);
@@ -229,7 +242,10 @@
   const visibles = $('[data-visibles]');
   const POR_PAGINA = D.porPagina || 24;
   let sel = {}, termino = '', limite = POR_PAGINA;
-  const pasa = (t, s, palabras) => Object.values(s).every(id => t._tags.includes(id)) && palabras.every(w => t._texto.includes(w) || t._texto.includes(w.replace(/s$/, '')));
+  // El carro elegido en el filtro por vehículo (null = todos; sin `tienda.vehiculos` queda siempre en null).
+  let veh = null, quitarVeh = () => {}, pintarVeh = null;
+  const lesirve = t => !veh || compatible((D.productos[t.dataset.id] || {}).c, veh);
+  const pasa = (t, s, palabras) => lesirve(t) && Object.values(s).every(id => t._tags.includes(id)) && palabras.every(w => t._texto.includes(w) || t._texto.includes(w.replace(/s$/, '')));
   const verMas = $('[data-ver-mas]');
   // Guías (3-nov-2026): una pestaña por mascota; la intro de la mascota filtrada va arriba de la grilla.
   const intros = $$('[data-guia-intro]'), tabs = $$('.guia-tab');
@@ -280,7 +296,8 @@
     const conGuia = elegidos.find(id => tabs.some(t => t.dataset.tab === id));
     if (conGuia) pestana(conGuia);
     const w = $('[data-wsp-busqueda]');
-    if (w) w.href = 'https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(D.saludo + (termino ? 'quisiera saber si tienen ' + termino + '.' : 'quisiera saber si tienen un producto que no encontré en la página.'));
+    const carro = veh ? ' para mi ' + nombreVehiculo(veh) : '';
+    if (w) w.href = 'https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(D.saludo + (termino ? 'quisiera saber si tienen ' + termino + carro + '.' : 'quisiera saber si tienen un producto que no encontré en la página' + carro + '.'));
   };
   const alCatalogo = () => $('#catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
   document.addEventListener('click', e => {
@@ -311,9 +328,12 @@
   const buscar = () => {
     const palabras = norm(q.value).split(/\s+/).filter(Boolean);
     if (!palabras.length) return cerrarSug();
-    const hits = tarjetas.filter(t => { const tx = norm(t.dataset.buscar); return palabras.every(w => tx.includes(w) || tx.includes(w.replace(/s$/, ''))); });
+    const dice = t => { const tx = norm(t.dataset.buscar); return palabras.every(w => tx.includes(w) || tx.includes(w.replace(/s$/, ''))); };
+    // Con un carro elegido solo se sugiere lo que le sirve; si para él no hay nada pero para otros sí, se ofrece verlo.
+    const hits = tarjetas.filter(t => dice(t) && lesirve(t));
+    const deOtros = veh && !hits.length ? tarjetas.filter(dice).length : 0;
     sug.innerHTML = hits.slice(0, 6).map(t => { const p = D.productos[t.dataset.id]; return `<button type="button" class="sug" role="option" data-ir-prod="${esc(t.dataset.id)}"><img src="${esc(src(p.i))}" alt="" width="44" height="44"><span>${esc(p.n)}<small>${esc(p.m)}</small></span></button>`; }).join('')
-      + (hits.length ? `<button type="button" class="sug-todo" data-ver-todo>Ver los ${hits.length} resultados</button>` : `<p class="sug" style="cursor:default">No lo encontramos. <button type="button" class="enlace" data-ver-todo>Preguntar por WhatsApp</button></p>`);
+      + (hits.length ? `<button type="button" class="sug-todo" data-ver-todo>Ver los ${hits.length} resultados</button>` : deOtros ? `<p class="sug" style="cursor:default">Para su ${esc(nombreVehiculo(veh))} no lo encontramos. <button type="button" class="enlace" data-sin-carro>Verlo para todos los carros</button></p>` : `<p class="sug" style="cursor:default">No lo encontramos. <button type="button" class="enlace" data-ver-todo>Preguntar por WhatsApp</button></p>`);
     sug.hidden = false; q.setAttribute('aria-expanded', 'true');
   };
   const verTodo = () => { termino = q.value.trim(); sel = {}; limite = POR_PAGINA; aplicar(); cerrarSug(); q.blur(); alCatalogo(); };
@@ -330,6 +350,7 @@
   sug.addEventListener('click', e => {
     const o = e.target.closest('[data-ir-prod]');
     if (e.target.closest('[data-ver-todo]')) return verTodo();
+    if (e.target.closest('[data-sin-carro]')) { quitarVeh(); return verTodo(); }
     if (!o) return;
     cerrarSug(); q.blur(); sel = {}; termino = ''; limite = POR_PAGINA; aplicar(o.dataset.irProd);
     const t = tarjetas.find(x => x.dataset.id === o.dataset.irProd);
@@ -463,6 +484,80 @@
     window.open('https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');
   });
 
+  // Filtro por vehículo (25-nov-2026, opt-in `tienda.vehiculos`; el selector lo pinta templates/tienda/vehiculo.ejs).
+  // Marca → Modelo → Año: la grilla deja lo que le sirve a ese carro y lo que sirve para todo carro (se combina con los
+  // filtros de tipo y la búsqueda), cada repuesto suyo lleva el sello «Para su <modelo>», arriba va cuántos son con
+  // «Quitar filtro» (y, si para ese carro no hay nada propio, un WhatsApp para preguntar), el carro se recuerda en
+  // localStorage (`vehiculo-<slug>`) y «Su carro» del pedido se llena con «Marca Modelo Año».
+  const vForm = D.vehiculos && $('[data-vehiculo]');
+  if (vForm) {
+    const CLAVE_V = 'vehiculo-' + D.slug;
+    const modelosDe = new Map(D.vehiculos.marcas);
+    const sMarca = $('#v-marca', vForm), sModelo = $('#v-modelo', vForm), sAnio = $('#v-anio', vForm);
+    const txt = $('[data-vehiculo-txt]', vForm), botones = $('[data-vehiculo-botones]', vForm), vWsp = $('[data-vehiculo-wsp]', vForm);
+    const campo = form.distrito;
+    let auto = '';
+    const ponerModelos = (marca, elegido) => {
+      const lista = modelosDe.get(marca) || [];
+      sModelo.innerHTML = `<option value="">${!marca ? 'Primero la marca' : lista.length ? 'Todos los modelos' : 'Sin modelos en la lista'}</option>`
+        + lista.map(m => `<option${m === elegido ? ' selected' : ''}>${esc(m)}</option>`).join('');
+      sModelo.disabled = !lista.length;
+      sAnio.disabled = !marca;
+      if (!marca) sAnio.value = '';
+    };
+    const leer = () => (sMarca.value && modelosDe.has(sMarca.value) ? { marca: sMarca.value, modelo: sModelo.value, anio: sAnio.value } : null);
+    const guardarV = () => { try { if (veh) localStorage.setItem(CLAVE_V, JSON.stringify(veh)); else localStorage.removeItem(CLAVE_V); } catch (e) {} };
+    // «Su carro»: al elegir se escribe el carro; al cargar, solo si está vacío; al quitar, se borra si era el automático.
+    const llenarCarro = forzar => {
+      const nuevo = nombreVehiculo(veh), actual = campo.value.trim();
+      if (nuevo && (forzar || !actual || actual === auto)) campo.value = nuevo;
+      else if (!nuevo && actual && actual === auto) campo.value = '';
+      auto = nuevo;
+    };
+    const plural = (n, uno, varios) => n + ' ' + (n === 1 ? uno : varios);
+    const pintarV = () => {
+      vForm.classList.toggle('activo', !!veh);
+      $$('#catalogo .prod-compat').forEach(x => x.remove());
+      botones.hidden = !veh; vWsp.hidden = true;
+      if (!veh) { txt.textContent = ''; return; }
+      const nombre = nombreVehiculo(veh), corto = veh.modelo || veh.marca;
+      let suyos = 0, todos = 0;
+      tarjetas.forEach(t => {
+        const c = (D.productos[t.dataset.id] || {}).c;
+        if (!compatible(c, veh)) return;
+        if (!c) { todos++; return; }
+        suyos++;
+        const f = $('.prod-foto', t);
+        if (f) f.insertAdjacentHTML('beforeend', `<span class="prod-compat">${svg('check')}<span>Para su ${esc(corto)}</span></span>`);
+      });
+      const extra = todos ? ` y ${plural(todos, 'que sirve', 'que sirven')} para todo carro` : '';
+      if (suyos) txt.innerHTML = `<strong>${plural(suyos, 'producto', 'productos')} para su ${esc(nombre)}</strong>${extra}.` + (veh.modelo ? '' : ' Elija el modelo para ver lo exacto.');
+      else {
+        txt.innerHTML = `Para su <strong>${esc(nombre)}</strong> todavía no hay repuestos en la página${todos ? '; le mostramos lo que sirve para todo carro' : ''}. Pregúntenos: puede que lo consigamos.`;
+        vWsp.hidden = false;
+        vWsp.href = 'https://wa.me/' + D.whatsapp + '?text=' + encodeURIComponent(D.saludo + 'quisiera saber qué tienen para mi ' + nombre + '.');
+      }
+    };
+    const poner = () => { veh = leer(); guardarV(); llenarCarro(true); limite = POR_PAGINA; aplicar(); pintarV(); };
+    sMarca.addEventListener('change', () => { ponerModelos(sMarca.value, ''); sAnio.value = ''; poner(); });
+    sModelo.addEventListener('change', poner);
+    sAnio.addEventListener('change', poner);
+    vForm.addEventListener('submit', e => e.preventDefault());
+    quitarVeh = () => { sMarca.value = ''; ponerModelos('', ''); poner(); };
+    $('[data-vehiculo-quitar]', vForm).addEventListener('click', () => { quitarVeh(); sMarca.focus(); });
+    pintarVeh = pintarV;
+    // El carro de la visita anterior (si sigue en el catálogo).
+    let g = null;
+    try { g = JSON.parse(localStorage.getItem(CLAVE_V) || 'null'); } catch (e) {}
+    if (g && modelosDe.has(g.marca)) {
+      sMarca.value = g.marca;
+      ponerModelos(g.marca, (modelosDe.get(g.marca) || []).includes(g.modelo) ? g.modelo : '');
+      sAnio.value = [...sAnio.options].some(o => o.value && o.value === String(g.anio)) ? String(g.anio) : '';
+      veh = leer(); llenarCarro(false);
+    } else { sMarca.value = ''; ponerModelos('', ''); }
+    pintarV();
+  }
+
   pintarCuenta(false); pintarLista(); pintarRepetir();
   aplicar();
 
@@ -476,6 +571,7 @@
     if (ultimo) { ultimo.items = ultimo.items.filter(i => D.productos[i.id]); if (!ultimo.items.length) ultimo = null; }
     pintarCuenta(false); pintarLista(); pintarRepetir();
     aplicar();
+    if (pintarVeh) pintarVeh();
   };
   const traerHoja = async () => {
     const ctl = typeof AbortController === 'function' ? new AbortController() : null;
